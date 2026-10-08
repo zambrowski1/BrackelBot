@@ -1,0 +1,9 @@
+include LICENSE NOTICE.md README.md
+include requirements*.txt
+recursive-include wiki_stats *.py *.json
+recursive-include toolforge *.sh *.yaml
+recursive-include examples *.json *.wiki *.example
+recursive-include docs *.md *.json
+recursive-include tests *.py *.wiki *.json *.md
+recursive-include third_party *
+global-exclude *.pyc

@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.1",
+  "package_id": "FICTIONAL-TEST-03-add-national-team",
+  "generated_at": "2026-10-08T12:00:00Z",
+  "is_test": true,
+  "articles": [
+    {
+      "title": "Участник:Zambrowski/testbot",
+      "player": "Кальвин Браккельман",
+      "operations": [
+        {
+          "id": "national-u21",
+          "type": "add_national_team",
+          "entity": {
+            "name": "Германия до 21 года",
+            "kind": "national_team",
+            "age": 21,
+            "wikidata_id": "Q314851"
+          },
+          "target": {
+            "structure": "career",
+            "field": "национальная сборная"
+          },
+          "as_of": "2026-10-08",
+          "sources": [
+            {
+              "url": "https://ru.wikipedia.org/wiki/Участник:Zambrowski/testbot",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-08",
+              "note": "ТОЛЬКО ВЫМЫШЛЕННЫЙ ТЕСТ БРАККЕЛЬМАННА. Новые числа и переходы не являются спортивными фактами."
+            }
+          ],
+          "payload": {
+            "period": "2026—{{н.в.}}",
+            "stats": {
+              "appearances": 2,
+              "goals": 1
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

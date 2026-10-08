@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.1",
+  "package_id": "FICTIONAL-TEST-09-repeat-after-01",
+  "generated_at": "2026-10-08T12:00:00Z",
+  "is_test": true,
+  "articles": [
+    {
+      "title": "Участник:Zambrowski/testbot",
+      "player": "Кальвин Браккельман",
+      "operations": [
+        {
+          "id": "stats",
+          "type": "update_stats",
+          "entity": {
+            "name": "Аугсбург",
+            "wikitext": "{{Флаг Германии|20px}} [[Аугсбург (футбольный клуб)|Аугсбург]]"
+          },
+          "target": {
+            "structure": "career",
+            "field": "клубы",
+            "period": "2026—{{н.в.}}"
+          },
+          "as_of": "2026-10-08",
+          "sources": [
+            {
+              "url": "https://ru.wikipedia.org/wiki/Участник:Zambrowski/testbot",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-08",
+              "note": "ТОЛЬКО ВЫМЫШЛЕННЫЙ ТЕСТ БРАККЕЛЬМАННА. Новые числа и переходы не являются спортивными фактами."
+            }
+          ],
+          "season": null,
+          "competition": {
+            "name": "Чемпионат (вымышленный тест)",
+            "category": "all",
+            "scope": "league"
+          },
+          "expected": {
+            "appearances": 4,
+            "goals": 1
+          },
+          "new": {
+            "appearances": 5,
+            "goals": 2
+          }
+        }
+      ]
+    }
+  ]
+}

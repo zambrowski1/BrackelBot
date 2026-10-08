@@ -1,0 +1,182 @@
+<!-- ВЫМЫШЛЕННЫЙ ТЕСТОВЫЙ НАБОР BrackelBot; добавленные еврокубковые нули заданы как тестовые значения, не спортивные факты. -->
+{{Футболист
+| имя = Кальвин Браккельман
+| изображение = Calvin_Brackelmann_SC_Paderborn_07_2025.jpg
+| описание изображения = Кальвин Браккельман в 2025 году
+| полное имя = Кальвин Марк Браккельман
+| дата рождения = 22.08.1999
+| место рождения = [[Люнебург]], [[Германия]]
+| гражданство = {{Флаг Германии|20px}} [[Германия]]
+| рост = 196<ref name="fca-profile"/>
+| позиция = [[Защитник (футбол)|центральный защитник]]
+| нынешний клуб = {{Флаг Германии|20px}} [[Аугсбург (футбольный клуб)|Аугсбург]]
+| номер = 2
+| молодёжные клубы = {{спортивная карьера
+  |2003—2004|{{Флаг Германии|20px}} Хандорф|
+  |2005—2006|{{Флаг Германии|20px}} {{Нп5|Тройбунд Люнебург|Тройбунд Люнебург|de|MTV Treubund Lüneburg}}|
+  |2006—2012|{{Флаг Германии|20px}} [[Гамбург (футбольный клуб)|Гамбург]]|
+  |2013|{{Флаг Германии|20px}} Тройбунд Люнебург|
+  |2013—2016|{{Флаг Германии|20px}} [[Ганза (футбольный клуб)|Ганза]]|
+  |2017—2018|{{Флаг Германии|20px}} [[Кёльн (футбольный клуб)|Кёльн]]<ref name="youth-profile">{{Cite web|url=https://www.transfermarkt.de/calvin-brackelmann/profil/spieler/358766|title=Calvin Brackelmann — Spielerprofil: Jugendvereine|website=Transfermarkt|lang=de|access-date=2026-10-06}}</ref>|
+ }}
+| клубы = {{спортивная карьера
+  |2018—2020|{{Флаг Германии|20px}} [[Кёльн II]]|11 (0)
+  |2020|{{Флаг Германии|20px}} [[Шальке 04 II]]|4 (0)
+  |2021|{{Флаг Германии|20px}} [[Рёдингхаузен (футбольный клуб)|Рёдингхаузен]]|2 (0)
+  |2021—2022|{{Флаг Германии|20px}} [[Любек (футбольный клуб)|Любек]]|29 (1)
+  |2022—2023|{{Флаг Германии|20px}} [[Ингольштадт 04]]|28 (2)
+  |2023—2025|{{Флаг Германии|20px}} [[Падерборн 07 II]]|13 (1)
+  |2023—2026|{{Флаг Германии|20px}} [[Падерборн 07]]|59 (5)
+  |2026—{{н.в.}}|{{Флаг Германии|20px}} [[Аугсбург (футбольный клуб)|Аугсбург]]|4 (1)
+ }}
+| национальная сборная = {{спортивная карьера
+  |2016—2017|{{Флаг Германии|20px}} [[Сборная Германии по футболу (до 18 лет)|Германия (до 18)]]|6 (0)
+  |2017—2018|{{Флаг Германии|20px}} [[Сборная Германии по футболу (до 19 лет)|Германия (до 19)]]|3 (0)
+ }}
+| обновление данных о клубе = 04.10.2026
+| обновление данных о сборной = 04.10.2026
+}}
+
+'''Ка́львин Марк Бра́ккельман''' ({{lang-de|Calvin Marc Brackelmann}}; {{IPA-de|ˈkalvɪn maʁk ˈbʁakl̩man|lang}}; род. {{ДР|22|8|1999}}, [[Люнебург]]) — немецкий футболист, [[Защитник (футбол)|центральный защитник]] клуба «[[Аугсбург (футбольный клуб)|Аугсбург]]». Выступал за юношеские сборные Германии [[Сборная Германии по футболу (до 18 лет)|до 18]] и [[Сборная Германии по футболу (до 19 лет)|до 19 лет]]<ref name="dfb">{{Cite web|url=https://datencenter.dfb.de/en/data-center/people/calvin-brackelmann/player|title=Calvin Brackelmann — Player profile|website=DFB Datencenter|lang=en|access-date=2026-10-04}}</ref><ref name="fca-profile">{{Cite web|url=https://www.fcaugsburg.de/team/player/calvin-brackelmann-305|title=Calvin Brackelmann|website=FC Augsburg|lang=de|access-date=2026-10-04}}</ref>.
+
+Взрослую карьеру начал в резервных командах немецких клубов. В сезоне 2022/23 выступал за «[[Ингольштадт 04]]» в [[Третья лига Германии по футболу|Третьей лиге]], затем играл за «[[Падерборн 07]]» во [[Вторая Бундеслига|Второй Бундеслиге]]. В 2026 году перешёл в «Аугсбург», в составе которого дебютировал в [[Чемпионат Германии по футболу|Бундеслиге]]<ref name="dfb"/><ref name="fca-sign">{{Cite web|url=https://www.fcaugsburg.de/en/article/fca-sign-calvin-brackelmann-23162|title=FCA sign Calvin Brackelmann|website=FC Augsburg|date=2026-05-29|lang=en|access-date=2026-10-04}}</ref>.
+
+== Ранние годы ==
+Кальвин Браккельман родился в Люнебурге. Начал заниматься футболом в местных любительских клубах «Хандорф» и «Тройбунд Люнебург» ({{lang-de|MTV Handorf}} и {{lang-de|MTV Treubund Lüneburg}}), после чего несколько лет занимался в академии «[[Гамбург (футбольный клуб)|Гамбурга]]». В начале 2013 года ненадолго вернулся в «{{Нп5|Тройбунд Люнебург|Тройбунд Люнебург|de|MTV Treubund Lüneburg}}»<ref name="youth-profile"/>. В том же году перешёл в академию «[[Ганза (футбольный клуб)|Ганзы]]» из [[Росток]]а<ref name="fca-focus">{{Cite web|url=https://www.fcaugsburg.de/en/article/ready-for-the-bundesliga-brackelmann-in-focus-23167|title=Ready for the Bundesliga: Brackelmann in focus|website=FC Augsburg|date=2026-06-02|lang=en|access-date=2026-10-04}}</ref>.
+
+В январе 2017 года он присоединился к «[[Кёльн (футбольный клуб)|Кёльну]]». За юношескую команду клуба он провёл 27 официальных матчей, затем начал выступать за «[[Кёльн II]]» в [[Региональная лига «Запад»|Региональной лиге «Запад»]]. За резервную команду в сезонах 2018/19 и 2019/20 сыграл 11 матчей чемпионата<ref name="dfb"/>.
+
+== Клубная карьера ==
+
+=== Начало взрослой карьеры ===
+В январе 2020 года Браккельман перешёл в «[[Шальке 04 II]]». Он успел сыграть четыре матча Региональной лиги «Запад», после чего в феврале получил разрыв крестообразной связки в игре против «[[Ферль (футбольный клуб)|Ферля]]». Травма потребовала длительного восстановления. В опубликованном в 2022 году материале ''Neuburger Rundschau'' о Браккельмане отмечалось, что после травмы он сомневался в продолжении футбольной карьеры<ref name="dfb"/><ref name="mss-schalke">{{Cite web|url=https://www.media-sportservice.de/2020/02/22/schalke-04-ii-saison-aus-fuer-innenverteidiger-calvin-brackelmann/|title=FC Schalke 04 II: Bitteres Saison-Aus für Calvin Brackelmann|website=Media Sportservice|date=2020-02-22|lang=de|access-date=2026-10-04}}</ref><ref name="aa-profile">{{Cite web|url=https://www.augsburger-allgemeine.de/neuburg/sport/fc-ingolstadt-ueber-umwege-fci-verteidiger-brackelmann-hat-in-seiner-karriere-viel-erlebt-id64323531.html|title=Über Umwege: FCI-Spieler Brackelmann hat in seiner Karriere viel erlebt|author=Benjamin Sigmund|website=Neuburger Rundschau|date=2022-10-21|lang=de|access-date=2026-10-04}}</ref>.
+
+После ухода из «Шальке» некоторое время оставался без клуба. В начале 2021 года он присоединился к «Рёдингхаузену», однако в оставшейся части сезона провёл два матча чемпионата<ref name="dfb"/>.
+
+=== «Любек» ===
+Летом 2021 года Браккельман проходил просмотр в «Любеке» и по его итогам подписал контракт на сезон 2021/22 с опцией продления<ref name="hls-contract">{{Cite web|url=https://www.hlsports.de/fussball/vfb-luebeck-nimmt-probespieler-unter-vertrag-265450|title=VfB Lübeck nimmt Probespieler unter Vertrag|website=HL-SPORTS|date=2021-07-22|lang=de|access-date=2026-10-04}}</ref>. В [[Региональная лига «Север»|Региональной лиге «Север»]] он провёл 29 матчей и забил один мяч<ref name="dfb"/>. В мае 2022 года «Любек» выиграл Кубок [[Шлезвиг-Гольштейн|земли Шлезвиг-Гольштейн]], победив в финале «ТСБ Фленсбург» ({{lang-de|TSB Flensburg}}) в серии пенальти<ref name="hls-cup">{{Cite web|url=https://www.hlsports.de/fussball/vfb-luebeck-zieht-nach-elfmeter-drama-in-flensburg-in-den-dfb-pokal-ein-284409|title=VfB Lübeck zieht nach Elfmeter-Drama in Flensburg in den DFB-Pokal ein|website=HL-SPORTS|date=2022-05-21|lang=de|access-date=2026-10-04}}</ref>.
+
+=== «Ингольштадт 04» ===
+Летом 2022 года Кальвин перешёл в клуб Третьей лиги «Ингольштадт 04»<ref name="mss-ingol">{{Cite web|url=https://www.media-sportservice.de/2022/05/29/fc-ingolstadt-04-verpflichtet-ex-koelner-calvin-brackelmann/|title=FC Ingolstadt 04 verpflichtet Ex-Kölner Calvin Brackelmann|website=Media Sportservice|date=2022-05-29|lang=de|access-date=2026-10-04}}</ref>. 23 июля 2022 года он дебютировал в Третьей лиге в победном матче против «[[Байройт (футбольный клуб)|Байройта]]» (1:0). За сезон провёл 28 матчей чемпионата и забил два гола; ещё один раз сыграл в [[Кубок Германии по футболу|Кубке Германии]]<ref name="dfb"/>.
+
+В зимнем рейтинге ''[[Kicker|kicker]]'' сезона 2022/23 он занял третье место среди центральных защитников Третьей лиги<ref name="kicker-rank">{{Cite web|url=https://www.kicker.de/calvin-brackelmann/spieler-rangliste|title=Calvin Brackelmann — Spieler-Rangliste|website=kicker|lang=de|access-date=2026-10-04}}</ref>.
+
+=== «Падерборн 07» ===
+31 августа 2023 года Браккельман перешёл в клуб Второй Бундеслиги «Падерборн 07». Условия трансферной компенсации клубы не раскрыли<ref name="fci-transfer">{{Cite web|url=https://www.fcingolstadt.de/fci-gibt-calvin-brackelmann-an-den-sc-paderborn-ab/|title=FCI gibt Calvin Brackelmann an den SC Paderborn ab|website=FC Ingolstadt 04|date=2023-08-31|lang=de|access-date=2026-10-05}}</ref>. При объявлении трансфера клуб сообщал, что защитник будет преимущественно тренироваться с основной командой, а при необходимости получать игровую практику в команде до 21 года, выступавшей в Региональной лиге<ref name="scp-sign">{{Cite web|url=https://www.scp07.de/Newsarchiv/Grosser-Verteidiger.html|title=Großer Verteidiger: Calvin Brackelmann verstärkt den SCP07|website=SC Paderborn 07|date=2023-08-31|lang=de|access-date=2026-10-04}}</ref>.
+
+После длительного перерыва из-за травмы защитник испытывал трудности с физической подготовкой и восстанавливал игровую форму, выступая за вторую команду клуба<ref name="nw-bezirks">{{Cite web|url=https://www.nw.de/sport/sc_paderborn_07/23986165_Paderborns-Calvin-Brackelmann-Ich-bin-wie-ein-Bezirksligaspieler-hier-angekommen.html|title=Paderborns Calvin Brackelmann: „Ich bin wie ein Bezirksligaspieler hier angekommen“|author=Robert Hilberath|website=Neue Westfälische|date=2024-11-20|lang=de|access-date=2026-10-04}}</ref>. 21 января 2024 года защитник дебютировал за первую команду в чемпионате; до конца сезона 2023/24 сыграл 13 матчей во Второй Бундеслиге<ref name="dfb"/>.
+
+В сезоне 2024/25 провёл 22 матча чемпионата и забил три гола<ref name="dfb"/>. 22 ноября 2024 года забил первый гол за основную команду «Падерборна»: в компенсированное время матча с «[[Нюрнберг (футбольный клуб)|Нюрнбергом]]» принёс клубу победу со счётом 3:2<ref name="sportschau-nurn">{{Cite web|url=https://www.sportschau.de/fussball/bundesliga2/entscheidung-in-der-nachspielzeit-paderborn-klettert-an-die-spitze,zweite-bundesliga-scp-fcn-100.html|title=Entscheidung in der Nachspielzeit: Paderborn klettert an die Spitze|website=Sportschau|date=2024-11-22|lang=de|access-date=2026-10-04}}</ref><ref name="scp-emotional">{{Cite web|url=https://www.scp07.de/Newsarchiv/%E2%80%9EEmotionalstes-Spiel%E2%80%9C.html|title=„Emotionalstes Spiel“: Die Stimmen zum 3:2-Sieg gegen Nürnberg|website=SC Paderborn 07|date=2024-11-22|lang=de|access-date=2026-10-04}}</ref>.
+
+В ноябре 2025 года перенёс операцию на левом бедре<ref name="kicker-op">{{Cite web|url=https://www.kicker.de/paderborn-auf-absehbare-zeit-ohne-brackelmann-1165263/artikel|title=Paderborn auf absehbare Zeit ohne Brackelmann|website=kicker|date=2025-11-12|lang=de|access-date=2026-10-04}}</ref>. 18 января 2026 года в матче с «[[Хольштайн (футбольный клуб)|Хольштайном]]» получил сотрясение мозга после неудачного приземления<ref name="radio-concussion">{{Cite web|url=https://www.radiohochstift.de/nachrichten/paderborn-hoexter/diagnose-liegt-vor-gehirnerschuetterung-bei-scp-spieler-calvin-brackelmann.html|title=Diagnose liegt vor: Gehirnerschütterung bei SCP-Spieler Calvin Brackelmann|website=Radio Hochstift|date=2026-01-21|lang=de|access-date=2026-10-04}}</ref>.
+
+28 февраля 2026 года защитник забил прямым ударом со штрафного в матче против «[[Кайзерслаутерн (футбольный клуб)|Кайзерслаутерна]]», завершившемся победой «Падерборна» 2:1<ref name="bund-kl">{{Cite web|url=https://www.bundesliga.com/de/2bundesliga/news/1-fc-kaiserslautern-sc-paderborn-07-spieltag-24-spielbericht-highlights-36206|title=Wilde Schlussphase auf dem „Betze“: Paderborn behält die Nerven|website=Bundesliga|date=2026-02-28|lang=de|access-date=2026-10-04}}</ref>. В чемпионате сезона 2025/26 он провёл 24 матча и забил два гола<ref name="dfb"/>. По итогам сезона «Падерборн» занял третье место и получил право сыграть в стыковых матчах за выход в Бундеслигу<ref>{{cite web|url=https://www.bundesliga.com/en/bundesliga/news/wolfsburg-paderborn-to-contest-play-off-for-place-in-2026-27-bundesliga-37445|title=Wolfsburg and Paderborn to contest play-off for place in 2026/27 Bundesliga|lang=en|date=2026-05-17|publisher=Bundesliga|access-date=2026-10-04}}</ref>.
+
+Первый стыковой матч против «[[Вольфсбург (футбольный клуб)|Вольфсбурга]]» завершился со счётом 0:0<ref name="bund-po1">{{Cite web|url=https://www.bundesliga.com/en/bundesliga/news/wolfsburg-paderborn-match-report-highlights-matchday-1-37513|title=Paderborn hold Wolfsburg to goalless draw in relegation play-off first-leg|website=Bundesliga|date=2026-05-21|lang=en|access-date=2026-10-04}}</ref>. В ответной встрече 25 мая «Падерборн» победил 2:1 после дополнительного времени. Браккельман сделал голевую передачу на [[Бильбия, Филип|Филипа Бильбию]], который сравнял счёт. Победа позволила «Падерборну» выйти в Бундеслигу<ref name="bund-po2">{{Cite web|url=https://www.bundesliga.com/en/bundesliga/news/paderborn-win-play-off-wolfsburg-relegation-promotion-37559|title=Paderborn promoted to the Bundesliga as Wolfsburg relegated|website=Bundesliga|date=2026-05-26|lang=en|access-date=2026-10-04}}</ref>. Всего за первую команду клуба Браккельман провёл 63 официальных матча и забил пять голов<ref name="dfb"/><ref name="fca-sign"/>.
+
+=== «Аугсбург» ===
+29 мая 2026 года «Аугсбург» объявил о подписании Браккельмана на правах свободного агента. Контракт был заключён до 30 июня 2030 года. Спортивный директор клуба Беньямин Вебер, ранее работавший с игроком в Падерборне, отметил его скорость, рост и физическую мощь<ref name="fca-sign"/>.
+
+30 августа 2026 года Кальвин дебютировал в Бундеслиге, выйдя в стартовом составе в матче первого тура против «Шальке 04»; «Аугсбург» победил 3:0<ref name="bund-schalke">{{Cite web|url=https://www.bundesliga.com/de/bundesliga/news/fc-augsburg-fc-schalke-04-spieltag-1-spielbericht-highlights-38908|title=Kade führt Augsburg zum Sieg gegen Rückkehrer Schalke|website=Bundesliga|date=2026-08-30|lang=de|access-date=2026-10-04}}</ref>. 19 сентября в гостевой игре с «[[Вердер (футбольный клуб)|Вердером]]» он головой забил свой первый мяч в Бундеслиге, однако команда, ведя 2:0, уступила 2:3<ref name="bund-werder">{{Cite web|url=https://www.bundesliga.com/en/bundesliga/news/werder-bremen-augsburg-match-report-highlights-matchday-4-39264|title=Marco Grüll leads Werder Bremen to stunning late comeback against Augsburg|website=Bundesliga|date=2026-09-19|lang=en|access-date=2026-10-04}}</ref>.
+
+== Карьера в сборной ==
+В 2016—2017 годах Браккельман провёл шесть матчей за юношескую сборную Германии до 18 лет. В 2017—2018 годах сыграл три встречи за сборную до 19 лет. Голов за юношеские сборные не забивал<ref name="dfb"/>.
+
+== Статистика выступлений ==
+
+=== Клубная статистика ===
+{{обновлено|2026-10-04}}
+{{КлСтат|Чемпионат|[[Кубок Германии по футболу|Кубок Германии]]|Еврокубки|Стыковые матчи}}
+{{КлСтат/Клуб|{{Флаг Германии|20px}} «[[Кёльн II]]»|сезоны=2}}
+{{КлСтат/Лига|[[Региональная лига «Запад»]]|сезоны=2}}
+{{КлСтат/Сезон|2018/19|6|0|0|0|0|0|0|0}}
+{{КлСтат/Сезон|2019/20|5|0|0|0|0|0|0|0}}
+{{КлСтат/ИтогоЗаКлуб|Итого|11|0|0|0|0|0|0|0}}
+{{КлСтат/Клуб|{{Флаг Германии|20px}} «[[Шальке 04 II]]»|сезоны=1}}
+{{КлСтат/Лига|Региональная лига «Запад»|сезоны=1}}
+{{КлСтат/Сезон|2019/20|4|0|0|0|0|0|0|0}}
+{{КлСтат/ИтогоЗаКлуб|Итого|4|0|0|0|0|0|0|0}}
+{{КлСтат/Клуб|{{Флаг Германии|20px}} «[[Рёдингхаузен (футбольный клуб)|Рёдингхаузен]]»|сезоны=1}}
+{{КлСтат/Лига|Региональная лига «Запад»|сезоны=1}}
+{{КлСтат/Сезон|2020/21|2|0|0|0|0|0|0|0}}
+{{КлСтат/ИтогоЗаКлуб|Итого|2|0|0|0|0|0|0|0}}
+{{КлСтат/Клуб|{{Флаг Германии|20px}} «[[Любек (футбольный клуб)|Любек]]»|сезоны=1}}
+{{КлСтат/Лига|[[Региональная лига «Север»]]|сезоны=1}}
+{{КлСтат/Сезон|2021/22|29|1|0|0|0|0|0|0}}
+{{КлСтат/ИтогоЗаКлуб|Итого|29|1|0|0|0|0|0|0}}
+{{КлСтат/Клуб|{{Флаг Германии|20px}} «[[Ингольштадт 04]]»|сезоны=1}}
+{{КлСтат/Лига|[[Третья лига Германии по футболу|Третья лига]]|сезоны=1}}
+{{КлСтат/Сезон|2022/23|28|2|1|0|0|0|0|0}}
+{{КлСтат/ИтогоЗаКлуб|Итого|28|2|1|0|0|0|0|0}}
+{{КлСтат/Клуб|{{Флаг Германии|20px}} «[[Падерборн 07 II]]»|сезоны=2}}
+{{КлСтат/Лига|Региональная лига «Запад»|сезоны=2}}
+{{КлСтат/Сезон|2023/24|12|1|0|0|0|0|0|0}}
+{{КлСтат/Сезон|2024/25|1|0|0|0|0|0|0|0}}
+{{КлСтат/ИтогоЗаКлуб|Итого|13|1|0|0|0|0|0|0}}
+{{КлСтат/Клуб|{{Флаг Германии|20px}} «[[Падерборн 07]]»|сезоны=3}}
+{{КлСтат/Лига|[[Вторая Бундеслига]]|сезоны=3}}
+{{КлСтат/Сезон|2023/24|13|0|0|0|0|0|0|0}}
+{{КлСтат/Сезон|2024/25|22|3|1|0|0|0|0|0}}
+{{КлСтат/Сезон|2025/26|24|2|1|0|0|0|2|0}}
+{{КлСтат/ИтогоЗаКлуб|Итого|59|5|2|0|0|0|2|0}}
+{{КлСтат/Клуб|{{Флаг Германии|20px}} «[[Аугсбург (футбольный клуб)|Аугсбург]]»|сезоны=1}}
+{{КлСтат/Лига|[[Чемпионат Германии по футболу|Бундеслига]]|сезоны=1}}
+{{КлСтат/Сезон|2026/27|4|1|0|0|0|0|0|0}}
+{{КлСтат/ИтогоЗаКлуб|Итого|4|1|0|0|0|0|0|0}}
+{{КлСтат/Итого|150|10|3|0|0|0|2|0}}
+
+: ''Данные в таблице актуальны по состоянию на 4 октября 2026 года. В графе «Стыковые матчи» учтены встречи за место в Бундеслиге. Региональный Кубок Шлезвиг-Гольштейна в таблицу не включён. Статистика приведена по DFB Datencenter и официальному сайту Бундеслиги''<ref name="dfb"/><ref name="bund-profile">{{Cite web|url=https://www.bundesliga.com/de/spieler/calvin-brackelmann|title=Calvin Brackelmann — Spielerprofil|website=Bundesliga|lang=de|access-date=2026-10-04}}</ref>.
+
+=== Статистика за сборные ===
+{{обновлено|2026-10-04}}
+
+{| class="wikitable mw-collapsible mw-collapsed" style="text-align:center; font-size:95%; min-width:600px;"
+! colspan="6" style="{{цвета сборной/Германия|1}}" | Матчи Кальвина Браккельмана за [[Сборная Германии по футболу (до 18 лет)|сборную Германии до 18 лет]]
+|-
+! № !! Дата !! Соперник !! Счёт !! Голы !! Соревнование
+|-
+| 1 || 13 ноября 2016 || {{Флаг Ирландии|20px}} [[Сборная Ирландии по футболу (до 18 лет)|Ирландия (до 18 лет)]] || 3:2 || 0 || [[Товарищеский матч]]
+|-
+| 2 || 14 ноября 2016 || {{Флаг Нидерландов|20px}} [[Сборная Нидерландов по футболу (до 18 лет)|Нидерланды (до 18 лет)]] || 2:1 || 0 || Товарищеский матч
+|-
+| 3 || 15 декабря 2016 || {{Флаг Сербии|20px}} [[Сборная Сербии по футболу (до 18 лет)|Сербия (до 18 лет)]] || 2:0 || 0 || Турнир четырёх наций (до 18 лет)
+|-
+| 4 || 26 марта 2017 || {{Флаг Франции|20px}} [[Сборная Франции по футболу (до 18 лет)|Франция (до 18 лет)]] || 1:1 || 0 || Товарищеский матч
+|-
+| 5 || 17 апреля 2017 || {{Флаг Австрии|20px}} [[Сборная Австрии по футболу (до 18 лет)|Австрия (до 18 лет)]] || 3:0 || 0 || Товарищеский матч
+|-
+| 6 || 17 мая 2017 || {{Флаг Италии|20px}} [[Сборная Италии по футболу (до 18 лет)|Италия (до 18 лет)]] || 4:0 || 0 || Товарищеский матч
+|}
+'''Итого: 6 матчей / 0 голов; 5 побед, 1 ничья, 0 поражений'''<ref name="dfb"/><ref name="national-u18-1">{{Cite web|url=https://datencenter.dfb.de/datencenter/personen/calvin-brackelmann/spieler/spiele-in-wettbewerb/laenderspiel-1245/deutschland-u-18-m|title=Calvin Brackelmann — Spiele für Deutschland U 18|website=DFB Datencenter|lang=de|access-date=2026-10-07}}</ref><ref name="national-u18-2">{{Cite web|url=https://datencenter.dfb.de/datencenter/personen/calvin-brackelmann/spieler/spiele-in-wettbewerb/u-18-vier-nationen-turnier/deutschland-u-18-m|title=Calvin Brackelmann — Spiele für Deutschland U 18|website=DFB Datencenter|lang=de|access-date=2026-10-07}}</ref>.
+
+{| class="wikitable mw-collapsible mw-collapsed" style="text-align:center; font-size:95%; min-width:600px;"
+! colspan="6" style="{{цвета сборной/Германия|1}}" | Матчи Кальвина Браккельмана за [[Сборная Германии по футболу (до 19 лет)|сборную Германии до 19 лет]]
+|-
+! № !! Дата !! Соперник !! Счёт !! Голы !! Соревнование
+|-
+| 1 || 31 августа 2017 || {{Флаг Швейцарии|20px}} [[Сборная Швейцарии по футболу (до 19 лет)|Швейцария (до 19 лет)]] || 0:0 || 0 || [[Товарищеский матч]]
+|-
+| 2 || 12 ноября 2017 || {{Флаг Кипра|20px}} [[Сборная Кипра по футболу (до 19 лет)|Кипр (до 19 лет)]] || 3:0 || 0 || Товарищеский матч
+|-
+| 3 || 25 апреля 2018 || {{Флаг Дании|20px}} [[Сборная Дании по футболу (до 19 лет)|Дания (до 19 лет)]] || 2:2 || 0 || Товарищеский матч
+|}
+'''Итого: 3 матча / 0 голов; 1 победа, 2 ничьи, 0 поражений'''<ref name="dfb"/><ref name="national-u19-1">{{Cite web|url=https://datencenter.dfb.de/datencenter/personen/calvin-brackelmann/spieler/spiele-in-wettbewerb/laenderspiel-1355/deutschland-u-19-m|title=Calvin Brackelmann — Spiele für Deutschland U 19|website=DFB Datencenter|lang=de|access-date=2026-10-07}}</ref>.
+
+: ''Счёт указан с точки зрения сборной Германии. Послематчевые серии пенальти не учитываются в числе голов; для баланса побед, ничьих и поражений используется результат до серии пенальти''.
+
+
+== Достижения ==
+; «Любек»
+* Обладатель Кубка Шлезвиг-Гольштейна: 2021/22<ref name="hls-cup"/>
+
+== Примечания ==
+{{примечания|2}}
+
+== Ссылки ==
+* [https://datencenter.dfb.de/en/data-center/people/calvin-brackelmann/player Профиль на сайте DFB Datencenter]
+* [https://www.bundesliga.com/de/spieler/calvin-brackelmann Профиль на официальном сайте Бундеслиги]
+* [https://www.fcaugsburg.de/team/player/calvin-brackelmann-305 Профиль на сайте «Аугсбурга»]
+{{ВС}}
+{{Состав ФК Аугсбург}}
+
+{{DEFAULTSORT:Браккельман, Кальвин}}

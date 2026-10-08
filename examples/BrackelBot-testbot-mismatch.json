@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0",
+  "package_id": "brackelbot-testbot-wrong-old-001",
+  "generated_at": "2026-10-08T09:30:00Z",
+  "articles": [
+    {
+      "title": "Участник:Zambrowski/testbot",
+      "player": "Кальвин Браккельман",
+      "operations": [
+        {
+          "id": "brackelmann-intentional-old-mismatch",
+          "type": "update_stats",
+          "entity": {
+            "name": "Аугсбург",
+            "wikitext": "{{Флаг Германии|20px}} [[Аугсбург (футбольный клуб)|Аугсбург]]"
+          },
+          "season": null,
+          "competition": {
+            "name": "Чемпионат Германии (вымышленный тест)",
+            "category": "all",
+            "scope": "league"
+          },
+          "target": {
+            "structure": "career",
+            "field": "клубы",
+            "period": "2026—{{н.в.}}"
+          },
+          "expected": {
+            "appearances": 99,
+            "goals": 99
+          },
+          "new": {
+            "appearances": 100,
+            "goals": 100
+          },
+          "as_of": "2026-10-08",
+          "sources": [
+            {
+              "url": "https://ru.wikipedia.org/wiki/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Zambrowski/testbot",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-08",
+              "note": "Проверка защиты: ожидаемые старые значения намеренно неверные. Программа должна вернуть old_value_mismatch; ничего не менять."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

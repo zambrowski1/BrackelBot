@@ -1,0 +1,172 @@
+{
+  "schema_version": "1.0",
+  "package_id": "real-fixtures-noop",
+  "mode": "dry_run",
+  "publishing_enabled": false,
+  "failures": [],
+  "articles": [
+    {
+      "title": "Фюллькруг, Никлас",
+      "revid": 155486931,
+      "revision_timestamp": "2026-10-08T06:10:23Z",
+      "warnings": [
+        "Dry Run: публикация отключена. Даты актуальности, итоги и связанные поля автоматически не изменяются."
+      ],
+      "diff": "",
+      "changes": [
+        {
+          "id": "noop-0",
+          "operation": {
+            "id": "noop-0",
+            "type": "update_stats",
+            "entity": {
+              "name": "{{Флаг Италии|20px}} «[[Милан (футбольный клуб)|Милан]]»",
+              "wikitext": "{{Флаг Италии|20px}} «[[Милан (футбольный клуб)|Милан]]»"
+            },
+            "season": "2025/26 (аренда)",
+            "competition": {
+              "name": "Чемпионат",
+              "category": "Чемпионат",
+              "scope": "category"
+            },
+            "target": {
+              "structure": "club_table"
+            },
+            "expected": {
+              "appearances": 20,
+              "goals": 1
+            },
+            "new": {
+              "appearances": 20,
+              "goals": 1
+            },
+            "as_of": "2026-10-05",
+            "sources": [
+              {
+                "url": "https://ru.wikipedia.org/w/index.php?oldid=155486931",
+                "provenance": "user_provided",
+                "coverage_as_of": "2026-10-05",
+                "note": "Технический no-op пример из снимка статьи; не независимое подтверждение спортивной статистики."
+              }
+            ]
+          },
+          "status": "already_applied",
+          "message": "Новые значения уже присутствуют",
+          "patches": [],
+          "diff": "",
+          "source_verification": "user_provided_not_independently_verified",
+          "decision": "pending"
+        }
+      ]
+    },
+    {
+      "title": "Кляйндинст, Тим",
+      "revid": 155488058,
+      "revision_timestamp": "2026-10-08T08:21:12Z",
+      "warnings": [
+        "Dry Run: публикация отключена. Даты актуальности, итоги и связанные поля автоматически не изменяются."
+      ],
+      "diff": "",
+      "changes": [
+        {
+          "id": "noop-1",
+          "operation": {
+            "id": "noop-1",
+            "type": "update_stats",
+            "entity": {
+              "name": "{{Флаг Германии|20px}} «[[Боруссия (футбольный клуб, Мёнхенгладбах)|Боруссия Мёнхенгладбах]]»",
+              "wikitext": "{{Флаг Германии|20px}} «[[Боруссия (футбольный клуб, Мёнхенгладбах)|Боруссия Мёнхенгладбах]]»"
+            },
+            "season": "2026/27",
+            "competition": {
+              "name": "Чемпионат",
+              "category": "Чемпионат",
+              "scope": "category"
+            },
+            "target": {
+              "structure": "club_table"
+            },
+            "expected": {
+              "appearances": 3,
+              "goals": 0
+            },
+            "new": {
+              "appearances": 3,
+              "goals": 0
+            },
+            "as_of": "2026-10-05",
+            "sources": [
+              {
+                "url": "https://ru.wikipedia.org/w/index.php?oldid=155488058",
+                "provenance": "user_provided",
+                "coverage_as_of": "2026-10-05",
+                "note": "Технический no-op пример из снимка статьи; не независимое подтверждение спортивной статистики."
+              }
+            ]
+          },
+          "status": "already_applied",
+          "message": "Новые значения уже присутствуют",
+          "patches": [],
+          "diff": "",
+          "source_verification": "user_provided_not_independently_verified",
+          "decision": "pending"
+        }
+      ]
+    },
+    {
+      "title": "Табакович, Харис",
+      "revid": 155487220,
+      "revision_timestamp": "2026-10-08T06:58:03Z",
+      "warnings": [
+        "Dry Run: публикация отключена. Даты актуальности, итоги и связанные поля автоматически не изменяются."
+      ],
+      "diff": "",
+      "changes": [
+        {
+          "id": "noop-2",
+          "operation": {
+            "id": "noop-2",
+            "type": "update_stats",
+            "entity": {
+              "name": "{{Флаг Австрии|20px}} «[[Ред Булл (футбольный клуб, Зальцбург)|Ред Булл (Зальцбург)]]»",
+              "wikitext": "{{Флаг Австрии|20px}} «[[Ред Булл (футбольный клуб, Зальцбург)|Ред Булл (Зальцбург)]]»"
+            },
+            "season": "2026/27",
+            "competition": {
+              "name": "Чемпионат",
+              "category": "Чемпионат",
+              "scope": "category"
+            },
+            "target": {
+              "structure": "club_table"
+            },
+            "expected": {
+              "appearances": 6,
+              "goals": 3
+            },
+            "new": {
+              "appearances": 6,
+              "goals": 3
+            },
+            "as_of": "2026-10-05",
+            "sources": [
+              {
+                "url": "https://ru.wikipedia.org/w/index.php?oldid=155487220",
+                "provenance": "user_provided",
+                "coverage_as_of": "2026-10-05",
+                "note": "Технический no-op пример из снимка статьи; не независимое подтверждение спортивной статистики."
+              }
+            ]
+          },
+          "status": "already_applied",
+          "message": "Новые значения уже присутствуют",
+          "patches": [],
+          "diff": "",
+          "source_verification": "user_provided_not_independently_verified",
+          "decision": "pending"
+        }
+      ]
+    }
+  ],
+  "offline": false
+}

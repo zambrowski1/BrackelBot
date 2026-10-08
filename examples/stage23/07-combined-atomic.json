@@ -1,0 +1,275 @@
+{
+  "schema_version": "1.1",
+  "package_id": "FICTIONAL-TEST-07-combined-atomic",
+  "generated_at": "2026-10-08T12:00:00Z",
+  "is_test": true,
+  "articles": [
+    {
+      "title": "Участник:Zambrowski/testbot",
+      "player": "Кальвин Браккельман",
+      "operations": [
+        {
+          "id": "stats",
+          "type": "update_stats",
+          "entity": {
+            "name": "Аугсбург",
+            "wikitext": "{{Флаг Германии|20px}} [[Аугсбург (футбольный клуб)|Аугсбург]]"
+          },
+          "target": {
+            "structure": "career",
+            "field": "клубы",
+            "period": "2026—{{н.в.}}"
+          },
+          "as_of": "2026-10-08",
+          "sources": [
+            {
+              "url": "https://ru.wikipedia.org/wiki/Участник:Zambrowski/testbot",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-08",
+              "note": "ТОЛЬКО ВЫМЫШЛЕННЫЙ ТЕСТ БРАККЕЛЬМАННА. Новые числа и переходы не являются спортивными фактами."
+            }
+          ],
+          "season": null,
+          "competition": {
+            "name": "Чемпионат (вымышленный тест)",
+            "category": "all",
+            "scope": "league"
+          },
+          "expected": {
+            "appearances": 4,
+            "goals": 1
+          },
+          "new": {
+            "appearances": 5,
+            "goals": 2
+          },
+          "group_id": "all-linked"
+        },
+        {
+          "id": "close-previous",
+          "type": "update_career_period",
+          "entity": {
+            "name": "Аугсбург",
+            "wikitext": "{{Флаг Германии|20px}} [[Аугсбург (футбольный клуб)|Аугсбург]]"
+          },
+          "target": {
+            "structure": "career",
+            "field": "клубы",
+            "period": "2026—{{н.в.}}"
+          },
+          "as_of": "2026-10-08",
+          "sources": [
+            {
+              "url": "https://ru.wikipedia.org/wiki/Участник:Zambrowski/testbot",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-08",
+              "note": "ТОЛЬКО ВЫМЫШЛЕННЫЙ ТЕСТ БРАККЕЛЬМАННА. Новые числа и переходы не являются спортивными фактами."
+            }
+          ],
+          "group_id": "all-linked",
+          "payload": {
+            "period": "2026—2026"
+          }
+        },
+        {
+          "id": "new-club",
+          "type": "add_club",
+          "entity": {
+            "name": "Borussia Mönchengladbach",
+            "kind": "club",
+            "wikidata_id": "Q101959"
+          },
+          "target": {
+            "structure": "career",
+            "field": "клубы"
+          },
+          "as_of": "2026-10-08",
+          "sources": [
+            {
+              "url": "https://ru.wikipedia.org/wiki/Участник:Zambrowski/testbot",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-08",
+              "note": "ТОЛЬКО ВЫМЫШЛЕННЫЙ ТЕСТ БРАККЕЛЬМАННА. Новые числа и переходы не являются спортивными фактами."
+            }
+          ],
+          "group_id": "all-linked",
+          "payload": {
+            "period": "2026—{{н.в.}}",
+            "role": "primary",
+            "stats": {
+              "appearances": 2,
+              "goals": 1
+            },
+            "previous": {
+              "wikitext": "{{Флаг Германии|20px}} [[Аугсбург (футбольный клуб)|Аугсбург]]",
+              "period": "2026—2026"
+            }
+          }
+        },
+        {
+          "id": "current-club",
+          "type": "update_current_club",
+          "entity": {
+            "name": "Borussia Mönchengladbach",
+            "kind": "club",
+            "wikidata_id": "Q101959"
+          },
+          "target": {
+            "structure": "career",
+            "field": "клубы"
+          },
+          "as_of": "2026-10-08",
+          "sources": [
+            {
+              "url": "https://ru.wikipedia.org/wiki/Участник:Zambrowski/testbot",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-08",
+              "note": "ТОЛЬКО ВЫМЫШЛЕННЫЙ ТЕСТ БРАККЕЛЬМАННА. Новые числа и переходы не являются спортивными фактами."
+            }
+          ],
+          "group_id": "all-linked",
+          "expected": "{{Флаг Германии|20px}} [[Аугсбург (футбольный клуб)|Аугсбург]]",
+          "payload": {}
+        },
+        {
+          "id": "national-u21",
+          "type": "add_national_team",
+          "entity": {
+            "name": "Германия до 21 года",
+            "kind": "national_team",
+            "age": 21,
+            "wikidata_id": "Q314851"
+          },
+          "target": {
+            "structure": "career",
+            "field": "национальная сборная"
+          },
+          "as_of": "2026-10-08",
+          "sources": [
+            {
+              "url": "https://ru.wikipedia.org/wiki/Участник:Zambrowski/testbot",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-08",
+              "note": "ТОЛЬКО ВЫМЫШЛЕННЫЙ ТЕСТ БРАККЕЛЬМАННА. Новые числа и переходы не являются спортивными фактами."
+            }
+          ],
+          "payload": {
+            "period": "2026—{{н.в.}}",
+            "stats": {
+              "appearances": 2,
+              "goals": 1
+            }
+          },
+          "group_id": "all-linked"
+        },
+        {
+          "id": "new-season",
+          "type": "add_season",
+          "entity": {
+            "name": "Падерборн 07",
+            "wikitext": "{{Флаг Германии|20px}} «[[Падерборн 07]]»"
+          },
+          "target": {
+            "structure": "club_table"
+          },
+          "as_of": "2026-10-08",
+          "sources": [
+            {
+              "url": "https://ru.wikipedia.org/wiki/Участник:Zambrowski/testbot",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-08",
+              "note": "ТОЛЬКО ВЫМЫШЛЕННЫЙ ТЕСТ БРАККЕЛЬМАННА. Новые числа и переходы не являются спортивными фактами."
+            }
+          ],
+          "season": "2026/27",
+          "payload": {
+            "categories": {
+              "Чемпионат": {
+                "appearances": 2,
+                "goals": 1
+              },
+              "[[Кубок Германии по футболу|Кубок Германии]]": {
+                "appearances": 0,
+                "goals": 0
+              },
+              "Еврокубки": {
+                "appearances": 0,
+                "goals": 0
+              },
+              "Стыковые матчи": {
+                "appearances": 0,
+                "goals": 0
+              }
+            },
+            "league_wikitext": "[[Вторая Бундеслига]]",
+            "insert_after_season": "2025/26",
+            "complete": true
+          },
+          "group_id": "all-linked"
+        },
+        {
+          "id": "europe",
+          "type": "add_competition",
+          "entity": {
+            "name": "Аугсбург",
+            "wikitext": "{{Флаг Германии|20px}} «[[Аугсбург (футбольный клуб)|Аугсбург]]»"
+          },
+          "target": {
+            "structure": "club_table"
+          },
+          "as_of": "2026-10-08",
+          "sources": [
+            {
+              "url": "https://ru.wikipedia.org/wiki/Участник:Zambrowski/testbot",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-08",
+              "note": "ТОЛЬКО ВЫМЫШЛЕННЫЙ ТЕСТ БРАККЕЛЬМАННА. Новые числа и переходы не являются спортивными фактами."
+            }
+          ],
+          "season": "2026/27",
+          "competition": {
+            "name": "Лига Европы (вымышленный тест)",
+            "category": "Еврокубки",
+            "scope": "category",
+            "mapping_rule": "Полный тестовый итог категории Еврокубки; другие турниры категории отсутствуют."
+          },
+          "expected": {
+            "appearances": 0,
+            "goals": 0
+          },
+          "new": {
+            "appearances": 2,
+            "goals": 1
+          },
+          "group_id": "all-linked"
+        },
+        {
+          "id": "historical-period",
+          "type": "update_career_period",
+          "entity": {
+            "name": "Кёльн II",
+            "wikitext": "{{Флаг Германии|20px}} [[Кёльн II]]"
+          },
+          "target": {
+            "structure": "career",
+            "field": "клубы",
+            "period": "2018—2020"
+          },
+          "as_of": "2026-10-08",
+          "sources": [
+            {
+              "url": "https://ru.wikipedia.org/wiki/Участник:Zambrowski/testbot",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-08",
+              "note": "ТОЛЬКО ВЫМЫШЛЕННЫЙ ТЕСТ БРАККЕЛЬМАННА. Новые числа и переходы не являются спортивными фактами."
+            }
+          ],
+          "payload": {
+            "period": "2018—2019"
+          },
+          "group_id": "all-linked"
+        }
+      ]
+    }
+  ]
+}

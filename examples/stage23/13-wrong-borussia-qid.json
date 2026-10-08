@@ -1,0 +1,100 @@
+{
+  "schema_version": "1.1",
+  "package_id": "FICTIONAL-TEST-13-wrong-borussia-qid",
+  "generated_at": "2026-10-08T12:00:00Z",
+  "is_test": true,
+  "articles": [
+    {
+      "title": "Участник:Zambrowski/testbot",
+      "player": "Кальвин Браккельман",
+      "operations": [
+        {
+          "id": "close-previous",
+          "type": "update_career_period",
+          "entity": {
+            "name": "Аугсбург",
+            "wikitext": "{{Флаг Германии|20px}} [[Аугсбург (футбольный клуб)|Аугсбург]]"
+          },
+          "target": {
+            "structure": "career",
+            "field": "клубы",
+            "period": "2026—{{н.в.}}"
+          },
+          "as_of": "2026-10-08",
+          "sources": [
+            {
+              "url": "https://ru.wikipedia.org/wiki/Участник:Zambrowski/testbot",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-08",
+              "note": "ТОЛЬКО ВЫМЫШЛЕННЫЙ ТЕСТ БРАККЕЛЬМАННА. Новые числа и переходы не являются спортивными фактами."
+            }
+          ],
+          "group_id": "transfer",
+          "payload": {
+            "period": "2026—2026"
+          }
+        },
+        {
+          "id": "new-club",
+          "type": "add_club",
+          "entity": {
+            "name": "Borussia Mönchengladbach",
+            "kind": "club",
+            "wikidata_id": "Q41420"
+          },
+          "target": {
+            "structure": "career",
+            "field": "клубы"
+          },
+          "as_of": "2026-10-08",
+          "sources": [
+            {
+              "url": "https://ru.wikipedia.org/wiki/Участник:Zambrowski/testbot",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-08",
+              "note": "ТОЛЬКО ВЫМЫШЛЕННЫЙ ТЕСТ БРАККЕЛЬМАННА. Новые числа и переходы не являются спортивными фактами."
+            }
+          ],
+          "group_id": "transfer",
+          "payload": {
+            "period": "2026—{{н.в.}}",
+            "role": "primary",
+            "stats": {
+              "appearances": 2,
+              "goals": 1
+            },
+            "previous": {
+              "wikitext": "{{Флаг Германии|20px}} [[Аугсбург (футбольный клуб)|Аугсбург]]",
+              "period": "2026—2026"
+            }
+          }
+        },
+        {
+          "id": "current-club",
+          "type": "update_current_club",
+          "entity": {
+            "name": "Borussia Mönchengladbach",
+            "kind": "club",
+            "wikidata_id": "Q41420"
+          },
+          "target": {
+            "structure": "career",
+            "field": "клубы"
+          },
+          "as_of": "2026-10-08",
+          "sources": [
+            {
+              "url": "https://ru.wikipedia.org/wiki/Участник:Zambrowski/testbot",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-08",
+              "note": "ТОЛЬКО ВЫМЫШЛЕННЫЙ ТЕСТ БРАККЕЛЬМАННА. Новые числа и переходы не являются спортивными фактами."
+            }
+          ],
+          "group_id": "transfer",
+          "expected": "{{Флаг Германии|20px}} [[Аугсбург (футбольный клуб)|Аугсбург]]",
+          "payload": {}
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+mwparserfromhell>=0.7.2,<0.8
+jsonschema>=4.23,<5
+requests>=2.32,<3
+PyMySQL>=1.1,<2

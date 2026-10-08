@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.1",
+  "package_id": "FICTIONAL-TEST-12-unknown-years",
+  "generated_at": "2026-10-08T12:00:00Z",
+  "is_test": true,
+  "articles": [
+    {
+      "title": "Участник:Zambrowski/testbot",
+      "player": "Кальвин Браккельман",
+      "operations": [
+        {
+          "id": "historical-period",
+          "type": "update_career_period",
+          "entity": {
+            "name": "Кёльн II",
+            "wikitext": "{{Флаг Германии|20px}} [[Кёльн II]]"
+          },
+          "target": {
+            "structure": "career",
+            "field": "клубы",
+            "period": "2018—2020"
+          },
+          "as_of": "2026-10-08",
+          "sources": [
+            {
+              "url": "https://ru.wikipedia.org/wiki/Участник:Zambrowski/testbot",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-08",
+              "note": "ТОЛЬКО ВЫМЫШЛЕННЫЙ ТЕСТ БРАККЕЛЬМАННА. Новые числа и переходы не являются спортивными фактами."
+            }
+          ],
+          "payload": {
+            "period": "2018—?"
+          }
+        }
+      ]
+    }
+  ]
+}

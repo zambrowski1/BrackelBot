@@ -1,0 +1,16 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"Explicit community bot-task approval",
+  "type":"object", "additionalProperties":false,
+  "required":["community_approved","operator_enabled","approval_url","approved_at","league","seasons","titles","operations"],
+  "properties":{
+    "community_approved":{"type":"boolean"},
+    "operator_enabled":{"type":"boolean"},
+    "approval_url":{"type":"string","format":"uri","pattern":"^https://ru\\.wikipedia\\.org/wiki/.+"},
+    "approved_at":{"type":"string","format":"date-time"},
+    "league":{"const":78},
+    "seasons":{"type":"array","minItems":1,"uniqueItems":true,"items":{"type":"integer","minimum":2000,"maximum":2100}},
+    "titles":{"type":"array","minItems":1,"uniqueItems":true,"items":{"type":"string","minLength":1,"pattern":"^[^:]+$"}},
+    "operations":{"type":"array","minItems":1,"uniqueItems":true,"items":{"enum":["update_stats","update_date","update_totals","add_club","update_current_club","update_career_period","add_season","add_competition","add_national_team"]}}
+  }
+}

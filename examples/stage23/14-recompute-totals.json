@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.1",
+  "package_id": "FICTIONAL-TEST-14-recompute-totals",
+  "generated_at": "2026-10-08T12:00:00Z",
+  "is_test": true,
+  "articles": [
+    {
+      "title": "Участник:Zambrowski/testbot",
+      "player": "Кальвин Браккельман",
+      "operations": [
+        {
+          "id": "totals",
+          "type": "update_totals",
+          "entity": {
+            "name": "Полная таблица",
+            "wikitext": "КлСтат"
+          },
+          "target": {
+            "structure": "club_table"
+          },
+          "as_of": "2026-10-08",
+          "sources": [
+            {
+              "url": "https://ru.wikipedia.org/wiki/Участник:Zambrowski/testbot",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-08",
+              "note": "ТОЛЬКО ВЫМЫШЛЕННЫЙ ТЕСТ БРАККЕЛЬМАННА. Новые числа и переходы не являются спортивными фактами."
+            }
+          ],
+          "payload": {
+            "complete": true
+          }
+        }
+      ]
+    }
+  ]
+}

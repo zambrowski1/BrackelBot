@@ -1,0 +1,8 @@
+# Verify python3.13 with `toolforge jobs images` before loading.
+- name: brackelbot-daily
+  image: python3.13
+  command: ./brackelbot/toolforge/run.sh --dry-run
+  schedule: "0 4 * * *"
+  emails: onfailure
+  retry: 0
+  mem: 512Mi

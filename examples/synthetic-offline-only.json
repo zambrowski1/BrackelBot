@@ -1,0 +1,84 @@
+{
+  "schema_version": "1.0",
+  "package_id": "SYNTHETIC-OFFLINE-ONLY",
+  "generated_at": "2026-10-08T08:00:00Z",
+  "articles": [
+    {
+      "title": "Кляйндинст, Тим",
+      "player": "Тим Кляйндинст",
+      "base_revid": 155488058,
+      "operations": [
+        {
+          "id": "synthetic-season",
+          "type": "update_stats",
+          "entity": {
+            "name": "Боруссия Мёнхенгладбах",
+            "wikitext": "{{Флаг Германии|20px}} «[[Боруссия (футбольный клуб, Мёнхенгладбах)|Боруссия Мёнхенгладбах]]»"
+          },
+          "season": "2026/27",
+          "competition": {
+            "name": "Чемпионат",
+            "category": "Чемпионат",
+            "scope": "category"
+          },
+          "target": {
+            "structure": "club_table"
+          },
+          "expected": {
+            "appearances": 3,
+            "goals": 0
+          },
+          "new": {
+            "appearances": 4,
+            "goals": 1
+          },
+          "as_of": "2026-10-05",
+          "sources": [
+            {
+              "url": "https://ru.wikipedia.org/w/index.php?oldid=155488058",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-05",
+              "note": "ВЫМЫШЛЕННЫЕ тестовые числа. Только локальные испытания, не спортивные сведения."
+            }
+          ]
+        },
+        {
+          "id": "synthetic-national",
+          "type": "update_stats",
+          "entity": {
+            "name": "Германия (основная сборная)",
+            "wikitext": "{{Флаг Германии|20px}} [[Сборная Германии по футболу|Германия]]"
+          },
+          "season": null,
+          "competition": {
+            "name": "Все матчи сборной",
+            "category": "all",
+            "scope": "national_all"
+          },
+          "target": {
+            "structure": "career",
+            "field": "национальная сборная",
+            "period": "2024—{{н.в.}}"
+          },
+          "expected": {
+            "appearances": 6,
+            "goals": 4
+          },
+          "new": {
+            "appearances": 7,
+            "goals": 5
+          },
+          "as_of": "2026-10-05",
+          "sources": [
+            {
+              "url": "https://ru.wikipedia.org/w/index.php?oldid=155488058",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-05",
+              "note": "ВЫМЫШЛЕННЫЕ тестовые числа. Только локальные испытания, не спортивные сведения."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

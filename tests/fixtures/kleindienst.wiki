@@ -1,0 +1,243 @@
+{{Футболист
+| имя = Тим Кляйндинст
+| изображение = Kleindienst, Tim Heidenheim 16-17 (3) WP (cropped).jpg
+| описание изображения = Тим Кляйндинст в 2017 году
+| дата рождения = 31.08.1995
+| гражданство = {{Флаг Германии|20px}} [[Германия]]
+| рост = 194<ref name="bundesliga-profile">{{Cite web|url=https://www.bundesliga.com/de/spieler/tim-kleindienst|title=Tim Kleindienst — Spielerprofil|website=Bundesliga|lang=de|access-date=2026-10-05}}</ref>
+| позиция = [[Нападающий (футбол)|нападающий]]
+| нынешний клуб = {{Флаг Германии|20px}} [[Боруссия (футбольный клуб, Мёнхенгладбах)|Боруссия (Мёнхенгладбах)]]
+| номер = 11
+| молодёжные клубы = {{спортивная карьера
+  |—2008|{{Флаг Германии|20px}} Виктория (Йютербог)|<ref name="early-years"/>
+  |2008—2013|{{Флаг Германии|20px}} [[Энерги]]|<ref name="early-years"/>
+ }}
+| клубы = {{спортивная карьера
+  |2013|{{Флаг Германии|20px}} {{Нп5|Энерги II|Энерги II|en|FC Energie Cottbus II}}|4 (0)
+  |2013—2015|{{Флаг Германии|20px}} [[Энерги]]|37 (13)
+  |2015—2019|{{Флаг Германии|20px}} [[Фрайбург (футбольный клуб)|Фрайбург]]|33 (2)
+  |2016—2019|{{фарм-клуб}}{{Флаг Германии|20px}} [[Фрайбург II]]|11 (3)
+  |2016—2017|{{аренда}}{{Флаг Германии|20px}} [[Хайденхайм (футбольный клуб)|Хайденхайм]]|27 (7)
+  |2019—2020|{{Флаг Германии|20px}} [[Хайденхайм (футбольный клуб)|Хайденхайм]]|27 (14)
+  |2020—2021|{{Флаг Бельгии|20px}} [[Гент (футбольный клуб)|Гент]]|15 (1)
+  |2021|{{аренда}}{{Флаг Германии|20px}} [[Хайденхайм (футбольный клуб)|Хайденхайм]]|15 (11)
+  |2021—2024|{{Флаг Германии|20px}} [[Хайденхайм (футбольный клуб)|Хайденхайм]]|95 (47)
+  |2024—{{н.в.}}|{{Флаг Германии|20px}} [[Боруссия (футбольный клуб, Мёнхенгладбах)|Боруссия (Мёнхенгладбах)]]|37 (16)
+ }}
+| национальная сборная = {{спортивная карьера
+  |2014—2016|{{Флаг Германии|20px}} [[Сборная Германии по футболу (до 20 лет)|Германия (до 20)]]|10 (0)
+  |2024—{{н.в.}}|{{Флаг Германии|20px}} [[Сборная Германии по футболу|Германия]]|6 (4)
+ }}
+| обновление данных о клубе = 05.10.2026
+| обновление данных о сборной = 05.10.2026
+}}
+
+'''Тим Кля́йндинст''' ({{Lang-de|Tim Kleindienst}}; {{IPA-de|tɪm ˈklaɪ̯ndiːnst|lang}}; род. {{ДР|31|8|1995}}, [[Йютербог]], [[Германия]]) — немецкий [[футболист]], [[Нападающий (футбол)|нападающий]] мёнхенгладбахской «[[Боруссия (футбольный клуб, Мёнхенгладбах)|Боруссии]]» и [[Сборная Германии по футболу|сборной Германии]]<ref name="bundesliga-profile"/><ref name="dfb-profile"/>.
+
+Воспитанник «[[Энерги]]». Выступал также за «[[Фрайбург (футбольный клуб)|Фрайбург]]», «[[Хайденхайм (футбольный клуб)|Хайденхайм]]» и бельгийский «[[Гент (футбольный клуб)|Гент]]». В сезоне 2022/23 вместе с «Хайденхаймом» выиграл [[Вторая Бундеслига|Вторую Бундеслигу]] и стал её лучшим бомбардиром, забив 25 мячей. Осенью 2024 года дебютировал за взрослую сборную Германии<ref name="dfb-profile">{{Cite web|url=https://datencenter.dfb.de/personen/tim-kleindienst/spieler|title=Tim Kleindienst — Spielerprofil|website=DFB Datencenter|lang=de|access-date=2026-10-05}}</ref>.
+
+== Ранние годы ==
+Тим родился в Йютербоге и начал заниматься футболом в местном клубе «Виктория». Летом 2008 года перешёл в систему подготовки «Энерги» из [[Котбус]]а и поступил в Лужицкую спортивную школу. В юношеских командах клуба выступал до начала взрослой карьеры<ref name="early-years">{{Cite web|url=https://www.lr-online.de/energie-cottbus/energie-cottbus-drecksack-tim-kleindienst-sein-weg-ueber-den-fce-zu-nagelsmann-77565239.html|title=Energie Cottbus: „Drecksack“ Tim Kleindienst — sein Weg über den FCE zu Nagelsmann|website=Lausitzer Rundschau|lang=de|access-date=2026-10-05}}</ref>.
+
+== Клубная карьера ==
+
+=== «Энерги» ===
+За {{Нп5|Энерги II|вторую команду «Энерги»|en|FC Energie Cottbus II}} дебютировал 7 мая 2013 года в матче [[Региональная лига «Северо-Восток»|Региональной лиги «Северо-Восток»]] против «[[Оптик (футбольный клуб)|Оптика]]» (1:2)<ref>{{Cite web|url=https://www.transfermarkt.world/fsv-optik-rathenow_fc-energie-cottbus-ii/index/spielbericht/2249044|title=Оптик Ратенов--Энерги II|website=Transfermarkt|access-date=2023-05-12|archive-date=2023-05-12|archive-url=https://web.archive.org/web/20230512103100/https://www.transfermarkt.world/fsv-optik-rathenow_fc-energie-cottbus-ii/index/spielbericht/2249044|url-status=live|lang=ru}}</ref><ref name="reserve-debut">{{Cite web|url=https://datencenter.dfb.de/datencenter/regionalliga-nordost/2012-2013/20/optik-rathenow-energie-cottbus-ii-1408466|title=Optik Rathenow — Energie Cottbus II, 2:1|website=DFB Datencenter|lang=de|access-date=2026-10-06}}</ref>. За основную команду свой первый матч провёл 14 декабря 2013 года в 18-м туре Второй Бундеслиги против «[[Фортуна (футбольный клуб, Дюссельдорф)|Фортуны]]»: в домашней встрече (1:3) вышел на замену на 78-й минуте<ref name="energie-debut">{{Cite web|url=https://datencenter.dfb.de/datencenter/2-bundesliga/2013-2014/18/energie-cottbus-fortuna-duesseldorf-1764995|title=Energie Cottbus — Fortuna Düsseldorf, 1:3, 2. Bundesliga 2013/14|website=DFB Datencenter|date=2013-12-14|lang=de|access-date=2026-10-05}}</ref>.
+
+После вылета «Энерги» в [[Третья лига Германии по футболу|Третью лигу]] стал регулярно выходить на поле. 26 июля 2014 года забил первый гол за основную команду в победном матче с «[[Оснабрюк (футбольный клуб)|Оснабрюком]]» (3:1)<ref>{{Cite web|url=https://www.transfermarkt.world/Оснабрюк_Энерги-Котбус/index/spielbericht/2462901|title=Оснабрюк--Энерги|website=Transfermarkt|access-date=2023-09-08|archive-date=2023-05-12|archive-url=https://web.archive.org/web/20230512111650/https://www.transfermarkt.world/Оснабрюк_Энерги-Котбус/index/spielbericht/2462901|url-status=live|lang=ru}}</ref><ref name="energie-first">{{Cite web|url=https://datencenter.dfb.de/datencenter/3-liga/2014-2015/1/vfl-osnabrueck-energie-cottbus-2211406|title=VfL Osnabrück — Energie Cottbus, 1:3|website=DFB Datencenter|lang=de|access-date=2026-10-06}}</ref>. 21 февраля 2015 года в матче против «[[Ян (футбольный клуб)|Яна]]» (4:1) оформил хет-трик и отдал голевую передачу на [[Михель, Свен|Свена Михеля]]<ref>{{Cite web|url=https://www.transfermarkt.world/Энерги-Котбус_Ян-Регенсбург/index/spielbericht/2463150|title=Энерги--Ян|website=Transfermarkt|access-date=2023-09-08|archive-date=2023-05-12|archive-url=https://web.archive.org/web/20230512111648/https://www.transfermarkt.world/Энерги-Котбус_Ян-Регенсбург/index/spielbericht/2463150|url-status=live|lang=ru}}</ref><ref name="energie-three">{{Cite web|url=https://datencenter.dfb.de/datencenter/3-liga/2014-2015/26/energie-cottbus-jahn-regensburg-2211710|title=Energie Cottbus — Jahn Regensburg, 4:1|website=DFB Datencenter|lang=de|access-date=2026-10-06}}</ref>. В сезоне 2014/15 провёл 35 матчей чемпионата и забил 13 мячей<ref name="kicker-career">{{Cite web|url=https://www.kicker.de/tim-kleindienst/laufbahn/dfb-pokal/2025-26/bor-moenchengladbach|title=Tim Kleindienst — Laufbahn|website=kicker|lang=de|access-date=2026-10-05}}</ref>. В том же сезоне команда выиграла Кубок Бранденбурга, победив в финале «Унион» из Фюрстенвальде со счётом 3:2<ref name="brandenburg-cup">{{Cite web|url=https://www.flb.de/seite/447257/landespokal.html|title=Landespokal Brandenburg der Herren|website=Fußball-Landesverband Brandenburg|lang=de|access-date=2026-10-05}}</ref>.
+
+=== «Фрайбург» и первая аренда в «Хайденхайм» ===
+1 июля 2015 года перешёл в «[[Фрайбург (футбольный клуб)|Фрайбург]]»<ref name="old-transfer-history">{{Cite web|url=https://www.transfermarkt.world/tim-kleindienst/transfers/spieler/193033|title=Трансферная история|website=Transfermarkt|access-date=2023-05-12|archive-date=2023-05-12|archive-url=https://web.archive.org/web/20230512224015/https://www.transfermarkt.world/tim-kleindienst/transfers/spieler/193033|url-status=live|lang=ru}}</ref>. По сообщению liga3-online.de, трансферная компенсация составила от 150 до 250 тыс. евро<ref name="kleindienst-fee-2015">{{Cite web|url=https://www.liga3-online.de/zwischenbilanz-die-transfers-der-dritten-liga/|title=Zwischenbilanz: Die Transfers der Dritten Liga|author=Tommy Könnel|website=liga3-online.de|date=2015-07-01|lang=de|access-date=2026-10-05}}</ref>. Дебют в клубе состоялся 27 июля в матче против «[[Нюрнберг (футбольный клуб)|Нюрнберга]]» (6:3)<ref>{{Cite web|url=https://www.transfermarkt.world/Фрайбург_Нюрнберг/index/spielbericht/2581157|title=Фрайбург--Нюрнберг|website=Transfermarkt|access-date=2023-09-08|archive-date=2023-05-13|archive-url=https://web.archive.org/web/20230513053633/https://www.transfermarkt.world/Фрайбург_Нюрнберг/index/spielbericht/2581157|url-status=live|lang=ru}}</ref><ref name="freiburg-debut">{{Cite web|url=https://datencenter.dfb.de/datencenter/2-bundesliga/2015-2016/1/sc-freiburg-1-fc-nuernberg-2222359|title=SC Freiburg — 1. FC Nürnberg, 6:3|website=DFB Datencenter|lang=de|access-date=2026-10-06}}</ref>. В первом сезоне сыграл семь матчей Второй Бундеслиги; команда выиграла турнир и вернулась в высший дивизион. Помимо основной команды, выступал за [[Фрайбург II|резервный состав]] в [[Региональная лига «Юго-Запад»|Региональной лиге «Юго-Запад»]]<ref name="kicker-career"/>. За «Фрайбург II» дебютировал 28 февраля 2016 года в матче против «[[Киккерс (футбольный клуб, Оффенбах)|Киккерс Оффенбах]]» (1:2)<ref>{{Cite web|url=https://www.transfermarkt.world/sc-freiburg-ii_Киккерс-Оффенбах/index/spielbericht/2605468|title=Фрайбург II--Киккерс Оффенбах|website=Transfermarkt|access-date=2023-09-08|archive-date=2023-05-13|archive-url=https://web.archive.org/web/20230513151022/https://www.transfermarkt.world/sc-freiburg-ii_Киккерс-Оффенбах/index/spielbericht/2605468|url-status=live|lang=ru}}</ref>. Свой первый гол за вторую команду забил 20 марта в ворота «[[Ворматия (футбольный клуб, Вормс)|Ворматии]]» (2:0)<ref>{{Cite web|url=https://www.transfermarkt.world/sc-freiburg-ii_vfr-wormatia-worms/index/spielbericht/2605493|title=Фрайбург II--Ворматия|website=Transfermarkt|access-date=2023-05-13|archive-date=2023-05-13|archive-url=https://web.archive.org/web/20230513145315/https://www.transfermarkt.world/sc-freiburg-ii_vfr-wormatia-worms/index/spielbericht/2605493|url-status=live|lang=ru}}</ref>.
+
+Сезон 2016/17 провёл в аренде в «Хайденхайме». Дебютировал за «Хайденхайм» 7 августа 2016 года в матче первого тура Второй Бундеслиги против «[[Эрцгебирге (футбольный клуб)|Эрцгебирге]]» (1:0)<ref>{{Cite web|url=https://www.transfermarkt.world/Хайденхайм_Эрцгебирге-Ауэ/index/spielbericht/2704218|title=Хайденхайм--Эрцгебирге|website=Transfermarkt|access-date=2023-09-08|archive-date=2023-05-13|archive-url=https://web.archive.org/web/20230513154018/https://www.transfermarkt.world/Хайденхайм_Эрцгебирге-Ауэ/index/spielbericht/2704218|url-status=live|lang=ru}}</ref><ref name="heid-debut">{{Cite web|url=https://datencenter.dfb.de/datencenter/2-bundesliga/2016-2017/1/1-fc-heidenheim-erzgebirge-aue-2238017|title=1. FC Heidenheim — Erzgebirge Aue, 1:0|website=DFB Datencenter|lang=de|access-date=2026-10-06}}</ref>. Свой первый гол забил 17 сентября в ворота «Фортуны» (2:0)<ref>{{Cite web|url=https://www.transfermarkt.world/Хайденхайм_Фортуна-Дюссельдорф/index/spielbericht/2704291|title=Хайденхайм--Фортуна Дюссельдорф|website=Transfermarkt|access-date=2023-09-08|archive-date=2023-05-13|archive-url=https://web.archive.org/web/20230513152322/https://www.transfermarkt.world/Хайденхайм_Фортуна-Дюссельдорф/index/spielbericht/2704291|url-status=live|lang=ru}}</ref>. В 27 матчах Второй Бундеслиги забил семь голов, после чего вернулся во «Фрайбург»<ref name="freiburg-departure">{{Cite web|url=https://www.scfreiburg.com/aktuell/nachrichten/profis/news/20192020/tim-kleindienst-wechselt-nach-heidenheim/|title=Tim Kleindienst wechselt nach Heidenheim|website=SC Freiburg|date=2019-09-02|lang=de|access-date=2026-10-05}}</ref>.
+
+27 июля 2017 года впервые сыграл в еврокубках — в квалификации [[Лига Европы УЕФА|Лиги Европы]] против словенского «[[Домжале (футбольный клуб)|Домжале]]» (1:0). Принял участие и в ответной встрече, в которой «Фрайбург» проиграл 0:2 и завершил выступление в турнире<ref name="freiburg-europe">{{Cite web|url=https://www.rsssf.org/tablesd/duitec-freiburg2018.html|title=The UEFA Europa League 2017/18 — SC Freiburg (GER)|author=Matthias Arnhold|website=RSSSF|date=2017-12-21|lang=en|access-date=2026-10-05}}</ref>. 20 августа дебютировал в [[Чемпионат Германии по футболу|Бундеслиге]] в матче с франкфуртским «[[Айнтрахт (футбольный клуб, Франкфурт-на-Майне)|Айнтрахтом]]» (0:0)<ref name="bundesliga-debut">{{Cite web|url=https://datencenter.dfb.de/datencenter/bundesliga/2017-2018/1/sc-freiburg-eintracht-frankfurt-2247689|title=SC Freiburg — Eintracht Frankfurt, 0:0, Bundesliga 2017/18|website=DFB Datencenter|date=2017-08-20|lang=de|access-date=2026-10-05}}</ref>.
+
+16 декабря 2017 года отдал три голевые передачи в матче против «[[Аугсбург (футбольный клуб)|Аугсбурга]]» (3:3)<ref>{{Cite web|url=https://www.transfermarkt.world/Аугсбург_Фрайбург/index/spielbericht/2871878|title=Аугсбург--Фрайбург|website=Transfermarkt|access-date=2023-09-08|archive-date=2023-05-13|archive-url=https://web.archive.org/web/20230513140804/https://www.transfermarkt.world/Аугсбург_Фрайбург/index/spielbericht/2871878|url-status=live|lang=ru}}</ref><ref name="freiburg-three-assists">{{Cite web|url=https://www.bundesliga.com/de/bundesliga/spieltag/2017-2018/17/fc-augsburg-vs-sc-freiburg/liveticker|title=FC Augsburg — Sport-Club Freiburg, 3:3|website=Bundesliga|date=2017-12-16|lang=de|access-date=2026-10-06}}</ref>.
+
+Первые два гола в Бундеслиге забил в заключительных турах сезона 2017/18: 5 мая 2018 года против мёнхенгладбахской «Боруссии» и 12 мая против «Аугсбурга». Во второй встрече его мяч установил окончательный счёт 2:0; эта победа обеспечила «Фрайбургу» сохранение места в Бундеслиге<ref name="bundesliga-career">{{Cite web|url=https://www.bundesliga.com/de/bundesliga/news/tim-kleindienst-1-fc-heidenheim-borussia-monchengladbach-24-spieltag-31118|title=Die Rückkehr zur alten Liebe: Tim Kleindienst zu Gast beim 1. FC Heidenheim|website=Bundesliga|date=2025-02-26|lang=de|access-date=2026-10-05}}</ref>. В следующем сезоне сыграл лишь четыре матча чемпионата. Всего за первую команду «Фрайбурга» провёл 33 матча чемпионатов Германии и забил два гола<ref name="kicker-career"/>.
+
+=== Возвращение в «Хайденхайм» и «Гент» ===
+2 сентября 2019 года вернулся в «Хайденхайм», на этот раз на постоянной основе<ref name="freiburg-departure"/>. По данным Sky Sport, подписал четырёхлетний контракт, а сумма перехода составила 3 млн евро<ref name="kleindienst-fee-2019">{{Cite web|url=https://sport.sky.de/fussball/artikel/2-bundesliga-kleindienst-glaenzt-fuer-heidenheim/12823821/34942|title=Mehr als nur eine Tormaschine! Kleindienst glänzt für Heidenheim|author=Thorsten Mesch|website=Sky Sport|date=2023-03-02|lang=de|access-date=2026-10-05}}</ref>. 14 сентября 2019 года, в первом матче после возвращения в «Хайденхайм», забил два мяча и отдал голевую передачу [[Лейперц, Роберт|Роберту Лейперцу]] в победной встрече с «[[Хольштайн (футбольный клуб)|Хольштайном]]» (3:0)<ref>{{Cite web|url=https://www.transfermarkt.world/Хайденхайм_Хольштайн-Киль/index/spielbericht/3203797|title=Хайденхайм--Хольштайн|website=Transfermarkt|access-date=2023-09-08|archive-date=2023-05-13|archive-url=https://web.archive.org/web/20230513150152/https://www.transfermarkt.world/Хайденхайм_Хольштайн-Киль/index/spielbericht/3203797|url-status=live|lang=ru}}</ref>. В сезоне 2019/20 забил 14 мячей в 27 матчах Второй Бундеслиги. Команда заняла третье место и встретилась с бременским «[[Вердер (футбольный клуб)|Вердером]]» в стыковых матчах за право выступать в Бундеслиге. После выездной ничьей 0:0 нападающий забил оба гола «Хайденхайма» в ответной встрече (2:2), однако по действовавшему тогда правилу выездного гола в высшем дивизионе остался «Вердер»<ref name="playoff-2020">{{Cite web|url=https://datencenter.dfb.de/datencenter/relegation-bundesliga/2019-2020/2/1-fc-heidenheim-werder-bremen-2308376|title=1. FC Heidenheim — Werder Bremen, 2:2, Relegation Bundesliga 2019/20|website=DFB Datencenter|date=2020-07-06|lang=de|access-date=2026-10-05}}</ref>.
+
+30 июля 2020 года подписал четырёхлетний контракт с бельгийским «[[Гент (футбольный клуб)|Гентом]]»<ref name="gent-signing">{{Cite web|url=https://www.kaagent.be/nl/nieuws/30-07-2020/willkommen-tim|title=Willkommen Tim!|website=KAA Gent|date=2020-07-30|lang=nl|access-date=2026-10-05}}</ref>. По данным ''kicker'', бельгийский клуб заплатил за переход 3,5 млн евро<ref name="kleindienst-gent-fees">{{Cite web|url=https://www.kicker.de/kleindienst-verlaengert-langfristig-in-heidenheim-964219/artikel|title=Kleindienst verlängert langfristig in Heidenheim|website=kicker|lang=de|access-date=2026-10-05}}</ref>. Дебют в [[Чемпионат Бельгии по футболу|чемпионате Бельгии]] состоялся 15 августа 2020 года в матче против «[[Кортрейк (футбольный клуб)|Кортрейка]]» (1:2)<ref>{{Cite web|url=https://www.transfermarkt.world/Гент_Кортрейк/index/spielbericht/3415247|title=Гент--Кортрейк|website=Transfermarkt|access-date=2023-09-08|archive-date=2023-05-13|archive-url=https://web.archive.org/web/20230513152213/https://www.transfermarkt.world/Гент_Кортрейк/index/spielbericht/3415247|url-status=live|lang=ru}}</ref>. 23 сентября забил свой первый гол за клуб в домашнем матче квалификации [[Лига чемпионов УЕФА|Лиги чемпионов]] с киевским «[[Динамо (футбольный клуб, Киев)|Динамо]]» (1:2)<ref name="gent-kyiv">{{Cite web|url=https://www.kaagent.be/nl/team/games/uefa-champions-league-voorrondes-2020-2021/2/kaa-gent/dinamo-kiev/verslag|title=KAA Gent — Dynamo Kyiv|website=KAA Gent|date=2020-09-23|lang=nl|access-date=2026-10-05}}</ref>. Свой первый мяч в чемпионате забил 26 сентября в ворота «[[Ауд-Хеверле Лёвен]]» (2:3)<ref>{{Cite web|url=https://www.transfermarkt.world/Гент_Левен/index/spielbericht/3415293|title=Гент--Ауд-Хеверле Лёвен|website=Transfermarkt|access-date=2023-09-08|archive-date=2023-05-16|archive-url=https://web.archive.org/web/20230516120546/https://www.transfermarkt.world/Гент_Левен/index/spielbericht/3415293|url-status=live|lang=ru}}</ref>. 29 октября забил «[[Хоффенхайм (футбольный клуб)|Хоффенхайму]]» в групповом этапе Лиги Европы (1:4)<ref name="gent-hoffenheim">{{Cite web|url=https://www.kaagent.be/nl/nieuws/29-10-2020/gent-niet-opgewassen-tegen-sterk-hoffenheim|title=Gent niet opgewassen tegen sterk Hoffenheim|website=KAA Gent|date=2020-10-29|lang=nl|access-date=2026-10-05}}</ref>. За полгода в Бельгии провёл 23 официальных матча и забил три мяча, из них 15 матчей и один гол — в национальном чемпионате<ref name="gent-return">{{Cite web|url=https://www.kaagent.be/nl/nieuws/18-06-2021/tim-kleindienst-keert-terug-naar-fc-heidenheim|title=Tim Kleindienst keert terug naar FC Heidenheim|website=KAA Gent|date=2021-06-18|lang=nl|access-date=2026-10-05}}</ref><ref name="kicker-career"/>.
+
+Позднее, рассказывая о бельгийском периоде карьеры в интервью для сайта Бундеслиги, Кляйндинст отмечал, что при выборе «Гента» ориентировался на возможность играть в еврокубках и более высокую зарплату, но недостаточно учёл обстоятельства переезда. Его супруга, работавшая учительницей, не смогла переехать вместе с ним, а ограничения, связанные с пандемией COVID-19, усилили чувство одиночества. Этот период совпал со спортивным кризисом «Гента» и частой сменой тренеров. Возвращение в знакомую команду «Хайденхайма» позволило ему продолжить карьеру под руководством [[Шмидт, Франк (футболист)|Франка Шмидта]]<ref name="career-interview">{{Cite web|url=https://www.bundesliga.com/de/bundesliga/news/tim-kleindienst-das-geheimnis-innerer-starke-31126|title=Das Geheimnis innerer Stärke|website=Bundesliga|date=2025-02-28|lang=de|access-date=2026-10-08}}</ref>.
+
+=== «Хайденхайм»: чемпионство и Бундеслига ===
+29 января 2021 года вновь перешёл в «Хайденхайм» на правах аренды до 30 июня с опцией выкупа<ref name="heidenheim-loan">{{Cite web|url=https://www.kaagent.be/nl/nieuws/29-01-2021/kleindienst-uitgeleend-aan-fc-heidenheim|title=Tim Kleindienst uitgeleend aan FC Heidenheim|website=KAA Gent|date=2021-01-29|lang=nl|access-date=2026-10-06}}</ref>. 31 января оформил дубль в первом матче после возвращения в «Хайденхайм» — против «[[Санкт-Паули (футбольный клуб)|Санкт-Паули]]» (3:4)<ref>{{Cite web|url=https://www.transfermarkt.world/Хайденхайм_Санкт-Паули/index/spielbericht/3413396|title=Хайденхайм--Санкт-Паули|website=Transfermarkt|access-date=2023-09-08|archive-date=2023-05-13|archive-url=https://web.archive.org/web/20230513151022/https://www.transfermarkt.world/Хайденхайм_Санкт-Паули/index/spielbericht/3413396|url-status=live|lang=ru}}</ref><ref name="heid-return-double">{{Cite web|url=https://www.bundesliga.com/de/2bundesliga/news/1-fc-heidenheim-1846-fc-st-pauli-19-spieltag-spielbericht-14559|title=Furioses 4:3 für den FC St. Pauli beim 1. FC Heidenheim 1846|website=Bundesliga|date=2021-01-31|lang=de|access-date=2026-10-06}}</ref>. За весь период аренды футболист провёл 15 матчей, в которых забил 11 мячей<ref name="kicker-career"/>. В июне клубы согласовали постоянный переход нападающего<ref name="gent-return"/>. По данным ''kicker'', «Хайденхайм» заплатил «Генту» 3,5 млн евро<ref name="kleindienst-gent-fees"/>.
+
+19 февраля 2023 года в матче против «Нюрнберга» (5:0) забил четыре мяча<ref>{{Cite web|url=https://www.transfermarkt.world/Хайденхайм_Нюрнберг/index/spielbericht/3839404|title=Хайденхайм--Нюрнберг|website=Transfermarkt|access-date=2023-09-08|archive-date=2023-05-13|archive-url=https://web.archive.org/web/20230513221729/https://www.transfermarkt.world/Хайденхайм_Нюрнберг/index/spielbericht/3839404|url-status=live|lang=ru}}</ref><ref name="heid-four-goals">{{Cite web|url=https://www.bundesliga.com/de/2bundesliga/videos/watch/kleindienst-viererpack-1-fc-heidenheim-besiegt-1-fc-nurnberg-klar-WDDoaoHq|title=Kleindienst-Viererpack: 1. FC Heidenheim besiegt 1. FC Nürnberg klar|website=Bundesliga|date=2023-02-20|lang=de|access-date=2026-10-06}}</ref>. 17 марта трижды отличился в победной встрече с «[[Карлсруэ (футбольный клуб)|Карлсруэ]]» (5:2)<ref>{{Cite web|url=https://www.transfermarkt.world/Хайденхайм_Карлсруэ/index/spielbericht/3839478|title=Хайденхайм--Карлсруэ|website=Transfermarkt|access-date=2023-09-08|archive-date=2023-05-13|archive-url=https://web.archive.org/web/20230513223941/https://www.transfermarkt.world/Хайденхайм_Карлсруэ/index/spielbericht/3839478|url-status=live|lang=ru}}</ref><ref name="heid-karlsruhe">{{Cite web|url=https://www.bundesliga.com/de/2bundesliga/spieltag/2022-2023/25/1-fc-heidenheim-1846-vs-karlsruher-sc/liveticker|title=1. FC Heidenheim — Karlsruher SC, 5:2|website=Bundesliga|date=2023-03-17|lang=de|access-date=2026-10-06}}</ref>.
+
+В сезоне 2022/23 Кляйндинст забил 25 голов в 32 матчах чемпионата и стал лучшим бомбардиром Второй Бундеслиги. 28 мая 2023 года, в заключительном туре против «[[Ян (футбольный клуб)|Яна]]» из Регенсбурга, забил победный мяч на девятой добавленной минуте. «Хайденхайм» выиграл 3:2, стал чемпионом и впервые в своей истории вышел в Бундеслигу<ref name="promotion">{{Cite web|url=https://www.sport1.de/news/fussball/2-bundesliga/2023/05/torjager-kleindienst-schiesst-heidenheim-in-die-bundesliga|title=Torjäger: Kleindienst schießt Heidenheim in die Bundesliga|website=Sport1|date=2023-05-28|lang=de|access-date=2026-10-05}}</ref>.
+
+В первом сезоне команды в высшем дивизионе провёл 33 матча и забил 12 голов, став её лучшим бомбардиром. «Хайденхайм» занял восьмое место и получил право выступить в [[Лига конференций УЕФА|Лиге конференций УЕФА]]<ref name="bundesliga-career"/>. 6 апреля 2024 года забил два мяча в домашней встрече с «[[Бавария (футбольный клуб)|Баварией]]»: уступая к перерыву 0:2, хозяева победили 3:2, а нападающий забил второй и третий мячи команды<ref name="heidenheim-bayern">{{Cite web|url=https://fcbayern.com/en/news/matchreports/2024/04/match-report-bundesliga-md28-fc-heidenheim-v-fc-bayern-060424|title=Bayern slip to defeat in Heidenheim|website=FC Bayern München|date=2024-04-06|lang=en|access-date=2026-10-05}}</ref>.
+
+=== «Боруссия Мёнхенгладбах» ===
+21 июня 2024 года мёнхенгладбахская «Боруссия» объявила о подписании Кляйндинста. Первоначальный контракт был рассчитан до 30 июня 2028 года; сумму трансфера клубы не раскрыли<ref name="gladbach-signing">{{Cite web|url=https://www.borussia.de/news/borussia-verpflichtet-tim-kleindienst-vom-1-fc-heidenheim|title=Borussia verpflichtet Tim Kleindienst vom 1. FC Heidenheim|website=Borussia Mönchengladbach|date=2024-06-21|lang=de|access-date=2026-10-05}}</ref>. По данным ''kicker'', она составила около 7 млн евро<ref name="kleindienst-fee-2024">{{Cite web|url=https://www.kicker.de/kleindienst-dann-haette-frank-schmidt-aufgehoert-1094284/artikel|title=Kleindienst? „… dann hätte Frank Schmidt aufgehört“|website=kicker|date=2025-02-28|lang=de|access-date=2026-10-05}}</ref>.
+
+В сезоне 2024/25 сыграл 31 матч Бундеслиги и забил 16 мячей. Стал лучшим бомбардиром клуба и занял пятое место в списке бомбардиров чемпионата. Семь голов забил ударами головой — больше любого другого игрока в том сезоне<ref name="gladbach-season">{{Cite web|url=https://www.bundesliga.com/de/bundesliga/news/bestenlisten-saison-toptorschutzen-2024-25-5-beste-torschutzen-25762|title=Bestenlisten der Saison 2024/25: Top-Torschützen|website=Bundesliga|lang=de|access-date=2026-10-05}}</ref>.
+
+В мае 2025 года получил травму колена с повреждением мениска в матче с «Баварией», после которой потребовалась операция<ref name="knee-injury">{{Cite web|url=https://www.borussia.de/news/kleindienst-faellt-mit-knieverletzung-mit-meniskusbeteiligung-aus|title=Kleindienst fällt mit Knieverletzung mit Meniskusbeteiligung aus|website=Borussia Mönchengladbach|date=2025-05-17|lang=de|access-date=2026-10-05}}</ref>. В августе был назначен капитаном команды<ref name="captain">{{Cite web|url=https://www.borussia.de/news/kleindienst-wird-kapitaen-mannschaftsrat-neu-besetzt|title=Kleindienst wird Kapitän, Mannschaftsrat neu besetzt|website=Borussia Mönchengladbach|date=2025-08-13|lang=de|access-date=2026-10-05}}</ref>, а 6 ноября продлил контракт до 30 июня 2029 года<ref name="contract-extension">{{Cite web|url=https://www.borussia.de/news/borussia-verlaengert-vertrag-mit-tim-kleindienst|title=Borussia verlängert Vertrag mit Tim Kleindienst|website=Borussia Mönchengladbach|date=2025-11-06|lang=de|access-date=2026-10-05}}</ref>.
+
+В ноябре вернулся на поле, однако после двух коротких выходов в чемпионате и одного в Кубке Германии вновь столкнулся с проблемами колена. В декабре перенёс повторное хирургическое вмешательство<ref name="knee-operation">{{Cite web|url=https://www.borussia.de/news/kein-langfristiger-ausfall-fuer-kleindienst|title=Kein langfristiger Ausfall für Kleindienst|website=Borussia Mönchengladbach|date=2025-12-15|lang=de|access-date=2026-10-05}}</ref>. 16 мая 2026 года, в заключительном туре чемпионата против «[[Хоффенхайм (футбольный клуб)|Хоффенхайма]]» (4:0), впервые после декабрьского вмешательства вернулся к выступлениям, выйдя на замену на 86-й минуте<ref name="comeback-may-2026">{{Cite web|url=https://www.bundesliga.com/en/bundesliga/matchday/2025-2026/34/borussia-moenchengladbach-vs-tsg-hoffenheim/liveticker|title=Borussia Mönchengladbach — TSG Hoffenheim, 4:0, Bundesliga 2025/26|website=Bundesliga|date=2026-05-16|lang=en|access-date=2026-10-08}}</ref>. Таким образом, сезон 2025/26 завершил с тремя матчами Бундеслиги и одним кубковым матчем<ref name="dfb-profile"/>.
+
+В ходе подготовки к сезону 2026/27 вновь стал получать игровую практику. В июле вышел в стартовом составе товарищеского матча против «[[Рот-Вайсс Эссен]]» (2:1) — впервые за 14 месяцев — и провёл на поле 32 минуты. Спортивный директор клуба [[Шрёдер, Рувен|Рувен Шрёдер]] отмечал, что нападающий продолжал работать и во время летнего перерыва<ref name="comeback-summer-2026">{{Cite web|url=https://www.t-online.de/sport/fussball/bundesliga/id_101368608/borussia-moenchengladbach-kleindienst-erstmals-seit-14-monaten-in-startelf.html|title=Nach 14 Monaten: DFB-Spieler mit Startelf-Comeback|website=t-online|date=2026-07-31|lang=de|access-date=2026-10-08}}</ref>. 29 августа вернулся в стартовый состав в официальном матче: в первом туре Бундеслиги «Боруссия» уступила «[[РБ Лейпциг]]» со счётом 0:3<ref name="season-return-2026">{{Cite web|url=https://www.bundesliga.com/en/bundesliga/matchday/2026-2027/1/rb-leipzig-vs-borussia-moenchengladbach/liveticker|title=RB Leipzig — Borussia Mönchengladbach, 3:0, Bundesliga 2026/27|website=Bundesliga|date=2026-08-29|lang=en|access-date=2026-10-08}}</ref>. К дате обновления статистики принял участие в трёх матчах чемпионата сезона 2026/27, не забив голов<ref name="dfb-profile"/>.
+
+== Карьера в сборной ==
+
+=== Молодёжная сборная ===
+3 сентября 2014 года дебютировал за [[Сборная Германии по футболу (до 20 лет)|сборную Германии до 20 лет]] в матче против Италии (0:1)<ref name="u20-debut">{{Cite web|url=https://datencenter.dfb.de/personen/tim-kleindienst/spieler/spiele-in-wettbewerb/u-20-laenderspielreihe/31140|title=Tim Kleindienst — Spiele in der internationalen Spielrunde|website=DFB Datencenter|lang=de|access-date=2026-10-05}}</ref>. Был включён в заявку на [[Чемпионат мира по футболу среди молодёжных команд 2015|молодёжный чемпионат мира 2015 года]] в Новой Зеландии, но 28 мая выбыл из-за разрыва наружной связки; его заменил [[Кёпке, Паскаль|Паскаль Кёпке]]<ref name="u20-world-cup">{{Cite web|url=https://www.sport1.de/news/fussball/dfb-team/2015/05/dfb-nominiert-pascal-koepke-fuer-u-20-wm-nach|title=DFB nominiert Pascal Köpke für U-20-WM nach|website=Sport1|lang=de|access-date=2026-10-05}}</ref><ref>{{Cite web|lang=de|url=http://www.dfb.de/u-20-maenner/news-detail-u-20/wm-aus-fuer-kleindienst-koepke-nachnominiert-123908/|title=WM-Aus für Kleindienst, Köpke nachnominiert|website=DFB|access-date=2023-05-12|archive-date=2023-04-20|archive-url=https://web.archive.org/web/20230420180511/https://www.dfb.de/u-20-maenner/news-detail-u-20/wm-aus-fuer-kleindienst-koepke-nachnominiert-123908/|url-status=live}}</ref>. В 2014—2016 годах провёл за эту сборную десять матчей, голов не забивал<ref name="dfb-profile"/>.
+
+=== Основная сборная ===
+3 октября 2024 года [[Нагельсман, Юлиан|Юлиан Нагельсман]] впервые вызвал Кляйндинста во взрослую сборную Германии на матчи [[Лига наций УЕФА 2024/2025|Лиги наций УЕФА]] против Боснии и Герцеговины и Нидерландов<ref name="senior-callup">{{Cite web|url=https://www.dfb.de/news/ein-neuling-und-drei-rueckkehrer-fuer-bosnien-und-die-niederlande|title=Ein Neuling und drei Rückkehrer für Bosnien und die Niederlande|website=DFB|date=2024-10-03|lang=de|access-date=2026-10-05}}</ref>. 11 октября нападающий дебютировал в гостевой встрече с [[Сборная Боснии и Герцеговины по футболу|Боснией и Герцеговиной]] (2:1), проведя на поле весь матч<ref name="senior-debut">{{Cite web|url=https://datencenter.dfb.de/datencenter/uefa-nations-league-division-a-2640/2024-25/gruppe-3/bosnien-herzegowina-deutschland-2372760|title=Bosnien und Herzegowina — Deutschland, 1:2, UEFA Nations League 2024/25|website=DFB Datencenter|date=2024-10-11|lang=de|access-date=2026-10-05}}</ref>.
+
+16 ноября 2024 года забил первые два мяча за сборную в ответном матче с боснийцами, завершившемся победой Германии со счётом 7:0<ref name="first-national-goals">{{Cite web|url=https://datencenter.dfb.de/datencenter/uefa-nations-league-division-a-2640/2024-25/gruppe-3/deutschland-bosnien-herzegowina-2372764|title=Deutschland — Bosnien und Herzegowina, 7:0, UEFA Nations League 2024/25|website=DFB Datencenter|date=2024-11-16|lang=de|access-date=2026-10-05}}</ref>. В марте 2025 года отличился в обоих четвертьфинальных матчах Лиги наций против [[Сборная Италии по футболу|Италии]]: в Милане Германия победила 2:1, а ответная встреча в Дортмунде завершилась со счётом 3:3. Немецкая команда вышла в полуфинал по сумме двух матчей<ref name="italy-away">{{Cite web|url=https://www.dfb.de/news/goretzka-und-kleindienst-sorgen-fuer-sieg-in-italien|title=Goretzka und Kleindienst sorgen für Sieg in Italien|website=DFB|date=2025-03-20|lang=de|access-date=2026-10-05}}</ref><ref name="italy-home">{{Cite web|url=https://datencenter.dfb.de/datencenter/uefa-nations-league-division-a-2640/2024-25/viertelfinale/deutschland-italien-2391434|title=Deutschland — Italien, 3:3, UEFA Nations League 2024/25|website=DFB Datencenter|date=2025-03-23|lang=de|access-date=2026-10-05}}</ref>.
+
+В заявку на [[Чемпионат мира по футболу 2026|чемпионат мира 2026 года]] Кляйндинст не вошёл после сезона, большую часть которого пропустил из-за травмы<ref name="world-cup-2026">{{Cite web|url=https://www.merkur.de/sport/fussball/kleindienst-reagiert-auf-wm-aus-und-macht-wichtige-dfb-ansage-zr-94321862.html|title=Kleindienst reagiert auf WM-Aus und macht wichtige DFB-Ansage|author=Dominik Welle|website=Merkur|date=2026-05-26|lang=de|access-date=2026-10-05}}</ref>.
+
+== Стиль игры ==
+Кляйндинст играет на позиции центрального нападающего. Его рост и физическая сила позволяют вести верховые единоборства и принимать длинные передачи, однако его роль не ограничивается завершением атак. В анализе на сайте Бундеслиги отмечались умение отойти от линии защитников, выиграть мяч в воздухе и продолжить атаку передачей партнёру, после чего вновь занять позицию в штрафной площади. При завершении фланговых атак он использует ранние перемещения и выбор позиции между защитниками. В том же материале указывалось, что Кляйндинст не относится к наиболее скоростным форвардам и компенсирует это своевременным началом рывка; обратной стороной таких действий становятся попадания в офсайд<ref name="playing-style-bundesliga">{{Cite web|url=https://www.bundesliga.com/de/bundesliga/news/borussia-monchengladbach-tim-kleindienst-universalsturmer-analyse-30825|title=Alleskönner Tim Kleindienst lässt die Fohlen von Europa träumen|website=Bundesliga|date=2025-02-20|lang=de|access-date=2026-10-08}}</ref>.
+
+Аналитический материал ''Eurosport'', опубликованный перед дебютом Кляйндинста в сборной Германии, выделял его интенсивную работу без мяча. Прессингуя центрального защитника, нападающий подходит по дуге, перекрывает направление передачи другому защитнику или опорному полузащитнику и вынуждает соперника развивать атаку через фланг. Его игра головой помогает команде выходить из-под давления: он служит адресатом длинных передач и выполняет скидки набегающим полузащитникам. В статье также подчёркивалось, что Кляйндинст способен завершать атаки обеими ногами, хотя левая является немного сильнее, и использовать финты перед ударом<ref name="playing-style-eurosport">{{Cite web|url=https://www.eurosport.de/fussball/uefa-nations-league/2024-2025/dfb-team-im-taktik-check-tim-kleindienst-erstmals-im-deutschen-nationalteam-mehr-als-nur-ein-luckenfuller_sto20044249/story.shtml|title=DFB-Team im Taktik-Check — Tim Kleindienst erstmals im deutschen Nationalteam: Mehr als nur ein Lücke(n)füller|website=Eurosport|lang=de|access-date=2026-10-08}}</ref>.
+
+Высокую интенсивность его игры отражают показатели сезона 2023/24: по данным Бундеслиги, Кляйндинст занял первое место в чемпионате по выигранным верховым единоборствам, спринтам и интенсивным рывкам, а по общему числу выигранных единоборств был третьим<ref name="playing-style-profile">{{Cite web|url=https://www.bundesliga.com/en/bundesliga/news/tim-kleindienst-who-is-borussia-monchengladbach-s-new-striker-germany-nagelsmann-29191|title=Tim Kleindienst: Who is the Germany striker?|website=Bundesliga|lang=en|access-date=2026-10-08}}</ref>. В следующем сезоне, уже выступая за «Боруссию», забил семь мячей головой — лучший показатель Бундеслиги 2024/25<ref name="gladbach-season"/>.
+
+== Статистика выступлений ==
+
+=== Клубная статистика ===
+{{обновлено|2026-10-05}}
+{{КлСтат|Чемпионат|Национальный кубок|Еврокубки|Стыковые матчи}}
+{{КлСтат/Клуб|{{Флаг Германии|20px}} «{{Нп5|Энерги II|Энерги II|en|FC Energie Cottbus II}}»|сезоны=1}}
+{{КлСтат/Лига|[[Региональная лига «Северо-Восток»]]|сезоны=1}}
+{{КлСтат/Сезон|2012/13|4|0|0|0|0|0|0|0}}
+{{КлСтат/ИтогоЗаКлуб|Итого|4|0|0|0|0|0|0|0}}
+{{КлСтат/Клуб|{{Флаг Германии|20px}} «[[Энерги]]»|сезоны=2}}
+{{КлСтат/Лига|[[Вторая Бундеслига]]|сезоны=1}}
+{{КлСтат/Сезон|2013/14|2|0|0|0|0|0|0|0}}
+{{КлСтат/Лига|[[Третья лига Германии по футболу|Третья лига]]|сезоны=1}}
+{{КлСтат/Сезон|2014/15|35|13|1|0|0|0|0|0}}
+{{КлСтат/ИтогоЗаКлуб|Итого|37|13|1|0|0|0|0|0}}
+{{КлСтат/Клуб|{{Флаг Германии|20px}} «[[Фрайбург (футбольный клуб)|Фрайбург]]»|сезоны=3}}
+{{КлСтат/Лига|Вторая Бундеслига|сезоны=1}}
+{{КлСтат/Сезон|2015/16|7|0|1|0|0|0|0|0}}
+{{КлСтат/Лига|[[Чемпионат Германии по футболу|Бундеслига]]|сезоны=2}}
+{{КлСтат/Сезон|2017/18|22|2|1|0|2|0|0|0}}
+{{КлСтат/Сезон|2018/19|4|0|2|0|0|0|0|0}}
+{{КлСтат/ИтогоЗаКлуб|Итого|33|2|4|0|2|0|0|0}}
+{{КлСтат/Клуб|{{Флаг Германии|20px}} «[[Фрайбург II]]»|сезоны=3}}
+{{КлСтат/Лига|[[Региональная лига «Юго-Запад»]]|сезоны=3}}
+{{КлСтат/Сезон|2015/16|8|2|0|0|0|0|0|0}}
+{{КлСтат/Сезон|2018/19|2|1|0|0|0|0|0|0}}
+{{КлСтат/Сезон|2019/20|1|0|0|0|0|0|0|0}}
+{{КлСтат/ИтогоЗаКлуб|Итого|11|3|0|0|0|0|0|0}}
+{{КлСтат/Клуб|{{Флаг Германии|20px}} «[[Хайденхайм (футбольный клуб)|Хайденхайм]]»|сезоны=6}}
+{{КлСтат/Лига|Вторая Бундеслига|сезоны=5}}
+{{КлСтат/Сезон|2016/17 (аренда)|27|7|1|0|0|0|0|0}}
+{{КлСтат/Сезон|2019/20|27|14|0|0|0|0|2|2}}
+{{КлСтат/Сезон|2020/21 (аренда)|15|11|0|0|0|0|0|0}}
+{{КлСтат/Сезон|2021/22|30|10|1|0|0|0|0|0}}
+{{КлСтат/Сезон|2022/23|32|25|2|0|0|0|0|0}}
+{{КлСтат/Лига|Бундеслига|сезоны=1}}
+{{КлСтат/Сезон|2023/24|33|12|2|2|0|0|0|0}}
+{{КлСтат/ИтогоЗаКлуб|Итого|164|79|6|2|0|0|2|2}}
+{{КлСтат/Клуб|{{Флаг Бельгии|20px}} «[[Гент (футбольный клуб)|Гент]]»|сезоны=1}}
+{{КлСтат/Лига|[[Чемпионат Бельгии по футболу|Первый дивизион A]]|сезоны=1}}
+{{КлСтат/Сезон|2020/21|15|1|0|0|8|2|0|0}}
+{{КлСтат/ИтогоЗаКлуб|Итого|15|1|0|0|8|2|0|0}}
+{{КлСтат/Клуб|{{Флаг Германии|20px}} «[[Боруссия (футбольный клуб, Мёнхенгладбах)|Боруссия Мёнхенгладбах]]»|сезоны=3}}
+{{КлСтат/Лига|Бундеслига|сезоны=3}}
+{{КлСтат/Сезон|2024/25|31|16|2|0|0|0|0|0}}
+{{КлСтат/Сезон|2025/26|3|0|1|0|0|0|0|0}}
+{{КлСтат/Сезон|2026/27|3|0|0|0|0|0|0|0}}
+{{КлСтат/ИтогоЗаКлуб|Итого|37|16|3|0|0|0|0|0}}
+{{КлСтат/Итого|301|114|14|2|10|2|2|2}}
+: ''Данные в таблице актуальны по состоянию на 5 октября 2026 года. В графе «Национальный кубок» учтены Кубок Германии и Кубок Бельгии; региональный Кубок Бранденбурга и юношеские соревнования не включены. Еврокубки включают квалификационные раунды: два матча Лиги Европы за «Фрайбург», три матча квалификации Лиги чемпионов и пять матчей Лиги Европы за «Гент». Стыковые матчи — встречи за право выступать в Бундеслиге в 2020 году. Статистика приведена по DFB Datencenter, kicker, RSSSF и официальному сайту Бундеслиги''<ref name="dfb-profile"/><ref name="kicker-career"/><ref name="freiburg-europe"/><ref name="bundesliga-profile"/>.
+
+=== Статистика за сборные ===
+{{обновлено|2026-10-05}}
+
+{| class="wikitable mw-collapsible mw-collapsed" style="text-align:center; font-size:95%; min-width:600px;"
+! colspan="6" style="{{цвета сборной/Германия|1}}" | Матчи Тима Кляйндинста за [[Сборная Германии по футболу (до 20 лет)|сборную Германии до 20 лет]]
+|-
+! № !! Дата !! Соперник !! Счёт !! Голы !! Соревнование
+|-
+| 1 || 3 сентября 2014 || {{Флаг Италии|20px}} [[Сборная Италии по футболу (до 20 лет)|Италия (до 20 лет)]] || 0:1 || 0 || Международная серия матчей (до 20 лет)
+|-
+| 2 || 7 сентября 2014 || {{Флаг Швейцарии|20px}} [[Сборная Швейцарии по футболу (до 20 лет)|Швейцария (до 20 лет)]] || 0:0 || 0 || Международная серия матчей (до 20 лет)
+|-
+| 3 || 9 октября 2014 || {{Флаг Англии|20px}} [[Сборная Англии по футболу (до 20 лет)|Англия (до 20 лет)]] || 0:1 || 0 || [[Товарищеский матч]]
+|-
+| 4 || 11 октября 2014 || {{Флаг Турции|20px}} [[Сборная Турции по футболу (до 20 лет)|Турция (до 20 лет)]] || 1:0 || 0 || Товарищеский матч
+|-
+| 5 || 13 октября 2014 || {{Флаг Нидерландов|20px}} [[Сборная Нидерландов по футболу (до 20 лет)|Нидерланды (до 20 лет)]] || 1:1 || 0 || Товарищеский матч
+|-
+| 6 || 14 ноября 2014 || {{Флаг Швейцарии|20px}} Швейцария (до 20 лет) || 1:1 || 0 || Международная серия матчей (до 20 лет)
+|-
+| 7 || 18 ноября 2014 || {{Флаг Польши|20px}} [[Сборная Польши по футболу (до 20 лет)|Польша (до 20 лет)]] || 2:0 || 0 || Международная серия матчей (до 20 лет)
+|-
+| 8 || 27 марта 2015 || {{Флаг Польши|20px}} Польша (до 20 лет) || 1:2 || 0 || Международная серия матчей (до 20 лет)
+|-
+| 9 || 23 марта 2016 || {{Флаг Швейцарии|20px}} Швейцария (до 20 лет) || 1:1 || 0 || Международная серия матчей (до 20 лет)
+|-
+| 10 || 26 марта 2016 || {{Флаг Швейцарии|20px}} Швейцария (до 20 лет) || 1:1 || 0 || Международная серия матчей (до 20 лет)
+|}
+'''Итого: 10 матчей / 0 голов; 2 победы, 5 ничьих, 3 поражения'''<ref name="u20-debut"/><ref name="u20-friendly-stats">{{Cite web|url=https://datencenter.dfb.de/personen/tim-kleindienst/spieler/spiele-in-wettbewerb/laenderspiel-1241/deutschland-u-20-m|title=Tim Kleindienst — Länderspiele für Deutschland U 20|website=DFB Datencenter|lang=de|access-date=2026-10-06}}</ref>.
+
+{| class="wikitable mw-collapsible mw-collapsed" style="text-align:center; font-size:95%; min-width:600px;"
+! colspan="6" style="{{цвета сборной/Германия|1}}" | Матчи Тима Кляйндинста за [[Сборная Германии по футболу|сборную Германии]]
+|-
+! № !! Дата !! Соперник !! Счёт !! Голы !! Соревнование
+|-
+| 1 || 11 октября 2024 || {{Флаг Боснии и Герцеговины|20px}} [[Сборная Боснии и Герцеговины по футболу|Босния и Герцеговина]] || 2:1 || 0 || [[Лига наций УЕФА 2024/2025]]
+|-
+| 2 || 14 октября 2024 || {{Флаг Нидерландов|20px}} [[Сборная Нидерландов по футболу|Нидерланды]] || 1:0 || 0 || Лига наций УЕФА 2024/2025
+|-
+| 3 || 16 ноября 2024 || {{Флаг Боснии и Герцеговины|20px}} Босния и Герцеговина || 7:0 || 2 || Лига наций УЕФА 2024/2025
+|-
+| 4 || 19 ноября 2024 || {{Флаг Венгрии|20px}} [[Сборная Венгрии по футболу|Венгрия]] || 1:1 || 0 || Лига наций УЕФА 2024/2025
+|-
+| 5 || 20 марта 2025 || {{Флаг Италии|20px}} [[Сборная Италии по футболу|Италия]] || 2:1 || 1 || Лига наций УЕФА 2024/2025
+|-
+| 6 || 23 марта 2025 || {{Флаг Италии|20px}} Италия || 3:3 || 1 || Лига наций УЕФА 2024/2025
+|}
+'''Итого: 6 матчей / 4 гола; 4 победы, 2 ничьи, 0 поражений'''<ref name="dfb-profile"/><ref name="senior-debut"/><ref name="first-national-goals"/><ref name="italy-away"/><ref name="italy-home"/><ref name="netherlands-match">{{Cite web|url=https://www.dfb.de/news/debuetant-leweling-schiesst-dfb-team-zum-sieg-gegen-niederlande|title=Debütant Leweling schießt DFB-Team zum Sieg gegen Niederlande|website=DFB|date=2024-10-14|lang=de|access-date=2026-10-06}}</ref><ref name="hungary-match">{{Cite web|url=https://www.dfb.de/news/germany-denied-victory-by-last-minute-penalty|title=Germany denied victory by last minute penalty|website=DFB|date=2024-11-19|lang=en|access-date=2026-10-06}}</ref>.
+
+: ''Таблицы составлены по данным DFB Datencenter и официальным отчётам Немецкого футбольного союза''.
+
+== Достижения ==
+; «Энерги»
+* Обладатель Кубка Бранденбурга: 2014/15<ref name="brandenburg-cup"/>
+
+; «Фрайбург»
+* Победитель [[Вторая Бундеслига|Второй Бундеслиги]]: [[Вторая Бундеслига 2015/2016|2015/16]]<ref name="dfb-profile"/>
+
+; «Хайденхайм»
+* Победитель Второй Бундеслиги: [[Вторая Бундеслига 2022/2023|2022/23]]<ref name="promotion"/>
+
+; Личные
+
+* Лучший бомбардир Второй Бундеслиги: 2022/23 (25 голов)<ref name="promotion"/>
+* Лауреат премии «Felix» в категории «Футбол» в [[Северный Рейн-Вестфалия|Северном Рейне-Вестфалии]]: 2025<ref name="felix-award">{{Cite web|url=https://www.borussia.de/news/kleindienst-erhaelt-felix-award-1|title=Kleindienst erhält Felix Award|website=Borussia Mönchengladbach|date=2025-11-29|lang=de|access-date=2026-10-05}}</ref>
+
+== Примечания ==
+{{примечания|2}}
+
+== Ссылки ==
+* [https://datencenter.dfb.de/personen/tim-kleindienst/spieler Профиль на сайте DFB Datencenter]
+* [https://www.bundesliga.com/de/spieler/tim-kleindienst Профиль на официальном сайте Бундеслиги]
+* [https://www.kicker.de/tim-kleindienst/laufbahn/dfb-pokal/2025-26/bor-moenchengladbach Профиль и статистика на сайте kicker]
+
+{{Внешние ссылки}}
+{{Состав ФК Боруссия Мёнхенгладбах}}
+{{Лучшие бомбардиры Второй Бундеслиги}}
+
+[[Категория:Футболисты Германии]]
+[[Категория:Игроки сборной Германии по футболу]]
+[[Категория:Игроки ФК «Энерги II»]]
+[[Категория:Игроки ФК «Энерги»]]
+[[Категория:Игроки ФК «Фрайбург»]]
+[[Категория:Игроки ФК «Фрайбург II»]]
+[[Категория:Игроки ФК «Хайденхайм»]]
+[[Категория:Игроки ФК «Гент»]]
+[[Категория:Игроки ФК «Боруссия» Мёнхенгладбах]]

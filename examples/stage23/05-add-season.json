@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.1",
+  "package_id": "FICTIONAL-TEST-05-add-season",
+  "generated_at": "2026-10-08T12:00:00Z",
+  "is_test": true,
+  "articles": [
+    {
+      "title": "Участник:Zambrowski/testbot",
+      "player": "Кальвин Браккельман",
+      "operations": [
+        {
+          "id": "new-season",
+          "type": "add_season",
+          "entity": {
+            "name": "Падерборн 07",
+            "wikitext": "{{Флаг Германии|20px}} «[[Падерборн 07]]»"
+          },
+          "target": {
+            "structure": "club_table"
+          },
+          "as_of": "2026-10-08",
+          "sources": [
+            {
+              "url": "https://ru.wikipedia.org/wiki/Участник:Zambrowski/testbot",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-08",
+              "note": "ТОЛЬКО ВЫМЫШЛЕННЫЙ ТЕСТ БРАККЕЛЬМАННА. Новые числа и переходы не являются спортивными фактами."
+            }
+          ],
+          "season": "2026/27",
+          "payload": {
+            "categories": {
+              "Чемпионат": {
+                "appearances": 2,
+                "goals": 1
+              },
+              "[[Кубок Германии по футболу|Кубок Германии]]": {
+                "appearances": 0,
+                "goals": 0
+              },
+              "Еврокубки": {
+                "appearances": 0,
+                "goals": 0
+              },
+              "Стыковые матчи": {
+                "appearances": 0,
+                "goals": 0
+              }
+            },
+            "league_wikitext": "[[Вторая Бундеслига]]",
+            "insert_after_season": "2025/26",
+            "complete": true
+          }
+        }
+      ]
+    }
+  ]
+}

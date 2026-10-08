@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.1",
+  "package_id": "FICTIONAL-TEST-10-structure-proposal",
+  "generated_at": "2026-10-08T12:00:00Z",
+  "is_test": true,
+  "articles": [
+    {
+      "title": "Участник:Zambrowski/testbot",
+      "player": "Кальвин Браккельман",
+      "operations": [
+        {
+          "id": "europe",
+          "type": "add_competition",
+          "entity": {
+            "name": "Аугсбург",
+            "wikitext": "{{Флаг Германии|20px}} «[[Аугсбург (футбольный клуб)|Аугсбург]]»"
+          },
+          "target": {
+            "structure": "club_table"
+          },
+          "as_of": "2026-10-08",
+          "sources": [
+            {
+              "url": "https://ru.wikipedia.org/wiki/Участник:Zambrowski/testbot",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-08",
+              "note": "ТОЛЬКО ВЫМЫШЛЕННЫЙ ТЕСТ БРАККЕЛЬМАННА. Новые числа и переходы не являются спортивными фактами."
+            }
+          ],
+          "season": "2026/27",
+          "competition": {
+            "name": "Кубок лиги",
+            "category": "Кубок лиги",
+            "scope": "category",
+            "mapping_rule": "Полный тестовый итог категории Еврокубки; другие турниры категории отсутствуют."
+          },
+          "expected": {
+            "appearances": 0,
+            "goals": 0
+          },
+          "new": {
+            "appearances": 2,
+            "goals": 1
+          },
+          "payload": {
+            "structure_proposal": "ТЕСТ: добавить отдельную пару столбцов Кубок лиги. Требует отдельного проектирования и подтверждения; этот JSON не исполняет перестройку."
+          }
+        }
+      ]
+    }
+  ]
+}

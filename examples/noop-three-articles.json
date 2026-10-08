@@ -1,0 +1,130 @@
+{
+  "schema_version": "1.0",
+  "package_id": "real-fixtures-noop",
+  "generated_at": "2026-10-08T08:00:00Z",
+  "articles": [
+    {
+      "title": "Фюллькруг, Никлас",
+      "player": "Никлас Фюллькруг",
+      "base_revid": 155486931,
+      "operations": [
+        {
+          "id": "noop-0",
+          "type": "update_stats",
+          "entity": {
+            "name": "Милан",
+            "wikitext": "{{Флаг Италии|20px}} «[[Милан (футбольный клуб)|Милан]]»"
+          },
+          "season": "2025/26 (аренда)",
+          "competition": {
+            "name": "Чемпионат",
+            "category": "Чемпионат",
+            "scope": "category"
+          },
+          "target": {
+            "structure": "club_table"
+          },
+          "expected": {
+            "appearances": 20,
+            "goals": 1
+          },
+          "new": {
+            "appearances": 20,
+            "goals": 1
+          },
+          "as_of": "2026-10-05",
+          "sources": [
+            {
+              "url": "https://ru.wikipedia.org/w/index.php?oldid=155486931",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-05",
+              "note": "Технический no-op пример из снимка статьи; не независимое подтверждение спортивной статистики."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Кляйндинст, Тим",
+      "player": "Тим Кляйндинст",
+      "base_revid": 155488058,
+      "operations": [
+        {
+          "id": "noop-1",
+          "type": "update_stats",
+          "entity": {
+            "name": "Боруссия Мёнхенгладбах",
+            "wikitext": "{{Флаг Германии|20px}} «[[Боруссия (футбольный клуб, Мёнхенгладбах)|Боруссия Мёнхенгладбах]]»"
+          },
+          "season": "2026/27",
+          "competition": {
+            "name": "Чемпионат",
+            "category": "Чемпионат",
+            "scope": "category"
+          },
+          "target": {
+            "structure": "club_table"
+          },
+          "expected": {
+            "appearances": 3,
+            "goals": 0
+          },
+          "new": {
+            "appearances": 3,
+            "goals": 0
+          },
+          "as_of": "2026-10-05",
+          "sources": [
+            {
+              "url": "https://ru.wikipedia.org/w/index.php?oldid=155488058",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-05",
+              "note": "Технический no-op пример из снимка статьи; не независимое подтверждение спортивной статистики."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Табакович, Харис",
+      "player": "Харис Табакович",
+      "base_revid": 155487220,
+      "operations": [
+        {
+          "id": "noop-2",
+          "type": "update_stats",
+          "entity": {
+            "name": "Ред Булл (Зальцбург)",
+            "wikitext": "{{Флаг Австрии|20px}} «[[Ред Булл (футбольный клуб, Зальцбург)|Ред Булл (Зальцбург)]]»"
+          },
+          "season": "2026/27",
+          "competition": {
+            "name": "Чемпионат",
+            "category": "Чемпионат",
+            "scope": "category"
+          },
+          "target": {
+            "structure": "club_table"
+          },
+          "expected": {
+            "appearances": 6,
+            "goals": 3
+          },
+          "new": {
+            "appearances": 6,
+            "goals": 3
+          },
+          "as_of": "2026-10-05",
+          "sources": [
+            {
+              "url": "https://ru.wikipedia.org/w/index.php?oldid=155487220",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-05",
+              "note": "Технический no-op пример из снимка статьи; не независимое подтверждение спортивной статистики."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

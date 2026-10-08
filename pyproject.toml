@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wikipedia-stats-updater"
+version = "0.4.0"
+description = "BrackelBot football statistics planner and Toolforge runner"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE", "NOTICE.md"]
+requires-python = ">=3.12"
+dependencies = ["mwparserfromhell>=0.7.2,<0.8", "jsonschema>=4.23,<5", "requests>=2.32,<3"]
+
+[project.urls]
+Source = "https://github.com/zambrowski1/BrackelBot"
+Issues = "https://github.com/zambrowski1/BrackelBot/issues"
+
+[project.optional-dependencies]
+gui = ["PySide6>=6.8,<7"]
+server = ["PyMySQL>=1.1,<2"]
+test = ["pytest>=8,<10"]
+
+[project.scripts]
+wiki-stats = "wiki_stats.cli:main"
+brackelbot = "wiki_stats.server_cli:main"
+
+[tool.setuptools.package-data]
+wiki_stats = ["*.schema.json", "clubs.json"]
+
+[tool.setuptools.packages.find]
+include = ["wiki_stats*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

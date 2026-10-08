@@ -21,6 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-Wikipedia texts in tests/fixtures are excluded from this MIT license.
+Wikipedia texts in tests/fixtures and their derivatives in examples are
+excluded from this MIT license.
 They remain under applicable Wikipedia licenses, including CC BY-SA 4.0.
-Attribution and revision links: docs/ARTICLE_ANALYSIS.md and fixture metadata.
+Attribution and revision links: NOTICE.md, docs/ARTICLE_ANALYSIS.md and fixture metadata.

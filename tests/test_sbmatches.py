@@ -36,7 +36,10 @@ function Node:__tostring()
     return result..'</'..self.name..'>'
 end
 mw={text={trim=function(s) return pythonTrim(s) end},html={}}
-mw.ustring={lower=function(s) return pythonLower(s) end}
+mw.ustring={lower=function(s) return pythonLower(s) end,
+    len=function(s) return pythonLen(s) end,
+    sub=function(s,i,j) return pythonSub(s,i,j) end}
+mw.ustring.find=function(s,pattern) return pythonCyrillic(s) and 1 or nil end
 mw.html.create=function(name) return setmetatable({name=name,attrs={},children={}},Node) end
 existingTitles={['Сборная Франции по футболу (до 18 лет)']=true,
     ['Сборная Ирландии по футболу']=true}
@@ -60,6 +63,9 @@ def renderer():
     runtime = lupa.LuaRuntime(unpack_returned_tuples=True)
     runtime.globals().pythonTrim=lambda s:s.strip()
     runtime.globals().pythonLower=lambda s:s.lower()
+    runtime.globals().pythonCyrillic=lambda s:bool(re.search('[А-Яа-яЁё]',s))
+    runtime.globals().pythonLen=len
+    runtime.globals().pythonSub=lambda s,i,j=None:s[i-1 if i>0 else len(s)+i:len(s) if j is None else j if j>=0 else len(s)+j+1]
     runtime.execute(HOST)
     module = runtime.execute((ROOT/'Модуль.lua').read_text(encoding='utf-8'))
     return lambda args: module['_render'](runtime.table_from(args),runtime.globals().testFrame)
@@ -181,7 +187,7 @@ def test_invalid_age_rejected(renderer,age):
 
 
 def test_unknown_short_country_needs_explicit_link(renderer):
-    with pytest.raises(lupa.LuaError,match='полную ссылку'): renderer(national_args('Ирландиия'))
+    with pytest.raises(lupa.LuaError,match='полную ссылку'): renderer(national_args('Неизвестная команда'))
 
 
 def test_redirect_without_safe_foreign_article_not_followed(renderer):
@@ -205,6 +211,9 @@ def test_repeated_country_uses_single_title_lookup_and_template_expansion():
     runtime=lupa.LuaRuntime(unpack_returned_tuples=True)
     runtime.globals().pythonTrim=lambda s:s.strip()
     runtime.globals().pythonLower=lambda s:s.lower()
+    runtime.globals().pythonCyrillic=lambda s:bool(re.search('[А-Яа-яЁё]',s))
+    runtime.globals().pythonLen=len
+    runtime.globals().pythonSub=lambda s,i,j=None:s[i-1 if i>0 else len(s)+i:len(s) if j is None else j if j>=0 else len(s)+j+1]
     runtime.execute(HOST)
     runtime.execute('''
     titleCalls=0; templateCalls=0
@@ -275,3 +284,63 @@ def test_unverified_flag_is_not_fabricated(renderer):
     result=renderer(national_args('Падания'))
     assert 'Падания (до 18 лет)' in result
     assert '{{Флаг' not in result
+
+
+@pytest.mark.parametrize('value,name',[
+    ('ФРГ','Германия'),('ф.р.г.','Германия'),('Западная Германия','Германия'),
+    ('Pоссия','Россия'),('CША','США'),('Гeрмания','Германия'),
+    ('Федеративная Республика Германия','Германия'),('сборная Германии','Германия'),
+    ('  футбольная сборная Ирландии  ','Ирландия'),('РЕСПУБЛИКА ИРЛАНДИЯ','Ирландия'),
+    ('Ireland','Ирландия'),('Germany','Германия'),('Германя','Германия'),
+    ('Гермнаия','Германия'),('Гермаия','Германия'),('Ирландиия','Ирландия'),
+    ('Ирладния','Ирландия'),('Нидерладны','Нидерланды'),('Голландия','Нидерланды'),
+    ('Кот д Ивуар','Кот-д’Ивуар'),('Кот-д-Ивуар','Кот-д’Ивуар'),
+    ('Кот-д\'Ивуар','Кот-д’Ивуар'),('КотдИвуар','Кот-д’Ивуар'),
+    ('Берег Слоновой Кости','Кот-д’Ивуар'),('Côte d’Ivoire','Кот-д’Ивуар'),
+    ('Ivory Coast','Кот-д’Ивуар'),('Буркина—Фасо','Буркина-Фасо'),
+    ('Буркина_Фасо','Буркина-Фасо'),('Буркина\u00a0\u00a0Фасо','Буркина-Фасо'),
+    ('Шри\u202fЛанка','Шри-Ланка'),('Шри‑Ланка','Шри-Ланка'),
+    ('С.Ш.А.','США'),('U.S.A.','США'),('Соединённые Штаты','США'),
+    ('К.Н.Д.Р.','КНДР'),('Китайский Тайбей','Китайский Тайбэй'),
+    ('Киргыстан','Кыргызстан'),('Микронезия','Федеративные Штаты Микронезии'),
+    ('Фареры','Фарерские острова'),('Багамы','Багамские Острова'),
+    ('БиГ','Босния и Герцеговина'),('ПНГ','Папуа — Новая Гвинея'),
+    ('Сан Томе и Принсипи','Сан-Томе и Принсипи'),('Сент-Киттс и Невис','Сент-Китс и Невис'),
+    ('Советский Союз','СССР'),('Г.Д.Р.','ГДР'),('С.С.С.Р.','СССР'),
+    # Not in the explicit typo list: one-edit correction is exercised here.
+    ('Аргентна','Аргентина'),('Бразииля','Бразилия'),('Франциия','Франция'),
+    ('Портгуалия','Португалия'),('Люксембур','Люксембург'),
+])
+def test_human_spelling_variants_and_typos(renderer,value,name):
+    result=renderer(national_args(value))
+    assert name+' (до 18 лет)' in result
+
+
+@pytest.mark.parametrize('value',['Корея','Конго','Congo','Korea','Великобритания','UK','Виргинские острова'])
+def test_ambiguous_abbreviations_require_clarification_even_for_seniors(renderer,value):
+    for age in ['','18']:
+        with pytest.raises(lupa.LuaError,match='уточните сборную'):
+            renderer(national_args(value,age))
+
+
+@pytest.mark.parametrize('value',['Мали','Мальта','Нигер','Нигерия','Гвинея','Гайана','Доминика','Доминиканская Республика'])
+def test_real_country_names_never_fuzzy_corrected_to_another_team(renderer,value):
+    result=renderer(national_args(value))
+    assert value+' (до 18 лет)' in result
+
+
+@pytest.mark.parametrize('value',['Мли','Нигр','Ирлнд','GR','UAS'])
+def test_short_names_and_codes_not_guessed(renderer,value):
+    with pytest.raises(lupa.LuaError,match='полную ссылку'): renderer(national_args(value))
+
+
+def test_manual_wikitext_bypasses_aliases_and_typo_correction(renderer):
+    manual='[[Историческая сборная|Конго]]'
+    assert manual in renderer(national_args(manual))
+
+
+def test_ambiguous_typo_does_not_choose_ireland_over_iceland(renderer):
+    for age in ['', '18']:
+        with pytest.raises(lupa.LuaError,match='неоднозначная опечатка') as error:
+            renderer(national_args('Иландия',age))
+        assert 'Ирландия' in str(error.value) and 'Исландия' in str(error.value)

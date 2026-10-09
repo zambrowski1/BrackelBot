@@ -1,30 +1,111 @@
 {
-  "note": "Identity catalogue, not a current-season membership list. Bind API IDs separately; article and QID checked live before use.",
+  "note": "Identity catalogue; API IDs are bound separately. League membership is a dated snapshot, not runtime scope.",
+  "membership_sources": {
+    "1": "https://www.bundesliga.com/de/bundesliga/clubs",
+    "2": "https://www.bundesliga.com/de/2bundesliga/clubs",
+    "3": "https://www.dfb.de/news/teilnehmerfeld-der-3-liga-steht-fest-havelse-rueckt-fuer-1860-nach"
+  },
+  "membership_season": "2026/27",
+  "verified_at": "2026-10-09",
   "clubs": [
     {
-      "name": "Рома", "title": "Рома (футбольный клуб)", "qid": "Q2739",
-      "aliases": ["AS Roma", "Roma"], "flag": "Италии", "country_qid": "Q38", "kind": "club"
-    },
-    {
-      "name": "Спортинг Лиссабон", "display_name": "Спортинг (Лиссабон)",
-      "title": "Спортинг (футбольный клуб, Лиссабон)", "qid": "Q75729",
-      "aliases": ["Sporting CP", "Sporting Lisbon", "Спортинг (Лиссабон)"],
-      "flag": "Португалии", "country_qid": "Q45", "kind": "club"
-    },
-    {
-      "name": "Боруссия Мёнхенгладбах",
-      "display_name": "Боруссия (Мёнхенгладбах)",
-      "title": "Боруссия (футбольный клуб, Мёнхенгладбах)",
-      "qid": "Q101959",
+      "name": "Аугсбург",
+      "display_name": "Аугсбург",
+      "title": "Аугсбург (футбольный клуб)",
+      "qid": "Q15755",
       "aliases": [
-        "Боруссия (футбольный клуб, Мёнхенгладбах)",
-        "Borussia Mönchengladbach",
-        "Borussia Monchengladbach",
-        "Боруссия Мёнхенгладбах"
+        "Augsburg",
+        "Die Fuggerstädter",
+        "FC Augsburg",
+        "FC Augsburg Football Team",
+        "FC Augsburg Soccer Team",
+        "Fußball-Club Augsburg",
+        "Fußball-Club Augsburg 1907 e. V",
+        "Fußball-Club Augsburg 1907 e. V.",
+        "Аугсбург",
+        "Аугсбург (футбольный клуб)"
       ],
       "flag": "Германии",
       "country_qid": "Q183",
-      "kind": "club"
+      "kind": "club",
+      "league_tier": 1,
+      "season": 2026,
+      "sitelinks": {
+        "ru": "Аугсбург (футбольный клуб)",
+        "de": "FC Augsburg",
+        "en": "FC Augsburg"
+      },
+      "verified_at": "2026-10-09"
+    },
+    {
+      "name": "Унион Берлин",
+      "display_name": "Унион (Берлин)",
+      "title": "Унион (футбольный клуб, Берлин)",
+      "qid": "Q141971",
+      "aliases": [
+        "1. FC Union Berlin",
+        "1. Fußballclub Union Berlin",
+        "1. Fußballclub Union Berlin e. V.",
+        "BSG Motor Oberschöneweide",
+        "Berlin FC",
+        "Die Eisernen",
+        "FC Berlin",
+        "FC Olympia Oberschöneweide",
+        "FC Union Berlin",
+        "Motor Oberschöneweide",
+        "Olympia Oberschöneweide",
+        "SC Union Oberschöneweide",
+        "SG Oberschöneweide",
+        "SG Union Oberschöneweide",
+        "The Iron Ones",
+        "Union",
+        "Union Berlin",
+        "Union Oberschöneweide",
+        "Унион",
+        "Унион (Берлин)",
+        "Унион (футбольный клуб, Берлин)",
+        "Унион Берлин"
+      ],
+      "flag": "Германии",
+      "country_qid": "Q183",
+      "kind": "club",
+      "league_tier": 1,
+      "season": 2026,
+      "sitelinks": {
+        "ru": "Унион (футбольный клуб, Берлин)",
+        "de": "1. FC Union Berlin",
+        "en": "1. FC Union Berlin"
+      },
+      "verified_at": "2026-10-09"
+    },
+    {
+      "name": "Вердер",
+      "display_name": "Вердер",
+      "title": "Вердер (футбольный клуб)",
+      "qid": "Q51976",
+      "aliases": [
+        "Die Grün-Weißen",
+        "Die Werderaner",
+        "SV Werder Bremen",
+        "Sportverein Werder Bremen",
+        "Sportverein Werder Bremen von 1899 e. V.",
+        "The Green-Whites",
+        "Werder",
+        "Werder Bremen",
+        "Вердер",
+        "Вердер (футбольный клуб)"
+      ],
+      "flag": "Германии",
+      "country_qid": "Q183",
+      "kind": "club",
+      "league_tier": 1,
+      "season": 2026,
+      "sitelinks": {
+        "ru": "Вердер (футбольный клуб)",
+        "de": "Werder Bremen",
+        "en": "SV Werder Bremen"
+      },
+      "verified_at": "2026-10-09"
     },
     {
       "name": "Боруссия Дортмунд",
@@ -32,246 +113,1575 @@
       "title": "Боруссия (футбольный клуб, Дортмунд)",
       "qid": "Q41420",
       "aliases": [
-        "Боруссия (футбольный клуб, Дортмунд)",
+        "BV 09 Borussia Dortmund",
+        "BV Borussia 09 Dortmund",
+        "BV Borussia Dortmund",
+        "BVB",
+        "BVB 09",
+        "BVB 09 Dortmund",
+        "BVB Dortmund",
+        "BVB09",
+        "Ballspiel-Verein Borussia 1909",
+        "Ballspielverein Borussia 09 Dortmund",
+        "Ballspielverein Borussia 09 e. V. Dortmund",
+        "Ballspielverein Borussia 09 e.V. Dortmund",
+        "Ballspielverein Borussia Dortmund",
+        "Borussia 09",
         "Borussia Dortmund",
+        "Borussia Dortmund GmbH & Co. KGaA",
+        "Die Borussen",
+        "Die Schwarzgelben",
+        "Dortmund",
+        "The Black and Yellows",
+        "Боруссия",
+        "Боруссия (Дортмунд)",
+        "Боруссия (футбольный клуб, Дортмунд)",
         "Боруссия Дортмунд"
       ],
       "flag": "Германии",
       "country_qid": "Q183",
-      "kind": "club"
+      "kind": "club",
+      "league_tier": 1,
+      "season": 2026,
+      "sitelinks": {
+        "ru": "Боруссия (футбольный клуб, Дортмунд)",
+        "de": "Borussia Dortmund",
+        "en": "Borussia Dortmund"
+      },
+      "verified_at": "2026-10-09"
     },
     {
-      "name": "Аугсбург",
-      "title": "Аугсбург (футбольный клуб)",
-      "qid": "Q15755",
+      "name": "Эльферсберг",
+      "display_name": "Эльферсберг",
+      "title": "Эльферсберг (футбольный клуб)",
+      "qid": "Q692691",
       "aliases": [
-        "Аугсбург (футбольный клуб)",
-        "FC Augsburg",
-        "Augsburg",
-        "Аугсбург"
+        "Elversberg",
+        "SV 07 Elversberg",
+        "SV Elversberg",
+        "SV Elversberg 07",
+        "SVE",
+        "Sportvereinigung 07 Elversberg",
+        "Sportvereinigung 07 Elversberg e.V.",
+        "Sportvereinigung Elversberg",
+        "Эльферсберг",
+        "Эльферсберг (футбольный клуб)"
       ],
       "flag": "Германии",
       "country_qid": "Q183",
-      "kind": "club"
-    },
-    {
-      "name": "Бавария",
-      "title": "Бавария (футбольный клуб)",
-      "qid": "Q15789",
-      "aliases": [
-        "Бавария (футбольный клуб)",
-        "Bayern Munich",
-        "Бавария"
-      ],
-      "flag": "Германии",
-      "country_qid": "Q183",
-      "kind": "club"
-    },
-    {
-      "name": "Байер",
-      "title": "Байер 04",
-      "qid": "Q104761",
-      "aliases": [
-        "Байер 04",
-        "Bayer Leverkusen",
-        "Байер"
-      ],
-      "flag": "Германии",
-      "country_qid": "Q183",
-      "kind": "club"
-    },
-    {
-      "name": "Фрайбург",
-      "title": "Фрайбург (футбольный клуб)",
-      "qid": "Q106394",
-      "aliases": [
-        "Фрайбург (футбольный клуб)",
-        "SC Freiburg",
-        "Фрайбург"
-      ],
-      "flag": "Германии",
-      "country_qid": "Q183",
-      "kind": "club"
+      "kind": "club",
+      "league_tier": 1,
+      "season": 2026,
+      "sitelinks": {
+        "ru": "Эльферсберг (футбольный клуб)",
+        "de": "SV Elversberg",
+        "en": "SV Elversberg"
+      },
+      "verified_at": "2026-10-09"
     },
     {
       "name": "Айнтрахт Франкфурт",
+      "display_name": "Айнтрахт (Франкфурт-на-Майне)",
       "title": "Айнтрахт (футбольный клуб, Франкфурт-на-Майне)",
       "qid": "Q38245",
       "aliases": [
-        "Айнтрахт (футбольный клуб, Франкфурт-на-Майне)",
+        "Die Adler",
+        "Eintracht",
         "Eintracht Frankfurt",
-        "Айнтрахт Франкфурт"
+        "Eintracht Frankfurt Fußball AG",
+        "Eintracht Frankfurt e. V.",
+        "Eintracht Frankfurt e. V.",
+        "Frankfurt",
+        "Frankfurter SG Eintracht",
+        "Frankfurter Sportgemeinde Eintracht",
+        "SG Eintracht Frankfurt",
+        "SGE",
+        "Sportgemeinde „Eintracht“",
+        "The Eagles",
+        "eintracht.de",
+        "Айнтрахт",
+        "Айнтрахт (Франкфурт-на-Майне)",
+        "Айнтрахт (футбольный клуб, Франкфурт-на-Майне)",
+        "Айнтрахт Франкфурт",
+        "ФК Айнтрахт Франкфурт"
       ],
       "flag": "Германии",
       "country_qid": "Q183",
-      "kind": "club"
+      "kind": "club",
+      "league_tier": 1,
+      "season": 2026,
+      "sitelinks": {
+        "ru": "Айнтрахт (футбольный клуб, Франкфурт-на-Майне)",
+        "de": "Eintracht Frankfurt",
+        "en": "Eintracht Frankfurt"
+      },
+      "verified_at": "2026-10-09"
     },
     {
-      "name": "Хайденхайм",
-      "title": "Хайденхайм (футбольный клуб)",
-      "qid": "Q162251",
+      "name": "Фрайбург",
+      "display_name": "Фрайбург",
+      "title": "Фрайбург (футбольный клуб)",
+      "qid": "Q106394",
       "aliases": [
-        "Хайденхайм (футбольный клуб)",
-        "1. FC Heidenheim",
-        "Хайденхайм"
+        "Die Breisgau-Brasilianer",
+        "S.C. Freiburg",
+        "SC Freiburg",
+        "Sport Club Freiburg",
+        "Sport-Club Freiburg e. V.",
+        "Sport-Club Freiburg e.V.",
+        "Sportclub Freiburg",
+        "The Breisgau Brazilians",
+        "VfL Freiburg",
+        "ФК Фрайбург",
+        "Фрайбург",
+        "Фрайбург (футбольный клуб)"
       ],
       "flag": "Германии",
       "country_qid": "Q183",
-      "kind": "club"
-    },
-    {
-      "name": "Хоффенхайм",
-      "title": "Хоффенхайм (футбольный клуб)",
-      "qid": "Q22707",
-      "aliases": [
-        "Хоффенхайм (футбольный клуб)",
-        "TSG Hoffenheim",
-        "Хоффенхайм"
-      ],
-      "flag": "Германии",
-      "country_qid": "Q183",
-      "kind": "club"
-    },
-    {
-      "name": "Майнц",
-      "title": "Майнц 05",
-      "qid": "Q105254",
-      "aliases": [
-        "Майнц 05",
-        "Mainz 05",
-        "Майнц"
-      ],
-      "flag": "Германии",
-      "country_qid": "Q183",
-      "kind": "club"
-    },
-    {
-      "name": "RB Leipzig",
-      "title": "РБ Лейпциг",
-      "qid": "Q702455",
-      "aliases": [
-        "РБ Лейпциг",
-        "RB Leipzig"
-      ],
-      "flag": "Германии",
-      "country_qid": "Q183",
-      "kind": "club"
-    },
-    {
-      "name": "Штутгарт",
-      "title": "Штутгарт (футбольный клуб)",
-      "qid": "Q4512",
-      "aliases": [
-        "Штутгарт (футбольный клуб)",
-        "VfB Stuttgart",
-        "Штутгарт"
-      ],
-      "flag": "Германии",
-      "country_qid": "Q183",
-      "kind": "club"
-    },
-    {
-      "name": "Вердер",
-      "title": "Вердер (футбольный клуб)",
-      "qid": "Q51976",
-      "aliases": [
-        "Вердер (футбольный клуб)",
-        "Werder Bremen",
-        "Вердер"
-      ],
-      "flag": "Германии",
-      "country_qid": "Q183",
-      "kind": "club"
-    },
-    {
-      "name": "Вольфсбург",
-      "title": "Вольфсбург (футбольный клуб)",
-      "qid": "Q101859",
-      "aliases": [
-        "Вольфсбург (футбольный клуб)",
-        "VfL Wolfsburg",
-        "Вольфсбург"
-      ],
-      "flag": "Германии",
-      "country_qid": "Q183",
-      "kind": "club"
-    },
-    {
-      "name": "Унион Берлин",
-      "title": "Унион (футбольный клуб, Берлин)",
-      "qid": "Q141971",
-      "aliases": [
-        "Унион (футбольный клуб, Берлин)",
-        "Union Berlin",
-        "Унион Берлин"
-      ],
-      "flag": "Германии",
-      "country_qid": "Q183",
-      "kind": "club"
+      "kind": "club",
+      "league_tier": 1,
+      "season": 2026,
+      "sitelinks": {
+        "ru": "Фрайбург (футбольный клуб)",
+        "de": "SC Freiburg",
+        "en": "SC Freiburg"
+      },
+      "verified_at": "2026-10-09"
     },
     {
       "name": "Гамбург",
+      "display_name": "Гамбург",
       "title": "Гамбург (футбольный клуб)",
       "qid": "Q51974",
       "aliases": [
-        "Гамбург (футбольный клуб)",
+        "H.S.V.",
+        "HSV",
+        "HSV Hamburg",
+        "Hamburg",
+        "Hamburg SV",
+        "Hamburg Sport Club",
+        "Hamburger",
+        "Hamburger S.V.",
         "Hamburger SV",
-        "Гамбург"
+        "Hamburger Sport-Verein",
+        "Hamburger Sport-Verein e. V.",
+        "HamburgerSV",
+        "Гамбург",
+        "Гамбург (футбольный клуб)"
       ],
       "flag": "Германии",
       "country_qid": "Q183",
-      "kind": "club"
+      "kind": "club",
+      "league_tier": 1,
+      "season": 2026,
+      "sitelinks": {
+        "ru": "Гамбург (футбольный клуб)",
+        "de": "Hamburger SV",
+        "en": "Hamburger SV"
+      },
+      "verified_at": "2026-10-09"
     },
     {
-      "name": "Санкт-Паули",
-      "title": "Санкт-Паули (футбольный клуб)",
-      "qid": "Q6463",
+      "name": "Хоффенхайм",
+      "display_name": "Хоффенхайм",
+      "title": "Хоффенхайм (футбольный клуб)",
+      "qid": "Q22707",
       "aliases": [
-        "Санкт-Паули (футбольный клуб)",
-        "FC St. Pauli",
-        "Санкт-Паули"
+        "1899 Hoffenheim",
+        "1899 Hoffenheim II",
+        "Die Kraichgauer",
+        "Hoffenheim",
+        "TSG 1899 Hoffenheim",
+        "TSG Hoffenheim",
+        "TSG Hoffenheim II",
+        "Turn- und Sportgemeinschaft 1899 Hoffenheim e.V.",
+        "Turn- und Sportgemeinschaft Hoffenheim 1899",
+        "Turn- und Sportgemeinschaft Hoffenheim 1899 e. V.",
+        "ФК Хоффенхайм",
+        "Хоффенхайм",
+        "Хоффенхайм (футбольный клуб)"
       ],
       "flag": "Германии",
       "country_qid": "Q183",
-      "kind": "club"
+      "kind": "club",
+      "league_tier": 1,
+      "season": 2026,
+      "sitelinks": {
+        "ru": "Хоффенхайм (футбольный клуб)",
+        "de": "TSG 1899 Hoffenheim",
+        "en": "TSG 1899 Hoffenheim"
+      },
+      "verified_at": "2026-10-09"
     },
     {
       "name": "Кёльн",
+      "display_name": "Кёльн",
       "title": "Кёльн (футбольный клуб)",
       "qid": "Q104770",
       "aliases": [
-        "Кёльн (футбольный клуб)",
+        "1. FC Cologne",
         "1. FC Köln",
+        "1. Fußball-Club Köln 01/07",
+        "1. Fußball-Club Köln 01/07 e. V.",
+        "1. Fußball-Club Köln 01/07 e. V.",
+        "Effzeh",
+        "F.C. Koln",
+        "F.C. Köln",
         "FC Cologne",
-        "Кёльн"
+        "FC Koln",
+        "FC Köln",
+        "FCKoln",
+        "Kölner BC 01",
+        "SpVgg Sülz",
+        "Кёльн",
+        "Кёльн (футбольный клуб)",
+        "ФК Кёльн"
       ],
       "flag": "Германии",
       "country_qid": "Q183",
-      "kind": "club"
+      "kind": "club",
+      "league_tier": 1,
+      "season": 2026,
+      "sitelinks": {
+        "ru": "Кёльн (футбольный клуб)",
+        "de": "1. FC Köln",
+        "en": "1. FC Köln"
+      },
+      "verified_at": "2026-10-09"
     },
     {
-      "name": "Бохум",
-      "title": "Бохум (футбольный клуб)",
-      "qid": "Q105861",
+      "name": "RB Leipzig",
+      "display_name": "РБ Лейпциг",
+      "title": "РБ Лейпциг",
+      "qid": "Q702455",
       "aliases": [
-        "Бохум (футбольный клуб)",
-        "VfL Bochum",
-        "Бохум"
+        "Die Roten Bullen",
+        "RB Leipzig",
+        "RasenBallsport Leipzig",
+        "RasenBallsport Leipzig e. V.",
+        "RasenBallsport Leipzig e.V.",
+        "Rasenball Leipzig",
+        "The Red Bulls",
+        "РБ Лейпциг",
+        "Ред Булл"
       ],
       "flag": "Германии",
       "country_qid": "Q183",
-      "kind": "club"
+      "kind": "club",
+      "league_tier": 1,
+      "season": 2026,
+      "sitelinks": {
+        "ru": "РБ Лейпциг",
+        "de": "RB Leipzig",
+        "en": "RB Leipzig"
+      },
+      "verified_at": "2026-10-09"
+    },
+    {
+      "name": "Байер",
+      "display_name": "Байер 04",
+      "title": "Байер 04",
+      "qid": "Q104761",
+      "aliases": [
+        "Bayer",
+        "Bayer 04",
+        "Bayer 04 Football",
+        "Bayer 04 Leverkusen",
+        "Bayer 04 Leverkusen Fußball GmbH",
+        "Bayer 04 Leverkusen Fußball GmbH Soccer",
+        "Bayer Leverkusen",
+        "Die Werkself",
+        "Leverkusen",
+        "The Company XI",
+        "Байер",
+        "Байер 04",
+        "Байер Леверкузен",
+        "Байер-04",
+        "Байер-04 Леверкузен"
+      ],
+      "flag": "Германии",
+      "country_qid": "Q183",
+      "kind": "club",
+      "league_tier": 1,
+      "season": 2026,
+      "sitelinks": {
+        "ru": "Байер 04",
+        "de": "Bayer 04 Leverkusen",
+        "en": "Bayer 04 Leverkusen"
+      },
+      "verified_at": "2026-10-09"
+    },
+    {
+      "name": "Майнц",
+      "display_name": "Майнц 05",
+      "title": "Майнц 05",
+      "qid": "Q105254",
+      "aliases": [
+        "1. FSV Mainz 05",
+        "1. Fußball- und Sportverein Mainz 05 e. V.",
+        "1.Fußball und Sportverein Mainz 05",
+        "Die Nullfünfer",
+        "FSV Mainz",
+        "FSV Mainz 05",
+        "Mainz",
+        "Mainz 05",
+        "Mainzer FSV",
+        "The Zero-Fivers",
+        "Майнц",
+        "Майнц 05",
+        "ФК Майнц"
+      ],
+      "flag": "Германии",
+      "country_qid": "Q183",
+      "kind": "club",
+      "league_tier": 1,
+      "season": 2026,
+      "sitelinks": {
+        "ru": "Майнц 05",
+        "de": "1. FSV Mainz 05",
+        "en": "1. FSV Mainz 05"
+      },
+      "verified_at": "2026-10-09"
+    },
+    {
+      "name": "Боруссия Мёнхенгладбах",
+      "display_name": "Боруссия (Мёнхенгладбах)",
+      "title": "Боруссия (футбольный клуб, Мёнхенгладбах)",
+      "qid": "Q101959",
+      "aliases": [
+        "Bor. Mönchengladbach",
+        "Borussia M'Gladbach",
+        "Borussia Monchengladbach",
+        "Borussia Mönchengladbach",
+        "Borussia Verein für Leibesübungen 1900 Mönchengladbach",
+        "Borussia VfL 1900",
+        "Fohlen-Elf",
+        "Fohlenelf",
+        "VfTuR München-Gladbach",
+        "Боруссия",
+        "Боруссия (Мёнхенгладбах)",
+        "Боруссия (футбольный клуб, Мёнхенгладбах)",
+        "Боруссия Менхенгладбах",
+        "Боруссия Мёнхенгладбах"
+      ],
+      "flag": "Германии",
+      "country_qid": "Q183",
+      "kind": "club",
+      "league_tier": 1,
+      "season": 2026,
+      "sitelinks": {
+        "ru": "Боруссия (футбольный клуб, Мёнхенгладбах)",
+        "de": "Borussia Mönchengladbach",
+        "en": "Borussia Mönchengladbach"
+      },
+      "verified_at": "2026-10-09"
+    },
+    {
+      "name": "Бавария",
+      "display_name": "Бавария",
+      "title": "Бавария (футбольный клуб)",
+      "qid": "Q15789",
+      "aliases": [
+        "Bavaria Munich",
+        "Bayern",
+        "Bayern Muenchen",
+        "Bayern Munchen",
+        "Bayern Munich",
+        "Bayern München",
+        "Bayern of Munich",
+        "Die Bayernf",
+        "F.C. Bayern Munich",
+        "FC Bavaria Munich",
+        "FC Bayern",
+        "FC Bayern Muenchen",
+        "FC Bayern Munchen",
+        "FC Bayern Munich",
+        "FC Bayern München",
+        "FC Hollywood",
+        "FCB",
+        "FCB Munich",
+        "FCBM",
+        "FCBM 1900",
+        "Fußball-Club Bayern München e. V.",
+        "Munich",
+        "Бавария",
+        "Бавария (футбольный клуб)",
+        "ФК Бавария Мюнхен"
+      ],
+      "flag": "Германии",
+      "country_qid": "Q183",
+      "kind": "club",
+      "league_tier": 1,
+      "season": 2026,
+      "sitelinks": {
+        "ru": "Бавария (футбольный клуб)",
+        "de": "FC Bayern München",
+        "en": "FC Bayern Munich"
+      },
+      "verified_at": "2026-10-09"
+    },
+    {
+      "name": "Падерборн 07",
+      "display_name": "Падерборн 07",
+      "title": "Падерборн 07",
+      "qid": "Q160532",
+      "aliases": [
+        "Die Ostwestfalen",
+        "Paderborn 07",
+        "SC Paderborn",
+        "SC Paderborn 07",
+        "SCP 07",
+        "SV 1907 Schloss Neuhaus",
+        "Sport-Club Paderborn 07 e.V.",
+        "TuS Schloss Neuhaus",
+        "Падерборн 07",
+        "ФК Падерборн 07"
+      ],
+      "flag": "Германии",
+      "country_qid": "Q183",
+      "kind": "club",
+      "league_tier": 1,
+      "season": 2026,
+      "sitelinks": {
+        "ru": "Падерборн 07",
+        "de": "SC Paderborn 07",
+        "en": "SC Paderborn 07"
+      },
+      "verified_at": "2026-10-09"
     },
     {
       "name": "Schalke 04",
+      "display_name": "Шальке 04",
       "title": "Шальке 04",
       "qid": "Q32494",
       "aliases": [
-        "Шальке 04",
-        "Schalke 04"
+        "F.C. Schalke 04",
+        "FC Gelsenkirchen-Schalke 04",
+        "FC Gelsenkirchen-Schalke 04 e. V.",
+        "FC Schalke 04",
+        "Königsblau",
+        "S04",
+        "Schalke",
+        "Schalke 0",
+        "Schalke 04",
+        "Schalke04",
+        "Шальке 04"
       ],
       "flag": "Германии",
       "country_qid": "Q183",
+      "kind": "club",
+      "league_tier": 1,
+      "season": 2026,
+      "sitelinks": {
+        "ru": "Шальке 04",
+        "de": "FC Schalke 04",
+        "en": "FC Schalke 04"
+      },
+      "verified_at": "2026-10-09"
+    },
+    {
+      "name": "Штутгарт",
+      "display_name": "Штутгарт",
+      "title": "Штутгарт (футбольный клуб)",
+      "qid": "Q4512",
+      "aliases": [
+        "Die Schwaben",
+        "The Swabians",
+        "Verein für Bewegungsspiele Stuttgart 1893 e. V.",
+        "VfB",
+        "VfB Stuttgart",
+        "ФК Штутгарт",
+        "ФК Штуттгарт",
+        "Штутгарт",
+        "Штутгарт (футбольный клуб)",
+        "Штуттгарт"
+      ],
+      "flag": "Германии",
+      "country_qid": "Q183",
+      "kind": "club",
+      "league_tier": 1,
+      "season": 2026,
+      "sitelinks": {
+        "ru": "Штутгарт (футбольный клуб)",
+        "de": "VfB Stuttgart",
+        "en": "VfB Stuttgart"
+      },
+      "verified_at": "2026-10-09"
+    },
+    {
+      "name": "Арминия Билефельд",
+      "display_name": "Арминия (Билефельд)",
+      "title": "Арминия (футбольный клуб, Билефельд)",
+      "qid": "Q105844",
+      "aliases": [
+        "1. Bielefelder FC Arminia",
+        "Arminia Bielefeld",
+        "DSC Arminia Bielefeld",
+        "Deutscher Sportclub Arminia Bielefeld",
+        "Арминия",
+        "Арминия (Билефельд)",
+        "Арминия (футбольный клуб, Билефельд)",
+        "Арминия Билефельд"
+      ],
+      "flag": "Германии",
+      "country_qid": "Q183",
+      "kind": "club",
+      "league_tier": 2,
+      "season": 2026,
+      "sitelinks": {
+        "ru": "Арминия (футбольный клуб, Билефельд)",
+        "de": "Arminia Bielefeld",
+        "en": "Arminia Bielefeld"
+      },
+      "verified_at": "2026-10-09"
+    },
+    {
+      "name": "Бохум",
+      "display_name": "Бохум",
+      "title": "Бохум (футбольный клуб)",
+      "qid": "Q105861",
+      "aliases": [
+        "Die Unabsteigbaren",
+        "KSG Bochum",
+        "The Unrelegatables",
+        "Verein für Leibesübungen Bochum",
+        "Verein für Leibesübungen Bochum 1848",
+        "Verein für Leibesübungen Bochum 1848 – Fußballgemeinschaft",
+        "VfL Bochum",
+        "VfL Bochum 1848",
+        "VfL Bochum 1848 FG",
+        "VfL Bochum FG",
+        "Бохум",
+        "Бохум (футбольный клуб)",
+        "Бохум II",
+        "ФК Бохум"
+      ],
+      "flag": "Германии",
+      "country_qid": "Q183",
+      "kind": "club",
+      "league_tier": 2,
+      "season": 2026,
+      "sitelinks": {
+        "ru": "Бохум (футбольный клуб)",
+        "de": "VfL Bochum",
+        "en": "VfL Bochum"
+      },
+      "verified_at": "2026-10-09"
+    },
+    {
+      "name": "Айнтрахт Брауншвейг",
+      "display_name": "Айнтрахт (Брауншвейг)",
+      "title": "Айнтрахт (футбольный клуб, Брауншвейг)",
+      "qid": "Q154053",
+      "aliases": [
+        "BTSV Eintracht",
+        "Braunschweiger Turn- und Sportverein Eintracht von 1895",
+        "Eintracht Braunschweig",
+        "TSV Braunschweig",
+        "Айнтрахт",
+        "Айнтрахт (Брауншвейг)",
+        "Айнтрахт (футбольный клуб, Брауншвейг)",
+        "Айнтрахт Брауншвайг",
+        "Айнтрахт Брауншвейг"
+      ],
+      "flag": "Германии",
+      "country_qid": "Q183",
+      "kind": "club",
+      "league_tier": 2,
+      "season": 2026,
+      "sitelinks": {
+        "ru": "Айнтрахт (футбольный клуб, Брауншвейг)",
+        "de": "Eintracht Braunschweig",
+        "en": "Eintracht Braunschweig"
+      },
+      "verified_at": "2026-10-09"
+    },
+    {
+      "name": "Энерги",
+      "display_name": "Энерги",
+      "title": "Энерги",
+      "qid": "Q107818",
+      "aliases": [
+        "BSG Energie Cottbus",
+        "Energie Cottbus",
+        "FC Energie",
+        "FC Energie Cottbus",
+        "ФК Энергие Коттбус",
+        "ФК Энергия Котбус",
+        "ФК Энергия Коттбус",
+        "Энерги",
+        "Энерги Котбус"
+      ],
+      "flag": "Германии",
+      "country_qid": "Q183",
+      "kind": "club",
+      "league_tier": 2,
+      "season": 2026,
+      "sitelinks": {
+        "ru": "Энерги",
+        "de": "Energie Cottbus",
+        "en": "FC Energie Cottbus"
+      },
+      "verified_at": "2026-10-09"
+    },
+    {
+      "name": "Дармштадт 98",
+      "display_name": "Дармштадт 98",
+      "title": "Дармштадт 98",
+      "qid": "Q479351",
+      "aliases": [
+        "Darmstadt 98",
+        "FC Olympia Darmstadt",
+        "S.V. Darmstadt 98",
+        "SV 98",
+        "SV Darmstadt",
+        "SV Darmstadt 98",
+        "SV98",
+        "Дармштадт",
+        "Дармштадт 98"
+      ],
+      "flag": "Германии",
+      "country_qid": "Q183",
+      "kind": "club",
+      "league_tier": 2,
+      "season": 2026,
+      "sitelinks": {
+        "ru": "Дармштадт 98",
+        "de": "SV Darmstadt 98",
+        "en": "SV Darmstadt 98"
+      },
+      "verified_at": "2026-10-09"
+    },
+    {
+      "name": "Динамо Дрезден",
+      "display_name": "Динамо (Дрезден)",
+      "title": "Динамо (футбольный клуб, Дрезден)",
+      "qid": "Q141931",
+      "aliases": [
+        "1. FC Dynamo Dresden",
+        "Dynamo Dresden",
+        "SG Dynamo Dresden",
+        "Sportgemeinschaft Dynamo Dresden",
+        "Sportgemeinschaft Dynamo Dresden e. V.",
+        "Динамо",
+        "Динамо (Дрезден)",
+        "Динамо (футбольный клуб, Дрезден)",
+        "Динамо Дрезден",
+        "ФК Динамо (Дрезден)",
+        "ФК Динамо Дрезден"
+      ],
+      "flag": "Германии",
+      "country_qid": "Q183",
+      "kind": "club",
+      "league_tier": 2,
+      "season": 2026,
+      "sitelinks": {
+        "ru": "Динамо (футбольный клуб, Дрезден)",
+        "de": "Dynamo Dresden",
+        "en": "Dynamo Dresden"
+      },
+      "verified_at": "2026-10-09"
+    },
+    {
+      "name": "Гройтер Фюрт",
+      "display_name": "Гройтер Фюрт",
+      "title": "Гройтер Фюрт",
+      "qid": "Q153539",
+      "aliases": [
+        "Greuther",
+        "Greuther Furth",
+        "Greuther Fürth",
+        "SGF",
+        "SpVgg Fürth",
+        "SpVgg Greuther Fürth",
+        "SpVgg. Fürth",
+        "SpVgg. Greuther Fürth",
+        "Spielvereinigung Fürth",
+        "Spielvereinigung Greuther Fürth",
+        "TSV Fürth",
+        "Tuspo Fürth",
+        "Гройтер",
+        "Гройтер Фюрт"
+      ],
+      "flag": "Германии",
+      "country_qid": "Q183",
+      "kind": "club",
+      "league_tier": 2,
+      "season": 2026,
+      "sitelinks": {
+        "ru": "Гройтер Фюрт",
+        "de": "SpVgg Greuther Fürth",
+        "en": "SpVgg Greuther Fürth"
+      },
+      "verified_at": "2026-10-09"
+    },
+    {
+      "name": "Ганновер 96",
+      "display_name": "Ганновер 96",
+      "title": "Ганновер 96",
+      "qid": "Q33748",
+      "aliases": [
+        "H96",
+        "HSV",
+        "Hannover 96",
+        "Hannoveraner",
+        "Hannoverscher Sport-Verein von 1896 e.V.",
+        "Hannoverscher Sportverein",
+        "Hannoverscher Sportverein von 1896",
+        "Ганновер 96"
+      ],
+      "flag": "Германии",
+      "country_qid": "Q183",
+      "kind": "club",
+      "league_tier": 2,
+      "season": 2026,
+      "sitelinks": {
+        "ru": "Ганновер 96",
+        "de": "Hannover 96",
+        "en": "Hannover 96"
+      },
+      "verified_at": "2026-10-09"
+    },
+    {
+      "name": "Хайденхайм",
+      "display_name": "Хайденхайм",
+      "title": "Хайденхайм (футбольный клуб)",
+      "qid": "Q162251",
+      "aliases": [
+        "1. FC Heidenheim",
+        "1. Fussballclub Heidenheim 1846",
+        "1. Fussballclub Heidenheim 1846 e. V.",
+        "FCH",
+        "Heidenheim",
+        "Хайденхайм",
+        "Хайденхайм (футбольный клуб)"
+      ],
+      "flag": "Германии",
+      "country_qid": "Q183",
+      "kind": "club",
+      "league_tier": 2,
+      "season": 2026,
+      "sitelinks": {
+        "ru": "Хайденхайм (футбольный клуб)",
+        "de": "1. FC Heidenheim",
+        "en": "1. FC Heidenheim"
+      },
+      "verified_at": "2026-10-09"
+    },
+    {
+      "name": "Герта Берлин",
+      "display_name": "Герта (Берлин)",
+      "title": "Герта (футбольный клуб, Берлин)",
+      "qid": "Q102720",
+      "aliases": [
+        "Alte Dame",
+        "Berliner FC Hertha 1892",
+        "Hertha",
+        "Hertha BSC",
+        "Hertha BSC Berlin",
+        "Hertha BSC e. V.",
+        "Hertha Berlin",
+        "Hertha Berliner Sport-Club",
+        "Hertha Berliner Sport-Club e. V.",
+        "Hertha, Berliner Sport-Club e. V",
+        "SG Gesundbrunnen Berlin",
+        "Герта",
+        "Герта (Берлин)",
+        "Герта (футбольный клуб, Берлин)",
+        "Герта Берлин",
+        "ФК Герта"
+      ],
+      "flag": "Германии",
+      "country_qid": "Q183",
+      "kind": "club",
+      "league_tier": 2,
+      "season": 2026,
+      "sitelinks": {
+        "ru": "Герта (футбольный клуб, Берлин)",
+        "de": "Hertha BSC",
+        "en": "Hertha BSC"
+      },
+      "verified_at": "2026-10-09"
+    },
+    {
+      "name": "Кайзерслаутерн",
+      "display_name": "Кайзерслаутерн",
+      "title": "Кайзерслаутерн (футбольный клуб)",
+      "qid": "Q8466",
+      "aliases": [
+        "1. FC Kaiserslautern",
+        "1. FCK",
+        "1. Fußball-Club Kaiserslautern e. V.",
+        "Die roten Teufel",
+        "FCK",
+        "Kaiserslautern",
+        "Кайзерслаутерн",
+        "Кайзерслаутерн (футбольный клуб)"
+      ],
+      "flag": "Германии",
+      "country_qid": "Q183",
+      "kind": "club",
+      "league_tier": 2,
+      "season": 2026,
+      "sitelinks": {
+        "ru": "Кайзерслаутерн (футбольный клуб)",
+        "de": "1. FC Kaiserslautern",
+        "en": "1. FC Kaiserslautern"
+      },
+      "verified_at": "2026-10-09"
+    },
+    {
+      "name": "Карлсруэ",
+      "display_name": "Карлсруэ",
+      "title": "Карлсруэ (футбольный клуб)",
+      "qid": "Q105853",
+      "aliases": [
+        "KSC",
+        "Karlsruher SC",
+        "Karlsruher Sport-Club",
+        "Karlsruher Sport-Club Mühlburg-Phönix e. V.",
+        "Карлсруэ",
+        "Карлсруэ (футбольный клуб)",
+        "ФК Карлсруэ",
+        "Феникс"
+      ],
+      "flag": "Германии",
+      "country_qid": "Q183",
+      "kind": "club",
+      "league_tier": 2,
+      "season": 2026,
+      "sitelinks": {
+        "ru": "Карлсруэ (футбольный клуб)",
+        "de": "Karlsruher SC",
+        "en": "Karlsruher SC"
+      },
+      "verified_at": "2026-10-09"
+    },
+    {
+      "name": "Хольштайн",
+      "display_name": "Хольштайн",
+      "title": "Хольштайн (футбольный клуб)",
+      "qid": "Q157828",
+      "aliases": [
+        "Die Störche",
+        "Holstein Kiel",
+        "KSV Holstein",
+        "Kieler Sportvereinigung Holstein",
+        "Kieler Sportvereinigung Holstein von 1900",
+        "Kieler Sportvereinigung Holstein von 1900 e. V.",
+        "The Storks",
+        "Хольштайн",
+        "Хольштайн (футбольный клуб)",
+        "Хольштайн Киль"
+      ],
+      "flag": "Германии",
+      "country_qid": "Q183",
+      "kind": "club",
+      "league_tier": 2,
+      "season": 2026,
+      "sitelinks": {
+        "ru": "Хольштайн (футбольный клуб)",
+        "de": "Holstein Kiel",
+        "en": "Holstein Kiel"
+      },
+      "verified_at": "2026-10-09"
+    },
+    {
+      "name": "Магдебург",
+      "display_name": "Магдебург",
+      "title": "Магдебург (футбольный клуб)",
+      "qid": "Q155730",
+      "aliases": [
+        "1. FC Magdeburg",
+        "1. FC Magdeburg e. V.",
+        "1. FCM",
+        "Der Club",
+        "Die Blau-Weißen",
+        "Eintracht Sudenburg",
+        "F.C. Magdeburg",
+        "FC Magdeburg",
+        "Motor-Mitte Magdeburg",
+        "Stahl Magdeburg",
+        "Магдебург",
+        "Магдебург (футбольный клуб)",
+        "ФК Магдебург"
+      ],
+      "flag": "Германии",
+      "country_qid": "Q183",
+      "kind": "club",
+      "league_tier": 2,
+      "season": 2026,
+      "sitelinks": {
+        "ru": "Магдебург (футбольный клуб)",
+        "de": "1. FC Magdeburg",
+        "en": "1. FC Magdeburg"
+      },
+      "verified_at": "2026-10-09"
+    },
+    {
+      "name": "Нюрнберг",
+      "display_name": "Нюрнберг",
+      "title": "Нюрнберг (футбольный клуб)",
+      "qid": "Q15786",
+      "aliases": [
+        "1. FC Nurnberg",
+        "1. FC Nürnberg",
+        "1. FCN",
+        "1. Fußball-Club Nürnberg, Verein für Leibesübungen e. V.",
+        "Der Club",
+        "FCN",
+        "Нюрнберг",
+        "Нюрнберг (футбольный клуб)"
+      ],
+      "flag": "Германии",
+      "country_qid": "Q183",
+      "kind": "club",
+      "league_tier": 2,
+      "season": 2026,
+      "sitelinks": {
+        "ru": "Нюрнберг (футбольный клуб)",
+        "de": "1. FC Nürnberg",
+        "en": "1. FC Nürnberg"
+      },
+      "verified_at": "2026-10-09"
+    },
+    {
+      "name": "Оснабрюк",
+      "display_name": "Оснабрюк",
+      "title": "Оснабрюк (футбольный клуб)",
+      "qid": "Q160530",
+      "aliases": [
+        "Verein für Leibesübungen von 1899 e. V. Osnabrück",
+        "VfL Osnabrück",
+        "Оснабрюк",
+        "Оснабрюк (футбольный клуб)"
+      ],
+      "flag": "Германии",
+      "country_qid": "Q183",
+      "kind": "club",
+      "league_tier": 2,
+      "season": 2026,
+      "sitelinks": {
+        "ru": "Оснабрюк (футбольный клуб)",
+        "de": "VfL Osnabrück",
+        "en": "VfL Osnabrück"
+      },
+      "verified_at": "2026-10-09"
+    },
+    {
+      "name": "Санкт-Паули",
+      "display_name": "Санкт-Паули",
+      "title": "Санкт-Паули (футбольный клуб)",
+      "qid": "Q6463",
+      "aliases": [
+        "Die Kiezkicker",
+        "FC St. Pauli",
+        "FCSP",
+        "Football Club St. Pauli",
+        "Fußball-Club St. Pauli von 1910",
+        "Fußball-Club St. Pauli von 1910 e. V.",
+        "St. Pauli",
+        "Санкт-Паули",
+        "Санкт-Паули (футбольный клуб)"
+      ],
+      "flag": "Германии",
+      "country_qid": "Q183",
+      "kind": "club",
+      "league_tier": 2,
+      "season": 2026,
+      "sitelinks": {
+        "ru": "Санкт-Паули (футбольный клуб)",
+        "de": "FC St. Pauli",
+        "en": "FC St. Pauli"
+      },
+      "verified_at": "2026-10-09"
+    },
+    {
+      "name": "Вольфсбург",
+      "display_name": "Вольфсбург",
+      "title": "Вольфсбург (футбольный клуб)",
+      "qid": "Q101859",
+      "aliases": [
+        "Die Wölfe",
+        "Eintracht Wolfsburg",
+        "The Wolves",
+        "Verein für Leibesübungen Wolfsburg",
+        "VfL Wolfsburg",
+        "Wolfsburg",
+        "Вольсбург",
+        "Вольфсбург",
+        "Вольфсбург (футбольный клуб)",
+        "Вфл вольфсбург",
+        "ФК Вольфсбург"
+      ],
+      "flag": "Германии",
+      "country_qid": "Q183",
+      "kind": "club",
+      "league_tier": 2,
+      "season": 2026,
+      "sitelinks": {
+        "ru": "Вольфсбург (футбольный клуб)",
+        "de": "VfL Wolfsburg",
+        "en": "VfL Wolfsburg"
+      },
+      "verified_at": "2026-10-09"
+    },
+    {
+      "name": "Фортуна Дюссельдорф",
+      "display_name": "Фортуна (Дюссельдорф)",
+      "title": "Фортуна (футбольный клуб, Дюссельдорф)",
+      "qid": "Q151747",
+      "aliases": [
+        "Die Fortuna",
+        "Düsseldorfer Turn- und Sportverein Fortuna 1895 e. V.",
+        "F95",
+        "Fortuna",
+        "Fortuna 95",
+        "Fortuna Dusseldorf",
+        "Fortuna Düsseldorf",
+        "Fortuna Düsseldorf 1895",
+        "TSV Fortuna Düsseldorf",
+        "Фортуна (Дюссельдорф)",
+        "Фортуна (футбольный клуб, Дюссельдорф)",
+        "Фортуна Дюссельдорф"
+      ],
+      "flag": "Германии",
+      "country_qid": "Q183",
+      "kind": "club",
+      "league_tier": 3,
+      "season": 2026,
+      "sitelinks": {
+        "ru": "Фортуна (футбольный клуб, Дюссельдорф)",
+        "de": "Fortuna Düsseldorf",
+        "en": "Fortuna Düsseldorf"
+      },
+      "verified_at": "2026-10-09"
+    },
+    {
+      "name": "Пройссен Мюнстер",
+      "display_name": "Пройссен (Мюнстер)",
+      "title": "Пройссен (футбольный клуб, Мюнстер)",
+      "qid": "Q316865",
+      "aliases": [
+        "Die Adler",
+        "Preussen Munster",
+        "Preussen Münster",
+        "Preußen Münster",
+        "SC Preussen Munster",
+        "SC Preussen Münster",
+        "SC Preußen Münster",
+        "Пройзен Мюнстер",
+        "Пройссен",
+        "Пройссен (Мюнстер)",
+        "Пройссен (футбольный клуб, Мюнстер)",
+        "Пройссен Мюнстер"
+      ],
+      "flag": "Германии",
+      "country_qid": "Q183",
+      "kind": "club",
+      "league_tier": 3,
+      "season": 2026,
+      "sitelinks": {
+        "ru": "Пройссен (футбольный клуб, Мюнстер)",
+        "de": "Preußen Münster",
+        "en": "SC Preußen Münster"
+      },
+      "verified_at": "2026-10-09"
+    },
+    {
+      "name": "Рот-Вайсс Эссен",
+      "display_name": "Рот-Вайсс (Эссен)",
+      "title": "Рот-Вайсс (футбольный клуб, Эссен)",
+      "qid": "Q155218",
+      "aliases": [
+        "RW Essen",
+        "Rot-Weiss Essen",
+        "Rot-Weiß Essen",
+        "Rot-Weiß Essen e.V.",
+        "SC Rot-Weiß Essen",
+        "Рот-Вайсс",
+        "Рот-Вайсс (Эссен)",
+        "Рот-Вайсс (футбольный клуб, Эссен)",
+        "Рот-Вайсс Эссен",
+        "Рот-Вейсс"
+      ],
+      "flag": "Германии",
+      "country_qid": "Q183",
+      "kind": "club",
+      "league_tier": 3,
+      "season": 2026,
+      "sitelinks": {
+        "ru": "Рот-Вайсс (футбольный клуб, Эссен)",
+        "de": "Rot-Weiss Essen",
+        "en": "Rot-Weiss Essen"
+      },
+      "verified_at": "2026-10-09"
+    },
+    {
+      "name": "Дуйсбург",
+      "display_name": "Дуйсбург",
+      "title": "Дуйсбург (футбольный клуб)",
+      "qid": "Q154293",
+      "aliases": [
+        "MSV Duisburg",
+        "Meidericher SV",
+        "Meidericher SV Duisburg",
+        "Meidericher Spielverein",
+        "Meidericher Spielverein 02",
+        "Meidericher Spielverein Duisburg 02 e.V",
+        "Дуйсбург",
+        "Дуйсбург (футбольный клуб)",
+        "ФК Дуйсбург"
+      ],
+      "flag": "Германии",
+      "country_qid": "Q183",
+      "kind": "club",
+      "league_tier": 3,
+      "season": 2026,
+      "sitelinks": {
+        "ru": "Дуйсбург (футбольный клуб)",
+        "de": "MSV Duisburg",
+        "en": "MSV Duisburg"
+      },
+      "verified_at": "2026-10-09"
+    },
+    {
+      "name": "Ганза",
+      "display_name": "Ганза",
+      "title": "Ганза (футбольный клуб)",
+      "qid": "Q142005",
+      "aliases": [
+        "F.C. Hansa Rostock",
+        "FC Hansa Rostock",
+        "Hansa Rostock",
+        "Ганза",
+        "Ганза (футбольный клуб)"
+      ],
+      "flag": "Германии",
+      "country_qid": "Q183",
+      "kind": "club",
+      "league_tier": 3,
+      "season": 2026,
+      "sitelinks": {
+        "ru": "Ганза (футбольный клуб)",
+        "de": "Hansa Rostock",
+        "en": "FC Hansa Rostock"
+      },
+      "verified_at": "2026-10-09"
+    },
+    {
+      "name": "Ферль",
+      "display_name": "Ферль",
+      "title": "Ферль (футбольный клуб)",
+      "qid": "Q666010",
+      "aliases": [
+        "SC Verl",
+        "Ферль",
+        "Ферль (футбольный клуб)"
+      ],
+      "flag": "Германии",
+      "country_qid": "Q183",
+      "kind": "club",
+      "league_tier": 3,
+      "season": 2026,
+      "sitelinks": {
+        "ru": "Ферль (футбольный клуб)",
+        "de": "SC Verl",
+        "en": "SC Verl"
+      },
+      "verified_at": "2026-10-09"
+    },
+    {
+      "name": "Алеманния Ахен",
+      "display_name": "Алеманния (Ахен)",
+      "title": "Алеманния (футбольный клуб, Ахен)",
+      "qid": "Q153535",
+      "aliases": [
+        "Aachener FC Alemannia",
+        "Aachener TSV Alemannia 1847",
+        "Alemannia Aachen",
+        "FC Alemannia Aachen",
+        "TSV Alemannia Aachen",
+        "Аахен",
+        "Алеманния",
+        "Алеманния (Ахен)",
+        "Алеманния (футбольный клуб, Ахен)",
+        "Алеманния Ахен",
+        "ФК Алеманния"
+      ],
+      "flag": "Германии",
+      "country_qid": "Q183",
+      "kind": "club",
+      "league_tier": 3,
+      "season": 2026,
+      "sitelinks": {
+        "ru": "Алеманния (футбольный клуб, Ахен)",
+        "de": "Alemannia Aachen",
+        "en": "Alemannia Aachen"
+      },
+      "verified_at": "2026-10-09"
+    },
+    {
+      "name": "Веен",
+      "display_name": "Веен",
+      "title": "Веен (футбольный клуб)",
+      "qid": "Q310621",
+      "aliases": [
+        "SV Wehen",
+        "SV Wehen 1926-Taunusstein e. V.",
+        "SV Wehen Wiesbaden",
+        "SV Wehen-Taunusstein",
+        "SVWW",
+        "Sportverein Wehen 1926-Taunusstein e. V.",
+        "Веен",
+        "Веен (футбольный клуб)",
+        "Веен Висбаден"
+      ],
+      "flag": "Германии",
+      "country_qid": "Q183",
+      "kind": "club",
+      "league_tier": 3,
+      "season": 2026,
+      "sitelinks": {
+        "ru": "Веен (футбольный клуб)",
+        "de": "SV Wehen Wiesbaden",
+        "en": "SV Wehen Wiesbaden"
+      },
+      "verified_at": "2026-10-09"
+    },
+    {
+      "name": "Вальдхоф",
+      "display_name": "Вальдхоф",
+      "title": "Вальдхоф (футбольный клуб)",
+      "qid": "Q170134",
+      "aliases": [
+        "S.V. Waldhof Mannheim",
+        "SV Waldhof",
+        "SV Waldhof Mannheim",
+        "SV Waldhof Mannheim 07",
+        "Sportverein Waldhof Mannheim e.V.",
+        "Waldhof Mannheim",
+        "Вальдхоф",
+        "Вальдхоф (футбольный клуб)"
+      ],
+      "flag": "Германии",
+      "country_qid": "Q183",
+      "kind": "club",
+      "league_tier": 3,
+      "season": 2026,
+      "sitelinks": {
+        "ru": "Вальдхоф (футбольный клуб)",
+        "de": "SV Waldhof Mannheim",
+        "en": "SV Waldhof Mannheim"
+      },
+      "verified_at": "2026-10-09"
+    },
+    {
+      "name": "Виктория Кёльн",
+      "display_name": "Виктория (Кёльн)",
+      "title": "Виктория (футбольный клуб, Кёльн)",
+      "qid": "Q695008",
+      "aliases": [
+        "FC Viktoria Köln",
+        "FC Viktoria Köln 04",
+        "FC Viktoria Köln 1904",
+        "Fußballclub Viktoria Köln",
+        "Fußballclub Viktoria Köln 1904 e.V.",
+        "Rapid Köln",
+        "SC Köln-Brück",
+        "SC Preußen Dellbrück",
+        "SC Preußen Köln",
+        "SC Viktoria 04 Köln",
+        "VfR Köln",
+        "Viktoria Köln",
+        "Виктория (Кёльн)",
+        "Виктория (футбольный клуб, Кёльн)",
+        "Виктория Кёльн"
+      ],
+      "flag": "Германии",
+      "country_qid": "Q183",
+      "kind": "club",
+      "league_tier": 3,
+      "season": 2026,
+      "sitelinks": {
+        "ru": "Виктория (футбольный клуб, Кёльн)",
+        "de": "Viktoria Köln",
+        "en": "FC Viktoria Köln"
+      },
+      "verified_at": "2026-10-09"
+    },
+    {
+      "name": "Ингольштадт 04",
+      "display_name": "Ингольштадт 04",
+      "title": "Ингольштадт 04",
+      "qid": "Q170117",
+      "aliases": [
+        "FC Ingolstadt",
+        "FC Ingolstadt 04",
+        "Fußball-Club Ingolstadt 04 e.V",
+        "Ингольштадт",
+        "Ингольштадт 04",
+        "Ингольштадт-04"
+      ],
+      "flag": "Германии",
+      "country_qid": "Q183",
+      "kind": "club",
+      "league_tier": 3,
+      "season": 2026,
+      "sitelinks": {
+        "ru": "Ингольштадт 04",
+        "de": "FC Ingolstadt 04",
+        "en": "FC Ingolstadt 04"
+      },
+      "verified_at": "2026-10-09"
+    },
+    {
+      "name": "Ян",
+      "display_name": "Ян",
+      "title": "Ян (футбольный клуб)",
+      "qid": "Q265570",
+      "aliases": [
+        "Jahn",
+        "Jahn Regensburg",
+        "SSV Jahn",
+        "SSV Jahn Regensburg",
+        "SSV Regensburg",
+        "Sport- und Schwimmverein Jahn 2000 Regensburg e.V.",
+        "Sport- und Schwimmverein Jahn Regensburg",
+        "Ян",
+        "Ян (футбольный клуб)",
+        "Ян Регенсбург (футбольный клуб)"
+      ],
+      "flag": "Германии",
+      "country_qid": "Q183",
+      "kind": "club",
+      "league_tier": 3,
+      "season": 2026,
+      "sitelinks": {
+        "ru": "Ян (футбольный клуб)",
+        "de": "SSV Jahn Regensburg",
+        "en": "SSV Jahn Regensburg"
+      },
+      "verified_at": "2026-10-09"
+    },
+    {
+      "name": "Штутгарт II",
+      "display_name": "Штутгарт II",
+      "title": "Штутгарт II",
+      "qid": "Q107421",
+      "aliases": [
+        "VfB II",
+        "VfB Stuttgart Amateure",
+        "VfB Stuttgart II",
+        "Штутгарт II"
+      ],
+      "flag": "Германии",
+      "country_qid": "Q183",
+      "kind": "club",
+      "league_tier": 3,
+      "season": 2026,
+      "sitelinks": {
+        "ru": "Штутгарт II",
+        "de": "VfB Stuttgart II",
+        "en": "VfB Stuttgart II"
+      },
+      "verified_at": "2026-10-09",
+      "team_variant": "reserve"
+    },
+    {
+      "name": "Саарбрюккен",
+      "display_name": "Саарбрюккен",
+      "title": "Саарбрюккен (футбольный клуб)",
+      "qid": "Q157463",
+      "aliases": [
+        "1. FC Saarbrücken",
+        "1.F.C. Saarbrücken",
+        "1.Fußball-Club Saarbrücken e.V.",
+        "FC Saarbrücken",
+        "FCS",
+        "FV Saarbrücken",
+        "VfR 09 Saarbrücken",
+        "Саарбрюкен",
+        "Саарбрюккен",
+        "Саарбрюккен (футбольный клуб)"
+      ],
+      "flag": "Германии",
+      "country_qid": "Q183",
+      "kind": "club",
+      "league_tier": 3,
+      "season": 2026,
+      "sitelinks": {
+        "ru": "Саарбрюккен (футбольный клуб)",
+        "de": "1. FC Saarbrücken",
+        "en": "1. FC Saarbrücken"
+      },
+      "verified_at": "2026-10-09"
+    },
+    {
+      "name": "Хоффенхайм II",
+      "display_name": "Хоффенхайм II",
+      "title": "Хоффенхайм II",
+      "qid": "Q16637410",
+      "aliases": [
+        "TSG 1899 Hoffenheim II",
+        "Хоффенхайм II"
+      ],
+      "flag": "Германии",
+      "country_qid": "Q183",
+      "kind": "club",
+      "league_tier": 3,
+      "season": 2026,
+      "sitelinks": {
+        "ru": "Хоффенхайм II",
+        "de": "TSG 1899 Hoffenheim II",
+        "en": "TSG 1899 Hoffenheim II"
+      },
+      "verified_at": "2026-10-09",
+      "team_variant": "reserve"
+    },
+    {
+      "name": "Хавелсе",
+      "display_name": "Хавелсе",
+      "title": "Хавелсе",
+      "qid": "Q537301",
+      "aliases": [
+        "TSV Havelse",
+        "Хавелсе"
+      ],
+      "flag": "Германии",
+      "country_qid": "Q183",
+      "kind": "club",
+      "league_tier": 3,
+      "season": 2026,
+      "sitelinks": {
+        "ru": "Хавелсе",
+        "de": "TSV Havelse",
+        "en": "TSV Havelse"
+      },
+      "verified_at": "2026-10-09"
+    },
+    {
+      "name": "Меппен",
+      "display_name": "Меппен",
+      "title": "Меппен (футбольный клуб)",
+      "qid": "Q819400",
+      "aliases": [
+        "SV Meppen",
+        "Меппен",
+        "Меппен (футбольный клуб)"
+      ],
+      "flag": "Германии",
+      "country_qid": "Q183",
+      "kind": "club",
+      "league_tier": 3,
+      "season": 2026,
+      "sitelinks": {
+        "ru": "Меппен (футбольный клуб)",
+        "de": "SV Meppen",
+        "en": "SV Meppen"
+      },
+      "verified_at": "2026-10-09"
+    },
+    {
+      "name": "Фортуна Кёльн",
+      "display_name": "Фортуна (Кёльн)",
+      "title": "Фортуна (футбольный клуб, Кёльн)",
+      "qid": "Q310608",
+      "aliases": [
+        "Fortuna Köln",
+        "SC Fortuna Köln",
+        "Sport Club Fortuna Köln e.V.",
+        "Sport-Club Fortuna Köln e. V.",
+        "Фортуна (Кёльн)",
+        "Фортуна (футбольный клуб, Кёльн)",
+        "Фортуна Кёльн"
+      ],
+      "flag": "Германии",
+      "country_qid": "Q183",
+      "kind": "club",
+      "league_tier": 3,
+      "season": 2026,
+      "sitelinks": {
+        "ru": "Фортуна (футбольный клуб, Кёльн)",
+        "de": "SC Fortuna Köln",
+        "en": "SC Fortuna Köln"
+      },
+      "verified_at": "2026-10-09"
+    },
+    {
+      "name": "Зонненхоф Гроссаспах",
+      "display_name": "Зонненхоф Гроссаспах",
+      "title": "Зонненхоф Гроссаспах",
+      "qid": "Q692755",
+      "aliases": [
+        "SG Sonnenhof Großaspach",
+        "Sonnenhof Großaspach",
+        "Зонненхоф Гроссаспах",
+        "Зонненхоф Гроссашпах"
+      ],
+      "flag": "Германии",
+      "country_qid": "Q183",
+      "kind": "club",
+      "league_tier": 3,
+      "season": 2026,
+      "sitelinks": {
+        "ru": "Зонненхоф Гроссаспах",
+        "de": "SG Sonnenhof Großaspach",
+        "en": "SG Sonnenhof Großaspach"
+      },
+      "verified_at": "2026-10-09"
+    },
+    {
+      "name": "Вюрцбургер Киккерс",
+      "display_name": "Вюрцбургер Киккерс",
+      "title": "Вюрцбургер Киккерс",
+      "qid": "Q535785",
+      "aliases": [
+        "F.C. Würzburger Kickers",
+        "FC Würzburger Kickers",
+        "Fußball-Club Würzburger Kickers e.V.",
+        "KSG Würzburg",
+        "Kickers Würzburg",
+        "Würzburger Kickers",
+        "Вюрцбургер Кикерс",
+        "Вюрцбургер Киккерс"
+      ],
+      "flag": "Германии",
+      "country_qid": "Q183",
+      "kind": "club",
+      "league_tier": 3,
+      "season": 2026,
+      "sitelinks": {
+        "ru": "Вюрцбургер Киккерс",
+        "de": "Würzburger Kickers",
+        "en": "FC Würzburger Kickers"
+      },
+      "verified_at": "2026-10-09"
+    },
+    {
+      "name": "Рома",
+      "title": "Рома (футбольный клуб)",
+      "qid": "Q2739",
+      "aliases": [
+        "AS Roma",
+        "Roma"
+      ],
+      "flag": "Италии",
+      "country_qid": "Q38",
+      "kind": "club"
+    },
+    {
+      "name": "Спортинг Лиссабон",
+      "display_name": "Спортинг (Лиссабон)",
+      "title": "Спортинг (футбольный клуб, Лиссабон)",
+      "qid": "Q75729",
+      "aliases": [
+        "Sporting CP",
+        "Sporting Lisbon",
+        "Спортинг (Лиссабон)"
+      ],
+      "flag": "Португалии",
+      "country_qid": "Q45",
       "kind": "club"
     },
     {
@@ -281,19 +1691,6 @@
       "aliases": [
         "Гольштейн",
         "Holstein Kiel"
-      ],
-      "flag": "Германии",
-      "country_qid": "Q183",
-      "kind": "club"
-    },
-    {
-      "name": "Нюрнберг",
-      "title": "Нюрнберг (футбольный клуб)",
-      "qid": "Q15786",
-      "aliases": [
-        "Нюрнберг (футбольный клуб)",
-        "1. FC Nürnberg",
-        "Нюрнберг"
       ],
       "flag": "Германии",
       "country_qid": "Q183",

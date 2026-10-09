@@ -26,6 +26,13 @@ https://creativecommons.org/licenses/by-sa/4.0/ . Они исключены из
 
 ## Библиотеки и внешние данные
 
+Справочник `wiki_stats/clubs.json`: QID, названия, варианты названий и языковые
+ссылки получены из структурированных данных Wikidata, CC0. Связи русских статей
+проверены через MediaWiki API 9 октября 2026 года. [Лицензия Wikidata](https://www.wikidata.org/wiki/Wikidata:Licensing).
+Источники состава трёх лиг сезона 2026/27 указаны в самом JSON и
+[справочнике](docs/CLUB_CATALOGUE.md). Тексты статей и фотографии клубов в него
+не включены.
+
 Инвентаризация точных установленных версий и тексты уведомлений находятся в
 [THIRD_PARTY_LICENSES.md](docs/THIRD_PARTY_LICENSES.md), `docs/dependency-licenses-*.json`
 и `third_party/`. Внешние библиотеки не перелицензируются под MIT.

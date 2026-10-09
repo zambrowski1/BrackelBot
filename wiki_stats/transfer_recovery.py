@@ -2,7 +2,6 @@
 """Recover missing permanent club stints; uncertain histories never become edits."""
 from datetime import date, datetime, timezone
 import re
-import mwparserfromhell as mw
 from .errors import UpdateError
 from .source_validation import response_rows
 from .statistics_engine import pair_valid
@@ -13,7 +12,7 @@ from .api_football_client import utcnow
 from .transactions import digest
 from .schema_validator import validate_package
 from .change_planner import plan_article
-from .entity_resolver import EntityResolver
+from .entity_resolver import EntityResolver, reference_identity
 
 
 def history_fingerprint(history):
@@ -154,13 +153,8 @@ def recovery_plan(store, api, wiki, mapping, snapshot, current_id, history, as_o
         raise UpdateError('needs_review','Последняя строка старой карточки уже закрыта')
     if any('{{н.в.}}' in p for p,_,_ in rows[:-1]):
         raise UpdateError('needs_review','Несколько действующих периодов карьеры требуют проверки')
-    code = mw.parse(old_team)
-    links = code.filter_wikilinks()
-    if len(links)!=1 or any(not str(t.name).strip().casefold().startswith('флаг ') for t in code.filter_templates()):
-        raise UpdateError('needs_review','Аренда, резерв или сложная строка карьеры не восстанавливаются автоматически')
-    initial_page = wiki.get_page_identity(str(links[0].title).strip())
-    current_links = mw.parse(box['нынешний клуб'].text).filter_wikilinks()
-    if len(current_links)!=1 or wiki.get_page_identity(str(current_links[0].title).strip()) != initial_page:
+    initial_page = reference_identity(wiki,old_team)
+    if reference_identity(wiki,box['нынешний клуб'].text) != initial_page:
         raise UpdateError('needs_review','Текущий клуб и последняя строка старой карточки противоречат друг другу')
     initial = [c for _,c in store.items('clubs') if c['qid']==initial_page['qid'] and c['title']==initial_page['title']]
     if len(initial)!=1:

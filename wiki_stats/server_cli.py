@@ -38,6 +38,7 @@ def parser():
     p.add_argument('--state',help='Локальная SQLite (на Toolforge используйте BRACKELBOT_STORAGE=toolsdb)')
     sub=p.add_subparsers(dest='command',required=True)
     sub.add_parser('init-db');sub.add_parser('check-api');sub.add_parser('check-auth')
+    clubs=sub.add_parser('club-list');clubs.add_argument('--tier',type=int,choices=(1,2,3));clubs.add_argument('--season',type=int,default=2026)
     run=sub.add_parser('run');run.add_argument('--season',type=int,default=2026)
     modes=run.add_mutually_exclusive_group()
     for mode in ['dry-run','manual','test','automatic']: modes.add_argument('--'+mode,action='store_true')
@@ -65,6 +66,17 @@ def parser():
 def main(argv=None):
     if hasattr(sys.stdout,'reconfigure'): sys.stdout.reconfigure(encoding='utf-8')
     args=parser().parse_args(argv)
+    if args.command=='club-list':
+        from .entity_resolver import EntityResolver, ResolvedEntity
+        rows=[]
+        for club in EntityResolver(None).catalogue:
+            if args.tier and (club.get('league_tier')!=args.tier or club.get('season')!=args.season): continue
+            rows.append({'qid':club['qid'],'name':club['name'],'title':club['title'],
+                         'display_name':club.get('display_name',club['name']),'league_tier':club.get('league_tier'),
+                         'season':club.get('season'),'team_variant':club.get('team_variant','primary'),
+                         'wikitext':ResolvedEntity(club['title'],club['qid'],club['flag'],club.get('display_name',club['name']),'club',
+                                                   foreign_language=club.get('foreign_language'),foreign_title=club.get('foreign_title')).wikitext})
+        print(json.dumps(rows,ensure_ascii=False,indent=2));return 0
     store=None
     try:
         store=StateStore(args.state) if args.state else StateStore.from_env()

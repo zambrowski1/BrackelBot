@@ -1,6 +1,7 @@
 # SPDX-License-Identifier: MIT
 import json
 import re
+import mwparserfromhell as mw
 from dataclasses import dataclass
 from importlib.resources import files
 from .errors import UpdateError
@@ -24,10 +25,40 @@ class ResolvedEntity:
     display: str
     kind: str
     age: int | None = None
+    foreign_language: str | None = None
+    foreign_title: str | None = None
+    team_variant: str = 'primary'
 
     @property
     def wikitext(self):
-        return '{{Флаг '+self.flag+'|20px}} [['+self.title+'|'+self.display+']]'
+        link = ('{{нп5|'+self.title+'|'+self.display+'|'+self.foreign_language+'|'+self.foreign_title+'}}'
+                if self.foreign_language else '[['+self.title+'|'+self.display+']]')
+        return '{{Флаг '+self.flag+'|20px}} '+link
+
+
+def reference_identity(client, text):
+    """Recognize one club link, including the four positional NP parameters."""
+    code=mw.parse(text)
+    links=code.filter_wikilinks()
+    translations=[t for t in code.filter_templates() if str(t.name).strip().casefold() in {'нп','нп5','не переведено','iw'}]
+    if any(not str(t.name).strip().casefold().startswith('флаг ') and t not in translations for t in code.filter_templates()):
+        raise UpdateError('needs_review','Аренда, резерв или сложная ссылка требуют проверки')
+    if len(links)==1 and not translations:
+        return client.get_page_identity(str(links[0].title).strip())
+    if len(translations)==1 and not links:
+        template=translations[0]
+        try:
+            title,display,language,foreign=[str(template.get(str(i)).value).strip() for i in range(1,5)]
+            if len(template.params)!=4 or language not in {'de','en'}: raise ValueError()
+        except ValueError:
+            raise UpdateError('needs_review','Нужны четыре явных параметра нп5 и проверяемый языковой раздел') from None
+        page=client.get_foreign_page_identity(foreign,language)
+        resolved=EntityResolver(client).resolve({'name':title,'kind':'club','wikidata_id':page['qid'],
+                                                'page_title':title,'display_name':display})
+        if resolved.foreign_language!=language or resolved.foreign_title!=foreign:
+            raise UpdateError('entity_mismatch','Ссылка нп5 не совпадает с проверенной статьёй клуба')
+        return {'title':resolved.title,'qid':resolved.qid}
+    raise UpdateError('needs_review','Нужна единственная однозначная ссылка на клуб')
 
 
 def claim_ids(entity, prop):
@@ -47,11 +78,14 @@ class EntityResolver:
         if key in self.cache:
             return self.cache[key]
         name = ref['name'].strip().casefold()
-        matches = [c for c in self.catalogue if name in {a.casefold() for a in [c['name'],c['title'],*c['aliases']]}]
+        matches = [c for c in self.catalogue if name in {a.casefold() for a in [c['name'],c['title'],c.get('display_name',c['name']),*c['aliases']]}]
         if name in {'borussia','боруссия'}:
             matches = [c for c in self.catalogue if c['title'].startswith('Боруссия')]
         if len(matches) > 1:
-            raise UpdateError('entity_ambiguous','Название клуба неоднозначно; укажите полное название и QID')
+            selected=[c for c in matches if c['qid']==ref.get('wikidata_id')]
+            if len(selected)!=1:
+                raise UpdateError('entity_ambiguous','Название клуба неоднозначно; укажите полное название и QID')
+            matches=selected
         known = matches[0] if matches else None
         qid = ref.get('wikidata_id') or (known['qid'] if known else None)
         title = ref.get('page_title') or (known['title'] if known else None)
@@ -61,7 +95,9 @@ class EntityResolver:
         if wd:
             sitelink = wd.get('sitelinks',{}).get('ruwiki',{}).get('title')
             if not sitelink:
-                raise UpdateError('entity_not_found','У объекта нет русской статьи')
+                result=self._foreign(ref,known,wd,qid,title)
+                self.cache[key]=result
+                return result
             if title and title != sitelink:
                 raise UpdateError('entity_mismatch','Название статьи не соответствует QID')
             title = sitelink
@@ -113,6 +149,47 @@ class EntityResolver:
         flag_page = self.client.get_page_identity('Шаблон:Флаг '+flag, namespace=10)
         if flag_page['title'] != 'Шаблон:Флаг '+flag:
             raise UpdateError('flag_unverified','Неожиданное название шаблона флага')
-        result = ResolvedEntity(page['title'],qid,flag,display,kind,age)
+        result = ResolvedEntity(page['title'],qid,flag,display,kind,age,team_variant=known.get('team_variant','primary') if known else 'primary')
         self.cache[key] = result
         return result
+
+    def _foreign(self,ref,known,wd,qid,title):
+        if ref['kind']!='club' or not title or not known:
+            raise UpdateError('entity_not_found','Для клуба без русской статьи нужна запись справочника с русским названием')
+        if not any(lang+'wiki' in wd.get('sitelinks',{}) for lang in ('de','en')):
+            raise UpdateError('entity_not_found','Нет проверяемой русской, немецкой или английской статьи')
+        try:
+            self.client.get_page_identity(title)
+        except UpdateError as exc:
+            if exc.code!='entity_not_found': raise
+        else:
+            raise UpdateError('entity_mismatch','Русское название уже занято; проверьте статью и связь Wikidata')
+        language=foreign=None
+        for lang in ('de','en'):
+            candidate=wd.get('sitelinks',{}).get(lang+'wiki',{}).get('title')
+            if not candidate: continue
+            try:
+                page=self.client.get_foreign_page_identity(candidate,lang)
+            except UpdateError as exc:
+                if exc.code=='entity_not_found': continue
+                raise
+            if page.get('qid')==qid and page['title']==candidate:
+                language,foreign=lang,candidate;break
+        if not language:
+            raise UpdateError('entity_unverified','Иноязычная статья и обратная ссылка Wikidata не подтвердили клуб')
+        flag=COUNTRIES.get(known['country_qid'])
+        if not flag or (ref.get('flag') and ref['flag']!=flag):
+            raise UpdateError('flag_unverified','Не подтверждена страна клуба')
+        display=ref.get('display_name') or known.get('display_name',known['name'])
+        if display not in {known['name'],known['title'],known.get('display_name'),*known['aliases']}:
+            raise UpdateError('entity_mismatch','Отображаемое название не подтверждено справочником')
+        if any(ch in title+display+foreign for ch in '|{}[]\r\n'):
+            raise UpdateError('unsupported_entity','Недопустимый викитекст в названии клуба')
+        flag_page=self.client.get_page_identity('Шаблон:Флаг '+flag,namespace=10)
+        if flag_page['title']!='Шаблон:Флаг '+flag:
+            raise UpdateError('flag_unverified','Не подтвердился шаблон флага')
+        template=self.client.get_page_identity('Шаблон:Нп5',namespace=10)
+        if template['title'].casefold() not in {'шаблон:нп5','шаблон:не переведено'}:
+            raise UpdateError('entity_unverified','Шаблон Нп5 не подтвердился')
+        return ResolvedEntity(title,qid,flag,display,'club',foreign_language=language,foreign_title=foreign,
+                              team_variant=known.get('team_variant','primary'))

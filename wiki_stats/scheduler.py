@@ -19,6 +19,7 @@ from .publication_policy import PublicationPolicy, ServerPublisher
 from .models import Mode
 from .source_validation import roster_members, transfer_history
 from .transfer_recovery import recovery_plan, history_fingerprint, collect_statistics, received_at
+from .entity_resolver import reference_identity
 
 
 def review(store, kind, identifier, code, details=None):
@@ -154,8 +155,7 @@ class CycleRunner:
             parser=WikitextParser(snapshot.text)
             box=parser.infobox(mapping['wiki_name'])
             current=box.get('нынешний клуб')
-            current_links=[str(x.title).strip() for x in mw.parse(current.text if current else '').filter_wikilinks()]
-            current_titles={self.wiki.get_page_identity(title)['title'] for title in current_links}
+            current_titles={reference_identity(self.wiki,current.text)['title']} if current else set()
             history_record=self.api.transfers(pid)
             history=transfer_history(history_record, pid)
             if resolved.title not in current_titles:
@@ -182,16 +182,12 @@ class CycleRunner:
             if not anchor: raise UpdateError('needs_review','Нет подтверждённой карьерной базы для периода и сезона')
             if not anchor['period'].endswith('{{н.в.}}'):
                 raise UpdateError('needs_review','Закрытый исторический период нельзя обновлять дельтой текущего сезона')
-            anchor_code=mw.parse(anchor['career_wikitext'])
-            if (any(not str(t.name).strip().casefold().startswith('флаг ') for t in anchor_code.filter_templates())
-                or len(anchor_code.filter_wikilinks())!=1):
-                raise UpdateError('needs_review','Аренда, резерв или сложное оформление карьеры требуют ручного подтверждения')
+            anchor_identity=reference_identity(self.wiki,anchor['career_wikitext'])
             # A return in the same season must not reuse an old stint anchor.
             if any(anchor['as_of']<t['date']<=obs['fetched_at'][:10] for t in history):
                 raise UpdateError('needs_review','После базы зарегистрирован трансфер; нужна новая база периода')
             matches=[v for p,c,v in parser.career('клубы',mapping['wiki_name']) if p==anchor['period'] and c==anchor['career_wikitext']]
-            links={str(x.title).strip() for x in mw.parse(anchor['career_wikitext']).filter_wikilinks()}
-            if len(matches)!=1 or resolved.title not in links:
+            if len(matches)!=1 or (anchor_identity['qid'],anchor_identity['title'])!=(resolved.qid,resolved.title):
                 raise UpdateError('club_mismatch','Клуб и период базы не совпадают с единственной строкой карточки')
             nums=matches[0].numeric(pair=True);old={'appearances':nums[0].value,'goals':nums[1].value}
             operation=update_operation(mapping,anchor,obs,old)

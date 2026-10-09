@@ -111,6 +111,19 @@ class WikiClient:
         except (KeyError,IndexError,TypeError):
             raise UpdateError('invalid_api_response','Нет данных о статье клуба/сборной') from None
 
+    def get_foreign_page_identity(self,title,language):
+        if language not in {'de','en'}:
+            raise UpdateError('endpoint_not_allowed','Для клубов разрешены немецкая и английская Википедии')
+        data=self._api({'action':'query','prop':'pageprops','ppprop':'wikibase_item','redirects':1,'titles':title},
+                       endpoint=f'https://{language}.wikipedia.org/w/api.php')
+        try:
+            page=data['query']['pages'][0]
+            if 'missing' in page or page.get('ns')!=0:
+                raise UpdateError('entity_not_found','Иноязычная статья клуба не найдена')
+            return {'title':page['title'],'qid':page.get('pageprops',{}).get('wikibase_item')}
+        except (KeyError,IndexError,TypeError):
+            raise UpdateError('invalid_api_response','Нет данных об иноязычной статье') from None
+
     def get_wikidata_entity(self, qid):
         data = self._api({'action':'wbgetentities','ids':qid,'props':'sitelinks|claims|labels|aliases','languages':'ru|en|de'},endpoint='https://www.wikidata.org/w/api.php')
         try:

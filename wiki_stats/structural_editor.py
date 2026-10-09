@@ -85,6 +85,8 @@ def append_career(text, parser, player, op, resolver):
     period = payload['period']
     start = validate_period(period)
     role = payload.get('role','primary')
+    if getattr(entity,'team_variant','primary')=='reserve' and role!='reserve':
+        raise UpdateError('entity_mismatch','Дубль нельзя добавить как основную команду; нужен role=reserve')
     marker = {'primary':'','loan':'{{аренда}}','reserve':'{{фарм-клуб}}'}[role]
     team = marker+entity.wikitext
     appearances,goals = payload['stats']['appearances'],payload['stats']['goals']

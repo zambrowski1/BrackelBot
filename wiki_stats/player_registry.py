@@ -97,9 +97,10 @@ class PlayerRegistry:
         if len(matches)!=1 or [n.value for n in matches[0].numeric(pair=True)] != [anchor['career']['appearances'],anchor['career']['goals']]:
             raise UpdateError('old_value_mismatch','Карьерная база не соответствует единственной строке карточки')
         # Require the club's exact canonical link in the selected row.
-        import mwparserfromhell as mw
-        links = {str(x.title).strip() for x in mw.parse(anchor['career_wikitext']).filter_wikilinks()}
-        if resolved.title not in links: raise UpdateError('club_mismatch','Строка базы относится к другому клубу')
+        from .entity_resolver import reference_identity
+        identity=reference_identity(client,anchor['career_wikitext'])
+        if (identity['title'],identity['qid'])!=(resolved.title,resolved.qid):
+            raise UpdateError('club_mismatch','Строка базы относится к другому клубу')
         anchor = {**anchor,'verified_at':utcnow(),'base_revid':snapshot.revid}
         self.store.put('anchors',f"{player_id}:{anchor['team_id']}:{anchor['season']}",anchor)
         mapping['club_ids']=sorted(set(mapping['club_ids'])|{anchor['team_id']})

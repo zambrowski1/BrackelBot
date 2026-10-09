@@ -8,7 +8,7 @@ from .errors import UpdateError
 
 def reject_credentials(value):
     if isinstance(value,dict):
-        if any(str(k).casefold().replace('-','_') in {'password','token','lgpassword','lgtoken','csrf_token','bot_password','api_football_key','api_key','x_apisports_key','wiki_bot_password','highlightly_api_key','highlightly_keys','x_rapidapi_key'} for k in value):
+        if any(str(k).casefold().replace('-','_') in {'password','token','lgpassword','lgtoken','csrf_token','bot_password','api_football_key','api_key','x_apisports_key','wiki_bot_password','highlightly_api_key','highlightly_keys','sofascore_api_key','x_rapidapi_key'} for k in value):
             raise UpdateError('invalid_input','Учётные данные запрещены в JSON обновлений')
         for child in value.values(): reject_credentials(child)
     elif isinstance(value,list):
@@ -63,9 +63,9 @@ def validate_package(package: dict) -> None:
                         raise UpdateError('invalid_input', 'Для сборной задайте age: null для основной или возраст')
                 elif not op['entity'].get('wikitext'):
                     raise UpdateError('invalid_input', 'Для точного сопоставления нужен entity.wikitext')
-                if op['type'] in {'add_club', 'add_national_team', 'update_career_period', 'update_current_club'} and op['target']['structure'] != 'career':
+                if op['type'] in {'add_club', 'add_national_team', 'update_career_period', 'update_current_club','update_shirt_number'} and op['target']['structure'] != 'career':
                     raise UpdateError('invalid_input', 'Эта операция относится к карточке')
-                if op['type'] in {'add_season','update_totals','add_table_club','remove_season','remove_table_club','create_statistics_section'} and op['target']['structure'] != 'club_table':
+                if op['type'] in {'add_season','update_totals','add_table_club','remove_season','remove_table_club','create_statistics_section','update_table_date'} and op['target']['structure'] != 'club_table':
                     raise UpdateError('invalid_input', 'Эта операция относится к клубной таблице')
                 if op['type'] in {'add_season','add_table_club','remove_season'} and not op.get('season'):
                     raise UpdateError('invalid_input','Для нового сезона нужен season')

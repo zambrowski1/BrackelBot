@@ -186,6 +186,59 @@ def execute_operation(text,player,op,resolver=None):
     parser = WikitextParser(text)
     parser.infobox(player)
     kind = op['type']
+    if kind=='update_shirt_number':
+        if resolver is None:
+            raise UpdateError('entity_unverified','Нет проверенного клуба для номера')
+        entity = resolver.resolve(op['entity'])
+        current = parser.infobox(player).get('нынешний клуб')
+        if current is None or current.text.strip()!=entity.wikitext:
+            raise UpdateError('current_club_inconsistent','Номер относится к другому текущему клубу')
+        value = parser.infobox(player).get('номер')
+        if value is None:
+            raise UpdateError('unsupported_structure','Параметр номера отсутствует')
+        numeric = value.numeric()[0]
+        new = op['payload']['number']
+        if type(new) is not int or not 1<=new<=99:
+            raise UpdateError('invalid_number','Нужен подтверждённый номер от 1 до 99')
+        if numeric.value==new:
+            return text,'already_applied'
+        if numeric.value!=op['payload']['expected_number']:
+            raise UpdateError('old_value_mismatch','Старый номер не совпал')
+        return apply_patches(text,[numeric.patch(new,'shirt_number')]),'ready'
+    if kind=='update_table_date':
+        # Only a marker belonging to the sole KlStat table, never a generic
+        # article-wide {{обновлено}} or a national-team section.
+        parser.club_table()
+        table = next(t for t in parser.templates if t.name=='клстат')
+        markers = [t for t in parser.templates if t.name=='обновлено' and t.start+len(str(t.node))<=table.start
+                   and not text[t.start+len(str(t.node)):table.start].strip()]
+        if len(markers)!=1:
+            raise UpdateError('ambiguous_target','Нет единственной даты перед КлСтат')
+        value = markers[0].values().get('1')
+        if value is None:
+            raise UpdateError('unsupported_structure','Дата КлСтат отсутствует')
+        new = op['payload'].get('statistics_as_of',op['as_of'])
+        if date.fromisoformat(new)>date.fromisoformat(op['as_of']):
+            raise UpdateError('source_coverage_mismatch','Дата статистики позже подтверждённого охвата')
+        old = value.text.strip()
+        if old==new:
+            return text,'already_applied'
+        if old!=op['payload']['expected_value'] or date.fromisoformat(new)<date.fromisoformat(old):
+            raise UpdateError('old_value_mismatch','Дата КлСтат не совпала или предлагается более ранняя')
+        patches = [exact_patch(value,new,'table_date')]
+        months = ['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря']
+        old_day,new_day = date.fromisoformat(old),date.fromisoformat(new)
+        old_human = f'{old_day.day} {months[old_day.month-1]} {old_day.year}'
+        new_human = f'{new_day.day} {months[new_day.month-1]} {new_day.year}'
+        footer = list(re.finditer(r'Данные в таблице актуальны по состоянию на ('+re.escape(old_human)+r')',text))
+        if len(footer)>1:
+            raise UpdateError('ambiguous_target','Несколько подписей даты таблицы')
+        if footer:
+            m=footer[0]
+            if m.start()<table.start or '\n==' in text[table.start:m.start()]:
+                raise UpdateError('ambiguous_target','Подпись даты относится к другому разделу')
+            patches.append(Patch(m.start(1),m.end(1),old_human,new_human,'table_footer_date'))
+        return apply_patches(text,patches,structural=True),'ready'
     if kind=='create_statistics_section':
         from .statistics_section import create_section
         return create_section(text,parser,op,resolver)
@@ -243,7 +296,10 @@ def execute_operation(text,player,op,resolver=None):
         value = parser.infobox(player).get(op['payload']['field'])
         if value is None:
             raise UpdateError('unsupported_structure','Параметр даты отсутствует')
-        new = date.fromisoformat(op['as_of']).strftime('%d.%m.%Y')
+        actual = op['payload'].get('statistics_as_of',op['as_of'])
+        if date.fromisoformat(actual)>date.fromisoformat(op['as_of']):
+            raise UpdateError('source_coverage_mismatch','Дата статистики позже подтверждённого охвата')
+        new = date.fromisoformat(actual).strftime('%d.%m.%Y')
         if value.text.strip()==new:
             return text,'already_applied'
         if value.text.strip()!=op['payload']['expected_value']:

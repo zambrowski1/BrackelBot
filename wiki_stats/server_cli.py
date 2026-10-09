@@ -24,11 +24,14 @@ from .api_provider import ProviderStore
 def make_api(store):
     if getattr(store, 'provider', 'api_football') == 'paused':
         raise UpdateError('provider_paused', 'Сбор данных приостановлен оператором')
-    if getattr(store,'provider','api_football') not in {'api_football','highlightly'}:
+    if getattr(store,'provider','api_football') not in {'api_football','highlightly','sofascore'}:
         raise UpdateError('provider_invalid','Неизвестный источник статистики')
     if getattr(store, 'provider', 'api_football') == 'highlightly':
         from .highlightly_client import HighlightlyClient
         return HighlightlyClient(store)
+    if getattr(store, 'provider', '') == 'sofascore':
+        from .sofascore_client import SofascoreClient
+        return SofascoreClient(store)
     return ApiFootballClient(store)
 
 
@@ -48,7 +51,7 @@ def write_json(path,value):
 def parser():
     p=argparse.ArgumentParser(description='BrackelBot 0.4 — Toolforge и ручной контроль')
     p.add_argument('--state',help='Локальная SQLite (на Toolforge используйте BRACKELBOT_STORAGE=toolsdb)')
-    p.add_argument('--provider', choices=['api_football','highlightly','paused'], default=os.environ.get('BRACKELBOT_API_PROVIDER','api_football'))
+    p.add_argument('--provider', choices=['api_football','highlightly','sofascore','paused'], default=os.environ.get('BRACKELBOT_API_PROVIDER','api_football'))
     sub=p.add_subparsers(dest='command',required=True)
     sub.add_parser('init-db');sub.add_parser('check-api');sub.add_parser('check-auth')
     sub.add_parser('api-quotas')
@@ -58,6 +61,10 @@ def parser():
     table=sub.add_parser('check-klstat');table.add_argument('title');table.add_argument('--fixtures')
     kt=sub.add_parser('prepare-klstat');kt.add_argument('title');kt.add_argument('evidence');kt.add_argument('--fixtures')
     kt.add_argument('--package-out',default='klstat-package.json');kt.add_argument('--report',default='klstat-report.json')
+    ss=sub.add_parser('prepare-player');ss.add_argument('api_id',type=int);ss.add_argument('--title',required=True)
+    ss.add_argument('--identity-title',required=True);ss.add_argument('--qid',required=True);ss.add_argument('--wiki-name',required=True)
+    ss.add_argument('--package-out',default='sofascore-package.json');ss.add_argument('--report',default='sofascore-report.json')
+    ss.add_argument('--max-statistics',type=int,default=24);ss.add_argument('--max-match-pages',type=int,default=12)
     clubs=sub.add_parser('club-list');clubs.add_argument('--tier',type=int,choices=(1,2,3));clubs.add_argument('--season',type=int,default=2026)
     run=sub.add_parser('run');run.add_argument('--season',type=int,default=2026)
     modes=run.add_mutually_exclusive_group()
@@ -99,15 +106,46 @@ def main(argv=None):
         print(json.dumps(rows,ensure_ascii=False,indent=2));return 0
     store=None
     try:
-        if args.provider == 'paused' and args.command in {'run','check-api','api-quotas','search-player','inspect-player','check-league','player-confirm','club-confirm'}:
+        if args.provider == 'paused' and args.command in {'run','check-api','api-quotas','search-player','inspect-player','check-league','player-confirm','club-confirm','prepare-player'}:
             raise UpdateError('provider_paused', 'Сбор данных приостановлен оператором')
         store=StateStore(args.state) if args.state else StateStore.from_env()
         store=ProviderStore(store,args.provider)
         if args.command=='init-db':
             if store.get('policy','kill_switch') is None: store.put('policy','kill_switch',True)
             print('Хранилище готово. По умолчанию публикация выключена.');return 0
+        if args.command=='prepare-player':
+            if args.provider != 'sofascore':
+                raise UpdateError('provider_invalid','Эта команда требует --provider sofascore')
+            if not 1<=args.max_statistics<=100 or not 1<=args.max_match_pages<=30:
+                raise UpdateError('invalid_input','Неверные ограничения сбора')
+            from .sofascore_cycle import prepare_player
+            from .entity_resolver import EntityResolver
+            from .audit_logger import make_report
+            wiki=WikiClient()
+            with store.run_lock():
+                api=make_api(store)
+                profile=api.details(args.api_id)
+                mapping={'api_id':args.api_id,'qid':args.qid,'title':args.identity_title,
+                         'wiki_name':args.wiki_name,'birth_date':profile.get('date_of_birth')}
+                pkg,plan,evidence=prepare_player(wiki.fetch_page(args.title),mapping,api,wiki,EntityResolver(wiki),
+                    max_requests=args.max_statistics,max_match_pages=args.max_match_pages)
+                report=make_report(pkg,[plan],[])
+                report['collection']=evidence
+                report['plan_hashes']=[queue_plan(store,plan,'sofascore-'+uuid4().hex)] if plan.diff else []
+                write_json(args.package_out,pkg);write_json(args.report,report)
+            print(plan.diff)
+            print(json.dumps(report['collection'],ensure_ascii=False,indent=2))
+            print(json.dumps(report['plan_hashes']))
+            return 0 if all(c.status in {'ready','already_applied'} for c in plan.changes) else 1
+        if args.command=='check-api' and args.provider=='sofascore':
+            print(json.dumps(make_api(store).quota_status(),ensure_ascii=False,indent=2));return 0
         if args.command=='check-api':
             with store.run_lock(): result=make_api(store).status()
+            print(json.dumps(result,ensure_ascii=False,indent=2));return 0
+        if args.command in {'api-quotas','search-player','inspect-player'} and args.provider=='sofascore':
+            with store.run_lock():
+                api=make_api(store)
+                result=api.quota_status() if args.command=='api-quotas' else (api.search_players(args.name) if args.command=='search-player' else api.details(args.api_id))
             print(json.dumps(result,ensure_ascii=False,indent=2));return 0
         if args.command in {'api-quotas','search-player','inspect-player','check-league'}:
             if args.provider != 'highlightly':
@@ -262,6 +300,8 @@ def main(argv=None):
                     result=ClubRegistry(store).confirm(teams[0],args.qid,args.title,wiki)
                 StoreAudit(store,'operator').log('registry_confirmed',kind=args.command,api_id=args.api_id)
                 print(json.dumps(result,ensure_ascii=False,indent=2));return 0
+        if args.command=='run' and args.provider=='sofascore':
+            raise UpdateError('needs_review','Для Sofascore используйте prepare-player: планирование по подтверждённой связи, без публикации')
         if args.command=='run':
             mode='automatic' if args.automatic else ('manual' if args.manual else ('test' if args.test else 'dry_run'))
             wiki=WikiClient()

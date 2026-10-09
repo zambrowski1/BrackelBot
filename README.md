@@ -1,7 +1,7 @@
 # BrackelBot
 
 Бот для обновления футбольной статистики в русской Википедии. Получает данные
-из Highlightly или API-Football, сопоставляет игроков со статьями и готовит изменения карточек
+из Sofascore Scraper, Highlightly или API-Football, сопоставляет игроков со статьями и готовит изменения карточек
 и таблиц. Перед записью проверяет исходные числа и ревизию страницы.
 
 Основной режим — серверный запуск на Wikimedia Toolforge. Для ручной работы
@@ -52,6 +52,7 @@ python3 -m venv .venv-server
 | Что нужно сделать | Инструкция |
 |---|---|
 | Развернуть бота и настроить расписание | [Toolforge](docs/TOOLFORGE.md) |
+| Подключить Sofascore Scraper и получить общий diff карточки и КлСтат | [Sofascore](docs/SOFASCORE.md) |
 | Подключить Highlightly и несколько ключей | [Highlightly](docs/HIGHLIGHTLY.md) |
 | Подтвердить игроков, проверить diff и опубликовать изменения | [Работа с ботом](docs/SERVER_OPERATOR.md) |
 | Запустить приложение для Windows | [Windows](docs/WINDOWS_GUI.md) |

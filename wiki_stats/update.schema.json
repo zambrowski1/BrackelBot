@@ -443,7 +443,9 @@
             "add_table_club",
             "remove_season",
             "remove_table_club",
-            "create_statistics_section"
+            "create_statistics_section",
+            "update_shirt_number",
+            "update_table_date"
           ]
         },
         "entity": {
@@ -531,7 +533,8 @@
                 "enum": [
                   "user_provided",
                   "api_football",
-                  "highlightly"
+                  "highlightly",
+                  "sofascore"
                 ]
               },
               "coverage_as_of": {
@@ -834,6 +837,10 @@
                   "expected_value": {
                     "type": "string",
                     "minLength": 1
+                  },
+                  "statistics_as_of": {
+                    "type": "string",
+                    "format": "date"
                   }
                 },
                 "required": [
@@ -1140,6 +1147,75 @@
                   "statistics_as_of",
                   "categories",
                   "clubs"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "update_shirt_number"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "payload"
+            ],
+            "properties": {
+              "payload": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "expected_number": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 99
+                  },
+                  "number": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 99
+                  }
+                },
+                "required": [
+                  "expected_number",
+                  "number"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "update_table_date"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "payload"
+            ],
+            "properties": {
+              "payload": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "expected_value": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "statistics_as_of": {
+                    "type": "string",
+                    "format": "date"
+                  }
+                },
+                "required": [
+                  "expected_value"
                 ]
               }
             }

@@ -65,7 +65,7 @@ def validate_package(package: dict) -> None:
                     raise UpdateError('invalid_input', 'Для точного сопоставления нужен entity.wikitext')
                 if op['type'] in {'add_club', 'add_national_team', 'update_career_period', 'update_current_club'} and op['target']['structure'] != 'career':
                     raise UpdateError('invalid_input', 'Эта операция относится к карточке')
-                if op['type'] in {'add_season','update_totals','add_table_club','remove_season','remove_table_club'} and op['target']['structure'] != 'club_table':
+                if op['type'] in {'add_season','update_totals','add_table_club','remove_season','remove_table_club','create_statistics_section'} and op['target']['structure'] != 'club_table':
                     raise UpdateError('invalid_input', 'Эта операция относится к клубной таблице')
                 if op['type'] in {'add_season','add_table_club','remove_season'} and not op.get('season'):
                     raise UpdateError('invalid_input','Для нового сезона нужен season')

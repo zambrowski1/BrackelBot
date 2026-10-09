@@ -143,7 +143,8 @@ def main(argv=None):
                 if args.fixtures:
                     item=store.get('plans',report['plan_hashes'][0]);item['offline']=True;store.put('plans',report['plan_hashes'][0],item)
             write_json(args.report,report);print(plan.diff)
-            print(json.dumps(report['plan_hashes']));return 0
+            print(json.dumps(report['plan_hashes']))
+            return 0 if all(c.status in {'ready','already_applied'} for c in plan.changes) else 1
         if args.command=='kill-switch':
             if args.value=='off' and not args.confirm: raise UpdateError('confirmation_required','Для выключения аварийной блокировки нужен --confirm')
             store.put('policy','kill_switch',args.value=='on');print('Аварийная блокировка: '+args.value);return 0

@@ -13,6 +13,20 @@ def prepare_table(snapshot, evidence, resolver):
     if not isinstance(evidence,dict) or not isinstance(evidence.get('clubs'),list) or not evidence['clubs']:
         raise UpdateError('incomplete_statistics','Нужен список подтверждённых клубов и сезонов')
     parser=WikitextParser(snapshot.text)
+    if not any(t.name=='клстат' for t in parser.templates):
+        creation=evidence.get('create_section')
+        if not isinstance(creation,dict):
+            raise UpdateError('incomplete_statistics','Для создания раздела нужны create_section: категории, дата статистики и full_career')
+        payload={**deepcopy(creation),'complete':True,'clubs':[
+            {'entity':deepcopy(b['entity']),'rows':deepcopy(b['rows'])} for b in evidence['clubs']]}
+        op={'id':'create-klstat','type':'create_statistics_section','entity':{'name':'КлСтат','wikitext':'{{КлСтат}}'},
+            'target':{'structure':'club_table'},'as_of':evidence['as_of'],'sources':deepcopy(evidence['sources']),
+            'payload':payload}
+        article={'title':snapshot.title,'player':evidence['player'],'base_revid':snapshot.revid,'operations':[op]}
+        pkg={'schema_version':'1.1','package_id':'create-klstat-'+str(snapshot.revid),
+             'generated_at':evidence['as_of']+'T23:59:59Z','articles':[article]}
+        validate_package(pkg)
+        return pkg,plan_article(snapshot,article,'1.1',resolver)
     table=parser.club_table()
     layouts=table_layout(parser)
     operations=[]

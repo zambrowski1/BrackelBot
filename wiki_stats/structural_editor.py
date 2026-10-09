@@ -186,6 +186,9 @@ def execute_operation(text,player,op,resolver=None):
     parser = WikitextParser(text)
     parser.infobox(player)
     kind = op['type']
+    if kind=='create_statistics_section':
+        from .statistics_section import create_section
+        return create_section(text,parser,op,resolver)
     if kind in {'add_club','add_national_team'}:
         return append_career(text,parser,player,op,resolver)
     if kind in {'update_stats','add_competition'}:

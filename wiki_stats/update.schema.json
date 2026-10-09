@@ -442,7 +442,8 @@
             "update_date",
             "add_table_club",
             "remove_season",
-            "remove_table_club"
+            "remove_table_club",
+            "create_statistics_section"
           ]
         },
         "entity": {
@@ -1028,6 +1029,117 @@
                   "complete",
                   "expected_wikitext",
                   "reason"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "create_statistics_section"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "payload"
+            ],
+            "properties": {
+              "payload": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "complete": {
+                    "const": true
+                  },
+                  "full_career": {
+                    "type": "boolean"
+                  },
+                  "statistics_as_of": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "categories": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 4,
+                    "uniqueItems": true,
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "clubs": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "entity": {
+                          "allOf": [
+                            {
+                              "$ref": "#/$defs/entity"
+                            },
+                            {
+                              "properties": {
+                                "kind": {
+                                  "const": "club"
+                                }
+                              },
+                              "required": [
+                                "kind",
+                                "wikitext"
+                              ]
+                            }
+                          ]
+                        },
+                        "rows": {
+                          "type": "array",
+                          "minItems": 1,
+                          "items": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                              "season": {
+                                "type": "string",
+                                "minLength": 1
+                              },
+                              "league_wikitext": {
+                                "type": "string",
+                                "minLength": 1
+                              },
+                              "categories": {
+                                "type": "object",
+                                "minProperties": 1,
+                                "additionalProperties": {
+                                  "$ref": "#/$defs/full_stats"
+                                }
+                              }
+                            },
+                            "required": [
+                              "season",
+                              "league_wikitext",
+                              "categories"
+                            ]
+                          }
+                        }
+                      },
+                      "required": [
+                        "entity",
+                        "rows"
+                      ]
+                    }
+                  }
+                },
+                "required": [
+                  "complete",
+                  "full_career",
+                  "statistics_as_of",
+                  "categories",
+                  "clubs"
                 ]
               }
             }

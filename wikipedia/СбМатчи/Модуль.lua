@@ -25,14 +25,15 @@ end
 local function parseDate(value)
     local text = trim(value)
     local y,m,d = text:match('^(%d%d%d%d)%-(%d%d)%-(%d%d)$')
-    if not y then fail('дата должна иметь вид ГГГГ-ММ-ДД: ' .. text) end
+    if not y then d,m,y=text:match('^(%d%d)%-(%d%d)%-(%d%d%d%d)$') end
+    if not y then fail('дата должна иметь вид ДД-ММ-ГГГГ: ' .. text) end
     y,m,d = tonumber(y),tonumber(m),tonumber(d)
     local leap = y%4==0 and (y%100~=0 or y%400==0)
     local days = {31,leap and 29 or 28,31,30,31,30,31,31,30,31,30,31}
     if y<1872 or y>2100 or not days[m] or d<1 or d>days[m] then
         fail('несуществующая дата: ' .. text)
     end
-    return text, d .. ' ' .. months[m] .. ' ' .. y
+    return string.format('%04d-%02d-%02d',y,m,d),string.format('%02d-%02d-%04d',d,m,y)
 end
 
 local function score(value, name)

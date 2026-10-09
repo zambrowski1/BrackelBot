@@ -81,7 +81,7 @@ def test_user_example_reproduces_columns_dates_collapse_and_totals(renderer):
     result=renderer(example())
     assert 'wikitable mw-collapsible mw-collapsed' in result
     assert 'max-width:100%;' in result and 'min-width' not in result and 'colspan="6"' in result
-    assert '13 ноября 2016' in result and '17 мая 2017' in result
+    assert '13-11-2016' in result and '17-05-2017' in result
     for name in ('№','Дата','Соперник','Счёт','Голы','Соревнование'):
         assert f'<th scope="col">{name}</th>' in result
     assert 'Итого: 6 матчей / 0 голов; 5 побед, 1 ничья, 0 поражений' in result
@@ -113,7 +113,7 @@ def test_leap_date_and_multiple_goals(renderer):
     args={'заголовок':'Матчи игрока','дата1':'2024-02-29','соперник1':'Команда',
           'счёт1':'3:1','голы1':'2','соревнование1':'Товарищеский матч'}
     result=renderer(args)
-    assert '29 февраля 2024' in result and '1 матч / 2 гола; 1 победа' in result
+    assert '29-02-2024' in result and '1 матч / 2 гола; 1 победа' in result
 
 
 def test_compact_example_matches_verbose_example(renderer):
@@ -344,3 +344,29 @@ def test_ambiguous_typo_does_not_choose_ireland_over_iceland(renderer):
         with pytest.raises(lupa.LuaError,match='неоднозначная опечатка') as error:
             renderer(national_args('Иландия',age))
         assert 'Ирландия' in str(error.value) and 'Исландия' in str(error.value)
+
+
+def test_day_first_dates_match_legacy_iso_and_keep_updated_template_iso(renderer):
+    old=example()
+    new=dict(old)
+    for key,value in old.items():
+        if key.startswith('дата') or key=='обновлено':
+            y,m,d=value.split('-');new[key]=f'{d}-{m}-{y}'
+    assert renderer(old)==renderer(new)
+    assert '{{обновлено|2026-10-04}}' in renderer(new)
+
+
+def test_day_first_sort_is_chronological_not_alphabetical(renderer):
+    args={'заголовок':'Матчи','соревнование':'Кубок',
+          'матч1':'31-12-2023 ;; Германия ;; 1:0 ;; 0',
+          'матч2':'01-01-2024 ;; Франция ;; 1:1 ;; 0',
+          'обновлено':'02-01-2024'}
+    assert 'Итого: 2 матча' in renderer(args)
+    with pytest.raises(lupa.LuaError,match='по датам'):
+        renderer({**args,'матч1':args['матч2'],'матч2':args['матч1']})
+
+
+@pytest.mark.parametrize('date',['31-04-2024','29-02-2023','00-01-2024','01-13-2024','1-1-2024'])
+def test_invalid_day_first_date_rejected(renderer,date):
+    with pytest.raises(lupa.LuaError,match='дата'):
+        renderer({**national_args(),'матч1':f'{date} ;; Ирландия ;; 1:0 ;; 0'})

@@ -99,7 +99,10 @@ class EntityResolver:
         if ref.get('flag') and ref['flag'] != flag:
             raise UpdateError('entity_mismatch','Заявленный флаг не соответствует стране объекта')
         # Do not allow arbitrary display text to masquerade as another team.
-        display = known['name'] if known else page['title']
+        display = known.get('display_name',known['name']) if known else page['title']
+        if not known and kind=='club':
+            match = re.fullmatch(r'(.+) \(футбольный клуб(?:, ([^()]+))?\)',page['title'])
+            if match: display = match[1] + (f' ({match[2]})' if match[2] else '')
         if ref.get('display_name'):
             allowed = {display,page['title'],*(known['aliases'] if known else [])}
             if ref['display_name'] not in allowed:

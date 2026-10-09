@@ -111,6 +111,11 @@ class ApiFootballClient:
         return record
     def leagues(self, season): return self._single('/leagues',{'id':78,'season':season},ttl=86400)
     def teams(self, season): return self._single('/teams',{'league':78,'season':season},ttl=86400)
+    def team(self, team_id): return self._single('/teams',{'id':team_id},ttl=86400)
+    def team_leagues(self, team_id, season, fresh=False):
+        return self._single('/leagues',{'team':team_id,'season':season,'type':'league'},ttl=0 if fresh else 86400)
+    def player_statistics(self, player_id, season, fresh=False):
+        return self._single('/players',{'id':player_id,'season':season},ttl=0 if fresh else 21600)
     def transfers(self, player_id, fresh=False): return self._single('/transfers',{'player':player_id},ttl=0 if fresh else 21600)
     def squads(self, team_id, fresh=False): return self._single('/players/squads',{'team':team_id},ttl=0 if fresh else 21600)
     def player(self, player_id, season):

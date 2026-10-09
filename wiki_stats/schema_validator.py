@@ -79,6 +79,12 @@ def validate_package(package: dict) -> None:
                     current = [x for x in companions if x['type'] == 'update_current_club']
                     if not current:
                         raise UpdateError('invalid_input', 'Основной новый клуб должен быть связан с update_current_club')
-                    for cur in current:
-                        if cur['entity'] != op['entity']:
-                            raise UpdateError('invalid_input', 'Добавляемый клуб и текущий клуб в группе должны совпадать')
+                    historical = '{{н.в.}}' not in op['payload']['period']
+                    # Closed intermediate stints share the final current-club
+                    # update. The editor checks their chronology and previous row.
+                    final_clubs = [x for x in companions if x['type']=='add_club' and x['payload']['role']=='primary'
+                                   and '{{н.в.}}' in x['payload']['period']]
+                    if historical and any(cur['entity']==last['entity'] for cur in current for last in final_clubs):
+                        continue
+                    if not any(cur['entity'] == op['entity'] for cur in current):
+                        raise UpdateError('invalid_input', 'Добавляемый клуб должен иметь соответствующее изменение текущего клуба в группе')

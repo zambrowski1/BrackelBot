@@ -53,7 +53,7 @@ def parser():
     kill.add_argument('--confirm',action='store_true')
     approval=sub.add_parser('approval-install');approval.add_argument('file');approval.add_argument('--confirm',action='store_true',required=True)
     pc=sub.add_parser('player-confirm');pc.add_argument('api_id',type=int);pc.add_argument('--qid',required=True);pc.add_argument('--title',required=True);pc.add_argument('--wiki-name',required=True);pc.add_argument('--season',type=int,default=2026);pc.add_argument('--confirm',action='store_true',required=True)
-    cc=sub.add_parser('club-confirm');cc.add_argument('api_id',type=int);cc.add_argument('--qid',required=True);cc.add_argument('--title',required=True);cc.add_argument('--season',type=int,default=2026);cc.add_argument('--confirm',action='store_true',required=True)
+    cc=sub.add_parser('club-confirm');cc.add_argument('api_id',type=int);cc.add_argument('--qid',required=True);cc.add_argument('--title',required=True);cc.add_argument('--season',type=int,default=2026);cc.add_argument('--historical',action='store_true');cc.add_argument('--confirm',action='store_true',required=True)
     anchor=sub.add_parser('anchor-confirm');anchor.add_argument('api_id',type=int);anchor.add_argument('file');anchor.add_argument('--confirm',action='store_true',required=True)
     attest=sub.add_parser('attest-manual');attest.add_argument('hash');attest.add_argument('--api-id',type=int,required=True);attest.add_argument('--season',type=int,default=2026);attest.add_argument('--confirm',action='store_true',required=True)
     export=sub.add_parser('export');export.add_argument('bucket',choices=['players','clubs','anchors','review','runs','plans','backups','edits','audit']);export.add_argument('file')
@@ -172,8 +172,15 @@ def main(argv=None):
                     if args.api_id not in players: raise UpdateError('identity_unmapped','ID отсутствует в полном сборе выбранного сезона')
                     result=PlayerRegistry(store).confirm(players[args.api_id],args.qid,args.title,args.wiki_name,wiki)
                 else:
-                    scope=store.get('scope',str(args.season),{})
-                    teams=[t for t in scope.get('teams',[]) if t['id']==args.api_id]
+                    if args.historical:
+                        from .source_validation import response_rows
+                        rows=response_rows(ApiFootballClient(store).team(args.api_id))
+                        teams=[r.get('team',{}) for r in rows]
+                        if (len(teams)!=1 or teams[0].get('id')!=args.api_id or teams[0].get('national') is not False):
+                            raise UpdateError('club_unmapped','API не подтвердил единственный исторический клуб с указанным ID')
+                    else:
+                        scope=store.get('scope',str(args.season),{})
+                        teams=[t for t in scope.get('teams',[]) if t['id']==args.api_id]
                     if len(teams)!=1: raise UpdateError('club_unmapped','ID отсутствует в составе клубов выбранного сезона')
                     result=ClubRegistry(store).confirm(teams[0],args.qid,args.title,wiki)
                 StoreAudit(store,'operator').log('registry_confirmed',kind=args.command,api_id=args.api_id)

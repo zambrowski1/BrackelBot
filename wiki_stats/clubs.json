@@ -1,8 +1,19 @@
 {
-  "note": "Identity catalogue, not a current-season membership list. Historical clubs included; metadata fetched read-only 2026-10-08.",
+  "note": "Identity catalogue, not a current-season membership list. Bind API IDs separately; article and QID checked live before use.",
   "clubs": [
     {
+      "name": "Рома", "title": "Рома (футбольный клуб)", "qid": "Q2739",
+      "aliases": ["AS Roma", "Roma"], "flag": "Италии", "country_qid": "Q38", "kind": "club"
+    },
+    {
+      "name": "Спортинг Лиссабон", "display_name": "Спортинг (Лиссабон)",
+      "title": "Спортинг (футбольный клуб, Лиссабон)", "qid": "Q75729",
+      "aliases": ["Sporting CP", "Sporting Lisbon", "Спортинг (Лиссабон)"],
+      "flag": "Португалии", "country_qid": "Q45", "kind": "club"
+    },
+    {
       "name": "Боруссия Мёнхенгладбах",
+      "display_name": "Боруссия (Мёнхенгладбах)",
       "title": "Боруссия (футбольный клуб, Мёнхенгладбах)",
       "qid": "Q101959",
       "aliases": [
@@ -17,6 +28,7 @@
     },
     {
       "name": "Боруссия Дортмунд",
+      "display_name": "Боруссия (Дортмунд)",
       "title": "Боруссия (футбольный клуб, Дортмунд)",
       "qid": "Q41420",
       "aliases": [

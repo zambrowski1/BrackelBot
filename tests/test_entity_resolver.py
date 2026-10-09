@@ -68,6 +68,8 @@ def test_foreign_club_verified_from_qid_and_country():
         'P17':[{'mainsnak':{'datavalue':{'value':{'id':'Q40'}}}}]}}
     result=EntityResolver(client,CATALOGUE).resolve({'name':'Austria Vienna','kind':'club','wikidata_id':'Q901'})
     assert result.flag=='Австрии'
+    assert result.display=='Аустрия (Вена)'
+    assert '[[Аустрия (футбольный клуб, Вена)|Аустрия (Вена)]]' in result.wikitext
 
 
 def test_unknown_flag_country_or_nonfootball_object_refused():

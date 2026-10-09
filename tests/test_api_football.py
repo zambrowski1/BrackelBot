@@ -36,6 +36,20 @@ def client(tmp_path,replies):
     return api,store,session
 
 
+@pytest.mark.parametrize('method,endpoint,params', [
+    ('team_leagues','leagues',{'team':100,'season':2024,'type':'league'}),
+    ('player_statistics','players',{'id':100,'season':2024}),
+])
+def test_historical_endpoints_cache_and_fresh_recheck(tmp_path,method,endpoint,params):
+    api,store,session=client(tmp_path,[Response(envelope(path=endpoint)),Response(envelope(path=endpoint))])
+    fetch=getattr(api,method)
+    fetch(100,2024);fetch(100,2024)
+    assert len(session.calls)==1 and session.calls[0][1]['params']==params
+    fetch(100,2024,fresh=True)
+    assert len(session.calls)==2
+    store.close()
+
+
 def test_api_all_pages_and_cache(tmp_path):
     api,store,session=client(tmp_path,[Response(envelope(1,2)),Response(envelope(2,2))])
     ds=api.players(2026)

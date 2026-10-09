@@ -50,6 +50,14 @@ class PublicationPolicy:
         if not 0<=age<=86400 or evidence.get('season') not in approval.get('seasons',[]):
             raise UpdateError('source_stale','Покрытие сезона не одобрено или данные старше суток')
         mapping=self.store.get('players',evidence['player_id'])
+        if evidence.get('kind')=='transfer':
+            if self.mode!='manual' or not mapping or digest(mapping)!=evidence['mapping_hash']:
+                raise UpdateError('identity_changed','Цепочка переходов требует ручного подтверждения неизменной связи игрока')
+            if any(digest(self.store.get('clubs',tid))!=expected for tid,expected in evidence['club_hashes'].items()):
+                raise UpdateError('identity_changed','Связь исторического клуба изменилась после diff')
+            if any(c.status not in {'ready','already_applied'} for c in plan.changes):
+                raise UpdateError('needs_review','Непроверенная операция в цепочке переходов')
+            return
         if evidence.get('manual'):
             if self.mode!='manual' or not mapping or digest(mapping)!=evidence['mapping_hash']:
                 raise UpdateError('source_unverified','Ручная аттестация не разрешает Automatic или изменённую связь игрока')

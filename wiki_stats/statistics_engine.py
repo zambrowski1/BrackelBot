@@ -103,5 +103,5 @@ def update_operation(mapping, anchor, observation, old):
                 {'url':f"https://v3.football.api-sports.io/players?id={mapping['api_id']}&season={observation['season']}",
                  'provenance':'api_football','coverage_as_of':as_of,
                  'note':'Дата получения API, не подтверждённая дата последнего матча; карьерный итог = база + дельта сезона.'},
-                {'url':anchor['evidence_url'],'provenance':'user_provided','coverage_as_of':as_of,
+                {'url':anchor['evidence_url'],'provenance':'api_football' if anchor.get('transfer_plan_hash') else 'user_provided','coverage_as_of':as_of,
                  'note':f"Подтверждённая оператором база от {anchor['as_of']}; {anchor['career']} / {anchor['season_stats']}"}]}

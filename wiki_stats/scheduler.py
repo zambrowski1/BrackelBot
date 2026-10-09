@@ -18,6 +18,7 @@ from .operator_review import queue_plan, deserialize_plan, serialize_plan
 from .publication_policy import PublicationPolicy, ServerPublisher
 from .models import Mode
 from .source_validation import roster_members, transfer_history
+from .transfer_recovery import recovery_plan, history_fingerprint, collect_statistics, received_at
 
 
 def review(store, kind, identifier, code, details=None):
@@ -144,6 +145,38 @@ class CycleRunner:
                 raise UpdateError('identity_mismatch','Дата рождения API изменилась')
             check_player_identity(self.wiki,mapping)
             club,resolved=ClubRegistry(self.store).verify(tid,self.wiki)
+            snapshot=self.wiki.fetch_page(mapping['title'])
+            if snapshot.title!=mapping['title'] or snapshot.namespace!=0:
+                raise UpdateError('identity_mismatch','Получена другая статья или пространство, чем в проверенной связи игрока')
+            found=report.setdefault('found_articles',[])
+            if snapshot.title not in found: found.append(snapshot.title)
+            report['article_count']=len(found)
+            parser=WikitextParser(snapshot.text)
+            box=parser.infobox(mapping['wiki_name'])
+            current=box.get('нынешний клуб')
+            current_links=[str(x.title).strip() for x in mw.parse(current.text if current else '').filter_wikilinks()]
+            current_titles={self.wiki.get_page_identity(title)['title'] for title in current_links}
+            history_record=self.api.transfers(pid)
+            history=transfer_history(history_record, pid)
+            if resolved.title not in current_titles:
+                historical_ids={t['teams']['in']['id'] for t in history}
+                for historical_id in historical_ids:
+                    if not ClubRegistry(self.store).get(historical_id):
+                        review(self.store,'club',historical_id,'historical_club_unmapped',{'player_id':pid,'historical':True})
+                        report['review_count']+=1
+                plan,package,evidence=recovery_plan(self.store,self.api,self.wiki,mapping,snapshot,tid,history,obs['fetched_at'][:10])
+                evidence['fetched_at']=min(received_at(evidence['fetched_at']),received_at(history_record.get('fetched_at')),received_at(obs['fetched_at'])).isoformat()
+                if evidence['stints'][-1]['season_stats'].get(str(self.season))!=obs['stats']:
+                    raise UpdateError('needs_review','Исторический сбор и текущая выборка расходятся по текущему сезону')
+                for c in plan.changes: c.source_verification='api_football_transfer_history_and_league_statistics'
+                plan_hash=queue_plan(self.store,plan,report['run_id'])
+                self.store.put('plan_evidence',plan_hash,{**evidence,'plan_hash':plan_hash,'season':self.season,'team_id':tid,'observation':obs})
+                self.store.put('packages',plan_hash,package)
+                report['discrepancies']+=1;report['prepared_count']+=1;report['review_count']+=1
+                report['plans'].append({'hash':plan_hash,'title':snapshot.title,'diff':plan.diff,'manual_only':True})
+                review(self.store,'transfer',pid,'transfer_chain_prepared',{'plan_hash':plan_hash,'stints':evidence['stints']})
+                log.log('transfer_chain_prepared',title=snapshot.title,plan_hash=plan_hash)
+                return
             anchor_key=f'{pid}:{tid}:{self.season}'
             anchor=self.store.get('anchors',anchor_key)
             if not anchor: raise UpdateError('needs_review','Нет подтверждённой карьерной базы для периода и сезона')
@@ -154,21 +187,8 @@ class CycleRunner:
                 or len(anchor_code.filter_wikilinks())!=1):
                 raise UpdateError('needs_review','Аренда, резерв или сложное оформление карьеры требуют ручного подтверждения')
             # A return in the same season must not reuse an old stint anchor.
-            history=transfer_history(self.api.transfers(pid), pid)
             if any(anchor['as_of']<t['date']<=obs['fetched_at'][:10] for t in history):
                 raise UpdateError('needs_review','После базы зарегистрирован трансфер; нужна новая база периода')
-            snapshot=self.wiki.fetch_page(mapping['title'])
-            if snapshot.title!=mapping['title'] or snapshot.namespace!=0:
-                raise UpdateError('identity_mismatch','Получена другая статья или пространство, чем в проверенной связи игрока')
-            found=report.setdefault('found_articles',[])
-            if snapshot.title not in found: found.append(snapshot.title)
-            report['article_count']=len(found)
-            parser=WikitextParser(snapshot.text)
-            box=parser.infobox(mapping['wiki_name'])
-            current=box.get('нынешний клуб')
-            current_links={str(x.title).strip() for x in mw.parse(current.text if current else '').filter_wikilinks()}
-            if resolved.title not in current_links:
-                raise UpdateError('needs_review','Текущий клуб в карточке не соответствует текущему составу API')
             matches=[v for p,c,v in parser.career('клубы',mapping['wiki_name']) if p==anchor['period'] and c==anchor['career_wikitext']]
             links={str(x.title).strip() for x in mw.parse(anchor['career_wikitext']).filter_wikilinks()}
             if len(matches)!=1 or resolved.title not in links:
@@ -225,7 +245,7 @@ class CycleRunner:
             if exc.code not in {'needs_review','club_unmapped','identity_unmapped'}:
                 report['error_count']+=1
                 report['errors'].append({'status':exc.code,'message':str(exc),'api_id':pid,'team_id':tid})
-            review(self.store,'statistics',f'{pid}:{tid}',exc.code,{'observation':obs})
+            review(self.store,'statistics',f'{pid}:{tid}',exc.code,{'observation':obs,'message':str(exc)})
             report['review_count']+=1
             log.log('operation_requires_review',api_id=pid,team_id=tid,status=exc.code)
             if exc.code in {'api_quota_exhausted','api_rate_limited','api_authentication','authorization_error','publication_unknown'}: raise
@@ -234,6 +254,7 @@ class CycleRunner:
         policy=PublicationPolicy(self.store,'automatic')
         # All structural validation finishes before the first publication.
         for entry in report['plans']:
+            if entry.get('manual_only'): continue
             item=self.store.get('plans',entry['hash'])
             if item['status']!='pending': continue
             plan=deserialize_plan(item['plan'])
@@ -258,7 +279,27 @@ def publish_plan(store,plan_hash,wiki,policy,logger=None,plan=None,source_api=No
     if plan.snapshot.title!='Участник:Zambrowski/testbot':
         evidence=store.get('plan_evidence',plan_hash)
         check_player_identity(wiki,store.get('players',evidence['player_id']))
-        if not evidence.get('manual'):
+        if evidence.get('kind')=='transfer':
+            if source_api is None:
+                from .api_football_client import ApiFootballClient
+                source_api=ApiFootballClient(store)
+            try:
+                for tid in evidence['club_hashes']: ClubRegistry(store).verify(int(tid),wiki)
+                record=source_api.transfers(evidence['player_id'],fresh=True)
+                received_at(record.get('fetched_at'))
+                transfers=transfer_history(record,evidence['player_id'])
+                members=roster_members(source_api.squads(evidence['team_id'],fresh=True),evidence['team_id'])
+                mapping=store.get('players',evidence['player_id'])
+                stints,_,_=collect_statistics(source_api,evidence['player_id'],mapping['birth_date'],evidence['stints'],evidence['as_of'],fresh=True)
+                if (history_fingerprint(transfers)!=evidence['history_hash'] or stints!=evidence['stints']
+                    or evidence['player_id'] not in members):
+                    raise UpdateError('source_changed','История, состав или статистика изменились после diff')
+            except UpdateError as exc:
+                from .transactions import clear_approvals
+                clear_approvals(plan);plan.publishable=False
+                store.put('plans',plan_hash,{**item,'status':'stale','plan':serialize_plan(plan),'last_error':exc.code})
+                raise
+        elif not evidence.get('manual'):
             ClubRegistry(store).verify(evidence['team_id'],wiki)
             if source_api is None:
                 from .api_football_client import ApiFootballClient
@@ -295,7 +336,22 @@ def publish_plan(store,plan_hash,wiki,policy,logger=None,plan=None,source_api=No
     store.put('plans',plan_hash,{**item,'status':'published','plan':serialize_plan(plan),'result':result})
     store.put('edits',plan_hash,result)
     evidence=store.get('plan_evidence',plan_hash)
-    if evidence and not evidence.get('manual'):
+    if evidence and evidence.get('kind')=='transfer':
+        # An individually approved and freshly verified chain supplies the new
+        # career base. The following daily run can use the usual season delta.
+        mapping=store.get('players',evidence['player_id'])
+        last=evidence['stints'][-1]
+        period,team,_=WikitextParser(plan.preview).career('клубы',mapping['wiki_name'])[-1]
+        anchor={'team_id':last['team_id'],'season':evidence['season'],'period':period,'career_wikitext':team,
+                'career':last['stats'],'season_stats':last['season_stats'][str(evidence['season'])],
+                'as_of':evidence['as_of'],'evidence_url':f"https://v3.football.api-sports.io/players?id={evidence['player_id']}&season={evidence['season']}",
+                'verified_at':utcnow(),'base_revid':result['newrevid'],'transfer_plan_hash':plan_hash}
+        anchor_key=f"{evidence['player_id']}:{last['team_id']}:{evidence['season']}"
+        store.put('anchors',anchor_key,anchor)
+        mapping['club_ids']=sorted(set(mapping['club_ids'])|{s['team_id'] for s in evidence['stints']})
+        mapping['last_confirmed_statistics']=evidence['observation']
+        store.put('players',evidence['player_id'],mapping)
+    if evidence and not evidence.get('manual') and evidence.get('kind')!='transfer':
         mapping=store.get('players',evidence['player_id'])
         mapping['last_confirmed_statistics']=evidence['observation']
         # Changing runtime counters must not change verified identity evidence.

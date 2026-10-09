@@ -16,8 +16,12 @@ def exact_patch(value, new, field):
     return Patch(value.start+start,value.start+end,text[start:end],new,field)
 
 
+def is_active_period(period):
+    return bool(re.search(r'\{\{(?:н\.в\.|нв)\}\}', period, re.IGNORECASE))
+
+
 def validate_period(period):
-    match = re.fullmatch(r'((?:19|20)[0-9]{2})(?:([—–-])((?:19|20)[0-9]{2}|\{\{н\.в\.\}\}))?', period)
+    match = re.fullmatch(r'((?:19|20)[0-9]{2})(?:([—–-])((?:19|20)[0-9]{2}|\{\{(?:н\.в\.|нв)\}\}))?', period, re.IGNORECASE)
     if not match:
         raise UpdateError('unknown_period','Нужны подтверждённые годы: YYYY, YYYY—YYYY или YYYY—{{н.в.}}')
     if match[3] and match[3].isdigit() and int(match[3]) < int(match[1]):
@@ -127,11 +131,11 @@ def append_career(text, parser, player, op, resolver):
         if not previous:
             raise UpdateError('unknown_period','Для трансфера нужна явно выбранная завершённая строка предыдущего клуба')
         selected = [r for r in rows if r[0].text.strip()==previous['period'] and r[1].text.strip()==previous['wikitext'].strip()]
-        if len(selected)!=1 or '{{н.в.}}' in selected[0][0].text:
+        if len(selected)!=1 or is_active_period(selected[0][0].text):
             raise UpdateError('previous_period_not_closed','Завершите подтверждённый период прежнего клуба в этой группе')
         validate_period(previous['period'])
         # Other primary active stints cannot silently be closed or ignored.
-        active = [r for r in rows if '{{н.в.}}' in r[0].text and not any(x in r[1].text.casefold() for x in ['аренда','фарм-клуб'])]
+        active = [r for r in rows if is_active_period(r[0].text) and not any(x in r[1].text.casefold() for x in ['аренда','фарм-клуб'])]
         if active:
             raise UpdateError('previous_period_not_closed','В карточке остался незавершённый основной клуб')
     values = ref.values()
@@ -267,7 +271,7 @@ def execute_operation(text,player,op,resolver=None):
         if value.text.strip()!=op['expected']:
             raise UpdateError('old_value_mismatch','Текущий клуб не совпал с ожидаемым')
         _,rows = career_rows(parser,player,'клубы')
-        if not any(r[1].text.strip() in {entity.wikitext,'{{аренда}}'+entity.wikitext} and '{{н.в.}}' in r[0].text for r in rows):
+        if not any(r[1].text.strip() in {entity.wikitext,'{{аренда}}'+entity.wikitext} and is_active_period(r[0].text) for r in rows):
             raise UpdateError('current_club_inconsistent','Добавьте подтверждённую текущую строку клуба в той же группе')
         return apply_patches(text,[exact_patch(value,entity.wikitext,'current_club')],structural=True),'ready'
     if kind=='add_season':

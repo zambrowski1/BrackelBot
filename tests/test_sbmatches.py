@@ -60,9 +60,10 @@ def example():
 def test_user_example_reproduces_columns_dates_collapse_and_totals(renderer):
     result=renderer(example())
     assert 'wikitable mw-collapsible mw-collapsed' in result
-    assert 'min-width:600px;' in result and 'colspan="6"' in result
+    assert 'max-width:100%;' in result and 'min-width' not in result and 'colspan="6"' in result
     assert '13 ноября 2016' in result and '17 мая 2017' in result
-    assert '<th>№</th><th>Дата</th><th>Соперник</th><th>Счёт</th><th>Голы</th><th>Соревнование</th>' in result
+    for name in ('№','Дата','Соперник','Счёт','Голы','Соревнование'):
+        assert f'<th scope="col">{name}</th>' in result
     assert 'Итого: 6 матчей / 0 голов; 5 побед, 1 ничья, 0 поражений' in result
     assert result.count('<tr>')==8
     assert '{{обновлено|2026-10-04}}' in result
@@ -93,3 +94,39 @@ def test_leap_date_and_multiple_goals(renderer):
           'счёт1':'3:1','голы1':'2','соревнование1':'Товарищеский матч'}
     result=renderer(args)
     assert '29 февраля 2024' in result and '1 матч / 2 гола; 1 победа' in result
+
+
+def test_compact_example_matches_verbose_example(renderer):
+    template = next(t for t in mw.parse((ROOT/'Браккельман-кратко.wiki').read_text(encoding='utf-8')).filter_templates()
+                    if str(t.name).strip()=='СбМатчи')
+    args = {str(p.name).strip():str(p.value).strip() for p in template.params}
+    assert renderer(args)==renderer(example())
+
+
+def test_compact_with_nested_links_references_and_shootout(renderer):
+    args={'заголовок':'Матчи','соревнование':'Кубок',
+          'матч1':'2024-01-01 ;; {{Флаг Германии|20px}} [[Команда|Имя]] ;; 2:2 ;; 1',
+          'источник1':'<ref>Источник</ref>','пенальти1':'4:3'}
+    result=renderer(args)
+    assert '[[Команда|Имя]]' in result and 'Кубок<ref>Источник</ref>' in result
+    assert '2:2 (4:3 пен.)' in result and '0 побед, 1 ничья' in result
+
+
+@pytest.mark.parametrize('row,extra',[
+    ('2024-01-01 ;; Команда ;; 1:0',{}),
+    ('2024-01-01 ;; Команда ;; 1:0 ;;',{}),
+    ('2024-01-01 ;; Команда ;; 1:0 ;; 0 ;; Кубок ;; лишнее',{}),
+    ('2024-01-01 ;; Команда ;; 1:0 ;; 0',{'дата1':'2024-01-01'}),
+    ('2024-01-01 ;; Команда ;; 1:0 ;; 0',{'соревнование1':'Кубок'}),
+])
+def test_compact_malformed_or_mixed_input_fails(renderer,row,extra):
+    with pytest.raises(lupa.LuaError,match='СбМатчи:'):
+        renderer({'заголовок':'Матчи','соревнование':'Кубок','матч1':row,**extra})
+
+
+def test_mixed_row_formats_and_competition_override(renderer):
+    result=renderer({'заголовок':'Матчи','соревнование':'Общее',
+        'матч1':'2024-01-01 ;; А ;; 1:0 ;; 0 ;; Другое',
+        'дата2':'2024-01-02','соперник2':'Б','счёт2':'0:0','голы2':'0'})
+    assert 'Другое</td>' in result and 'Общее</td>' in result
+    assert '2 матча / 0 голов; 1 победа, 1 ничья' in result

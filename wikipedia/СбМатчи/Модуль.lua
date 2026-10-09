@@ -4,6 +4,7 @@ local p = {}
 local months = {'января','февраля','марта','апреля','мая','июня',
     'июля','августа','сентября','октября','ноября','декабря'}
 local fields = {'дата','соперник','счёт','голы','соревнование','источник','пенальти'}
+local indexedFields = {'матч','дата','соперник','счёт','голы','соревнование','источник','пенальти'}
 
 local function trim(value)
     return mw.text.trim(tostring(value or ''))
@@ -50,12 +51,13 @@ end
 function p._render(args, frame)
     local last = 0
     local allowed = {['игрок']=true,['сборная']=true,['заголовок']=true,
-        ['цвета']=true,['обновлено']=true,['свёрнуто']=true,['источники']=true}
+        ['цвета']=true,['обновлено']=true,['свёрнуто']=true,['источники']=true,
+        ['соревнование']=true}
     for key,value in pairs(args) do
         key = tostring(key)
         if trim(value)~='' and not allowed[key] then
             local found = false
-            for _,field in ipairs(fields) do
+            for _,field in ipairs(indexedFields) do
                 if key:sub(1,#field)==field then
                     local suffix = key:sub(#field+1)
                     if suffix:match('^[1-9]%d*$') then
@@ -82,6 +84,24 @@ function p._render(args, frame)
     for i=1,last do
         local row = {}
         for _,field in ipairs(fields) do row[field]=trim(args[field..i]) end
+        local compact = trim(args['матч'..i])
+        if compact~='' then
+            local parts, start = {}, 1
+            while true do
+                local position = compact:find(';;',start,true)
+                parts[#parts+1]=trim(compact:sub(start,position and position-1 or #compact))
+                if not position then break end
+                start=position+2
+            end
+            if #parts<4 or #parts>5 then
+                fail('матч'..i..': нужны дата ;; соперник ;; счёт ;; голы [;; соревнование]')
+            end
+            for j,field in ipairs({'дата','соперник','счёт','голы','соревнование'}) do
+                if row[field]~='' then fail('не смешивайте матч'..i..' и '..field..i) end
+                row[field]=parts[j] or ''
+            end
+        end
+        if row['соревнование']=='' then row['соревнование']=trim(args['соревнование']) end
         for _,field in ipairs({'дата','соперник','счёт','голы','соревнование'}) do
             if row[field]=='' then fail('отсутствует ' .. field .. i) end
         end
@@ -119,7 +139,7 @@ function p._render(args, frame)
     end
     local tab = mw.html.create('table'):addClass('wikitable mw-collapsible')
     if collapsed~='нет' then tab:addClass('mw-collapsed') end
-    tab:cssText('text-align:center; font-size:95%; min-width:600px;')
+    tab:cssText('text-align:center; font-size:95%; max-width:100%;')
     local heading = tab:tag('tr'):tag('th'):attr('colspan',6)
     local palette = trim(args['цвета'])
     if palette~='' then
@@ -129,12 +149,14 @@ function p._render(args, frame)
     heading:wikitext(title)
     local columns = tab:tag('tr')
     for _,name in ipairs({'№','Дата','Соперник','Счёт','Голы','Соревнование'}) do
-        columns:tag('th'):wikitext(name)
+        columns:tag('th'):attr('scope','col'):wikitext(name)
     end
     for i,row in ipairs(rows) do
         local tr = tab:tag('tr')
-        for _,value in ipairs({i,row.date,row['соперник'],row.score,row.goals,row['соревнование']..row['источник']}) do
-            tr:tag('td'):wikitext(tostring(value))
+        for j,value in ipairs({i,row.date,row['соперник'],row.score,row.goals,row['соревнование']..row['источник']}) do
+            local cell = tr:tag('td')
+            if j==4 then cell:cssText('white-space:nowrap;') end
+            cell:wikitext(tostring(value))
         end
     end
     local summary = "'''Итого: " .. totals.games .. ' ' .. plural(totals.games,'матч','матча','матчей')

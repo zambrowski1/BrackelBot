@@ -1,0 +1,2 @@
+# Optional: executes Wikipedia modules in Lua 5.1 during pytest.
+lupa==2.8

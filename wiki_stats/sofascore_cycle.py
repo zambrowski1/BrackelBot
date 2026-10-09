@@ -90,9 +90,10 @@ def _numbers(response, pid, tid, sid, part):
     return team, values
 
 
-def prepare_player(snapshot, mapping, api, wiki, resolver, *, max_requests=24, max_match_pages=12):
-    now = datetime.now(timezone.utc)
+def prepare_player(snapshot, mapping, api, wiki, resolver, *, max_requests=24, max_match_pages=12, now=None):
+    now = now or datetime.now(timezone.utc)
     day = now.date().isoformat()
+    current_season = now.year if now.month>=7 else now.year-1
     profile = api.details(mapping['api_id'])
     if profile.get('date_of_birth') != mapping['birth_date']:
         raise UpdateError('identity_mismatch', 'Дата рождения Sofascore изменилась')
@@ -280,9 +281,9 @@ def prepare_player(snapshot, mapping, api, wiki, resolver, *, max_requests=24, m
     if len(current_rows) == 1:
         period, text, value = current_rows[0]
         first = validate_period(period)
-        league_records = [r for r in records if r['team_id'] == current['id'] and r['tournament_id'] in LEAGUES]
-        last = max((int(r['season'][:4]) for r in league_records), default=first-1)
-        new = total(resolved_current.qid, first, last)
+        departed = any(t.get('transfer_from',{}).get('id')==current['id']
+                       and str(t.get('transfer_date',''))[:4]>=str(first) for t in transfers['transfers'])
+        new = None if departed else total(resolved_current.qid, first, current_season)
         if new:
             old = dict(zip(('appearances', 'goals'), [n.value for n in value.numeric(pair=True)]))
             if old != new:
@@ -306,7 +307,12 @@ def prepare_player(snapshot, mapping, api, wiki, resolver, *, max_requests=24, m
             first = validate_period(period)
             year = transfer_day.year
             old_total = total(previous.qid, first, year-1)
-            new_total = total(resolved_current.qid, year, year)
+            new_total = total(resolved_current.qid, year, current_season)
+            departed_before = any(t.get('transfer_from',{}).get('id')==previous_team['id']
+                and f'{first}-01-01'<=str(t.get('transfer_date',''))[:10]<transfer_day.isoformat()
+                for t in transfers['transfers'])
+            if departed_before:
+                old_total = None
             if old_total is not None and new_total is not None:
                 old = dict(zip(('appearances', 'goals'), [n.value for n in value.numeric(pair=True)]))
                 if old != old_total:
@@ -349,8 +355,7 @@ def prepare_player(snapshot, mapping, api, wiki, resolver, *, max_requests=24, m
     def career_covered(period, team):
         first = validate_period(period)
         if is_active_period(period):
-            last = max((int(r['season'][:4]) for r in records
-                        if r['resolved'].qid==row_entity(team) and r['tournament_id'] in LEAGUES), default=-1)
+            last = current_season
         else:
             # A closed calendar-year stint does not identify its final season
             # without transfer evidence. Do not overclaim global coverage.

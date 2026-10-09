@@ -141,7 +141,8 @@ class API:
 def prepare(text=MINI, api=None):
     text = text.replace('| имя =', '| дата рождения = 22.08.1999\n| имя =').replace('2025/26', '2026/27')
     return prepare_player(snapshot(text), {'api_id': 1, 'qid': 'Q114406918', 'title': 'Игрок',
-        'wiki_name': 'Кальвин Браккельман', 'birth_date': '1999-08-22'}, api or API(), Wiki(), Resolver())
+        'wiki_name': 'Кальвин Браккельман', 'birth_date': '1999-08-22'}, api or API(), Wiki(), Resolver(),
+        now=datetime(2026,10,9,tzinfo=timezone.utc))
 
 
 def test_full_pipeline_updates_card_table_totals_number_leaves_national():
@@ -235,7 +236,8 @@ def test_transfer_card_and_shirt_number_share_one_atomic_diff():
             if title=='Падерборн 07': return {'qid':'Q500','title':title}
             return super().get_page_identity(title)
     _,plan,_ = prepare_player(snapshot(text), {'api_id':1,'qid':'Q114406918','title':'Игрок',
-        'wiki_name':'Кальвин Браккельман','birth_date':'1999-08-22'}, TransferAPI(),TransferWiki(),TransferResolver())
+        'wiki_name':'Кальвин Браккельман','birth_date':'1999-08-22'}, TransferAPI(),TransferWiki(),TransferResolver(),
+        now=datetime(2026,10,9,tzinfo=timezone.utc))
     assert all(c.status in {'ready','already_applied'} for c in plan.changes)
     assert '|2023—2026|'+old_club+'| 59 (5)' in plan.preview
     assert '|2026—{{н.в.}}|'+AUGSBURG+'|5 (2)' in plan.preview
@@ -269,3 +271,17 @@ def test_pipeline_can_create_missing_partial_section_without_inventing_cup_zeros
     assert '{{КлСтат|Чемпионат}}' in plan.preview
     assert 'полный итог карьеры не заявляется' in plan.preview
     assert '{{КлСтат/Сезон|2026/27|5|2}}' in plan.preview
+
+
+def test_missing_current_season_cannot_lower_current_career_total():
+    api=API()
+    api.seasons=lambda pid: {'player_id':pid,'tournament_seasons':[
+        {'tournament':{'id':35},'seasons':[{'id':25,'year':'25/26'}]}]}
+    _,plan,evidence=prepare(api=api)
+    assert '|2026—{{н.в.}}|'+AUGSBURG+'| 4 (1)' in plan.preview
+    assert any(r['code']=='career_incomplete' for r in evidence['review'])
+
+
+def test_null_player_details_in_match_history_do_not_confirm_participation():
+    history={'complete':True,'matches':[{**match(),'player':None}]}
+    assert confirmed_match_date(history,{(2600,35,26)},datetime(2026,10,9,tzinfo=timezone.utc)) is None

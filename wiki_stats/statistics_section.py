@@ -68,7 +68,9 @@ def render_section(payload, resolver, as_of):
     if not years:
         raise UpdateError('incomplete_statistics','Нет подтверждённых сезонов')
     if not payload['full_career']:
-        lines.append("''В таблице представлены только подтверждённые сезоны "+str(min(years))+'—'+str(max(years)+1)+" годов; полный итог карьеры не заявляется.''")
+        # Keep the date immediately before KlStat so the next reconciliation
+        # can address it without mistaking another section's update marker.
+        lines.insert(-1,"''В таблице представлены только подтверждённые сезоны "+str(min(years))+'—'+str(max(years)+1)+" годов; полный итог карьеры не заявляется.''")
     body.append('{{КлСтат/Итого|'+'|'.join(map(str,grand))+'}}')
     return '\n'.join(lines+body)+'\n\n'
 

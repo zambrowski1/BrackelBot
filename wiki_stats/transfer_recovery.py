@@ -6,7 +6,7 @@ from .errors import UpdateError
 from .source_validation import response_rows
 from .statistics_engine import pair_valid
 from .wikitext_parser import WikitextParser
-from .structural_editor import validate_period
+from .structural_editor import validate_period, is_active_period
 from .club_registry import ClubRegistry
 from .api_football_client import utcnow
 from .transactions import digest
@@ -149,9 +149,9 @@ def recovery_plan(store, api, wiki, mapping, snapshot, current_id, history, as_o
     if not rows or 'нынешний клуб' not in box:
         raise UpdateError('needs_review','Нет исходной строки и текущего клуба для восстановления истории')
     period, old_team, old_numbers = rows[-1]
-    if not period.endswith('{{н.в.}}'):
+    if not is_active_period(period):
         raise UpdateError('needs_review','Последняя строка старой карточки уже закрыта')
-    if any('{{н.в.}}' in p for p,_,_ in rows[:-1]):
+    if any(is_active_period(p) for p,_,_ in rows[:-1]):
         raise UpdateError('needs_review','Несколько действующих периодов карьеры требуют проверки')
     initial_page = reference_identity(wiki,old_team)
     if reference_identity(wiki,box['нынешний клуб'].text) != initial_page:

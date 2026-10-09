@@ -12,6 +12,7 @@ from .statistics_engine import normalize_dataset, update_operation
 from .wikitext_parser import WikitextParser
 from .change_planner import plan_article
 from .schema_validator import validate_package
+from .structural_editor import is_active_period
 from .transactions import digest, approve_change
 from .state_store import StoreAudit
 from .operator_review import queue_plan, deserialize_plan, serialize_plan
@@ -190,7 +191,7 @@ class CycleRunner:
             anchor_key=f'{pid}:{tid}:{self.season}'
             anchor=self.store.get('anchors',anchor_key)
             if not anchor: raise UpdateError('needs_review','Нет подтверждённой карьерной базы для периода и сезона')
-            if not anchor['period'].endswith('{{н.в.}}'):
+            if not is_active_period(anchor['period']):
                 raise UpdateError('needs_review','Закрытый исторический период нельзя обновлять дельтой текущего сезона')
             anchor_identity=reference_identity(self.wiki,anchor['career_wikitext'])
             # A return in the same season must not reuse an old stint anchor.

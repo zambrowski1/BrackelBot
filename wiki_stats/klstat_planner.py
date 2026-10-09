@@ -9,7 +9,34 @@ from .structural_editor import table_layout
 from .wikitext_parser import WikitextParser
 
 
+def validate_evidence(evidence):
+    import json
+    from importlib.resources import files
+    from jsonschema import Draft202012Validator, FormatChecker
+    from .schema_validator import reject_credentials
+    reject_credentials(evidence)
+    definitions=json.loads(files('wiki_stats').joinpath('update.schema.json').read_text(encoding='utf-8'))['$defs']
+    operation=definitions['operation']
+    creation=next(c['then']['properties']['payload'] for c in operation['allOf']
+                  if c['if']['properties']['type'].get('const')=='create_statistics_section')
+    club=deepcopy(creation['properties']['clubs']['items'])
+    # Existing blocks need exact wikitext, while newly created clubs also need kind/QID.
+    club['properties']['entity']={'allOf':[{'$ref':'#/$defs/entity'},{'required':['wikitext']}]}
+    club['properties']['insert_after_club']={'type':'string','minLength':1}
+    metadata={k:deepcopy(creation['properties'][k]) for k in ['categories','statistics_as_of','full_career']}
+    schema={'type':'object','additionalProperties':False,'$defs':definitions,
+        'properties':{'player':{'type':'string','minLength':1},'as_of':{'type':'string','format':'date'},
+                      'sources':operation['properties']['sources'],
+                      'clubs':{'type':'array','minItems':1,'items':club},
+                      'create_section':{'type':'object','additionalProperties':False,'properties':metadata,'required':list(metadata)}},
+        'required':['player','as_of','sources','clubs']}
+    error=next(iter(Draft202012Validator(schema,format_checker=FormatChecker()).iter_errors(evidence)),None)
+    if error:
+        raise UpdateError('invalid_input','Неверные данные КлСтат: '+('/'.join(map(str,error.absolute_path)) or 'корневой объект'))
+
+
 def prepare_table(snapshot, evidence, resolver):
+    validate_evidence(evidence)
     if not isinstance(evidence,dict) or not isinstance(evidence.get('clubs'),list) or not evidence['clubs']:
         raise UpdateError('incomplete_statistics','Нужен список подтверждённых клубов и сезонов')
     parser=WikitextParser(snapshot.text)

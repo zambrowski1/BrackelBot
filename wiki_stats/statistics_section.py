@@ -28,7 +28,7 @@ def render_section(payload, resolver, as_of):
     lines=['== Статистика выступлений ==','', '=== Клубная статистика ===',
            '{{обновлено|'+day.isoformat()+'}}']
     body=['{{КлСтат|'+'|'.join(categories)+'}}']
-    grand=[0]*(2*len(categories)); seen=set(); years=[]
+    grand=[0]*(2*len(categories)); seen=set(); years=[]; checked_leagues=set()
     for club in payload['clubs']:
         entity=resolver.resolve(club['entity'])
         name=club['entity']['wikitext'].strip()
@@ -49,7 +49,9 @@ def render_section(payload, resolver, as_of):
             used.add(row['season']);last=year
             league=league_link(row['league_wikitext'])
             title=str(mw.parse(league).filter_wikilinks()[0].title).strip()
-            resolver.client.get_page_identity(title)
+            if title not in checked_leagues:
+                resolver.client.get_page_identity(title)
+                checked_leagues.add(title)
             values=numbers(SimpleNamespace(categories=categories),{'categories':row['categories'],'complete':True})
             parsed.append((league,row['season'],values))
             total=[a+b for a,b in zip(total,values)]

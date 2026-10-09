@@ -6,7 +6,7 @@ from .errors import UpdateError
 
 class ProviderStore:
     def __init__(self, store, provider):
-        if provider not in {'api_football', 'highlightly'}:
+        if provider not in {'api_football', 'highlightly', 'paused'}:
             raise UpdateError('provider_invalid', 'Неизвестный источник статистики')
         self.base, self.provider = store, provider
 
@@ -21,7 +21,12 @@ class ProviderStore:
 
 
 def make_api(store):
-    if getattr(store, 'provider', 'api_football') == 'highlightly':
+    provider=getattr(store,'provider',os.environ.get('BRACKELBOT_API_PROVIDER','api_football'))
+    if provider=='paused':
+        raise UpdateError('provider_paused','Сбор данных приостановлен оператором')
+    if provider not in {'api_football','highlightly'}:
+        raise UpdateError('provider_invalid','Неизвестный источник статистики')
+    if provider == 'highlightly':
         from .highlightly_client import HighlightlyClient
         return HighlightlyClient(store)
     from .api_football_client import ApiFootballClient

@@ -20,7 +20,7 @@ def validate_anchor(anchor):
         raise UpdateError('anchor_invalid','Карьерный итог меньше включённого сезонного показателя')
     if (type(anchor['team_id']) is not int or anchor['team_id']<=0 or type(anchor['season']) is not int
         or not 1000 <= anchor['season'] <= 9999 or not isinstance(anchor['period'],str)
-        or not re.fullmatch(r'\d{4}—(?:\d{4}|\{\{н\.в\.\}\})',anchor['period'])
+        or not re.fullmatch(r'\d{4}—(?:\d{4}|\{\{(?:н\.в\.|нв)\}\})',anchor['period'],re.IGNORECASE)
         or not isinstance(anchor['career_wikitext'],str) or not anchor['career_wikitext'].strip()
         or not isinstance(anchor['evidence_url'],str) or not re.match(r'^https://[^/\s]+/',anchor['evidence_url'])):
         raise UpdateError('anchor_invalid','База не указывает однозначный период и источник')

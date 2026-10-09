@@ -14,7 +14,7 @@ def _object(pairs):
     return result
 
 
-def load_package(path: str | Path) -> dict:
+def load_json(path: str | Path) -> dict:
     try:
         if Path(path).stat().st_size > 10_000_000:
             raise UpdateError("invalid_input", "JSON превышает 10 МБ")
@@ -22,5 +22,10 @@ def load_package(path: str | Path) -> dict:
                              parse_constant=lambda x: (_ for _ in ()).throw(ValueError(x)))
     except (OSError, UnicodeError, ValueError, RecursionError) as exc:
         raise UpdateError("invalid_input", f"Не удалось загрузить JSON: {exc}") from exc
+    return package
+
+
+def load_package(path: str | Path) -> dict:
+    package=load_json(path)
     validate_package(package)
     return package

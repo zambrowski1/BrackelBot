@@ -24,6 +24,8 @@ from .api_provider import ProviderStore
 def make_api(store):
     if getattr(store, 'provider', 'api_football') == 'paused':
         raise UpdateError('provider_paused', 'Сбор данных приостановлен оператором')
+    if getattr(store,'provider','api_football') not in {'api_football','highlightly'}:
+        raise UpdateError('provider_invalid','Неизвестный источник статистики')
     if getattr(store, 'provider', 'api_football') == 'highlightly':
         from .highlightly_client import HighlightlyClient
         return HighlightlyClient(store)
@@ -100,7 +102,7 @@ def main(argv=None):
         if args.provider == 'paused' and args.command in {'run','check-api','api-quotas','search-player','inspect-player','check-league','player-confirm','club-confirm'}:
             raise UpdateError('provider_paused', 'Сбор данных приостановлен оператором')
         store=StateStore(args.state) if args.state else StateStore.from_env()
-        if args.provider == 'highlightly': store=ProviderStore(store,args.provider)
+        store=ProviderStore(store,args.provider)
         if args.command=='init-db':
             if store.get('policy','kill_switch') is None: store.put('policy','kill_switch',True)
             print('Хранилище готово. По умолчанию публикация выключена.');return 0
@@ -128,12 +130,12 @@ def main(argv=None):
             result=check_table(wiki.fetch_page(args.title).text)
             print(json.dumps(result,ensure_ascii=False,indent=2));return 1 if result['warnings'] else 0
         if args.command=='prepare-klstat':
-            from .klstat_planner import prepare_table
+            from .klstat_planner import prepare_table, validate_evidence
             from .entity_resolver import EntityResolver
             from .audit_logger import make_report
-            evidence=json.loads(Path(args.evidence).read_text(encoding='utf-8'))
-            from .schema_validator import reject_credentials
-            reject_credentials(evidence)
+            from .json_loader import load_json
+            evidence=load_json(args.evidence)
+            validate_evidence(evidence)
             wiki=FixtureClient(args.fixtures) if args.fixtures else WikiClient()
             pkg,plan=prepare_table(wiki.fetch_page(args.title),evidence,EntityResolver(wiki))
             write_json(args.package_out,pkg)

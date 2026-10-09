@@ -9,7 +9,8 @@ from PySide6.QtWidgets import (QApplication, QMainWindow, QWidget, QVBoxLayout, 
                               QComboBox, QDialog, QLineEdit, QFormLayout, QDialogButtonBox)
 from .json_loader import load_package
 from .wiki_client import WikiClient
-from .change_planner import plan_package
+from .change_planner import plan_package, plan_article
+from .manual_dialog import ManualStatsDialog
 from .audit_logger import AuditLogger, make_report, audit_report
 from .models import Mode
 from .transactions import approve_change, reject_change, TEST_TITLE
@@ -58,11 +59,12 @@ class MainWindow(QMainWindow):
         self.client = client_factory()
         self.logger = logger or AuditLogger()
         self.package = None
+        self.offline_snapshot = None
         self.plans, self.failures, self.rows = [], [], []
         self.viewed = set()
         self.worker = None
         self.setAttribute(Qt.WidgetAttribute.WA_DeleteOnClose)
-        self.setWindowTitle("BrackelBot — ручное тестирование, этапы 2 и 3")
+        self.setWindowTitle("BrackelBot — проверка и ручной ввод статистики")
         self.resize(1300, 850)
         central = QWidget()
         layout = QVBoxLayout(central)
@@ -82,6 +84,8 @@ class MainWindow(QMainWindow):
         layout.addLayout(account_bar)
         bar = QHBoxLayout()
         self.load_button = QPushButton("Загрузить JSON")
+        self.entry_button = QPushButton('Ввести статистику')
+        self.save_package_button = QPushButton('Сохранить пакет')
         self.check_button = QPushButton("Проверить статьи")
         self.show_button = QPushButton("Показать изменения")
         self.approve_button = QPushButton("Подтвердить")
@@ -90,7 +94,7 @@ class MainWindow(QMainWindow):
         self.export_button = QPushButton("Экспортировать отчёт")
         self.backup_button = QPushButton('Сохранить исходную версию')
         self.restore_button = QPushButton('Восстановить из копии')
-        for button in [self.load_button, self.check_button, self.show_button, self.export_button]:
+        for button in [self.entry_button, self.load_button, self.save_package_button, self.check_button, self.show_button, self.export_button]:
             bar.addWidget(button)
         layout.addLayout(bar)
         decisions = QHBoxLayout()
@@ -119,10 +123,12 @@ class MainWindow(QMainWindow):
         self.article_status = QLabel('Статьи ещё не проверены')
         self.article_status.setWordWrap(True)
         layout.addWidget(self.article_status)
-        self.status = QLabel("Загрузите JSON-пакет. Сетевых запросов при запуске нет.")
+        self.status = QLabel("Введите статистику через форму или загрузите JSON-пакет.")
         self.status.setWordWrap(True)
         layout.addWidget(self.status)
         self.load_button.clicked.connect(self.load_json)
+        self.entry_button.clicked.connect(self.manual_entry)
+        self.save_package_button.clicked.connect(self.save_package)
         self.check_button.clicked.connect(self.check)
         self.show_button.clicked.connect(self.show_diff)
         self.approve_button.clicked.connect(lambda: self.decide("approved"))
@@ -139,6 +145,8 @@ class MainWindow(QMainWindow):
     def update_buttons(self):
         busy = self.worker is not None and self.worker.isRunning()
         self.load_button.setEnabled(not busy)
+        self.entry_button.setEnabled(not busy)
+        self.save_package_button.setEnabled(not busy and bool(self.package and self.package.get('articles')))
         self.check_button.setEnabled(bool(self.package and self.package.get('articles')) and not busy)
         for b in [self.show_button, self.reject_button, self.export_button]:
             b.setEnabled(bool(self.rows or self.failures) and not busy)
@@ -163,6 +171,7 @@ class MainWindow(QMainWindow):
             package = load_package(path)
             self.logger.log("package_loaded", package_id=package["package_id"])
             self.package = package
+            self.offline_snapshot = None
             self.plans, self.failures, self.rows = [], [], []
             self.viewed.clear()
             self.table.setRowCount(0)
@@ -172,8 +181,40 @@ class MainWindow(QMainWindow):
             QMessageBox.warning(self, "Ошибка загрузки", str(exc))
         self.update_buttons()
 
+    def manual_entry(self):
+        dialog = ManualStatsDialog(self.client, TaskWorker, self)
+        if dialog.exec() != QDialog.DialogCode.Accepted:
+            return
+        self.apply_manual_entry(dialog.package, dialog.snapshot, dialog.offline)
+
+    def apply_manual_entry(self, package, snapshot, offline=False):
+        plan = plan_article(snapshot, package['articles'][0], package['schema_version'])
+        if offline:
+            plan.publishable = False
+        self.package = package
+        self.offline_snapshot = snapshot if offline else None
+        self.viewed.clear()
+        self.checked([plan], [])
+        self.status.setText('Правка подготовлена из локального снимка; публикация отключена.' if offline else
+                            'Правка подготовлена. Просмотрите diff и проверьте источник перед подтверждением.')
+        self.update_buttons()
+
+    def save_package(self):
+        if not self.package or not self.package.get('articles'):
+            return
+        path, _ = QFileDialog.getSaveFileName(self, 'Сохранить пакет', 'manual-update.json', 'JSON (*.json)')
+        if path:
+            try:
+                Path(path).write_text(json.dumps(self.package, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
+                self.status.setText('Пакет сохранён: '+path)
+            except OSError as exc:
+                QMessageBox.warning(self, 'Ошибка сохранения', str(exc))
+
     def check(self):
         if not self.package or (self.worker and self.worker.isRunning()):
+            return
+        if self.offline_snapshot is not None:
+            self.apply_manual_entry(self.package, self.offline_snapshot, offline=True)
             return
         self.plans, self.failures, self.rows = [], [], []
         self.viewed.clear()

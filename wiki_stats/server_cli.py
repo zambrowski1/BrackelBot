@@ -18,6 +18,14 @@ from .publication_policy import PublicationPolicy
 from .transactions import plan_fingerprint
 from .json_loader import load_package
 from .change_planner import plan_package
+from .api_provider import ProviderStore
+
+
+def make_api(store):
+    if getattr(store, 'provider', 'api_football') == 'highlightly':
+        from .highlightly_client import HighlightlyClient
+        return HighlightlyClient(store)
+    return ApiFootballClient(store)
 
 
 def login_env(wiki):
@@ -36,8 +44,13 @@ def write_json(path,value):
 def parser():
     p=argparse.ArgumentParser(description='BrackelBot 0.4 — Toolforge и ручной контроль')
     p.add_argument('--state',help='Локальная SQLite (на Toolforge используйте BRACKELBOT_STORAGE=toolsdb)')
+    p.add_argument('--provider', choices=['api_football','highlightly'], default=os.environ.get('BRACKELBOT_API_PROVIDER','api_football'))
     sub=p.add_subparsers(dest='command',required=True)
     sub.add_parser('init-db');sub.add_parser('check-api');sub.add_parser('check-auth')
+    sub.add_parser('api-quotas')
+    search=sub.add_parser('search-player');search.add_argument('name')
+    inspect=sub.add_parser('inspect-player');inspect.add_argument('api_id',type=int);inspect.add_argument('--season',type=int,default=2026)
+    scope=sub.add_parser('check-league');scope.add_argument('--tier',type=int,choices=[1,2,3],default=1);scope.add_argument('--season',type=int,default=2026)
     clubs=sub.add_parser('club-list');clubs.add_argument('--tier',type=int,choices=(1,2,3));clubs.add_argument('--season',type=int,default=2026)
     run=sub.add_parser('run');run.add_argument('--season',type=int,default=2026)
     modes=run.add_mutually_exclusive_group()
@@ -80,11 +93,26 @@ def main(argv=None):
     store=None
     try:
         store=StateStore(args.state) if args.state else StateStore.from_env()
+        if args.provider == 'highlightly': store=ProviderStore(store,args.provider)
         if args.command=='init-db':
             if store.get('policy','kill_switch') is None: store.put('policy','kill_switch',True)
             print('Хранилище готово. По умолчанию публикация выключена.');return 0
         if args.command=='check-api':
-            print(json.dumps(ApiFootballClient(store).status(),ensure_ascii=False,indent=2));return 0
+            with store.run_lock(): result=make_api(store).status()
+            print(json.dumps(result,ensure_ascii=False,indent=2));return 0
+        if args.command in {'api-quotas','search-player','inspect-player','check-league'}:
+            if args.provider != 'highlightly':
+                raise UpdateError('provider_invalid','Эта команда требует --provider highlightly')
+            with store.run_lock():
+                api=make_api(store)
+                if args.command=='api-quotas': result=api.quota_status()
+                elif args.command=='search-player': result=api.search_players(args.name)
+                elif args.command=='check-league': result=api.scope(args.season,{1:67162,2:68013,3:68864}[args.tier])
+                else:
+                    result=api.player(args.api_id,args.season,fresh=False)
+                    _,profile,_=api.profile(args.api_id)
+                    result['transfers']=profile['transfers']
+            print(json.dumps(result,ensure_ascii=False,indent=2));return 0
         if args.command=='check-auth':
             wiki=WikiClient();print('Авторизация: '+login_env(wiki));wiki.verify_authenticated();wiki.logout_local();return 0
         if args.command=='kill-switch':
@@ -138,6 +166,7 @@ def main(argv=None):
                 plan.publishable=bool(plan.diff)
                 store.put('plans',args.hash,{**item,'plan':__import__('dataclasses').asdict(plan)})
                 store.put('plan_evidence',args.hash,{'manual':True,'plan_hash':args.hash,'league':78,'season':args.season,
+                          'provider':args.provider,
                           'fetched_at':utcnow(),'player_id':args.api_id,'mapping_hash':digest(mapping)})
                 StoreAudit(store,'operator').log('sources_attested',plan_hash=args.hash,api_id=args.api_id)
             print('Ручные источники подтверждены оператором; по-прежнему требуются diff и отдельное утверждение каждой операции.');return 0
@@ -177,16 +206,20 @@ def main(argv=None):
                     anchor=json.loads(Path(args.file).read_text(encoding='utf-8'))
                     result=PlayerRegistry(store).confirm_anchor(args.api_id,anchor,wiki)
                 elif args.command=='player-confirm':
-                    dataset=store.get('datasets',str(args.season))
-                    if not dataset: raise UpdateError('dataset_missing','Сначала выполните run --dry-run')
-                    from .statistics_engine import normalize_dataset
-                    players,_=normalize_dataset(dataset)
+                    if args.provider == 'highlightly':
+                        player,_,_=make_api(store).profile(args.api_id, fresh=True)
+                        players={args.api_id:player}
+                    else:
+                        dataset=store.get('datasets',str(args.season))
+                        if not dataset: raise UpdateError('dataset_missing','Сначала выполните run --dry-run')
+                        from .statistics_engine import normalize_dataset
+                        players,_=normalize_dataset(dataset)
                     if args.api_id not in players: raise UpdateError('identity_unmapped','ID отсутствует в полном сборе выбранного сезона')
                     result=PlayerRegistry(store).confirm(players[args.api_id],args.qid,args.title,args.wiki_name,wiki)
                 else:
-                    if args.historical:
+                    if args.historical or args.provider == 'highlightly':
                         from .source_validation import response_rows
-                        rows=response_rows(ApiFootballClient(store).team(args.api_id))
+                        rows=response_rows(make_api(store).team(args.api_id))
                         teams=[r.get('team',{}) for r in rows]
                         if (len(teams)!=1 or teams[0].get('id')!=args.api_id or teams[0].get('national') is not False):
                             raise UpdateError('club_unmapped','API не подтвердил единственный исторический клуб с указанным ID')
@@ -205,7 +238,11 @@ def main(argv=None):
             if mode=='automatic' and os.environ.get('BRACKELBOT_PUBLICATION')=='1' and not store.get('policy','kill_switch',True):
                 login_env(wiki)
             try:
-                report=CycleRunner(store,ApiFootballClient(store),wiki,season=args.season,mode=mode,discover=args.discover_candidates).run()
+                runner=CycleRunner
+                if args.provider == 'highlightly':
+                    from .highlightly_scheduler import HighlightlyCycleRunner
+                    runner=HighlightlyCycleRunner
+                report=runner(store,make_api(store),wiki,season=args.season,mode=mode,discover=args.discover_candidates).run()
             finally: wiki.logout_local()
             folder=Path(args.report_dir)
             write_json(folder/(report['run_id']+'.json'),report)

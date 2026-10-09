@@ -1,7 +1,7 @@
 # BrackelBot
 
 Бот для обновления футбольной статистики в русской Википедии. Получает данные
-из API-Football, сопоставляет игроков со статьями и готовит изменения карточек
+из Highlightly или API-Football, сопоставляет игроков со статьями и готовит изменения карточек
 и таблиц. Перед записью проверяет исходные числа и ревизию страницы.
 
 Основной режим — серверный запуск на Wikimedia Toolforge. Для ручной работы
@@ -12,7 +12,7 @@
 
 ## Быстрый старт
 
-Нужны Python 3.12+ и ключ API-Football.
+Нужны Python 3.12+ и ключ выбранного API.
 
 ```bash
 git clone https://github.com/zambrowski1/BrackelBot.git
@@ -22,22 +22,27 @@ python3 -m venv .venv-server
 .venv-server/bin/python -m wiki_stats.server_cli init-db
 ```
 
-Задайте `API_FOOTBALL_KEY` в окружении, затем проверьте подписку и запустите сбор:
+Для Highlightly задайте `BRACKELBOT_API_PROVIDER=highlightly` и
+`HIGHLIGHTLY_API_KEY` в окружении. Можно настроить несколько ключей с учётом
+общих квот подписок — [инструкция](docs/HIGHLIGHTLY.md). Затем:
 
 ```bash
 .venv-server/bin/python -m wiki_stats.server_cli check-api
+.venv-server/bin/python -m wiki_stats.server_cli search-player 'Harry Kane'
 .venv-server/bin/python -m wiki_stats.server_cli run --season 2026 --dry-run
 ```
 
 В Windows используйте `py -3` вместо `python3`, а путь к Python —
-`.venv-server/Scripts/python.exe`. Для проверки API можно просто открыть
+`.venv-server/Scripts/python.exe`. Для проверки API-Football можно открыть
 `CHECK_API.bat`: ключ вводится скрыто и не записывается в файл.
 
 Локально состояние хранится в SQLite, на Toolforge — в ToolsDB.
-На первом запуске нужно подтвердить соответствия игроков, клубов и исходную
-статистику. Это описано в руководстве оператора.
+Для API-Football выберите `BRACKELBOT_API_PROVIDER=api_football` и задайте
+`API_FOOTBALL_KEY`. На первом запуске нужно подтвердить соответствия игроков,
+клубов и исходную статистику. Highlightly обновляет только подтверждённых игроков;
+пустой реестр не запускает сканирование всей лиги.
 
-Для устаревшей карточки бот может подготовить пропущенную цепочку постоянных
+Через API-Football для устаревшей карточки бот может подготовить пропущенную цепочку постоянных
 переходов, включая промежуточные клубы других чемпионатов. Периоды и числа
 проверяются по истории и сезонной статистике. Такое изменение требует просмотра
 оператором; неизвестные значения не заменяются нулями.
@@ -47,6 +52,7 @@ python3 -m venv .venv-server
 | Что нужно сделать | Инструкция |
 |---|---|
 | Развернуть бота и настроить расписание | [Toolforge](docs/TOOLFORGE.md) |
+| Подключить Highlightly и несколько ключей | [Highlightly](docs/HIGHLIGHTLY.md) |
 | Подтвердить игроков, проверить diff и опубликовать изменения | [Работа с ботом](docs/SERVER_OPERATOR.md) |
 | Запустить приложение для Windows | [Windows](docs/WINDOWS_GUI.md) |
 | Подготовить JSON | [Формат пакета](docs/JSON_FORMAT.md), [операции](docs/JSON_OPERATIONS.md) |
@@ -80,6 +86,7 @@ python3 -m venv .venv-server
 CC BY-SA 4.0; ссылки на авторов и ревизии находятся в [NOTICE.md](NOTICE.md).
 [Лицензии библиотек](docs/THIRD_PARTY_LICENSES.md).
 
-Права на публикацию полученной через API статистики пока не подтверждены.
-Условия источника и требования Toolforge к данным описаны в
+Highlightly разрешает хранение и распространение данных в своих условиях;
+для API-Football допустимость нашего сценария ещё нужно уточнить.
+Условия источников и требования Toolforge к данным описаны в
 [DATA_POLICY.md](docs/DATA_POLICY.md).

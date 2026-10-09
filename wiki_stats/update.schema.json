@@ -526,7 +526,8 @@
               "provenance": {
                 "enum": [
                   "user_provided",
-                  "api_football"
+                  "api_football",
+                  "highlightly"
                 ]
               },
               "coverage_as_of": {

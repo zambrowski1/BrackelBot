@@ -1,5 +1,9 @@
 # Установка на Toolforge
 
+Для Highlightly выбор источника, ключи и проверка квоты описаны в
+[отдельной инструкции](HIGHLIGHTLY.md). Скрипты `operator.sh` и `run.sh`
+используют `BRACKELBOT_API_PROVIDER`; расписание менять при смене источника не нужно.
+
 Для установки нужен Tool Account. Ниже используется имя `brackelbot`;
 если у вас другое имя, замените его в путях и скриптах. Первый запуск — Dry Run.
 
@@ -84,12 +88,14 @@ SQLite предназначена для локальной разработки
 ```bash
 toolforge envvars create BRACKELBOT_STORAGE
 toolforge envvars create BRACKELBOT_DB_NAME
-toolforge envvars create API_FOOTBALL_KEY
 toolforge envvars create BRACKELBOT_PUBLICATION
 ```
 
-Вводимые значения соответственно: `toolsdb`, `s12345__brackelbot`, ваш API-ключ,
-`0`. Пароль ToolsDB программа берёт из системных `TOOL_TOOLSDB_USER` и
+Вводимые значения соответственно: `toolsdb`, `s12345__brackelbot`, `0`.
+Для Highlightly добавьте `BRACKELBOT_API_PROVIDER=highlightly` и `HIGHLIGHTLY_API_KEY`
+через Envvars, как описано в [HIGHLIGHTLY.md](HIGHLIGHTLY.md).
+Для API-Football задайте `BRACKELBOT_API_PROVIDER=api_football` и `API_FOOTBALL_KEY`.
+Пароль ToolsDB программа берёт из системных `TOOL_TOOLSDB_USER` и
 `TOOL_TOOLSDB_PASSWORD`; в образах с общим хранилищем есть официальный резервный
 вариант — файл `replica.my.cnf` инструмента. Его содержимое не копируется в проект.
 
@@ -111,8 +117,9 @@ toolforge jobs run bb-check-api --image python3.13 --command './brackelbot/toolf
 toolforge jobs run bb-check-auth --image python3.13 --command './brackelbot/toolforge/operator.sh check-auth' --wait
 ```
 
-Bootstrap ставит серверные зависимости без PySide6. Check-api показывает
-подписку и действительные лимиты `/status`; check-auth только входит и проверяет
+Bootstrap ставит серверные зависимости без PySide6. Check-api проверяет
+выбранный источник и показывает квоту (API-Football использует `/status`,
+Highlightly — заголовки ответа `/leagues`); check-auth только входит и проверяет
 сессию, без публикации. Если одноразовое задание с таким именем уже существует,
 удалите именно его (`toolforge jobs delete bb-check-api`) перед повторением.
 Не используйте flush: он затронет другие задания.
@@ -126,7 +133,9 @@ toolforge jobs logs bb-first
 ```
 
 Отчёты лежат в `/data/project/brackelbot/reports` и независимо сохраняются в
-ToolsDB. Первый цикл получает покрытие, клубы сезона, все страницы игроков и
+ToolsDB. Для Highlightly сначала подтвердите игроков по [его инструкции](HIGHLIGHTLY.md);
+цикл обрабатывает только этот реестр. Для API-Football первый цикл получает
+покрытие, клубы сезона, все страницы игроков и
 текущие составы. Он создаёт очередь подтверждения ID. Отсутствие готовых правок
 на первом запуске ожидаемо: требуется заполнение справочников и карьерных баз.
 Дальше следуйте [SERVER_OPERATOR.md](SERVER_OPERATOR.md).

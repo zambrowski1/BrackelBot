@@ -156,9 +156,19 @@ class CycleRunner:
             box=parser.infobox(mapping['wiki_name'])
             current=box.get('нынешний клуб')
             current_titles={reference_identity(self.wiki,current.text)['title']} if current else set()
-            history_record=self.api.transfers(pid)
-            history=transfer_history(history_record, pid)
+            highlightly = getattr(self.api, 'provider', '') == 'highlightly'
+            if highlightly:
+                history = [{'date': d} for d in self.api.transfer_dates(pid)]
+            else:
+                history_record=self.api.transfers(pid)
+                history=transfer_history(history_record, pid)
             if resolved.title not in current_titles:
+                if highlightly:
+                    _, profile, fetched = self.api.profile(pid)
+                    review(self.store, 'transfer', pid, 'transfer_chain_requires_mapping',
+                           {'current_team': teams[tid], 'transfers': profile['transfers'], 'fetched_at': fetched})
+                    report['review_count'] += 1
+                    return
                 historical_ids={t['teams']['in']['id'] for t in history}
                 for historical_id in historical_ids:
                     if not ClubRegistry(self.store).get(historical_id):
@@ -223,12 +233,13 @@ class CycleRunner:
             package={'schema_version':'1.1','package_id':'api-'+report['run_id'],'generated_at':utcnow(),'articles':[article]}
             validate_package(package)
             plan=plan_article(snapshot,article,'1.1')
-            for c in plan.changes: c.source_verification='api_football_with_operator_verified_anchor'
+            for c in plan.changes: c.source_verification=('highlightly' if highlightly else 'api_football')+'_with_operator_verified_anchor'
             if plan.warnings or any(c.status not in {'ready','already_applied'} for c in plan.changes):
                 raise UpdateError('unsupported_structure','План не прошёл проверки редактора или арифметики')
             plan.publishable=bool(plan.diff)
             plan_hash=queue_plan(self.store,plan,report['run_id'])
             self.store.put('plan_evidence',plan_hash,{'plan_hash':plan_hash,'league':78,'season':self.season,
+                'provider': 'highlightly' if highlightly else 'api_football',
                 'fetched_at':obs['fetched_at'],'player_id':pid,'team_id':tid,'anchor_key':anchor_key,
                 'mapping_hash':digest(mapping),'anchor_hash':digest(anchor),'observation':obs})
             self.store.put('packages',plan_hash,package)
@@ -272,13 +283,16 @@ def publish_plan(store,plan_hash,wiki,policy,logger=None,plan=None,source_api=No
     if item.get('offline'): raise UpdateError('offline_publication','План из локальных копий нельзя публиковать; выполните живую проверку')
     plan=plan or deserialize_plan(item['plan'])
     policy.gate_plan(plan)
+    evidence=store.get('plan_evidence',plan_hash, {})
+    if source_api is not None and getattr(source_api, 'provider', 'api_football') != evidence.get('provider', 'api_football'):
+        raise UpdateError('source_unverified', 'Для перепроверки выбран другой поставщик данных')
     if plan.snapshot.title!='Участник:Zambrowski/testbot':
         evidence=store.get('plan_evidence',plan_hash)
         check_player_identity(wiki,store.get('players',evidence['player_id']))
         if evidence.get('kind')=='transfer':
             if source_api is None:
-                from .api_football_client import ApiFootballClient
-                source_api=ApiFootballClient(store)
+                from .api_provider import make_api
+                source_api=make_api(store)
             try:
                 for tid in evidence['club_hashes']: ClubRegistry(store).verify(int(tid),wiki)
                 record=source_api.transfers(evidence['player_id'],fresh=True)
@@ -298,15 +312,20 @@ def publish_plan(store,plan_hash,wiki,policy,logger=None,plan=None,source_api=No
         elif not evidence.get('manual'):
             ClubRegistry(store).verify(evidence['team_id'],wiki)
             if source_api is None:
-                from .api_football_client import ApiFootballClient
-                source_api=ApiFootballClient(store)
+                from .api_provider import make_api
+                source_api=make_api(store)
             try:
                 live_players,observations=normalize_dataset(source_api.player(evidence['player_id'],evidence['season']), expected_season=evidence['season'])
-                members=roster_members(source_api.squads(evidence['team_id'],fresh=True), evidence['team_id'])
-                transfers=transfer_history(source_api.transfers(evidence['player_id'],fresh=True), evidence['player_id'])
+                if evidence.get('provider') == 'highlightly':
+                    team = source_api.current_team(evidence['player_id'], evidence['season'])
+                    members = {evidence['player_id']} if team['id'] == evidence['team_id'] else set()
+                    transfers = [{'date': d} for d in source_api.transfer_dates(evidence['player_id'])]
+                else:
+                    members=roster_members(source_api.squads(evidence['team_id'],fresh=True), evidence['team_id'])
+                    transfers=transfer_history(source_api.transfers(evidence['player_id'],fresh=True), evidence['player_id'])
             except UpdateError as exc:
                 # Invalid evidence must invalidate approvals as well as prevent this write.
-                if exc.code in {'api_invalid_response','api_incomplete','api_duplicate_conflict','api_identity_conflict'}:
+                if exc.code in {'api_invalid_response','api_incomplete','api_duplicate_conflict','api_identity_conflict','needs_review'}:
                     from .transactions import clear_approvals
                     clear_approvals(plan);plan.publishable=False
                     store.put('plans',plan_hash,{**item,'status':'stale','plan':serialize_plan(plan),'last_error':exc.code})

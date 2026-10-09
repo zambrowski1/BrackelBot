@@ -66,6 +66,11 @@ def normalize_dataset(dataset, *, expected_season=None):
                 value={'api_id':pid,'team_id':tid,'team_name':team['name'],'league':78,
                        'season':dataset['season'],'stats':pair,'fetched_at':dataset['fetched_at'],
                        'status':'known' if pair_valid(pair) else 'needs_review'}
+                if dataset.get('provider') == 'highlightly':
+                    url = f"https://soccer.highlightly.net/players/{pid}/statistics"
+                    if dataset.get('source_url') != url:
+                        raise UpdateError('source_unverified', 'Неверное происхождение Highlightly')
+                    value.update(provider='highlightly', source_url=url)
                 if key in observations and observations[key] != value:
                     raise UpdateError('api_duplicate_conflict','Разные статистические записи одной команды/сезона; сложение запрещено')
                 observations[key]=value
@@ -100,8 +105,8 @@ def update_operation(mapping, anchor, observation, old):
             'target':{'structure':'career','field':'клубы','period':anchor['period']},'season':None,
             'competition':{'name':'Чемпионат','category':'all','scope':'league'},
             'expected':old,'new':new,'as_of':as_of,'sources':[
-                {'url':f"https://v3.football.api-sports.io/players?id={mapping['api_id']}&season={observation['season']}",
-                 'provenance':'api_football','coverage_as_of':as_of,
+                {'url':observation.get('source_url', f"https://v3.football.api-sports.io/players?id={mapping['api_id']}&season={observation['season']}"),
+                 'provenance':observation.get('provider','api_football'),'coverage_as_of':as_of,
                  'note':'Дата получения API, не подтверждённая дата последнего матча; карьерный итог = база + дельта сезона.'},
                 {'url':anchor['evidence_url'],'provenance':'api_football' if anchor.get('transfer_plan_hash') else 'user_provided','coverage_as_of':as_of,
                  'note':f"Подтверждённая оператором база от {anchor['as_of']}; {anchor['career']} / {anchor['season_stats']}"}]}

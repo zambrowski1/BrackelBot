@@ -9,6 +9,7 @@
     "approval_url":{"type":"string","format":"uri","pattern":"^https://ru\\.wikipedia\\.org/wiki/.+"},
     "approved_at":{"type":"string","format":"date-time"},
     "league":{"const":78},
+    "providers":{"type":"array","minItems":1,"uniqueItems":true,"items":{"enum":["api_football","highlightly"]}},
     "seasons":{"type":"array","minItems":1,"uniqueItems":true,"items":{"type":"integer","minimum":2000,"maximum":2100}},
     "titles":{"type":"array","minItems":1,"uniqueItems":true,"items":{"type":"string","minLength":1,"pattern":"^[^:]+$"}},
     "operations":{"type":"array","minItems":1,"uniqueItems":true,"items":{"enum":["update_stats","update_date","update_totals","add_club","update_current_club","update_career_period","add_season","add_competition","add_national_team"]}}

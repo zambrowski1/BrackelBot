@@ -46,6 +46,10 @@ class PublicationPolicy:
         evidence=self.store.get('plan_evidence',plan.content_fingerprint)
         if not evidence or evidence.get('plan_hash')!=plan_fingerprint(plan) or evidence.get('league')!=78:
             raise UpdateError('source_unverified','Нет подтверждённого серверного происхождения плана')
+        if evidence.get('provider', 'api_football') != getattr(self.store, 'provider', 'api_football'):
+            raise UpdateError('source_unverified', 'План и реестр относятся к разным поставщикам данных')
+        if evidence.get('provider', 'api_football') not in approval.get('providers', ['api_football']):
+            raise UpdateError('provider_not_approved', 'Источник данных не указан в одобренной ботозадаче')
         age=(datetime.now(timezone.utc)-datetime.fromisoformat(evidence['fetched_at'])).total_seconds()
         if not 0<=age<=86400 or evidence.get('season') not in approval.get('seasons',[]):
             raise UpdateError('source_stale','Покрытие сезона не одобрено или данные старше суток')

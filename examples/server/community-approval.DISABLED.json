@@ -4,6 +4,7 @@
   "approval_url":"https://ru.wikipedia.org/wiki/Википедия:Заявки_на_статус_бота",
   "approved_at":"2026-10-08T00:00:00Z",
   "league":78,
+  "providers":["highlightly"],
   "seasons":[2026],
   "titles":["ВПИШИТЕ ТОЛЬКО ОДОБРЕННЫЕ СТАТЬИ"],
   "operations":["update_stats"]

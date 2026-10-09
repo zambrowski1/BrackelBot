@@ -22,6 +22,8 @@ from .api_provider import ProviderStore
 
 
 def make_api(store):
+    if getattr(store, 'provider', 'api_football') == 'paused':
+        raise UpdateError('provider_paused', 'Сбор данных приостановлен оператором')
     if getattr(store, 'provider', 'api_football') == 'highlightly':
         from .highlightly_client import HighlightlyClient
         return HighlightlyClient(store)
@@ -44,7 +46,7 @@ def write_json(path,value):
 def parser():
     p=argparse.ArgumentParser(description='BrackelBot 0.4 — Toolforge и ручной контроль')
     p.add_argument('--state',help='Локальная SQLite (на Toolforge используйте BRACKELBOT_STORAGE=toolsdb)')
-    p.add_argument('--provider', choices=['api_football','highlightly'], default=os.environ.get('BRACKELBOT_API_PROVIDER','api_football'))
+    p.add_argument('--provider', choices=['api_football','highlightly','paused'], default=os.environ.get('BRACKELBOT_API_PROVIDER','api_football'))
     sub=p.add_subparsers(dest='command',required=True)
     sub.add_parser('init-db');sub.add_parser('check-api');sub.add_parser('check-auth')
     sub.add_parser('api-quotas')
@@ -92,6 +94,8 @@ def main(argv=None):
         print(json.dumps(rows,ensure_ascii=False,indent=2));return 0
     store=None
     try:
+        if args.provider == 'paused' and args.command in {'run','check-api','api-quotas','search-player','inspect-player','check-league','player-confirm','club-confirm'}:
+            raise UpdateError('provider_paused', 'Сбор данных приостановлен оператором')
         store=StateStore(args.state) if args.state else StateStore.from_env()
         if args.provider == 'highlightly': store=ProviderStore(store,args.provider)
         if args.command=='init-db':

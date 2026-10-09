@@ -48,11 +48,68 @@ local function plural(n, one, few, many)
     return many
 end
 
+-- Verified English articles; redirects to another age group are excluded.
+local countries = {
+    ["Ирландия"]={gen="Ирландии", foreign={[0]="Republic of Ireland national football team", [17]="Republic of Ireland national under-17 football team", [19]="Republic of Ireland national under-19 football team", [21]="Republic of Ireland national under-21 football team", [23]="Republic of Ireland national under-23 football team"}},
+    ["Нидерланды"]={gen="Нидерландов", foreign={[0]="Netherlands national football team", [17]="Netherlands national under-17 football team", [19]="Netherlands national under-19 football team", [21]="Netherlands national under-21 football team"}},
+    ["Сербия"]={gen="Сербии", foreign={[0]="Serbia national football team", [17]="Serbia national under-17 football team", [19]="Serbia national under-19 football team", [20]="Serbia national under-20 football team", [21]="Serbia national under-21 football team"}},
+    ["Франция"]={gen="Франции", foreign={[0]="France national football team", [16]="France national under-16 football team", [17]="France national under-17 football team", [18]="France national under-18 football team", [19]="France national under-19 football team", [20]="France national under-20 football team", [21]="France national under-21 football team"}},
+    ["Австрия"]={gen="Австрии", foreign={[0]="Austria national football team", [17]="Austria national under-17 football team", [18]="Austria national under-18 football team", [19]="Austria national under-19 football team", [21]="Austria national under-21 football team"}},
+    ["Италия"]={gen="Италии", foreign={[0]="Italy national football team", [16]="Italy national under-16 football team", [17]="Italy national under-17 football team", [18]="Italy national under-18 football team", [19]="Italy national under-19 football team", [20]="Italy national under-20 football team", [21]="Italy national under-21 football team", [23]="Italy national under-23 football team"}},
+    ["Германия"]={gen="Германии", foreign={[0]="Germany national football team", [16]="Germany national under-16 football team", [17]="Germany national under-17 football team", [20]="Germany national under-20 football team", [21]="Germany national under-21 football team"}},
+    ["Швейцария"]={gen="Швейцарии", foreign={[0]="Switzerland national football team", [16]="Switzerland national under-16 football team", [17]="Switzerland national under-17 football team", [18]="Switzerland national under-18 football team", [19]="Switzerland national under-19 football team", [20]="Switzerland national under-20 football team", [21]="Switzerland national under-21 football team", [23]="Switzerland national under-23 football team"}},
+    ["Кипр"]={gen="Кипра", foreign={[0]="Cyprus national football team", [17]="Cyprus national under-17 football team", [18]="Cyprus national under-18 football team", [19]="Cyprus national under-19 football team", [21]="Cyprus national under-21 football team"}},
+    ["Дания"]={gen="Дании", foreign={[0]="Denmark national football team", [17]="Denmark national under-17 football team", [19]="Denmark national under-19 football team", [21]="Denmark national under-21 football team"}},
+    ["Англия"]={gen="Англии", foreign={[0]="England national football team", [16]="England national under-16 football team", [17]="England national under-17 football team", [18]="England national under-18 football team", [19]="England national under-19 football team", [20]="England national under-20 football team", [21]="England national under-21 football team"}},
+    ["Испания"]={gen="Испании", foreign={[0]="Spain national football team", [16]="Spain national under-16 football team", [17]="Spain national under-17 football team", [18]="Spain national under-18 football team", [19]="Spain national under-19 football team", [20]="Spain national under-20 football team", [21]="Spain national under-21 football team", [23]="Spain national under-23 football team"}},
+    ["Португалия"]={gen="Португалии", foreign={[0]="Portugal national football team", [16]="Portugal national under-16 football team", [17]="Portugal national under-17 football team", [18]="Portugal national under-18 football team", [19]="Portugal national under-19 football team", [20]="Portugal national under-20 football team", [21]="Portugal national under-21 football team"}},
+    ["Бельгия"]={gen="Бельгии", foreign={[0]="Belgium national football team", [17]="Belgium national under-17 football team", [18]="Belgium national under-18 football team", [19]="Belgium national under-19 football team", [21]="Belgium national under-21 football team"}},
+    ["Россия"]={gen="России", foreign={[0]="Russia national football team", [17]="Russia national under-17 football team", [19]="Russia national under-19 football team", [20]="Russia national under-20 football team", [21]="Russia national under-21 football team"}},
+    ["Украина"]={gen="Украины", foreign={[0]="Ukraine national football team", [16]="Ukraine national under-16 football team", [17]="Ukraine national under-17 football team", [18]="Ukraine national under-18 football team", [19]="Ukraine national under-19 football team", [20]="Ukraine national under-20 football team", [21]="Ukraine national under-21 football team"}},
+}
+
+local function ageCategory(value)
+    local text = trim(value)
+    if text=='' then return 0 end
+    if not text:match('^%d%d$') then fail('возраст должен быть числом от 15 до 23') end
+    local age = tonumber(text)
+    if age<15 or age>23 then fail('возраст должен быть числом от 15 до 23') end
+    return age
+end
+
+local function opponent(value, age, frame, cache)
+    -- Explicit wikitext is an editor override, including historical flags.
+    if value:find('[[',1,true) or value:find('{{',1,true) then return value end
+    local country = countries[value]
+    if not country then
+        if age>0 then fail('неизвестная сборная «'..value..'»: укажите полную ссылку') end
+        return value
+    end
+    if cache[value] then return cache[value] end
+    local article = 'Сборная '..country.gen..' по футболу'
+    local label = value
+    if age>0 then
+        article=article..' (до '..age..' лет)'
+        label=label..' (до '..age..' лет)'
+    end
+    local title = mw.title.new(article)
+    local link = '[['..article..'|'..label..']]'
+    if (not title or not title.exists or title.isRedirect) and country.foreign[age] then
+        link=frame:expandTemplate{title='нп5',args={article,label,'en',country.foreign[age]}}
+    elseif title and title.isRedirect then
+        -- A redirect may lead to a different age group; do not silently follow it.
+        link=label
+    end
+    local flag=frame:expandTemplate{title='Флаг '..country.gen,args={'20px'}}
+    cache[value]=flag..' '..link
+    return cache[value]
+end
+
 function p._render(args, frame)
     local last = 0
     local allowed = {['игрок']=true,['сборная']=true,['заголовок']=true,
         ['цвета']=true,['обновлено']=true,['свёрнуто']=true,['источники']=true,
-        ['соревнование']=true}
+        ['соревнование']=true,['возраст']=true}
     for key,value in pairs(args) do
         key = tostring(key)
         if trim(value)~='' and not allowed[key] then
@@ -73,6 +130,8 @@ function p._render(args, frame)
         end
     end
     if last==0 then fail('нет строк матчей') end
+    local age = ageCategory(args['возраст'])
+    local opponentCache = {}
     local title = trim(args['заголовок'])
     if title=='' then
         if trim(args['игрок'])=='' or trim(args['сборная'])=='' then
@@ -105,6 +164,7 @@ function p._render(args, frame)
         for _,field in ipairs({'дата','соперник','счёт','голы','соревнование'}) do
             if row[field]=='' then fail('отсутствует ' .. field .. i) end
         end
+        row['соперник']=opponent(row['соперник'],age,frame,opponentCache)
         local iso,display = parseDate(row['дата'])
         if previous and iso<previous then fail('матчи должны идти по датам') end
         previous = iso

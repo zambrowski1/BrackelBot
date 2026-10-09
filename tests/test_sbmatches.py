@@ -35,9 +35,18 @@ function Node:__tostring()
 end
 mw={text={trim=function(s) return s:match('^%s*(.-)%s*$') end},html={}}
 mw.html.create=function(name) return setmetatable({name=name,attrs={},children={}},Node) end
+existingTitles={['Сборная Франции по футболу (до 18 лет)']=true,
+    ['Сборная Ирландии по футболу']=true}
+redirectTitles={['Сборная Ирландии по футболу (до 16 лет)']=true}
+mw.title={new=function(name) return {exists=existingTitles[name] or false,
+    isRedirect=redirectTitles[name] or false} end}
 testFrame={expandTemplate=function(self,spec)
     if spec.title=='обновлено' then return '{{обновлено|'..spec.args[1]..'}}' end
     if spec.title=='цвета сборной/Германия' then return 'background:#fff;color:#000;' end
+    if spec.title:sub(1,#'Флаг ')=='Флаг ' then return '{{'..spec.title..'|20px}}' end
+    if spec.title=='нп5' then
+        return '{{нп5|'..table.concat(spec.args,'|')..'}}'
+    end
     error('Unexpected template dependency: '..spec.title)
 end}
 '''
@@ -130,3 +139,79 @@ def test_mixed_row_formats_and_competition_override(renderer):
         'дата2':'2024-01-02','соперник2':'Б','счёт2':'0:0','голы2':'0'})
     assert 'Другое</td>' in result and 'Общее</td>' in result
     assert '2 матча / 0 голов; 1 победа, 1 ничья' in result
+
+
+def national_args(country='Ирландия',age='18'):
+    return {'заголовок':'Матчи','возраст':age,'соревнование':'Товарищеский матч',
+            'матч1':f'2016-11-13 ;; {country} ;; 3:2 ;; 0'}
+
+
+def test_ireland_u18_keeps_correct_age_without_wrong_english_redirect(renderer):
+    result=renderer(national_args())
+    assert '{{Флаг Ирландии|20px}} [[Сборная Ирландии по футболу (до 18 лет)|Ирландия (до 18 лет)]]' in result
+    assert 'under-19' not in result and '{{нп5' not in result
+
+
+def test_existing_russian_youth_article_preferred(renderer):
+    result=renderer(national_args('Франция'))
+    assert '[[Сборная Франции по футболу (до 18 лет)|Франция (до 18 лет)]]' in result
+    assert '{{нп5' not in result
+
+
+def test_missing_russian_article_uses_verified_same_age_foreign_article(renderer):
+    result=renderer(national_args('Австрия'))
+    assert '{{нп5|Сборная Австрии по футболу (до 18 лет)|Австрия (до 18 лет)|en|Austria national under-18 football team}}' in result
+
+
+def test_senior_default_and_explicit_overrides(renderer):
+    result=renderer(national_args(age=''))
+    assert '[[Сборная Ирландии по футболу|Ирландия]]' in result and '(до ' not in result
+    manual='{{Флаг Ирландии|20px}} [[Особая статья|Ирландия]]'
+    assert manual in renderer(national_args(manual))
+
+
+@pytest.mark.parametrize('age',['0','14','24','18 лет','-1'])
+def test_invalid_age_rejected(renderer,age):
+    with pytest.raises(lupa.LuaError,match='возраст'): renderer(national_args(age=age))
+
+
+def test_unknown_short_country_needs_explicit_link(renderer):
+    with pytest.raises(lupa.LuaError,match='полную ссылку'): renderer(national_args('Ирландиия'))
+
+
+def test_redirect_without_safe_foreign_article_not_followed(renderer):
+    result=renderer(national_args(age='16'))
+    assert '{{Флаг Ирландии|20px}} Ирландия (до 16 лет)' in result
+    assert '[[Сборная Ирландии' not in result
+
+
+def test_auto_example_keeps_match_totals_and_ages(renderer):
+    template=next(t for t in mw.parse((ROOT/'Браккельман-авто.wiki').read_text(encoding='utf-8')).filter_templates()
+                  if str(t.name).strip()=='СбМатчи')
+    args={str(p.name).strip():str(p.value).strip() for p in template.params}
+    result=renderer(args)
+    assert 'Итого: 6 матчей / 0 голов; 5 побед, 1 ничья, 0 поражений' in result
+    assert '{{Флаг Ирландии|20px}}' in result
+    assert 'Ирландия (до 18 лет)' in result and 'Австрия (до 18 лет)' in result
+    assert 'under-19' not in result
+
+
+def test_repeated_country_uses_single_title_lookup_and_template_expansion():
+    runtime=lupa.LuaRuntime(unpack_returned_tuples=True)
+    runtime.execute(HOST)
+    runtime.execute('''
+    titleCalls=0; templateCalls=0
+    local originalNew=mw.title.new
+    mw.title.new=function(name) titleCalls=titleCalls+1 return originalNew(name) end
+    local originalExpand=testFrame.expandTemplate
+    testFrame.expandTemplate=function(self,spec)
+        templateCalls=templateCalls+1 return originalExpand(self,spec)
+    end
+    ''')
+    module=runtime.execute((ROOT/'Модуль.lua').read_text(encoding='utf-8'))
+    args=national_args('Австрия')
+    args['матч2']='2016-11-14 ;; Австрия ;; 0:0 ;; 0'
+    result=module['_render'](runtime.table_from(args),runtime.globals().testFrame)
+    assert '2 матча' in result
+    assert runtime.globals().titleCalls==1
+    assert runtime.globals().templateCalls==2  # One flag and one foreign link.

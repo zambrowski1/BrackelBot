@@ -17,6 +17,7 @@ from .state_store import StoreAudit
 from .operator_review import queue_plan, deserialize_plan, serialize_plan
 from .publication_policy import PublicationPolicy, ServerPublisher
 from .models import Mode
+from .source_validation import roster_members, transfer_history
 
 
 def review(store, kind, identifier, code, details=None):
@@ -50,13 +51,7 @@ class CycleRunner:
     def _rosters(self, teams):
         membership={}
         for tid in teams:
-            data=self.api.squads(tid)['data']
-            rows=data['response']
-            if len(rows)!=1 or rows[0].get('team',{}).get('id')!=tid or not isinstance(rows[0].get('players'),list) or not rows[0]['players']:
-                raise UpdateError('api_incomplete','Не получен полный текущий состав клуба')
-            for player in rows[0]['players']:
-                pid=player.get('id')
-                if type(pid) is not int or pid<=0: raise UpdateError('api_invalid_response','Неверный ID в составе клуба')
+            for pid in roster_members(self.api.squads(tid), tid):
                 membership.setdefault(pid,set()).add(tid)
         return membership
 
@@ -65,8 +60,7 @@ class CycleRunner:
             pid=int(key)
             if pid in membership or mapping['monitoring']!='active': continue
             try:
-                rows=self.api.transfers(pid)['data']['response']
-                history=[t for row in rows if row.get('player',{}).get('id')==pid for t in row.get('transfers',[])]
+                history=transfer_history(self.api.transfers(pid), pid)
                 history=[t for t in history if isinstance(t.get('date'),str) and t['date']<=date.today().isoformat()]
                 if not history:
                     review(self.store,'monitoring',pid,'absence_unconfirmed');report['review_count']+=1;continue
@@ -104,7 +98,7 @@ class CycleRunner:
                 status=self.api.status();report['api_available']=True;report['account']=status
                 teams=self._scope()
                 dataset=self.api.players(self.season)
-                players,observations=normalize_dataset(dataset)
+                players,observations=normalize_dataset(dataset, expected_season=self.season)
                 membership=self._rosters(teams)
                 # No registry/absence conclusions before all pages AND rosters.
                 self.store.put('scope',str(self.season),{'league':78,'teams':list(teams.values()),'fetched_at':utcnow()})
@@ -160,9 +154,8 @@ class CycleRunner:
                 or len(anchor_code.filter_wikilinks())!=1):
                 raise UpdateError('needs_review','Аренда, резерв или сложное оформление карьеры требуют ручного подтверждения')
             # A return in the same season must not reuse an old stint anchor.
-            transfer_rows=self.api.transfers(pid)['data']['response']
-            transfer_history=[t for row in transfer_rows if row.get('player',{}).get('id')==pid for t in row.get('transfers',[])]
-            if any(t.get('date','')>anchor['as_of'] and t.get('date','')<=obs['fetched_at'][:10] for t in transfer_history):
+            history=transfer_history(self.api.transfers(pid), pid)
+            if any(anchor['as_of']<t['date']<=obs['fetched_at'][:10] for t in history):
                 raise UpdateError('needs_review','После базы зарегистрирован трансфер; нужна новая база периода')
             snapshot=self.wiki.fetch_page(mapping['title'])
             if snapshot.title!=mapping['title'] or snapshot.namespace!=0:
@@ -191,8 +184,7 @@ class CycleRunner:
                 seasons=[r for r in table.seasons if r.season==f'{self.season}/{str(self.season+1)[-2:]}'
                          and resolved.title in {str(x.title).strip() for x in mw.parse(r.club).filter_wikilinks()}]
                 if len(seasons)!=1:
-                    review(self.store,'season',f'{pid}:{tid}','new_season_needs_complete_categories',{'observation':obs})
-                    report['review_count']+=1
+                    raise UpdateError('needs_review','Нет единственной строки текущего сезона; карточка и таблица должны обновляться согласованно')
                 else:
                     categories=[c for c in table.categories if c=='Чемпионат']
                     if len(categories)!=1: raise UpdateError('unsupported_structure','Категория чемпионата не определена однозначно')
@@ -271,12 +263,18 @@ def publish_plan(store,plan_hash,wiki,policy,logger=None,plan=None,source_api=No
             if source_api is None:
                 from .api_football_client import ApiFootballClient
                 source_api=ApiFootballClient(store)
-            live_players,observations=normalize_dataset(source_api.player(evidence['player_id'],evidence['season']))
+            try:
+                live_players,observations=normalize_dataset(source_api.player(evidence['player_id'],evidence['season']), expected_season=evidence['season'])
+                members=roster_members(source_api.squads(evidence['team_id'],fresh=True), evidence['team_id'])
+                transfers=transfer_history(source_api.transfers(evidence['player_id'],fresh=True), evidence['player_id'])
+            except UpdateError as exc:
+                # Invalid evidence must invalidate approvals as well as prevent this write.
+                if exc.code in {'api_invalid_response','api_incomplete','api_duplicate_conflict','api_identity_conflict'}:
+                    from .transactions import clear_approvals
+                    clear_approvals(plan);plan.publishable=False
+                    store.put('plans',plan_hash,{**item,'status':'stale','plan':serialize_plan(plan),'last_error':exc.code})
+                raise
             current=[o for o in observations if o['api_id']==evidence['player_id'] and o['team_id']==evidence['team_id']]
-            roster=source_api.squads(evidence['team_id'],fresh=True)['data']['response']
-            members=[p.get('id') for r in roster if r.get('team',{}).get('id')==evidence['team_id'] for p in r.get('players',[])]
-            history=source_api.transfers(evidence['player_id'],fresh=True)['data']['response']
-            transfers=[t for r in history if r.get('player',{}).get('id')==evidence['player_id'] for t in r.get('transfers',[])]
             anchor=store.get('anchors',evidence['anchor_key'])
             mapping=store.get('players',evidence['player_id'])
             live_player=live_players.get(evidence['player_id'],{})

@@ -2,11 +2,19 @@
 import copy
 from pathlib import Path
 import pytest
+import requests
 from wiki_stats.wiki_client import FixtureClient
 from wiki_stats.wikitext_parser import WikitextParser
 
 
 FIXTURES = Path(__file__).parent / "fixtures"
+
+
+@pytest.fixture(autouse=True)
+def prevent_live_http(monkeypatch):
+    def blocked(*args, **kwargs):
+        raise AssertionError('Tests must use recorded or synthetic responses, not live HTTP')
+    monkeypatch.setattr(requests.sessions.Session, 'request', blocked)
 
 
 @pytest.fixture

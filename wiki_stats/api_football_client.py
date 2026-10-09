@@ -75,6 +75,8 @@ class ApiFootballClient:
         if errors:
             # Never echo arbitrary server strings: they can reflect the key.
             names = set(errors) if isinstance(errors,dict) else set()
+            if 'plan' in names:
+                raise UpdateError('api_plan_restricted','Тариф API-Football не разрешает этот запрос или сезон')
             code = 'api_authentication' if names & {'token','key','authentication'} else ('api_quota_exhausted' if names & {'requests','rateLimit'} else 'api_data_unavailable')
             raise UpdateError(code,'API сообщил об ошибке или недоступном покрытии')
         if path == '/status':
@@ -123,6 +125,7 @@ class ApiFootballClient:
         key = str(season)
         self.store.put('api_checkpoint',key,{'complete':False,'next_page':1,'started_at':utcnow()})
         rows, times, total = [], [], None
+        page_hashes = set()
         page = 1
         while True:
             record = self.request('/players',{'league':78,'season':season,'page':page},ttl=21600)
@@ -132,6 +135,10 @@ class ApiFootballClient:
             total = data['paging']['total']
             if not data['response']:
                 raise UpdateError('api_incomplete','Пустая выборка игроков не является составом лиги')
+            page_hash = digest(data['response'])
+            if page_hash in page_hashes:
+                raise UpdateError('api_incomplete','API повторил содержимое страницы; полнота списка игроков не подтверждена')
+            page_hashes.add(page_hash)
             rows.extend(data['response']);times.append(record['fetched_at'])
             self.store.put('api_checkpoint',key,{'complete':False,'next_page':page+1,'total':total})
             if page == total: break

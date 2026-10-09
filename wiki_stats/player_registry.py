@@ -90,6 +90,8 @@ class PlayerRegistry:
         from .entity_resolver import EntityResolver
         resolved = EntityResolver(client).resolve({'name':club['name'],'kind':'club','wikidata_id':club['qid'],'page_title':club['title']})
         snapshot = client.fetch_page(mapping['title'])
+        if snapshot.title != mapping['title'] or snapshot.namespace != 0:
+            raise UpdateError('identity_mismatch','База получена из другой статьи или пространства')
         rows = WikitextParser(snapshot.text).career('клубы',mapping['wiki_name'])
         matches = [v for p,c,v in rows if p==anchor['period'] and c==anchor['career_wikitext']]
         if len(matches)!=1 or [n.value for n in matches[0].numeric(pair=True)] != [anchor['career']['appearances'],anchor['career']['goals']]:

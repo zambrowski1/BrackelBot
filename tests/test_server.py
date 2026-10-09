@@ -93,6 +93,76 @@ def test_transfer_after_anchor_requires_review(store):
     assert report['prepared_count']==0 and any(x['reason']=='needs_review' for _,x in store.items('review'))
 
 
+@pytest.mark.parametrize('rows', [[{'player': {'id': 990001}}],
+                                 [{'player': {'id': 999}, 'transfers': []}],
+                                 [{'player': {'id': 990001}, 'transfers': None}]])
+def test_incomplete_transfer_evidence_cannot_prepare_update(store, rows):
+    api = ServerApi(); api.transfers = lambda *args, **kwargs: {'data': {'response': rows}}
+    report, wiki = prepare(store, api=api)
+    assert not report['plans'] and not wiki.saved
+    assert any(entry['status'] == 'api_invalid_response' for entry in report['errors'])
+
+
+def test_missing_season_does_not_publish_career_only(store, monkeypatch):
+    from dataclasses import replace
+    wiki = ServerWiki()
+    wiki.current = replace(wiki.current, text=wiki.current.text.replace('2026/27', '2025/26'))
+    community(store); monkeypatch.setenv('BRACKELBOT_PUBLICATION', '1')
+    report, wiki = prepare(store, mode='automatic', wiki=wiki)
+    assert not report['plans'] and not wiki.saved and report['review_count'] > 0
+    assert '4 (1)' in wiki.current.text
+
+
+def test_duplicate_roster_stops_before_registry_changes(store):
+    api = ServerApi()
+    api.squads = lambda *args, **kwargs: {'data': {'response': [
+        {'team': {'id': 15755}, 'players': [{'id': 990001}, {'id': 990001}]}]}}
+    report, wiki = prepare(store, api=api)
+    assert report['status'] == 'stopped' and not store.get('scope', '2026') and not wiki.saved
+
+
+@pytest.mark.parametrize('kind', ['transfers', 'roster', 'season', 'timestamp'])
+def test_invalid_fresh_source_clears_approvals_and_blocks_write(store, kind):
+    report, wiki = prepare(store); community(store)
+    key = report['plans'][0]['hash']
+    for change in store.get('plans', key)['plan']['changes']:
+        approve_stored(store, key, change['id'])
+    api = ServerApi()
+    if kind == 'transfers':
+        api.transfers = lambda *args, **kwargs: {'data': {'response': [{'player': {'id': 990001}}]}}
+    elif kind == 'roster':
+        api.squads = lambda *args, **kwargs: {'data': {'response': []}}
+    else:
+        original = api.player
+        def invalid_player(*args):
+            value = original(*args)
+            value['season' if kind == 'season' else 'fetched_at'] = 2025 if kind == 'season' else '2099-01-01T00:00:00Z'
+            return value
+        api.player = invalid_player
+    with pytest.raises(UpdateError):
+        publish_plan(store, key, wiki, PublicationPolicy(store, 'manual', enabled=lambda: True), source_api=api)
+    item = store.get('plans', key)
+    assert item['status'] == 'stale' and not wiki.saved
+    assert all(c['decision'] == 'pending' for c in item['plan']['changes'])
+
+
+def test_anchor_cannot_be_confirmed_against_wrong_page(store):
+    from dataclasses import replace
+    seed(store)
+    wiki = ServerWiki()
+    wiki.current = replace(wiki.current, title='Другой игрок')
+    with pytest.raises(UpdateError) as exc:
+        PlayerRegistry(store).confirm_anchor(990001, ANCHOR, wiki)
+    assert exc.value.code == 'identity_mismatch'
+
+
+def test_anchor_source_is_not_misrepresented_as_api_evidence(store):
+    report, _ = prepare(store)
+    sources = store.get('plans', report['plans'][0]['hash'])['plan']['changes'][0]['operation']['sources']
+    assert sources[0]['provenance'] == 'api_football'
+    assert sources[1]['provenance'] == 'user_provided'
+
+
 def test_main_policy_modes_page_and_task_allowlists(store):
     policy=PublicationPolicy(store,'automatic',enabled=lambda:True)
     with pytest.raises(UpdateError): policy.gate_page(TITLE)

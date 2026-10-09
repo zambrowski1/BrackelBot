@@ -137,3 +137,45 @@ def test_missing_account_quota_is_rejected(tmp_path):
     api,_,_=client(tmp_path,[Response({'errors':[],'response':{'requests':{}}})])
     with pytest.raises(UpdateError) as exc: api.status()
     assert exc.value.code=='api_invalid_response'
+
+
+@pytest.mark.parametrize('changes', [{'season': 2025}, {'season': True}, {'response': {}},
+                                    {'fetched_at': 'bad'}, {'fetched_at': '2026-10-08T00:00:00'},
+                                    {'fetched_at': '2099-01-01T00:00:00Z'}])
+def test_dataset_season_and_timestamp_are_verified(changes):
+    with pytest.raises(UpdateError) as exc:
+        normalize_dataset({**dataset(), **changes}, expected_season=2026)
+    assert exc.value.code == 'api_invalid_response'
+
+
+def test_invalid_games_object_returns_domain_error():
+    row = player_row(); row['statistics'][0]['games'] = []
+    with pytest.raises(UpdateError) as exc:
+        normalize_dataset(dataset([row]))
+    assert exc.value.code == 'api_invalid_response'
+
+
+def test_repeated_page_is_not_a_complete_league(tmp_path):
+    rows = [player_row()]
+    api, store, session = client(tmp_path, [Response(envelope(1, 2, rows)), Response(envelope(2, 2, rows))])
+    with pytest.raises(UpdateError) as exc:
+        api.players(2026)
+    assert exc.value.code == 'api_incomplete' and store.get('datasets', '2026') is None
+    assert len(session.calls) == 2
+    assert not store.get('api_checkpoint', '2026')['complete']
+
+
+def test_plan_restriction_is_distinct_from_invalid_key(tmp_path):
+    api, _, _ = client(tmp_path, [Response({'errors': {'plan': 'SECRET-NEVER-LOG'}})])
+    with pytest.raises(UpdateError) as exc:
+        api.leagues(2026)
+    assert exc.value.code == 'api_plan_restricted' and 'SECRET' not in str(exc.value)
+
+
+@pytest.mark.parametrize('changes', [{'period': None}, {'period': '2027—2026'}, {'period': '2099—{{н.в.}}'},
+                                    {'season': True}, {'season': 1}, {'career_wikitext': []}, {'evidence_url': None}])
+def test_invalid_anchor_is_a_domain_error(changes):
+    from wiki_stats.statistics_engine import validate_anchor
+    with pytest.raises(UpdateError) as exc:
+        validate_anchor({**ANCHOR, **changes})
+    assert exc.value.code == 'anchor_invalid'

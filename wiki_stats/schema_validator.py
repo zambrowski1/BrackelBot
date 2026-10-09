@@ -65,10 +65,14 @@ def validate_package(package: dict) -> None:
                     raise UpdateError('invalid_input', 'Для точного сопоставления нужен entity.wikitext')
                 if op['type'] in {'add_club', 'add_national_team', 'update_career_period', 'update_current_club'} and op['target']['structure'] != 'career':
                     raise UpdateError('invalid_input', 'Эта операция относится к карточке')
-                if op['type'] in {'add_season','update_totals'} and op['target']['structure'] != 'club_table':
+                if op['type'] in {'add_season','update_totals','add_table_club','remove_season','remove_table_club'} and op['target']['structure'] != 'club_table':
                     raise UpdateError('invalid_input', 'Эта операция относится к клубной таблице')
-                if op['type']=='add_season' and not op.get('season'):
+                if op['type'] in {'add_season','add_table_club','remove_season'} and not op.get('season'):
                     raise UpdateError('invalid_input','Для нового сезона нужен season')
+                if op['type']=='add_table_club' and op['entity'].get('kind')!='club':
+                    raise UpdateError('invalid_input','Для блока клуба нужен entity.kind=club')
+                if op['type'] in {'remove_season','remove_table_club'} and not op['payload']['reason'].strip():
+                    raise UpdateError('invalid_input','Укажите подтверждённую причину удаления')
                 if op['type']=='update_career_period' and (not op['target'].get('period') or not op['target'].get('field')):
                     raise UpdateError('invalid_input','Для периода нужны точные target.field и target.period')
                 if op['type']=='update_current_club' and op['target'].get('field','клубы')!='клубы':

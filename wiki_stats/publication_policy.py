@@ -90,7 +90,9 @@ class ServerPublisher(Publisher):
     def _summary(self,types):
         labels={'update_stats':'обновление статистики','update_totals':'пересчёт итогов','update_date':'дата статистики',
                 'add_club':'добавление клуба','update_current_club':'текущий клуб','update_career_period':'период карьеры',
-                'add_season':'добавление сезона','add_competition':'соревнование','add_national_team':'добавление сборной','restore':'восстановление'}
+                'add_season':'добавление сезона','add_table_club':'блок клуба в КлСтат',
+                'remove_season':'удаление ошибочного сезона','remove_table_club':'удаление ошибочного блока клуба',
+                'add_competition':'соревнование','add_national_team':'добавление сборной','restore':'восстановление'}
         return 'BrackelBot: '+', '.join(labels.get(t,t) for t in types)+(' (тест)' if self.policy.mode=='test' else '')
     def _backup(self,snapshot):
         import hashlib

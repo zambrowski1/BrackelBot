@@ -439,7 +439,10 @@
             "update_totals",
             "update_current_club",
             "update_career_period",
-            "update_date"
+            "update_date",
+            "add_table_club",
+            "remove_season",
+            "remove_table_club"
           ]
         },
         "entity": {
@@ -739,13 +742,38 @@
                   },
                   "complete": {
                     "const": true
+                  },
+                  "insert_before_season": {
+                    "type": "string",
+                    "minLength": 1
                   }
                 },
                 "required": [
                   "categories",
                   "league_wikitext",
-                  "insert_after_season",
                   "complete"
+                ],
+                "oneOf": [
+                  {
+                    "required": [
+                      "insert_after_season"
+                    ],
+                    "not": {
+                      "required": [
+                        "insert_before_season"
+                      ]
+                    }
+                  },
+                  {
+                    "required": [
+                      "insert_before_season"
+                    ],
+                    "not": {
+                      "required": [
+                        "insert_after_season"
+                      ]
+                    }
+                  }
                 ]
               }
             }
@@ -877,6 +905,130 @@
                   }
                 },
                 "required": []
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "add_table_club"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "payload",
+              "season"
+            ],
+            "properties": {
+              "payload": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "complete": {
+                    "const": true
+                  },
+                  "categories": {
+                    "type": "object",
+                    "minProperties": 1,
+                    "additionalProperties": {
+                      "$ref": "#/$defs/full_stats"
+                    }
+                  },
+                  "league_wikitext": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "insert_after_club": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "complete",
+                  "categories",
+                  "league_wikitext",
+                  "insert_after_club"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "remove_season"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "payload",
+              "season"
+            ],
+            "properties": {
+              "payload": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "complete": {
+                    "const": true
+                  },
+                  "expected_wikitext": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "reason": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "complete",
+                  "expected_wikitext",
+                  "reason"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "remove_table_club"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "payload"
+            ],
+            "properties": {
+              "payload": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "complete": {
+                    "const": true
+                  },
+                  "expected_wikitext": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "reason": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "complete",
+                  "expected_wikitext",
+                  "reason"
+                ]
               }
             }
           }

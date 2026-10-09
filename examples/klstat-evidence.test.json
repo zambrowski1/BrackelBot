@@ -1,0 +1,66 @@
+{
+  "player": "Кальвин Браккельман",
+  "as_of": "2026-10-08",
+  "sources": [
+    {
+      "url": "https://ru.wikipedia.org/wiki/Участник:Zambrowski/testbot",
+      "provenance": "user_provided",
+      "coverage_as_of": "2026-10-08",
+      "note": "ТОЛЬКО ВЫМЫШЛЕННЫЙ ТЕСТ"
+    }
+  ],
+  "clubs": [
+    {
+      "entity": {
+        "name": "Аугсбург",
+        "wikitext": "{{Флаг Германии|20px}} «[[Аугсбург (футбольный клуб)|Аугсбург]]»"
+      },
+      "rows": [
+        {
+          "season": "2025/26",
+          "league_wikitext": "[[Чемпионат Германии по футболу|Бундеслига]]",
+          "categories": {
+            "Чемпионат": {
+              "appearances": 5,
+              "goals": 1
+            },
+            "Национальный кубок": {
+              "appearances": 0,
+              "goals": 0
+            },
+            "Еврокубки": {
+              "appearances": 0,
+              "goals": 0
+            },
+            "Стыковые матчи": {
+              "appearances": 0,
+              "goals": 0
+            }
+          }
+        },
+        {
+          "season": "2026/27",
+          "league_wikitext": "[[Чемпионат Германии по футболу|Бундеслига]]",
+          "categories": {
+            "Чемпионат": {
+              "appearances": 6,
+              "goals": 1
+            },
+            "Национальный кубок": {
+              "appearances": 0,
+              "goals": 0
+            },
+            "Еврокубки": {
+              "appearances": 0,
+              "goals": 0
+            },
+            "Стыковые матчи": {
+              "appearances": 0,
+              "goals": 0
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

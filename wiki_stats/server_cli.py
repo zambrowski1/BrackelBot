@@ -53,6 +53,9 @@ def parser():
     search=sub.add_parser('search-player');search.add_argument('name')
     inspect=sub.add_parser('inspect-player');inspect.add_argument('api_id',type=int);inspect.add_argument('--season',type=int,default=2026)
     scope=sub.add_parser('check-league');scope.add_argument('--tier',type=int,choices=[1,2,3],default=1);scope.add_argument('--season',type=int,default=2026)
+    table=sub.add_parser('check-klstat');table.add_argument('title');table.add_argument('--fixtures')
+    kt=sub.add_parser('prepare-klstat');kt.add_argument('title');kt.add_argument('evidence');kt.add_argument('--fixtures')
+    kt.add_argument('--package-out',default='klstat-package.json');kt.add_argument('--report',default='klstat-report.json')
     clubs=sub.add_parser('club-list');clubs.add_argument('--tier',type=int,choices=(1,2,3));clubs.add_argument('--season',type=int,default=2026)
     run=sub.add_parser('run');run.add_argument('--season',type=int,default=2026)
     modes=run.add_mutually_exclusive_group()
@@ -119,6 +122,28 @@ def main(argv=None):
             print(json.dumps(result,ensure_ascii=False,indent=2));return 0
         if args.command=='check-auth':
             wiki=WikiClient();print('Авторизация: '+login_env(wiki));wiki.verify_authenticated();wiki.logout_local();return 0
+        if args.command=='check-klstat':
+            from .klstat_editor import check_table
+            wiki=FixtureClient(args.fixtures) if args.fixtures else WikiClient()
+            result=check_table(wiki.fetch_page(args.title).text)
+            print(json.dumps(result,ensure_ascii=False,indent=2));return 1 if result['warnings'] else 0
+        if args.command=='prepare-klstat':
+            from .klstat_planner import prepare_table
+            from .entity_resolver import EntityResolver
+            from .audit_logger import make_report
+            evidence=json.loads(Path(args.evidence).read_text(encoding='utf-8'))
+            from .schema_validator import reject_credentials
+            reject_credentials(evidence)
+            wiki=FixtureClient(args.fixtures) if args.fixtures else WikiClient()
+            pkg,plan=prepare_table(wiki.fetch_page(args.title),evidence,EntityResolver(wiki))
+            write_json(args.package_out,pkg)
+            report=make_report(pkg,[plan],[])
+            with store.run_lock():
+                report['plan_hashes']=[queue_plan(store,plan,'klstat-'+uuid4().hex)]
+                if args.fixtures:
+                    item=store.get('plans',report['plan_hashes'][0]);item['offline']=True;store.put('plans',report['plan_hashes'][0],item)
+            write_json(args.report,report);print(plan.diff)
+            print(json.dumps(report['plan_hashes']));return 0
         if args.command=='kill-switch':
             if args.value=='off' and not args.confirm: raise UpdateError('confirmation_required','Для выключения аварийной блокировки нужен --confirm')
             store.put('policy','kill_switch',args.value=='on');print('Аварийная блокировка: '+args.value);return 0

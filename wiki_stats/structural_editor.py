@@ -178,54 +178,8 @@ def table_layout(parser):
 
 
 def add_season(text,parser,op):
-    table = parser.club_table()
-    club = op['entity']['wikitext'].strip()
-    payload = op['payload']
-    season = op.get('season')
-    if not season or not re.fullmatch(r'(19|20)[0-9]{2}(?:/[0-9]{2})?(?: \(аренда\))?',season):
-        raise UpdateError('unknown_season','Нужен точный подтверждённый сезон')
-    categories = payload['categories']
-    if set(categories)!=set(table.categories):
-        raise UpdateError('incomplete_statistics','Для нового сезона нужны подтверждённые данные по каждой категории')
-    numbers = [categories[c][f] for c in table.categories for f in ['appearances','goals']]
-    existing = [r for r in table.seasons if r.club==club and r.season==season]
-    if existing:
-        row = existing[0]
-        actual = [row.values[str(i+2)].numeric()[0].value for i in range(len(numbers))]
-        if actual == numbers:
-            return text,'already_applied'
-        raise UpdateError('old_value_mismatch','Сезон уже существует с другими значениями')
-    layouts = table_layout(parser)
-    if club not in layouts:
-        raise UpdateError('unsupported_structure','Нет блока клуба в таблице; создание нового блока требует ручного рассмотрения')
-    layout = layouts[club]
-    last,league = layout['seasons'][-1]
-    if last.values()['1'].text.strip()!=payload['insert_after_season'] or league.values()['1'].text.strip()!=payload['league_wikitext']:
-        raise UpdateError('unsupported_structure','Поддерживается продолжение последней лиги выбранного клуба по явному якорю')
-    if int(season[:4]) <= int(payload['insert_after_season'][:4]):
-        raise UpdateError('unknown_season','Новый сезон должен следовать за сезоном-якорем')
-    if arithmetic_warnings(text):
-        raise UpdateError('totals_mismatch','Сначала исправьте исходные итоги отдельной подтверждённой операцией')
-    # Clone this article's row style, not a fabricated generic table.
-    row = str(last.node)
-    from .wikitext_parser import WikitextParser as Parser
-    ref = Parser(row).templates[0]
-    row_p = ref.values()
-    edits = [exact_patch(row_p['1'],season,'season')]
-    for i,value in enumerate(numbers):
-        # References belong to the prior season and are never copied to a new one.
-        if len(row_p[str(i+2)].code.nodes)!=1:
-            raise UpdateError('unsupported_structure','Строка-образец со сносками/комментариями не клонируется автоматически')
-        edits.append(exact_patch(row_p[str(i+2)],str(value),'new_stat'))
-    row = apply_patches(row,edits,structural=True)
-    newline = '\r\n' if '\r\n' in text else '\n'
-    end = last.start+len(str(last.node))
-    patches = [Patch(end,end,'',newline+row,'new_season')]
-    for owner in [layout['club'],league]:
-        count = owner.values()['сезоны'].numeric()[0]
-        patches.append(count.patch(count.value+1,'season_count'))
-    result = apply_patches(text,patches,structural=True)
-    return recompute_totals(result),'ready'
+    from .klstat_editor import insert_season
+    return insert_season(text, parser, op)
 
 
 def execute_operation(text,player,op,resolver=None):
@@ -276,6 +230,9 @@ def execute_operation(text,player,op,resolver=None):
         return apply_patches(text,[exact_patch(value,entity.wikitext,'current_club')],structural=True),'ready'
     if kind=='add_season':
         return add_season(text,parser,op)
+    if kind in {'add_table_club','remove_season','remove_table_club'}:
+        from .klstat_editor import edit_table
+        return edit_table(text, parser, op, resolver)
     if kind=='update_totals':
         result = recompute_totals(text)
         return result,'ready' if result!=text else 'already_applied'

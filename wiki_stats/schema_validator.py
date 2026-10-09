@@ -8,7 +8,7 @@ from .errors import UpdateError
 
 def reject_credentials(value):
     if isinstance(value,dict):
-        if any(str(k).casefold().replace('-','_') in {'password','token','lgpassword','lgtoken','csrf_token','bot_password','api_football_key','api_key','x_apisports_key','wiki_bot_password','highlightly_api_key','highlightly_keys','sofascore_api_key','x_rapidapi_key'} for k in value):
+        if any(str(k).casefold().replace('-','_') in {'password','token','lgpassword','lgtoken','csrf_token','bot_password','api_football_key','api_key','x_apisports_key','wiki_bot_password','highlightly_api_key','highlightly_keys','sofascore_api_key','sofascore_keys','x_rapidapi_key'} for k in value):
             raise UpdateError('invalid_input','Учётные данные запрещены в JSON обновлений')
         for child in value.values(): reject_credentials(child)
     elif isinstance(value,list):

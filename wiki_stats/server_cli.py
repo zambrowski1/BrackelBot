@@ -138,7 +138,8 @@ def main(argv=None):
             print(json.dumps(report['plan_hashes']))
             return 0 if all(c.status in {'ready','already_applied'} for c in plan.changes) else 1
         if args.command=='check-api' and args.provider=='sofascore':
-            print(json.dumps(make_api(store).quota_status(),ensure_ascii=False,indent=2));return 0
+            with store.run_lock(): result=make_api(store).check_keys(1128792)
+            print(json.dumps(result,ensure_ascii=False,indent=2));return 0
         if args.command=='check-api':
             with store.run_lock(): result=make_api(store).status()
             print(json.dumps(result,ensure_ascii=False,indent=2));return 0

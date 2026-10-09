@@ -41,7 +41,7 @@ def test_quota_cache_reservation_and_reset():
     api.request('/search', {'query': 'x'})
     assert api.quota_status()['remaining'] == 0
     assert api.request('/search', {'query': 'x'}) == {'ok': True}
-    with pytest.raises(UpdateError, match='Квота'):
+    with pytest.raises(UpdateError, match='Квот'):
         api.request('/search', {'query': 'y'})
     clock[0] = 4000
     api.request('/search', {'query': 'y'})
@@ -285,3 +285,56 @@ def test_missing_current_season_cannot_lower_current_career_total():
 def test_null_player_details_in_match_history_do_not_confirm_participation():
     history={'complete':True,'matches':[{**match(),'player':None}]}
     assert confirmed_match_date(history,{(2600,35,26)},datetime(2026,10,9,tzinfo=timezone.utc)) is None
+
+
+def test_three_subscriptions_sum_budgets_and_rotate_after_exhaustion():
+    store=Store();session=Session([response(remaining=0),response(remaining=998),response(remaining=997),response(remaining=999)])
+    api=SofascoreClient(store,keys=['KEY_A','KEY_B','KEY_C'],session=session)
+    api.request('/search',{'query':'first'})
+    api.request('/search',{'query':'second'})
+    assert [c[1]['headers']['x-rapidapi-key'] for c in session.calls]==['KEY_A','KEY_B']
+    # Checking all keys keeps an exhausted subscription untouched.
+    api.check_keys(1)
+    q=api.quota_status()
+    assert q['limit']==3000 and len(q['keys'])==3
+    assert all(k not in str(store.data) for k in ['KEY_A','KEY_B','KEY_C'])
+
+
+def test_existing_single_key_balance_survives_pool_migration():
+    store=Store();session=Session([response(remaining=940)])
+    SofascoreClient(store,key='KEY_A',session=session).request('/search',{'query':'x'})
+    pool=SofascoreClient(store,keys=['KEY_A','KEY_B','KEY_C'],session=Session([]))
+    assert pool.quota_status()['keys'][0]['remaining']==940
+    assert pool.request('/search',{'query':'x'})=={'ok':True}
+
+
+def test_exhausted_429_rotates_but_rate_429_stops_every_key():
+    exhausted=Session([response(status=429,remaining=0),response(remaining=999)])
+    api=SofascoreClient(Store(),keys=['KEY_A','KEY_B'],session=exhausted)
+    assert api.request('/search',{'query':'x'})=={'ok':True}
+    assert len(exhausted.calls)==2
+    rate=Session([response(status=429,remaining=900),response()])
+    api=SofascoreClient(Store(),keys=['KEY_A','KEY_B'],session=rate)
+    with pytest.raises(UpdateError) as exc: api.request('/search',{'query':'x'})
+    assert exc.value.code=='api_rate_limited' and len(rate.calls)==1
+    with pytest.raises(UpdateError): api.request('/search',{'query':'x'})
+    assert len(rate.calls)==1
+
+
+def test_bad_key_rotates_but_502_does_not():
+    session=Session([response(status=403),response()])
+    api=SofascoreClient(Store(),keys=['KEY_A','KEY_B'],session=session)
+    api.request('/search',{'query':'x'})
+    assert api.quota_status()['keys'][0]['disabled']
+    session=Session([response(status=502),response()])
+    api=SofascoreClient(Store(),keys=['KEY_A','KEY_B'],session=session)
+    with pytest.raises(UpdateError): api.request('/search',{'query':'x'})
+    assert len(session.calls)==1
+
+
+def test_pool_rejects_duplicate_keys_and_reflected_secrets():
+    with pytest.raises(UpdateError): SofascoreClient(Store(),keys=['KEY_A','KEY_A'])
+    store=Store();session=Session([response({'reflected':'KEY_B'})])
+    api=SofascoreClient(store,keys=['KEY_A','KEY_B'],session=session)
+    with pytest.raises(UpdateError): api.request('/search',{'query':'x'})
+    assert not any(bucket=='cache' for bucket,_ in store.data)

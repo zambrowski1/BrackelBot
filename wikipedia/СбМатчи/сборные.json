@@ -1,0 +1,4279 @@
+{
+  "checked": "2026-10-09",
+  "source": {
+    "page": "Список мужских национальных сборных по футболу",
+    "revision": 155225580
+  },
+  "fifa_list_teams": 211,
+  "countries": {
+    "Абхазия": {
+      "gen": "Абхазии",
+      "ru": {
+        "0": "Сборная Абхазии по футболу"
+      },
+      "foreign": {
+        "0": "Abkhazia national football team"
+      },
+      "foreign_de": {},
+      "english_main": "Abkhazia national football team",
+      "flag": "Флаг Абхазии"
+    },
+    "Австралия": {
+      "gen": "Австралии",
+      "ru": {
+        "0": "Сборная Австралии по футболу",
+        "20": "Сборная Австралии по футболу (до 20 лет)",
+        "23": "Олимпийская сборная Австралии по футболу"
+      },
+      "foreign": {
+        "0": "Australia men's national soccer team",
+        "17": "Australia men's national under-17 soccer team",
+        "20": "Australia men's national under-20 soccer team",
+        "23": "Australia men's national under-23 soccer team"
+      },
+      "foreign_de": {},
+      "english_main": "Australia men's national soccer team",
+      "flag": "Флаг Австралии"
+    },
+    "Австрия": {
+      "gen": "Австрии",
+      "ru": {
+        "0": "Сборная Австрии по футболу",
+        "17": "Сборная Австрии по футболу (до 17 лет)",
+        "19": "Сборная Австрии по футболу (до 19 лет)",
+        "21": "Сборная Австрии по футболу (до 21 года)"
+      },
+      "foreign": {
+        "0": "Austria national football team",
+        "17": "Austria national under-17 football team",
+        "18": "Austria national under-18 football team",
+        "19": "Austria national under-19 football team",
+        "21": "Austria national under-21 football team"
+      },
+      "foreign_de": {
+        "15": "Österreichische Fußballnationalmannschaft (U-15-Junioren)",
+        "16": "Österreichische Fußballnationalmannschaft (U-16-Junioren)"
+      },
+      "english_main": "Austria national football team",
+      "flag": "Флаг Австрии"
+    },
+    "Азербайджан": {
+      "gen": "Азербайджана",
+      "ru": {
+        "0": "Сборная Азербайджана по футболу",
+        "17": "Сборная Азербайджана по футболу (до 17 лет)",
+        "19": "Сборная Азербайджана по футболу (до 19 лет)",
+        "21": "Сборная Азербайджана по футболу (до 21 года)"
+      },
+      "foreign": {
+        "0": "Azerbaijan national football team",
+        "17": "Azerbaijan national under-17 football team",
+        "18": "Azerbaijan national under-18 football team",
+        "19": "Azerbaijan national under-19 football team",
+        "20": "Azerbaijan national under-20 football team",
+        "21": "Azerbaijan national under-21 football team",
+        "23": "Azerbaijan national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Azerbaijan national football team",
+      "flag": "Флаг Азербайджана"
+    },
+    "Албания": {
+      "gen": "Албании",
+      "ru": {
+        "0": "Сборная Албании по футболу",
+        "21": "Сборная Албании по футболу (до 21 года)"
+      },
+      "foreign": {
+        "0": "Albania national football team",
+        "15": "Albania national under-15 football team",
+        "16": "Albania national under-16 football team",
+        "17": "Albania national under-17 football team",
+        "18": "Albania national under-18 football team",
+        "19": "Albania national under-19 football team",
+        "20": "Albania national under-20 football team",
+        "21": "Albania national under-21 football team",
+        "23": "Albania national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Albania national football team",
+      "flag": "Флаг Албании"
+    },
+    "Алжир": {
+      "gen": "Алжира",
+      "ru": {
+        "0": "Сборная Алжира по футболу"
+      },
+      "foreign": {
+        "0": "Algeria national football team",
+        "15": "Algeria national under-15 football team",
+        "17": "Algeria national under-17 football team",
+        "18": "Algeria national under-18 football team",
+        "20": "Algeria national under-20 football team",
+        "23": "Algeria national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Algeria national football team",
+      "flag": "Флаг Алжира"
+    },
+    "Американские Виргинские Острова": {
+      "gen": "Американских Виргинских Островов",
+      "ru": {
+        "0": "Сборная Американских Виргинских Островов по футболу"
+      },
+      "foreign": {
+        "0": "United States Virgin Islands national soccer team",
+        "20": "United States Virgin Islands national under-20 soccer team"
+      },
+      "foreign_de": {},
+      "english_main": "United States Virgin Islands national soccer team",
+      "flag": "Флаг Американских Виргинских островов"
+    },
+    "Американское Самоа": {
+      "gen": "Американского Самоа",
+      "ru": {
+        "0": "Сборная Американского Самоа по футболу"
+      },
+      "foreign": {
+        "0": "American Samoa national football team",
+        "17": "American Samoa national under-17 football team",
+        "20": "American Samoa national under-20 football team",
+        "23": "American Samoa national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "American Samoa national football team",
+      "flag": "Флаг Американского Самоа"
+    },
+    "Ангилья": {
+      "gen": "Ангильи",
+      "ru": {
+        "0": "Сборная Ангильи по футболу"
+      },
+      "foreign": {
+        "0": "Anguilla national football team",
+        "20": "Anguilla national under-20 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Anguilla national football team",
+      "flag": "Флаг Ангильи"
+    },
+    "Англия": {
+      "gen": "Англии",
+      "ru": {
+        "0": "Сборная Англии по футболу",
+        "16": "Сборная Англии по футболу (до 16 лет)",
+        "17": "Сборная Англии по футболу (до 17 лет)",
+        "18": "Сборная Англии по футболу (до 18 лет)",
+        "19": "Сборная Англии по футболу (до 19 лет)",
+        "20": "Сборная Англии по футболу (до 20 лет)",
+        "21": "Сборная Англии по футболу (до 21 года)"
+      },
+      "foreign": {
+        "0": "England national football team",
+        "16": "England national under-16 football team",
+        "17": "England national under-17 football team",
+        "18": "England national under-18 football team",
+        "19": "England national under-19 football team",
+        "20": "England national under-20 football team",
+        "21": "England national under-21 football team"
+      },
+      "foreign_de": {
+        "15": "Englische Fußballnationalmannschaft (U-15-Junioren)"
+      },
+      "english_main": "England national football team",
+      "flag": "Флаг Англии"
+    },
+    "Ангола": {
+      "gen": "Анголы",
+      "ru": {
+        "0": "Сборная Анголы по футболу",
+        "20": "Сборная Анголы по футболу (до 20 лет)"
+      },
+      "foreign": {
+        "0": "Angola national football team",
+        "17": "Angola national under-17 football team",
+        "20": "Angola national under-20 football team",
+        "23": "Angola national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Angola national football team",
+      "flag": "Флаг Анголы"
+    },
+    "Андорра": {
+      "gen": "Андорры",
+      "ru": {
+        "0": "Сборная Андорры по футболу",
+        "17": "Сборная Андорры по футболу (до 17 лет)",
+        "19": "Сборная Андорры по футболу (до 19 лет)",
+        "21": "Сборная Андорры по футболу (до 21 года)"
+      },
+      "foreign": {
+        "0": "Andorra national football team",
+        "17": "Andorra national under-17 football team",
+        "19": "Andorra national under-19 football team",
+        "21": "Andorra national under-21 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Andorra national football team",
+      "flag": "Флаг Андорры"
+    },
+    "Антигуа и Барбуда": {
+      "gen": "Антигуа и Барбуды",
+      "ru": {
+        "0": "Сборная Антигуа и Барбуды по футболу"
+      },
+      "foreign": {
+        "0": "Antigua and Barbuda national football team",
+        "20": "Antigua and Barbuda national under-20 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Antigua and Barbuda national football team",
+      "flag": "Флаг Антигуа и Барбуды"
+    },
+    "Аргентина": {
+      "gen": "Аргентины",
+      "ru": {
+        "0": "Сборная Аргентины по футболу",
+        "15": "Сборная Аргентины по футболу (до 15 лет)",
+        "17": "Сборная Аргентины по футболу (до 17 лет)",
+        "20": "Сборная Аргентины по футболу (до 20 лет)",
+        "23": "Олимпийская сборная Аргентины по футболу"
+      },
+      "foreign": {
+        "0": "Argentina national football team",
+        "15": "Argentina national under-15 football team",
+        "17": "Argentina national under-17 football team",
+        "20": "Argentina national under-20 football team",
+        "23": "Argentina national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Argentina national football team",
+      "flag": "Флаг Аргентины"
+    },
+    "Армения": {
+      "gen": "Армении",
+      "ru": {
+        "0": "Сборная Армении по футболу",
+        "17": "Сборная Армении по футболу (до 17 лет)",
+        "19": "Сборная Армении по футболу (до 19 лет)",
+        "21": "Сборная Армении по футболу (до 21 года)"
+      },
+      "foreign": {
+        "0": "Armenia national football team",
+        "17": "Armenia national under-17 football team",
+        "19": "Armenia national under-19 football team",
+        "21": "Armenia national under-21 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Armenia national football team",
+      "flag": "Флаг Армении"
+    },
+    "Аруба": {
+      "gen": "Арубы",
+      "ru": {
+        "0": "Сборная Арубы по футболу"
+      },
+      "foreign": {
+        "0": "Aruba national football team",
+        "20": "Aruba national under-20 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Aruba national football team",
+      "flag": "Флаг Арубы"
+    },
+    "Афганистан": {
+      "gen": "Афганистана",
+      "ru": {
+        "0": "Сборная Афганистана по футболу"
+      },
+      "foreign": {
+        "0": "Afghanistan national football team",
+        "17": "Afghanistan national under-17 football team",
+        "20": "Afghanistan national under-20 football team",
+        "23": "Afghanistan national under-23 football team"
+      },
+      "foreign_de": {
+        "19": "Afghanische Fußballnationalmannschaft (U-19-Junioren)"
+      },
+      "english_main": "Afghanistan national football team",
+      "flag": "Флаг Афганистана"
+    },
+    "Багамские Острова": {
+      "gen": "Багамских Островов",
+      "ru": {
+        "0": "Сборная Багамских Островов по футболу"
+      },
+      "foreign": {
+        "0": "Bahamas national football team"
+      },
+      "foreign_de": {},
+      "english_main": "Bahamas national football team",
+      "flag": "Флаг Багамских Островов"
+    },
+    "Бангладеш": {
+      "gen": "Бангладеш",
+      "ru": {
+        "0": "Сборная Бангладеш по футболу"
+      },
+      "foreign": {
+        "0": "Bangladesh national football team",
+        "17": "Bangladesh national under-17 football team",
+        "20": "Bangladesh national under-20 football team",
+        "23": "Bangladesh national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Bangladesh national football team",
+      "flag": "Флаг Бангладеш"
+    },
+    "Барбадос": {
+      "gen": "Барбадоса",
+      "ru": {
+        "0": "Сборная Барбадоса по футболу"
+      },
+      "foreign": {
+        "0": "Barbados national football team",
+        "17": "Barbados national under-17 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Barbados national football team",
+      "flag": "Флаг Барбадоса"
+    },
+    "Бахрейн": {
+      "gen": "Бахрейна",
+      "ru": {
+        "0": "Сборная Бахрейна по футболу"
+      },
+      "foreign": {
+        "0": "Bahrain national football team",
+        "17": "Bahrain national under-17 football team",
+        "20": "Bahrain national under-20 football team",
+        "23": "Bahrain national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Bahrain national football team",
+      "flag": "Флаг Бахрейна"
+    },
+    "Беларусь": {
+      "gen": "Беларуси",
+      "ru": {
+        "0": "Сборная Беларуси по футболу",
+        "17": "Сборная Беларуси по футболу (до 17 лет)",
+        "19": "Сборная Беларуси по футболу (до 19 лет)",
+        "21": "Сборная Беларуси по футболу (до 21 года)",
+        "23": "Олимпийская сборная Беларуси по футболу"
+      },
+      "foreign": {
+        "0": "Belarus national football team",
+        "17": "Belarus national under-17 football team",
+        "19": "Belarus national under-19 football team",
+        "21": "Belarus national under-21 football team",
+        "23": "Belarus national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Belarus national football team",
+      "flag": "Флаг Беларуси"
+    },
+    "Белиз": {
+      "gen": "Белиза",
+      "ru": {
+        "0": "Сборная Белиза по футболу"
+      },
+      "foreign": {
+        "0": "Belize national football team",
+        "20": "Belize national under-20 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Belize national football team",
+      "flag": "Флаг Белиза"
+    },
+    "Бельгия": {
+      "gen": "Бельгии",
+      "ru": {
+        "0": "Сборная Бельгии по футболу",
+        "17": "Сборная Бельгии по футболу (до 17 лет)",
+        "19": "Сборная Бельгии по футболу (до 19 лет)",
+        "21": "Сборная Бельгии по футболу (до 21 года)"
+      },
+      "foreign": {
+        "0": "Belgium national football team",
+        "17": "Belgium national under-17 football team",
+        "18": "Belgium national under-18 football team",
+        "19": "Belgium national under-19 football team",
+        "21": "Belgium national under-21 football team"
+      },
+      "foreign_de": {
+        "15": "Belgische Fußballnationalmannschaft (U-15-Junioren)",
+        "16": "Belgische Fußballnationalmannschaft (U-16-Junioren)"
+      },
+      "english_main": "Belgium national football team",
+      "flag": "Флаг Бельгии"
+    },
+    "Бенин": {
+      "gen": "Бенина",
+      "ru": {
+        "0": "Сборная Бенина по футболу"
+      },
+      "foreign": {
+        "0": "Benin national football team",
+        "17": "Benin national under-17 football team",
+        "20": "Benin national under-20 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Benin national football team",
+      "flag": "Флаг Бенина"
+    },
+    "Бермуды": {
+      "gen": "Бермудских Островов",
+      "ru": {
+        "0": "Сборная Бермудских Островов по футболу"
+      },
+      "foreign": {
+        "0": "Bermuda national football team",
+        "17": "Bermuda national under-17 football team",
+        "20": "Bermuda national under-20 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Bermuda national football team",
+      "flag": "Флаг Бермудских Островов"
+    },
+    "Болгария": {
+      "gen": "Болгарии",
+      "ru": {
+        "0": "Сборная Болгарии по футболу",
+        "21": "Сборная Болгарии по футболу (до 21 года)"
+      },
+      "foreign": {
+        "0": "Bulgaria national football team",
+        "17": "Bulgaria national under-17 football team",
+        "18": "Bulgaria national under-18 football team",
+        "19": "Bulgaria national under-19 football team",
+        "21": "Bulgaria national under-21 football team",
+        "23": "Bulgaria national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Bulgaria national football team",
+      "flag": "Флаг Болгарии"
+    },
+    "Боливия": {
+      "gen": "Боливии",
+      "ru": {
+        "0": "Сборная Боливии по футболу",
+        "17": "Сборная Боливии по футболу (до 17 лет)",
+        "20": "Сборная Боливии по футболу (до 20 лет)",
+        "23": "Олимпийская сборная Боливии по футболу"
+      },
+      "foreign": {
+        "0": "Bolivia national football team",
+        "17": "Bolivia national under-17 football team",
+        "20": "Bolivia national under-20 football team",
+        "23": "Bolivia national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Bolivia national football team",
+      "flag": "Флаг Боливии"
+    },
+    "Бонайре": {
+      "gen": "Бонайре",
+      "ru": {
+        "0": "Сборная Бонайре по футболу"
+      },
+      "foreign": {
+        "0": "Bonaire national football team"
+      },
+      "foreign_de": {},
+      "english_main": "Bonaire national football team",
+      "flag": "Флаг Бонайре"
+    },
+    "Босния и Герцеговина": {
+      "gen": "Боснии и Герцеговины",
+      "ru": {
+        "0": "Сборная Боснии и Герцеговины по футболу",
+        "21": "Сборная Боснии и Герцеговины по футболу (до 21 года)"
+      },
+      "foreign": {
+        "0": "Bosnia and Herzegovina national football team",
+        "15": "Bosnia and Herzegovina national under-15 football team",
+        "17": "Bosnia and Herzegovina national under-17 football team",
+        "18": "Bosnia and Herzegovina national under-18 football team",
+        "19": "Bosnia and Herzegovina national under-19 football team",
+        "21": "Bosnia and Herzegovina national under-21 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Bosnia and Herzegovina national football team",
+      "flag": "Флаг Боснии и Герцеговины"
+    },
+    "Ботсвана": {
+      "gen": "Ботсваны",
+      "ru": {
+        "0": "Сборная Ботсваны по футболу"
+      },
+      "foreign": {
+        "0": "Botswana national football team",
+        "17": "Botswana national under-17 football team",
+        "20": "Botswana national under-20 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Botswana national football team",
+      "flag": "Флаг Ботсваны"
+    },
+    "Бразилия": {
+      "gen": "Бразилии",
+      "ru": {
+        "0": "Сборная Бразилии по футболу",
+        "15": "Сборная Бразилии по футболу (до 15 лет)",
+        "17": "Сборная Бразилии по футболу (до 17 лет)",
+        "20": "Сборная Бразилии по футболу (до 20 лет)",
+        "23": "Олимпийская сборная Бразилии по футболу"
+      },
+      "foreign": {
+        "0": "Brazil national football team",
+        "15": "Brazil national under-15 football team",
+        "17": "Brazil national under-17 football team",
+        "20": "Brazil national under-20 football team",
+        "23": "Brazil national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Brazil national football team",
+      "flag": "Флаг Бразилии"
+    },
+    "Британские Виргинские острова": {
+      "gen": "Британских Виргинских Островов",
+      "ru": {
+        "0": "Сборная Британских Виргинских Островов по футболу"
+      },
+      "foreign": {
+        "0": "British Virgin Islands national football team",
+        "17": "British Virgin Islands national under-17 football team"
+      },
+      "foreign_de": {},
+      "english_main": "British Virgin Islands national football team",
+      "flag": "Флаг Британских Виргинских островов"
+    },
+    "Бруней": {
+      "gen": "Брунея",
+      "ru": {
+        "0": "Сборная Брунея по футболу"
+      },
+      "foreign": {
+        "0": "Brunei national football team",
+        "17": "Brunei national under-17 football team",
+        "19": "Brunei national under-19 football team",
+        "21": "Brunei national under-21 football team",
+        "23": "Brunei national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Brunei national football team",
+      "flag": "Флаг Брунея"
+    },
+    "Буркина-Фасо": {
+      "gen": "Буркина-Фасо",
+      "ru": {
+        "0": "Сборная Буркина-Фасо по футболу"
+      },
+      "foreign": {
+        "0": "Burkina Faso national football team",
+        "17": "Burkina Faso national under-17 football team",
+        "20": "Burkina Faso national under-20 football team",
+        "23": "Burkina Faso national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Burkina Faso national football team",
+      "flag": "Флаг Буркина-Фасо"
+    },
+    "Бурунди": {
+      "gen": "Бурунди",
+      "ru": {
+        "0": "Сборная Бурунди по футболу"
+      },
+      "foreign": {
+        "0": "Burundi national football team",
+        "17": "Burundi national under-17 football team",
+        "20": "Burundi national under-20 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Burundi national football team",
+      "flag": "Флаг Бурунди"
+    },
+    "Бутан": {
+      "gen": "Бутана",
+      "ru": {
+        "0": "Сборная Бутана по футболу"
+      },
+      "foreign": {
+        "0": "Bhutan national football team",
+        "17": "Bhutan national under-17 football team",
+        "20": "Bhutan national under-20 football team",
+        "23": "Bhutan national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Bhutan national football team",
+      "flag": "Флаг Бутана"
+    },
+    "Вануату": {
+      "gen": "Вануату",
+      "ru": {
+        "0": "Сборная Вануату по футболу"
+      },
+      "foreign": {
+        "0": "Vanuatu national football team",
+        "15": "Vanuatu national under-15 football team",
+        "17": "Vanuatu national under-17 football team",
+        "18": "Vanuatu national under-18 football team",
+        "20": "Vanuatu national under-20 football team",
+        "23": "Vanuatu national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Vanuatu national football team",
+      "flag": "Флаг Вануату"
+    },
+    "Ватикан": {
+      "gen": "Ватикана",
+      "ru": {
+        "0": "Сборная Ватикана по футболу"
+      },
+      "foreign": {
+        "0": "Vatican City national football team"
+      },
+      "foreign_de": {},
+      "english_main": "Vatican City national football team",
+      "flag": "Флаг Ватикана"
+    },
+    "Венгрия": {
+      "gen": "Венгрии",
+      "ru": {
+        "0": "Сборная Венгрии по футболу",
+        "17": "Сборная Венгрии по футболу (до 17 лет)",
+        "19": "Сборная Венгрии по футболу (до 19 лет)",
+        "21": "Сборная Венгрии по футболу (до 21 года)"
+      },
+      "foreign": {
+        "0": "Hungary national football team",
+        "17": "Hungary national under-17 football team",
+        "19": "Hungary national under-19 football team",
+        "21": "Hungary national under-21 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Hungary national football team",
+      "flag": "Флаг Венгрии"
+    },
+    "Венесуэла": {
+      "gen": "Венесуэлы",
+      "ru": {
+        "0": "Сборная Венесуэлы по футболу",
+        "17": "Сборная Венесуэлы по футболу (до 17 лет)",
+        "20": "Сборная Венесуэлы по футболу (до 20 лет)"
+      },
+      "foreign": {
+        "0": "Venezuela national football team",
+        "17": "Venezuela national under-17 football team",
+        "20": "Venezuela national under-20 football team",
+        "23": "Venezuela national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Venezuela national football team",
+      "flag": "Флаг Венесуэлы"
+    },
+    "Восточный Тимор": {
+      "gen": "Восточного Тимора",
+      "ru": {
+        "0": "Сборная Восточного Тимора по футболу"
+      },
+      "foreign": {
+        "0": "Timor-Leste national football team",
+        "16": "Timor-Leste national under-16 football team",
+        "19": "Timor-Leste national under-19 football team",
+        "21": "Timor-Leste national under-21 football team",
+        "23": "Timor-Leste national under-23 football team"
+      },
+      "foreign_de": {
+        "17": "Osttimoresische Fußballnationalmannschaft (U-17-Junioren)"
+      },
+      "english_main": "Timor-Leste national football team",
+      "flag": "Флаг Восточного Тимора"
+    },
+    "Вьетнам": {
+      "gen": "Вьетнама",
+      "ru": {
+        "0": "Сборная Вьетнама по футболу"
+      },
+      "foreign": {
+        "0": "Vietnam national football team",
+        "17": "Vietnam national under-17 football team",
+        "20": "Vietnam national under-20 football team",
+        "21": "Vietnam national under-21 football team",
+        "23": "Vietnam national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Vietnam national football team",
+      "flag": "Флаг Вьетнама"
+    },
+    "ГДР": {
+      "gen": "ГДР",
+      "ru": {
+        "0": "Сборная ГДР по футболу",
+        "21": "Сборная ГДР по футболу (до 21 года)"
+      },
+      "foreign": {
+        "0": "East Germany national football team",
+        "16": "East Germany national under-16 football team",
+        "21": "East Germany national under-21 football team",
+        "23": "East Germany national under-23 football team"
+      },
+      "foreign_de": {
+        "15": "Fußballnationalmannschaft der DDR (U-15-Junioren)",
+        "17": "Fußballnationalmannschaft der DDR (U-17-Junioren)",
+        "18": "Fußballnationalmannschaft der DDR (U-18-Junioren)",
+        "19": "Fußballnationalmannschaft der DDR (U-19-Junioren)"
+      },
+      "english_main": "East Germany national football team",
+      "flag": "Флаг ГДР"
+    },
+    "Габон": {
+      "gen": "Габона",
+      "ru": {
+        "0": "Сборная Габона по футболу"
+      },
+      "foreign": {
+        "0": "Gabon national football team",
+        "17": "Gabon national under-17 football team",
+        "20": "Gabon national under-20 football team",
+        "23": "Gabon national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Gabon national football team",
+      "flag": "Флаг Габона"
+    },
+    "Гаити": {
+      "gen": "Гаити",
+      "ru": {
+        "0": "Сборная Гаити по футболу"
+      },
+      "foreign": {
+        "0": "Haiti national football team",
+        "15": "Haiti national under-15 football team",
+        "17": "Haiti national under-17 football team",
+        "20": "Haiti national under-20 football team",
+        "23": "Haiti national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Haiti national football team",
+      "flag": "Флаг Гаити"
+    },
+    "Гайана": {
+      "gen": "Гайаны",
+      "ru": {
+        "0": "Сборная Гайаны по футболу"
+      },
+      "foreign": {
+        "0": "Guyana national football team",
+        "17": "Guyana national under-17 football team",
+        "20": "Guyana national under-20 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Guyana national football team",
+      "flag": "Флаг Гайаны"
+    },
+    "Гамбия": {
+      "gen": "Гамбии",
+      "ru": {
+        "0": "Сборная Гамбии по футболу"
+      },
+      "foreign": {
+        "0": "Gambia national football team",
+        "17": "Gambia national under-17 football team",
+        "20": "Gambia national under-20 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Gambia national football team",
+      "flag": "Флаг Гамбии"
+    },
+    "Гана": {
+      "gen": "Ганы",
+      "ru": {
+        "0": "Сборная Ганы по футболу"
+      },
+      "foreign": {
+        "0": "Ghana national football team",
+        "23": "Ghana national under-23 football team"
+      },
+      "foreign_de": {
+        "17": "Ghanaische Fußballnationalmannschaft (U-17-Junioren)"
+      },
+      "english_main": "Ghana national football team",
+      "flag": "Флаг Ганы"
+    },
+    "Гваделупа": {
+      "gen": "Гваделупы",
+      "ru": {
+        "0": "Сборная Гваделупы по футболу"
+      },
+      "foreign": {
+        "0": "Guadeloupe national football team",
+        "17": "Guadeloupe national under-17 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Guadeloupe national football team",
+      "flag": "Флаг Гваделупы"
+    },
+    "Гватемала": {
+      "gen": "Гватемалы",
+      "ru": {
+        "0": "Сборная Гватемалы по футболу"
+      },
+      "foreign": {
+        "0": "Guatemala national football team",
+        "17": "Guatemala national under-17 football team",
+        "20": "Guatemala national under-20 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Guatemala national football team",
+      "flag": "Флаг Гватемалы"
+    },
+    "Гвинея": {
+      "gen": "Гвинеи",
+      "ru": {
+        "0": "Сборная Гвинеи по футболу"
+      },
+      "foreign": {
+        "0": "Guinea national football team",
+        "17": "Guinea national under-17 football team",
+        "20": "Guinea national under-20 football team",
+        "23": "Guinea national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Guinea national football team",
+      "flag": "Флаг Гвинеи"
+    },
+    "Гвинея-Бисау": {
+      "gen": "Гвинеи-Бисау",
+      "ru": {
+        "0": "Сборная Гвинеи-Бисау по футболу"
+      },
+      "foreign": {
+        "0": "Guinea-Bissau national football team",
+        "17": "Guinea-Bissau national under-17 football team",
+        "20": "Guinea-Bissau national under-20 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Guinea-Bissau national football team",
+      "flag": "Флаг Гвинеи-Бисау"
+    },
+    "Германия": {
+      "gen": "Германии",
+      "ru": {
+        "0": "Сборная Германии по футболу",
+        "17": "Сборная Германии по футболу (до 17 лет)",
+        "20": "Сборная Германии по футболу (до 20 лет)",
+        "21": "Сборная Германии по футболу (до 21 года)",
+        "19": "Сборная Германии по футболу (до 19 лет)"
+      },
+      "foreign": {
+        "0": "Germany national football team",
+        "16": "Germany national under-16 football team",
+        "17": "Germany national under-17 football team",
+        "20": "Germany national under-20 football team",
+        "21": "Germany national under-21 football team"
+      },
+      "foreign_de": {
+        "15": "Deutsche Fußballnationalmannschaft (U-15-Junioren)",
+        "18": "Deutsche Fußballnationalmannschaft (U-18-Junioren)",
+        "19": "Deutsche Fußballnationalmannschaft (U-19-Junioren)"
+      },
+      "english_main": "Germany national football team",
+      "flag": "Флаг Германии"
+    },
+    "Гибралтар": {
+      "gen": "Гибралтара",
+      "ru": {
+        "0": "Сборная Гибралтара по футболу"
+      },
+      "foreign": {
+        "0": "Gibraltar national football team",
+        "16": "Gibraltar national under-16 football team",
+        "17": "Gibraltar national under-17 football team",
+        "19": "Gibraltar national under-19 football team",
+        "21": "Gibraltar national under-21 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Gibraltar national football team",
+      "flag": "Флаг Гибралтара"
+    },
+    "Гондурас": {
+      "gen": "Гондураса",
+      "ru": {
+        "0": "Сборная Гондураса по футболу"
+      },
+      "foreign": {
+        "0": "Honduras national football team",
+        "15": "Honduras national under-15 football team",
+        "17": "Honduras national under-17 football team",
+        "20": "Honduras national under-20 football team",
+        "23": "Honduras national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Honduras national football team",
+      "flag": "Флаг Гондураса"
+    },
+    "Гонконг": {
+      "gen": "Гонконга",
+      "ru": {
+        "0": "Сборная Гонконга по футболу"
+      },
+      "foreign": {
+        "0": "Hong Kong national football team",
+        "17": "Hong Kong national under-17 football team",
+        "20": "Hong Kong national under-20 football team",
+        "23": "Hong Kong national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Hong Kong national football team",
+      "flag": "Флаг Гонконга"
+    },
+    "Гренада": {
+      "gen": "Гренады",
+      "ru": {
+        "0": "Сборная Гренады по футболу"
+      },
+      "foreign": {
+        "0": "Grenada national football team"
+      },
+      "foreign_de": {},
+      "english_main": "Grenada national football team",
+      "flag": "Флаг Гренады"
+    },
+    "Гренландия": {
+      "gen": "Гренландии",
+      "ru": {
+        "0": "Сборная Гренландии по футболу"
+      },
+      "foreign": {
+        "0": "Greenland national football team"
+      },
+      "foreign_de": {},
+      "english_main": "Greenland national football team",
+      "flag": "Флаг Гренландии"
+    },
+    "Греция": {
+      "gen": "Греции",
+      "ru": {
+        "0": "Сборная Греции по футболу",
+        "17": "Сборная Греции по футболу (до 17 лет)",
+        "21": "Сборная Греции по футболу (до 21 года)"
+      },
+      "foreign": {
+        "0": "Greece national football team",
+        "17": "Greece national under-17 football team",
+        "18": "Greece national under-18 football team",
+        "19": "Greece national under-19 football team",
+        "20": "Greece national under-20 football team",
+        "21": "Greece national under-21 football team",
+        "23": "Greece national under-23 football team"
+      },
+      "foreign_de": {
+        "16": "Griechische Fußballnationalmannschaft (U-16-Junioren)"
+      },
+      "english_main": "Greece national football team",
+      "flag": "Флаг Греции"
+    },
+    "Грузия": {
+      "gen": "Грузии",
+      "ru": {
+        "0": "Сборная Грузии по футболу",
+        "17": "Сборная Грузии по футболу (до 17 лет)",
+        "19": "Сборная Грузии по футболу (до 19 лет)",
+        "21": "Сборная Грузии по футболу (до 21 года)"
+      },
+      "foreign": {
+        "0": "Georgia national football team",
+        "17": "Georgia national under-17 football team",
+        "19": "Georgia national under-19 football team",
+        "21": "Georgia national under-21 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Georgia national football team",
+      "flag": "Флаг Грузии"
+    },
+    "Гуам": {
+      "gen": "Гуама",
+      "ru": {
+        "0": "Сборная Гуама по футболу",
+        "17": "Сборная Гуама по футболу (до 17 лет)"
+      },
+      "foreign": {
+        "0": "Guam national football team",
+        "17": "Guam national under-17 football team",
+        "20": "Guam national under-20 football team",
+        "23": "Guam national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Guam national football team",
+      "flag": "Флаг Гуама"
+    },
+    "ДР Конго": {
+      "gen": "ДР Конго",
+      "ru": {
+        "0": "Сборная ДР Конго по футболу",
+        "20": "Сборная ДР Конго по футболу (до 20 лет)"
+      },
+      "foreign": {
+        "0": "DR Congo national football team",
+        "17": "DR Congo national under-17 football team",
+        "20": "DR Congo national under-20 football team"
+      },
+      "foreign_de": {},
+      "english_main": "DR Congo national football team",
+      "flag": "Флаг ДР Конго"
+    },
+    "Дания": {
+      "gen": "Дании",
+      "ru": {
+        "0": "Сборная Дании по футболу",
+        "17": "Сборная Дании по футболу (до 17 лет)",
+        "19": "Сборная Дании по футболу (до 19 лет)",
+        "21": "Сборная Дании по футболу (до 21 года)"
+      },
+      "foreign": {
+        "0": "Denmark national football team",
+        "17": "Denmark national under-17 football team",
+        "19": "Denmark national under-19 football team",
+        "21": "Denmark national under-21 football team"
+      },
+      "foreign_de": {
+        "16": "Dänische Fußballnationalmannschaft (U-16-Junioren)",
+        "18": "Dänische Fußballnationalmannschaft (U-18-Junioren)"
+      },
+      "english_main": "Denmark national football team",
+      "flag": "Флаг Дании"
+    },
+    "Джерси": {
+      "gen": "Джерси",
+      "ru": {
+        "0": "Сборная Джерси по футболу"
+      },
+      "foreign": {
+        "0": "Jersey official football team"
+      },
+      "foreign_de": {},
+      "english_main": "Jersey official football team",
+      "flag": "Флаг Джерси"
+    },
+    "Джибути": {
+      "gen": "Джибути",
+      "ru": {
+        "0": "Сборная Джибути по футболу"
+      },
+      "foreign": {
+        "0": "Djibouti national football team",
+        "17": "Djibouti national under-17 football team",
+        "20": "Djibouti national under-20 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Djibouti national football team",
+      "flag": "Флаг Джибути"
+    },
+    "Доминика": {
+      "gen": "Доминики",
+      "ru": {
+        "0": "Сборная Доминики по футболу"
+      },
+      "foreign": {
+        "0": "Dominica national football team"
+      },
+      "foreign_de": {},
+      "english_main": "Dominica national football team",
+      "flag": "Флаг Доминики"
+    },
+    "Доминиканская Республика": {
+      "gen": "Доминиканской Республики",
+      "ru": {
+        "0": "Сборная Доминиканской Республики по футболу"
+      },
+      "foreign": {
+        "0": "Dominican Republic national football team",
+        "17": "Dominican Republic national under-17 football team",
+        "20": "Dominican Republic national under-20 football team",
+        "23": "Dominican Republic national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Dominican Republic national football team",
+      "flag": "Флаг Доминиканской Республики"
+    },
+    "Египет": {
+      "gen": "Египта",
+      "ru": {
+        "0": "Сборная Египта по футболу",
+        "23": "Олимпийская сборная Египта по футболу"
+      },
+      "foreign": {
+        "0": "Egypt national football team",
+        "17": "Egypt national under-17 football team",
+        "20": "Egypt national under-20 football team",
+        "23": "Egypt national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Egypt national football team",
+      "flag": "Флаг Египта"
+    },
+    "Замбия": {
+      "gen": "Замбии",
+      "ru": {
+        "0": "Сборная Замбии по футболу",
+        "20": "Сборная Замбии по футболу (до 20 лет)"
+      },
+      "foreign": {
+        "0": "Zambia national football team",
+        "17": "Zambia national under-17 football team",
+        "20": "Zambia national under-20 football team",
+        "23": "Zambia national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Zambia national football team",
+      "flag": "Флаг Замбии"
+    },
+    "Занзибар": {
+      "gen": "Занзибара",
+      "ru": {
+        "0": "Сборная Занзибара по футболу"
+      },
+      "foreign": {
+        "0": "Zanzibar national football team",
+        "20": "Zanzibar national under-20 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Zanzibar national football team",
+      "flag": "Флаг Занзибара"
+    },
+    "Западная Сахара": {
+      "gen": "Западной Сахары",
+      "ru": {
+        "0": "Сборная Западной Сахары по футболу"
+      },
+      "foreign": {
+        "0": "Western Sahara national football team"
+      },
+      "foreign_de": {},
+      "english_main": "Western Sahara national football team",
+      "flag": "Флаг Западной Сахары"
+    },
+    "Зимбабве": {
+      "gen": "Зимбабве",
+      "ru": {
+        "0": "Сборная Зимбабве по футболу",
+        "20": "Сборная Зимбабве по футболу (до 20 лет)"
+      },
+      "foreign": {
+        "0": "Zimbabwe national football team",
+        "17": "Zimbabwe national under-17 football team",
+        "20": "Zimbabwe national under-20 football team",
+        "23": "Zimbabwe national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Zimbabwe national football team",
+      "flag": "Флаг Зимбабве"
+    },
+    "Израиль": {
+      "gen": "Израиля",
+      "ru": {
+        "0": "Сборная Израиля по футболу",
+        "17": "Сборная Израиля по футболу (до 17 лет)",
+        "19": "Сборная Израиля по футболу (до 19 лет)",
+        "21": "Сборная Израиля по футболу (до 21 года)"
+      },
+      "foreign": {
+        "0": "Israel national football team",
+        "17": "Israel national under-17 football team",
+        "18": "Israel national under-18 football team",
+        "19": "Israel national under-19 football team",
+        "21": "Israel national under-21 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Israel national football team",
+      "flag": "Флаг Израиля"
+    },
+    "Индия": {
+      "gen": "Индии",
+      "ru": {
+        "0": "Сборная Индии по футболу"
+      },
+      "foreign": {
+        "0": "India national football team",
+        "15": "India national under-15 football team",
+        "17": "India national under-17 football team",
+        "20": "India national under-20 football team",
+        "23": "India national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "India national football team",
+      "flag": "Флаг Индии"
+    },
+    "Индонезия": {
+      "gen": "Индонезии",
+      "ru": {
+        "0": "Сборная Индонезии по футболу",
+        "19": "Сборная Индонезии по футболу (до 19 лет)"
+      },
+      "foreign": {
+        "0": "Indonesia national football team",
+        "17": "Indonesia national under-17 football team",
+        "20": "Indonesia national under-20 football team",
+        "21": "Indonesia national under-21 football team",
+        "23": "Indonesia national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Indonesia national football team",
+      "flag": "Флаг Индонезии"
+    },
+    "Иордания": {
+      "gen": "Иордании",
+      "ru": {
+        "0": "Сборная Иордании по футболу"
+      },
+      "foreign": {
+        "0": "Jordan national football team",
+        "17": "Jordan national under-17 football team",
+        "20": "Jordan national under-20 football team",
+        "23": "Jordan national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Jordan national football team",
+      "flag": "Флаг Иордании"
+    },
+    "Ирак": {
+      "gen": "Ирака",
+      "ru": {
+        "0": "Сборная Ирака по футболу"
+      },
+      "foreign": {
+        "0": "Iraq national football team",
+        "17": "Iraq national under-17 football team",
+        "20": "Iraq national under-20 football team",
+        "23": "Iraq national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Iraq national football team",
+      "flag": "Флаг Ирака"
+    },
+    "Иран": {
+      "gen": "Ирана",
+      "ru": {
+        "0": "Сборная Ирана по футболу",
+        "23": "Сборная Ирана по футболу (до 23 лет)"
+      },
+      "foreign": {
+        "0": "Iran national football team",
+        "17": "Iran national under-17 football team",
+        "20": "Iran national under-20 football team",
+        "23": "Iran national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Iran national football team",
+      "flag": "Флаг Ирана"
+    },
+    "Ирландия": {
+      "gen": "Ирландии",
+      "ru": {
+        "0": "Сборная Ирландии по футболу",
+        "17": "Сборная Ирландии по футболу (до 17 лет)",
+        "21": "Сборная Ирландии по футболу (до 21 года)"
+      },
+      "foreign": {
+        "0": "Republic of Ireland national football team",
+        "17": "Republic of Ireland national under-17 football team",
+        "19": "Republic of Ireland national under-19 football team",
+        "21": "Republic of Ireland national under-21 football team",
+        "23": "Republic of Ireland national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Republic of Ireland national football team",
+      "flag": "Флаг Ирландии"
+    },
+    "Исландия": {
+      "gen": "Исландии",
+      "ru": {
+        "0": "Сборная Исландии по футболу",
+        "17": "Сборная Исландии по футболу (до 17 лет)",
+        "19": "Сборная Исландии по футболу (до 19 лет)",
+        "21": "Сборная Исландии по футболу (до 21 года)"
+      },
+      "foreign": {
+        "0": "Iceland national football team"
+      },
+      "foreign_de": {
+        "17": "Isländische Fußballnationalmannschaft (U-17-Junioren)",
+        "19": "Isländische Fußballnationalmannschaft (U-19-Junioren)"
+      },
+      "english_main": "Iceland national football team",
+      "flag": "Флаг Исландии"
+    },
+    "Испания": {
+      "gen": "Испании",
+      "ru": {
+        "0": "Сборная Испании по футболу",
+        "17": "Сборная Испании по футболу (до 17 лет)",
+        "19": "Сборная Испании по футболу (до 19 лет)",
+        "21": "Сборная Испании по футболу (до 21 года)",
+        "23": "Олимпийская сборная Испании по футболу"
+      },
+      "foreign": {
+        "0": "Spain national football team",
+        "15": "Spain national under-15 football team",
+        "16": "Spain national under-16 football team",
+        "17": "Spain national under-17 football team",
+        "18": "Spain national under-18 football team",
+        "19": "Spain national under-19 football team",
+        "20": "Spain national under-20 football team",
+        "21": "Spain national under-21 football team",
+        "23": "Spain national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Spain national football team",
+      "flag": "Флаг Испании"
+    },
+    "Италия": {
+      "gen": "Италии",
+      "ru": {
+        "0": "Сборная Италии по футболу",
+        "17": "Сборная Италии по футболу (до 17 лет)",
+        "19": "Сборная Италии по футболу (до 19 лет)",
+        "20": "Сборная Италии по футболу (до 20 лет)",
+        "21": "Сборная Италии по футболу (до 21 года)"
+      },
+      "foreign": {
+        "0": "Italy national football team",
+        "15": "Italy national under-15 football team",
+        "16": "Italy national under-16 football team",
+        "17": "Italy national under-17 football team",
+        "18": "Italy national under-18 football team",
+        "19": "Italy national under-19 football team",
+        "20": "Italy national under-20 football team",
+        "21": "Italy national under-21 football team",
+        "23": "Italy national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Italy national football team",
+      "flag": "Флаг Италии"
+    },
+    "Йемен": {
+      "gen": "Йемена",
+      "ru": {
+        "0": "Сборная Йемена по футболу"
+      },
+      "foreign": {
+        "0": "Yemen national football team",
+        "17": "Yemen national under-17 football team",
+        "20": "Yemen national under-20 football team",
+        "23": "Yemen national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Yemen national football team",
+      "flag": "Флаг Йемена"
+    },
+    "КНДР": {
+      "gen": "КНДР",
+      "ru": {
+        "0": "Сборная КНДР по футболу"
+      },
+      "foreign": {
+        "0": "North Korea national football team",
+        "17": "North Korea national under-17 football team",
+        "20": "North Korea national under-20 football team",
+        "23": "North Korea national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "North Korea national football team",
+      "flag": "Флаг КНДР"
+    },
+    "Кабо-Верде": {
+      "gen": "Кабо-Верде",
+      "ru": {
+        "0": "Сборная Кабо-Верде по футболу"
+      },
+      "foreign": {
+        "0": "Cape Verde national football team",
+        "20": "Cape Verde national under-20 football team"
+      },
+      "foreign_de": {
+        "17": "Kapverdische Fußballnationalmannschaft (U-17-Junioren)"
+      },
+      "english_main": "Cape Verde national football team",
+      "flag": "Флаг Кабо-Верде"
+    },
+    "Казахстан": {
+      "gen": "Казахстана",
+      "ru": {
+        "0": "Сборная Казахстана по футболу",
+        "17": "Сборная Казахстана по футболу (до 17 лет)",
+        "19": "Сборная Казахстана по футболу (до 19 лет)",
+        "21": "Сборная Казахстана по футболу (до 21 года)"
+      },
+      "foreign": {
+        "0": "Kazakhstan national football team",
+        "17": "Kazakhstan national under-17 football team",
+        "19": "Kazakhstan national under-19 football team",
+        "21": "Kazakhstan national under-21 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Kazakhstan national football team",
+      "flag": "Флаг Казахстана"
+    },
+    "Каймановы Острова": {
+      "gen": "Каймановых Островов",
+      "ru": {
+        "0": "Сборная Каймановых Островов по футболу"
+      },
+      "foreign": {
+        "0": "Cayman Islands national football team"
+      },
+      "foreign_de": {},
+      "english_main": "Cayman Islands national football team",
+      "flag": "Флаг Каймановых Островов"
+    },
+    "Камбоджа": {
+      "gen": "Камбоджи",
+      "ru": {
+        "0": "Сборная Камбоджи по футболу"
+      },
+      "foreign": {
+        "0": "Cambodia national football team",
+        "17": "Cambodia national under-17 football team",
+        "21": "Cambodia national under-21 football team",
+        "23": "Cambodia national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Cambodia national football team",
+      "flag": "Флаг Камбоджи"
+    },
+    "Камерун": {
+      "gen": "Камеруна",
+      "ru": {
+        "0": "Сборная Камеруна по футболу",
+        "20": "Сборная Камеруна по футболу (до 20 лет)"
+      },
+      "foreign": {
+        "0": "Cameroon national football team",
+        "17": "Cameroon national under-17 football team",
+        "20": "Cameroon national under-20 football team",
+        "23": "Cameroon national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Cameroon national football team",
+      "flag": "Флаг Камеруна"
+    },
+    "Канада": {
+      "gen": "Канады",
+      "ru": {
+        "0": "Сборная Канады по футболу",
+        "17": "Сборная Канады по футболу (до 17 лет)"
+      },
+      "foreign": {
+        "0": "Canada men's national soccer team",
+        "17": "Canada men's national under-17 soccer team",
+        "20": "Canada men's national under-20 soccer team",
+        "23": "Canada men's national under-23 soccer team"
+      },
+      "foreign_de": {},
+      "english_main": "Canada men's national soccer team",
+      "flag": "Флаг Канады"
+    },
+    "Каталония": {
+      "gen": "Каталонии",
+      "ru": {
+        "0": "Сборная Каталонии по футболу"
+      },
+      "foreign": {
+        "0": "Catalonia national football team"
+      },
+      "foreign_de": {},
+      "english_main": "Catalonia national football team",
+      "flag": "Флаг Каталонии"
+    },
+    "Катар": {
+      "gen": "Катара",
+      "ru": {
+        "0": "Сборная Катара по футболу",
+        "20": "Сборная Катара по футболу (до 20 лет)"
+      },
+      "foreign": {
+        "0": "Qatar national football team",
+        "17": "Qatar national under-17 football team",
+        "20": "Qatar national under-20 football team",
+        "23": "Qatar national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Qatar national football team",
+      "flag": "Флаг Катара"
+    },
+    "Кения": {
+      "gen": "Кении",
+      "ru": {
+        "0": "Сборная Кении по футболу"
+      },
+      "foreign": {
+        "0": "Kenya national football team",
+        "17": "Kenya national under-17 football team",
+        "20": "Kenya national under-20 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Kenya national football team",
+      "flag": "Флаг Кении"
+    },
+    "Кипр": {
+      "gen": "Кипра",
+      "ru": {
+        "0": "Сборная Кипра по футболу",
+        "21": "Сборная Кипра по футболу (до 21 года)"
+      },
+      "foreign": {
+        "0": "Cyprus national football team",
+        "17": "Cyprus national under-17 football team",
+        "18": "Cyprus national under-18 football team",
+        "19": "Cyprus national under-19 football team",
+        "21": "Cyprus national under-21 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Cyprus national football team",
+      "flag": "Флаг Кипра"
+    },
+    "Кирибати": {
+      "gen": "Кирибати",
+      "ru": {
+        "0": "Сборная Кирибати по футболу"
+      },
+      "foreign": {
+        "0": "Kiribati national football team"
+      },
+      "foreign_de": {},
+      "english_main": "Kiribati national football team",
+      "flag": "Флаг Кирибати"
+    },
+    "Китай": {
+      "gen": "Китая",
+      "ru": {
+        "0": "Сборная Китая по футболу",
+        "20": "Сборная Китая по футболу (до 20 лет)"
+      },
+      "foreign": {
+        "0": "China national football team",
+        "17": "China national under-17 football team",
+        "20": "China national under-20 football team",
+        "23": "China national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "China national football team",
+      "flag": "Флаг Китая"
+    },
+    "Китайский Тайбэй": {
+      "gen": "Тайваня",
+      "ru": {
+        "0": "Сборная Тайваня по футболу"
+      },
+      "foreign": {
+        "0": "Chinese Taipei national football team",
+        "17": "Chinese Taipei national under-17 football team",
+        "20": "Chinese Taipei national under-20 football team",
+        "23": "Chinese Taipei national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Chinese Taipei national football team",
+      "flag": "Флаг Тайваня"
+    },
+    "Колумбия": {
+      "gen": "Колумбии",
+      "ru": {
+        "0": "Сборная Колумбии по футболу",
+        "17": "Сборная Колумбии по футболу (до 17 лет)",
+        "20": "Сборная Колумбии по футболу (до 20 лет)"
+      },
+      "foreign": {
+        "0": "Colombia national football team",
+        "15": "Colombia national under-15 football team",
+        "17": "Colombia national under-17 football team",
+        "20": "Colombia national under-20 football team",
+        "23": "Colombia national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Colombia national football team",
+      "flag": "Флаг Колумбии"
+    },
+    "Коморы": {
+      "gen": "Комор",
+      "ru": {
+        "0": "Сборная Комор по футболу"
+      },
+      "foreign": {
+        "0": "Comoros national football team",
+        "17": "Comoros national under-17 football team",
+        "20": "Comoros national under-20 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Comoros national football team",
+      "flag": "Флаг Комор"
+    },
+    "Корсика": {
+      "gen": "Корсики",
+      "ru": {
+        "0": "Сборная Корсики по футболу"
+      },
+      "foreign": {
+        "0": "Corsica national football team"
+      },
+      "foreign_de": {},
+      "english_main": "Corsica national football team",
+      "flag": null
+    },
+    "Косово": {
+      "gen": "Косова",
+      "ru": {
+        "0": "Сборная Косова по футболу"
+      },
+      "foreign": {
+        "0": "Kosovo national football team",
+        "15": "Kosovo national under-15 football team",
+        "17": "Kosovo national under-17 football team",
+        "19": "Kosovo national under-19 football team",
+        "21": "Kosovo national under-21 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Kosovo national football team",
+      "flag": "Флаг Косова"
+    },
+    "Коста-Рика": {
+      "gen": "Коста-Рики",
+      "ru": {
+        "0": "Сборная Коста-Рики по футболу"
+      },
+      "foreign": {
+        "0": "Costa Rica national football team",
+        "17": "Costa Rica national under-17 football team",
+        "20": "Costa Rica national under-20 football team",
+        "23": "Costa Rica national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Costa Rica national football team",
+      "flag": "Флаг Коста-Рики"
+    },
+    "Кот-д’Ивуар": {
+      "gen": "Кот-д’Ивуара",
+      "ru": {
+        "0": "Сборная Кот-д’Ивуара по футболу",
+        "23": "Олимпийская сборная Кот-д’Ивуара по футболу"
+      },
+      "foreign": {
+        "0": "Ivory Coast national football team",
+        "17": "Ivory Coast national under-17 football team",
+        "20": "Ivory Coast national under-20 football team",
+        "23": "Ivory Coast national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Ivory Coast national football team",
+      "flag": "Флаг Кот-д’Ивуара"
+    },
+    "Куба": {
+      "gen": "Кубы",
+      "ru": {
+        "0": "Сборная Кубы по футболу",
+        "17": "Сборная Кубы по футболу (до 17 лет)",
+        "20": "Сборная Кубы по футболу (до 20 лет)"
+      },
+      "foreign": {
+        "0": "Cuba national football team",
+        "17": "Cuba national under-17 football team",
+        "20": "Cuba national under-20 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Cuba national football team",
+      "flag": "Флаг Кубы"
+    },
+    "Кувейт": {
+      "gen": "Кувейта",
+      "ru": {
+        "0": "Сборная Кувейта по футболу"
+      },
+      "foreign": {
+        "0": "Kuwait national football team",
+        "17": "Kuwait national under-17 football team",
+        "20": "Kuwait national under-20 football team",
+        "23": "Kuwait national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Kuwait national football team",
+      "flag": "Флаг Кувейта"
+    },
+    "Кыргызстан": {
+      "gen": "Кыргызстана",
+      "ru": {
+        "0": "Сборная Кыргызстана по футболу",
+        "17": "Сборная Кыргызстана по футболу (до 17 лет)",
+        "20": "Сборная Кыргызстана по футболу (до 20 лет)",
+        "23": "Олимпийская сборная Кыргызстана по футболу"
+      },
+      "foreign": {
+        "0": "Kyrgyzstan national football team",
+        "17": "Kyrgyzstan national under-17 football team",
+        "20": "Kyrgyzstan national under-20 football team",
+        "23": "Kyrgyzstan national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Kyrgyzstan national football team",
+      "flag": "Флаг Кыргызстана"
+    },
+    "Кюрасао": {
+      "gen": "Кюрасао",
+      "ru": {
+        "0": "Сборная Кюрасао по футболу"
+      },
+      "foreign": {
+        "0": "Curaçao national football team",
+        "20": "Curaçao national under-20 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Curaçao national football team",
+      "flag": "Флаг Кюрасао"
+    },
+    "Лаос": {
+      "gen": "Лаоса",
+      "ru": {
+        "0": "Сборная Лаоса по футболу"
+      },
+      "foreign": {
+        "0": "Laos national football team",
+        "17": "Laos national under-17 football team",
+        "20": "Laos national under-20 football team",
+        "21": "Laos national under-21 football team",
+        "23": "Laos national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Laos national football team",
+      "flag": "Флаг Лаоса"
+    },
+    "Латвия": {
+      "gen": "Латвии",
+      "ru": {
+        "0": "Сборная Латвии по футболу",
+        "17": "Сборная Латвии по футболу (до 17 лет)",
+        "19": "Сборная Латвии по футболу (до 19 лет)",
+        "21": "Сборная Латвии по футболу (до 21 года)",
+        "23": "Сборная Латвии по футболу (до 23 лет)"
+      },
+      "foreign": {
+        "0": "Latvia national football team",
+        "17": "Latvia national under-17 football team",
+        "18": "Latvia national under-18 football team",
+        "19": "Latvia national under-19 football team",
+        "21": "Latvia national under-21 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Latvia national football team",
+      "flag": "Флаг Латвии"
+    },
+    "Лесото": {
+      "gen": "Лесото",
+      "ru": {
+        "0": "Сборная Лесото по футболу",
+        "20": "Сборная Лесото по футболу (до 20 лет)"
+      },
+      "foreign": {
+        "0": "Lesotho national football team",
+        "17": "Lesotho national under-17 football team",
+        "20": "Lesotho national under-20 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Lesotho national football team",
+      "flag": "Флаг Лесото"
+    },
+    "Либерия": {
+      "gen": "Либерии",
+      "ru": {
+        "0": "Сборная Либерии по футболу"
+      },
+      "foreign": {
+        "0": "Liberia national football team",
+        "17": "Liberia national under-17 football team",
+        "20": "Liberia national under-20 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Liberia national football team",
+      "flag": "Флаг Либерии"
+    },
+    "Ливан": {
+      "gen": "Ливана",
+      "ru": {
+        "0": "Сборная Ливана по футболу"
+      },
+      "foreign": {
+        "0": "Lebanon national football team",
+        "17": "Lebanon national under-17 football team",
+        "20": "Lebanon national under-20 football team",
+        "23": "Lebanon national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Lebanon national football team",
+      "flag": "Флаг Ливана"
+    },
+    "Ливия": {
+      "gen": "Ливии",
+      "ru": {
+        "0": "Сборная Ливии по футболу"
+      },
+      "foreign": {
+        "0": "Libya national football team",
+        "17": "Libya national under-17 football team",
+        "20": "Libya national under-20 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Libya national football team",
+      "flag": "Флаг Ливии"
+    },
+    "Литва": {
+      "gen": "Литвы",
+      "ru": {
+        "0": "Сборная Литвы по футболу",
+        "21": "Сборная Литвы по футболу (до 21 года)"
+      },
+      "foreign": {
+        "0": "Lithuania national football team",
+        "17": "Lithuania national under-17 football team",
+        "18": "Lithuania national under-18 football team",
+        "19": "Lithuania national under-19 football team",
+        "21": "Lithuania national under-21 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Lithuania national football team",
+      "flag": "Флаг Литвы"
+    },
+    "Лихтенштейн": {
+      "gen": "Лихтенштейна",
+      "ru": {
+        "0": "Сборная Лихтенштейна по футболу",
+        "19": "Сборная Лихтенштейна по футболу (до 19 лет)",
+        "21": "Сборная Лихтенштейна по футболу (до 21 года)"
+      },
+      "foreign": {
+        "0": "Liechtenstein national football team",
+        "17": "Liechtenstein national under-17 football team",
+        "19": "Liechtenstein national under-19 football team",
+        "21": "Liechtenstein national under-21 football team",
+        "23": "Liechtenstein national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Liechtenstein national football team",
+      "flag": "Флаг Лихтенштейна"
+    },
+    "Люксембург": {
+      "gen": "Люксембурга",
+      "ru": {
+        "0": "Сборная Люксембурга по футболу"
+      },
+      "foreign": {
+        "0": "Luxembourg national football team",
+        "17": "Luxembourg national under-17 football team",
+        "19": "Luxembourg national under-19 football team",
+        "21": "Luxembourg national under-21 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Luxembourg national football team",
+      "flag": "Флаг Люксембурга"
+    },
+    "Маврикий": {
+      "gen": "Маврикия",
+      "ru": {
+        "0": "Сборная Маврикия по футболу"
+      },
+      "foreign": {
+        "0": "Mauritius national football team",
+        "17": "Mauritius national under-17 football team",
+        "20": "Mauritius national under-20 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Mauritius national football team",
+      "flag": "Флаг Маврикия"
+    },
+    "Мавритания": {
+      "gen": "Мавритании",
+      "ru": {
+        "0": "Сборная Мавритании по футболу"
+      },
+      "foreign": {
+        "0": "Mauritania national football team",
+        "17": "Mauritania national under-17 football team",
+        "20": "Mauritania national under-20 football team",
+        "23": "Mauritania national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Mauritania national football team",
+      "flag": "Флаг Мавритании"
+    },
+    "Мадагаскар": {
+      "gen": "Мадагаскара",
+      "ru": {
+        "0": "Сборная Мадагаскара по футболу",
+        "20": "Сборная Мадагаскара по футболу (до 20 лет)"
+      },
+      "foreign": {
+        "0": "Madagascar national football team",
+        "17": "Madagascar national under-17 football team",
+        "20": "Madagascar national under-20 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Madagascar national football team",
+      "flag": "Флаг Мадагаскара"
+    },
+    "Макао": {
+      "gen": "Макао",
+      "ru": {
+        "0": "Сборная Макао по футболу"
+      },
+      "foreign": {
+        "0": "Macau national football team",
+        "17": "Macau national under-17 football team",
+        "20": "Macau national under-20 football team",
+        "23": "Macau national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Macau national football team",
+      "flag": "Флаг Макао"
+    },
+    "Малави": {
+      "gen": "Малави",
+      "ru": {
+        "0": "Сборная Малави по футболу"
+      },
+      "foreign": {
+        "0": "Malawi national football team",
+        "17": "Malawi national under-17 football team",
+        "20": "Malawi national under-20 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Malawi national football team",
+      "flag": "Флаг Малави"
+    },
+    "Малайзия": {
+      "gen": "Малайзии",
+      "ru": {
+        "0": "Сборная Малайзии по футболу"
+      },
+      "foreign": {
+        "0": "Malaysia national football team",
+        "16": "Malaysia national under-16 football team",
+        "19": "Malaysia national under-19 football team",
+        "22": "Malaysia national under-22 football team",
+        "23": "Malaysia national under-23 football team"
+      },
+      "foreign_de": {
+        "17": "Malaysische Fußballnationalmannschaft (U-17-Junioren)"
+      },
+      "english_main": "Malaysia national football team",
+      "flag": "Флаг Малайзии"
+    },
+    "Мали": {
+      "gen": "Мали",
+      "ru": {
+        "0": "Сборная Мали по футболу",
+        "20": "Сборная Мали по футболу (до 20 лет)"
+      },
+      "foreign": {
+        "0": "Mali national football team",
+        "17": "Mali national under-17 football team",
+        "20": "Mali national under-20 football team",
+        "23": "Mali national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Mali national football team",
+      "flag": "Флаг Мали"
+    },
+    "Мальдивы": {
+      "gen": "Мальдив",
+      "ru": {
+        "0": "Сборная Мальдив по футболу"
+      },
+      "foreign": {
+        "0": "Maldives national football team",
+        "17": "Maldives national under-17 football team",
+        "20": "Maldives national under-20 football team",
+        "23": "Maldives national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Maldives national football team",
+      "flag": "Флаг Мальдив"
+    },
+    "Мальта": {
+      "gen": "Мальты",
+      "ru": {
+        "0": "Сборная Мальты по футболу",
+        "21": "Сборная Мальты по футболу (до 21 года)"
+      },
+      "foreign": {
+        "0": "Malta national football team",
+        "17": "Malta national under-17 football team",
+        "19": "Malta national under-19 football team",
+        "21": "Malta national under-21 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Malta national football team",
+      "flag": "Флаг Мальты"
+    },
+    "Маньчжоу-го": {
+      "gen": "Маньчжоу-го",
+      "ru": {
+        "0": "Сборная Маньчжоу-го по футболу"
+      },
+      "foreign": {
+        "0": "Manchukuo national football team"
+      },
+      "foreign_de": {},
+      "english_main": "Manchukuo national football team",
+      "flag": "Флаг Маньчжоу-го"
+    },
+    "Марокко": {
+      "gen": "Марокко",
+      "ru": {
+        "0": "Сборная Марокко по футболу",
+        "23": "Олимпийская сборная Марокко по футболу"
+      },
+      "foreign": {
+        "0": "Morocco national football team",
+        "17": "Morocco national under-17 football team",
+        "18": "Morocco national under-18 football team",
+        "20": "Morocco national under-20 football team",
+        "23": "Morocco national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Morocco national football team",
+      "flag": "Флаг Марокко"
+    },
+    "Мартиника": {
+      "gen": "Мартиники",
+      "ru": {
+        "0": "Сборная Мартиники по футболу"
+      },
+      "foreign": {
+        "0": "Martinique national football team"
+      },
+      "foreign_de": {},
+      "english_main": "Martinique national football team",
+      "flag": "Флаг Мартиники"
+    },
+    "Мексика": {
+      "gen": "Мексики",
+      "ru": {
+        "0": "Сборная Мексики по футболу",
+        "17": "Сборная Мексики по футболу (до 17 лет)",
+        "20": "Сборная Мексики по футболу (до 20 лет)",
+        "23": "Олимпийская сборная Мексики по футболу"
+      },
+      "foreign": {
+        "0": "Mexico national football team",
+        "15": "Mexico national under-15 football team",
+        "16": "Mexico national under-16 football team",
+        "17": "Mexico national under-17 football team",
+        "18": "Mexico national under-18 football team",
+        "20": "Mexico national under-20 football team",
+        "21": "Mexico national under-21 football team",
+        "23": "Mexico national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Mexico national football team",
+      "flag": "Флаг Мексики"
+    },
+    "Мир": {
+      "gen": "мира",
+      "ru": {
+        "0": "Сборная мира по футболу"
+      },
+      "foreign": {
+        "0": "World XI"
+      },
+      "foreign_de": {},
+      "english_main": "World XI",
+      "flag": null
+    },
+    "Мозамбик": {
+      "gen": "Мозамбика",
+      "ru": {
+        "0": "Сборная Мозамбика по футболу",
+        "20": "Сборная Мозамбика по футболу (до 20 лет)"
+      },
+      "foreign": {
+        "0": "Mozambique national football team",
+        "17": "Mozambique national under-17 football team",
+        "20": "Mozambique national under-20 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Mozambique national football team",
+      "flag": "Флаг Мозамбика"
+    },
+    "Молдова": {
+      "gen": "Молдовы",
+      "ru": {
+        "0": "Сборная Молдовы по футболу",
+        "21": "Сборная Молдовы по футболу (до 21 года)"
+      },
+      "foreign": {
+        "0": "Moldova national football team",
+        "17": "Moldova national under-17 football team",
+        "19": "Moldova national under-19 football team",
+        "21": "Moldova national under-21 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Moldova national football team",
+      "flag": "Флаг Молдовы"
+    },
+    "Монако": {
+      "gen": "Монако",
+      "ru": {
+        "0": "Сборная Монако по футболу"
+      },
+      "foreign": {
+        "0": "Monaco national football team"
+      },
+      "foreign_de": {},
+      "english_main": "Monaco national football team",
+      "flag": "Флаг Монако"
+    },
+    "Монголия": {
+      "gen": "Монголии",
+      "ru": {
+        "0": "Сборная Монголии по футболу"
+      },
+      "foreign": {
+        "0": "Mongolia national football team",
+        "17": "Mongolia national under-17 football team",
+        "20": "Mongolia national under-20 football team",
+        "23": "Mongolia national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Mongolia national football team",
+      "flag": "Флаг Монголии"
+    },
+    "Монтсеррат": {
+      "gen": "Монтсеррата",
+      "ru": {
+        "0": "Сборная Монтсеррата по футболу"
+      },
+      "foreign": {
+        "0": "Montserrat national football team"
+      },
+      "foreign_de": {},
+      "english_main": "Montserrat national football team",
+      "flag": "Флаг Монтсеррата"
+    },
+    "Мьянма": {
+      "gen": "Мьянмы",
+      "ru": {
+        "0": "Сборная Мьянмы по футболу"
+      },
+      "foreign": {
+        "0": "Myanmar national football team",
+        "17": "Myanmar national under-17 football team",
+        "19": "Myanmar national under-19 football team",
+        "20": "Myanmar national under-20 football team",
+        "22": "Myanmar national under-22 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Myanmar national football team",
+      "flag": "Флаг Мьянмы"
+    },
+    "Намибия": {
+      "gen": "Намибии",
+      "ru": {
+        "0": "Сборная Намибии по футболу"
+      },
+      "foreign": {
+        "0": "Namibia national football team",
+        "17": "Namibia national under-17 football team",
+        "20": "Namibia national under-20 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Namibia national football team",
+      "flag": "Флаг Намибии"
+    },
+    "Науру": {
+      "gen": "Науру",
+      "ru": {
+        "0": "Сборная Науру по футболу"
+      },
+      "foreign": {
+        "0": "Nauru national soccer team"
+      },
+      "foreign_de": {},
+      "english_main": "Nauru national soccer team",
+      "flag": "Флаг Науру"
+    },
+    "Непал": {
+      "gen": "Непала",
+      "ru": {
+        "0": "Сборная Непала по футболу"
+      },
+      "foreign": {
+        "0": "Nepal national football team",
+        "17": "Nepal national under-17 football team",
+        "20": "Nepal national under-20 football team",
+        "23": "Nepal national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Nepal national football team",
+      "flag": "Флаг Непала"
+    },
+    "Нигер": {
+      "gen": "Нигера",
+      "ru": {
+        "0": "Сборная Нигера по футболу"
+      },
+      "foreign": {
+        "0": "Niger national football team",
+        "17": "Niger national under-17 football team",
+        "20": "Niger national under-20 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Niger national football team",
+      "flag": "Флаг Нигера"
+    },
+    "Нигерия": {
+      "gen": "Нигерии",
+      "ru": {
+        "0": "Сборная Нигерии по футболу",
+        "17": "Сборная Нигерии по футболу (до 17 лет)",
+        "20": "Сборная Нигерии по футболу (до 20 лет)"
+      },
+      "foreign": {
+        "0": "Nigeria national football team",
+        "17": "Nigeria national under-17 football team",
+        "20": "Nigeria national under-20 football team",
+        "23": "Nigeria national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Nigeria national football team",
+      "flag": "Флаг Нигерии"
+    },
+    "Нидерландские Антильские острова": {
+      "gen": "Нидерландских Антильских островов",
+      "ru": {
+        "0": "Сборная Нидерландских Антильских островов по футболу"
+      },
+      "foreign": {
+        "0": "Netherlands Antilles national football team",
+        "20": "Netherlands Antilles national under-20 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Netherlands Antilles national football team",
+      "flag": "Флаг Нидерландских Антильских островов"
+    },
+    "Нидерланды": {
+      "gen": "Нидерландов",
+      "ru": {
+        "0": "Сборная Нидерландов по футболу",
+        "17": "Сборная Нидерландов по футболу (до 17 лет)",
+        "19": "Сборная Нидерландов по футболу (до 19 лет)",
+        "21": "Сборная Нидерландов по футболу (до 21 года)"
+      },
+      "foreign": {
+        "0": "Netherlands national football team",
+        "17": "Netherlands national under-17 football team",
+        "19": "Netherlands national under-19 football team",
+        "21": "Netherlands national under-21 football team"
+      },
+      "foreign_de": {
+        "15": "Niederländische Fußballnationalmannschaft (U-15-Junioren)",
+        "16": "Niederländische Fußballnationalmannschaft (U-16-Junioren)",
+        "18": "Niederländische Fußballnationalmannschaft (U-18-Junioren)"
+      },
+      "english_main": "Netherlands national football team",
+      "flag": "Флаг Нидерландов"
+    },
+    "Никарагуа": {
+      "gen": "Никарагуа",
+      "ru": {
+        "0": "Сборная Никарагуа по футболу"
+      },
+      "foreign": {
+        "0": "Nicaragua national football team",
+        "17": "Nicaragua national under-17 football team",
+        "20": "Nicaragua national under-20 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Nicaragua national football team",
+      "flag": "Флаг Никарагуа"
+    },
+    "Ниуэ": {
+      "gen": "Ниуэ",
+      "ru": {
+        "0": "Сборная Ниуэ по футболу"
+      },
+      "foreign": {
+        "0": "Niue national soccer team"
+      },
+      "foreign_de": {},
+      "english_main": "Niue national soccer team",
+      "flag": "Флаг Ниуэ"
+    },
+    "Новая Зеландия": {
+      "gen": "Новой Зеландии",
+      "ru": {
+        "0": "Сборная Новой Зеландии по футболу",
+        "23": "Олимпийская сборная Новой Зеландии по футболу"
+      },
+      "foreign": {
+        "0": "New Zealand men's national football team",
+        "17": "New Zealand men's national under-17 football team",
+        "20": "New Zealand men's national under-20 football team",
+        "23": "New Zealand men's national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "New Zealand men's national football team",
+      "flag": "Флаг Новой Зеландии"
+    },
+    "Новая Каледония": {
+      "gen": "Новой Каледонии",
+      "ru": {
+        "0": "Сборная Новой Каледонии по футболу"
+      },
+      "foreign": {
+        "0": "New Caledonia national football team",
+        "17": "New Caledonia national under-17 football team",
+        "20": "New Caledonia national under-20 football team",
+        "23": "New Caledonia national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "New Caledonia national football team",
+      "flag": "Флаг Новой Каледонии"
+    },
+    "Норвегия": {
+      "gen": "Норвегии",
+      "ru": {
+        "0": "Сборная Норвегии по футболу",
+        "17": "Сборная Норвегии по футболу (до 17 лет)",
+        "19": "Сборная Норвегии по футболу (до 19 лет)",
+        "21": "Сборная Норвегии по футболу (до 21 года)"
+      },
+      "foreign": {
+        "0": "Norway national football team",
+        "17": "Norway national under-17 football team",
+        "19": "Norway national under-19 football team",
+        "20": "Norway national under-20 football team",
+        "21": "Norway national under-21 football team"
+      },
+      "foreign_de": {
+        "15": "Norwegische Fußballnationalmannschaft (U-15-Junioren)",
+        "16": "Norwegische Fußballnationalmannschaft (U-16-Junioren)",
+        "18": "Norwegische Fußballnationalmannschaft (U-18-Junioren)"
+      },
+      "english_main": "Norway national football team",
+      "flag": "Флаг Норвегии"
+    },
+    "ОАЭ": {
+      "gen": "ОАЭ",
+      "ru": {
+        "0": "Сборная ОАЭ по футболу"
+      },
+      "foreign": {
+        "0": "United Arab Emirates national football team",
+        "17": "United Arab Emirates national under-17 football team",
+        "20": "United Arab Emirates national under-20 football team",
+        "23": "United Arab Emirates national under-23 football team"
+      },
+      "foreign_de": {
+        "18": "Fußballnationalmannschaft der Vereinigten Arabischen Emirate (U-18-Junioren)"
+      },
+      "english_main": "United Arab Emirates national football team",
+      "flag": "Флаг ОАЭ"
+    },
+    "Оман": {
+      "gen": "Омана",
+      "ru": {
+        "0": "Сборная Омана по футболу"
+      },
+      "foreign": {
+        "0": "Oman national football team",
+        "17": "Oman national under-17 football team",
+        "20": "Oman national under-20 football team",
+        "23": "Oman national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Oman national football team",
+      "flag": "Флаг Омана"
+    },
+    "Острова Кука": {
+      "gen": "Островов Кука",
+      "ru": {
+        "0": "Сборная Островов Кука по футболу"
+      },
+      "foreign": {
+        "0": "Cook Islands national football team",
+        "17": "Cook Islands national under-17 football team",
+        "20": "Cook Islands national under-20 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Cook Islands national football team",
+      "flag": "Флаг Островов Кука"
+    },
+    "Падания": {
+      "gen": "Падании",
+      "ru": {
+        "0": "Сборная Падании по футболу"
+      },
+      "foreign": {
+        "0": "Padania national football team"
+      },
+      "foreign_de": {},
+      "english_main": "Padania national football team",
+      "flag": null
+    },
+    "Пакистан": {
+      "gen": "Пакистана",
+      "ru": {
+        "0": "Сборная Пакистана по футболу"
+      },
+      "foreign": {
+        "0": "Pakistan national football team",
+        "17": "Pakistan national under-17 football team",
+        "20": "Pakistan national under-20 football team",
+        "23": "Pakistan national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Pakistan national football team",
+      "flag": "Флаг Пакистана"
+    },
+    "Палау": {
+      "gen": "Палау",
+      "ru": {
+        "0": "Сборная Палау по футболу"
+      },
+      "foreign": {
+        "0": "Palau national football team"
+      },
+      "foreign_de": {},
+      "english_main": "Palau national football team",
+      "flag": "Флаг Палау"
+    },
+    "Палестина": {
+      "gen": "Палестины",
+      "ru": {
+        "0": "Сборная Палестины по футболу"
+      },
+      "foreign": {
+        "0": "Palestine national football team",
+        "17": "Palestine national under-17 football team",
+        "20": "Palestine national under-20 football team",
+        "23": "Palestine national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Palestine national football team",
+      "flag": "Флаг Палестины"
+    },
+    "Панама": {
+      "gen": "Панамы",
+      "ru": {
+        "0": "Сборная Панамы по футболу",
+        "20": "Сборная Панамы по футболу (до 20 лет)"
+      },
+      "foreign": {
+        "0": "Panama national football team",
+        "17": "Panama national under-17 football team",
+        "20": "Panama national under-20 football team",
+        "23": "Panama national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Panama national football team",
+      "flag": "Флаг Панамы"
+    },
+    "Папуа — Новая Гвинея": {
+      "gen": "Папуа — Новой Гвинеи",
+      "ru": {
+        "0": "Сборная Папуа — Новой Гвинеи по футболу"
+      },
+      "foreign": {
+        "0": "Papua New Guinea national soccer team",
+        "17": "Papua New Guinea national under-17 soccer team",
+        "20": "Papua New Guinea national under-20 soccer team",
+        "23": "Papua New Guinea national under-23 soccer team"
+      },
+      "foreign_de": {},
+      "english_main": "Papua New Guinea national soccer team",
+      "flag": "Флаг Папуа — Новой Гвинеи"
+    },
+    "Парагвай": {
+      "gen": "Парагвая",
+      "ru": {
+        "0": "Сборная Парагвая по футболу",
+        "17": "Сборная Парагвая по футболу (до 17 лет)",
+        "20": "Сборная Парагвая по футболу (до 20 лет)",
+        "23": "Олимпийская сборная Парагвая по футболу"
+      },
+      "foreign": {
+        "0": "Paraguay national football team",
+        "17": "Paraguay national under-17 football team",
+        "20": "Paraguay national under-20 football team",
+        "23": "Paraguay national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Paraguay national football team",
+      "flag": "Флаг Парагвая"
+    },
+    "Перу": {
+      "gen": "Перу",
+      "ru": {
+        "0": "Сборная Перу по футболу",
+        "17": "Сборная Перу по футболу (до 17 лет)",
+        "20": "Сборная Перу по футболу (до 20 лет)"
+      },
+      "foreign": {
+        "0": "Peru national football team",
+        "15": "Peru national under-15 football team",
+        "17": "Peru national under-17 football team",
+        "20": "Peru national under-20 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Peru national football team",
+      "flag": "Флаг Перу"
+    },
+    "Польша": {
+      "gen": "Польши",
+      "ru": {
+        "0": "Сборная Польши по футболу",
+        "17": "Сборная Польши по футболу (до 17 лет)",
+        "19": "Сборная Польши по футболу (до 19 лет)",
+        "21": "Сборная Польши по футболу (до 21 года)"
+      },
+      "foreign": {
+        "0": "Poland national football team",
+        "16": "Poland national under-16 football team",
+        "17": "Poland national under-17 football team",
+        "18": "Poland national under-18 football team",
+        "19": "Poland national under-19 football team",
+        "20": "Poland national under-20 football team",
+        "21": "Poland national under-21 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Poland national football team",
+      "flag": "Флаг Польши"
+    },
+    "Португалия": {
+      "gen": "Португалии",
+      "ru": {
+        "0": "Сборная Португалии по футболу",
+        "17": "Сборная Португалии по футболу (до 17 лет)",
+        "19": "Сборная Португалии по футболу (до 19 лет)",
+        "21": "Сборная Португалии по футболу (до 21 года)"
+      },
+      "foreign": {
+        "0": "Portugal national football team",
+        "15": "Portugal national under-15 football team",
+        "16": "Portugal national under-16 football team",
+        "17": "Portugal national under-17 football team",
+        "18": "Portugal national under-18 football team",
+        "19": "Portugal national under-19 football team",
+        "20": "Portugal national under-20 football team",
+        "21": "Portugal national under-21 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Portugal national football team",
+      "flag": "Флаг Португалии"
+    },
+    "Пуэрто-Рико": {
+      "gen": "Пуэрто-Рико",
+      "ru": {
+        "0": "Сборная Пуэрто-Рико по футболу"
+      },
+      "foreign": {
+        "0": "Puerto Rico national football team",
+        "15": "Puerto Rico national under-15 football team",
+        "17": "Puerto Rico national under-17 football team",
+        "20": "Puerto Rico national under-20 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Puerto Rico national football team",
+      "flag": "Флаг Пуэрто-Рико"
+    },
+    "Республика Конго": {
+      "gen": "Республики Конго",
+      "ru": {
+        "0": "Сборная Республики Конго по футболу"
+      },
+      "foreign": {
+        "0": "Congo national football team",
+        "17": "Congo national under-17 football team",
+        "20": "Congo national under-20 football team",
+        "23": "Congo national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Congo national football team",
+      "flag": "Флаг Республики Конго"
+    },
+    "Республика Корея": {
+      "gen": "Республики Корея",
+      "ru": {
+        "0": "Сборная Республики Корея по футболу",
+        "20": "Сборная Республики Корея по футболу (до 20 лет)",
+        "23": "Олимпийская сборная Республики Корея по футболу"
+      },
+      "foreign": {
+        "0": "South Korea national football team",
+        "17": "South Korea national under-17 football team",
+        "20": "South Korea national under-20 football team",
+        "23": "South Korea national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "South Korea national football team",
+      "flag": "Флаг Республики Корея"
+    },
+    "Реюньон": {
+      "gen": "Реюньона",
+      "ru": {
+        "0": "Сборная Реюньона по футболу",
+        "17": "Сборная Реюньона по футболу (до 17 лет)",
+        "20": "Сборная Реюньона по футболу (до 20 лет)"
+      },
+      "foreign": {
+        "0": "Réunion national football team"
+      },
+      "foreign_de": {},
+      "english_main": "Réunion national football team",
+      "flag": "Флаг Реюньона"
+    },
+    "Российская империя": {
+      "gen": "Российской империи",
+      "ru": {
+        "0": "Сборная Российской империи по футболу"
+      },
+      "foreign": {
+        "0": "Russian Empire national football team"
+      },
+      "foreign_de": {},
+      "english_main": "Russian Empire national football team",
+      "flag": "Флаг Российской империи"
+    },
+    "Россия": {
+      "gen": "России",
+      "ru": {
+        "0": "Сборная России по футболу",
+        "17": "Сборная России по футболу (до 17 лет)",
+        "19": "Сборная России по футболу (до 19 лет)",
+        "21": "Сборная России по футболу (до 21 года)"
+      },
+      "foreign": {
+        "0": "Russia national football team",
+        "17": "Russia national under-17 football team",
+        "19": "Russia national under-19 football team",
+        "20": "Russia national under-20 football team",
+        "21": "Russia national under-21 football team"
+      },
+      "foreign_de": {
+        "16": "Russische Fußballnationalmannschaft (U-16-Junioren)",
+        "18": "Russische Fußballnationalmannschaft (U-18-Junioren)"
+      },
+      "english_main": "Russia national football team",
+      "flag": "Флаг России"
+    },
+    "Руанда": {
+      "gen": "Руанды",
+      "ru": {
+        "0": "Сборная Руанды по футболу"
+      },
+      "foreign": {
+        "0": "Rwanda national football team",
+        "17": "Rwanda national under-17 football team",
+        "20": "Rwanda national under-20 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Rwanda national football team",
+      "flag": "Флаг Руанды"
+    },
+    "Румыния": {
+      "gen": "Румынии",
+      "ru": {
+        "0": "Сборная Румынии по футболу",
+        "19": "Сборная Румынии по футболу (до 19 лет)",
+        "21": "Сборная Румынии по футболу (до 21 года)"
+      },
+      "foreign": {
+        "0": "Romania national football team",
+        "16": "Romania national under-16 football team",
+        "17": "Romania national under-17 football team",
+        "19": "Romania national under-19 football team",
+        "20": "Romania national under-20 football team",
+        "21": "Romania national under-21 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Romania national football team",
+      "flag": "Флаг Румынии"
+    },
+    "СНГ": {
+      "gen": "СНГ",
+      "ru": {
+        "0": "Сборная СНГ по футболу"
+      },
+      "foreign": {
+        "0": "CIS national football team"
+      },
+      "foreign_de": {},
+      "english_main": "CIS national football team",
+      "flag": "Флаг СНГ"
+    },
+    "СССР": {
+      "gen": "СССР",
+      "ru": {
+        "0": "Сборная СССР по футболу",
+        "16": "Сборная СССР по футболу (до 16 лет)",
+        "18": "Сборная СССР по футболу (до 18 лет)",
+        "20": "Сборная СССР по футболу (до 20 лет)",
+        "21": "Сборная СССР по футболу (до 21 года)"
+      },
+      "foreign": {
+        "0": "Soviet Union national football team",
+        "16": "Soviet Union national under-16 football team",
+        "18": "Soviet Union national under-18 football team",
+        "20": "Soviet Union national under-20 football team",
+        "21": "Soviet Union national under-21 football team",
+        "23": "Soviet Union national under-23 football team"
+      },
+      "foreign_de": {
+        "17": "Fußballnationalmannschaft der UdSSR (U-17-Junioren)"
+      },
+      "english_main": "Soviet Union national football team",
+      "flag": "Флаг СССР"
+    },
+    "США": {
+      "gen": "США",
+      "ru": {
+        "0": "Сборная США по футболу",
+        "17": "Сборная США по футболу (до 17 лет)",
+        "20": "Сборная США по футболу (до 20 лет)"
+      },
+      "foreign": {
+        "0": "United States men's national soccer team",
+        "17": "United States men's national under-17 soccer team",
+        "18": "United States men's national under-18 soccer team",
+        "19": "United States men's national under-19 soccer team",
+        "20": "United States men's national under-20 soccer team",
+        "21": "United States men's national under-21 soccer team",
+        "23": "United States men's national under-23 soccer team"
+      },
+      "foreign_de": {},
+      "english_main": "United States men's national soccer team",
+      "flag": "Флаг США"
+    },
+    "Саар": {
+      "gen": "Саара",
+      "ru": {
+        "0": "Сборная Саара по футболу"
+      },
+      "foreign": {
+        "0": "Saarland national football team",
+        "18": "Saarland national under-18 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Saarland national football team",
+      "flag": "Флаг Саара"
+    },
+    "Сальвадор": {
+      "gen": "Сальвадора",
+      "ru": {
+        "0": "Сборная Сальвадора по футболу"
+      },
+      "foreign": {
+        "0": "El Salvador national football team",
+        "17": "El Salvador national under-17 football team",
+        "20": "El Salvador national under-20 football team",
+        "21": "El Salvador national under-21 football team",
+        "23": "El Salvador national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "El Salvador national football team",
+      "flag": "Флаг Сальвадора"
+    },
+    "Самоа": {
+      "gen": "Самоа",
+      "ru": {
+        "0": "Сборная Самоа по футболу"
+      },
+      "foreign": {
+        "0": "Samoa national football team",
+        "17": "Samoa national under-17 football team",
+        "20": "Samoa national under-20 football team",
+        "23": "Samoa national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Samoa national football team",
+      "flag": "Флаг Самоа"
+    },
+    "Сан-Марино": {
+      "gen": "Сан-Марино",
+      "ru": {
+        "0": "Сборная Сан-Марино по футболу",
+        "21": "Сборная Сан-Марино по футболу (до 21 года)"
+      },
+      "foreign": {
+        "0": "San Marino national football team",
+        "17": "San Marino national under-17 football team",
+        "19": "San Marino national under-19 football team",
+        "21": "San Marino national under-21 football team"
+      },
+      "foreign_de": {},
+      "english_main": "San Marino national football team",
+      "flag": "Флаг Сан-Марино"
+    },
+    "Сан-Томе и Принсипи": {
+      "gen": "Сан-Томе и Принсипи",
+      "ru": {
+        "0": "Сборная Сан-Томе и Принсипи по футболу"
+      },
+      "foreign": {
+        "0": "São Tomé and Príncipe national football team"
+      },
+      "foreign_de": {},
+      "english_main": "São Tomé and Príncipe national football team",
+      "flag": "Флаг Сан-Томе и Принсипи"
+    },
+    "Саудовская Аравия": {
+      "gen": "Саудовской Аравии",
+      "ru": {
+        "0": "Сборная Саудовской Аравии по футболу",
+        "20": "Сборная Саудовской Аравии по футболу (до 20 лет)",
+        "23": "Олимпийская сборная Саудовской Аравии по футболу"
+      },
+      "foreign": {
+        "0": "Saudi Arabia national football team",
+        "17": "Saudi Arabia national under-17 football team",
+        "20": "Saudi Arabia national under-20 football team",
+        "23": "Saudi Arabia national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Saudi Arabia national football team",
+      "flag": "Флаг Саудовской Аравии"
+    },
+    "Северная Ирландия": {
+      "gen": "Северной Ирландии",
+      "ru": {
+        "0": "Сборная Северной Ирландии по футболу",
+        "16": "Сборная Северной Ирландии по футболу (до 16 лет)",
+        "17": "Сборная Северной Ирландии по футболу (до 17 лет)",
+        "21": "Сборная Северной Ирландии по футболу (до 21 года)"
+      },
+      "foreign": {
+        "0": "Northern Ireland national football team",
+        "16": "Northern Ireland national under-16 football team",
+        "17": "Northern Ireland national under-17 football team",
+        "19": "Northern Ireland national under-19 football team",
+        "21": "Northern Ireland national under-21 football team",
+        "23": "Northern Ireland national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Northern Ireland national football team",
+      "flag": "Флаг Северной Ирландии"
+    },
+    "Северная Македония": {
+      "gen": "Северной Македонии",
+      "ru": {
+        "0": "Сборная Северной Македонии по футболу"
+      },
+      "foreign": {
+        "0": "North Macedonia national football team",
+        "17": "North Macedonia national under-17 football team",
+        "19": "North Macedonia national under-19 football team",
+        "21": "North Macedonia national under-21 football team"
+      },
+      "foreign_de": {},
+      "english_main": "North Macedonia national football team",
+      "flag": "Флаг Северной Македонии"
+    },
+    "Северные Марианские Острова": {
+      "gen": "Северных Марианских Островов",
+      "ru": {
+        "0": "Сборная Северных Марианских Островов по футболу"
+      },
+      "foreign": {
+        "0": "Northern Mariana Islands national football team",
+        "15": "Northern Mariana Islands national under-15 football team",
+        "17": "Northern Mariana Islands national under-17 football team",
+        "18": "Northern Mariana Islands national under-18 football team",
+        "20": "Northern Mariana Islands national under-20 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Northern Mariana Islands national football team",
+      "flag": "Флаг Северных Марианских Островов"
+    },
+    "Северный Вьетнам": {
+      "gen": "Северного Вьетнама",
+      "ru": {
+        "0": "Сборная Северного Вьетнама по футболу"
+      },
+      "foreign": {
+        "0": "North Vietnam national football team"
+      },
+      "foreign_de": {},
+      "english_main": "North Vietnam national football team",
+      "flag": null
+    },
+    "Северный Кипр": {
+      "gen": "Турецкой Республики Северного Кипра",
+      "ru": {
+        "0": "Сборная Турецкой Республики Северного Кипра по футболу"
+      },
+      "foreign": {
+        "0": "Northern Cyprus national football team"
+      },
+      "foreign_de": {},
+      "english_main": "Northern Cyprus national football team",
+      "flag": "Флаг Турецкой Республики Северного Кипра"
+    },
+    "Сейшельские Острова": {
+      "gen": "Сейшельских Островов",
+      "ru": {
+        "0": "Сборная Сейшельских Островов по футболу"
+      },
+      "foreign": {
+        "0": "Seychelles national football team",
+        "17": "Seychelles national under-17 football team",
+        "20": "Seychelles national under-20 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Seychelles national football team",
+      "flag": "Флаг Сейшельских Островов"
+    },
+    "Сен-Мартен": {
+      "gen": "Сен-Мартена",
+      "ru": {
+        "0": "Сборная Сен-Мартена по футболу"
+      },
+      "foreign": {
+        "0": "Saint Martin national football team"
+      },
+      "foreign_de": {},
+      "english_main": "Saint Martin national football team",
+      "flag": "Флаг Сен-Мартена"
+    },
+    "Сенегал": {
+      "gen": "Сенегала",
+      "ru": {
+        "0": "Сборная Сенегала по футболу",
+        "17": "Сборная Сенегала по футболу (до 17 лет)",
+        "20": "Сборная Сенегала по футболу (до 20 лет)"
+      },
+      "foreign": {
+        "0": "Senegal national football team",
+        "17": "Senegal national under-17 football team",
+        "20": "Senegal national under-20 football team",
+        "23": "Senegal national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Senegal national football team",
+      "flag": "Флаг Сенегала"
+    },
+    "Сент-Винсент и Гренадины": {
+      "gen": "Сент-Винсента и Гренадин",
+      "ru": {
+        "0": "Сборная Сент-Винсента и Гренадин по футболу"
+      },
+      "foreign": {
+        "0": "Saint Vincent and the Grenadines national football team",
+        "20": "Saint Vincent and the Grenadines national under-20 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Saint Vincent and the Grenadines national football team",
+      "flag": "Флаг Сент-Винсента и Гренадин"
+    },
+    "Сент-Китс и Невис": {
+      "gen": "Сент-Китса и Невиса",
+      "ru": {
+        "0": "Сборная Сент-Китса и Невиса по футболу"
+      },
+      "foreign": {
+        "0": "Saint Kitts and Nevis national football team",
+        "20": "Saint Kitts and Nevis national under-20 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Saint Kitts and Nevis national football team",
+      "flag": "Флаг Сент-Китса и Невиса"
+    },
+    "Сент-Люсия": {
+      "gen": "Сент-Люсии",
+      "ru": {
+        "0": "Сборная Сент-Люсии по футболу"
+      },
+      "foreign": {
+        "0": "Saint Lucia national football team",
+        "17": "Saint Lucia national under-17 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Saint Lucia national football team",
+      "flag": "Флаг Сент-Люсии"
+    },
+    "Сербия": {
+      "gen": "Сербии",
+      "ru": {
+        "0": "Сборная Сербии по футболу",
+        "17": "Сборная Сербии по футболу (до 17 лет)",
+        "19": "Сборная Сербии по футболу (до 19 лет)",
+        "21": "Сборная Сербии по футболу (до 21 года)"
+      },
+      "foreign": {
+        "0": "Serbia national football team",
+        "17": "Serbia national under-17 football team",
+        "19": "Serbia national under-19 football team",
+        "20": "Serbia national under-20 football team",
+        "21": "Serbia national under-21 football team"
+      },
+      "foreign_de": {
+        "18": "Serbische Fußballnationalmannschaft (U-18-Junioren)"
+      },
+      "english_main": "Serbia national football team",
+      "flag": "Флаг Сербии"
+    },
+    "Сербия и Черногория": {
+      "gen": "Сербии и Черногории",
+      "ru": {
+        "0": "Сборная Сербии и Черногории по футболу"
+      },
+      "foreign": {
+        "0": "Serbia and Montenegro national football team"
+      },
+      "foreign_de": {
+        "17": "Serbisch-montenegrinische Fußballnationalmannschaft (U-17-Junioren)"
+      },
+      "english_main": "Serbia and Montenegro national football team",
+      "flag": "Флаг Сербии и Черногории"
+    },
+    "Сингапур": {
+      "gen": "Сингапура",
+      "ru": {
+        "0": "Сборная Сингапура по футболу"
+      },
+      "foreign": {
+        "0": "Singapore national football team",
+        "17": "Singapore national under-17 football team",
+        "20": "Singapore national under-20 football team",
+        "21": "Singapore national under-21 football team",
+        "23": "Singapore national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Singapore national football team",
+      "flag": "Флаг Сингапура"
+    },
+    "Синт-Мартен": {
+      "gen": "Синт-Мартена",
+      "ru": {
+        "0": "Сборная Синт-Мартена по футболу"
+      },
+      "foreign": {
+        "0": "Sint Maarten national football team",
+        "20": "Sint Maarten national under-20 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Sint Maarten national football team",
+      "flag": "Флаг Синт-Мартена"
+    },
+    "Сирия": {
+      "gen": "Сирии",
+      "ru": {
+        "0": "Сборная Сирии по футболу"
+      },
+      "foreign": {
+        "0": "Syria national football team",
+        "17": "Syria national under-17 football team",
+        "20": "Syria national under-20 football team",
+        "23": "Syria national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Syria national football team",
+      "flag": "Флаг Сирии"
+    },
+    "Словакия": {
+      "gen": "Словакии",
+      "ru": {
+        "0": "Сборная Словакии по футболу",
+        "21": "Сборная Словакии по футболу (до 21 года)"
+      },
+      "foreign": {
+        "0": "Slovakia national football team",
+        "16": "Slovakia national under-16 football team",
+        "17": "Slovakia national under-17 football team",
+        "18": "Slovakia national under-18 football team",
+        "19": "Slovakia national under-19 football team",
+        "20": "Slovakia national under-20 football team",
+        "21": "Slovakia national under-21 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Slovakia national football team",
+      "flag": "Флаг Словакии"
+    },
+    "Словения": {
+      "gen": "Словении",
+      "ru": {
+        "0": "Сборная Словении по футболу",
+        "21": "Сборная Словении по футболу (до 21 года)"
+      },
+      "foreign": {
+        "0": "Slovenia national football team",
+        "17": "Slovenia national under-17 football team",
+        "19": "Slovenia national under-19 football team",
+        "21": "Slovenia national under-21 football team"
+      },
+      "foreign_de": {
+        "15": "Slowenische Fußballnationalmannschaft (U-15-Junioren)",
+        "16": "Slowenische Fußballnationalmannschaft (U-16-Junioren)",
+        "18": "Slowenische Fußballnationalmannschaft (U-18-Junioren)"
+      },
+      "english_main": "Slovenia national football team",
+      "flag": "Флаг Словении"
+    },
+    "Соломоновы Острова": {
+      "gen": "Соломоновых Островов",
+      "ru": {
+        "0": "Сборная Соломоновых Островов по футболу"
+      },
+      "foreign": {
+        "0": "Solomon Islands national football team",
+        "17": "Solomon Islands national under-17 football team",
+        "20": "Solomon Islands national under-20 football team",
+        "23": "Solomon Islands national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Solomon Islands national football team",
+      "flag": "Флаг Соломоновых Островов"
+    },
+    "Сомали": {
+      "gen": "Сомали",
+      "ru": {
+        "0": "Сборная Сомали по футболу"
+      },
+      "foreign": {
+        "0": "Somalia national football team",
+        "17": "Somalia national under-17 football team",
+        "20": "Somalia national under-20 football team",
+        "23": "Somalia national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Somalia national football team",
+      "flag": "Флаг Сомали"
+    },
+    "Сомалиленд": {
+      "gen": "Сомалиленда",
+      "ru": {
+        "0": "Сборная Сомалиленда по футболу"
+      },
+      "foreign": {
+        "0": "Somaliland national football team"
+      },
+      "foreign_de": {},
+      "english_main": "Somaliland national football team",
+      "flag": "Флаг Сомалиленда"
+    },
+    "Страна Басков": {
+      "gen": "Страны Басков",
+      "ru": {
+        "0": "Сборная Страны Басков по футболу"
+      },
+      "foreign": {
+        "0": "Basque Country national football team"
+      },
+      "foreign_de": {},
+      "english_main": "Basque Country national football team",
+      "flag": "Флаг Страны Басков"
+    },
+    "Судан": {
+      "gen": "Судана",
+      "ru": {
+        "0": "Сборная Судана по футболу"
+      },
+      "foreign": {
+        "0": "Sudan national football team",
+        "17": "Sudan national under-17 football team",
+        "20": "Sudan national under-20 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Sudan national football team",
+      "flag": "Флаг Судана"
+    },
+    "Суринам": {
+      "gen": "Суринама",
+      "ru": {
+        "0": "Сборная Суринама по футболу"
+      },
+      "foreign": {
+        "0": "Suriname national football team",
+        "17": "Suriname national under-17 football team",
+        "20": "Suriname national under-20 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Suriname national football team",
+      "flag": "Флаг Суринама"
+    },
+    "Сьерра-Леоне": {
+      "gen": "Сьерра-Леоне",
+      "ru": {
+        "0": "Сборная Сьерра-Леоне по футболу"
+      },
+      "foreign": {
+        "0": "Sierra Leone national football team",
+        "17": "Sierra Leone national under-17 football team",
+        "20": "Sierra Leone national under-20 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Sierra Leone national football team",
+      "flag": "Флаг Сьерра-Леоне"
+    },
+    "Таджикистан": {
+      "gen": "Таджикистана",
+      "ru": {
+        "0": "Сборная Таджикистана по футболу",
+        "17": "Сборная Таджикистана по футболу (до 17 лет)",
+        "19": "Сборная Таджикистана по футболу (до 19 лет)"
+      },
+      "foreign": {
+        "0": "Tajikistan national football team",
+        "17": "Tajikistan national under-17 football team",
+        "20": "Tajikistan national under-20 football team",
+        "23": "Tajikistan national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Tajikistan national football team",
+      "flag": "Флаг Таджикистана"
+    },
+    "Таиланд": {
+      "gen": "Таиланда",
+      "ru": {
+        "0": "Сборная Таиланда по футболу"
+      },
+      "foreign": {
+        "0": "Thailand national football team",
+        "17": "Thailand national under-17 football team",
+        "20": "Thailand national under-20 football team",
+        "21": "Thailand national under-21 football team",
+        "23": "Thailand national under-23 football team"
+      },
+      "foreign_de": {
+        "19": "Thailändische Fußballnationalmannschaft (U-19-Junioren)"
+      },
+      "english_main": "Thailand national football team",
+      "flag": "Флаг Таиланда"
+    },
+    "Таити": {
+      "gen": "Таити",
+      "ru": {
+        "0": "Сборная Таити по футболу"
+      },
+      "foreign": {
+        "0": "Tahiti national football team",
+        "17": "Tahiti national under-17 football team",
+        "20": "Tahiti national under-20 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Tahiti national football team",
+      "flag": "Флаг Таити"
+    },
+    "Танзания": {
+      "gen": "Танзании",
+      "ru": {
+        "0": "Сборная Танзании по футболу"
+      },
+      "foreign": {
+        "0": "Tanzania national football team",
+        "15": "Tanzania national under-15 football team",
+        "17": "Tanzania national under-17 football team",
+        "20": "Tanzania national under-20 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Tanzania national football team",
+      "flag": "Флаг Танзании"
+    },
+    "Теркс и Кайкос": {
+      "gen": "Теркса и Кайкоса",
+      "ru": {
+        "0": "Сборная Теркса и Кайкоса по футболу"
+      },
+      "foreign": {
+        "0": "Turks and Caicos Islands national football team"
+      },
+      "foreign_de": {},
+      "english_main": "Turks and Caicos Islands national football team",
+      "flag": "Флаг Теркса и Кайкоса"
+    },
+    "Тибет": {
+      "gen": "Тибета",
+      "ru": {
+        "0": "Сборная Тибета по футболу"
+      },
+      "foreign": {
+        "0": "Tibet national football team"
+      },
+      "foreign_de": {},
+      "english_main": "Tibet national football team",
+      "flag": "Флаг Тибета"
+    },
+    "Того": {
+      "gen": "Того",
+      "ru": {
+        "0": "Сборная Того по футболу"
+      },
+      "foreign": {
+        "0": "Togo national football team",
+        "17": "Togo national under-17 football team",
+        "20": "Togo national under-20 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Togo national football team",
+      "flag": "Флаг Того"
+    },
+    "Тонга": {
+      "gen": "Тонги",
+      "ru": {
+        "0": "Сборная Тонги по футболу"
+      },
+      "foreign": {
+        "0": "Tonga national football team",
+        "17": "Tonga national under-17 football team",
+        "20": "Tonga national under-20 football team",
+        "23": "Tonga national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Tonga national football team",
+      "flag": "Флаг Тонги"
+    },
+    "Тринидад и Тобаго": {
+      "gen": "Тринидада и Тобаго",
+      "ru": {
+        "0": "Сборная Тринидада и Тобаго по футболу",
+        "17": "Сборная Тринидада и Тобаго по футболу (до 17 лет)"
+      },
+      "foreign": {
+        "0": "Trinidad and Tobago national football team",
+        "17": "Trinidad and Tobago national under-17 football team",
+        "20": "Trinidad and Tobago national under-20 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Trinidad and Tobago national football team",
+      "flag": "Флаг Тринидада и Тобаго"
+    },
+    "Тувалу": {
+      "gen": "Тувалу",
+      "ru": {
+        "0": "Сборная Тувалу по футболу"
+      },
+      "foreign": {
+        "0": "Tuvalu national football team"
+      },
+      "foreign_de": {},
+      "english_main": "Tuvalu national football team",
+      "flag": "Флаг Тувалу"
+    },
+    "Тунис": {
+      "gen": "Туниса",
+      "ru": {
+        "0": "Сборная Туниса по футболу"
+      },
+      "foreign": {
+        "0": "Tunisia national football team",
+        "15": "Tunisia national under-15 football team",
+        "17": "Tunisia national under-17 football team",
+        "18": "Tunisia national under-18 football team",
+        "20": "Tunisia national under-20 football team",
+        "23": "Tunisia national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Tunisia national football team",
+      "flag": "Флаг Туниса"
+    },
+    "Туркменистан": {
+      "gen": "Туркменистана",
+      "ru": {
+        "0": "Сборная Туркменистана по футболу",
+        "21": "Сборная Туркменистана по футболу (до 21 года)"
+      },
+      "foreign": {
+        "0": "Turkmenistan national football team",
+        "17": "Turkmenistan national under-17 football team",
+        "21": "Turkmenistan national under-21 football team",
+        "23": "Turkmenistan national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Turkmenistan national football team",
+      "flag": "Флаг Туркменистана"
+    },
+    "Турция": {
+      "gen": "Турции",
+      "ru": {
+        "0": "Сборная Турции по футболу",
+        "17": "Сборная Турции по футболу (до 17 лет)",
+        "19": "Сборная Турции по футболу (до 19 лет)",
+        "21": "Сборная Турции по футболу (до 21 года)"
+      },
+      "foreign": {
+        "0": "Turkey national football team",
+        "15": "Turkey national under-15 football team",
+        "16": "Turkey national under-16 football team",
+        "17": "Turkey national under-17 football team",
+        "18": "Turkey national under-18 football team",
+        "19": "Turkey national under-19 football team",
+        "20": "Turkey national under-20 football team",
+        "21": "Turkey national under-21 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Turkey national football team",
+      "flag": "Флаг Турции"
+    },
+    "Уганда": {
+      "gen": "Уганды",
+      "ru": {
+        "0": "Сборная Уганды по футболу"
+      },
+      "foreign": {
+        "0": "Uganda national football team",
+        "17": "Uganda national under-17 football team",
+        "20": "Uganda national under-20 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Uganda national football team",
+      "flag": "Флаг Уганды"
+    },
+    "Узбекистан": {
+      "gen": "Узбекистана",
+      "ru": {
+        "0": "Сборная Узбекистана по футболу",
+        "17": "Сборная Узбекистана по футболу (до 17 лет)",
+        "20": "Сборная Узбекистана по футболу (до 20 лет)",
+        "23": "Сборная Узбекистана по футболу (до 23 лет)"
+      },
+      "foreign": {
+        "0": "Uzbekistan national football team",
+        "17": "Uzbekistan national under-17 football team",
+        "20": "Uzbekistan national under-20 football team",
+        "23": "Uzbekistan national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Uzbekistan national football team",
+      "flag": "Флаг Узбекистана"
+    },
+    "Украина": {
+      "gen": "Украины",
+      "ru": {
+        "0": "Сборная Украины по футболу",
+        "16": "Сборная Украины по футболу (до 16 лет)",
+        "17": "Сборная Украины по футболу (до 17 лет)",
+        "18": "Сборная Украины по футболу (до 18 лет)",
+        "19": "Сборная Украины по футболу (до 19 лет)",
+        "20": "Сборная Украины по футболу (до 20 лет)",
+        "21": "Сборная Украины по футболу (до 21 года)"
+      },
+      "foreign": {
+        "0": "Ukraine national football team",
+        "16": "Ukraine national under-16 football team",
+        "17": "Ukraine national under-17 football team",
+        "18": "Ukraine national under-18 football team",
+        "19": "Ukraine national under-19 football team",
+        "20": "Ukraine national under-20 football team",
+        "21": "Ukraine national under-21 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Ukraine national football team",
+      "flag": "Флаг Украины"
+    },
+    "Уругвай": {
+      "gen": "Уругвая",
+      "ru": {
+        "0": "Сборная Уругвая по футболу",
+        "17": "Сборная Уругвая по футболу (до 17 лет)",
+        "20": "Сборная Уругвая по футболу (до 20 лет)"
+      },
+      "foreign": {
+        "0": "Uruguay national football team",
+        "15": "Uruguay national under-15 football team",
+        "17": "Uruguay national under-17 football team",
+        "18": "Uruguay national under-18 football team",
+        "20": "Uruguay national under-20 football team",
+        "23": "Uruguay national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Uruguay national football team",
+      "flag": "Флаг Уругвая"
+    },
+    "Уэльс": {
+      "gen": "Уэльса",
+      "ru": {
+        "0": "Сборная Уэльса по футболу",
+        "17": "Сборная Уэльса по футболу (до 17 лет)",
+        "21": "Сборная Уэльса по футболу (до 21 года)"
+      },
+      "foreign": {
+        "0": "Wales national football team",
+        "17": "Wales national under-17 football team",
+        "18": "Wales national under-18 football team",
+        "19": "Wales national under-19 football team",
+        "20": "Wales national under-20 football team",
+        "21": "Wales national under-21 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Wales national football team",
+      "flag": "Флаг Уэльса"
+    },
+    "Фарерские острова": {
+      "gen": "Фарерских островов",
+      "ru": {
+        "0": "Сборная Фарерских островов по футболу",
+        "17": "Сборная Фарерских островов по футболу (до 17 лет)",
+        "21": "Сборная Фарерских островов по футболу (до 21 года)"
+      },
+      "foreign": {
+        "0": "Faroe Islands national football team",
+        "17": "Faroe Islands national under-17 football team",
+        "19": "Faroe Islands national under-19 football team",
+        "21": "Faroe Islands national under-21 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Faroe Islands national football team",
+      "flag": "Флаг Фарерских островов"
+    },
+    "Федеративные Штаты Микронезии": {
+      "gen": "Федеративных Штатов Микронезии",
+      "ru": {
+        "0": "Сборная Федеративных Штатов Микронезии по футболу"
+      },
+      "foreign": {
+        "0": "Federated States of Micronesia national football team",
+        "23": "Federated States of Micronesia national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Federated States of Micronesia national football team",
+      "flag": "Флаг Федеративных Штатов Микронезии"
+    },
+    "Фиджи": {
+      "gen": "Фиджи",
+      "ru": {
+        "0": "Сборная Фиджи по футболу",
+        "17": "Сборная Фиджи по футболу (до 17 лет)",
+        "20": "Сборная Фиджи по футболу (до 20 лет)",
+        "23": "Олимпийская сборная Фиджи по футболу"
+      },
+      "foreign": {
+        "0": "Fiji national football team",
+        "17": "Fiji national under-17 football team",
+        "20": "Fiji national under-20 football team",
+        "23": "Fiji national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Fiji national football team",
+      "flag": "Флаг Фиджи"
+    },
+    "Филиппины": {
+      "gen": "Филиппин",
+      "ru": {
+        "0": "Сборная Филиппин по футболу"
+      },
+      "foreign": {
+        "0": "Philippines national football team",
+        "17": "Philippines national under-17 football team",
+        "20": "Philippines national under-20 football team",
+        "21": "Philippines national under-21 football team",
+        "23": "Philippines national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Philippines national football team",
+      "flag": "Флаг Филиппин"
+    },
+    "Финляндия": {
+      "gen": "Финляндии",
+      "ru": {
+        "0": "Сборная Финляндии по футболу",
+        "19": "Сборная Финляндии по футболу (до 19 лет)",
+        "21": "Сборная Финляндии по футболу (до 21 года)"
+      },
+      "foreign": {
+        "0": "Finland national football team",
+        "16": "Finland national under-16 football team",
+        "17": "Finland national under-17 football team",
+        "18": "Finland national under-18 football team",
+        "19": "Finland national under-19 football team",
+        "21": "Finland national under-21 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Finland national football team",
+      "flag": "Флаг Финляндии"
+    },
+    "Франция": {
+      "gen": "Франции",
+      "ru": {
+        "0": "Сборная Франции по футболу",
+        "16": "Сборная Франции по футболу (до 16 лет)",
+        "17": "Сборная Франции по футболу (до 17 лет)",
+        "18": "Сборная Франции по футболу (до 18 лет)",
+        "19": "Сборная Франции по футболу (до 19 лет)",
+        "20": "Сборная Франции по футболу (до 20 лет)",
+        "21": "Сборная Франции по футболу (до 21 года)"
+      },
+      "foreign": {
+        "0": "France national football team",
+        "16": "France national under-16 football team",
+        "17": "France national under-17 football team",
+        "18": "France national under-18 football team",
+        "19": "France national under-19 football team",
+        "20": "France national under-20 football team",
+        "21": "France national under-21 football team"
+      },
+      "foreign_de": {},
+      "english_main": "France national football team",
+      "flag": "Флаг Франции"
+    },
+    "Французская Гвиана": {
+      "gen": "Французской Гвианы",
+      "ru": {
+        "0": "Сборная Французской Гвианы по футболу"
+      },
+      "foreign": {
+        "0": "French Guiana national football team"
+      },
+      "foreign_de": {},
+      "english_main": "French Guiana national football team",
+      "flag": "Флаг Французской Гвианы"
+    },
+    "Хорватия": {
+      "gen": "Хорватии",
+      "ru": {
+        "0": "Сборная Хорватии по футболу",
+        "17": "Сборная Хорватии по футболу (до 17 лет)",
+        "21": "Сборная Хорватии по футболу (до 21 года)"
+      },
+      "foreign": {
+        "0": "Croatia national football team",
+        "15": "Croatia national under-15 football team",
+        "16": "Croatia national under-16 football team",
+        "17": "Croatia national under-17 football team",
+        "18": "Croatia national under-18 football team",
+        "19": "Croatia national under-19 football team",
+        "20": "Croatia national under-20 football team",
+        "21": "Croatia national under-21 football team",
+        "23": "Croatia national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Croatia national football team",
+      "flag": "Флаг Хорватии"
+    },
+    "ЦАР": {
+      "gen": "ЦАР",
+      "ru": {
+        "0": "Сборная ЦАР по футболу"
+      },
+      "foreign": {
+        "0": "Central African Republic national football team",
+        "17": "Central African Republic national under-17 football team",
+        "20": "Central African Republic national under-20 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Central African Republic national football team",
+      "flag": "Флаг ЦАР"
+    },
+    "Чад": {
+      "gen": "Чада",
+      "ru": {
+        "0": "Сборная Чада по футболу"
+      },
+      "foreign": {
+        "0": "Chad national football team",
+        "20": "Chad national under-20 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Chad national football team",
+      "flag": "Флаг Чада"
+    },
+    "Черногория": {
+      "gen": "Черногории",
+      "ru": {
+        "0": "Сборная Черногории по футболу",
+        "19": "Сборная Черногории по футболу (до 19 лет)",
+        "21": "Сборная Черногории по футболу (до 21 года)"
+      },
+      "foreign": {
+        "0": "Montenegro national football team",
+        "17": "Montenegro national under-17 football team",
+        "19": "Montenegro national under-19 football team",
+        "21": "Montenegro national under-21 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Montenegro national football team",
+      "flag": "Флаг Черногории"
+    },
+    "Чехия": {
+      "gen": "Чехии",
+      "ru": {
+        "0": "Сборная Чехии по футболу",
+        "17": "Сборная Чехии по футболу (до 17 лет)",
+        "19": "Сборная Чехии по футболу (до 19 лет)",
+        "21": "Сборная Чехии по футболу (до 21 года)",
+        "20": "Сборная Чехии по футболу (до 20 лет)"
+      },
+      "foreign": {
+        "0": "Czech Republic national football team",
+        "17": "Czech Republic national under-17 football team",
+        "18": "Czech Republic national under-18 football team",
+        "19": "Czech Republic national under-19 football team",
+        "21": "Czech Republic national under-21 football team"
+      },
+      "foreign_de": {
+        "16": "Tschechische Fußballnationalmannschaft (U-16-Junioren)"
+      },
+      "english_main": "Czech Republic national football team",
+      "flag": "Флаг Чехии"
+    },
+    "Чехословакия": {
+      "gen": "Чехословакии",
+      "ru": {
+        "0": "Сборная Чехословакии по футболу",
+        "21": "Сборная Чехословакии по футболу (до 21 года)"
+      },
+      "foreign": {
+        "0": "Czechoslovakia national football team",
+        "16": "Czechoslovakia national under-16 football team",
+        "21": "Czechoslovakia national under-21 football team",
+        "23": "Czechoslovakia national under-23 football team"
+      },
+      "foreign_de": {
+        "17": "Tschechoslowakische Fußballnationalmannschaft (U-17-Junioren)"
+      },
+      "english_main": "Czechoslovakia national football team",
+      "flag": "Флаг Чехословакии"
+    },
+    "Чили": {
+      "gen": "Чили",
+      "ru": {
+        "0": "Сборная Чили по футболу",
+        "17": "Сборная Чили по футболу (до 17 лет)",
+        "20": "Сборная Чили по футболу (до 20 лет)"
+      },
+      "foreign": {
+        "0": "Chile national football team",
+        "17": "Chile national under-17 football team",
+        "20": "Chile national under-20 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Chile national football team",
+      "flag": "Флаг Чили"
+    },
+    "Швейцария": {
+      "gen": "Швейцарии",
+      "ru": {
+        "0": "Сборная Швейцарии по футболу",
+        "17": "Сборная Швейцарии по футболу (до 17 лет)",
+        "19": "Сборная Швейцарии по футболу (до 19 лет)",
+        "21": "Сборная Швейцарии по футболу (до 21 года)"
+      },
+      "foreign": {
+        "0": "Switzerland national football team",
+        "16": "Switzerland national under-16 football team",
+        "17": "Switzerland national under-17 football team",
+        "18": "Switzerland national under-18 football team",
+        "19": "Switzerland national under-19 football team",
+        "20": "Switzerland national under-20 football team",
+        "21": "Switzerland national under-21 football team",
+        "23": "Switzerland national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Switzerland national football team",
+      "flag": "Флаг Швейцарии"
+    },
+    "Швеция": {
+      "gen": "Швеции",
+      "ru": {
+        "0": "Сборная Швеции по футболу",
+        "17": "Сборная Швеции по футболу (до 17 лет)",
+        "19": "Сборная Швеции по футболу (до 19 лет)",
+        "21": "Сборная Швеции по футболу (до 21 года)"
+      },
+      "foreign": {
+        "0": "Sweden men's national football team",
+        "17": "Sweden men's national under-17 football team",
+        "19": "Sweden men's national under-19 football team",
+        "21": "Sweden men's national under-21 football team"
+      },
+      "foreign_de": {
+        "15": "Schwedische Fußballnationalmannschaft (U-15-Junioren)",
+        "16": "Schwedische Fußballnationalmannschaft (U-16-Junioren)",
+        "18": "Schwedische Fußballnationalmannschaft (U-18-Junioren)"
+      },
+      "english_main": "Sweden men's national football team",
+      "flag": "Флаг Швеции"
+    },
+    "Шотландия": {
+      "gen": "Шотландии",
+      "ru": {
+        "0": "Сборная Шотландии по футболу",
+        "17": "Сборная Шотландии по футболу (до 17 лет)",
+        "19": "Сборная Шотландии по футболу (до 19 лет)",
+        "21": "Сборная Шотландии по футболу (до 21 года)"
+      },
+      "foreign": {
+        "0": "Scotland national football team",
+        "16": "Scotland national under-16 football team",
+        "17": "Scotland national under-17 football team",
+        "18": "Scotland national under-18 football team",
+        "19": "Scotland national under-19 football team",
+        "20": "Scotland national under-20 football team",
+        "21": "Scotland national under-21 football team"
+      },
+      "foreign_de": {
+        "15": "Schottische Fußballnationalmannschaft (U-15-Junioren)"
+      },
+      "english_main": "Scotland national football team",
+      "flag": "Флаг Шотландии"
+    },
+    "Шри-Ланка": {
+      "gen": "Шри-Ланки",
+      "ru": {
+        "0": "Сборная Шри-Ланки по футболу"
+      },
+      "foreign": {
+        "0": "Sri Lanka national football team",
+        "17": "Sri Lanka national under-17 football team",
+        "20": "Sri Lanka national under-20 football team",
+        "23": "Sri Lanka national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Sri Lanka national football team",
+      "flag": "Флаг Шри-Ланки"
+    },
+    "Эквадор": {
+      "gen": "Эквадора",
+      "ru": {
+        "0": "Сборная Эквадора по футболу",
+        "17": "Сборная Эквадора по футболу (до 17 лет)",
+        "20": "Сборная Эквадора по футболу (до 20 лет)"
+      },
+      "foreign": {
+        "0": "Ecuador national football team",
+        "17": "Ecuador national under-17 football team",
+        "20": "Ecuador national under-20 football team",
+        "23": "Ecuador national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Ecuador national football team",
+      "flag": "Флаг Эквадора"
+    },
+    "Экваториальная Гвинея": {
+      "gen": "Экваториальной Гвинеи",
+      "ru": {
+        "0": "Сборная Экваториальной Гвинеи по футболу"
+      },
+      "foreign": {
+        "0": "Equatorial Guinea national football team",
+        "17": "Equatorial Guinea national under-17 football team",
+        "20": "Equatorial Guinea national under-20 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Equatorial Guinea national football team",
+      "flag": "Флаг Экваториальной Гвинеи"
+    },
+    "Эритрея": {
+      "gen": "Эритреи",
+      "ru": {
+        "0": "Сборная Эритреи по футболу"
+      },
+      "foreign": {
+        "0": "Eritrea national football team",
+        "15": "Eritrea national under-15 football team",
+        "20": "Eritrea national under-20 football team"
+      },
+      "foreign_de": {
+        "17": "Eritreische Fußballnationalmannschaft (U-17-Junioren)"
+      },
+      "english_main": "Eritrea national football team",
+      "flag": "Флаг Эритреи"
+    },
+    "Эсватини": {
+      "gen": "Эсватини",
+      "ru": {
+        "0": "Сборная Эсватини по футболу",
+        "20": "Сборная Эсватини по футболу (до 20 лет)"
+      },
+      "foreign": {
+        "0": "Eswatini national football team",
+        "17": "Eswatini national under-17 football team",
+        "20": "Eswatini national under-20 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Eswatini national football team",
+      "flag": "Флаг Эсватини"
+    },
+    "Эстония": {
+      "gen": "Эстонии",
+      "ru": {
+        "0": "Сборная Эстонии по футболу",
+        "23": "Сборная Эстонии по футболу (до 23 лет)"
+      },
+      "foreign": {
+        "0": "Estonia national football team",
+        "17": "Estonia national under-17 football team",
+        "19": "Estonia national under-19 football team",
+        "21": "Estonia national under-21 football team",
+        "23": "Estonia national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Estonia national football team",
+      "flag": "Флаг Эстонии"
+    },
+    "Эфиопия": {
+      "gen": "Эфиопии",
+      "ru": {
+        "0": "Сборная Эфиопии по футболу"
+      },
+      "foreign": {
+        "0": "Ethiopia national football team",
+        "17": "Ethiopia national under-17 football team",
+        "20": "Ethiopia national under-20 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Ethiopia national football team",
+      "flag": "Флаг Эфиопии"
+    },
+    "ЮАР": {
+      "gen": "ЮАР",
+      "ru": {
+        "0": "Сборная ЮАР по футболу",
+        "20": "Сборная ЮАР по футболу (до 20 лет)",
+        "23": "Олимпийская сборная ЮАР по футболу"
+      },
+      "foreign": {
+        "0": "South Africa national soccer team",
+        "15": "South Africa national under-15 soccer team",
+        "17": "South Africa national under-17 soccer team",
+        "20": "South Africa national under-20 soccer team",
+        "23": "South Africa national under-23 soccer team"
+      },
+      "foreign_de": {},
+      "english_main": "South Africa national soccer team",
+      "flag": "Флаг ЮАР"
+    },
+    "Югославия": {
+      "gen": "Югославии",
+      "ru": {
+        "0": "Сборная Югославии по футболу",
+        "21": "Сборная Югославии по футболу (до 21 года)"
+      },
+      "foreign": {
+        "0": "Yugoslavia national football team",
+        "20": "Yugoslavia national under-20 football team",
+        "21": "Yugoslavia national under-21 football team",
+        "23": "Yugoslavia national under-23 football team"
+      },
+      "foreign_de": {
+        "17": "Jugoslawische Fußballnationalmannschaft (U-17-Junioren)"
+      },
+      "english_main": "Yugoslavia national football team",
+      "flag": "Флаг Югославии"
+    },
+    "Южная Осетия": {
+      "gen": "Южной Осетии",
+      "ru": {
+        "0": "Сборная Южной Осетии по футболу"
+      },
+      "foreign": {
+        "0": "South Ossetia national football team"
+      },
+      "foreign_de": {},
+      "english_main": "South Ossetia national football team",
+      "flag": "Флаг Южной Осетии"
+    },
+    "Южный Вьетнам": {
+      "gen": "Южного Вьетнама",
+      "ru": {
+        "0": "Сборная Южного Вьетнама по футболу"
+      },
+      "foreign": {
+        "0": "South Vietnam national football team",
+        "20": "South Vietnam national under-20 football team"
+      },
+      "foreign_de": {},
+      "english_main": "South Vietnam national football team",
+      "flag": "Флаг Южного Вьетнама"
+    },
+    "Южный Йемен": {
+      "gen": "Южного Йемена",
+      "ru": {
+        "0": "Сборная Южного Йемена по футболу"
+      },
+      "foreign": {
+        "0": "South Yemen national football team"
+      },
+      "foreign_de": {
+        "17": "Südjemenitische Fußballnationalmannschaft (U-17-Junioren)"
+      },
+      "english_main": "South Yemen national football team",
+      "flag": "Флаг Южного Йемена"
+    },
+    "Южный Судан": {
+      "gen": "Южного Судана",
+      "ru": {
+        "0": "Сборная Южного Судана по футболу"
+      },
+      "foreign": {
+        "0": "South Sudan national football team",
+        "17": "South Sudan national under-17 football team",
+        "20": "South Sudan national under-20 football team"
+      },
+      "foreign_de": {},
+      "english_main": "South Sudan national football team",
+      "flag": "Флаг Южного Судана"
+    },
+    "Ямайка": {
+      "gen": "Ямайки",
+      "ru": {
+        "0": "Сборная Ямайки по футболу"
+      },
+      "foreign": {
+        "0": "Jamaica national football team",
+        "17": "Jamaica national under-17 football team",
+        "20": "Jamaica national under-20 football team",
+        "23": "Jamaica national under-23 football team"
+      },
+      "foreign_de": {},
+      "english_main": "Jamaica national football team",
+      "flag": "Флаг Ямайки"
+    },
+    "Япония": {
+      "gen": "Японии",
+      "ru": {
+        "0": "Сборная Японии по футболу",
+        "23": "Олимпийская сборная Японии по футболу"
+      },
+      "foreign": {
+        "0": "Japan national football team",
+        "17": "Japan national under-17 football team",
+        "20": "Japan national under-20 football team",
+        "23": "Japan national under-23 football team"
+      },
+      "foreign_de": {
+        "15": "Japanische Fußballnationalmannschaft (U-15-Junioren)",
+        "16": "Japanische Fußballnationalmannschaft (U-16-Junioren)",
+        "18": "Japanische Fußballnationalmannschaft (U-18-Junioren)",
+        "19": "Japanische Fußballnationalmannschaft (U-19-Junioren)"
+      },
+      "english_main": "Japan national football team",
+      "flag": "Флаг Японии"
+    }
+  },
+  "aliases": {
+    "ALG": "Алжир",
+    "ANT": "Нидерландские Антильские острова",
+    "ARM": "Армения",
+    "AUS": "Австралия",
+    "AUT": "Австрия",
+    "BFA": "Буркина-Фасо",
+    "BHU": "Бутан",
+    "BRA": "Бразилия",
+    "BRU": "Бруней",
+    "BUR": "Бурунди",
+    "CAM": "Камбоджа",
+    "CAY": "Каймановы Острова",
+    "CGO": "Республика Конго",
+    "CHA": "Чад",
+    "CHI": "Чили",
+    "CHN": "Китай",
+    "CIS": "СНГ",
+    "CIV": "Кот-д’Ивуар",
+    "CMR": "Камерун",
+    "COD": "ДР Конго",
+    "COK": "Острова Кука",
+    "COM": "Коморы",
+    "CPV": "Кабо-Верде",
+    "CRC": "Коста-Рика",
+    "CRO": "Хорватия",
+    "CTA": "ЦАР",
+    "CUB": "Куба",
+    "CUW": "Кюрасао",
+    "CYP": "Кипр",
+    "CZE": "Чехия",
+    "DDR": "ГДР",
+    "DEN": "Дания",
+    "DJI": "Джибути",
+    "DMA": "Доминика",
+    "DOM": "Доминиканская Республика",
+    "ECU": "Эквадор",
+    "EGY": "Египет",
+    "ENG": "Англия",
+    "EQG": "Экваториальная Гвинея",
+    "ERI": "Эритрея",
+    "ESP": "Испания",
+    "EST": "Эстония",
+    "ETH": "Эфиопия",
+    "FIJ": "Фиджи",
+    "FIN": "Финляндия",
+    "FRA": "Франция",
+    "FRO": "Фарерские острова",
+    "FSM": "Федеративные Штаты Микронезии",
+    "GAB": "Габон",
+    "GAM": "Гамбия",
+    "GEO": "Грузия",
+    "GER": "Германия",
+    "GHA": "Гана",
+    "GIB": "Гибралтар",
+    "GLP": "Гваделупа",
+    "GNB": "Гвинея-Бисау",
+    "GRE": "Греция",
+    "GRN": "Гренада",
+    "GUA": "Гватемала",
+    "GUF": "Французская Гвиана",
+    "GUI": "Гвинея",
+    "GUM": "Гуам",
+    "GUY": "Гайана",
+    "HAI": "Гаити",
+    "HKG": "Гонконг",
+    "HON": "Гондурас",
+    "HUN": "Венгрия",
+    "IDN": "Индонезия",
+    "IND": "Индия",
+    "IRL": "Ирландия",
+    "IRN": "Иран",
+    "IRQ": "Ирак",
+    "ISL": "Исландия",
+    "ISR": "Израиль",
+    "ITA": "Италия",
+    "JAM": "Ямайка",
+    "JOR": "Иордания",
+    "KAZ": "Казахстан",
+    "KEN": "Кения",
+    "KGZ": "Кыргызстан",
+    "KIR": "Кирибати",
+    "KOR": "Республика Корея",
+    "KOS": "Косово",
+    "KSA": "Саудовская Аравия",
+    "KUW": "Кувейт",
+    "LAO": "Лаос",
+    "LBN": "Ливан",
+    "LBR": "Либерия",
+    "LBY": "Ливия",
+    "LCA": "Сент-Люсия",
+    "LES": "Лесото",
+    "LTU": "Литва",
+    "LUX": "Люксембург",
+    "LVA": "Латвия",
+    "MAC": "Макао",
+    "MAD": "Мадагаскар",
+    "MAR": "Марокко",
+    "MAS": "Малайзия",
+    "MCO": "Монако",
+    "MDA": "Молдова",
+    "MDV": "Мальдивы",
+    "MEX": "Мексика",
+    "MKD": "Северная Македония",
+    "MLI": "Мали",
+    "MLT": "Мальта",
+    "MNE": "Черногория",
+    "MNG": "Монголия",
+    "MOZ": "Мозамбик",
+    "MRI": "Маврикий",
+    "MSR": "Монтсеррат",
+    "MTN": "Мавритания",
+    "MTQ": "Мартиника",
+    "MWI": "Малави",
+    "MYA": "Мьянма",
+    "NAM": "Намибия",
+    "NCA": "Никарагуа",
+    "NCL": "Новая Каледония",
+    "NCY": "Северный Кипр",
+    "NED": "Нидерланды",
+    "NEP": "Непал",
+    "NGA": "Нигерия",
+    "NIG": "Нигер",
+    "NIU": "Ниуэ",
+    "NMI": "Северные Марианские Острова",
+    "NOR": "Норвегия",
+    "NZL": "Новая Зеландия",
+    "OMA": "Оман",
+    "PAK": "Пакистан",
+    "PAN": "Панама",
+    "PAR": "Парагвай",
+    "PER": "Перу",
+    "PHI": "Филиппины",
+    "PLE": "Палестина",
+    "PLW": "Палау",
+    "PNG": "Папуа — Новая Гвинея",
+    "POR": "Португалия",
+    "PRK": "КНДР",
+    "PUR": "Пуэрто-Рико",
+    "QAT": "Катар",
+    "REU": "Реюньон",
+    "ROU": "Румыния",
+    "RSA": "ЮАР",
+    "RUS": "Россия",
+    "RWA": "Руанда",
+    "SAA": "Саар",
+    "SAM": "Самоа",
+    "SCO": "Шотландия",
+    "SEN": "Сенегал",
+    "SEY": "Сейшельские Острова",
+    "SIN": "Сингапур",
+    "SKN": "Сент-Китс и Невис",
+    "SLE": "Сьерра-Леоне",
+    "SLV": "Сальвадор",
+    "SMA": "Синт-Мартен",
+    "SMN": "Сен-Мартен",
+    "SMR": "Сан-Марино",
+    "SOL": "Соломоновы Острова",
+    "SOM": "Сомали",
+    "SRI": "Шри-Ланка",
+    "SSD": "Южный Судан",
+    "SUD": "Судан",
+    "SUI": "Швейцария",
+    "SUR": "Суринам",
+    "SVK": "Словакия",
+    "SWE": "Швеция",
+    "SWZ": "Эсватини",
+    "SYE": "Южный Йемен",
+    "SYR": "Сирия",
+    "TAH": "Таити",
+    "TAN": "Танзания",
+    "TCA": "Теркс и Кайкос",
+    "TCH": "Чехословакия",
+    "TGA": "Тонга",
+    "THA": "Таиланд",
+    "TJK": "Таджикистан",
+    "TKM": "Туркменистан",
+    "TLS": "Восточный Тимор",
+    "TOG": "Того",
+    "TPE": "Китайский Тайбэй",
+    "TRI": "Тринидад и Тобаго",
+    "TUN": "Тунис",
+    "TUR": "Турция",
+    "TUV": "Тувалу",
+    "UAE": "ОАЭ",
+    "UGA": "Уганда",
+    "UKR": "Украина",
+    "URS": "СССР",
+    "URU": "Уругвай",
+    "USA": "США",
+    "UZB": "Узбекистан",
+    "VAN": "Вануату",
+    "VAT": "Ватикан",
+    "VEN": "Венесуэла",
+    "VGB": "Британские Виргинские острова",
+    "VIE": "Вьетнам",
+    "VIN": "Сент-Винсент и Гренадины",
+    "VSO": "Южный Вьетнам",
+    "WAL": "Уэльс",
+    "YEM": "Йемен",
+    "ZAM": "Замбия",
+    "ZAN": "Занзибар",
+    "ZIM": "Зимбабве",
+    "Белоруссия": "Беларусь",
+    "Гвиана": "Французская Гвиана",
+    "ДРК": "ДР Конго",
+    "Демократическая Республика Конго": "ДР Конго",
+    "КНР": "Китай",
+    "Киргизия": "Кыргызстан",
+    "Китайская Народная Республика": "Китай",
+    "Кот-д'Ивуар": "Кот-д’Ивуар",
+    "Кот-дʼИвуар": "Кот-д’Ивуар",
+    "Македония": "Северная Македония",
+    "Нидерландские Антильские Острова": "Нидерландские Антильские острова",
+    "Папуа Новая Гвинея": "Папуа — Новая Гвинея",
+    "Папуа-Новая Гвинея": "Папуа — Новая Гвинея",
+    "Респ. Конго": "Республика Конго",
+    "Сборная мира": "Мир",
+    "Свазиленд": "Эсватини",
+    "Северная Корея": "КНДР",
+    "Соединенные Штаты Америки": "США",
+    "Соединённые Штаты Америки": "США",
+    "Тайвань": "Китайский Тайбэй",
+    "ФРГ": "Германия",
+    "Центральноафриканская Республика": "ЦАР",
+    "Чешская Республика": "Чехия",
+    "Южная Корея": "Республика Корея",
+    "Южно-Африканская Республика": "ЮАР"
+  }
+}

@@ -5,6 +5,8 @@ The stub covers argument access and HTML construction, not MediaWiki parsing
 or ResourceLoader's collapse control; those need an on-wiki sandbox preview.
 """
 from pathlib import Path
+import json
+import re
 import mwparserfromhell as mw
 import pytest
 
@@ -33,7 +35,8 @@ function Node:__tostring()
     for _,child in ipairs(self.children) do result=result..tostring(child) end
     return result..'</'..self.name..'>'
 end
-mw={text={trim=function(s) return s:match('^%s*(.-)%s*$') end},html={}}
+mw={text={trim=function(s) return pythonTrim(s) end},html={}}
+mw.ustring={lower=function(s) return pythonLower(s) end}
 mw.html.create=function(name) return setmetatable({name=name,attrs={},children={}},Node) end
 existingTitles={['Сборная Франции по футболу (до 18 лет)']=true,
     ['Сборная Ирландии по футболу']=true}
@@ -55,6 +58,8 @@ end}
 @pytest.fixture
 def renderer():
     runtime = lupa.LuaRuntime(unpack_returned_tuples=True)
+    runtime.globals().pythonTrim=lambda s:s.strip()
+    runtime.globals().pythonLower=lambda s:s.lower()
     runtime.execute(HOST)
     module = runtime.execute((ROOT/'Модуль.lua').read_text(encoding='utf-8'))
     return lambda args: module['_render'](runtime.table_from(args),runtime.globals().testFrame)
@@ -198,6 +203,8 @@ def test_auto_example_keeps_match_totals_and_ages(renderer):
 
 def test_repeated_country_uses_single_title_lookup_and_template_expansion():
     runtime=lupa.LuaRuntime(unpack_returned_tuples=True)
+    runtime.globals().pythonTrim=lambda s:s.strip()
+    runtime.globals().pythonLower=lambda s:s.lower()
     runtime.execute(HOST)
     runtime.execute('''
     titleCalls=0; templateCalls=0
@@ -215,3 +222,56 @@ def test_repeated_country_uses_single_title_lookup_and_template_expansion():
     assert '2 матча' in result
     assert runtime.globals().titleCalls==1
     assert runtime.globals().templateCalls==2  # One flag and one foreign link.
+
+
+@pytest.mark.parametrize('value,name',[
+    ('BRA','Бразилия'),('usa','США'),('GER','Германия'),('RUS','Россия'),
+    ('ирландия','Ирландия'),('южная корея','Республика Корея'),
+    ('Южная Корея','Республика Корея'),('Белоруссия','Беларусь'),
+    ('Киргизия','Кыргызстан'),('Тайвань','Китайский Тайбэй'),
+    ('СССР','СССР'),('ГДР','ГДР'),('Сербия и Черногория','Сербия и Черногория'),
+])
+def test_country_aliases_codes_and_historical_teams(renderer,value,name):
+    result=renderer(national_args(value))
+    assert name+' (до 18 лет)' in result
+
+
+def test_german_exact_age_fallback(renderer):
+    result=renderer(national_args('Германия'))
+    assert '|de|Deutsche Fußballnationalmannschaft (U-18-Junioren)' in result
+    assert 'Германия (до 18 лет)' in result
+
+
+def test_age21_uses_correct_russian_grammar(renderer):
+    result=renderer(national_args('Ирландия',age='21'))
+    assert 'Ирландия (до 21 года)' in result and 'до 21 лет' not in result
+
+
+def test_named_olympic_article_used_for_under23(renderer):
+    result=renderer(national_args('Бразилия',age='23'))
+    assert 'Олимпийская сборная Бразилии по футболу' in result
+    assert 'Бразилия (до 23 лет)' in result
+
+
+def test_entire_catalogue_all_ages_and_aliases_render(renderer):
+    catalogue=json.loads((ROOT/'сборные.json').read_text(encoding='utf-8'))
+    assert catalogue['fifa_list_teams']==211
+    assert len(catalogue['countries'])>=254
+    assert 'национальных сборных' not in catalogue['countries']
+    for name,team in catalogue['countries'].items():
+        for age in ['',*map(str,range(15,24))]:
+            result=renderer(national_args(name,age))
+            assert 'Итого: 1 матч / 0 голов' in result
+        for field in ('foreign','foreign_de'):
+            for age,title in team[field].items():
+                if age=='0': continue
+                expected=r'under-'+age+r'\b' if field=='foreign' else r'U-'+age+r'\b'
+                assert re.search(expected,title), (name,age,title)
+    for alias,name in catalogue['aliases'].items():
+        assert name+' (до 18 лет)' in renderer(national_args(alias))
+
+
+def test_unverified_flag_is_not_fabricated(renderer):
+    result=renderer(national_args('Падания'))
+    assert 'Падания (до 18 лет)' in result
+    assert '{{Флаг' not in result

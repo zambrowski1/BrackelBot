@@ -66,7 +66,7 @@ def missing_stints(history, initial_id, start_year, current_id, as_of):
     return stints
 
 
-def collect_statistics(api, player_id, birth_date, stints, as_of, *, fresh=False):
+def collect_statistics(api, player_id, birth_date, stints, as_of, *, fresh=False, goalkeeper=False):
     """Sum league-only season records overlapping each verified stint.
 
     League calendars distinguish a summer move from the preceding season.
@@ -124,7 +124,11 @@ def collect_statistics(api, player_id, birth_date, stints, as_of, *, fresh=False
                             and s['league']['id'] == leagues[0] and s['league']['season'] == season]
                 if len(selected)!=1:
                     raise UpdateError('incomplete_statistics','Нет единственной сезонной записи игрока за промежуточный клуб')
-                pair = {'appearances':selected[0]['games'].get('appearences'),'goals':selected[0]['goals'].get('total')}
+                keeper = goalkeeper or str(selected[0]['games'].get('position', '')).casefold() in {'goalkeeper', 'goalie', 'gk', 'g'}
+                raw = selected[0]['goals'].get('conceded' if keeper else 'total')
+                if raw is not None and (type(raw) is not int or not 0 <= raw <= 10000):
+                    raise UpdateError('incomplete_statistics','Неверный показатель голов')
+                pair = {'appearances':selected[0]['games'].get('appearences'),'goals':-raw if keeper and raw is not None else raw}
                 if not pair_valid(pair):
                     raise UpdateError('incomplete_statistics','Неизвестные матчи или голы периода нельзя заменить нулями')
             except (KeyError,TypeError,ValueError,AttributeError):
@@ -163,7 +167,8 @@ def recovery_plan(store, api, wiki, mapping, snapshot, current_id, history, as_o
     resolved = {}
     for stint in stints:
         _, resolved[stint['team_id']] = ClubRegistry(store).verify(stint['team_id'],wiki)
-    statistics, fetched_at, urls = collect_statistics(api,mapping['api_id'],mapping['birth_date'],stints,as_of)
+    from .goalkeeper import is_goalkeeper
+    statistics, fetched_at, urls = collect_statistics(api,mapping['api_id'],mapping['birth_date'],stints,as_of,goalkeeper=is_goalkeeper(parser,mapping['wiki_name']))
     old_pair = dict(zip(('appearances','goals'),[n.value for n in old_numbers.numeric(pair=True)]))
     if any(statistics[0]['stats'][k] < old_pair[k] for k in old_pair):
         raise UpdateError('needs_review','Исторический итог старого клуба меньше чисел в статье')

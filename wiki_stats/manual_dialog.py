@@ -37,8 +37,9 @@ class ManualStatsDialog(QDialog):
         self.games, self.goals = QSpinBox(), QSpinBox()
         for box in (self.games, self.goals):
             box.setRange(0, 100000)
+        self.goals.setRange(-100000, 100000)
         form.addRow('Новое число матчей', self.games)
-        form.addRow('Новое число голов', self.goals)
+        form.addRow('Голы (пропущенные — с минусом)', self.goals)
         self.source, self.coverage, self.note = QLineEdit(), QLineEdit(), QLineEdit()
         self.source.setPlaceholderText('https://… — страница, подтверждающая новые числа')
         self.coverage.setPlaceholderText('ГГГГ-ММ-ДД — дата охвата источника')

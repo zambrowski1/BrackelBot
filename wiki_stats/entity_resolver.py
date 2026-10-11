@@ -14,7 +14,8 @@ COUNTRIES = {'Q183':'Германии','Q40':'Австрии','Q39':'Швейц�
              'Q45':'Португалии','Q34':'Швеции','Q35':'Дании','Q20':'Норвегии','Q33':'Финляндии',
              'Q159':'России','Q212':'Украины','Q227':'Азербайджана','Q232':'Казахстана',
              'Q17':'Японии','Q884':'Южной Кореи','Q1028':'Марокко','Q1033':'Нигерии',
-             'Q1041':'Сенегала','Q1008':'Кот-д’Ивуара','Q117':'Ганы','Q258':'ЮАР'}
+             'Q1041':'Сенегала','Q1008':'Кот-д’Ивуара','Q117':'Ганы','Q258':'ЮАР',
+             'Q235':'Монако','Q213':'Чехии','Q21':'Англии','Q22':'Шотландии','Q25':'Уэльса','Q26':'Северной Ирландии'}
 
 
 @dataclass(frozen=True)
@@ -41,7 +42,8 @@ def reference_identity(client, text):
     code=mw.parse(text)
     links=code.filter_wikilinks()
     translations=[t for t in code.filter_templates() if str(t.name).strip().casefold() in {'нп','нп5','не переведено','iw'}]
-    if any(not str(t.name).strip().casefold().startswith('флаг ') and t not in translations for t in code.filter_templates()):
+    annotations = [t for t in code.filter_templates() if str(t.name).strip().casefold() in {'аренда','фарм-клуб'} and not t.params]
+    if any(not str(t.name).strip().casefold().startswith('флаг ') and t not in translations and t not in annotations for t in code.filter_templates()):
         raise UpdateError('needs_review','Аренда, резерв или сложная ссылка требуют проверки')
     if len(links)==1 and not translations:
         return client.get_page_identity(str(links[0].title).strip())
@@ -128,6 +130,22 @@ class EntityResolver:
         countries = claim_ids(wd,'P17')
         if known:
             countries = {known['country_qid']}
+        elif kind=='club' and countries=={'Q145'}:
+            # Football uses England/Scotland/Wales flags. Verify geography;
+            # the United Kingdom country alone cannot select one of them.
+            pending=list(claim_ids(wd,'P159')|claim_ids(wd,'P131'))
+            visited=set();home=set()
+            while pending and len(visited)<8:
+                location=pending.pop(0)
+                if location in visited:continue
+                visited.add(location)
+                if location in {'Q21','Q22','Q25','Q26'}:
+                    home.add(location);continue
+                geography=self.client.get_wikidata_entity(location)
+                pending.extend(claim_ids(geography,'P131'))
+            if len(home)!=1:
+                raise UpdateError('flag_unverified','Не подтверждена футбольная страна клуба Великобритании')
+            countries=home
         flags = {COUNTRIES[c] for c in countries if c in COUNTRIES}
         if len(flags) != 1:
             raise UpdateError('flag_unverified','Страна и флаг не определены однозначно')

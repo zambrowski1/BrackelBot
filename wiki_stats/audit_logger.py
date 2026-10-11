@@ -4,6 +4,7 @@ import os
 from dataclasses import asdict
 from datetime import datetime, timezone
 from pathlib import Path
+from .test_pages import TEST_TITLES
 
 
 def default_audit_path():
@@ -23,7 +24,7 @@ class AuditLogger:
 
 def make_report(package, plans, failures, mode='dry_run'):
     return {"schema_version": package.get('schema_version','1.0'), "package_id": package["package_id"], "mode": mode,
-            "publishing_enabled": mode=='manual', "allowed_publish_title":"Участник:Zambrowski/testbot", "failures": failures,
+            "publishing_enabled": mode=='manual', "allowed_publish_title":"Участник:Zambrowski/testbot", "allowed_publish_titles":list(TEST_TITLES), "failures": failures,
             "articles": [{"title": p.snapshot.title, "revid": p.snapshot.revid,
                           "revision_timestamp": p.snapshot.timestamp, "warnings": p.warnings,
                           "diff": p.diff, "article_status": 'published' if any(c.status=='published' for c in p.changes) else ('review_required' if any(c.status not in {'ready','already_applied'} for c in p.changes) else 'checked'),

@@ -1,0 +1,111 @@
+{
+  "schema_version": "1.1",
+  "package_id": "sofascore-155437529",
+  "generated_at": "2026-10-11T20:06:24.972303+00:00",
+  "articles": [
+    {
+      "title": "Шик, Патрик",
+      "base_revid": 155437529,
+      "subject_scope": "football_statistics",
+      "player": "Патрик Шик",
+      "operations": [
+        {
+          "id": "normalize-statistics-layout",
+          "type": "normalize_statistics_layout",
+          "group_id": "sofascore-reconciliation",
+          "entity": {
+            "name": "Патрик Шик",
+            "wikitext": "{{Футболист}}"
+          },
+          "target": {
+            "structure": "club_table"
+          },
+          "as_of": "2026-10-11",
+          "sources": [
+            {
+              "url": "https://ru.wikipedia.org/wiki/Википедия:Оформление_статей",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-11",
+              "note": "Порядок разделов по заданию владельца; статистические значения не меняются"
+            }
+          ],
+          "payload": {
+            "expected_sha256": "df68d79b4c0504aab91d8a2a380eab729b779a800396ef80ae0594f2ffa3487e"
+          }
+        },
+        {
+          "as_of": "2026-10-11",
+          "group_id": "sofascore-reconciliation",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/280609",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-11",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-1",
+          "type": "update_stats",
+          "entity": {
+            "name": "Байер 04",
+            "wikitext": "{{Флаг Германии|20px}} [[Байер 04]]"
+          },
+          "target": {
+            "structure": "career",
+            "field": "клубы",
+            "period": "2020—{{н. в.}}"
+          },
+          "season": null,
+          "competition": {
+            "name": "Чемпионат",
+            "category": "all",
+            "scope": "league"
+          },
+          "expected": {
+            "appearances": 149,
+            "goals": 80
+          },
+          "new": {
+            "appearances": 154,
+            "goals": 85
+          }
+        },
+        {
+          "as_of": "2026-10-11",
+          "group_id": "sofascore-reconciliation",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/280609",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-11",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-2",
+          "type": "update_date",
+          "entity": {
+            "name": "Байер 04",
+            "kind": "club",
+            "wikidata_id": "Q104761",
+            "page_title": "Байер 04",
+            "wikitext": "{{Флаг Германии|20px}} [[Байер 04|Байер 04]]"
+          },
+          "target": {
+            "structure": "career",
+            "field": "клубы"
+          },
+          "payload": {
+            "field": "обновление данных о клубе",
+            "expected_value": "16.5.2026",
+            "statistics_as_of": "2026-10-10"
+          }
+        }
+      ],
+      "review_warnings": [
+        "Не восстановлены строки сезонов: Байер 04 2020/21 (не подтверждены: Еврокубки), Байер 04 2021/22 (не подтверждены: Еврокубки), Байер 04 2022/23 (не подтверждены: Еврокубки, Прочие), Байер 04 2023/24 (не подтверждены: Еврокубки), Байер 04 2024/25 (не подтверждены: Еврокубки, Прочие), Байер 04 2025/26 (не подтверждены: Еврокубки, Прочие), Байер 04 2026/27 (не подтверждены: Еврокубки); полнота таблицы не подтверждена.",
+        "Общая дата статистики сборных сохранена: полный охват всех сборных ещё не подтверждён.",
+        "Часть статистики сборных не подтверждена полной сверкой матчей. Неподтверждённые показатели сохранены; причины указаны в отчёте."
+      ]
+    }
+  ]
+}

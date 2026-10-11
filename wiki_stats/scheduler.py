@@ -4,6 +4,7 @@ from dataclasses import asdict
 from datetime import datetime, timezone, date
 from uuid import uuid4
 import mwparserfromhell as mw
+from .test_pages import is_test_page
 from .errors import UpdateError
 from .api_football_client import utcnow
 from .player_registry import PlayerRegistry, check_player_identity
@@ -201,6 +202,9 @@ class CycleRunner:
             if len(matches)!=1 or (anchor_identity['qid'],anchor_identity['title'])!=(resolved.qid,resolved.title):
                 raise UpdateError('club_mismatch','Клуб и период базы не совпадают с единственной строкой карточки')
             nums=matches[0].numeric(pair=True);old={'appearances':nums[0].value,'goals':nums[1].value}
+            from .goalkeeper import is_goalkeeper, decreased
+            if is_goalkeeper(parser, mapping['wiki_name']) and obs.get('goal_metric') != 'conceded':
+                raise UpdateError('goal_metric_mismatch', 'API не подтвердил пропущенные голы вратаря')
             operation=update_operation(mapping,anchor,obs,old)
             operations=[]
             if old!=operation['new']: operations.append(operation)
@@ -217,9 +221,9 @@ class CycleRunner:
                     if len(categories)!=1: raise UpdateError('unsupported_structure','Категория чемпионата не определена однозначно')
                     index=table.categories.index(categories[0]);row=seasons[0]
                     previous={'appearances':row.values[str(2+2*index)].numeric()[0].value,
-                              'goals':row.values[str(3+2*index)].numeric()[0].value}
+                              'goals':row.values[str(3+2*index)].numeric(signed=True)[0].value}
                     if previous!=obs['stats']:
-                        if any(obs['stats'][k]<previous[k] for k in previous):
+                        if decreased(obs['stats'],previous):
                             raise UpdateError('needs_review','Сезонная таблица содержит больше API; проверьте историческое исправление')
                         table_op={**operation,'id':operation['id']+'-season','season':row.season,
                                   'entity':{'name':obs['team_name'],'wikitext':row.club},
@@ -287,7 +291,7 @@ def publish_plan(store,plan_hash,wiki,policy,logger=None,plan=None,source_api=No
     evidence=store.get('plan_evidence',plan_hash, {})
     if source_api is not None and getattr(source_api, 'provider', 'api_football') != evidence.get('provider', 'api_football'):
         raise UpdateError('source_unverified', 'Для перепроверки выбран другой поставщик данных')
-    if plan.snapshot.title!='Участник:Zambrowski/testbot':
+    if not is_test_page(plan.snapshot.title):
         evidence=store.get('plan_evidence',plan_hash)
         check_player_identity(wiki,store.get('players',evidence['player_id']))
         if evidence.get('kind')=='transfer':
@@ -301,7 +305,8 @@ def publish_plan(store,plan_hash,wiki,policy,logger=None,plan=None,source_api=No
                 transfers=transfer_history(record,evidence['player_id'])
                 members=roster_members(source_api.squads(evidence['team_id'],fresh=True),evidence['team_id'])
                 mapping=store.get('players',evidence['player_id'])
-                stints,_,_=collect_statistics(source_api,evidence['player_id'],mapping['birth_date'],evidence['stints'],evidence['as_of'],fresh=True)
+                from .goalkeeper import is_goalkeeper
+                stints,_,_=collect_statistics(source_api,evidence['player_id'],mapping['birth_date'],evidence['stints'],evidence['as_of'],fresh=True,goalkeeper=is_goalkeeper(WikitextParser(plan.snapshot.text),mapping['wiki_name']))
                 if (history_fingerprint(transfers)!=evidence['history_hash'] or stints!=evidence['stints']
                     or evidence['player_id'] not in members):
                     raise UpdateError('source_changed','История, состав или статистика изменились после diff')

@@ -11,16 +11,21 @@ from .change_validator import apply_patches, arithmetic_warnings
 def exact_patch(value, new, field):
     text = value.text
     start = len(text)-len(text.lstrip())
+    if not text.strip():
+        # Empty parameter values include the newline before the next field.
+        # Insert after horizontal padding, before that newline.
+        start = len(text)-len(text.lstrip(' \t'))
     end = len(text.rstrip())
     end = max(start,end)
     return Patch(value.start+start,value.start+end,text[start:end],new,field)
 
 
 def is_active_period(period):
-    return bool(re.search(r'\{\{(?:н\.в\.|нв)\}\}', period, re.IGNORECASE))
+    return bool(re.search(r'\{\{\s*(?:н\s*\.\s*в\s*\.|нв)\s*\}\}', period, re.IGNORECASE))
 
 
 def validate_period(period):
+    period = re.sub(r'\{\{\s*(?:н\s*\.\s*в\s*\.|нв)\s*\}\}', '{{н.в.}}', period, flags=re.IGNORECASE)
     match = re.fullmatch(r'((?:19|20)[0-9]{2})(?:([—–-])((?:19|20)[0-9]{2}|\{\{(?:н\.в\.|нв)\}\}))?', period, re.IGNORECASE)
     if not match:
         raise UpdateError('unknown_period','Нужны подтверждённые годы: YYYY, YYYY—YYYY или YYYY—{{н.в.}}')
@@ -63,18 +68,30 @@ def recompute_totals(text):
     sums = {club:[0]*width for club in table.totals}
     for row in table.seasons:
         for i in range(width):
-            sums[row.club][i] += row.values[str(i+2)].numeric()[0].value
+            sums[row.club][i] += row.values[str(i+2)].numeric(signed=bool(i % 2))[0].value
     patches = []
     for club, values in table.totals.items():
         for i,value in enumerate(values):
-            number = value.numeric()[0]
+            number = value.numeric(signed=bool(i % 2))[0]
             if number.value != sums[club][i]:
                 patches.append(number.patch(sums[club][i],'club_total'))
     for i,value in enumerate(table.grand_total):
         total = sum(v[i] for v in sums.values())
-        number = value.numeric()[0]
+        number = value.numeric(signed=bool(i % 2))[0]
         if number.value != total:
             patches.append(number.patch(total,'career_total'))
+    for ref in parser.templates:
+        if ref.name not in {'клстат/сезон','клстат/итогозаклуб','клстат/итого'}:continue
+        values=ref.values();first=1 if ref.name=='клстат/итого' else 2
+        for j,key in enumerate(('игры','голы')):
+            if key not in values:continue
+            wanted=sum(values[str(first+i)].numeric(signed=bool(i%2))[0].value for i in range(j,width,2))
+            if ref.name=='клстат/итогозаклуб':
+                club=next(c for c,l in table_layout(parser).items() if l['total'].start==ref.start)
+                wanted=sum(sums[club][i] for i in range(j,width,2))
+            elif ref.name=='клстат/итого':wanted=sum(sum(v[i] for v in sums.values()) for i in range(j,width,2))
+            number=values[key].numeric(signed=bool(j))[0]
+            if number.value!=wanted:patches.append(number.patch(wanted,'explicit_total'))
     return apply_patches(text,patches)
 
 
@@ -157,14 +174,16 @@ def append_career(text, parser, player, op, resolver):
     return result,'ready'
 
 
-def table_layout(parser):
-    parser.club_table()
+def table_layout(parser, *, allow_duplicates=False):
+    parser.club_table(allow_duplicates=allow_duplicates)
     club = league = None
     layouts = {}
     for ref in parser.templates:
         if ref.name=='клстат/клуб':
             club = ref.values()['1'].text.strip()
             layouts[club] = {'club':ref,'seasons':[]}
+            from .wikitext_parser import InlineLeagueRef
+            league=InlineLeagueRef(ref) if '2' in ref.values() else None
         elif ref.name=='клстат/лига' and club:
             league = ref
         elif ref.name=='клстат/сезон' and club:
@@ -183,9 +202,38 @@ def add_season(text,parser,op):
 
 
 def execute_operation(text,player,op,resolver=None):
+    if op['type'] == 'bind_infobox_name':
+        from .infobox_binding import bind
+        return bind(text, player, op)
     parser = WikitextParser(text)
     parser.infobox(player)
+    from .goalkeeper import validate_goal_values
+    validate_goal_values(parser, player, op)
     kind = op['type']
+    if kind=='normalize_statistics_layout':
+        from .statistics_layout import execute
+        return execute(text,player,op)
+    if kind=='normalize_club_table':
+        from .klstat_normalization import execute
+        return execute(text,player,op)
+    if kind == 'migrate_career_template':
+        from .career_migration import migrate
+        return migrate(text, player, op)
+    if kind == 'migrate_club_table':
+        from .legacy_club_table import migrate
+        return migrate(text,player,op)
+    if kind in {'repair_career_duplicates','repair_duplicate_season'}:
+        from .duplicate_repair import repair_duplicates
+        return repair_duplicates(text, player, op)
+    if kind in {'update_sbmatch', 'add_sbmatch'}:
+        from .sbmatches_editor import execute_match
+        return execute_match(text, player, op)
+    if kind=='repair_sbmatches':
+        from .sbmatches_repair import repair
+        return repair(text,player,op)
+    if kind=='create_sbmatches':
+        from .sbmatches_create import create
+        return create(text,player,op)
     if kind=='update_shirt_number':
         if resolver is None:
             raise UpdateError('entity_unverified','Нет проверенного клуба для номера')
@@ -196,10 +244,16 @@ def execute_operation(text,player,op,resolver=None):
         value = parser.infobox(player).get('номер')
         if value is None:
             raise UpdateError('unsupported_structure','Параметр номера отсутствует')
-        numeric = value.numeric()[0]
         new = op['payload']['number']
         if type(new) is not int or not 1<=new<=99:
             raise UpdateError('invalid_number','Нужен подтверждённый номер от 1 до 99')
+        if 'expected_raw' in op['payload']:
+            old=value.text.strip()
+            if old==str(new):return text,'already_applied'
+            if old!=op['payload']['expected_raw'] or not re.fullmatch(r'[?—–-]?|0',old):
+                raise UpdateError('old_value_mismatch','Не совпал пустой или неизвестный номер')
+            return apply_patches(text,[exact_patch(value,str(new),'shirt_number')],structural=True),'ready'
+        numeric = value.numeric()[0]
         if numeric.value==new:
             return text,'already_applied'
         if numeric.value!=op['payload']['expected_number']:
@@ -265,7 +319,24 @@ def execute_operation(text,player,op,resolver=None):
         row = select_career(parser,player,op,new_period=period)
         if row[0].text.strip()==period:
             return text,'already_applied'
-        validate_period(op['target']['period'])
+        old_period = op['target']['period']
+        if op['payload'].get('restore_unknown_end'):
+            if not re.fullmatch(r'(?:19|20)[0-9]{2}—\?', old_period) or not is_active_period(period):
+                raise UpdateError('unknown_period','Восстанавливается только неизвестный конец действующего периода')
+            arrival = date.fromisoformat(op['payload']['arrival_date'])
+            if arrival.year != int(old_period[:4]) or arrival > date.fromisoformat(op['as_of']):
+                raise UpdateError('source_scope_mismatch','Дата прихода не подтверждает этот период')
+            if resolver is None:
+                raise UpdateError('entity_unverified','Нужно подтверждение нынешнего клуба')
+            entity = resolver.resolve(op['entity'])
+            from .entity_resolver import reference_identity
+            current = parser.infobox(player).get('нынешний клуб')
+            if (op['target']['field']!='клубы' or current is None
+                    or reference_identity(resolver.client,current.text)['qid']!=entity.qid
+                    or reference_identity(resolver.client,row[1].text)['qid']!=entity.qid):
+                raise UpdateError('current_club_inconsistent','Период относится к другому текущему клубу')
+        else:
+            validate_period(old_period)
         if int(period[:4])!=int(op['target']['period'][:4]):
             raise UpdateError('unknown_period','Изменение начального года периода требует ручного рассмотрения')
         return apply_patches(text,[exact_patch(row[0],period,'career_period')],structural=True),'ready'
@@ -281,7 +352,20 @@ def execute_operation(text,player,op,resolver=None):
         if value.text.strip()!=op['expected']:
             raise UpdateError('old_value_mismatch','Текущий клуб не совпал с ожидаемым')
         _,rows = career_rows(parser,player,'клубы')
-        if not any(r[1].text.strip() in {entity.wikitext,'{{аренда}}'+entity.wikitext} and is_active_period(r[0].text) for r in rows):
+        def matches_current(row):
+            if not is_active_period(row[0].text):
+                return False
+            raw = row[1].text.strip()
+            if raw in {entity.wikitext,'{{аренда}}'+entity.wikitext}:
+                return True
+            if not getattr(resolver,'client',None):
+                return False
+            from .entity_resolver import reference_identity
+            try:
+                return reference_identity(resolver.client,raw)['qid']==entity.qid
+            except UpdateError:
+                return False
+        if not any(matches_current(r) for r in rows):
             raise UpdateError('current_club_inconsistent','Добавьте подтверждённую текущую строку клуба в той же группе')
         return apply_patches(text,[exact_patch(value,entity.wikitext,'current_club')],structural=True),'ready'
     if kind=='add_season':

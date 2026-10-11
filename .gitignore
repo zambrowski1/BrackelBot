@@ -27,3 +27,7 @@ credentials*.json
 secrets*.json
 backups/
 api-cache/
+
+# Saved review reports are intentional handoff artifacts.
+!handoff/**/report.json
+handoff/**/work-history/

@@ -12,8 +12,8 @@ from .klstat_editor import numbers, season_key, league_link
 
 def render_section(payload, resolver, as_of):
     categories=payload['categories']
-    if not 1 <= len(categories) <= 4 or len(set(categories)) != len(categories):
-        raise UpdateError('incomplete_statistics','Нужны 1–4 разные категории соревнований')
+    if not 1 <= len(categories) <= 5 or len(set(categories)) != len(categories):
+        raise UpdateError('incomplete_statistics','Нужны 1–5 разных категорий соревнований')
     # Labels may be plain text or a single wikilink, never templates or markup.
     for category in categories:
         code=mw.parse(category)
@@ -40,6 +40,7 @@ def render_section(payload, resolver, as_of):
         rows=club['rows']
         if not rows:
             raise UpdateError('incomplete_statistics','Нельзя создавать пустой блок клуба')
+        club_index=len(body)
         body.append('{{КлСтат/Клуб|'+name+'|сезоны='+str(len(rows))+'}}')
         total=[0]*len(grand); last=None; used=set(); parsed=[]
         for row in rows:
@@ -55,23 +56,23 @@ def render_section(payload, resolver, as_of):
             values=numbers(SimpleNamespace(categories=categories),{'categories':row['categories'],'complete':True})
             parsed.append((league,row['season'],values))
             total=[a+b for a,b in zip(total,values)]
+        single_league=len({r[0] for r in parsed})==1
+        if single_league:body[club_index]='{{КлСтат/Клуб|'+name+'|'+parsed[0][0]+'|сезоны='+str(len(rows))+'}}'
         i=0
         while i<len(parsed):
             end=i+1
             while end<len(parsed) and parsed[end][0]==parsed[i][0]: end+=1
-            body.append('{{КлСтат/Лига|'+parsed[i][0]+'|сезоны='+str(end-i)+'}}')
+            if not single_league:body.append('{{КлСтат/Лига|'+parsed[i][0]+'|сезоны='+str(end-i)+'}}')
             for league,season,values in parsed[i:end]:
                 body.append('{{КлСтат/Сезон|'+season+'|'+'|'.join(map(str,values))+'}}')
             i=end
-        body.append('{{КлСтат/ИтогоЗаКлуб|Итого|'+'|'.join(map(str,total))+'}}')
+        body.append('{{КлСтат/ИтогоЗаКлуб||'+'|'.join(map(str,total))+'}}')
         grand=[a+b for a,b in zip(grand,total)]
     if not years:
         raise UpdateError('incomplete_statistics','Нет подтверждённых сезонов')
-    if not payload['full_career']:
-        # Keep the date immediately before KlStat so the next reconciliation
-        # can address it without mistaking another section's update marker.
-        lines.insert(-1,"''В таблице представлены только подтверждённые сезоны "+str(min(years))+'—'+str(max(years)+1)+" годов; полный итог карьеры не заявляется.''")
-    body.append('{{КлСтат/Итого|'+'|'.join(map(str,grand))+'}}')
+    # The native total template always says "Всего за карьеру". A bounded
+    # history therefore closes the table without claiming a career total.
+    body.append('{{КлСтат/Итого|'+'|'.join(map(str,grand))+'}}' if payload['full_career'] else '|}\n{{комментарии}}')
     return '\n'.join(lines+body)+'\n\n'
 
 
@@ -85,23 +86,40 @@ def create_section(text, parser, op, resolver):
         return text,'already_applied'
     if any(t.name.startswith('клстат') for t in parser.templates):
         raise UpdateError('statistics_exists','КлСтат уже существует; используйте сравнение и изменение строк')
-    footer=None; offset=0
+    from .native_national_table import find_tables
+    national_tables={start for start,_ in find_tables(text)}
+    has_national = bool(national_tables) or any(t.name=='сбматчи' for t in parser.templates)
+    common_section=None
+    national_titles={'сборная','матчи за сборную','выступления за сборную','статистика выступлений за сборную'}
+    footer=None; offset=0; allowed_raw=[]
     for node in parser.code.nodes:
         value=str(node)
         if isinstance(node,Heading):
             title=str(node.title).strip().casefold()
-            if 'статист' in title or 'выступлен' in title:
+            if node.level==2 and title=='статистика выступлений' and has_national:
+                if common_section is not None:
+                    raise UpdateError('ambiguous_target','Несколько разделов статистики выступлений')
+                common_section=offset+len(value)
+            elif ('статист' in title or 'выступлен' in title) and title not in national_titles:
                 raise UpdateError('statistics_exists','В статье уже есть возможный раздел статистики; нужна проверка')
-            if node.level==2 and title in {'примечания','ссылки','литература','источники','см. также'} and footer is None:
+            if node.level==2 and title in national_titles and footer is None:footer=offset
+            if node.level==2 and title in {'достижения','награды','примечания','ссылки','литература','источники','см. также'} and footer is None:
                 footer=offset
-        if isinstance(node,Tag) and str(node.tag).strip().casefold()=='table' and any(w in value.casefold() for w in ['матч','гол','сезон','apps','goals']):
-            raise UpdateError('statistics_exists','Найдена обычная таблица с возможной статистикой')
+        if isinstance(node,Tag) and str(node.tag).strip().casefold()=='table':
+            if offset in national_tables:allowed_raw.append(value)
+            else:raise UpdateError('statistics_exists','Найдена обычная таблица с возможной статистикой')
         if isinstance(node,Wikilink) and str(node.title).strip().casefold().startswith('категория:') and footer is None:
             footer=offset
         offset+=len(value)
-    if '{|' in text:
+    other_text=text
+    for raw in allowed_raw:other_text=other_text.replace(raw,'',1)
+    if '{|' in other_text:
         raise UpdateError('statistics_exists','Найдена обычная викитаблица; создание раздела требует проверки')
-    point=footer if footer is not None else len(text)
+    if common_section is not None:
+        point=common_section
+        section=section.split(newline,1)[1].lstrip('\r\n')
+    else:
+        point=footer if footer is not None else len(text)
     prefix='' if text[:point].endswith(newline+newline) or point==0 else newline+newline
     result=apply_patches(text,[Patch(point,point,'',prefix+section,'new_statistics_section')],structural=True)
     warnings=arithmetic_warnings(result)

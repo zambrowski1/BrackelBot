@@ -15,7 +15,7 @@ from wiki_stats.audit_logger import AuditLogger, make_report, audit_report
 @pytest.mark.parametrize('case', ['negative', 'bool', 'missing_source', 'future_as_of', 'unknown', 'unequal_fields', 'duplicate_id', 'fake_verified'])
 def test_invalid_input(package, case):
     op = package['articles'][0]['operations'][0]
-    if case == 'negative': op['new']['goals'] = -1
+    if case == 'negative': op['new']['appearances'] = -1
     if case == 'bool': op['new']['goals'] = True
     if case == 'missing_source': op['sources'] = []
     if case == 'future_as_of': op['as_of'] = '2030-01-01'

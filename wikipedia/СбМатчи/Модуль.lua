@@ -3,8 +3,8 @@
 local p = {}
 local months = {'января','февраля','марта','апреля','мая','июня',
     'июля','августа','сентября','октября','ноября','декабря'}
-local fields = {'дата','соперник','счёт','голы','соревнование','источник','пенальти'}
-local indexedFields = {'матч','дата','соперник','счёт','голы','соревнование','источник','пенальти'}
+local fields = {'дата','соперник','счёт','голы','соревнование','источник','пенальти','пропущенные голы'}
+local indexedFields = {'матч','дата','соперник','счёт','голы','соревнование','источник','пенальти','пропущенные голы'}
 
 local function trim(value)
     return mw.text.trim(tostring(value or ''))
@@ -26,6 +26,7 @@ local function parseDate(value)
     local text = trim(value)
     local y,m,d = text:match('^(%d%d%d%d)%-(%d%d)%-(%d%d)$')
     if not y then d,m,y=text:match('^(%d%d)%-(%d%d)%-(%d%d%d%d)$') end
+    if not y then d,m,y=text:match('^(%d%d)%.(%d%d)%.(%d%d%d%d)$') end
     if not y then fail('дата должна иметь вид ДД-ММ-ГГГГ: ' .. text) end
     y,m,d = tonumber(y),tonumber(m),tonumber(d)
     local leap = y%4==0 and (y%100~=0 or y%400==0)
@@ -33,7 +34,7 @@ local function parseDate(value)
     if y<1872 or y>2100 or not days[m] or d<1 or d>days[m] then
         fail('несуществующая дата: ' .. text)
     end
-    return string.format('%04d-%02d-%02d',y,m,d),string.format('%02d-%02d-%04d',d,m,y)
+    return string.format('%04d-%02d-%02d',y,m,d),d .. ' ' .. months[m] .. ' ' .. y
 end
 
 local function score(value, name)
@@ -2425,7 +2426,7 @@ local function opponent(value, age, frame, cache)
     if age>0 then
         local suffix = ' (до '..age..' '..(age==21 and 'года' or 'лет')..')'
         article=article..suffix
-        label=label..suffix
+        label=label..' (до '..age..')'
     end
     article = country.ru[age] or article
     local title = mw.title.new(article)
@@ -2449,7 +2450,7 @@ function p._render(args, frame)
     local last = 0
     local allowed = {['игрок']=true,['сборная']=true,['заголовок']=true,
         ['цвета']=true,['обновлено']=true,['свёрнуто']=true,['источники']=true,
-        ['соревнование']=true,['возраст']=true}
+        ['соревнование']=true,['возраст']=true,['статистика']=true}
     for key,value in pairs(args) do
         key = tostring(key)
         if trim(value)~='' and not allowed[key] then
@@ -2470,6 +2471,10 @@ function p._render(args, frame)
         end
     end
     if last==0 then fail('нет строк матчей') end
+    local metric = trim(args['статистика'])
+    if metric=='' then metric='голы' end
+    if metric~='голы' and metric~='пропущенные голы' then fail('статистика: голы или пропущенные голы') end
+    local inactive = metric=='голы' and 'пропущенные голы' or 'голы'
     local age = ageCategory(args['возраст'])
     local opponentCache = {}
     local title = trim(args['заголовок'])
@@ -2495,13 +2500,14 @@ function p._render(args, frame)
             if #parts<4 or #parts>5 then
                 fail('матч'..i..': нужны дата ;; соперник ;; счёт ;; голы [;; соревнование]')
             end
-            for j,field in ipairs({'дата','соперник','счёт','голы','соревнование'}) do
+            for j,field in ipairs({'дата','соперник','счёт',metric,'соревнование'}) do
                 if row[field]~='' then fail('не смешивайте матч'..i..' и '..field..i) end
                 row[field]=parts[j] or ''
             end
         end
         if row['соревнование']=='' then row['соревнование']=trim(args['соревнование']) end
-        for _,field in ipairs({'дата','соперник','счёт','голы','соревнование'}) do
+        if row[inactive]~='' then fail('значение в невыбранном столбце '..inactive..i) end
+        for _,field in ipairs({'дата','соперник','счёт','соревнование'}) do
             if row[field]=='' then fail('отсутствует ' .. field .. i) end
         end
         row['соперник']=opponent(row['соперник'],age,frame,opponentCache)
@@ -2510,8 +2516,8 @@ function p._render(args, frame)
         previous = iso
         row.date, row.iso = display, iso
         local own,other = score(row['счёт'],'счёт'..i)
-        local goals = number(row['голы'],'голы'..i)
-        if goals>own then fail('голов игрока больше, чем голов сборной в матче '..i) end
+        local goals = number(row[metric]=='' and '0' or row[metric],metric..i)
+        if goals>(metric=='голы' and own or other) then fail('значение '..metric..' больше счёта сборной в матче '..i) end
         row.score = own .. ':' .. other
         if row['пенальти']~='' then
             if own~=other then fail('серия пенальти требует ничейного счёта в матче '..i) end
@@ -2523,7 +2529,7 @@ function p._render(args, frame)
         if own>other then totals.wins=totals.wins+1
         elseif own<other then totals.losses=totals.losses+1
         else totals.draws=totals.draws+1 end
-        row.goals = goals
+        row.goals = goals==0 and '—' or goals
         rows[#rows+1]=row
     end
     local updated = trim(args['обновлено'])
@@ -2548,7 +2554,7 @@ function p._render(args, frame)
     end
     heading:wikitext(title)
     local columns = tab:tag('tr')
-    for _,name in ipairs({'№','Дата','Соперник','Счёт','Голы','Соревнование'}) do
+    for _,name in ipairs({'№','Дата','Соперник','Счёт',metric=='голы' and 'Голы' or 'Пропущенные голы','Соревнование'}) do
         columns:tag('th'):attr('scope','col'):wikitext(name)
     end
     for i,row in ipairs(rows) do
@@ -2560,7 +2566,7 @@ function p._render(args, frame)
         end
     end
     local summary = "'''Итого: " .. totals.games .. ' ' .. plural(totals.games,'матч','матча','матчей')
-        .. ' / ' .. totals.goals .. ' ' .. plural(totals.goals,'гол','гола','голов')
+        .. ' / ' .. totals.goals .. ' ' .. (metric=='голы' and plural(totals.goals,'гол','гола','голов') or plural(totals.goals,'пропущенный гол','пропущенных гола','пропущенных голов'))
         .. '; ' .. totals.wins .. ' ' .. plural(totals.wins,'победа','победы','побед')
         .. ', ' .. totals.draws .. ' ' .. plural(totals.draws,'ничья','ничьи','ничьих')
         .. ', ' .. totals.losses .. ' ' .. plural(totals.losses,'поражение','поражения','поражений') .. "'''"

@@ -5,6 +5,7 @@ import os
 from pathlib import Path
 from uuid import uuid4
 from dataclasses import asdict
+from .test_pages import is_test_page
 from .errors import UpdateError
 from .models import ChangeResult, ArticlePlan, TransactionGroup
 from .diff_generator import generate_diff
@@ -16,7 +17,7 @@ def default_backup_dir():
 
 
 def save_backup(snapshot, directory=None):
-    if snapshot.title!='Участник:Zambrowski/testbot':
+    if not is_test_page(snapshot.title) or snapshot.namespace != 2:
         raise UpdateError('page_not_allowed','Резервные копии публикации допустимы только для тестовой страницы')
     path=Path(directory) if directory else default_backup_dir()
     path.mkdir(parents=True,exist_ok=True)
@@ -35,15 +36,15 @@ def plan_restore(client, backup_path):
         if path.stat().st_size>10_000_000:
             raise ValueError('Размер файла')
         data=json.loads(path.read_text(encoding='utf-8'))
-        if data.get('format')!='brackelbot-backup-1' or data.get('title')!='Участник:Zambrowski/testbot':
+        if data.get('format')!='brackelbot-backup-1' or not is_test_page(data.get('title')):
             raise ValueError('Не резервная копия тестовой страницы')
         text=data['text']
         if not isinstance(text,str) or hashlib.sha256(text.encode('utf-8')).hexdigest()!=data['sha256']:
             raise ValueError('Контрольная сумма не совпала')
     except (OSError,ValueError,KeyError,TypeError):
         raise UpdateError('invalid_backup','Некорректная резервная копия тестовой страницы') from None
-    snapshot=client.fetch_page('Участник:Zambrowski/testbot')
-    if snapshot.title!='Участник:Zambrowski/testbot' or snapshot.namespace!=2:
+    snapshot=client.fetch_page(data['title'])
+    if snapshot.title != data['title'] or not is_test_page(snapshot.title) or snapshot.namespace!=2:
         raise UpdateError('page_not_allowed','Получена страница вне белого списка')
     diff=generate_diff(snapshot.text,text,snapshot.title)
     patches=minimal_patches(snapshot.text,text,'restore')

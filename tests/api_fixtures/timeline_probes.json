@@ -1,0 +1,1672 @@
+[
+  {
+    "pid": 136924,
+    "match": {
+      "id": 7888536,
+      "is_finished": true,
+      "status": {
+        "code": 100,
+        "type": "finished",
+        "description": "Ended"
+      },
+      "home_score": {
+        "current": 4,
+        "display": 4,
+        "periods": {
+          "period1": 2,
+          "period2": 2,
+          "normaltime": 4
+        }
+      },
+      "away_score": {
+        "current": 0,
+        "display": 0,
+        "periods": {
+          "period1": 0,
+          "period2": 0,
+          "normaltime": 0
+        }
+      },
+      "start_time": "2018-07-26T16:30:00Z",
+      "season": {
+        "id": 17352,
+        "name": "UEFA Europa League 18/19",
+        "year": "18/19"
+      },
+      "tournament": {
+        "id": 679,
+        "name": "UEFA Europa League",
+        "slug": "uefa-europa-league",
+        "link": "https://www.sofascore.com/tournament/football/europe/uefa-europa-league/679",
+        "image_link": "https://img.sofascore.com/api/v1/unique-tournament/679/image",
+        "dark_image_link": "https://img.sofascore.com/api/v1/unique-tournament/679/image/dark",
+        "colors": {
+          "primary": null,
+          "secondary": "#f37d25"
+        },
+        "followers_count": 422991,
+        "category": {
+          "id": 1465,
+          "name": "Europe",
+          "slug": "europe",
+          "link": "https://www.sofascore.com/football/europe",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": null,
+          "flag_image_link": "https://img.sofascore.com/api/v1/country/europe/flag"
+        },
+        "live_activity_enabled": true,
+        "has_player_statistics": true,
+        "group": {
+          "id": 10910,
+          "name": "UEFA Europa League, Qualification",
+          "slug": "uefa-europa-league-qualification",
+          "is_group": false
+        },
+        "is_live": false
+      },
+      "round": {
+        "number": 15,
+        "name": "Qualification round 2",
+        "slug": "qualification-round-2",
+        "cup_round_type": null
+      },
+      "player": {
+        "team_id": 36360,
+        "is_on_bench": false,
+        "statistics": null,
+        "incidents": {
+          "yellow_cards": 1
+        }
+      },
+      "home_team": {
+        "id": 36360
+      },
+      "away_team": {
+        "id": 1760
+      }
+    },
+    "lineups": {
+      "match_id": 7888536,
+      "is_confirmed": true,
+      "home": {
+        "players": [
+          {
+            "player": {
+              "id": 136924
+            },
+            "team_id": 36360,
+            "position": "D",
+            "is_substitute": false,
+            "statistics": {}
+          }
+        ]
+      },
+      "away": {
+        "players": []
+      }
+    },
+    "incidents": {
+      "match_id": 7888536,
+      "count": 24,
+      "incidents": [
+        {
+          "type": "period",
+          "class": null,
+          "text": "FT",
+          "is_live": false,
+          "time": 90,
+          "added_time": 999,
+          "home_score": 4,
+          "away_score": 0,
+          "is_home": null,
+          "id": null
+        },
+        {
+          "type": "injuryTime",
+          "class": null,
+          "text": null,
+          "is_live": null,
+          "time": 90,
+          "added_time": 0,
+          "home_score": null,
+          "away_score": null,
+          "is_home": null,
+          "id": null
+        },
+        {
+          "type": "substitution",
+          "class": "regular",
+          "text": null,
+          "is_live": null,
+          "time": 89,
+          "added_time": null,
+          "home_score": null,
+          "away_score": null,
+          "is_home": true,
+          "id": 118930146,
+          "player_in": {
+            "id": 942944
+          },
+          "player_out": {
+            "id": 886363
+          }
+        },
+        {
+          "type": "substitution",
+          "class": "regular",
+          "text": null,
+          "is_live": null,
+          "time": 85,
+          "added_time": null,
+          "home_score": null,
+          "away_score": null,
+          "is_home": true,
+          "id": 118930145,
+          "player_in": {
+            "id": 912951
+          },
+          "player_out": {
+            "id": 97012
+          }
+        },
+        {
+          "type": "goal",
+          "class": "regular",
+          "text": null,
+          "is_live": null,
+          "time": 84,
+          "added_time": null,
+          "home_score": 4,
+          "away_score": 0,
+          "is_home": true,
+          "id": 123653517,
+          "player": {
+            "id": 352938
+          }
+        },
+        {
+          "type": "substitution",
+          "class": "regular",
+          "text": null,
+          "is_live": null,
+          "time": 83,
+          "added_time": null,
+          "home_score": null,
+          "away_score": null,
+          "is_home": false,
+          "id": 118930148,
+          "player_in": {
+            "id": 791953
+          },
+          "player_out": {
+            "id": 50394
+          }
+        },
+        {
+          "type": "card",
+          "class": "yellowRed",
+          "text": null,
+          "is_live": null,
+          "time": 81,
+          "added_time": null,
+          "home_score": null,
+          "away_score": null,
+          "is_home": true,
+          "id": 118939235,
+          "player": {
+            "id": 21600
+          }
+        },
+        {
+          "type": "card",
+          "class": "yellow",
+          "text": null,
+          "is_live": null,
+          "time": 79,
+          "added_time": null,
+          "home_score": null,
+          "away_score": null,
+          "is_home": false,
+          "id": 118939260,
+          "player": {
+            "id": 36028
+          }
+        },
+        {
+          "type": "card",
+          "class": "yellow",
+          "text": null,
+          "is_live": null,
+          "time": 79,
+          "added_time": null,
+          "home_score": null,
+          "away_score": null,
+          "is_home": true,
+          "id": 118939255,
+          "player": {
+            "id": 124318
+          }
+        },
+        {
+          "type": "card",
+          "class": "yellow",
+          "text": null,
+          "is_live": null,
+          "time": 78,
+          "added_time": null,
+          "home_score": null,
+          "away_score": null,
+          "is_home": false,
+          "id": 118939259,
+          "player": {
+            "id": 209166
+          }
+        },
+        {
+          "type": "substitution",
+          "class": "regular",
+          "text": null,
+          "is_live": null,
+          "time": 72,
+          "added_time": null,
+          "home_score": null,
+          "away_score": null,
+          "is_home": false,
+          "id": 118930117,
+          "player_in": {
+            "id": 36028
+          },
+          "player_out": {
+            "id": 35631
+          }
+        },
+        {
+          "type": "substitution",
+          "class": "regular",
+          "text": null,
+          "is_live": null,
+          "time": 68,
+          "added_time": null,
+          "home_score": null,
+          "away_score": null,
+          "is_home": true,
+          "id": 118930116,
+          "player_in": {
+            "id": 780014
+          },
+          "player_out": {
+            "id": 796444
+          }
+        },
+        {
+          "type": "goal",
+          "class": "regular",
+          "text": null,
+          "is_live": null,
+          "time": 50,
+          "added_time": null,
+          "home_score": 3,
+          "away_score": 0,
+          "is_home": true,
+          "id": 123653456,
+          "player": {
+            "id": 84251
+          }
+        },
+        {
+          "type": "substitution",
+          "class": "regular",
+          "text": null,
+          "is_live": null,
+          "time": 46,
+          "added_time": null,
+          "home_score": null,
+          "away_score": null,
+          "is_home": false,
+          "id": 118930093,
+          "player_in": {
+            "id": 257565
+          },
+          "player_out": {
+            "id": 860148
+          }
+        },
+        {
+          "type": "period",
+          "class": null,
+          "text": "HT",
+          "is_live": false,
+          "time": 45,
+          "added_time": 999,
+          "home_score": 2,
+          "away_score": 0,
+          "is_home": null,
+          "id": null
+        },
+        {
+          "type": "card",
+          "class": "yellow",
+          "text": null,
+          "is_live": null,
+          "time": 45,
+          "added_time": 2,
+          "home_score": null,
+          "away_score": null,
+          "is_home": true,
+          "id": 118939254,
+          "player": {
+            "id": 796444
+          }
+        },
+        {
+          "type": "injuryTime",
+          "class": null,
+          "text": null,
+          "is_live": null,
+          "time": 45,
+          "added_time": 0,
+          "home_score": null,
+          "away_score": null,
+          "is_home": null,
+          "id": null
+        },
+        {
+          "type": "goal",
+          "class": "regular",
+          "text": null,
+          "is_live": null,
+          "time": 39,
+          "added_time": null,
+          "home_score": 2,
+          "away_score": 0,
+          "is_home": true,
+          "id": 123653397,
+          "player": {
+            "id": 886363
+          }
+        },
+        {
+          "type": "goal",
+          "class": "regular",
+          "text": null,
+          "is_live": null,
+          "time": 35,
+          "added_time": null,
+          "home_score": 1,
+          "away_score": 0,
+          "is_home": true,
+          "id": 123653385,
+          "player": {
+            "id": 97012
+          }
+        },
+        {
+          "type": "card",
+          "class": "yellow",
+          "text": null,
+          "is_live": null,
+          "time": 34,
+          "added_time": null,
+          "home_score": null,
+          "away_score": null,
+          "is_home": true,
+          "id": 118939253,
+          "player": {
+            "id": 21600
+          }
+        },
+        {
+          "type": "card",
+          "class": "yellow",
+          "text": null,
+          "is_live": null,
+          "time": 33,
+          "added_time": null,
+          "home_score": null,
+          "away_score": null,
+          "is_home": false,
+          "id": 118939258,
+          "player": {
+            "id": 35631
+          }
+        },
+        {
+          "type": "card",
+          "class": "yellow",
+          "text": null,
+          "is_live": null,
+          "time": 29,
+          "added_time": null,
+          "home_score": null,
+          "away_score": null,
+          "is_home": false,
+          "id": 118939257,
+          "player": {
+            "id": 7015
+          }
+        },
+        {
+          "type": "card",
+          "class": "yellow",
+          "text": null,
+          "is_live": null,
+          "time": 11,
+          "added_time": null,
+          "home_score": null,
+          "away_score": null,
+          "is_home": false,
+          "id": 118939256,
+          "player": {
+            "id": 1894
+          }
+        },
+        {
+          "type": "card",
+          "class": "yellow",
+          "text": null,
+          "is_live": null,
+          "time": 7,
+          "added_time": null,
+          "home_score": null,
+          "away_score": null,
+          "is_home": true,
+          "id": 118939252,
+          "player": {
+            "id": 136924
+          }
+        }
+      ]
+    }
+  },
+  {
+    "pid": 856076,
+    "match": {
+      "id": 11605953,
+      "is_finished": true,
+      "status": {
+        "code": 100,
+        "type": "finished",
+        "description": "Ended"
+      },
+      "home_score": {
+        "current": 2,
+        "display": 2,
+        "periods": {
+          "period1": 0,
+          "period2": 2,
+          "normaltime": 2
+        }
+      },
+      "away_score": {
+        "current": 1,
+        "display": 1,
+        "periods": {
+          "period1": 0,
+          "period2": 1,
+          "normaltime": 1
+        }
+      },
+      "start_time": "2023-12-13T17:45:00Z",
+      "season": {
+        "id": 52162,
+        "name": "UEFA Champions League 23/24",
+        "year": "23/24",
+        "season_coverage_info": {}
+      },
+      "tournament": {
+        "id": 7,
+        "name": "UEFA Champions League",
+        "slug": "uefa-champions-league",
+        "link": "https://www.sofascore.com/tournament/football/europe/uefa-champions-league/7",
+        "image_link": "https://img.sofascore.com/api/v1/unique-tournament/7/image",
+        "dark_image_link": "https://img.sofascore.com/api/v1/unique-tournament/7/image/dark",
+        "colors": {
+          "primary": "#062b5c",
+          "secondary": "#086aab"
+        },
+        "followers_count": 1129379,
+        "category": {
+          "id": 1465,
+          "name": "Europe",
+          "slug": "europe",
+          "link": "https://www.sofascore.com/football/europe",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": null,
+          "flag_image_link": "https://img.sofascore.com/api/v1/country/europe/flag"
+        },
+        "live_activity_enabled": true,
+        "has_player_statistics": true,
+        "group": {
+          "id": 1468,
+          "name": "UEFA Champions League, Group G",
+          "slug": "uefa-champions-league-group-g",
+          "is_group": true
+        },
+        "is_live": false
+      },
+      "round": {
+        "number": 6,
+        "name": null,
+        "slug": null,
+        "cup_round_type": null
+      },
+      "player": {
+        "team_id": 36360,
+        "is_on_bench": true,
+        "statistics": null,
+        "incidents": null
+      },
+      "home_team": {
+        "id": 36360
+      },
+      "away_team": {
+        "id": 2445
+      }
+    },
+    "lineups": {
+      "match_id": 11605953,
+      "is_confirmed": true,
+      "home": {
+        "players": [
+          {
+            "player": {
+              "id": 856076
+            },
+            "team_id": 36360,
+            "position": "D",
+            "is_substitute": true,
+            "statistics": {}
+          }
+        ]
+      },
+      "away": {
+        "players": []
+      }
+    },
+    "incidents": {
+      "match_id": 11605953,
+      "count": 22,
+      "incidents": [
+        {
+          "type": "period",
+          "class": null,
+          "text": "FT",
+          "is_live": false,
+          "time": 90,
+          "added_time": 999,
+          "home_score": 2,
+          "away_score": 1,
+          "is_home": null,
+          "id": null
+        },
+        {
+          "type": "injuryTime",
+          "class": null,
+          "text": null,
+          "is_live": null,
+          "time": 90,
+          "added_time": 0,
+          "home_score": null,
+          "away_score": null,
+          "is_home": null,
+          "id": null
+        },
+        {
+          "type": "card",
+          "class": "yellow",
+          "text": null,
+          "is_live": null,
+          "time": 85,
+          "added_time": null,
+          "home_score": null,
+          "away_score": null,
+          "is_home": false,
+          "id": 121059417,
+          "player": {
+            "id": 1065154
+          }
+        },
+        {
+          "type": "substitution",
+          "class": "regular",
+          "text": null,
+          "is_live": null,
+          "time": 82,
+          "added_time": null,
+          "home_score": null,
+          "away_score": null,
+          "is_home": false,
+          "id": 122280201,
+          "player_in": {
+            "id": 994053
+          },
+          "player_out": {
+            "id": 928106
+          }
+        },
+        {
+          "type": "card",
+          "class": "yellow",
+          "text": null,
+          "is_live": null,
+          "time": 81,
+          "added_time": null,
+          "home_score": null,
+          "away_score": null,
+          "is_home": false,
+          "id": 121059414,
+          "player": {
+            "id": 928106
+          }
+        },
+        {
+          "type": "substitution",
+          "class": "regular",
+          "text": null,
+          "is_live": null,
+          "time": 80,
+          "added_time": null,
+          "home_score": null,
+          "away_score": null,
+          "is_home": true,
+          "id": 122280197,
+          "player_in": {
+            "id": 791079
+          },
+          "player_out": {
+            "id": 976421
+          }
+        },
+        {
+          "type": "card",
+          "class": "yellow",
+          "text": null,
+          "is_live": null,
+          "time": 77,
+          "added_time": null,
+          "home_score": null,
+          "away_score": null,
+          "is_home": true,
+          "id": 121059406,
+          "player": {
+            "id": 168897
+          }
+        },
+        {
+          "type": "substitution",
+          "class": "regular",
+          "text": null,
+          "is_live": null,
+          "time": 74,
+          "added_time": null,
+          "home_score": null,
+          "away_score": null,
+          "is_home": true,
+          "id": 122280186,
+          "player_in": {
+            "id": 997183
+          },
+          "player_out": {
+            "id": 51785
+          }
+        },
+        {
+          "type": "substitution",
+          "class": "regular",
+          "text": null,
+          "is_live": null,
+          "time": 74,
+          "added_time": null,
+          "home_score": null,
+          "away_score": null,
+          "is_home": true,
+          "id": 122280185,
+          "player_in": {
+            "id": 835480
+          },
+          "player_out": {
+            "id": 135264
+          }
+        },
+        {
+          "type": "substitution",
+          "class": "regular",
+          "text": null,
+          "is_live": null,
+          "time": 74,
+          "added_time": null,
+          "home_score": null,
+          "away_score": null,
+          "is_home": true,
+          "id": 122280184,
+          "player_in": {
+            "id": 232306
+          },
+          "player_out": {
+            "id": 986397
+          }
+        },
+        {
+          "type": "substitution",
+          "class": "regular",
+          "text": null,
+          "is_live": null,
+          "time": 70,
+          "added_time": null,
+          "home_score": null,
+          "away_score": null,
+          "is_home": false,
+          "id": 122280170,
+          "player_in": {
+            "id": 1001201
+          },
+          "player_out": {
+            "id": 801072
+          }
+        },
+        {
+          "type": "substitution",
+          "class": "regular",
+          "text": null,
+          "is_live": null,
+          "time": 70,
+          "added_time": null,
+          "home_score": null,
+          "away_score": null,
+          "is_home": false,
+          "id": 122280171,
+          "player_in": {
+            "id": 988277
+          },
+          "player_out": {
+            "id": 857482
+          }
+        },
+        {
+          "type": "card",
+          "class": "yellow",
+          "text": null,
+          "is_live": null,
+          "time": 70,
+          "added_time": null,
+          "home_score": null,
+          "away_score": null,
+          "is_home": true,
+          "id": 121059405,
+          "player": {
+            "id": 135264
+          }
+        },
+        {
+          "type": "substitution",
+          "class": "regular",
+          "text": null,
+          "is_live": null,
+          "time": 62,
+          "added_time": null,
+          "home_score": null,
+          "away_score": null,
+          "is_home": false,
+          "id": 122280154,
+          "player_in": {
+            "id": 1065154
+          },
+          "player_out": {
+            "id": 862078
+          }
+        },
+        {
+          "type": "substitution",
+          "class": "regular",
+          "text": null,
+          "is_live": null,
+          "time": 62,
+          "added_time": null,
+          "home_score": null,
+          "away_score": null,
+          "is_home": false,
+          "id": 122280153,
+          "player_in": {
+            "id": 787448
+          },
+          "player_out": {
+            "id": 231614
+          }
+        },
+        {
+          "type": "substitution",
+          "class": "regular",
+          "text": null,
+          "is_live": null,
+          "time": 59,
+          "added_time": null,
+          "home_score": null,
+          "away_score": null,
+          "is_home": true,
+          "id": 122280147,
+          "player_in": {
+            "id": 319853
+          },
+          "player_out": {
+            "id": 945063
+          }
+        },
+        {
+          "type": "goal",
+          "class": "regular",
+          "text": null,
+          "is_live": null,
+          "time": 56,
+          "added_time": null,
+          "home_score": 2,
+          "away_score": 1,
+          "is_home": true,
+          "id": 175893324,
+          "player": {
+            "id": 51785
+          }
+        },
+        {
+          "type": "goal",
+          "class": "regular",
+          "text": null,
+          "is_live": null,
+          "time": 53,
+          "added_time": null,
+          "home_score": 1,
+          "away_score": 1,
+          "is_home": false,
+          "id": 175893241,
+          "player": {
+            "id": 928106
+          }
+        },
+        {
+          "type": "goal",
+          "class": "regular",
+          "text": null,
+          "is_live": null,
+          "time": 51,
+          "added_time": null,
+          "home_score": 1,
+          "away_score": 0,
+          "is_home": true,
+          "id": 175893090,
+          "player": {
+            "id": 986397
+          }
+        },
+        {
+          "type": "period",
+          "class": null,
+          "text": "HT",
+          "is_live": false,
+          "time": 45,
+          "added_time": 999,
+          "home_score": 0,
+          "away_score": 0,
+          "is_home": null,
+          "id": null
+        },
+        {
+          "type": "card",
+          "class": "yellow",
+          "text": null,
+          "is_live": null,
+          "time": 33,
+          "added_time": null,
+          "home_score": null,
+          "away_score": null,
+          "is_home": false,
+          "id": 121059359,
+          "player": {
+            "id": 558320
+          }
+        },
+        {
+          "type": "varDecision",
+          "class": "goalAwarded",
+          "text": null,
+          "is_live": null,
+          "time": 7,
+          "added_time": null,
+          "home_score": null,
+          "away_score": null,
+          "is_home": true,
+          "id": 22384,
+          "player": {
+            "id": 986397
+          }
+        }
+      ]
+    }
+  },
+  {
+    "pid": 556866,
+    "match": {
+      "id": 7851883,
+      "is_finished": true,
+      "status": {
+        "code": 100,
+        "type": "finished",
+        "description": "Ended"
+      },
+      "home_score": {
+        "current": 3,
+        "display": 3,
+        "periods": {
+          "period1": 2,
+          "period2": 1,
+          "normaltime": 3
+        }
+      },
+      "away_score": {
+        "current": 0,
+        "display": 0,
+        "periods": {
+          "period1": 0,
+          "period2": 0,
+          "normaltime": 0
+        }
+      },
+      "start_time": "2019-02-03T14:30:00Z",
+      "season": {
+        "id": 17597,
+        "name": "Bundesliga 18/19",
+        "year": "18/19"
+      },
+      "tournament": {
+        "id": 35,
+        "name": "Bundesliga",
+        "slug": "bundesliga",
+        "link": "https://www.sofascore.com/tournament/football/germany/bundesliga/35",
+        "image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image",
+        "dark_image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image/dark",
+        "colors": {
+          "primary": "#e2080e",
+          "secondary": "#8e0902"
+        },
+        "followers_count": 524476,
+        "category": {
+          "id": 30,
+          "name": "Germany",
+          "slug": "germany",
+          "link": "https://www.sofascore.com/football/germany",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "flag_image_link": "https://img.sofascore.com/api/v1/country/DE/flag"
+        },
+        "live_activity_enabled": true,
+        "has_player_statistics": true,
+        "group": null,
+        "is_live": false
+      },
+      "round": {
+        "number": 20,
+        "name": null,
+        "slug": null,
+        "cup_round_type": null
+      },
+      "player": {
+        "team_id": 2600,
+        "is_on_bench": false,
+        "statistics": {
+          "rating": 6.9,
+          "minutes_played": 90
+        },
+        "incidents": null
+      },
+      "home_team": {
+        "id": 2600
+      },
+      "away_team": {
+        "id": 2556
+      }
+    },
+    "lineups": {
+      "match_id": 7851883,
+      "is_confirmed": true,
+      "home": {
+        "players": [
+          {
+            "player": {
+              "id": 556866
+            },
+            "team_id": 2673,
+            "position": "G",
+            "is_substitute": false,
+            "statistics": {
+              "minutes_played": 90
+            }
+          }
+        ]
+      },
+      "away": {
+        "players": []
+      }
+    },
+    "incidents": {
+      "match_id": 7851883,
+      "count": 13,
+      "incidents": [
+        {
+          "type": "period",
+          "class": null,
+          "text": "FT",
+          "is_live": false,
+          "time": 90,
+          "added_time": 999,
+          "home_score": 3,
+          "away_score": 0,
+          "is_home": null,
+          "id": null
+        },
+        {
+          "type": "substitution",
+          "class": "regular",
+          "text": null,
+          "is_live": null,
+          "time": 88,
+          "added_time": null,
+          "home_score": null,
+          "away_score": null,
+          "is_home": true,
+          "id": 119145468,
+          "player_in": {
+            "id": 788768
+          },
+          "player_out": {
+            "id": 23666
+          }
+        },
+        {
+          "type": "card",
+          "class": "yellow",
+          "text": null,
+          "is_live": null,
+          "time": 78,
+          "added_time": null,
+          "home_score": null,
+          "away_score": null,
+          "is_home": false,
+          "id": 119104158,
+          "player": {
+            "id": 180511
+          }
+        },
+        {
+          "type": "substitution",
+          "class": "regular",
+          "text": null,
+          "is_live": null,
+          "time": 76,
+          "added_time": null,
+          "home_score": null,
+          "away_score": null,
+          "is_home": true,
+          "id": 119145467,
+          "player_in": {
+            "id": 881222
+          },
+          "player_out": {
+            "id": 576382
+          }
+        },
+        {
+          "type": "substitution",
+          "class": "regular",
+          "text": null,
+          "is_live": null,
+          "time": 73,
+          "added_time": null,
+          "home_score": null,
+          "away_score": null,
+          "is_home": false,
+          "id": 119145471,
+          "player_in": {
+            "id": 165413
+          },
+          "player_out": {
+            "id": 856553
+          }
+        },
+        {
+          "type": "substitution",
+          "class": "regular",
+          "text": null,
+          "is_live": null,
+          "time": 68,
+          "added_time": null,
+          "home_score": null,
+          "away_score": null,
+          "is_home": true,
+          "id": 119145466,
+          "player_in": {
+            "id": 105173
+          },
+          "player_out": {
+            "id": 823127
+          }
+        },
+        {
+          "type": "substitution",
+          "class": "regular",
+          "text": null,
+          "is_live": null,
+          "time": 58,
+          "added_time": null,
+          "home_score": null,
+          "away_score": null,
+          "is_home": false,
+          "id": 119145470,
+          "player_in": {
+            "id": 108538
+          },
+          "player_out": {
+            "id": 848276
+          }
+        },
+        {
+          "type": "goal",
+          "class": "regular",
+          "text": null,
+          "is_live": null,
+          "time": 54,
+          "added_time": null,
+          "home_score": 3,
+          "away_score": 0,
+          "is_home": true,
+          "id": 125080961,
+          "player": {
+            "id": 576382
+          }
+        },
+        {
+          "type": "period",
+          "class": null,
+          "text": "HT",
+          "is_live": false,
+          "time": 45,
+          "added_time": 999,
+          "home_score": 2,
+          "away_score": 0,
+          "is_home": null,
+          "id": null
+        },
+        {
+          "type": "injuryTime",
+          "class": null,
+          "text": null,
+          "is_live": null,
+          "time": 45,
+          "added_time": 0,
+          "home_score": null,
+          "away_score": null,
+          "is_home": null,
+          "id": null
+        },
+        {
+          "type": "substitution",
+          "class": "injury",
+          "text": null,
+          "is_live": null,
+          "time": 44,
+          "added_time": null,
+          "home_score": null,
+          "away_score": null,
+          "is_home": false,
+          "id": 119145469,
+          "player_in": {
+            "id": 180511
+          },
+          "player_out": {
+            "id": 40360
+          }
+        },
+        {
+          "type": "goal",
+          "class": "penalty",
+          "text": null,
+          "is_live": null,
+          "time": 34,
+          "added_time": null,
+          "home_score": 2,
+          "away_score": 0,
+          "is_home": true,
+          "id": 125080960,
+          "player": {
+            "id": 576382
+          }
+        },
+        {
+          "type": "goal",
+          "class": "penalty",
+          "text": null,
+          "is_live": null,
+          "time": 8,
+          "added_time": null,
+          "home_score": 1,
+          "away_score": 0,
+          "is_home": true,
+          "id": 125080959,
+          "player": {
+            "id": 576382
+          }
+        }
+      ]
+    }
+  },
+  {
+    "pid": 556866,
+    "match": {
+      "id": 7851916,
+      "is_finished": true,
+      "status": {
+        "code": 100,
+        "type": "finished",
+        "description": "Ended"
+      },
+      "home_score": {
+        "current": 1,
+        "display": 1,
+        "periods": {
+          "period1": 1,
+          "period2": 0,
+          "normaltime": 1
+        }
+      },
+      "away_score": {
+        "current": 3,
+        "display": 3,
+        "periods": {
+          "period1": 2,
+          "period2": 1,
+          "normaltime": 3
+        }
+      },
+      "start_time": "2019-04-14T16:00:00Z",
+      "season": {
+        "id": 17597,
+        "name": "Bundesliga 18/19",
+        "year": "18/19"
+      },
+      "tournament": {
+        "id": 35,
+        "name": "Bundesliga",
+        "slug": "bundesliga",
+        "link": "https://www.sofascore.com/tournament/football/germany/bundesliga/35",
+        "image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image",
+        "dark_image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image/dark",
+        "colors": {
+          "primary": "#e2080e",
+          "secondary": "#8e0902"
+        },
+        "followers_count": 524476,
+        "category": {
+          "id": 30,
+          "name": "Germany",
+          "slug": "germany",
+          "link": "https://www.sofascore.com/football/germany",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "flag_image_link": "https://img.sofascore.com/api/v1/country/DE/flag"
+        },
+        "live_activity_enabled": true,
+        "has_player_statistics": true,
+        "group": null,
+        "is_live": false
+      },
+      "round": {
+        "number": 29,
+        "name": null,
+        "slug": null,
+        "cup_round_type": null
+      },
+      "player": {
+        "team_id": 2600,
+        "is_on_bench": false,
+        "statistics": {
+          "rating": 6.5,
+          "minutes_played": 40
+        },
+        "incidents": null
+      },
+      "home_team": {
+        "id": 2674
+      },
+      "away_team": {
+        "id": 2600
+      }
+    },
+    "lineups": {
+      "match_id": 7851916,
+      "is_confirmed": true,
+      "home": {
+        "players": []
+      },
+      "away": {
+        "players": [
+          {
+            "player": {
+              "id": 556866
+            },
+            "team_id": 2673,
+            "position": "G",
+            "is_substitute": false,
+            "statistics": {
+              "minutes_played": 40
+            }
+          }
+        ]
+      }
+    },
+    "incidents": {
+      "match_id": 7851916,
+      "count": 18,
+      "incidents": [
+        {
+          "type": "period",
+          "class": null,
+          "text": "FT",
+          "is_live": false,
+          "time": 90,
+          "added_time": 999,
+          "home_score": 1,
+          "away_score": 3,
+          "is_home": null,
+          "id": null
+        },
+        {
+          "type": "substitution",
+          "class": "regular",
+          "text": null,
+          "is_live": null,
+          "time": 90,
+          "added_time": 2,
+          "home_score": null,
+          "away_score": null,
+          "is_home": false,
+          "id": 119234843,
+          "player_in": {
+            "id": 4640
+          },
+          "player_out": {
+            "id": 105173
+          }
+        },
+        {
+          "type": "injuryTime",
+          "class": null,
+          "text": null,
+          "is_live": null,
+          "time": 90,
+          "added_time": 0,
+          "home_score": null,
+          "away_score": null,
+          "is_home": null,
+          "id": null
+        },
+        {
+          "type": "goal",
+          "class": "regular",
+          "text": null,
+          "is_live": null,
+          "time": 84,
+          "added_time": null,
+          "home_score": 1,
+          "away_score": 3,
+          "is_home": false,
+          "id": 125741528,
+          "player": {
+            "id": 111483
+          }
+        },
+        {
+          "type": "substitution",
+          "class": "regular",
+          "text": null,
+          "is_live": null,
+          "time": 83,
+          "added_time": null,
+          "home_score": null,
+          "away_score": null,
+          "is_home": false,
+          "id": 119234842,
+          "player_in": {
+            "id": 37733
+          },
+          "player_out": {
+            "id": 576382
+          }
+        },
+        {
+          "type": "card",
+          "class": "yellow",
+          "text": null,
+          "is_live": null,
+          "time": 69,
+          "added_time": null,
+          "home_score": null,
+          "away_score": null,
+          "is_home": true,
+          "id": 119173665,
+          "player": {
+            "id": 152769
+          }
+        },
+        {
+          "type": "substitution",
+          "class": "regular",
+          "text": null,
+          "is_live": null,
+          "time": 66,
+          "added_time": null,
+          "home_score": null,
+          "away_score": null,
+          "is_home": true,
+          "id": 119234840,
+          "player_in": {
+            "id": 13028
+          },
+          "player_out": {
+            "id": 35194
+          }
+        },
+        {
+          "type": "substitution",
+          "class": "regular",
+          "text": null,
+          "is_live": null,
+          "time": 54,
+          "added_time": null,
+          "home_score": null,
+          "away_score": null,
+          "is_home": true,
+          "id": 119234839,
+          "player_in": {
+            "id": 190917
+          },
+          "player_out": {
+            "id": 138890
+          }
+        },
+        {
+          "type": "card",
+          "class": "yellowRed",
+          "text": null,
+          "is_live": null,
+          "time": 47,
+          "added_time": null,
+          "home_score": null,
+          "away_score": null,
+          "is_home": true,
+          "id": 119173664,
+          "player": {
+            "id": 15857
+          }
+        },
+        {
+          "type": "period",
+          "class": null,
+          "text": "HT",
+          "is_live": false,
+          "time": 45,
+          "added_time": 999,
+          "home_score": 1,
+          "away_score": 2,
+          "is_home": null,
+          "id": null
+        },
+        {
+          "type": "goal",
+          "class": "regular",
+          "text": null,
+          "is_live": null,
+          "time": 45,
+          "added_time": 4,
+          "home_score": 1,
+          "away_score": 2,
+          "is_home": false,
+          "id": 125741527,
+          "player": {
+            "id": 796027
+          }
+        },
+        {
+          "type": "card",
+          "class": "yellow",
+          "text": null,
+          "is_live": null,
+          "time": 45,
+          "added_time": 1,
+          "home_score": null,
+          "away_score": null,
+          "is_home": false,
+          "id": 119173666,
+          "player": {
+            "id": 111483
+          }
+        },
+        {
+          "type": "injuryTime",
+          "class": null,
+          "text": null,
+          "is_live": null,
+          "time": 45,
+          "added_time": 0,
+          "home_score": null,
+          "away_score": null,
+          "is_home": null,
+          "id": null
+        },
+        {
+          "type": "card",
+          "class": "yellow",
+          "text": null,
+          "is_live": null,
+          "time": 41,
+          "added_time": null,
+          "home_score": null,
+          "away_score": null,
+          "is_home": true,
+          "id": 119173663,
+          "player": {
+            "id": 15857
+          }
+        },
+        {
+          "type": "substitution",
+          "class": "injury",
+          "text": null,
+          "is_live": null,
+          "time": 40,
+          "added_time": null,
+          "home_score": null,
+          "away_score": null,
+          "is_home": false,
+          "id": 119234841,
+          "player_in": {
+            "id": 40372
+          },
+          "player_out": {
+            "id": 556866
+          }
+        },
+        {
+          "type": "goal",
+          "class": "regular",
+          "text": null,
+          "is_live": null,
+          "time": 31,
+          "added_time": null,
+          "home_score": 1,
+          "away_score": 1,
+          "is_home": false,
+          "id": 125741526,
+          "player": {
+            "id": 796027
+          }
+        },
+        {
+          "type": "substitution",
+          "class": "injury",
+          "text": null,
+          "is_live": null,
+          "time": 26,
+          "added_time": null,
+          "home_score": null,
+          "away_score": null,
+          "is_home": true,
+          "id": 119234838,
+          "player_in": {
+            "id": 848287
+          },
+          "player_out": {
+            "id": 114777
+          }
+        },
+        {
+          "type": "goal",
+          "class": "regular",
+          "text": null,
+          "is_live": null,
+          "time": 14,
+          "added_time": null,
+          "home_score": 1,
+          "away_score": 0,
+          "is_home": true,
+          "id": 125741525,
+          "player": {
+            "id": 138890
+          }
+        }
+      ]
+    }
+  }
+]

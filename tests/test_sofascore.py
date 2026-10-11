@@ -138,6 +138,50 @@ class API:
     def quota_status(self): return {'remaining': 999}
 
 
+@pytest.mark.parametrize('tid,league_title', [(1079,'Региональная лига «Юго-Запад»'),(1085,'Региональная лига «Бавария»')])
+def test_regional_season_is_collected_and_builds_its_own_league_table(tid,league_title):
+    class Regional(API):
+        def seasons(self,pid):
+            return {'player_id':pid,'statistics_types':{str(tid):{'26':['overall']}},
+                'tournament_seasons':[{'tournament':{'id':tid},'seasons':[{'id':26,'year':'26/27'}]}]}
+        def statistics(self,pid,tournament,sid,part):
+            assert tournament==tid and part=='overall'
+            return super().statistics(pid,tournament,sid,part)
+        def matches(self,pid,max_pages=12):
+            return {'complete':True,'matches':[match(i,tournament=tid) for i in range(1,6)]}
+    _,plan,evidence=prepare(MINI.split('{{КлСтат|')[0],Regional())
+    assert not any(r['code']=='competition_unmapped' for r in evidence['review'])
+    assert '[['+league_title+']]' in plan.preview
+    assert '{{КлСтат/Сезон|2026/27|5|2}}' in plan.preview
+
+
+def test_failed_reserve_league_does_not_hide_verified_primary_league():
+    class ReserveFailure(API):
+        def seasons(self,pid):
+            result=super().seasons(pid)
+            result['tournament_seasons'].append({'tournament':{'id':1085},'seasons':[{'id':99,'year':'26/27'}]})
+            return result
+        def statistics(self,pid,tid,sid,part):
+            if tid==1085:raise UpdateError('club_ambiguous','Reserve team not specified')
+            return super().statistics(pid,tid,sid,part)
+    _,plan,evidence=prepare(api=ReserveFailure())
+    assert any(r['code']=='club_ambiguous' and r['tournament_id']==1085 for r in evidence['review'])
+    assert any(c.operation.get('competition',{}).get('category')=='Чемпионат' and c.status=='ready' for c in plan.changes)
+
+def test_multiple_missing_seasons_use_newly_inserted_anchor():
+    class ThreeSeasons(API):
+        def seasons(self,pid):
+            return {'player_id':pid,'statistics_types':{'35':{str(y):['overall','home','away'] for y in (24,25,26)}},
+                'tournament_seasons':[{'tournament':{'id':35},'seasons':[{'id':y,'year':f'{y}/{y+1}'} for y in (24,25,26)]}]}
+    card=MINI.split('{{КлСтат|')[0]
+    text=card+'{{КлСтат|Чемпионат}}\n'+\
+        '{{КлСтат/Клуб|'+AUGSBURG+'|сезоны=1}}\n{{КлСтат/Лига|[[Чемпионат Германии по футболу|Бундеслига]]|сезоны=1}}\n'+\
+        '{{КлСтат/Сезон|2024/25|4|1}}\n{{КлСтат/ИтогоЗаКлуб||4|1}}\n{{КлСтат/Итого|4|1}}'
+    pkg,plan,report=prepare(text,ThreeSeasons())
+    assert all(c.status in ('ready','already_applied') for c in plan.changes)
+    assert [r.season for r in __import__('wiki_stats.wikitext_parser',fromlist=['WikitextParser']).WikitextParser(plan.preview).club_table().seasons]==['2024/25','2025/26','2026/27']
+
+
 def prepare(text=MINI, api=None):
     text = text.replace('| имя =', '| дата рождения = 22.08.1999\n| имя =').replace('2025/26', '2026/27')
     return prepare_player(snapshot(text), {'api_id': 1, 'qid': 'Q114406918', 'title': 'Игрок',
@@ -157,6 +201,59 @@ def test_full_pipeline_updates_card_table_totals_number_leaves_national():
     assert any(r['code'] == 'global_date_incomplete_coverage' for r in evidence['review'])
 
 
+def test_football_career_alias_is_migrated_to_canonical_template():
+    _, plan, _ = prepare(MINI.replace('спортивная карьера', 'футбольная карьера'))
+    assert '{{футбольная карьера' not in plan.preview
+    assert any(c.operation['type']=='migrate_career_template' for c in plan.changes)
+    assert all(c.status in {'ready', 'already_applied'} for c in plan.changes)
+
+
+def test_negative_career_without_goalkeeper_position_stops_collection():
+    with pytest.raises(UpdateError) as exc:
+        prepare(MINI.replace('4 (1)', '4 (-1)'))
+    assert exc.value.code == 'goal_metric_mismatch'
+
+
+def test_sandbox_birthday_allows_single_digit_day_and_month():
+    from dataclasses import replace
+    class BirthdayWiki(Wiki):
+        def get_wikidata_entity(self, qid):
+            result = super().get_wikidata_entity(qid)
+            result['claims']['P569'][0]['mainsnak']['datavalue']['value']['time'] = '+1999-08-02T00:00:00Z'
+            return result
+    class BirthdayAPI(API):
+        def details(self, pid):
+            return {**super().details(pid), 'date_of_birth':'1999-08-02'}
+    text=MINI.replace('| имя =','| дата рождения = 2.8.1999\n| имя =').replace('2025/26','2026/27')
+    _, plan, _ = prepare_player(replace(snapshot(text),title='Участник:Zambrowski/testbot4',namespace=2),
+        {'api_id':1,'qid':'Q114406918','title':'Игрок','wiki_name':'Кальвин Браккельман','birth_date':'1999-08-02'},
+        BirthdayAPI(), BirthdayWiki(), Resolver(), now=datetime(2026,10,9,tzinfo=timezone.utc))
+    assert plan.diff
+
+
+def test_missing_season_keeps_incomplete_table_out_of_publishable_plans():
+    class PartialAPI(API):
+        def seasons(self,pid):
+            result=super().seasons(pid)
+            result['tournament_seasons'][0]['seasons'].append({'id':25,'year':'25/26'})
+            return result
+    pkg,plan,evidence=prepare(api=PartialAPI())
+    assert plan.diff and not plan.publishable
+    assert any('2025/26' in warning and 'полнота' in warning for warning in plan.warnings)
+    assert any(r['code']=='new_row_needs_all_categories' for r in evidence['review'])
+    missing = next(r for r in evidence['review'] if r['code']=='new_row_needs_all_categories')
+    assert missing['league_status']=='confirmed'
+    assert missing['missing_categories']==['Национальный кубок','Еврокубки','Стыковые матчи']
+    assert all(category in ' '.join(plan.warnings) for category in missing['missing_categories'])
+    assert all(c.source_verification=='existing_table_arithmetic' for c in plan.changes if c.operation['type']=='update_totals')
+    from wiki_stats.change_planner import plan_article
+    imported=plan_article(plan.snapshot,pkg['articles'][0],'1.1',Resolver())
+    assert imported.warnings==plan.warnings and not imported.publishable
+    _,migrated,_=prepare(MINI.replace('спортивная карьера','футбольная карьера'),api=PartialAPI())
+    assert migrated.diff and not migrated.publishable
+    assert any('2025/26' in warning for warning in migrated.warnings)
+
+
 def test_missing_statistics_never_becomes_zero():
     api = API()
     api.statistics = lambda *a: {'player_id': 1, 'tournament_id': 35, 'season_id': 26,
@@ -164,6 +261,26 @@ def test_missing_statistics_never_becomes_zero():
     _, plan, evidence = prepare(api=api)
     assert '{{КлСтат/Сезон|2026/27|4|1|' in plan.preview
     assert any(r['code'] == 'incomplete_statistics' for r in evidence['review'])
+
+
+def test_unavailable_season_does_not_stop_independent_season_collection():
+    class OneFailedSeason(API):
+        calls = None
+        def __init__(self): self.calls = []
+        def seasons(self, pid):
+            result = super().seasons(pid)
+            result['tournament_seasons'][0]['seasons'].append({'id':25,'year':'25/26'})
+            return result
+        def statistics(self, pid, tid, sid, part):
+            self.calls.append(sid)
+            if sid == 26:
+                raise UpdateError('api_unavailable', 'One unavailable season')
+            return super().statistics(pid, tid, sid, part)
+    api = OneFailedSeason()
+    _, _, evidence = prepare(api=api)
+    assert api.calls == [26,25]
+    assert evidence['covered_statistics'] == 1
+    assert any(r['code']=='api_unavailable' and r['season']=='2026/27' for r in evidence['review'])
 
 
 def test_older_match_date_never_regresses_card_date():
@@ -263,13 +380,43 @@ def test_overall_fallback_requires_complete_non_playoff_match_count():
     assert any(r['code']=='overall_league_unproven' for r in report['review'])
 
 
+@pytest.mark.parametrize('types,accepted', [
+    (['overall','home','away'],True), (['overall'],True),
+    (['overall','playoffs'],False), (['home','away'],False), (None,False)])
+def test_advertised_football_scope_does_not_need_complete_career_history(types, accepted):
+    class AdvertisedAPI(API):
+        def seasons(self,pid):
+            result=super().seasons(pid)
+            result['statistics_types']={'35':{'26':types}}
+            return result
+        def statistics(self,pid,tid,sid,part):
+            if part=='regularSeason':raise UpdateError('api_not_found','404')
+            return super().statistics(pid,tid,sid,part)
+        def matches(self,*args,**kwargs):return {'complete':False,'matches':[match()]}
+    _,plan,report=prepare(api=AdvertisedAPI())
+    assert ('{{КлСтат/Сезон|2026/27|5|2|' in plan.preview) == accepted
+    assert report['covered_statistics'] == (1 if accepted else 0)
+
+
+def test_declared_scope_cannot_override_observed_playoff():
+    class PlayoffAPI(API):
+        def seasons(self,pid):
+            return {**super().seasons(pid),'statistics_types':{'35':{'26':['overall','home','away']}}}
+        def matches(self,*args,**kwargs):
+            row=match();row['round']={'cup_round_type':1}
+            return {'complete':False,'matches':[row]}
+    _,plan,report=prepare(api=PlayoffAPI())
+    assert '{{КлСтат/Сезон|2026/27|4|1|' in plan.preview
+    assert any(r['code']=='overall_league_unproven' for r in report['review'])
+
+
 def test_pipeline_can_create_missing_partial_section_without_inventing_cup_zeros():
     text = MINI[:MINI.index('{{КлСтат|')]
     _,plan,report = prepare(text)
     assert all(c.status in {'ready','already_applied'} for c in plan.changes)
     assert '== Статистика выступлений ==' in plan.preview
     assert '{{КлСтат|Чемпионат}}' in plan.preview
-    assert 'полный итог карьеры не заявляется' in plan.preview
+    assert 'полный итог карьеры не заявляется' not in plan.preview
     assert '{{КлСтат/Сезон|2026/27|5|2}}' in plan.preview
 
 
@@ -338,3 +485,184 @@ def test_pool_rejects_duplicate_keys_and_reflected_secrets():
     api=SofascoreClient(store,keys=['KEY_A','KEY_B'],session=session)
     with pytest.raises(UpdateError): api.request('/search',{'query':'x'})
     assert not any(bucket=='cache' for bucket,_ in store.data)
+
+@pytest.mark.parametrize('period', ['2023—{{н.в.}}','2023—{{н. в.}}','2023—{{ н. в. }}','2023—{{НВ}}'])
+def test_current_period_variants_are_recognized_without_rewriting(period):
+    from wiki_stats.structural_editor import is_active_period, validate_period
+    assert is_active_period(period)
+    assert validate_period(period)==2023
+
+@pytest.mark.parametrize('fail_second', [False,True])
+def test_european_competitions_are_summed_only_when_all_queries_succeed(fail_second):
+    class EuropeAPI(API):
+        def seasons(self,pid):
+            result=super().seasons(pid)
+            for tid in [7,679]:
+                result['tournament_seasons'].append({'tournament':{'id':tid},'seasons':[{'id':26,'year':'26/27'}]})
+            return result
+        def statistics(self,pid,tid,sid,part):
+            if tid==7 and fail_second:raise UpdateError('api_unavailable','One European competition failed')
+            result=super().statistics(pid,tid,sid,part)
+            result['statistics']={'appearances':2 if tid==7 else 3,'goals':1}
+            return result
+        def matches(self,*args,**kwargs):
+            return {'complete':True,'matches':[match()]+[match(10+i,tournament=tid) for tid,count in [(7,2),(679,3)] for i in range(count)]}
+    _,plan,report=prepare(api=EuropeAPI())
+    changes=[c for c in plan.changes if c.operation.get('competition',{}).get('category')=='Еврокубки']
+    assert bool(changes)==(not fail_second)
+    if changes:assert changes[0].operation['new']=={'appearances':5,'goals':2}
+
+def test_european_main_round_statistics_do_not_erase_qualification():
+    class QualifyingAPI(API):
+        def seasons(self,pid):
+            result=super().seasons(pid)
+            result['tournament_seasons'].append({'tournament':{'id':679},'seasons':[{'id':26,'year':'26/27'}]})
+            return result
+        def statistics(self,pid,tid,sid,part):
+            result=super().statistics(pid,tid,sid,part)
+            if tid==679:result['statistics']={'appearances':5,'goals':0}
+            return result
+        def matches(self,*args,**kwargs):
+            rows=[match()]+[match(i,tournament=679) for i in range(10,21)]
+            for row in rows[1:]:row['season']['year']='26/27'
+            for row in rows[1:7]:row['season']['id']=99
+            return {'complete':True,'matches':rows}
+    _,plan,report=prepare(api=QualifyingAPI())
+    assert not any(c.operation.get('competition',{}).get('category')=='Еврокубки' for c in plan.changes)
+    assert any(r['code']=='european_scope_unproven' and r['history_appearances']==11 for r in report['review'])
+
+
+def test_european_total_includes_qualifiers_of_an_unindexed_competition():
+    class MissingChampionsIndex(API):
+        def seasons(self,pid):
+            result=super().seasons(pid)
+            result['tournament_seasons'].append({'tournament':{'id':679},'seasons':[{'id':26,'year':'26/27'}]})
+            return result
+        def statistics(self,pid,tid,sid,part):
+            result=super().statistics(pid,tid,sid,part)
+            if tid==679:result['statistics']={'appearances':5,'goals':1}
+            return result
+        def matches(self,*args,**kwargs):
+            rows=[match()]+[match(i,tournament=679) for i in range(10,15)]+[match(i,tournament=7) for i in range(20,23)]
+            for row in rows[1:]:row['season']['year']='26/27'
+            return {'complete':True,'matches':rows}
+    _,plan,report=prepare(api=MissingChampionsIndex())
+    assert not any(c.operation.get('competition',{}).get('category')=='Еврокубки' for c in plan.changes)
+    assert any(r['code']=='european_category_incomplete' for r in report['review'])
+
+@pytest.mark.parametrize('api_apps,accepted',[(5,True),(6,False)])
+def test_mid_season_transfer_does_not_attribute_other_club_games(api_apps,accepted):
+    class SplitAPI(API):
+        def seasons(self,pid):
+            return {**super().seasons(pid),'statistics_types':{'35':{'26':['overall','home','away']}}}
+        def statistics(self,pid,tid,sid,part):
+            result=super().statistics(pid,tid,sid,part);result['statistics']['appearances']=api_apps;return result
+        def transfers(self,pid):
+            return {'player_id':pid,'transfers':[{'transfer_date':'2026-08-01','transfer_from':{'id':99},'transfer_to':{'id':2600}}]}
+        def matches(self,*args,**kwargs):
+            rows=[match(i) for i in range(1,6)]
+            other=match(10);other['player']['team_id']=99;other['away_team']['id']=2600
+            return {'complete':True,'matches':rows+[other]}
+    _,plan,report=prepare(api=SplitAPI())
+    assert any(c.operation['type']=='update_stats' for c in plan.changes)==accepted
+    assert any(r['code']=='multi_club_season_unproven' for r in report['review'])== (not accepted)
+
+def test_european_sum_does_not_ignore_unqueried_competition_at_request_cap():
+    class CappedAPI(API):
+        def seasons(self,pid):
+            return {'player_id':pid,'tournament_seasons':[
+                {'tournament':{'id':tid},'seasons':[{'id':26,'year':'26/27'}]} for tid in [35,7,679]]}
+    text=MINI.replace('| имя =','| дата рождения = 22.08.1999\n| имя =').replace('2025/26','2026/27')
+    _,plan,report=prepare_player(snapshot(text),{'api_id':1,'qid':'Q114406918','title':'Игрок',
+        'wiki_name':'Кальвин Браккельман','birth_date':'1999-08-22'},CappedAPI(),Wiki(),Resolver(),
+        now=datetime(2026,10,9,tzinfo=timezone.utc),max_requests=2)
+    assert not any(c.operation.get('competition',{}).get('category')=='Еврокубки' for c in plan.changes)
+    assert any(r['code']=='collection_capped' for r in report['review'])
+
+@pytest.mark.parametrize('arrival,expected', [('2026-07-01',True),('2025-07-01',False),('2027-07-01',False)])
+def test_unknown_active_period_requires_matching_past_transfer(arrival,expected):
+    class PeriodAPI(API):
+        def transfers(self,pid):
+            return {'player_id':pid,'transfers':[{'transfer_date':arrival,'transfer_to':self.details(pid)['team'],
+                'transfer_from':{'id':99,'name':'Аугсбург'}} ]}
+    raw=MINI.replace('2026—{{н.в.}}','2026—?')
+    _,plan,_=prepare(raw,api=PeriodAPI())
+    repaired=any(c.id=='restore-active-career-period' and c.status in ('ready','already_applied') for c in plan.changes)
+    assert repaired==expected
+    if expected:
+        assert '2026—?' not in plan.preview
+        assert '2026—{{н.в.}}' in plan.preview
+
+
+def test_unknown_period_operation_checks_current_club_and_preserves_notes():
+    op=operation('period','update_career_period',entity={'name':'Аугсбург','kind':'club','wikidata_id':'Q15755','wikitext':AUGSBURG},
+        target={'structure':'career','field':'клубы','period':'2026—?'},
+        payload={'period':'2026—{{н.в.}}','restore_unknown_end':True,'arrival_date':'2026-07-01'})
+    raw=MINI.replace('2026—{{н.в.}}','2026—?')
+    fixed,status=execute_operation(raw,'Кальвин Браккельман',op,Resolver())
+    assert status=='ready' and '<ref name="x"/>' in fixed
+    assert execute_operation(fixed,'Кальвин Браккельман',op,Resolver())[1]=='already_applied'
+    op['payload']['arrival_date']='2025-07-01'
+    with pytest.raises(UpdateError):execute_operation(raw,'Кальвин Браккельман',op,Resolver())
+
+def test_loan_season_label_matches_source_without_creating_another_season():
+ raw=MINI.replace('{{КлСтат/Сезон|2025/26|','{{КлСтат/Сезон|2025/26 (аренда)|')
+ _,plan,report=prepare(raw)
+ assert '{{КлСтат/Сезон|2026/27 (аренда)|5|2|' in plan.preview
+ assert not any(c.operation['type']=='add_season' for c in plan.changes)
+ assert not any(r['code']=='new_row_needs_all_categories' for r in report['review'])
+
+@pytest.mark.parametrize('change,zero', [('none',True),('incomplete',False),('count',False),('cup',False),('bench',True),('unknown_minutes',False)])
+def test_absent_category_zero_requires_complete_anchored_closed_season(change,zero):
+    from wiki_stats.sofascore_cycle import absent_category_zero
+    league={'season':'2025/26','team_id':2600,'tournament_id':35,'season_id':25,'numbers':{'appearances':1,'goals':0}}
+    old=match(1,day='2024-01-01');old['season']['id']=24
+    played=match(2,day='2025-09-01');played['season']={'id':25,'year':'25/26'}
+    latest=match(3,day='2026-09-01')
+    history={'complete':True,'matches':[old,played,latest]}
+    if change=='incomplete':history['complete']=False
+    if change=='count':league['numbers']['appearances']=2
+    if change in ('cup','bench','unknown_minutes'):
+        cup=match(4,day='2025-10-01',tournament=217,minutes=0 if change=='bench' else 90)
+        cup['season']={'id':52,'year':'25/26'}
+        if change=='unknown_minutes':cup['player']['statistics']={}
+        history['matches'].append(cup)
+    result=absent_category_zero(history,league,'Национальный кубок',datetime(2026,10,9,tzinfo=timezone.utc))
+    assert (result=={'appearances':0,'goals':0})==zero
+
+
+@pytest.mark.parametrize('extra,expected', [('bench',True),('missing_played',False),('playoff',False)])
+def test_unknown_league_bench_does_not_hide_proven_absent_category(extra,expected):
+    from wiki_stats.sofascore_cycle import absent_category_zero
+    league={'season':'2025/26','team_id':2600,'tournament_id':35,'season_id':25,'numbers':{'appearances':1,'goals':0}}
+    old=match(1,day='2024-01-01');old['season']['id']=24
+    played=match(2,day='2025-09-01');played['season']={'id':25,'year':'25/26'}
+    latest=match(3,day='2026-09-01')
+    bench=match(4,day='2025-10-01');bench['season']={'id':25,'year':'25/26'}
+    bench['player']['statistics']=None
+    if extra=='missing_played':league['numbers']['appearances']=2
+    if extra=='playoff':bench['round']={'name':'Relegation playoffs'}
+    result=absent_category_zero({'complete':True,'matches':[old,played,bench,latest]},league,'Прочие',datetime(2026,10,9,tzinfo=timezone.utc))
+    assert (result=={'appearances':0,'goals':0})==expected
+
+
+def test_supported_plain_league_label_allows_restoring_a_missing_season():
+    from wiki_stats.klstat_editor import same_league_name
+    assert same_league_name('Бундеслига','[[Чемпионат Германии по футболу|Бундеслига]]')
+    assert not same_league_name('Бундеслига','[[Чемпионат Испании|Бундеслига]]')
+    class ClosedAPI(API):
+        def seasons(self,pid):
+            result=super().seasons(pid)
+            result['tournament_seasons'][0]['seasons'].append({'id':25,'year':'25/26'})
+            return result
+        def matches(self,*args,**kwargs):
+            rows=[match(1,day='2024-01-01')]+[match(i,day='2025-10-01') for i in range(2,7)]+[match(7,day='2026-09-01')]
+            for row in rows[1:6]:row['season']={'id':25,'year':'25/26'}
+            return {'complete':True,'matches':rows}
+    text=MINI.replace('[[Чемпионат Германии по футболу|Бундеслига]]','Бундеслига')
+    pkg,plan,report=prepare(text,api=ClosedAPI())
+    assert any(c.operation['type']=='add_season' and c.status=='ready' for c in plan.changes)
+    assert '{{КлСтат/Сезон|2025/26|5|2|0|0|0|0|0|0}}' in plan.preview
+    assert any(r['code']=='zero_from_complete_match_history' for r in report['review'])
+    replay=__import__('wiki_stats.change_planner',fromlist=['plan_article']).plan_article(snapshot(plan.preview),pkg['articles'][0],'1.1',Resolver())
+    assert not replay.diff and all(c.status=='already_applied' for c in replay.changes)

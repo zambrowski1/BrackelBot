@@ -19,6 +19,7 @@ from .transactions import plan_fingerprint
 from .json_loader import load_package
 from .change_planner import plan_package
 from .api_provider import ProviderStore
+from .sofascore_limits import DEFAULT_STATISTICS, DEFAULT_MATCH_PAGES, DEFAULT_MATCH_REQUESTS
 
 
 def make_api(store):
@@ -64,7 +65,9 @@ def parser():
     ss=sub.add_parser('prepare-player');ss.add_argument('api_id',type=int);ss.add_argument('--title',required=True)
     ss.add_argument('--identity-title',required=True);ss.add_argument('--qid',required=True);ss.add_argument('--wiki-name',required=True)
     ss.add_argument('--package-out',default='sofascore-package.json');ss.add_argument('--report',default='sofascore-report.json')
-    ss.add_argument('--max-statistics',type=int,default=24);ss.add_argument('--max-match-pages',type=int,default=12)
+    ss.add_argument('--max-statistics',type=int,default=DEFAULT_STATISTICS);ss.add_argument('--max-match-pages',type=int,default=DEFAULT_MATCH_PAGES)
+    ss.add_argument('--max-match-requests',type=int,default=DEFAULT_MATCH_REQUESTS)
+    ss.add_argument('--statistics-since',type=int,default=2020,help='Первый сезон КлСтат для обновления; по умолчанию 2020/21. Более ранние строки сохраняются.')
     clubs=sub.add_parser('club-list');clubs.add_argument('--tier',type=int,choices=(1,2,3));clubs.add_argument('--season',type=int,default=2026)
     run=sub.add_parser('run');run.add_argument('--season',type=int,default=2026)
     modes=run.add_mutually_exclusive_group()
@@ -116,7 +119,7 @@ def main(argv=None):
         if args.command=='prepare-player':
             if args.provider != 'sofascore':
                 raise UpdateError('provider_invalid','Эта команда требует --provider sofascore')
-            if not 1<=args.max_statistics<=100 or not 1<=args.max_match_pages<=30:
+            if not 1<=args.max_statistics<=100 or not 1<=args.max_match_pages<=30 or not 0<=args.max_match_requests<=2000:
                 raise UpdateError('invalid_input','Неверные ограничения сбора')
             from .sofascore_cycle import prepare_player
             from .entity_resolver import EntityResolver
@@ -128,7 +131,7 @@ def main(argv=None):
                 mapping={'api_id':args.api_id,'qid':args.qid,'title':args.identity_title,
                          'wiki_name':args.wiki_name,'birth_date':profile.get('date_of_birth')}
                 pkg,plan,evidence=prepare_player(wiki.fetch_page(args.title),mapping,api,wiki,EntityResolver(wiki),
-                    max_requests=args.max_statistics,max_match_pages=args.max_match_pages)
+                    max_requests=args.max_statistics,max_match_pages=args.max_match_pages,max_match_requests=args.max_match_requests,statistics_since=args.statistics_since)
                 report=make_report(pkg,[plan],[])
                 report['collection']=evidence
                 report['plan_hashes']=[queue_plan(store,plan,'sofascore-'+uuid4().hex)] if plan.diff else []

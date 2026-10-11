@@ -45,6 +45,26 @@ def test_new_club_verified_totals_and_repeat():
     assert planned([op],first.preview).changes[0].status=='already_applied'
 
 
+def test_historical_club_can_be_inserted_before_first_block():
+    op=add_block();op['season']='2024/25'
+    op['payload']['insert_before_club']=op['payload'].pop('insert_after_club')
+    first=planned([op]);assert first.changes[0].status=='ready'
+    clubs=list(table_layout(WikitextParser(first.preview)))
+    assert clubs==[BVB,TABLE_AUGSBURG]
+    assert not arithmetic_warnings(first.preview)
+    assert planned([op],first.preview).changes[0].status=='already_applied'
+
+
+def test_confirmed_range_notice_tracks_added_historical_season():
+    notice = "В таблице представлены только подтверждённые сезоны 2025—2026 годов; полный итог карьеры не заявляется."
+    op=add_block();op['season']='2024/25'
+    op['payload']['insert_before_club']=op['payload'].pop('insert_after_club')
+    first=planned([op],notice+'\n'+MINI)
+    assert first.changes[0].status=='ready'
+    assert notice.replace('2025—2026','2024—2026') in first.preview
+    assert not planned([op],first.preview).diff
+
+
 def test_new_club_rejects_wrong_wikilink():
     op=add_block();op['entity']['wikitext']=WERDER
     assert planned([op]).changes[0].status=='entity_mismatch'

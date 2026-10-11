@@ -4,6 +4,8 @@ from .errors import UpdateError
 
 def map_statistics(parser, player, op):
     parser.infobox(player)
+    from .goalkeeper import validate_goal_values
+    validate_goal_values(parser, player, op)
     target = op["target"]
     entity = op["entity"]["wikitext"].strip()
     if target["structure"] == "career":
@@ -24,4 +26,4 @@ def map_statistics(parser, player, op):
         raise UpdateError("ambiguous_target" if matches else "season_not_found", "Клуб и сезон не определяют единственную строку")
     index = table.categories.index(category)
     p = matches[0].values
-    return {"appearances": p[str(2+2*index)].numeric()[0], "goals": p[str(3+2*index)].numeric()[0]}
+    return {"appearances": p[str(2+2*index)].numeric()[0], "goals": p[str(3+2*index)].numeric(signed=True)[0]}

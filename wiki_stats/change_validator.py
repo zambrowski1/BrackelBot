@@ -1,6 +1,7 @@
 # SPDX-License-Identifier: MIT
 from collections import defaultdict
 import mwparserfromhell as mw
+import re
 from .errors import UpdateError
 from .wikitext_parser import WikitextParser
 
@@ -11,7 +12,7 @@ def apply_patches(text, patches, structural=False):
     for p in ordered:
         if p.start < end or p.start < 0 or p.end > len(text) or text[p.start:p.end] != p.before:
             raise UpdateError("patch_conflict", "Пересекающиеся правки или неверные границы")
-        if not structural and (not p.before.isascii() or not p.before.isdigit() or not p.after.isascii() or not p.after.isdigit()):
+        if not structural and (not re.fullmatch(r"[-−]?[0-9]+|[-—–]", p.before) or not p.after.isascii() or not re.fullmatch(r"-?[0-9]+", p.after)):
             raise UpdateError("integrity_error", "На первом этапе разрешена только замена целых чисел")
         end = p.end
     result = text
@@ -38,12 +39,18 @@ def arithmetic_warnings(text):
     sums = defaultdict(lambda: [0]*width)
     for row in table.seasons:
         for i in range(width):
-            sums[row.club][i] += row.values[str(i+2)].numeric()[0].value
+            sums[row.club][i] += row.values[str(i+2)].numeric(signed=bool(i % 2))[0].value
     warnings = []
     for club, values in table.totals.items():
-        if [v.numeric()[0].value for v in values] != sums[club]:
+        if [v.numeric(signed=bool(i % 2))[0].value for i, v in enumerate(values)] != sums[club]:
             warnings.append(f"Итог клуба не равен сумме сезонов: {club}")
     grand = [sum(v[i] for v in sums.values()) for i in range(width)]
-    if [v.numeric()[0].value for v in table.grand_total] != grand:
+    if table.grand_total and [v.numeric(signed=bool(i % 2))[0].value for i, v in enumerate(table.grand_total)] != grand:
         warnings.append("Итог карьеры не равен сумме сезонов")
+    for ref in parser.templates:
+        if ref.name!='клстат/сезон':continue
+        values=ref.values()
+        for j,key in enumerate(('игры','голы')):
+            if key in values and values[key].numeric(signed=bool(j))[0].value!=sum(values[str(2+i)].numeric(signed=bool(i%2))[0].value for i in range(j,width,2)):
+                warnings.append('Общий итог сезона не равен сумме турниров: '+values['1'].text.strip())
     return warnings

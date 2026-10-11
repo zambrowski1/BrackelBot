@@ -36,6 +36,28 @@ def validate_package(package: dict) -> None:
             if op["id"] in ids:
                 raise UpdateError("invalid_input", "Идентификаторы операций должны быть уникальны")
             ids.add(op["id"])
+            if op['type']=='bind_infobox_name' and (article.get('base_revid') is None or not op['entity'].get('wikidata_id')):
+                raise UpdateError('invalid_input','Для имени старой карточки нужны base_revid и проверенный QID')
+            if op['type']=='repair_sbmatches':
+                from .test_pages import is_test_page
+                if (not is_test_page(article['title']) and op.get('payload',{}).get('complete') is not True) or article.get('base_revid') is None:
+                    raise UpdateError('invalid_input','Замена полигонной выборкой разрешена только тестовой странице с base_revid')
+            if op['type']=='migrate_career_template':
+                if article.get('base_revid') is None or op['target']['structure']!='career':
+                    raise UpdateError('invalid_input','Для замены шаблона нужны base_revid и target.structure=career')
+            if op['type']=='migrate_club_table' and (article.get('base_revid') is None or op['target']['structure']!='club_table'):
+                raise UpdateError('invalid_input','Для переноса клубной таблицы нужны base_revid и club_table')
+            if op['type'] in {'normalize_club_table','normalize_statistics_layout'} and (article.get('base_revid') is None or op['target']['structure']!='club_table'):
+                raise UpdateError('invalid_input','Для объединения таблицы нужны base_revid и club_table')
+            if op['type']=='update_career_period' and op.get('payload',{}).get('restore_unknown_end') and article.get('base_revid') is None:
+                raise UpdateError('invalid_input','Восстановление неизвестного периода требует base_revid')
+            if op['type'] in {'repair_career_duplicates','repair_duplicate_season'}:
+                if article.get('base_revid') is None:
+                    raise UpdateError('invalid_input','Исправление дубликатов требует base_revid')
+                if op['type']=='repair_career_duplicates' and (op['target']['structure']!='career' or not op['target'].get('period') or not op['target'].get('field')):
+                    raise UpdateError('invalid_input','Для дубликатов карьеры нужны поле и период')
+                if op['type']=='repair_duplicate_season' and (op['target']['structure']!='club_table' or not op.get('season')):
+                    raise UpdateError('invalid_input','Для дубликатов сезона нужны клубная таблица и сезон')
             if date.fromisoformat(op["as_of"]) > generated:
                 raise UpdateError("invalid_input", "Дата охвата позже даты формирования пакета")
             if op["type"] in {"update_stats", "add_competition"} and (op["type"] == "update_stats" or package['schema_version'] == '1.1'):
@@ -52,6 +74,11 @@ def validate_package(package: dict) -> None:
                         raise UpdateError("invalid_input", "Карточка содержит период карьеры, season должен быть null")
                 elif not op["season"] or op["competition"]["scope"] != "category":
                     raise UpdateError("invalid_input", "Для таблицы нужны сезон и scope=category")
+            if op['type'] in {'update_sbmatch', 'add_sbmatch','repair_sbmatches','create_sbmatches'}:
+                if article.get('base_revid') is None:
+                    raise UpdateError('invalid_input', 'Для СбМатчи нужен base_revid')
+                if op['entity'].get('kind') != 'national_team' or not op['entity'].get('wikitext'):
+                    raise UpdateError('invalid_input', 'Для СбМатчи нужны сборная и точный entity.wikitext')
             if package['schema_version'] == '1.1':
                 if not op['id'].strip() or not article['player'].strip():
                     raise UpdateError('invalid_input', 'Пустой идентификатор или имя')

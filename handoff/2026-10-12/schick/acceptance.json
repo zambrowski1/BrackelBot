@@ -1,0 +1,31 @@
+{
+  "title": "Шик, Патрик",
+  "wiki_revision": 155437529,
+  "fresh_wikipedia_snapshot_matches_test_input": true,
+  "national_table_preserved_exactly": true,
+  "national_table_sha256": "fe11f72f210d9f6ba47dc1b845bf690b3b3b02eed5acda91e9b1677826de6a67",
+  "statistics_before_achievements": true,
+  "no_duplicate_national_statistics": true,
+  "infobox_league_total": {
+    "before": [
+      149,
+      80
+    ],
+    "after": [
+      154,
+      85
+    ]
+  },
+  "infobox_update_date": {
+    "before": "16.5.2026",
+    "after": "10.10.2026"
+  },
+  "new_provider_requests": 0,
+  "wikipedia_writes": 0,
+  "complete_club_table_generated": false,
+  "complete_article_ready": false,
+  "focused_tests": {
+    "passed": 93,
+    "seconds": 9.7
+  }
+}

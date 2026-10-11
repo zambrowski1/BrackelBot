@@ -33,6 +33,18 @@ class TemplateRef:
 
 
 @dataclass
+class InlineLeagueRef:
+    club: TemplateRef
+
+    @property
+    def start(self):return self.club.start
+
+    def values(self):
+        p=self.club.values()
+        return {'1':p['2'],'сезоны':p['сезоны']}
+
+
+@dataclass
 class ValueRef:
     code: object
     start: int
@@ -41,7 +53,7 @@ class ValueRef:
     def text(self):
         return str(self.code)
 
-    def numeric(self, pair=False):
+    def numeric(self, pair=False, signed=False):
         nodes = self.code.nodes
         if not nodes or not isinstance(nodes[0], Text):
             raise UpdateError("unsupported_structure", "Число должно быть обычным текстом")
@@ -50,12 +62,14 @@ class ValueRef:
                 continue
             if isinstance(n, Tag) and str(n.tag).strip().casefold() == "ref" and not n.invalid:
                 continue
+            if isinstance(n, Template) and str(n.name).strip().casefold() == 'efn' and all(str(p.name).strip() in {'1','name','group'} for p in n.params):
+                continue
             raise UpdateError("unsupported_structure", "Неизвестное оформление числового параметра")
-        pattern = r"\s*([0-9]+)\s*\(\s*([0-9]+)\s*\)\s*" if pair else r"\s*([0-9]+)\s*"
+        pattern = r"\s*([0-9]+)\s*\(\s*([-−]?[0-9]+)\s*\)\s*" if pair else (r"\s*([-−]?[0-9]+|[-—–])\s*" if signed else r"\s*([0-9]+|[-—–])\s*")
         match = re.fullmatch(pattern, str(nodes[0]))
         if not match:
             raise UpdateError("unsupported_structure", "Поддерживаются только целые числа и пары матчей (голов)")
-        return [NumberRef(int(match[g]), self.start + match.start(g), self.start + match.end(g), match[g])
+        return [NumberRef(0 if match[g] in {'-','—','–'} else int(match[g].replace('−','-')), self.start + match.start(g), self.start + match.end(g), match[g])
                 for g in range(1, 3 if pair else 2)]
 
 
@@ -82,7 +96,10 @@ def top_templates(code, start=0):
 
 def only_template(value, name):
     templates = top_templates(value.code, value.start)
-    if len(templates) != 1 or templates[0].name != name.casefold():
+    names = {name.casefold()}
+    if name.casefold() == 'спортивная карьера':
+        names.add('футбольная карьера')
+    if len(templates) != 1 or templates[0].name not in names:
         raise UpdateError("unsupported_structure", f"Ожидался единственный шаблон {name}")
     if any(not isinstance(n, (Template, Comment)) and str(n).strip() for n in value.code.nodes):
         raise UpdateError("unsupported_structure", "Постороннее содержимое рядом с шаблоном")
@@ -133,13 +150,13 @@ class WikitextParser:
         return [(values[str(i)].text.strip(), values[str(i+1)].text.strip(), values[str(i+2)])
                 for i in range(1, len(values) + 1, 3)]
 
-    def club_table(self):
+    def club_table(self, *, allow_duplicates=False):
         headers = [t for t in self.templates if t.name == "клстат"]
         if len(headers) != 1:
             raise UpdateError("unsupported_structure", "Нужна единственная таблица КлСтат")
         header = headers[0]
         hp = header.values()
-        if set(hp) != {str(i) for i in range(1, len(hp)+1)} or not 1 <= len(hp) <= 4:
+        if set(hp) != {str(i) for i in range(1, len(hp)+1)} or not 1 <= len(hp) <= 5:
             raise UpdateError("unsupported_structure", "Неизвестные параметры заголовка КлСтат")
         categories = [hp[str(i)].text.strip() for i in range(1, len(hp)+1)]
         if len(set(categories)) != len(categories):
@@ -165,30 +182,36 @@ class WikitextParser:
                 continue
             if not active:
                 continue
+            if club is None and totals and re.match(r'\s*\|}\s*\{\{комментарии\}\}', self.text[offset-len(str(node)):], re.I):
+                grand = []
+                break
             if isinstance(node, Comment) or (isinstance(node, Text) and not str(node).strip()):
                 continue
             if not ref or ref.name not in allowed:
                 raise UpdateError("unsupported_structure", "Неизвестный узел в таблице КлСтат")
             p = ref.values()
             if ref.name == "клстат/клуб":
-                if club is not None or set(p) != {"1", "сезоны"}:
+                if club is not None or set(p) not in ({"1", "сезоны"},{"1","2","сезоны"}):
                     raise UpdateError("unsupported_structure", "Нарушена структура блока клуба")
                 club = p["1"].text.strip()
                 if club in totals:
                     raise UpdateError("ambiguous_target", "Повторный блок клуба")
                 declared_club = count_param(p)
                 club_count = 0
-                league_count = declared_league = None
+                league_count = 0 if '2' in p else None
+                declared_league = declared_club if '2' in p else None
             elif ref.name == "клстат/лига":
                 if club is None or set(p) != {"1", "сезоны"} or (declared_league is not None and league_count != declared_league):
                     raise UpdateError("unsupported_structure", "Нарушена структура лиги")
                 declared_league = count_param(p)
                 league_count = 0
             elif ref.name in {"клстат/сезон", "клстат/итогозаклуб"}:
-                if club is None or declared_league is None or set(p) != {str(i) for i in range(1, 2*len(categories)+2)}:
+                if club is None or declared_league is None or set(p)-{'игры','голы'} != {str(i) for i in range(1, 2*len(categories)+2)}:
                     raise UpdateError("unsupported_structure", "Неизвестная ширина строки таблицы")
                 for i in range(2, 2*len(categories)+2):
-                    p[str(i)].numeric()
+                    p[str(i)].numeric(signed=bool(i % 2))
+                for key in ('игры','голы'):
+                    if key in p:p[key].numeric(signed=key=='голы')
                 if ref.name == "клстат/сезон":
                     seasons.append(SeasonRow(club, p["1"].text.strip(), p))
                     club_count += 1
@@ -199,15 +222,23 @@ class WikitextParser:
                     totals[club] = [p[str(i)] for i in range(2, 2*len(categories)+2)]
                     club = None
             else:
-                if club is not None or not totals or set(p) != {str(i) for i in range(1, 2*len(categories)+1)}:
+                if club is not None or not totals or set(p)-{'игры','голы'} != {str(i) for i in range(1, 2*len(categories)+1)}:
                     raise UpdateError("unsupported_structure", "Нарушена строка итогов карьеры")
                 grand = [p[str(i)] for i in range(1, 2*len(categories)+1)]
-                for v in grand:
-                    v.numeric()
+                for i, v in enumerate(grand):
+                    v.numeric(signed=bool(i % 2))
+                for key in ('игры','голы'):
+                    if key in p:p[key].numeric(signed=key=='голы')
                 break
         if grand is None:
-            raise UpdateError("unsupported_structure", "Нет закрывающей строки итогов КлСтат")
+            # A partial history may use the native table closing markup,
+            # without the template that labels its sum a full career total.
+            last = next((t for t in reversed(self.templates) if t.name == 'клстат/итогозаклуб' and t.start > header.start), None)
+            tail = self.text[last.start + len(str(last.node)):] if last else ''
+            if club is not None or not totals or not re.match(r'\s*\|}\s*\{\{комментарии\}\}', tail, re.I):
+                raise UpdateError("unsupported_structure", "Нет закрывающей строки итогов КлСтат")
+            grand = []
         keys = [(s.club, s.season) for s in seasons]
-        if len(keys) != len(set(keys)):
+        if len(keys) != len(set(keys)) and not allow_duplicates:
             raise UpdateError("ambiguous_target", "Повторный сезон одного клуба")
         return ClubTable(categories, seasons, totals, grand)

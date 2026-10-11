@@ -1685,6 +1685,27 @@
       "kind": "club"
     },
     {
+      "name": "Гент",
+      "display_name": "Гент",
+      "title": "Гент (футбольный клуб)",
+      "qid": "Q18232",
+      "aliases": [
+        "KAA Gent",
+        "K.A.A. Gent",
+        "Gent",
+        "Ghent",
+        "Koninklijke Atletiek Associatie Gent"
+      ],
+      "flag": "Бельгии",
+      "country_qid": "Q31",
+      "kind": "club",
+      "verified_at": "2026-10-10",
+      "identity_sources": [
+        "https://ru.wikipedia.org/wiki/Гент_(футбольный_клуб)",
+        "https://www.wikidata.org/wiki/Q18232"
+      ]
+    },
+    {
       "name": "Holstein Kiel",
       "title": "Гольштейн",
       "qid": "Q111224",

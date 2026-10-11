@@ -26,7 +26,7 @@ wiki-stats = "wiki_stats.cli:main"
 brackelbot = "wiki_stats.server_cli:main"
 
 [tool.setuptools.package-data]
-wiki_stats = ["*.schema.json", "clubs.json"]
+wiki_stats = ["*.schema.json", "clubs.json", "national_teams.json"]
 
 [tool.setuptools.packages.find]
 include = ["wiki_stats*"]

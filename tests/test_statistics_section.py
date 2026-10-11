@@ -42,8 +42,9 @@ def test_new_section_verified_totals_placement_and_repeated_operation(crlf):
     assert not arithmetic_warnings(plan.preview)
     assert plan.preview.index('== Статистика выступлений ==')<plan.preview.index('== Примечания ==')
     assert '{{обновлено|2026-10-04}}' in plan.preview
-    assert 'полный итог карьеры не заявляется' in plan.preview
-    assert '{{КлСтат/Итого|4|1|0|0|0|0}}' in plan.preview
+    assert 'полный итог карьеры не заявляется' not in plan.preview
+    assert '{{КлСтат/Итого|' not in plan.preview
+    assert '|}\n{{комментарии}}'.replace('\n','\r\n' if crlf else '\n') in plan.preview
     assert references(plan.preview)==references(text)
     # Only the inserted section differs; article content remains byte-for-byte.
     insertion=plan.groups[0].patches
@@ -84,7 +85,30 @@ def test_multiple_leagues_have_correct_rowspans():
     _,plan=prepare(data=data)
     assert plan.changes[0].status=='ready'
     assert plan.preview.count('{{КлСтат/Лига|')==2
-    assert '{{КлСтат/Итого|8|2|0|0|0|0}}' in plan.preview
+    assert '{{КлСтат/Итого|' not in plan.preview
+
+def test_documented_single_league_and_five_categories_remain_editable():
+    from wiki_stats.wikitext_parser import WikitextParser
+    from wiki_stats.structural_editor import execute_operation
+    data=evidence();categories=['Чемпионат','Кубок','Кубок лиги','Еврокубки','Прочее']
+    data['create_section']['categories']=categories
+    row=data['clubs'][0]['rows'][0]
+    row['categories']={c:{'appearances':4 if c=='Чемпионат' else 0,'goals':1 if c=='Чемпионат' else 0} for c in categories}
+    _,plan=prepare(data=data)
+    assert plan.changes[0].status=='ready'
+    assert '{{КлСтат/Клуб|'+TABLE_AUGSBURG+'|'+LEAGUE+'|сезоны=1}}' in plan.preview
+    assert '{{КлСтат/Лига|' not in plan.preview
+    assert '{{КлСтат/ИтогоЗаКлуб||4|1|0|0|0|0|0|0|0|0}}' in plan.preview
+    op=operation('new','add_season',entity={'name':'Аугсбург','wikitext':TABLE_AUGSBURG},
+        target={'structure':'club_table'},season='2026/27',payload={'complete':True,'categories':row['categories'],
+        'league_wikitext':LEAGUE,'insert_after_season':'2025/26'})
+    fixed,status=execute_operation(plan.preview,'Кальвин Браккельман',op)
+    assert status=='ready' and len(WikitextParser(fixed).club_table().seasons)==2
+    assert 'сезоны=2' in fixed and execute_operation(fixed,'Кальвин Браккельман',op)[1]=='already_applied'
+    noted=plan.preview.replace('{{КлСтат/Сезон|2025/26|4|1|0|0|0|0|0|0|0|0}}',
+        '{{КлСтат/Сезон|2025/26|4|1|0|0|0|0|0|0|0|0}}<!-- только сезон 2025/26 -->')
+    fixed,status=execute_operation(noted,'Кальвин Браккельман',op)
+    assert '|0|0}}<!-- только сезон 2025/26 -->\n{{КлСтат/Сезон|2026/27|' in fixed
 
 
 def test_unknown_date_is_not_replaced_with_fetch_date():
@@ -100,6 +124,24 @@ def test_full_career_label_requires_explicit_flag():
     _,plan=prepare(data=data)
     assert plan.changes[0].status=='ready'
     assert 'полный итог карьеры не заявляется' not in plan.preview
+    assert '{{КлСтат/Итого|' in plan.preview
+
+
+def test_statistics_is_before_achievements():
+    text=BARE.replace('== Примечания ==','== Достижения ==\n* Кубок\n\n== Примечания ==')
+    _,plan=prepare(text)
+    assert plan.preview.index('== Статистика выступлений ==') < plan.preview.index('== Достижения ==')
+
+
+def test_missing_club_table_joins_existing_statistics_without_touching_nationals():
+    existing='{{СбМатчи|игрок=Кальвин Браккельман|сборная=Германия}}'
+    text=BARE.replace('== Примечания ==',
+        '== Статистика выступлений ==\n=== Сборная ===\n'+existing+'\n\n== Примечания ==')
+    _,plan=prepare(text)
+    assert plan.changes[0].status=='ready'
+    assert plan.preview.count('== Статистика выступлений ==')==1
+    assert plan.preview.count(existing)==1
+    assert plan.preview.index('=== Клубная статистика ===') < plan.preview.index('=== Сборная ===')
 
 
 def test_category_markup_and_unavailable_league_block_creation():

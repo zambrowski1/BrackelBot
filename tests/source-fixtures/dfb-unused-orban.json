@@ -1,0 +1,1161 @@
+{
+  "row": {
+    "id": 1763180,
+    "custom_id": "Adbslrc",
+    "slug": "berliner-fc-dynamo-1-fc-kaiserslautern",
+    "link": "https://www.sofascore.com/football/match/berliner-fc-dynamo-1-fc-kaiserslautern/Adbslrc#id:1763180",
+    "start_time": "2011-07-30T13:30:00Z",
+    "status": {
+      "code": 100,
+      "type": "finished",
+      "description": "Ended"
+    },
+    "is_live": false,
+    "is_finished": true,
+    "winner_code": 2,
+    "home_team": {
+      "id": 5861,
+      "name": "Berliner FC Dynamo",
+      "short_name": "BFC Dynamo",
+      "code": "BFC",
+      "slug": "berliner-fc-dynamo",
+      "link": "https://www.sofascore.com/team/football/berliner-fc-dynamo/5861",
+      "image_link": "https://img.sofascore.com/api/v1/team/5861/image",
+      "sport": {
+        "id": 1,
+        "name": "Football",
+        "slug": "football"
+      },
+      "country": {
+        "name": "Germany",
+        "alpha2": "DE",
+        "alpha3": "DEU",
+        "slug": "germany"
+      },
+      "gender": "M",
+      "is_national": false,
+      "colors": {
+        "primary": "#990000",
+        "secondary": "#ffffff",
+        "text": "#ffffff"
+      },
+      "followers_count": 3387
+    },
+    "away_team": {
+      "id": 2675,
+      "name": "1. FC Kaiserslautern",
+      "short_name": "Kaiserslautern",
+      "code": "FCK",
+      "slug": "1-fc-kaiserslautern",
+      "link": "https://www.sofascore.com/team/football/1-fc-kaiserslautern/2675",
+      "image_link": "https://img.sofascore.com/api/v1/team/2675/image",
+      "sport": {
+        "id": 1,
+        "name": "Football",
+        "slug": "football"
+      },
+      "country": {
+        "name": "Germany",
+        "alpha2": "DE",
+        "alpha3": "DEU",
+        "slug": "germany"
+      },
+      "gender": "M",
+      "is_national": false,
+      "colors": {
+        "primary": "#ca0000",
+        "secondary": "#ffffff",
+        "text": "#ffffff"
+      },
+      "followers_count": 21736
+    },
+    "home_score": {
+      "current": 0,
+      "display": 0,
+      "periods": {
+        "period1": 0,
+        "period2": 0,
+        "normaltime": 0
+      }
+    },
+    "away_score": {
+      "current": 3,
+      "display": 3,
+      "periods": {
+        "period1": 2,
+        "period2": 1,
+        "normaltime": 3
+      }
+    },
+    "round": {
+      "number": 7,
+      "name": "Round 1",
+      "slug": "round-1",
+      "cup_round_type": null
+    },
+    "tournament": {
+      "id": 217,
+      "name": "DFB Pokal",
+      "slug": "dfb-pokal",
+      "link": "https://www.sofascore.com/tournament/football/germany/dfb-pokal/217",
+      "image_link": "https://img.sofascore.com/api/v1/unique-tournament/217/image",
+      "dark_image_link": "https://img.sofascore.com/api/v1/unique-tournament/217/image/dark",
+      "colors": {
+        "primary": "#ffcc00",
+        "secondary": "#666666"
+      },
+      "followers_count": 77976,
+      "category": {
+        "id": 30,
+        "name": "Germany",
+        "slug": "germany",
+        "link": "https://www.sofascore.com/football/germany",
+        "sport": {
+          "id": 1,
+          "name": "Football",
+          "slug": "football"
+        },
+        "country": {
+          "name": "Germany",
+          "alpha2": "DE",
+          "alpha3": "DEU",
+          "slug": "germany"
+        },
+        "flag_image_link": "https://img.sofascore.com/api/v1/country/DE/flag"
+      },
+      "live_activity_enabled": true,
+      "has_player_statistics": true,
+      "group": null,
+      "is_live": false
+    },
+    "season": {
+      "id": 3383,
+      "name": "DFB Pokal 11/12",
+      "year": "11/12"
+    },
+    "time": {
+      "current_period_start_time": null
+    },
+    "has_highlights": false,
+    "is_final_result_only": false
+  },
+  "lineup": {
+    "match_id": 1763180,
+    "is_confirmed": true,
+    "home": {
+      "formation": "4-2-3-1",
+      "players": [
+        {
+          "player": {
+            "id": 40292,
+            "name": "Daniel Rothe",
+            "short_name": "D. Rothe",
+            "slug": "daniel-rothe",
+            "link": "https://www.sofascore.com/player/daniel-rothe/40292",
+            "image_link": "https://img.sofascore.com/api/v1/player/40292/image",
+            "position": "G",
+            "date_of_birth": "1981-02-25",
+            "gender": "M",
+            "country": {
+              "name": "Germany",
+              "alpha2": "DE",
+              "alpha3": "DEU",
+              "slug": "germany"
+            },
+            "followers_count": 1
+          },
+          "team_id": 241802,
+          "position": "G",
+          "jersey_number": null,
+          "is_substitute": false,
+          "is_captain": false,
+          "statistics": null
+        },
+        {
+          "player": {
+            "id": 4907,
+            "name": "Amadeus Wallschlager",
+            "short_name": "A. Wallschlager",
+            "slug": "amadeus-wallschlager",
+            "link": "https://www.sofascore.com/player/amadeus-wallschlager/4907",
+            "image_link": "https://img.sofascore.com/api/v1/player/4907/image",
+            "date_of_birth": "1985-09-01",
+            "country": {
+              "name": "Germany",
+              "alpha2": "DE",
+              "alpha3": "DEU",
+              "slug": "germany"
+            },
+            "followers_count": 1
+          },
+          "team_id": 241802,
+          "position": null,
+          "jersey_number": null,
+          "is_substitute": false,
+          "is_captain": false,
+          "statistics": null
+        },
+        {
+          "player": {
+            "id": 26697,
+            "name": "Martin Neubert",
+            "short_name": "M. Neubert",
+            "slug": "martin-neubert",
+            "link": "https://www.sofascore.com/player/martin-neubert/26697",
+            "image_link": "https://img.sofascore.com/api/v1/player/26697/image",
+            "date_of_birth": "1980-10-30",
+            "country": {
+              "name": "Germany",
+              "alpha2": "DE",
+              "alpha3": "DEU",
+              "slug": "germany"
+            },
+            "followers_count": 0
+          },
+          "team_id": 241802,
+          "position": null,
+          "jersey_number": null,
+          "is_substitute": false,
+          "is_captain": false,
+          "statistics": null
+        },
+        {
+          "player": {
+            "id": 161493,
+            "name": "Maciej Kwiatkowski",
+            "short_name": "M. Kwiatkowski",
+            "slug": "maciej-kwiatkowski",
+            "link": "https://www.sofascore.com/player/maciej-kwiatkowski/161493",
+            "image_link": "https://img.sofascore.com/api/v1/player/161493/image",
+            "position": "D",
+            "height_cm": 191,
+            "date_of_birth": "1988-03-25",
+            "country": {
+              "name": "Poland",
+              "alpha2": "PL",
+              "alpha3": "POL",
+              "slug": "poland"
+            },
+            "followers_count": 2
+          },
+          "team_id": 241802,
+          "position": "D",
+          "jersey_number": null,
+          "is_substitute": false,
+          "is_captain": false,
+          "statistics": null
+        },
+        {
+          "player": {
+            "id": 38891,
+            "name": "Gokhan Ahmetcik",
+            "short_name": "G. Ahmetcik",
+            "slug": "gokhan-ahmetcik",
+            "link": "https://www.sofascore.com/player/gokhan-ahmetcik/38891",
+            "image_link": "https://img.sofascore.com/api/v1/player/38891/image",
+            "position": "M",
+            "height_cm": 180,
+            "date_of_birth": "1984-07-06",
+            "country": {
+              "name": "Greece",
+              "alpha2": "GR",
+              "alpha3": "GRC",
+              "slug": "greece"
+            },
+            "followers_count": 1
+          },
+          "team_id": 241802,
+          "position": "M",
+          "jersey_number": null,
+          "is_substitute": false,
+          "is_captain": false,
+          "statistics": null
+        },
+        {
+          "player": {
+            "id": 40309,
+            "name": "Norbert Lemcke",
+            "short_name": "N. Lemcke",
+            "slug": "norbert-lemcke",
+            "link": "https://www.sofascore.com/player/norbert-lemcke/40309",
+            "image_link": "https://img.sofascore.com/api/v1/player/40309/image",
+            "gender": "M",
+            "country": null,
+            "followers_count": 1
+          },
+          "team_id": 2632,
+          "position": null,
+          "jersey_number": null,
+          "is_substitute": false,
+          "is_captain": false,
+          "statistics": null
+        },
+        {
+          "player": {
+            "id": 161495,
+            "name": "Ozgur Ozvatan",
+            "short_name": "O. Ozvatan",
+            "slug": "ozgur-ozvatan",
+            "link": "https://www.sofascore.com/player/ozgur-ozvatan/161495",
+            "image_link": "https://img.sofascore.com/api/v1/player/161495/image",
+            "position": "M",
+            "height_cm": 178,
+            "date_of_birth": "1985-03-03",
+            "gender": "M",
+            "country": {
+              "name": "Germany",
+              "alpha2": "DE",
+              "alpha3": "DEU",
+              "slug": "germany"
+            },
+            "followers_count": 0
+          },
+          "team_id": 241802,
+          "position": "M",
+          "jersey_number": null,
+          "is_substitute": false,
+          "is_captain": false,
+          "statistics": null
+        },
+        {
+          "player": {
+            "id": 40044,
+            "name": "Alexander Rahmig",
+            "short_name": "A. Rahmig",
+            "slug": "alexander-rahmig",
+            "link": "https://www.sofascore.com/player/alexander-rahmig/40044",
+            "image_link": "https://img.sofascore.com/api/v1/player/40044/image",
+            "position": "M",
+            "height_cm": 185,
+            "date_of_birth": "1988-12-29",
+            "country": {
+              "name": "Germany",
+              "alpha2": "DE",
+              "alpha3": "DEU",
+              "slug": "germany"
+            },
+            "market_value": {
+              "amount": 0,
+              "currency": "EUR"
+            },
+            "followers_count": 0
+          },
+          "team_id": 241802,
+          "position": "M",
+          "jersey_number": null,
+          "is_substitute": false,
+          "is_captain": false,
+          "statistics": null
+        },
+        {
+          "player": {
+            "id": 78869,
+            "name": "David Schimmelpfennig",
+            "short_name": "D. Schimmelpfennig",
+            "slug": "david-schimmelpfennig",
+            "link": "https://www.sofascore.com/player/david-schimmelpfennig/78869",
+            "image_link": "https://img.sofascore.com/api/v1/player/78869/image",
+            "position": "M",
+            "height_cm": 171,
+            "date_of_birth": "1981-10-06",
+            "gender": "M",
+            "country": {
+              "name": "Germany",
+              "alpha2": "DE",
+              "alpha3": "DEU",
+              "slug": "germany"
+            },
+            "followers_count": 1
+          },
+          "team_id": 241802,
+          "position": "M",
+          "jersey_number": null,
+          "is_substitute": false,
+          "is_captain": false,
+          "statistics": null
+        },
+        {
+          "player": {
+            "id": 155311,
+            "name": "Dennis Rehausen",
+            "short_name": "D. Rehausen",
+            "slug": "dennis-rehausen",
+            "link": "https://www.sofascore.com/player/dennis-rehausen/155311",
+            "image_link": "https://img.sofascore.com/api/v1/player/155311/image",
+            "position": "M",
+            "date_of_birth": "1985-06-04",
+            "gender": "M",
+            "country": {
+              "name": "Germany",
+              "alpha2": "DE",
+              "alpha3": "DEU",
+              "slug": "germany"
+            },
+            "followers_count": 1
+          },
+          "team_id": 241802,
+          "position": "M",
+          "jersey_number": null,
+          "is_substitute": false,
+          "is_captain": false,
+          "statistics": null
+        },
+        {
+          "player": {
+            "id": 158211,
+            "name": "Richard Steiner",
+            "short_name": "R. Steiner",
+            "slug": "richard-steiner",
+            "link": "https://www.sofascore.com/player/richard-steiner/158211",
+            "image_link": "https://img.sofascore.com/api/v1/player/158211/image",
+            "position": "F",
+            "height_cm": 185,
+            "date_of_birth": "1989-10-01",
+            "gender": "M",
+            "country": {
+              "name": "Germany",
+              "alpha2": "DE",
+              "alpha3": "DEU",
+              "slug": "germany"
+            },
+            "followers_count": 0
+          },
+          "team_id": 241802,
+          "position": "F",
+          "jersey_number": null,
+          "is_substitute": false,
+          "is_captain": false,
+          "statistics": null
+        },
+        {
+          "player": {
+            "id": 95146,
+            "name": "Nico Hildebrandt",
+            "short_name": "N. Hildebrandt",
+            "slug": "nico-hildebrandt",
+            "first_name": "Nico",
+            "last_name": "Hildebrandt",
+            "link": "https://www.sofascore.com/player/nico-hildebrandt/95146",
+            "image_link": "https://img.sofascore.com/api/v1/player/95146/image",
+            "position": "G",
+            "height_cm": 184,
+            "date_of_birth": "1990-08-31",
+            "gender": "M",
+            "country": {
+              "name": "Germany",
+              "alpha2": "DE",
+              "alpha3": "DEU",
+              "slug": "germany"
+            },
+            "followers_count": 1
+          },
+          "team_id": 241802,
+          "position": "G",
+          "jersey_number": null,
+          "is_substitute": true,
+          "is_captain": false,
+          "statistics": null
+        },
+        {
+          "player": {
+            "id": 155313,
+            "name": "Stefan Malchow",
+            "short_name": "S. Malchow",
+            "slug": "stefan-malchow",
+            "link": "https://www.sofascore.com/player/stefan-malchow/155313",
+            "image_link": "https://img.sofascore.com/api/v1/player/155313/image",
+            "position": "D",
+            "height_cm": 187,
+            "date_of_birth": "1981-09-30",
+            "gender": "M",
+            "country": {
+              "name": "Germany",
+              "alpha2": "DE",
+              "alpha3": "DEU",
+              "slug": "germany"
+            },
+            "followers_count": 0
+          },
+          "team_id": 241802,
+          "position": "D",
+          "jersey_number": null,
+          "is_substitute": true,
+          "is_captain": false,
+          "statistics": null
+        },
+        {
+          "player": {
+            "id": 158225,
+            "name": "Nico Paepke",
+            "short_name": "N. Paepke",
+            "slug": "nico-paepke",
+            "link": "https://www.sofascore.com/player/nico-paepke/158225",
+            "image_link": "https://img.sofascore.com/api/v1/player/158225/image",
+            "position": "D",
+            "height_cm": 180,
+            "date_of_birth": "1983-02-02",
+            "gender": "M",
+            "country": {
+              "name": "Germany",
+              "alpha2": "DE",
+              "alpha3": "DEU",
+              "slug": "germany"
+            },
+            "followers_count": 1
+          },
+          "team_id": 241802,
+          "position": "D",
+          "jersey_number": null,
+          "is_substitute": true,
+          "is_captain": false,
+          "statistics": null
+        },
+        {
+          "player": {
+            "id": 161497,
+            "name": "Sven Marten",
+            "short_name": "S. Marten",
+            "slug": "sven-marten",
+            "first_name": "Sven",
+            "last_name": "Marten",
+            "link": "https://www.sofascore.com/player/sven-marten/161497",
+            "image_link": "https://img.sofascore.com/api/v1/player/161497/image",
+            "position": "D",
+            "height_cm": 178,
+            "date_of_birth": "1989-10-23",
+            "gender": "M",
+            "country": {
+              "name": "Germany",
+              "alpha2": "DE",
+              "alpha3": "DEU",
+              "slug": "germany"
+            },
+            "market_value": {
+              "amount": 0,
+              "currency": "EUR"
+            },
+            "followers_count": 0
+          },
+          "team_id": 43374,
+          "position": "D",
+          "jersey_number": null,
+          "is_substitute": true,
+          "is_captain": false,
+          "statistics": null
+        },
+        {
+          "player": {
+            "id": 71039,
+            "name": "Martin Lange",
+            "short_name": "M. Lange",
+            "slug": "martin-lange",
+            "link": "https://www.sofascore.com/player/martin-lange/71039",
+            "image_link": "https://img.sofascore.com/api/v1/player/71039/image",
+            "position": "M",
+            "date_of_birth": "1990-08-28",
+            "gender": "M",
+            "country": {
+              "name": "Germany",
+              "alpha2": "DE",
+              "alpha3": "DEU",
+              "slug": "germany"
+            },
+            "followers_count": 3
+          },
+          "team_id": 241802,
+          "position": "M",
+          "jersey_number": null,
+          "is_substitute": true,
+          "is_captain": false,
+          "statistics": null
+        },
+        {
+          "player": {
+            "id": 38901,
+            "name": "Firat Karaduman",
+            "short_name": "F. Karaduman",
+            "slug": "firat-karaduman",
+            "link": "https://www.sofascore.com/player/firat-karaduman/38901",
+            "image_link": "https://img.sofascore.com/api/v1/player/38901/image",
+            "position": "F",
+            "date_of_birth": "1987-12-04",
+            "gender": "M",
+            "country": {
+              "name": "Germany",
+              "alpha2": "DE",
+              "alpha3": "DEU",
+              "slug": "germany"
+            },
+            "followers_count": 2
+          },
+          "team_id": 241802,
+          "position": "F",
+          "jersey_number": null,
+          "is_substitute": true,
+          "is_captain": false,
+          "statistics": null
+        },
+        {
+          "player": {
+            "id": 26735,
+            "name": "Shergo Biran",
+            "short_name": "S. Biran",
+            "slug": "shergo-biran",
+            "link": "https://www.sofascore.com/player/shergo-biran/26735",
+            "image_link": "https://img.sofascore.com/api/v1/player/26735/image",
+            "date_of_birth": "1979-01-04",
+            "country": {
+              "name": "Germany",
+              "alpha2": "DE",
+              "alpha3": "DEU",
+              "slug": "germany"
+            },
+            "followers_count": 1
+          },
+          "team_id": 241802,
+          "position": null,
+          "jersey_number": null,
+          "is_substitute": true,
+          "is_captain": false,
+          "statistics": null
+        }
+      ],
+      "missing_players": [],
+      "support_staff": [],
+      "kit_colors": {
+        "player": {
+          "primary": "990000",
+          "number": "ffffff",
+          "outline": "990000"
+        },
+        "goalkeeper": {
+          "primary": "66cc00",
+          "number": "ffffff",
+          "outline": "66cc00"
+        }
+      }
+    },
+    "away": {
+      "formation": "4-1-2-3",
+      "players": [
+        {
+          "player": {
+            "id": 38440,
+            "name": "Kevin Trapp",
+            "short_name": "K. Trapp",
+            "slug": "kevin-trapp",
+            "link": "https://www.sofascore.com/player/kevin-trapp/38440",
+            "image_link": "https://img.sofascore.com/api/v1/player/38440/image",
+            "position": "G",
+            "jersey_number": 1,
+            "height_cm": 189,
+            "date_of_birth": "1990-07-08",
+            "gender": "M",
+            "country": {
+              "name": "Germany",
+              "alpha2": "DE",
+              "alpha3": "DEU",
+              "slug": "germany"
+            },
+            "market_value": {
+              "amount": 1900000,
+              "currency": "EUR"
+            },
+            "followers_count": 1676
+          },
+          "team_id": 6070,
+          "position": "G",
+          "jersey_number": null,
+          "is_substitute": false,
+          "is_captain": false,
+          "statistics": null
+        },
+        {
+          "player": {
+            "id": 1610,
+            "name": "Florian Dick",
+            "short_name": "F. Dick",
+            "slug": "florian-dick",
+            "link": "https://www.sofascore.com/player/florian-dick/1610",
+            "image_link": "https://img.sofascore.com/api/v1/player/1610/image",
+            "position": "D",
+            "height_cm": 184,
+            "date_of_birth": "1984-11-09",
+            "country": {
+              "name": "Germany",
+              "alpha2": "DE",
+              "alpha3": "DEU",
+              "slug": "germany"
+            },
+            "followers_count": 2
+          },
+          "team_id": 241802,
+          "position": "D",
+          "jersey_number": null,
+          "is_substitute": false,
+          "is_captain": false,
+          "statistics": null
+        },
+        {
+          "player": {
+            "id": 198,
+            "name": "Mathias Abel",
+            "short_name": "M. Abel",
+            "slug": "mathias-abel",
+            "link": "https://www.sofascore.com/player/mathias-abel/198",
+            "image_link": "https://img.sofascore.com/api/v1/player/198/image",
+            "position": "D",
+            "jersey_number": 4,
+            "date_of_birth": "1981-06-22",
+            "country": {
+              "name": "Germany",
+              "alpha2": "DE",
+              "alpha3": "DEU",
+              "slug": "germany"
+            },
+            "followers_count": 1
+          },
+          "team_id": 241802,
+          "position": "D",
+          "jersey_number": null,
+          "is_substitute": false,
+          "is_captain": false,
+          "statistics": null
+        },
+        {
+          "player": {
+            "id": 37286,
+            "name": "Rodnei",
+            "short_name": "Rodnei",
+            "slug": "rodnei",
+            "link": "https://www.sofascore.com/player/rodnei/37286",
+            "image_link": "https://img.sofascore.com/api/v1/player/37286/image",
+            "position": "D",
+            "height_cm": 190,
+            "date_of_birth": "1985-09-11",
+            "country": {
+              "name": "Brazil",
+              "alpha2": "BR",
+              "alpha3": "BRA",
+              "slug": "brazil"
+            },
+            "followers_count": 3
+          },
+          "team_id": 241802,
+          "position": "D",
+          "jersey_number": null,
+          "is_substitute": false,
+          "is_captain": false,
+          "statistics": null
+        },
+        {
+          "player": {
+            "id": 8439,
+            "name": "Leon Jessen",
+            "short_name": "L. Jessen",
+            "slug": "leon-jessen",
+            "link": "https://www.sofascore.com/player/leon-jessen/8439",
+            "image_link": "https://img.sofascore.com/api/v1/player/8439/image",
+            "position": "D",
+            "jersey_number": 18,
+            "height_cm": 182,
+            "date_of_birth": "1986-06-11",
+            "country": {
+              "name": "Denmark",
+              "alpha2": "DK",
+              "alpha3": "DNK",
+              "slug": "denmark"
+            },
+            "followers_count": 1
+          },
+          "team_id": 241802,
+          "position": "D",
+          "jersey_number": null,
+          "is_substitute": false,
+          "is_captain": false,
+          "statistics": null
+        },
+        {
+          "player": {
+            "id": 109367,
+            "name": "Thanos Petsos",
+            "short_name": "T. Petsos",
+            "slug": "thanos-petsos",
+            "link": "https://www.sofascore.com/player/thanos-petsos/109367",
+            "image_link": "https://img.sofascore.com/api/v1/player/109367/image",
+            "position": "M",
+            "height_cm": 184,
+            "date_of_birth": "1991-06-05",
+            "country": {
+              "name": "Greece",
+              "alpha2": "GR",
+              "alpha3": "GRC",
+              "slug": "greece"
+            },
+            "market_value": {
+              "amount": 46000,
+              "currency": "EUR"
+            },
+            "followers_count": 24
+          },
+          "team_id": 241802,
+          "position": "M",
+          "jersey_number": null,
+          "is_substitute": false,
+          "is_captain": false,
+          "statistics": null
+        },
+        {
+          "player": {
+            "id": 424,
+            "name": "Christian Tiffert",
+            "short_name": "C. Tiffert",
+            "slug": "christian-tiffert",
+            "link": "https://www.sofascore.com/player/christian-tiffert/424",
+            "image_link": "https://img.sofascore.com/api/v1/player/424/image",
+            "position": "D",
+            "jersey_number": 13,
+            "height_cm": 183,
+            "date_of_birth": "1982-02-18",
+            "country": {
+              "name": "Germany",
+              "alpha2": "DE",
+              "alpha3": "DEU",
+              "slug": "germany"
+            },
+            "followers_count": 3
+          },
+          "team_id": 241802,
+          "position": "D",
+          "jersey_number": null,
+          "is_substitute": false,
+          "is_captain": false,
+          "statistics": null
+        },
+        {
+          "player": {
+            "id": 8871,
+            "name": "Pierre De Wit",
+            "short_name": "P. D. Wit",
+            "slug": "pierre-de-wit",
+            "link": "https://www.sofascore.com/player/pierre-de-wit/8871",
+            "image_link": "https://img.sofascore.com/api/v1/player/8871/image",
+            "position": "M",
+            "jersey_number": 9,
+            "height_cm": 172,
+            "date_of_birth": "1987-09-26",
+            "country": {
+              "name": "Germany",
+              "alpha2": "DE",
+              "alpha3": "DEU",
+              "slug": "germany"
+            },
+            "followers_count": 1
+          },
+          "team_id": 241802,
+          "position": "M",
+          "jersey_number": null,
+          "is_substitute": false,
+          "is_captain": false,
+          "statistics": null
+        },
+        {
+          "player": {
+            "id": 16078,
+            "name": "Olcay Şahan",
+            "short_name": "O. Şahan",
+            "slug": "olcay-sahan",
+            "link": "https://www.sofascore.com/player/olcay-sahan/16078",
+            "image_link": "https://img.sofascore.com/api/v1/player/16078/image",
+            "position": "M",
+            "height_cm": 179,
+            "date_of_birth": "1987-05-26",
+            "gender": "M",
+            "country": {
+              "name": "Türkiye",
+              "alpha2": "TR",
+              "alpha3": "TUR",
+              "slug": "turkiye"
+            },
+            "followers_count": 32
+          },
+          "team_id": 241802,
+          "position": "M",
+          "jersey_number": null,
+          "is_substitute": false,
+          "is_captain": false,
+          "statistics": null
+        },
+        {
+          "player": {
+            "id": 43108,
+            "name": "Itay Shechter",
+            "short_name": "I. Shechter",
+            "slug": "itay-shechter",
+            "link": "https://www.sofascore.com/player/itay-shechter/43108",
+            "image_link": "https://img.sofascore.com/api/v1/player/43108/image",
+            "position": "F",
+            "height_cm": 178,
+            "date_of_birth": "1987-02-22",
+            "gender": "M",
+            "country": {
+              "name": "Israel",
+              "alpha2": "IL",
+              "alpha3": "ISR",
+              "slug": "israel"
+            },
+            "followers_count": 10
+          },
+          "team_id": 241802,
+          "position": "F",
+          "jersey_number": null,
+          "is_substitute": false,
+          "is_captain": false,
+          "statistics": null
+        },
+        {
+          "player": {
+            "id": 9819,
+            "name": "Ivo Iličević",
+            "short_name": "I. Iličević",
+            "slug": "ivo-ilicevic",
+            "link": "https://www.sofascore.com/player/ivo-ilicevic/9819",
+            "image_link": "https://img.sofascore.com/api/v1/player/9819/image",
+            "position": "M",
+            "height_cm": 174,
+            "date_of_birth": "1986-11-14",
+            "country": {
+              "name": "Croatia",
+              "alpha2": "HR",
+              "alpha3": "HRV",
+              "slug": "croatia"
+            },
+            "followers_count": 19
+          },
+          "team_id": 241802,
+          "position": "M",
+          "jersey_number": null,
+          "is_substitute": false,
+          "is_captain": false,
+          "statistics": null
+        },
+        {
+          "player": {
+            "id": 7617,
+            "name": "Marco Knaller",
+            "short_name": "M. Knaller",
+            "slug": "marco-knaller",
+            "link": "https://www.sofascore.com/player/marco-knaller/7617",
+            "image_link": "https://img.sofascore.com/api/v1/player/7617/image",
+            "position": "G",
+            "height_cm": 192,
+            "date_of_birth": "1987-03-26",
+            "gender": "M",
+            "country": {
+              "name": "Austria",
+              "alpha2": "AT",
+              "alpha3": "AUT",
+              "slug": "austria"
+            },
+            "followers_count": 17
+          },
+          "team_id": 241802,
+          "position": "G",
+          "jersey_number": null,
+          "is_substitute": true,
+          "is_captain": false,
+          "statistics": null
+        },
+        {
+          "player": {
+            "id": 4771,
+            "name": "Martin Amedick",
+            "short_name": "M. Amedick",
+            "slug": "martin-amedick",
+            "link": "https://www.sofascore.com/player/martin-amedick/4771",
+            "image_link": "https://img.sofascore.com/api/v1/player/4771/image",
+            "position": "D",
+            "jersey_number": 25,
+            "height_cm": 194,
+            "date_of_birth": "1982-09-06",
+            "country": {
+              "name": "Germany",
+              "alpha2": "DE",
+              "alpha3": "DEU",
+              "slug": "germany"
+            },
+            "followers_count": 1
+          },
+          "team_id": 241802,
+          "position": "D",
+          "jersey_number": null,
+          "is_substitute": true,
+          "is_captain": false,
+          "statistics": null
+        },
+        {
+          "player": {
+            "id": 136924,
+            "name": "Willi Orbán",
+            "short_name": "W. Orbán",
+            "slug": "willi-orban",
+            "link": "https://www.sofascore.com/player/willi-orban/136924",
+            "image_link": "https://img.sofascore.com/api/v1/player/136924/image",
+            "position": "D",
+            "jersey_number": 4,
+            "height_cm": 186,
+            "date_of_birth": "1992-11-03",
+            "gender": "M",
+            "country": {
+              "name": "Hungary",
+              "alpha2": "HU",
+              "alpha3": "HUN",
+              "slug": "hungary"
+            },
+            "market_value": {
+              "amount": 5500000,
+              "currency": "EUR"
+            },
+            "followers_count": 3165
+          },
+          "team_id": 36360,
+          "position": "D",
+          "jersey_number": null,
+          "is_substitute": true,
+          "is_captain": false,
+          "statistics": null
+        },
+        {
+          "player": {
+            "id": 168,
+            "name": "Oliver Kirch",
+            "short_name": "O. Kirch",
+            "slug": "oliver-kirch",
+            "link": "https://www.sofascore.com/player/oliver-kirch/168",
+            "image_link": "https://img.sofascore.com/api/v1/player/168/image",
+            "position": "M",
+            "height_cm": 182,
+            "date_of_birth": "1982-08-21",
+            "country": {
+              "name": "Germany",
+              "alpha2": "DE",
+              "alpha3": "DEU",
+              "slug": "germany"
+            },
+            "followers_count": 5
+          },
+          "team_id": 241802,
+          "position": "M",
+          "jersey_number": null,
+          "is_substitute": true,
+          "is_captain": false,
+          "statistics": null
+        },
+        {
+          "player": {
+            "id": 27199,
+            "name": "Clemens Walch",
+            "short_name": "C. Walch",
+            "slug": "clemens-walch",
+            "link": "https://www.sofascore.com/player/clemens-walch/27199",
+            "image_link": "https://img.sofascore.com/api/v1/player/27199/image",
+            "position": "M",
+            "height_cm": 181,
+            "date_of_birth": "1987-07-10",
+            "country": {
+              "name": "Austria",
+              "alpha2": "AT",
+              "alpha3": "AUT",
+              "slug": "austria"
+            },
+            "market_value": {
+              "amount": 91000,
+              "currency": "EUR"
+            },
+            "followers_count": 2
+          },
+          "team_id": 241802,
+          "position": "M",
+          "jersey_number": null,
+          "is_substitute": true,
+          "is_captain": false,
+          "statistics": null
+        },
+        {
+          "player": {
+            "id": 37518,
+            "name": "Dorge Kouemaha",
+            "short_name": "D. Kouemaha",
+            "slug": "dorge-kouemaha",
+            "link": "https://www.sofascore.com/player/dorge-kouemaha/37518",
+            "image_link": "https://img.sofascore.com/api/v1/player/37518/image",
+            "position": "F",
+            "height_cm": 184,
+            "date_of_birth": "1983-06-28",
+            "country": {
+              "name": "Cameroon",
+              "alpha2": "CM",
+              "alpha3": "CMR",
+              "slug": "cameroon"
+            },
+            "followers_count": 1
+          },
+          "team_id": 241802,
+          "position": "F",
+          "jersey_number": null,
+          "is_substitute": true,
+          "is_captain": false,
+          "statistics": null
+        },
+        {
+          "player": {
+            "id": 38691,
+            "name": "Richard Sukuta-Pasu",
+            "short_name": "R. Sukuta-Pasu",
+            "slug": "richard-sukuta-pasu",
+            "first_name": "Richard",
+            "last_name": "Sukuta-Pasu",
+            "link": "https://www.sofascore.com/player/richard-sukuta-pasu/38691",
+            "image_link": "https://img.sofascore.com/api/v1/player/38691/image",
+            "position": "F",
+            "height_cm": 190,
+            "date_of_birth": "1990-06-24",
+            "country": {
+              "name": "Germany",
+              "alpha2": "DE",
+              "alpha3": "DEU",
+              "slug": "germany"
+            },
+            "market_value": {
+              "amount": 46000,
+              "currency": "EUR"
+            },
+            "followers_count": 25
+          },
+          "team_id": 1085902,
+          "position": "F",
+          "jersey_number": null,
+          "is_substitute": true,
+          "is_captain": false,
+          "statistics": null
+        }
+      ],
+      "missing_players": [],
+      "support_staff": [],
+      "kit_colors": {
+        "player": {
+          "primary": "264377",
+          "number": "bfbfbf",
+          "outline": "dc0003"
+        },
+        "goalkeeper": {
+          "primary": "f39344",
+          "number": "c4c0c2",
+          "outline": "f39344"
+        }
+      }
+    },
+    "statistical_version": null
+  },
+  "url": "https://datencenter.dfb.de/datencenter/dfb-pokal/2011-2012/1-runde/bfc-dynamo-1-fc-kaiserslautern-358803"
+}

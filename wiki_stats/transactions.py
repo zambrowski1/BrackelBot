@@ -7,7 +7,7 @@ from .models import Patch
 from .errors import UpdateError
 
 
-TEST_TITLE = "Участник:Zambrowski/testbot"
+from .test_pages import TEST_TITLE, TEST_TITLES
 
 
 def minimal_patches(before, after, field="structure"):

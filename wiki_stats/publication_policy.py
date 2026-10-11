@@ -3,6 +3,7 @@
 import os
 from dataclasses import asdict
 from datetime import datetime, timezone
+from .test_pages import is_test_page
 from .errors import UpdateError
 from .publisher import Publisher
 from .models import Mode
@@ -25,8 +26,8 @@ class PublicationPolicy:
     def gate_page(self, title):
         if self.mode == 'dry_run' or not self.enabled() or self.store.get('policy','kill_switch',True):
             raise UpdateError('publishing_disabled','Публикация отключена режимом, окружением или аварийным выключателем')
-        if title==TEST_TITLE and self.mode in {'test','manual'}: return
-        if self.mode=='test': raise UpdateError('page_not_allowed','Test разрешает только Участник:Zambrowski/testbot')
+        if is_test_page(title) and self.mode in {'test','manual'}: return
+        if self.mode=='test': raise UpdateError('page_not_allowed','Test разрешает только testbot и testbot1–testbot5 участника Zambrowski')
         approval=self.approval()
         if (not approval.get('community_approved') or not approval.get('operator_enabled')
             or title not in approval.get('titles',[]) or not title or ':' in title
@@ -36,7 +37,7 @@ class PublicationPolicy:
 
     def gate_plan(self, plan):
         self.gate_page(plan.snapshot.title)
-        if plan.snapshot.title==TEST_TITLE and self.mode in {'test','manual'}: return
+        if is_test_page(plan.snapshot.title) and self.mode in {'test','manual'}: return
         approval=self.approval()
         if plan.kind!='update' or any(c.operation['type'] not in approval.get('operations',[]) for c in plan.changes):
             raise UpdateError('task_not_approved','Тип правки не разрешён в одобренной задаче')
@@ -73,7 +74,8 @@ class PublicationPolicy:
             if c.status not in {'ready','already_applied'}:
                 raise UpdateError('needs_review','Непроверенная операция в серверном плане')
             if c.operation['type']=='update_stats':
-                if any(c.operation['new'][k]<c.operation['expected'][k] for k in c.operation['new']):
+                from .goalkeeper import decreased
+                if decreased(c.operation['new'],c.operation['expected']):
                     raise UpdateError('needs_review','Снижение статистики требует ручной проверки')
 
 
@@ -88,11 +90,15 @@ class ServerPublisher(Publisher):
         if mode!=Mode.MANUAL: raise UpdateError('publishing_disabled','Нужен проверенный и утверждённый план')
     def _save(self,client,current,text,summary): return client.save_allowed_page(current,text,summary)
     def _summary(self,types):
-        labels={'update_stats':'обновление статистики','update_totals':'пересчёт итогов','update_date':'дата статистики',
+        labels={'repair_sbmatches':'восстановление полигонной выборки матчей','update_sbmatch':'исправление матча сборной','add_sbmatch':'добавление матча сборной','update_stats':'обновление статистики','update_totals':'пересчёт итогов','update_date':'дата статистики',
                 'add_club':'добавление клуба','update_current_club':'текущий клуб','update_career_period':'период карьеры',
                 'add_season':'добавление сезона','add_table_club':'блок клуба в КлСтат',
                 'remove_season':'удаление ошибочного сезона','remove_table_club':'удаление ошибочного блока клуба',
                 'create_statistics_section':'создание раздела клубной статистики',
+                'migrate_career_template':'замена старого шаблона карьеры',
+                'migrate_club_table':'перенос клубной таблицы в КлСтат',
+                'repair_career_duplicates':'исправление дубликатов карьеры',
+                'repair_duplicate_season':'исправление дубликата сезона',
                 'add_competition':'соревнование','add_national_team':'добавление сборной','restore':'восстановление'}
         return 'BrackelBot: '+', '.join(labels.get(t,t) for t in types)+(' (тест)' if self.policy.mode=='test' else '')
     def _backup(self,snapshot):

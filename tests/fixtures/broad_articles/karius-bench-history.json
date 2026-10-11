@@ -1,0 +1,4636 @@
+{
+  "source": "Recorded Sofascore API responses from the read-only broad test",
+  "player_id": 174135,
+  "statistics": {
+    "player_id": 174135,
+    "tournament_id": 35,
+    "season_id": 28210,
+    "type": "overall",
+    "statistics": {
+      "rating": 6.95,
+      "total_rating": 27.8,
+      "count_rating": 4,
+      "goals": 0,
+      "big_chances_created": 0,
+      "big_chances_missed": 0,
+      "assists": 0,
+      "goals_assists_sum": 0,
+      "accurate_passes": 49,
+      "inaccurate_passes": 36,
+      "total_passes": 85,
+      "accurate_passes_percentage": 57.647058823529,
+      "accurate_own_half_passes": 34,
+      "accurate_opposition_half_passes": 15,
+      "accurate_final_third_passes": 3,
+      "key_passes": 0,
+      "successful_dribbles": 0,
+      "successful_dribbles_percentage": 0,
+      "tackles": 0,
+      "interceptions": 0,
+      "yellow_cards": 0,
+      "direct_red_cards": 0,
+      "red_cards": 0,
+      "accurate_crosses": 0,
+      "accurate_crosses_percentage": 0,
+      "total_shots": 0,
+      "shots_on_target": 0,
+      "shots_off_target": 0,
+      "ground_duels_won": 0,
+      "ground_duels_won_percentage": 0,
+      "aerial_duels_won": 2,
+      "aerial_duels_won_percentage": 100,
+      "total_duels_won": 2,
+      "total_duels_won_percentage": 100,
+      "minutes_played": 291,
+      "goal_conversion_percentage": 0,
+      "penalties_taken": 0,
+      "penalty_goals": 0,
+      "penalty_won": 0,
+      "penalty_conceded": 0,
+      "shot_from_set_piece": 0,
+      "free_kick_goal": 0,
+      "goals_from_inside_the_box": 0,
+      "goals_from_outside_the_box": 0,
+      "shots_from_inside_the_box": 0,
+      "shots_from_outside_the_box": 0,
+      "headed_goals": 0,
+      "left_foot_goals": 0,
+      "right_foot_goals": 0,
+      "accurate_long_balls": 23,
+      "accurate_long_balls_percentage": 38.983050847458,
+      "clearances": 2,
+      "error_lead_to_goal": 0,
+      "error_lead_to_shot": 0,
+      "dispossessed": 0,
+      "possession_lost": 39,
+      "possession_won_att_third": 0,
+      "total_chipped_passes": 6,
+      "accurate_chipped_passes": 1,
+      "touches": 106,
+      "was_fouled": 0,
+      "fouls": 0,
+      "hit_woodwork": 0,
+      "own_goals": 0,
+      "dribbled_past": 0,
+      "offsides": 0,
+      "blocked_shots": 0,
+      "pass_to_assist": 0,
+      "saves": 4,
+      "clean_sheet": 2,
+      "penalty_faced": 0,
+      "penalty_save": 0,
+      "saved_shots_from_inside_the_box": 2,
+      "saved_shots_from_outside_the_box": 2,
+      "goals_conceded_inside_the_box": 1,
+      "goals_conceded_outside_the_box": 0,
+      "punches": 0,
+      "runs_out": 0,
+      "successful_runs_out": 0,
+      "high_claims": 2,
+      "crosses_not_claimed": 0,
+      "matches_started": 3,
+      "penalty_conversion": 0,
+      "set_piece_conversion": 0,
+      "total_attempt_assist": 0,
+      "total_contest": 0,
+      "total_cross": 0,
+      "duel_lost": 0,
+      "aerial_lost": 0,
+      "attempt_penalty_miss": 0,
+      "attempt_penalty_post": 0,
+      "attempt_penalty_target": 0,
+      "total_long_balls": 59,
+      "goals_conceded": 1,
+      "tackles_won": 0,
+      "tackles_won_percentage": 0,
+      "scoring_frequency": 0,
+      "second_yellow_cards": 0,
+      "saves_caught": 0,
+      "saves_parried": 4,
+      "total_own_half_passes": 44,
+      "total_opposition_half_passes": 41,
+      "totw_appearances": 0,
+      "id": 625929,
+      "type": "overall",
+      "appearances": 4
+    },
+    "team": {
+      "id": 2547,
+      "name": "1. FC Union Berlin",
+      "short_name": "Union Berlin",
+      "code": "FCU",
+      "slug": "1-fc-union-berlin",
+      "link": "https://www.sofascore.com/team/football/1-fc-union-berlin/2547",
+      "image_link": "https://img.sofascore.com/api/v1/team/2547/image",
+      "sport": {
+        "id": 1,
+        "name": "Football",
+        "slug": "football"
+      },
+      "country": null,
+      "gender": "M",
+      "is_national": false,
+      "colors": {
+        "primary": "#ff0000",
+        "secondary": "#ffffff",
+        "text": "#ffffff"
+      },
+      "followers_count": 118322
+    }
+  },
+  "history": {
+    "complete": true,
+    "matches": [
+      {
+        "id": 8833689,
+        "custom_id": "PabsXab",
+        "slug": "1-fc-union-berlin-arminia-bielefeld",
+        "link": "https://www.sofascore.com/football/match/1-fc-union-berlin-arminia-bielefeld/PabsXab#id:8833689",
+        "start_time": "2021-03-07T17:00:00Z",
+        "status": {
+          "code": 100,
+          "type": "finished",
+          "description": "Ended"
+        },
+        "is_live": false,
+        "is_finished": true,
+        "winner_code": 3,
+        "home_team": {
+          "id": 2540,
+          "name": "Arminia Bielefeld",
+          "short_name": "Bielefeld",
+          "code": "ARM",
+          "slug": "arminia-bielefeld",
+          "link": "https://www.sofascore.com/team/football/arminia-bielefeld/2540",
+          "image_link": "https://img.sofascore.com/api/v1/team/2540/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#092288",
+            "secondary": "#000000",
+            "text": "#000000"
+          },
+          "followers_count": 21315
+        },
+        "away_team": {
+          "id": 2547,
+          "name": "1. FC Union Berlin",
+          "short_name": "Union Berlin",
+          "code": "FCU",
+          "slug": "1-fc-union-berlin",
+          "link": "https://www.sofascore.com/team/football/1-fc-union-berlin/2547",
+          "image_link": "https://img.sofascore.com/api/v1/team/2547/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#ff0000",
+            "secondary": "#ffffff",
+            "text": "#ffffff"
+          },
+          "followers_count": 118322
+        },
+        "home_score": {
+          "current": 0,
+          "display": 0,
+          "periods": {
+            "period1": 0,
+            "normaltime": 0
+          }
+        },
+        "away_score": {
+          "current": 0,
+          "display": 0,
+          "periods": {
+            "period1": 0,
+            "normaltime": 0
+          }
+        },
+        "round": {
+          "number": 24,
+          "name": null,
+          "slug": null,
+          "cup_round_type": null
+        },
+        "tournament": {
+          "id": 35,
+          "name": "Bundesliga",
+          "slug": "bundesliga",
+          "link": "https://www.sofascore.com/tournament/football/germany/bundesliga/35",
+          "image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image",
+          "dark_image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image/dark",
+          "colors": {
+            "primary": "#e2080e",
+            "secondary": "#8e0902"
+          },
+          "followers_count": 524181,
+          "category": {
+            "id": 30,
+            "name": "Germany",
+            "slug": "germany",
+            "link": "https://www.sofascore.com/football/germany",
+            "sport": {
+              "id": 1,
+              "name": "Football",
+              "slug": "football"
+            },
+            "country": {
+              "name": "Germany",
+              "alpha2": "DE",
+              "alpha3": "DEU",
+              "slug": "germany"
+            },
+            "flag_image_link": "https://img.sofascore.com/api/v1/country/DE/flag"
+          },
+          "live_activity_enabled": true,
+          "has_player_statistics": true,
+          "group": null,
+          "is_live": false
+        },
+        "season": {
+          "id": 28210,
+          "name": "Bundesliga 20/21",
+          "year": "20/21"
+        },
+        "time": {
+          "injury_time1": 10,
+          "injury_time2": 3,
+          "current_period_start_time": "2021-03-07T19:01:03Z"
+        },
+        "coverage": 1,
+        "has_highlights": false,
+        "has_player_statistics": true,
+        "has_player_heatmap": true,
+        "is_final_result_only": false,
+        "player": {
+          "team_id": 2547,
+          "is_on_bench": true,
+          "statistics": null,
+          "incidents": null
+        }
+      },
+      {
+        "id": 8833711,
+        "custom_id": "Xabswdb",
+        "slug": "1-fc-koln-1-fc-union-berlin",
+        "link": "https://www.sofascore.com/football/match/1-fc-koln-1-fc-union-berlin/Xabswdb#id:8833711",
+        "start_time": "2021-03-13T14:30:00Z",
+        "status": {
+          "code": 100,
+          "type": "finished",
+          "description": "Ended"
+        },
+        "is_live": false,
+        "is_finished": true,
+        "winner_code": 1,
+        "home_team": {
+          "id": 2547,
+          "name": "1. FC Union Berlin",
+          "short_name": "Union Berlin",
+          "code": "FCU",
+          "slug": "1-fc-union-berlin",
+          "link": "https://www.sofascore.com/team/football/1-fc-union-berlin/2547",
+          "image_link": "https://img.sofascore.com/api/v1/team/2547/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#ff0000",
+            "secondary": "#ffffff",
+            "text": "#ffffff"
+          },
+          "followers_count": 118322
+        },
+        "away_team": {
+          "id": 2671,
+          "name": "1. FC Köln",
+          "short_name": "Köln",
+          "code": "KOE",
+          "slug": "1-fc-koln",
+          "link": "https://www.sofascore.com/team/football/1-fc-koln/2671",
+          "image_link": "https://img.sofascore.com/api/v1/team/2671/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#ffffff",
+            "secondary": "#e30613",
+            "text": "#e30613"
+          },
+          "followers_count": 82796
+        },
+        "home_score": {
+          "current": 2,
+          "display": 2,
+          "periods": {
+            "period1": 0,
+            "normaltime": 2
+          }
+        },
+        "away_score": {
+          "current": 1,
+          "display": 1,
+          "periods": {
+            "period1": 1,
+            "normaltime": 1
+          }
+        },
+        "round": {
+          "number": 25,
+          "name": null,
+          "slug": null,
+          "cup_round_type": null
+        },
+        "tournament": {
+          "id": 35,
+          "name": "Bundesliga",
+          "slug": "bundesliga",
+          "link": "https://www.sofascore.com/tournament/football/germany/bundesliga/35",
+          "image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image",
+          "dark_image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image/dark",
+          "colors": {
+            "primary": "#e2080e",
+            "secondary": "#8e0902"
+          },
+          "followers_count": 524181,
+          "category": {
+            "id": 30,
+            "name": "Germany",
+            "slug": "germany",
+            "link": "https://www.sofascore.com/football/germany",
+            "sport": {
+              "id": 1,
+              "name": "Football",
+              "slug": "football"
+            },
+            "country": {
+              "name": "Germany",
+              "alpha2": "DE",
+              "alpha3": "DEU",
+              "slug": "germany"
+            },
+            "flag_image_link": "https://img.sofascore.com/api/v1/country/DE/flag"
+          },
+          "live_activity_enabled": true,
+          "has_player_statistics": true,
+          "group": null,
+          "is_live": false
+        },
+        "season": {
+          "id": 28210,
+          "name": "Bundesliga 20/21",
+          "year": "20/21"
+        },
+        "time": {
+          "injury_time1": 1,
+          "injury_time2": 3,
+          "current_period_start_time": "2021-03-13T16:28:03Z"
+        },
+        "coverage": 1,
+        "has_highlights": false,
+        "has_player_statistics": true,
+        "has_player_heatmap": true,
+        "is_final_result_only": false,
+        "player": {
+          "team_id": 2547,
+          "is_on_bench": true,
+          "statistics": null,
+          "incidents": null
+        }
+      },
+      {
+        "id": 8833618,
+        "custom_id": "Xabszdb",
+        "slug": "eintracht-frankfurt-1-fc-union-berlin",
+        "link": "https://www.sofascore.com/football/match/eintracht-frankfurt-1-fc-union-berlin/Xabszdb#id:8833618",
+        "start_time": "2021-03-20T14:30:00Z",
+        "status": {
+          "code": 100,
+          "type": "finished",
+          "description": "Ended"
+        },
+        "is_live": false,
+        "is_finished": true,
+        "winner_code": 1,
+        "home_team": {
+          "id": 2674,
+          "name": "Eintracht Frankfurt",
+          "short_name": "Frankfurt",
+          "code": "SGE",
+          "slug": "eintracht-frankfurt",
+          "link": "https://www.sofascore.com/team/football/eintracht-frankfurt/2674",
+          "image_link": "https://img.sofascore.com/api/v1/team/2674/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#000000",
+            "secondary": "#ff1111",
+            "text": "#ff1111"
+          },
+          "followers_count": 240555
+        },
+        "away_team": {
+          "id": 2547,
+          "name": "1. FC Union Berlin",
+          "short_name": "Union Berlin",
+          "code": "FCU",
+          "slug": "1-fc-union-berlin",
+          "link": "https://www.sofascore.com/team/football/1-fc-union-berlin/2547",
+          "image_link": "https://img.sofascore.com/api/v1/team/2547/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#ff0000",
+            "secondary": "#ffffff",
+            "text": "#ffffff"
+          },
+          "followers_count": 118322
+        },
+        "home_score": {
+          "current": 5,
+          "display": 5,
+          "periods": {
+            "period1": 4,
+            "normaltime": 5
+          }
+        },
+        "away_score": {
+          "current": 2,
+          "display": 2,
+          "periods": {
+            "period1": 2,
+            "normaltime": 2
+          }
+        },
+        "round": {
+          "number": 26,
+          "name": null,
+          "slug": null,
+          "cup_round_type": null
+        },
+        "tournament": {
+          "id": 35,
+          "name": "Bundesliga",
+          "slug": "bundesliga",
+          "link": "https://www.sofascore.com/tournament/football/germany/bundesliga/35",
+          "image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image",
+          "dark_image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image/dark",
+          "colors": {
+            "primary": "#e2080e",
+            "secondary": "#8e0902"
+          },
+          "followers_count": 524181,
+          "category": {
+            "id": 30,
+            "name": "Germany",
+            "slug": "germany",
+            "link": "https://www.sofascore.com/football/germany",
+            "sport": {
+              "id": 1,
+              "name": "Football",
+              "slug": "football"
+            },
+            "country": {
+              "name": "Germany",
+              "alpha2": "DE",
+              "alpha3": "DEU",
+              "slug": "germany"
+            },
+            "flag_image_link": "https://img.sofascore.com/api/v1/country/DE/flag"
+          },
+          "live_activity_enabled": true,
+          "has_player_statistics": true,
+          "group": null,
+          "is_live": false
+        },
+        "season": {
+          "id": 28210,
+          "name": "Bundesliga 20/21",
+          "year": "20/21"
+        },
+        "time": {
+          "injury_time1": 3,
+          "injury_time2": 4,
+          "current_period_start_time": "2021-03-20T16:23:45Z"
+        },
+        "coverage": 1,
+        "has_highlights": false,
+        "has_player_statistics": true,
+        "has_player_heatmap": true,
+        "is_final_result_only": false,
+        "player": {
+          "team_id": 2547,
+          "is_on_bench": true,
+          "statistics": null,
+          "incidents": null
+        }
+      },
+      {
+        "id": 8833633,
+        "custom_id": "DabsXab",
+        "slug": "1-fc-union-berlin-hertha-bsc",
+        "link": "https://www.sofascore.com/football/match/1-fc-union-berlin-hertha-bsc/DabsXab#id:8833633",
+        "start_time": "2021-04-04T16:00:00Z",
+        "status": {
+          "code": 100,
+          "type": "finished",
+          "description": "Ended"
+        },
+        "is_live": false,
+        "is_finished": true,
+        "winner_code": 3,
+        "home_team": {
+          "id": 2547,
+          "name": "1. FC Union Berlin",
+          "short_name": "Union Berlin",
+          "code": "FCU",
+          "slug": "1-fc-union-berlin",
+          "link": "https://www.sofascore.com/team/football/1-fc-union-berlin/2547",
+          "image_link": "https://img.sofascore.com/api/v1/team/2547/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#ff0000",
+            "secondary": "#ffffff",
+            "text": "#ffffff"
+          },
+          "followers_count": 118322
+        },
+        "away_team": {
+          "id": 2528,
+          "name": "Hertha BSC",
+          "short_name": "Hertha",
+          "code": "BSC",
+          "slug": "hertha-bsc",
+          "link": "https://www.sofascore.com/team/football/hertha-bsc/2528",
+          "image_link": "https://img.sofascore.com/api/v1/team/2528/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#ffffff",
+            "secondary": "#0131ad",
+            "text": "#0131ad"
+          },
+          "followers_count": 44229
+        },
+        "home_score": {
+          "current": 1,
+          "display": 1,
+          "periods": {
+            "period1": 1,
+            "normaltime": 1
+          }
+        },
+        "away_score": {
+          "current": 1,
+          "display": 1,
+          "periods": {
+            "period1": 1,
+            "normaltime": 1
+          }
+        },
+        "round": {
+          "number": 27,
+          "name": null,
+          "slug": null,
+          "cup_round_type": null
+        },
+        "tournament": {
+          "id": 35,
+          "name": "Bundesliga",
+          "slug": "bundesliga",
+          "link": "https://www.sofascore.com/tournament/football/germany/bundesliga/35",
+          "image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image",
+          "dark_image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image/dark",
+          "colors": {
+            "primary": "#e2080e",
+            "secondary": "#8e0902"
+          },
+          "followers_count": 524181,
+          "category": {
+            "id": 30,
+            "name": "Germany",
+            "slug": "germany",
+            "link": "https://www.sofascore.com/football/germany",
+            "sport": {
+              "id": 1,
+              "name": "Football",
+              "slug": "football"
+            },
+            "country": {
+              "name": "Germany",
+              "alpha2": "DE",
+              "alpha3": "DEU",
+              "slug": "germany"
+            },
+            "flag_image_link": "https://img.sofascore.com/api/v1/country/DE/flag"
+          },
+          "live_activity_enabled": true,
+          "has_player_statistics": true,
+          "group": null,
+          "is_live": false
+        },
+        "season": {
+          "id": 28210,
+          "name": "Bundesliga 20/21",
+          "year": "20/21"
+        },
+        "time": {
+          "injury_time1": 1,
+          "injury_time2": 3,
+          "current_period_start_time": "2021-04-04T17:53:59Z"
+        },
+        "coverage": 1,
+        "has_highlights": false,
+        "has_player_statistics": true,
+        "has_player_heatmap": true,
+        "is_final_result_only": false,
+        "player": {
+          "team_id": 2547,
+          "is_on_bench": true,
+          "statistics": null,
+          "incidents": null
+        }
+      },
+      {
+        "id": 8833714,
+        "custom_id": "Xabsxdb",
+        "slug": "fc-bayern-munchen-1-fc-union-berlin",
+        "link": "https://www.sofascore.com/football/match/fc-bayern-munchen-1-fc-union-berlin/Xabsxdb#id:8833714",
+        "start_time": "2021-04-10T13:30:00Z",
+        "status": {
+          "code": 100,
+          "type": "finished",
+          "description": "Ended"
+        },
+        "is_live": false,
+        "is_finished": true,
+        "winner_code": 3,
+        "home_team": {
+          "id": 2672,
+          "name": "FC Bayern München",
+          "short_name": "Bayern",
+          "code": "FCB",
+          "slug": "fc-bayern-munchen",
+          "link": "https://www.sofascore.com/team/football/fc-bayern-munchen/2672",
+          "image_link": "https://img.sofascore.com/api/v1/team/2672/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#cf142f",
+            "secondary": "#ffffff",
+            "text": "#ffffff"
+          },
+          "followers_count": 2988283
+        },
+        "away_team": {
+          "id": 2547,
+          "name": "1. FC Union Berlin",
+          "short_name": "Union Berlin",
+          "code": "FCU",
+          "slug": "1-fc-union-berlin",
+          "link": "https://www.sofascore.com/team/football/1-fc-union-berlin/2547",
+          "image_link": "https://img.sofascore.com/api/v1/team/2547/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#ff0000",
+            "secondary": "#ffffff",
+            "text": "#ffffff"
+          },
+          "followers_count": 118322
+        },
+        "home_score": {
+          "current": 1,
+          "display": 1,
+          "periods": {
+            "period1": 0,
+            "normaltime": 1
+          }
+        },
+        "away_score": {
+          "current": 1,
+          "display": 1,
+          "periods": {
+            "period1": 0,
+            "normaltime": 1
+          }
+        },
+        "round": {
+          "number": 28,
+          "name": null,
+          "slug": null,
+          "cup_round_type": null
+        },
+        "tournament": {
+          "id": 35,
+          "name": "Bundesliga",
+          "slug": "bundesliga",
+          "link": "https://www.sofascore.com/tournament/football/germany/bundesliga/35",
+          "image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image",
+          "dark_image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image/dark",
+          "colors": {
+            "primary": "#e2080e",
+            "secondary": "#8e0902"
+          },
+          "followers_count": 524181,
+          "category": {
+            "id": 30,
+            "name": "Germany",
+            "slug": "germany",
+            "link": "https://www.sofascore.com/football/germany",
+            "sport": {
+              "id": 1,
+              "name": "Football",
+              "slug": "football"
+            },
+            "country": {
+              "name": "Germany",
+              "alpha2": "DE",
+              "alpha3": "DEU",
+              "slug": "germany"
+            },
+            "flag_image_link": "https://img.sofascore.com/api/v1/country/DE/flag"
+          },
+          "live_activity_enabled": true,
+          "has_player_statistics": true,
+          "group": null,
+          "is_live": false
+        },
+        "season": {
+          "id": 28210,
+          "name": "Bundesliga 20/21",
+          "year": "20/21"
+        },
+        "time": {
+          "injury_time1": 1,
+          "injury_time2": 3,
+          "current_period_start_time": "2021-04-10T15:21:40Z"
+        },
+        "coverage": 1,
+        "has_highlights": false,
+        "has_player_statistics": true,
+        "has_player_heatmap": true,
+        "is_final_result_only": false,
+        "player": {
+          "team_id": 2547,
+          "is_on_bench": true,
+          "statistics": null,
+          "incidents": null
+        }
+      },
+      {
+        "id": 8833568,
+        "custom_id": "XabsCdb",
+        "slug": "vfb-stuttgart-1-fc-union-berlin",
+        "link": "https://www.sofascore.com/football/match/vfb-stuttgart-1-fc-union-berlin/XabsCdb#id:8833568",
+        "start_time": "2021-04-17T13:30:00Z",
+        "status": {
+          "code": 100,
+          "type": "finished",
+          "description": "Ended"
+        },
+        "is_live": false,
+        "is_finished": true,
+        "winner_code": 1,
+        "home_team": {
+          "id": 2547,
+          "name": "1. FC Union Berlin",
+          "short_name": "Union Berlin",
+          "code": "FCU",
+          "slug": "1-fc-union-berlin",
+          "link": "https://www.sofascore.com/team/football/1-fc-union-berlin/2547",
+          "image_link": "https://img.sofascore.com/api/v1/team/2547/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#ff0000",
+            "secondary": "#ffffff",
+            "text": "#ffffff"
+          },
+          "followers_count": 118322
+        },
+        "away_team": {
+          "id": 2677,
+          "name": "VfB Stuttgart",
+          "short_name": "Stuttgart",
+          "code": "VFB",
+          "slug": "vfb-stuttgart",
+          "link": "https://www.sofascore.com/team/football/vfb-stuttgart/2677",
+          "image_link": "https://img.sofascore.com/api/v1/team/2677/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#ffffff",
+            "secondary": "#ff0000",
+            "text": "#ff0000"
+          },
+          "followers_count": 248653
+        },
+        "home_score": {
+          "current": 2,
+          "display": 2,
+          "periods": {
+            "period1": 2,
+            "normaltime": 2
+          }
+        },
+        "away_score": {
+          "current": 1,
+          "display": 1,
+          "periods": {
+            "period1": 0,
+            "normaltime": 1
+          }
+        },
+        "round": {
+          "number": 29,
+          "name": null,
+          "slug": null,
+          "cup_round_type": null
+        },
+        "tournament": {
+          "id": 35,
+          "name": "Bundesliga",
+          "slug": "bundesliga",
+          "link": "https://www.sofascore.com/tournament/football/germany/bundesliga/35",
+          "image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image",
+          "dark_image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image/dark",
+          "colors": {
+            "primary": "#e2080e",
+            "secondary": "#8e0902"
+          },
+          "followers_count": 524181,
+          "category": {
+            "id": 30,
+            "name": "Germany",
+            "slug": "germany",
+            "link": "https://www.sofascore.com/football/germany",
+            "sport": {
+              "id": 1,
+              "name": "Football",
+              "slug": "football"
+            },
+            "country": {
+              "name": "Germany",
+              "alpha2": "DE",
+              "alpha3": "DEU",
+              "slug": "germany"
+            },
+            "flag_image_link": "https://img.sofascore.com/api/v1/country/DE/flag"
+          },
+          "live_activity_enabled": true,
+          "has_player_statistics": true,
+          "group": null,
+          "is_live": false
+        },
+        "season": {
+          "id": 28210,
+          "name": "Bundesliga 20/21",
+          "year": "20/21"
+        },
+        "time": {
+          "injury_time1": 1,
+          "injury_time2": 4,
+          "current_period_start_time": "2021-04-17T15:22:30Z"
+        },
+        "coverage": 1,
+        "has_highlights": false,
+        "has_player_statistics": true,
+        "has_player_heatmap": true,
+        "is_final_result_only": false,
+        "player": {
+          "team_id": 2547,
+          "is_on_bench": true,
+          "statistics": null,
+          "incidents": null
+        }
+      },
+      {
+        "id": 8833712,
+        "custom_id": "Xabsydb",
+        "slug": "borussia-dortmund-1-fc-union-berlin",
+        "link": "https://www.sofascore.com/football/match/borussia-dortmund-1-fc-union-berlin/Xabsydb#id:8833712",
+        "start_time": "2021-04-21T18:30:00Z",
+        "status": {
+          "code": 100,
+          "type": "finished",
+          "description": "Ended"
+        },
+        "is_live": false,
+        "is_finished": true,
+        "winner_code": 1,
+        "home_team": {
+          "id": 2673,
+          "name": "Borussia Dortmund",
+          "short_name": "Dortmund",
+          "code": "BVB",
+          "slug": "borussia-dortmund",
+          "link": "https://www.sofascore.com/team/football/borussia-dortmund/2673",
+          "image_link": "https://img.sofascore.com/api/v1/team/2673/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#ffe600",
+            "secondary": "#000000",
+            "text": "#000000"
+          },
+          "followers_count": 1306648
+        },
+        "away_team": {
+          "id": 2547,
+          "name": "1. FC Union Berlin",
+          "short_name": "Union Berlin",
+          "code": "FCU",
+          "slug": "1-fc-union-berlin",
+          "link": "https://www.sofascore.com/team/football/1-fc-union-berlin/2547",
+          "image_link": "https://img.sofascore.com/api/v1/team/2547/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#ff0000",
+            "secondary": "#ffffff",
+            "text": "#ffffff"
+          },
+          "followers_count": 118322
+        },
+        "home_score": {
+          "current": 2,
+          "display": 2,
+          "periods": {
+            "period1": 1,
+            "normaltime": 2
+          }
+        },
+        "away_score": {
+          "current": 0,
+          "display": 0,
+          "periods": {
+            "period1": 0,
+            "normaltime": 0
+          }
+        },
+        "round": {
+          "number": 30,
+          "name": null,
+          "slug": null,
+          "cup_round_type": null
+        },
+        "tournament": {
+          "id": 35,
+          "name": "Bundesliga",
+          "slug": "bundesliga",
+          "link": "https://www.sofascore.com/tournament/football/germany/bundesliga/35",
+          "image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image",
+          "dark_image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image/dark",
+          "colors": {
+            "primary": "#e2080e",
+            "secondary": "#8e0902"
+          },
+          "followers_count": 524181,
+          "category": {
+            "id": 30,
+            "name": "Germany",
+            "slug": "germany",
+            "link": "https://www.sofascore.com/football/germany",
+            "sport": {
+              "id": 1,
+              "name": "Football",
+              "slug": "football"
+            },
+            "country": {
+              "name": "Germany",
+              "alpha2": "DE",
+              "alpha3": "DEU",
+              "slug": "germany"
+            },
+            "flag_image_link": "https://img.sofascore.com/api/v1/country/DE/flag"
+          },
+          "live_activity_enabled": true,
+          "has_player_statistics": true,
+          "group": null,
+          "is_live": false
+        },
+        "season": {
+          "id": 28210,
+          "name": "Bundesliga 20/21",
+          "year": "20/21"
+        },
+        "time": {
+          "injury_time1": 1,
+          "injury_time2": 3,
+          "current_period_start_time": "2021-04-21T20:22:09Z"
+        },
+        "coverage": 1,
+        "has_highlights": false,
+        "has_player_statistics": true,
+        "has_player_heatmap": true,
+        "is_final_result_only": false,
+        "player": {
+          "team_id": 2547,
+          "is_on_bench": true,
+          "statistics": null,
+          "incidents": null
+        }
+      },
+      {
+        "id": 8833590,
+        "custom_id": "JabsXab",
+        "slug": "1-fc-union-berlin-sv-werder-bremen",
+        "link": "https://www.sofascore.com/football/match/1-fc-union-berlin-sv-werder-bremen/JabsXab#id:8833590",
+        "start_time": "2021-04-24T13:30:00Z",
+        "status": {
+          "code": 100,
+          "type": "finished",
+          "description": "Ended"
+        },
+        "is_live": false,
+        "is_finished": true,
+        "winner_code": 1,
+        "home_team": {
+          "id": 2547,
+          "name": "1. FC Union Berlin",
+          "short_name": "Union Berlin",
+          "code": "FCU",
+          "slug": "1-fc-union-berlin",
+          "link": "https://www.sofascore.com/team/football/1-fc-union-berlin/2547",
+          "image_link": "https://img.sofascore.com/api/v1/team/2547/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#ff0000",
+            "secondary": "#ffffff",
+            "text": "#ffffff"
+          },
+          "followers_count": 118322
+        },
+        "away_team": {
+          "id": 2534,
+          "name": "SV Werder Bremen",
+          "short_name": "Bremen",
+          "code": "SVW",
+          "slug": "sv-werder-bremen",
+          "link": "https://www.sofascore.com/team/football/sv-werder-bremen/2534",
+          "image_link": "https://img.sofascore.com/api/v1/team/2534/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#009966",
+            "secondary": "#ffffff",
+            "text": "#ffffff"
+          },
+          "followers_count": 86364
+        },
+        "home_score": {
+          "current": 3,
+          "display": 3,
+          "periods": {
+            "period1": 0,
+            "normaltime": 3
+          }
+        },
+        "away_score": {
+          "current": 1,
+          "display": 1,
+          "periods": {
+            "period1": 0,
+            "normaltime": 1
+          }
+        },
+        "round": {
+          "number": 31,
+          "name": null,
+          "slug": null,
+          "cup_round_type": null
+        },
+        "tournament": {
+          "id": 35,
+          "name": "Bundesliga",
+          "slug": "bundesliga",
+          "link": "https://www.sofascore.com/tournament/football/germany/bundesliga/35",
+          "image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image",
+          "dark_image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image/dark",
+          "colors": {
+            "primary": "#e2080e",
+            "secondary": "#8e0902"
+          },
+          "followers_count": 524181,
+          "category": {
+            "id": 30,
+            "name": "Germany",
+            "slug": "germany",
+            "link": "https://www.sofascore.com/football/germany",
+            "sport": {
+              "id": 1,
+              "name": "Football",
+              "slug": "football"
+            },
+            "country": {
+              "name": "Germany",
+              "alpha2": "DE",
+              "alpha3": "DEU",
+              "slug": "germany"
+            },
+            "flag_image_link": "https://img.sofascore.com/api/v1/country/DE/flag"
+          },
+          "live_activity_enabled": true,
+          "has_player_statistics": true,
+          "group": null,
+          "is_live": false
+        },
+        "season": {
+          "id": 28210,
+          "name": "Bundesliga 20/21",
+          "year": "20/21"
+        },
+        "time": {
+          "injury_time1": 2,
+          "injury_time2": 3,
+          "current_period_start_time": "2021-04-24T15:23:32Z"
+        },
+        "coverage": 1,
+        "has_highlights": false,
+        "has_player_statistics": true,
+        "has_player_heatmap": true,
+        "is_final_result_only": false,
+        "player": {
+          "team_id": 2547,
+          "is_on_bench": true,
+          "statistics": null,
+          "incidents": null
+        }
+      },
+      {
+        "id": 8833702,
+        "custom_id": "zabsXab",
+        "slug": "1-fc-union-berlin-vfl-wolfsburg",
+        "link": "https://www.sofascore.com/football/match/1-fc-union-berlin-vfl-wolfsburg/zabsXab#id:8833702",
+        "start_time": "2021-05-08T13:30:00Z",
+        "status": {
+          "code": 100,
+          "type": "finished",
+          "description": "Ended"
+        },
+        "is_live": false,
+        "is_finished": true,
+        "winner_code": 1,
+        "home_team": {
+          "id": 2524,
+          "name": "VfL Wolfsburg",
+          "short_name": "Wolfsburg",
+          "code": "WOB",
+          "slug": "vfl-wolfsburg",
+          "link": "https://www.sofascore.com/team/football/vfl-wolfsburg/2524",
+          "image_link": "https://img.sofascore.com/api/v1/team/2524/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#64b42d",
+            "secondary": "#ffffff",
+            "text": "#ffffff"
+          },
+          "followers_count": 101537
+        },
+        "away_team": {
+          "id": 2547,
+          "name": "1. FC Union Berlin",
+          "short_name": "Union Berlin",
+          "code": "FCU",
+          "slug": "1-fc-union-berlin",
+          "link": "https://www.sofascore.com/team/football/1-fc-union-berlin/2547",
+          "image_link": "https://img.sofascore.com/api/v1/team/2547/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#ff0000",
+            "secondary": "#ffffff",
+            "text": "#ffffff"
+          },
+          "followers_count": 118322
+        },
+        "home_score": {
+          "current": 3,
+          "display": 3,
+          "periods": {
+            "period1": 1,
+            "normaltime": 3
+          }
+        },
+        "away_score": {
+          "current": 0,
+          "display": 0,
+          "periods": {
+            "period1": 0,
+            "normaltime": 0
+          }
+        },
+        "round": {
+          "number": 32,
+          "name": null,
+          "slug": null,
+          "cup_round_type": null
+        },
+        "tournament": {
+          "id": 35,
+          "name": "Bundesliga",
+          "slug": "bundesliga",
+          "link": "https://www.sofascore.com/tournament/football/germany/bundesliga/35",
+          "image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image",
+          "dark_image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image/dark",
+          "colors": {
+            "primary": "#e2080e",
+            "secondary": "#8e0902"
+          },
+          "followers_count": 524181,
+          "category": {
+            "id": 30,
+            "name": "Germany",
+            "slug": "germany",
+            "link": "https://www.sofascore.com/football/germany",
+            "sport": {
+              "id": 1,
+              "name": "Football",
+              "slug": "football"
+            },
+            "country": {
+              "name": "Germany",
+              "alpha2": "DE",
+              "alpha3": "DEU",
+              "slug": "germany"
+            },
+            "flag_image_link": "https://img.sofascore.com/api/v1/country/DE/flag"
+          },
+          "live_activity_enabled": true,
+          "has_player_statistics": true,
+          "group": null,
+          "is_live": false
+        },
+        "season": {
+          "id": 28210,
+          "name": "Bundesliga 20/21",
+          "year": "20/21"
+        },
+        "time": {
+          "injury_time1": 1,
+          "injury_time2": 2,
+          "current_period_start_time": "2021-05-08T15:20:11Z"
+        },
+        "coverage": 1,
+        "has_highlights": false,
+        "has_player_statistics": true,
+        "has_player_heatmap": true,
+        "is_final_result_only": false,
+        "player": {
+          "team_id": 2547,
+          "is_on_bench": true,
+          "statistics": null,
+          "incidents": null
+        }
+      },
+      {
+        "id": 8833530,
+        "custom_id": "XabsGdb",
+        "slug": "bayer-04-leverkusen-1-fc-union-berlin",
+        "link": "https://www.sofascore.com/football/match/bayer-04-leverkusen-1-fc-union-berlin/XabsGdb#id:8833530",
+        "start_time": "2021-05-15T13:30:00Z",
+        "status": {
+          "code": 100,
+          "type": "finished",
+          "description": "Ended"
+        },
+        "is_live": false,
+        "is_finished": true,
+        "winner_code": 3,
+        "home_team": {
+          "id": 2681,
+          "name": "Bayer 04 Leverkusen",
+          "short_name": "Leverkusen",
+          "code": "B04",
+          "slug": "bayer-04-leverkusen",
+          "link": "https://www.sofascore.com/team/football/bayer-04-leverkusen/2681",
+          "image_link": "https://img.sofascore.com/api/v1/team/2681/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#000000",
+            "secondary": "#ff2222",
+            "text": "#ff2222"
+          },
+          "followers_count": 890817
+        },
+        "away_team": {
+          "id": 2547,
+          "name": "1. FC Union Berlin",
+          "short_name": "Union Berlin",
+          "code": "FCU",
+          "slug": "1-fc-union-berlin",
+          "link": "https://www.sofascore.com/team/football/1-fc-union-berlin/2547",
+          "image_link": "https://img.sofascore.com/api/v1/team/2547/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#ff0000",
+            "secondary": "#ffffff",
+            "text": "#ffffff"
+          },
+          "followers_count": 118322
+        },
+        "home_score": {
+          "current": 1,
+          "display": 1,
+          "periods": {
+            "period1": 1,
+            "normaltime": 1
+          }
+        },
+        "away_score": {
+          "current": 1,
+          "display": 1,
+          "periods": {
+            "period1": 0,
+            "normaltime": 1
+          }
+        },
+        "round": {
+          "number": 33,
+          "name": null,
+          "slug": null,
+          "cup_round_type": null
+        },
+        "tournament": {
+          "id": 35,
+          "name": "Bundesliga",
+          "slug": "bundesliga",
+          "link": "https://www.sofascore.com/tournament/football/germany/bundesliga/35",
+          "image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image",
+          "dark_image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image/dark",
+          "colors": {
+            "primary": "#e2080e",
+            "secondary": "#8e0902"
+          },
+          "followers_count": 524181,
+          "category": {
+            "id": 30,
+            "name": "Germany",
+            "slug": "germany",
+            "link": "https://www.sofascore.com/football/germany",
+            "sport": {
+              "id": 1,
+              "name": "Football",
+              "slug": "football"
+            },
+            "country": {
+              "name": "Germany",
+              "alpha2": "DE",
+              "alpha3": "DEU",
+              "slug": "germany"
+            },
+            "flag_image_link": "https://img.sofascore.com/api/v1/country/DE/flag"
+          },
+          "live_activity_enabled": true,
+          "has_player_statistics": true,
+          "group": null,
+          "is_live": false
+        },
+        "season": {
+          "id": 28210,
+          "name": "Bundesliga 20/21",
+          "year": "20/21"
+        },
+        "time": {
+          "injury_time1": 2,
+          "injury_time2": 3,
+          "current_period_start_time": "2021-05-15T15:21:52Z"
+        },
+        "coverage": 1,
+        "has_highlights": false,
+        "has_player_statistics": true,
+        "has_player_heatmap": true,
+        "is_final_result_only": false,
+        "player": {
+          "team_id": 2547,
+          "is_on_bench": true,
+          "statistics": null,
+          "incidents": null
+        }
+      },
+      {
+        "id": 8833704,
+        "custom_id": "XabskCo",
+        "slug": "rb-leipzig-1-fc-union-berlin",
+        "link": "https://www.sofascore.com/football/match/rb-leipzig-1-fc-union-berlin/XabskCo#id:8833704",
+        "start_time": "2021-05-22T13:30:00Z",
+        "status": {
+          "code": 100,
+          "type": "finished",
+          "description": "Ended"
+        },
+        "is_live": false,
+        "is_finished": true,
+        "winner_code": 1,
+        "home_team": {
+          "id": 2547,
+          "name": "1. FC Union Berlin",
+          "short_name": "Union Berlin",
+          "code": "FCU",
+          "slug": "1-fc-union-berlin",
+          "link": "https://www.sofascore.com/team/football/1-fc-union-berlin/2547",
+          "image_link": "https://img.sofascore.com/api/v1/team/2547/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#ff0000",
+            "secondary": "#ffffff",
+            "text": "#ffffff"
+          },
+          "followers_count": 118322
+        },
+        "away_team": {
+          "id": 36360,
+          "name": "RB Leipzig",
+          "short_name": "Leipzig",
+          "code": "RBL",
+          "slug": "rb-leipzig",
+          "link": "https://www.sofascore.com/team/football/rb-leipzig/36360",
+          "image_link": "https://img.sofascore.com/api/v1/team/36360/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#ffffff",
+            "secondary": "#dd0000",
+            "text": "#dd0000"
+          },
+          "followers_count": 352024
+        },
+        "home_score": {
+          "current": 2,
+          "display": 2,
+          "periods": {
+            "period1": 0,
+            "normaltime": 2
+          }
+        },
+        "away_score": {
+          "current": 1,
+          "display": 1,
+          "periods": {
+            "period1": 0,
+            "normaltime": 1
+          }
+        },
+        "round": {
+          "number": 34,
+          "name": null,
+          "slug": null,
+          "cup_round_type": null
+        },
+        "tournament": {
+          "id": 35,
+          "name": "Bundesliga",
+          "slug": "bundesliga",
+          "link": "https://www.sofascore.com/tournament/football/germany/bundesliga/35",
+          "image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image",
+          "dark_image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image/dark",
+          "colors": {
+            "primary": "#e2080e",
+            "secondary": "#8e0902"
+          },
+          "followers_count": 524181,
+          "category": {
+            "id": 30,
+            "name": "Germany",
+            "slug": "germany",
+            "link": "https://www.sofascore.com/football/germany",
+            "sport": {
+              "id": 1,
+              "name": "Football",
+              "slug": "football"
+            },
+            "country": {
+              "name": "Germany",
+              "alpha2": "DE",
+              "alpha3": "DEU",
+              "slug": "germany"
+            },
+            "flag_image_link": "https://img.sofascore.com/api/v1/country/DE/flag"
+          },
+          "live_activity_enabled": true,
+          "has_player_statistics": true,
+          "group": null,
+          "is_live": false
+        },
+        "season": {
+          "id": 28210,
+          "name": "Bundesliga 20/21",
+          "year": "20/21"
+        },
+        "time": {
+          "injury_time2": 3,
+          "current_period_start_time": "2021-05-22T15:21:26Z"
+        },
+        "coverage": 1,
+        "has_highlights": false,
+        "has_player_statistics": true,
+        "has_player_heatmap": true,
+        "is_final_result_only": false,
+        "player": {
+          "team_id": 2547,
+          "is_on_bench": true,
+          "statistics": null,
+          "incidents": null
+        }
+      },
+      {
+        "id": 8833427,
+        "custom_id": "Xabsgbb",
+        "slug": "1-fsv-mainz-05-1-fc-union-berlin",
+        "link": "https://www.sofascore.com/football/match/1-fsv-mainz-05-1-fc-union-berlin/Xabsgbb#id:8833427",
+        "start_time": "2020-10-02T18:30:00Z",
+        "status": {
+          "code": 100,
+          "type": "finished",
+          "description": "Ended"
+        },
+        "is_live": false,
+        "is_finished": true,
+        "winner_code": 1,
+        "home_team": {
+          "id": 2547,
+          "name": "1. FC Union Berlin",
+          "short_name": "Union Berlin",
+          "code": "FCU",
+          "slug": "1-fc-union-berlin",
+          "link": "https://www.sofascore.com/team/football/1-fc-union-berlin/2547",
+          "image_link": "https://img.sofascore.com/api/v1/team/2547/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#ff0000",
+            "secondary": "#ffffff",
+            "text": "#ffffff"
+          },
+          "followers_count": 118322
+        },
+        "away_team": {
+          "id": 2556,
+          "name": "1. FSV Mainz 05",
+          "short_name": "Mainz 05",
+          "code": "M05",
+          "slug": "1-fsv-mainz-05",
+          "link": "https://www.sofascore.com/team/football/1-fsv-mainz-05/2556",
+          "image_link": "https://img.sofascore.com/api/v1/team/2556/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#ff0000",
+            "secondary": "#ffffff",
+            "text": "#ffffff"
+          },
+          "followers_count": 100768
+        },
+        "home_score": {
+          "current": 4,
+          "display": 4,
+          "periods": {
+            "period1": 1,
+            "normaltime": 4
+          }
+        },
+        "away_score": {
+          "current": 0,
+          "display": 0,
+          "periods": {
+            "period1": 0,
+            "normaltime": 0
+          }
+        },
+        "round": {
+          "number": 3,
+          "name": null,
+          "slug": null,
+          "cup_round_type": null
+        },
+        "tournament": {
+          "id": 35,
+          "name": "Bundesliga",
+          "slug": "bundesliga",
+          "link": "https://www.sofascore.com/tournament/football/germany/bundesliga/35",
+          "image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image",
+          "dark_image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image/dark",
+          "colors": {
+            "primary": "#e2080e",
+            "secondary": "#8e0902"
+          },
+          "followers_count": 524181,
+          "category": {
+            "id": 30,
+            "name": "Germany",
+            "slug": "germany",
+            "link": "https://www.sofascore.com/football/germany",
+            "sport": {
+              "id": 1,
+              "name": "Football",
+              "slug": "football"
+            },
+            "country": {
+              "name": "Germany",
+              "alpha2": "DE",
+              "alpha3": "DEU",
+              "slug": "germany"
+            },
+            "flag_image_link": "https://img.sofascore.com/api/v1/country/DE/flag"
+          },
+          "live_activity_enabled": true,
+          "has_player_statistics": true,
+          "group": null,
+          "is_live": false
+        },
+        "season": {
+          "id": 28210,
+          "name": "Bundesliga 20/21",
+          "year": "20/21"
+        },
+        "time": {
+          "current_period_start_time": "2020-10-02T20:18:23Z"
+        },
+        "coverage": 1,
+        "has_highlights": false,
+        "has_player_statistics": true,
+        "has_player_heatmap": true,
+        "is_final_result_only": false,
+        "player": {
+          "team_id": 2547,
+          "is_on_bench": true,
+          "statistics": null,
+          "incidents": null
+        }
+      },
+      {
+        "id": 8833422,
+        "custom_id": "FabsXab",
+        "slug": "1-fc-union-berlin-fc-schalke-04",
+        "link": "https://www.sofascore.com/football/match/1-fc-union-berlin-fc-schalke-04/FabsXab#id:8833422",
+        "start_time": "2020-10-18T16:00:00Z",
+        "status": {
+          "code": 100,
+          "type": "finished",
+          "description": "Ended"
+        },
+        "is_live": false,
+        "is_finished": true,
+        "winner_code": 3,
+        "home_team": {
+          "id": 2530,
+          "name": "FC Schalke 04",
+          "short_name": "Schalke",
+          "code": "S04",
+          "slug": "fc-schalke-04",
+          "link": "https://www.sofascore.com/team/football/fc-schalke-04/2530",
+          "image_link": "https://img.sofascore.com/api/v1/team/2530/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#0541cd",
+            "secondary": "#ffffff",
+            "text": "#ffffff"
+          },
+          "followers_count": 92240
+        },
+        "away_team": {
+          "id": 2547,
+          "name": "1. FC Union Berlin",
+          "short_name": "Union Berlin",
+          "code": "FCU",
+          "slug": "1-fc-union-berlin",
+          "link": "https://www.sofascore.com/team/football/1-fc-union-berlin/2547",
+          "image_link": "https://img.sofascore.com/api/v1/team/2547/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#ff0000",
+            "secondary": "#ffffff",
+            "text": "#ffffff"
+          },
+          "followers_count": 118322
+        },
+        "home_score": {
+          "current": 1,
+          "display": 1,
+          "periods": {
+            "period1": 0,
+            "normaltime": 1
+          }
+        },
+        "away_score": {
+          "current": 1,
+          "display": 1,
+          "periods": {
+            "period1": 0,
+            "normaltime": 1
+          }
+        },
+        "round": {
+          "number": 4,
+          "name": null,
+          "slug": null,
+          "cup_round_type": null
+        },
+        "tournament": {
+          "id": 35,
+          "name": "Bundesliga",
+          "slug": "bundesliga",
+          "link": "https://www.sofascore.com/tournament/football/germany/bundesliga/35",
+          "image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image",
+          "dark_image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image/dark",
+          "colors": {
+            "primary": "#e2080e",
+            "secondary": "#8e0902"
+          },
+          "followers_count": 524181,
+          "category": {
+            "id": 30,
+            "name": "Germany",
+            "slug": "germany",
+            "link": "https://www.sofascore.com/football/germany",
+            "sport": {
+              "id": 1,
+              "name": "Football",
+              "slug": "football"
+            },
+            "country": {
+              "name": "Germany",
+              "alpha2": "DE",
+              "alpha3": "DEU",
+              "slug": "germany"
+            },
+            "flag_image_link": "https://img.sofascore.com/api/v1/country/DE/flag"
+          },
+          "live_activity_enabled": true,
+          "has_player_statistics": true,
+          "group": null,
+          "is_live": false
+        },
+        "season": {
+          "id": 28210,
+          "name": "Bundesliga 20/21",
+          "year": "20/21"
+        },
+        "time": {
+          "injury_time1": 1,
+          "injury_time2": 3,
+          "current_period_start_time": "2020-10-18T17:52:04Z"
+        },
+        "coverage": 1,
+        "has_highlights": false,
+        "has_player_statistics": true,
+        "has_player_heatmap": true,
+        "is_final_result_only": false,
+        "player": {
+          "team_id": 2547,
+          "is_on_bench": true,
+          "statistics": null,
+          "incidents": null
+        }
+      },
+      {
+        "id": 8833499,
+        "custom_id": "PabsXab",
+        "slug": "1-fc-union-berlin-arminia-bielefeld",
+        "link": "https://www.sofascore.com/football/match/1-fc-union-berlin-arminia-bielefeld/PabsXab#id:8833499",
+        "start_time": "2020-11-07T14:30:00Z",
+        "status": {
+          "code": 100,
+          "type": "finished",
+          "description": "Ended"
+        },
+        "is_live": false,
+        "is_finished": true,
+        "winner_code": 1,
+        "home_team": {
+          "id": 2547,
+          "name": "1. FC Union Berlin",
+          "short_name": "Union Berlin",
+          "code": "FCU",
+          "slug": "1-fc-union-berlin",
+          "link": "https://www.sofascore.com/team/football/1-fc-union-berlin/2547",
+          "image_link": "https://img.sofascore.com/api/v1/team/2547/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#ff0000",
+            "secondary": "#ffffff",
+            "text": "#ffffff"
+          },
+          "followers_count": 118322
+        },
+        "away_team": {
+          "id": 2540,
+          "name": "Arminia Bielefeld",
+          "short_name": "Bielefeld",
+          "code": "ARM",
+          "slug": "arminia-bielefeld",
+          "link": "https://www.sofascore.com/team/football/arminia-bielefeld/2540",
+          "image_link": "https://img.sofascore.com/api/v1/team/2540/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#092288",
+            "secondary": "#000000",
+            "text": "#000000"
+          },
+          "followers_count": 21315
+        },
+        "home_score": {
+          "current": 5,
+          "display": 5,
+          "periods": {
+            "period1": 3,
+            "normaltime": 5
+          }
+        },
+        "away_score": {
+          "current": 0,
+          "display": 0,
+          "periods": {
+            "period1": 0,
+            "normaltime": 0
+          }
+        },
+        "round": {
+          "number": 7,
+          "name": null,
+          "slug": null,
+          "cup_round_type": null
+        },
+        "tournament": {
+          "id": 35,
+          "name": "Bundesliga",
+          "slug": "bundesliga",
+          "link": "https://www.sofascore.com/tournament/football/germany/bundesliga/35",
+          "image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image",
+          "dark_image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image/dark",
+          "colors": {
+            "primary": "#e2080e",
+            "secondary": "#8e0902"
+          },
+          "followers_count": 524181,
+          "category": {
+            "id": 30,
+            "name": "Germany",
+            "slug": "germany",
+            "link": "https://www.sofascore.com/football/germany",
+            "sport": {
+              "id": 1,
+              "name": "Football",
+              "slug": "football"
+            },
+            "country": {
+              "name": "Germany",
+              "alpha2": "DE",
+              "alpha3": "DEU",
+              "slug": "germany"
+            },
+            "flag_image_link": "https://img.sofascore.com/api/v1/country/DE/flag"
+          },
+          "live_activity_enabled": true,
+          "has_player_statistics": true,
+          "group": null,
+          "is_live": false
+        },
+        "season": {
+          "id": 28210,
+          "name": "Bundesliga 20/21",
+          "year": "20/21"
+        },
+        "time": {
+          "injury_time1": 4,
+          "current_period_start_time": "2020-11-07T16:21:20Z"
+        },
+        "coverage": 1,
+        "has_highlights": false,
+        "has_player_statistics": true,
+        "has_player_heatmap": true,
+        "is_final_result_only": false,
+        "player": {
+          "team_id": 2547,
+          "is_on_bench": true,
+          "statistics": null,
+          "incidents": null
+        }
+      },
+      {
+        "id": 8833516,
+        "custom_id": "Xabswdb",
+        "slug": "1-fc-koln-1-fc-union-berlin",
+        "link": "https://www.sofascore.com/football/match/1-fc-koln-1-fc-union-berlin/Xabswdb#id:8833516",
+        "start_time": "2020-11-22T17:00:00Z",
+        "status": {
+          "code": 100,
+          "type": "finished",
+          "description": "Ended"
+        },
+        "is_live": false,
+        "is_finished": true,
+        "winner_code": 2,
+        "home_team": {
+          "id": 2671,
+          "name": "1. FC Köln",
+          "short_name": "Köln",
+          "code": "KOE",
+          "slug": "1-fc-koln",
+          "link": "https://www.sofascore.com/team/football/1-fc-koln/2671",
+          "image_link": "https://img.sofascore.com/api/v1/team/2671/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#ffffff",
+            "secondary": "#e30613",
+            "text": "#e30613"
+          },
+          "followers_count": 82796
+        },
+        "away_team": {
+          "id": 2547,
+          "name": "1. FC Union Berlin",
+          "short_name": "Union Berlin",
+          "code": "FCU",
+          "slug": "1-fc-union-berlin",
+          "link": "https://www.sofascore.com/team/football/1-fc-union-berlin/2547",
+          "image_link": "https://img.sofascore.com/api/v1/team/2547/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#ff0000",
+            "secondary": "#ffffff",
+            "text": "#ffffff"
+          },
+          "followers_count": 118322
+        },
+        "home_score": {
+          "current": 1,
+          "display": 1,
+          "periods": {
+            "period1": 1,
+            "normaltime": 1
+          }
+        },
+        "away_score": {
+          "current": 2,
+          "display": 2,
+          "periods": {
+            "period1": 1,
+            "normaltime": 2
+          }
+        },
+        "round": {
+          "number": 8,
+          "name": null,
+          "slug": null,
+          "cup_round_type": null
+        },
+        "tournament": {
+          "id": 35,
+          "name": "Bundesliga",
+          "slug": "bundesliga",
+          "link": "https://www.sofascore.com/tournament/football/germany/bundesliga/35",
+          "image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image",
+          "dark_image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image/dark",
+          "colors": {
+            "primary": "#e2080e",
+            "secondary": "#8e0902"
+          },
+          "followers_count": 524181,
+          "category": {
+            "id": 30,
+            "name": "Germany",
+            "slug": "germany",
+            "link": "https://www.sofascore.com/football/germany",
+            "sport": {
+              "id": 1,
+              "name": "Football",
+              "slug": "football"
+            },
+            "country": {
+              "name": "Germany",
+              "alpha2": "DE",
+              "alpha3": "DEU",
+              "slug": "germany"
+            },
+            "flag_image_link": "https://img.sofascore.com/api/v1/country/DE/flag"
+          },
+          "live_activity_enabled": true,
+          "has_player_statistics": true,
+          "group": null,
+          "is_live": false
+        },
+        "season": {
+          "id": 28210,
+          "name": "Bundesliga 20/21",
+          "year": "20/21"
+        },
+        "time": {
+          "injury_time1": 1,
+          "injury_time2": 3,
+          "current_period_start_time": "2020-11-22T18:51:48Z"
+        },
+        "coverage": 1,
+        "has_highlights": false,
+        "has_player_statistics": true,
+        "has_player_heatmap": true,
+        "is_final_result_only": false,
+        "player": {
+          "team_id": 2547,
+          "is_on_bench": true,
+          "statistics": null,
+          "incidents": null
+        }
+      },
+      {
+        "id": 8833523,
+        "custom_id": "Xabszdb",
+        "slug": "eintracht-frankfurt-1-fc-union-berlin",
+        "link": "https://www.sofascore.com/football/match/eintracht-frankfurt-1-fc-union-berlin/Xabszdb#id:8833523",
+        "start_time": "2020-11-28T14:30:00Z",
+        "status": {
+          "code": 100,
+          "type": "finished",
+          "description": "Ended"
+        },
+        "is_live": false,
+        "is_finished": true,
+        "winner_code": 3,
+        "home_team": {
+          "id": 2547,
+          "name": "1. FC Union Berlin",
+          "short_name": "Union Berlin",
+          "code": "FCU",
+          "slug": "1-fc-union-berlin",
+          "link": "https://www.sofascore.com/team/football/1-fc-union-berlin/2547",
+          "image_link": "https://img.sofascore.com/api/v1/team/2547/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#ff0000",
+            "secondary": "#ffffff",
+            "text": "#ffffff"
+          },
+          "followers_count": 118322
+        },
+        "away_team": {
+          "id": 2674,
+          "name": "Eintracht Frankfurt",
+          "short_name": "Frankfurt",
+          "code": "SGE",
+          "slug": "eintracht-frankfurt",
+          "link": "https://www.sofascore.com/team/football/eintracht-frankfurt/2674",
+          "image_link": "https://img.sofascore.com/api/v1/team/2674/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#000000",
+            "secondary": "#ff1111",
+            "text": "#ff1111"
+          },
+          "followers_count": 240555
+        },
+        "home_score": {
+          "current": 3,
+          "display": 3,
+          "periods": {
+            "period1": 2,
+            "normaltime": 3
+          }
+        },
+        "away_score": {
+          "current": 3,
+          "display": 3,
+          "periods": {
+            "period1": 2,
+            "normaltime": 3
+          }
+        },
+        "round": {
+          "number": 9,
+          "name": null,
+          "slug": null,
+          "cup_round_type": null
+        },
+        "tournament": {
+          "id": 35,
+          "name": "Bundesliga",
+          "slug": "bundesliga",
+          "link": "https://www.sofascore.com/tournament/football/germany/bundesliga/35",
+          "image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image",
+          "dark_image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image/dark",
+          "colors": {
+            "primary": "#e2080e",
+            "secondary": "#8e0902"
+          },
+          "followers_count": 524181,
+          "category": {
+            "id": 30,
+            "name": "Germany",
+            "slug": "germany",
+            "link": "https://www.sofascore.com/football/germany",
+            "sport": {
+              "id": 1,
+              "name": "Football",
+              "slug": "football"
+            },
+            "country": {
+              "name": "Germany",
+              "alpha2": "DE",
+              "alpha3": "DEU",
+              "slug": "germany"
+            },
+            "flag_image_link": "https://img.sofascore.com/api/v1/country/DE/flag"
+          },
+          "live_activity_enabled": true,
+          "has_player_statistics": true,
+          "group": null,
+          "is_live": false
+        },
+        "season": {
+          "id": 28210,
+          "name": "Bundesliga 20/21",
+          "year": "20/21"
+        },
+        "time": {
+          "injury_time1": 2,
+          "injury_time2": 3,
+          "current_period_start_time": "2020-11-28T16:24:26Z"
+        },
+        "coverage": 1,
+        "has_highlights": false,
+        "has_player_statistics": true,
+        "has_player_heatmap": true,
+        "is_final_result_only": false,
+        "player": {
+          "team_id": 2547,
+          "is_on_bench": true,
+          "statistics": null,
+          "incidents": null
+        }
+      },
+      {
+        "id": 8833513,
+        "custom_id": "DabsXab",
+        "slug": "1-fc-union-berlin-hertha-bsc",
+        "link": "https://www.sofascore.com/football/match/1-fc-union-berlin-hertha-bsc/DabsXab#id:8833513",
+        "start_time": "2020-12-04T19:30:00Z",
+        "status": {
+          "code": 100,
+          "type": "finished",
+          "description": "Ended"
+        },
+        "is_live": false,
+        "is_finished": true,
+        "winner_code": 1,
+        "home_team": {
+          "id": 2528,
+          "name": "Hertha BSC",
+          "short_name": "Hertha",
+          "code": "BSC",
+          "slug": "hertha-bsc",
+          "link": "https://www.sofascore.com/team/football/hertha-bsc/2528",
+          "image_link": "https://img.sofascore.com/api/v1/team/2528/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#ffffff",
+            "secondary": "#0131ad",
+            "text": "#0131ad"
+          },
+          "followers_count": 44229
+        },
+        "away_team": {
+          "id": 2547,
+          "name": "1. FC Union Berlin",
+          "short_name": "Union Berlin",
+          "code": "FCU",
+          "slug": "1-fc-union-berlin",
+          "link": "https://www.sofascore.com/team/football/1-fc-union-berlin/2547",
+          "image_link": "https://img.sofascore.com/api/v1/team/2547/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#ff0000",
+            "secondary": "#ffffff",
+            "text": "#ffffff"
+          },
+          "followers_count": 118322
+        },
+        "home_score": {
+          "current": 3,
+          "display": 3,
+          "periods": {
+            "period1": 0,
+            "normaltime": 3
+          }
+        },
+        "away_score": {
+          "current": 1,
+          "display": 1,
+          "periods": {
+            "period1": 1,
+            "normaltime": 1
+          }
+        },
+        "home_red_cards": null,
+        "away_red_cards": 1,
+        "round": {
+          "number": 10,
+          "name": null,
+          "slug": null,
+          "cup_round_type": null
+        },
+        "tournament": {
+          "id": 35,
+          "name": "Bundesliga",
+          "slug": "bundesliga",
+          "link": "https://www.sofascore.com/tournament/football/germany/bundesliga/35",
+          "image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image",
+          "dark_image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image/dark",
+          "colors": {
+            "primary": "#e2080e",
+            "secondary": "#8e0902"
+          },
+          "followers_count": 524181,
+          "category": {
+            "id": 30,
+            "name": "Germany",
+            "slug": "germany",
+            "link": "https://www.sofascore.com/football/germany",
+            "sport": {
+              "id": 1,
+              "name": "Football",
+              "slug": "football"
+            },
+            "country": {
+              "name": "Germany",
+              "alpha2": "DE",
+              "alpha3": "DEU",
+              "slug": "germany"
+            },
+            "flag_image_link": "https://img.sofascore.com/api/v1/country/DE/flag"
+          },
+          "live_activity_enabled": true,
+          "has_player_statistics": true,
+          "group": null,
+          "is_live": false
+        },
+        "season": {
+          "id": 28210,
+          "name": "Bundesliga 20/21",
+          "year": "20/21"
+        },
+        "time": {
+          "injury_time1": 3,
+          "injury_time2": 4,
+          "current_period_start_time": "2020-12-04T21:30:26Z"
+        },
+        "coverage": 1,
+        "has_highlights": false,
+        "has_player_statistics": true,
+        "has_player_heatmap": true,
+        "is_final_result_only": false,
+        "player": {
+          "team_id": 2547,
+          "is_on_bench": true,
+          "statistics": null,
+          "incidents": null
+        }
+      },
+      {
+        "id": 8833466,
+        "custom_id": "Xabsxdb",
+        "slug": "fc-bayern-munchen-1-fc-union-berlin",
+        "link": "https://www.sofascore.com/football/match/fc-bayern-munchen-1-fc-union-berlin/Xabsxdb#id:8833466",
+        "start_time": "2020-12-12T17:30:00Z",
+        "status": {
+          "code": 100,
+          "type": "finished",
+          "description": "Ended"
+        },
+        "is_live": false,
+        "is_finished": true,
+        "winner_code": 3,
+        "home_team": {
+          "id": 2547,
+          "name": "1. FC Union Berlin",
+          "short_name": "Union Berlin",
+          "code": "FCU",
+          "slug": "1-fc-union-berlin",
+          "link": "https://www.sofascore.com/team/football/1-fc-union-berlin/2547",
+          "image_link": "https://img.sofascore.com/api/v1/team/2547/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#ff0000",
+            "secondary": "#ffffff",
+            "text": "#ffffff"
+          },
+          "followers_count": 118322
+        },
+        "away_team": {
+          "id": 2672,
+          "name": "FC Bayern München",
+          "short_name": "Bayern",
+          "code": "FCB",
+          "slug": "fc-bayern-munchen",
+          "link": "https://www.sofascore.com/team/football/fc-bayern-munchen/2672",
+          "image_link": "https://img.sofascore.com/api/v1/team/2672/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#cf142f",
+            "secondary": "#ffffff",
+            "text": "#ffffff"
+          },
+          "followers_count": 2988283
+        },
+        "home_score": {
+          "current": 1,
+          "display": 1,
+          "periods": {
+            "period1": 1,
+            "normaltime": 1
+          }
+        },
+        "away_score": {
+          "current": 1,
+          "display": 1,
+          "periods": {
+            "period1": 0,
+            "normaltime": 1
+          }
+        },
+        "round": {
+          "number": 11,
+          "name": null,
+          "slug": null,
+          "cup_round_type": null
+        },
+        "tournament": {
+          "id": 35,
+          "name": "Bundesliga",
+          "slug": "bundesliga",
+          "link": "https://www.sofascore.com/tournament/football/germany/bundesliga/35",
+          "image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image",
+          "dark_image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image/dark",
+          "colors": {
+            "primary": "#e2080e",
+            "secondary": "#8e0902"
+          },
+          "followers_count": 524181,
+          "category": {
+            "id": 30,
+            "name": "Germany",
+            "slug": "germany",
+            "link": "https://www.sofascore.com/football/germany",
+            "sport": {
+              "id": 1,
+              "name": "Football",
+              "slug": "football"
+            },
+            "country": {
+              "name": "Germany",
+              "alpha2": "DE",
+              "alpha3": "DEU",
+              "slug": "germany"
+            },
+            "flag_image_link": "https://img.sofascore.com/api/v1/country/DE/flag"
+          },
+          "live_activity_enabled": true,
+          "has_player_statistics": true,
+          "group": null,
+          "is_live": false
+        },
+        "season": {
+          "id": 28210,
+          "name": "Bundesliga 20/21",
+          "year": "20/21"
+        },
+        "time": {
+          "injury_time1": 3,
+          "injury_time2": 4,
+          "current_period_start_time": "2020-12-12T19:24:41Z"
+        },
+        "coverage": 1,
+        "has_highlights": false,
+        "has_player_statistics": true,
+        "has_player_heatmap": true,
+        "is_final_result_only": false,
+        "player": {
+          "team_id": 2547,
+          "is_on_bench": true,
+          "statistics": null,
+          "incidents": null
+        }
+      },
+      {
+        "id": 8833488,
+        "custom_id": "XabsCdb",
+        "slug": "vfb-stuttgart-1-fc-union-berlin",
+        "link": "https://www.sofascore.com/football/match/vfb-stuttgart-1-fc-union-berlin/XabsCdb#id:8833488",
+        "start_time": "2020-12-15T19:30:00Z",
+        "status": {
+          "code": 100,
+          "type": "finished",
+          "description": "Ended"
+        },
+        "is_live": false,
+        "is_finished": true,
+        "winner_code": 3,
+        "home_team": {
+          "id": 2677,
+          "name": "VfB Stuttgart",
+          "short_name": "Stuttgart",
+          "code": "VFB",
+          "slug": "vfb-stuttgart",
+          "link": "https://www.sofascore.com/team/football/vfb-stuttgart/2677",
+          "image_link": "https://img.sofascore.com/api/v1/team/2677/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#ffffff",
+            "secondary": "#ff0000",
+            "text": "#ff0000"
+          },
+          "followers_count": 248653
+        },
+        "away_team": {
+          "id": 2547,
+          "name": "1. FC Union Berlin",
+          "short_name": "Union Berlin",
+          "code": "FCU",
+          "slug": "1-fc-union-berlin",
+          "link": "https://www.sofascore.com/team/football/1-fc-union-berlin/2547",
+          "image_link": "https://img.sofascore.com/api/v1/team/2547/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#ff0000",
+            "secondary": "#ffffff",
+            "text": "#ffffff"
+          },
+          "followers_count": 118322
+        },
+        "home_score": {
+          "current": 2,
+          "display": 2,
+          "periods": {
+            "period1": 0,
+            "normaltime": 2
+          }
+        },
+        "away_score": {
+          "current": 2,
+          "display": 2,
+          "periods": {
+            "period1": 1,
+            "normaltime": 2
+          }
+        },
+        "round": {
+          "number": 12,
+          "name": null,
+          "slug": null,
+          "cup_round_type": null
+        },
+        "tournament": {
+          "id": 35,
+          "name": "Bundesliga",
+          "slug": "bundesliga",
+          "link": "https://www.sofascore.com/tournament/football/germany/bundesliga/35",
+          "image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image",
+          "dark_image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image/dark",
+          "colors": {
+            "primary": "#e2080e",
+            "secondary": "#8e0902"
+          },
+          "followers_count": 524181,
+          "category": {
+            "id": 30,
+            "name": "Germany",
+            "slug": "germany",
+            "link": "https://www.sofascore.com/football/germany",
+            "sport": {
+              "id": 1,
+              "name": "Football",
+              "slug": "football"
+            },
+            "country": {
+              "name": "Germany",
+              "alpha2": "DE",
+              "alpha3": "DEU",
+              "slug": "germany"
+            },
+            "flag_image_link": "https://img.sofascore.com/api/v1/country/DE/flag"
+          },
+          "live_activity_enabled": true,
+          "has_player_statistics": true,
+          "group": null,
+          "is_live": false
+        },
+        "season": {
+          "id": 28210,
+          "name": "Bundesliga 20/21",
+          "year": "20/21"
+        },
+        "time": {
+          "injury_time2": 4,
+          "current_period_start_time": "2020-12-15T21:24:31Z"
+        },
+        "coverage": 1,
+        "has_highlights": false,
+        "has_player_statistics": true,
+        "has_player_heatmap": true,
+        "is_final_result_only": false,
+        "player": {
+          "team_id": 2547,
+          "is_on_bench": true,
+          "statistics": null,
+          "incidents": null
+        }
+      },
+      {
+        "id": 8833484,
+        "custom_id": "Xabsydb",
+        "slug": "borussia-dortmund-1-fc-union-berlin",
+        "link": "https://www.sofascore.com/football/match/borussia-dortmund-1-fc-union-berlin/Xabsydb#id:8833484",
+        "start_time": "2020-12-18T19:30:00Z",
+        "status": {
+          "code": 100,
+          "type": "finished",
+          "description": "Ended"
+        },
+        "is_live": false,
+        "is_finished": true,
+        "winner_code": 1,
+        "home_team": {
+          "id": 2547,
+          "name": "1. FC Union Berlin",
+          "short_name": "Union Berlin",
+          "code": "FCU",
+          "slug": "1-fc-union-berlin",
+          "link": "https://www.sofascore.com/team/football/1-fc-union-berlin/2547",
+          "image_link": "https://img.sofascore.com/api/v1/team/2547/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#ff0000",
+            "secondary": "#ffffff",
+            "text": "#ffffff"
+          },
+          "followers_count": 118322
+        },
+        "away_team": {
+          "id": 2673,
+          "name": "Borussia Dortmund",
+          "short_name": "Dortmund",
+          "code": "BVB",
+          "slug": "borussia-dortmund",
+          "link": "https://www.sofascore.com/team/football/borussia-dortmund/2673",
+          "image_link": "https://img.sofascore.com/api/v1/team/2673/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#ffe600",
+            "secondary": "#000000",
+            "text": "#000000"
+          },
+          "followers_count": 1306648
+        },
+        "home_score": {
+          "current": 2,
+          "display": 2,
+          "periods": {
+            "period1": 0,
+            "normaltime": 2
+          }
+        },
+        "away_score": {
+          "current": 1,
+          "display": 1,
+          "periods": {
+            "period1": 0,
+            "normaltime": 1
+          }
+        },
+        "round": {
+          "number": 13,
+          "name": null,
+          "slug": null,
+          "cup_round_type": null
+        },
+        "tournament": {
+          "id": 35,
+          "name": "Bundesliga",
+          "slug": "bundesliga",
+          "link": "https://www.sofascore.com/tournament/football/germany/bundesliga/35",
+          "image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image",
+          "dark_image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image/dark",
+          "colors": {
+            "primary": "#e2080e",
+            "secondary": "#8e0902"
+          },
+          "followers_count": 524181,
+          "category": {
+            "id": 30,
+            "name": "Germany",
+            "slug": "germany",
+            "link": "https://www.sofascore.com/football/germany",
+            "sport": {
+              "id": 1,
+              "name": "Football",
+              "slug": "football"
+            },
+            "country": {
+              "name": "Germany",
+              "alpha2": "DE",
+              "alpha3": "DEU",
+              "slug": "germany"
+            },
+            "flag_image_link": "https://img.sofascore.com/api/v1/country/DE/flag"
+          },
+          "live_activity_enabled": true,
+          "has_player_statistics": true,
+          "group": null,
+          "is_live": false
+        },
+        "season": {
+          "id": 28210,
+          "name": "Bundesliga 20/21",
+          "year": "20/21"
+        },
+        "time": {
+          "injury_time2": 3,
+          "current_period_start_time": "2020-12-18T21:21:51Z"
+        },
+        "coverage": 1,
+        "has_highlights": false,
+        "has_player_statistics": true,
+        "has_player_heatmap": true,
+        "is_final_result_only": false,
+        "player": {
+          "team_id": 2547,
+          "is_on_bench": true,
+          "statistics": null,
+          "incidents": null
+        }
+      },
+      {
+        "id": 8833677,
+        "custom_id": "JabsXab",
+        "slug": "1-fc-union-berlin-sv-werder-bremen",
+        "link": "https://www.sofascore.com/football/match/1-fc-union-berlin-sv-werder-bremen/JabsXab#id:8833677",
+        "start_time": "2021-01-02T14:30:00Z",
+        "status": {
+          "code": 100,
+          "type": "finished",
+          "description": "Ended"
+        },
+        "is_live": false,
+        "is_finished": true,
+        "winner_code": 2,
+        "home_team": {
+          "id": 2534,
+          "name": "SV Werder Bremen",
+          "short_name": "Bremen",
+          "code": "SVW",
+          "slug": "sv-werder-bremen",
+          "link": "https://www.sofascore.com/team/football/sv-werder-bremen/2534",
+          "image_link": "https://img.sofascore.com/api/v1/team/2534/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#009966",
+            "secondary": "#ffffff",
+            "text": "#ffffff"
+          },
+          "followers_count": 86364
+        },
+        "away_team": {
+          "id": 2547,
+          "name": "1. FC Union Berlin",
+          "short_name": "Union Berlin",
+          "code": "FCU",
+          "slug": "1-fc-union-berlin",
+          "link": "https://www.sofascore.com/team/football/1-fc-union-berlin/2547",
+          "image_link": "https://img.sofascore.com/api/v1/team/2547/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#ff0000",
+            "secondary": "#ffffff",
+            "text": "#ffffff"
+          },
+          "followers_count": 118322
+        },
+        "home_score": {
+          "current": 0,
+          "display": 0,
+          "periods": {
+            "period1": 0,
+            "normaltime": 0
+          }
+        },
+        "away_score": {
+          "current": 2,
+          "display": 2,
+          "periods": {
+            "period1": 2,
+            "normaltime": 2
+          }
+        },
+        "round": {
+          "number": 14,
+          "name": null,
+          "slug": null,
+          "cup_round_type": null
+        },
+        "tournament": {
+          "id": 35,
+          "name": "Bundesliga",
+          "slug": "bundesliga",
+          "link": "https://www.sofascore.com/tournament/football/germany/bundesliga/35",
+          "image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image",
+          "dark_image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image/dark",
+          "colors": {
+            "primary": "#e2080e",
+            "secondary": "#8e0902"
+          },
+          "followers_count": 524181,
+          "category": {
+            "id": 30,
+            "name": "Germany",
+            "slug": "germany",
+            "link": "https://www.sofascore.com/football/germany",
+            "sport": {
+              "id": 1,
+              "name": "Football",
+              "slug": "football"
+            },
+            "country": {
+              "name": "Germany",
+              "alpha2": "DE",
+              "alpha3": "DEU",
+              "slug": "germany"
+            },
+            "flag_image_link": "https://img.sofascore.com/api/v1/country/DE/flag"
+          },
+          "live_activity_enabled": true,
+          "has_player_statistics": true,
+          "group": null,
+          "is_live": false
+        },
+        "season": {
+          "id": 28210,
+          "name": "Bundesliga 20/21",
+          "year": "20/21"
+        },
+        "time": {
+          "injury_time1": 2,
+          "injury_time2": 3,
+          "current_period_start_time": "2021-01-02T16:24:14Z"
+        },
+        "coverage": 1,
+        "has_highlights": false,
+        "has_player_statistics": true,
+        "has_player_heatmap": true,
+        "is_final_result_only": false,
+        "player": {
+          "team_id": 2547,
+          "is_on_bench": true,
+          "statistics": null,
+          "incidents": null
+        }
+      },
+      {
+        "id": 8833572,
+        "custom_id": "zabsXab",
+        "slug": "1-fc-union-berlin-vfl-wolfsburg",
+        "link": "https://www.sofascore.com/football/match/1-fc-union-berlin-vfl-wolfsburg/zabsXab#id:8833572",
+        "start_time": "2021-01-09T14:30:00Z",
+        "status": {
+          "code": 100,
+          "type": "finished",
+          "description": "Ended"
+        },
+        "is_live": false,
+        "is_finished": true,
+        "winner_code": 3,
+        "home_team": {
+          "id": 2547,
+          "name": "1. FC Union Berlin",
+          "short_name": "Union Berlin",
+          "code": "FCU",
+          "slug": "1-fc-union-berlin",
+          "link": "https://www.sofascore.com/team/football/1-fc-union-berlin/2547",
+          "image_link": "https://img.sofascore.com/api/v1/team/2547/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#ff0000",
+            "secondary": "#ffffff",
+            "text": "#ffffff"
+          },
+          "followers_count": 118322
+        },
+        "away_team": {
+          "id": 2524,
+          "name": "VfL Wolfsburg",
+          "short_name": "Wolfsburg",
+          "code": "WOB",
+          "slug": "vfl-wolfsburg",
+          "link": "https://www.sofascore.com/team/football/vfl-wolfsburg/2524",
+          "image_link": "https://img.sofascore.com/api/v1/team/2524/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#64b42d",
+            "secondary": "#ffffff",
+            "text": "#ffffff"
+          },
+          "followers_count": 101537
+        },
+        "home_score": {
+          "current": 2,
+          "display": 2,
+          "periods": {
+            "period1": 1,
+            "normaltime": 2
+          }
+        },
+        "away_score": {
+          "current": 2,
+          "display": 2,
+          "periods": {
+            "period1": 1,
+            "normaltime": 2
+          }
+        },
+        "home_red_cards": null,
+        "away_red_cards": 1,
+        "round": {
+          "number": 15,
+          "name": null,
+          "slug": null,
+          "cup_round_type": null
+        },
+        "tournament": {
+          "id": 35,
+          "name": "Bundesliga",
+          "slug": "bundesliga",
+          "link": "https://www.sofascore.com/tournament/football/germany/bundesliga/35",
+          "image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image",
+          "dark_image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image/dark",
+          "colors": {
+            "primary": "#e2080e",
+            "secondary": "#8e0902"
+          },
+          "followers_count": 524181,
+          "category": {
+            "id": 30,
+            "name": "Germany",
+            "slug": "germany",
+            "link": "https://www.sofascore.com/football/germany",
+            "sport": {
+              "id": 1,
+              "name": "Football",
+              "slug": "football"
+            },
+            "country": {
+              "name": "Germany",
+              "alpha2": "DE",
+              "alpha3": "DEU",
+              "slug": "germany"
+            },
+            "flag_image_link": "https://img.sofascore.com/api/v1/country/DE/flag"
+          },
+          "live_activity_enabled": true,
+          "has_player_statistics": true,
+          "group": null,
+          "is_live": false
+        },
+        "season": {
+          "id": 28210,
+          "name": "Bundesliga 20/21",
+          "year": "20/21"
+        },
+        "time": {
+          "injury_time1": 1,
+          "injury_time2": 4,
+          "current_period_start_time": "2021-01-09T16:23:58Z"
+        },
+        "coverage": 1,
+        "has_highlights": false,
+        "has_player_statistics": true,
+        "has_player_heatmap": true,
+        "is_final_result_only": false,
+        "player": {
+          "team_id": 2547,
+          "is_on_bench": true,
+          "statistics": null,
+          "incidents": null
+        }
+      },
+      {
+        "id": 8833682,
+        "custom_id": "XabsGdb",
+        "slug": "bayer-04-leverkusen-1-fc-union-berlin",
+        "link": "https://www.sofascore.com/football/match/bayer-04-leverkusen-1-fc-union-berlin/XabsGdb#id:8833682",
+        "start_time": "2021-01-15T19:30:00Z",
+        "status": {
+          "code": 100,
+          "type": "finished",
+          "description": "Ended"
+        },
+        "is_live": false,
+        "is_finished": true,
+        "winner_code": 1,
+        "home_team": {
+          "id": 2547,
+          "name": "1. FC Union Berlin",
+          "short_name": "Union Berlin",
+          "code": "FCU",
+          "slug": "1-fc-union-berlin",
+          "link": "https://www.sofascore.com/team/football/1-fc-union-berlin/2547",
+          "image_link": "https://img.sofascore.com/api/v1/team/2547/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#ff0000",
+            "secondary": "#ffffff",
+            "text": "#ffffff"
+          },
+          "followers_count": 118322
+        },
+        "away_team": {
+          "id": 2681,
+          "name": "Bayer 04 Leverkusen",
+          "short_name": "Leverkusen",
+          "code": "B04",
+          "slug": "bayer-04-leverkusen",
+          "link": "https://www.sofascore.com/team/football/bayer-04-leverkusen/2681",
+          "image_link": "https://img.sofascore.com/api/v1/team/2681/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#000000",
+            "secondary": "#ff2222",
+            "text": "#ff2222"
+          },
+          "followers_count": 890817
+        },
+        "home_score": {
+          "current": 1,
+          "display": 1,
+          "periods": {
+            "period1": 0,
+            "normaltime": 1
+          }
+        },
+        "away_score": {
+          "current": 0,
+          "display": 0,
+          "periods": {
+            "period1": 0,
+            "normaltime": 0
+          }
+        },
+        "round": {
+          "number": 16,
+          "name": null,
+          "slug": null,
+          "cup_round_type": null
+        },
+        "tournament": {
+          "id": 35,
+          "name": "Bundesliga",
+          "slug": "bundesliga",
+          "link": "https://www.sofascore.com/tournament/football/germany/bundesliga/35",
+          "image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image",
+          "dark_image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image/dark",
+          "colors": {
+            "primary": "#e2080e",
+            "secondary": "#8e0902"
+          },
+          "followers_count": 524181,
+          "category": {
+            "id": 30,
+            "name": "Germany",
+            "slug": "germany",
+            "link": "https://www.sofascore.com/football/germany",
+            "sport": {
+              "id": 1,
+              "name": "Football",
+              "slug": "football"
+            },
+            "country": {
+              "name": "Germany",
+              "alpha2": "DE",
+              "alpha3": "DEU",
+              "slug": "germany"
+            },
+            "flag_image_link": "https://img.sofascore.com/api/v1/country/DE/flag"
+          },
+          "live_activity_enabled": true,
+          "has_player_statistics": true,
+          "group": null,
+          "is_live": false
+        },
+        "season": {
+          "id": 28210,
+          "name": "Bundesliga 20/21",
+          "year": "20/21"
+        },
+        "time": {
+          "injury_time1": 3,
+          "injury_time2": 4,
+          "current_period_start_time": "2021-01-15T21:24:18Z"
+        },
+        "coverage": 1,
+        "has_highlights": false,
+        "has_player_statistics": true,
+        "has_player_heatmap": true,
+        "is_final_result_only": false,
+        "player": {
+          "team_id": 2547,
+          "is_on_bench": true,
+          "statistics": null,
+          "incidents": null
+        }
+      },
+      {
+        "id": 8833602,
+        "custom_id": "XabskCo",
+        "slug": "rb-leipzig-1-fc-union-berlin",
+        "link": "https://www.sofascore.com/football/match/rb-leipzig-1-fc-union-berlin/XabskCo#id:8833602",
+        "start_time": "2021-01-20T19:30:00Z",
+        "status": {
+          "code": 100,
+          "type": "finished",
+          "description": "Ended"
+        },
+        "is_live": false,
+        "is_finished": true,
+        "winner_code": 1,
+        "home_team": {
+          "id": 36360,
+          "name": "RB Leipzig",
+          "short_name": "Leipzig",
+          "code": "RBL",
+          "slug": "rb-leipzig",
+          "link": "https://www.sofascore.com/team/football/rb-leipzig/36360",
+          "image_link": "https://img.sofascore.com/api/v1/team/36360/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#ffffff",
+            "secondary": "#dd0000",
+            "text": "#dd0000"
+          },
+          "followers_count": 352024
+        },
+        "away_team": {
+          "id": 2547,
+          "name": "1. FC Union Berlin",
+          "short_name": "Union Berlin",
+          "code": "FCU",
+          "slug": "1-fc-union-berlin",
+          "link": "https://www.sofascore.com/team/football/1-fc-union-berlin/2547",
+          "image_link": "https://img.sofascore.com/api/v1/team/2547/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#ff0000",
+            "secondary": "#ffffff",
+            "text": "#ffffff"
+          },
+          "followers_count": 118322
+        },
+        "home_score": {
+          "current": 1,
+          "display": 1,
+          "periods": {
+            "period1": 0,
+            "normaltime": 1
+          }
+        },
+        "away_score": {
+          "current": 0,
+          "display": 0,
+          "periods": {
+            "period1": 0,
+            "normaltime": 0
+          }
+        },
+        "round": {
+          "number": 17,
+          "name": null,
+          "slug": null,
+          "cup_round_type": null
+        },
+        "tournament": {
+          "id": 35,
+          "name": "Bundesliga",
+          "slug": "bundesliga",
+          "link": "https://www.sofascore.com/tournament/football/germany/bundesliga/35",
+          "image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image",
+          "dark_image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image/dark",
+          "colors": {
+            "primary": "#e2080e",
+            "secondary": "#8e0902"
+          },
+          "followers_count": 524181,
+          "category": {
+            "id": 30,
+            "name": "Germany",
+            "slug": "germany",
+            "link": "https://www.sofascore.com/football/germany",
+            "sport": {
+              "id": 1,
+              "name": "Football",
+              "slug": "football"
+            },
+            "country": {
+              "name": "Germany",
+              "alpha2": "DE",
+              "alpha3": "DEU",
+              "slug": "germany"
+            },
+            "flag_image_link": "https://img.sofascore.com/api/v1/country/DE/flag"
+          },
+          "live_activity_enabled": true,
+          "has_player_statistics": true,
+          "group": null,
+          "is_live": false
+        },
+        "season": {
+          "id": 28210,
+          "name": "Bundesliga 20/21",
+          "year": "20/21"
+        },
+        "time": {
+          "injury_time2": 3,
+          "current_period_start_time": "2021-01-20T21:21:35Z"
+        },
+        "coverage": 1,
+        "has_highlights": false,
+        "has_player_statistics": true,
+        "has_player_heatmap": true,
+        "is_final_result_only": false,
+        "player": {
+          "team_id": 2547,
+          "is_on_bench": true,
+          "statistics": null,
+          "incidents": null
+        }
+      },
+      {
+        "id": 8833659,
+        "custom_id": "Xabsacb",
+        "slug": "fc-augsburg-1-fc-union-berlin",
+        "link": "https://www.sofascore.com/football/match/fc-augsburg-1-fc-union-berlin/Xabsacb#id:8833659",
+        "start_time": "2021-01-23T14:30:00Z",
+        "status": {
+          "code": 100,
+          "type": "finished",
+          "description": "Ended"
+        },
+        "is_live": false,
+        "is_finished": true,
+        "winner_code": 1,
+        "home_team": {
+          "id": 2600,
+          "name": "FC Augsburg",
+          "short_name": "Augsburg",
+          "code": "FCA",
+          "slug": "fc-augsburg",
+          "link": "https://www.sofascore.com/team/football/fc-augsburg/2600",
+          "image_link": "https://img.sofascore.com/api/v1/team/2600/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#ffffff",
+            "secondary": "#cd1719",
+            "text": "#cd1719"
+          },
+          "followers_count": 78521
+        },
+        "away_team": {
+          "id": 2547,
+          "name": "1. FC Union Berlin",
+          "short_name": "Union Berlin",
+          "code": "FCU",
+          "slug": "1-fc-union-berlin",
+          "link": "https://www.sofascore.com/team/football/1-fc-union-berlin/2547",
+          "image_link": "https://img.sofascore.com/api/v1/team/2547/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#ff0000",
+            "secondary": "#ffffff",
+            "text": "#ffffff"
+          },
+          "followers_count": 118322
+        },
+        "home_score": {
+          "current": 2,
+          "display": 2,
+          "periods": {
+            "period1": 1,
+            "normaltime": 2
+          }
+        },
+        "away_score": {
+          "current": 1,
+          "display": 1,
+          "periods": {
+            "period1": 1,
+            "normaltime": 1
+          }
+        },
+        "round": {
+          "number": 18,
+          "name": null,
+          "slug": null,
+          "cup_round_type": null
+        },
+        "tournament": {
+          "id": 35,
+          "name": "Bundesliga",
+          "slug": "bundesliga",
+          "link": "https://www.sofascore.com/tournament/football/germany/bundesliga/35",
+          "image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image",
+          "dark_image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image/dark",
+          "colors": {
+            "primary": "#e2080e",
+            "secondary": "#8e0902"
+          },
+          "followers_count": 524181,
+          "category": {
+            "id": 30,
+            "name": "Germany",
+            "slug": "germany",
+            "link": "https://www.sofascore.com/football/germany",
+            "sport": {
+              "id": 1,
+              "name": "Football",
+              "slug": "football"
+            },
+            "country": {
+              "name": "Germany",
+              "alpha2": "DE",
+              "alpha3": "DEU",
+              "slug": "germany"
+            },
+            "flag_image_link": "https://img.sofascore.com/api/v1/country/DE/flag"
+          },
+          "live_activity_enabled": true,
+          "has_player_statistics": true,
+          "group": null,
+          "is_live": false
+        },
+        "season": {
+          "id": 28210,
+          "name": "Bundesliga 20/21",
+          "year": "20/21"
+        },
+        "time": {
+          "injury_time1": 1,
+          "injury_time2": 4,
+          "current_period_start_time": "2021-01-23T16:22:36Z"
+        },
+        "coverage": 1,
+        "has_highlights": false,
+        "has_player_statistics": true,
+        "has_player_heatmap": true,
+        "is_final_result_only": false,
+        "player": {
+          "team_id": 2547,
+          "is_on_bench": true,
+          "statistics": null,
+          "incidents": null
+        }
+      },
+      {
+        "id": 8833564,
+        "custom_id": "CabsXab",
+        "slug": "1-fc-union-berlin-borussia-mgladbach",
+        "link": "https://www.sofascore.com/football/match/1-fc-union-berlin-borussia-mgladbach/CabsXab#id:8833564",
+        "start_time": "2021-01-30T14:30:00Z",
+        "status": {
+          "code": 100,
+          "type": "finished",
+          "description": "Ended"
+        },
+        "is_live": false,
+        "is_finished": true,
+        "winner_code": 3,
+        "home_team": {
+          "id": 2547,
+          "name": "1. FC Union Berlin",
+          "short_name": "Union Berlin",
+          "code": "FCU",
+          "slug": "1-fc-union-berlin",
+          "link": "https://www.sofascore.com/team/football/1-fc-union-berlin/2547",
+          "image_link": "https://img.sofascore.com/api/v1/team/2547/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#ff0000",
+            "secondary": "#ffffff",
+            "text": "#ffffff"
+          },
+          "followers_count": 118322
+        },
+        "away_team": {
+          "id": 2527,
+          "name": "Borussia M'gladbach",
+          "short_name": "M'gladbach",
+          "code": "BMG",
+          "slug": "borussia-mgladbach",
+          "link": "https://www.sofascore.com/team/football/borussia-mgladbach/2527",
+          "image_link": "https://img.sofascore.com/api/v1/team/2527/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#ffffff",
+            "secondary": "#000000",
+            "text": "#000000"
+          },
+          "followers_count": 106028
+        },
+        "home_score": {
+          "current": 1,
+          "display": 1,
+          "periods": {
+            "period1": 1,
+            "normaltime": 1
+          }
+        },
+        "away_score": {
+          "current": 1,
+          "display": 1,
+          "periods": {
+            "period1": 0,
+            "normaltime": 1
+          }
+        },
+        "round": {
+          "number": 19,
+          "name": null,
+          "slug": null,
+          "cup_round_type": null
+        },
+        "tournament": {
+          "id": 35,
+          "name": "Bundesliga",
+          "slug": "bundesliga",
+          "link": "https://www.sofascore.com/tournament/football/germany/bundesliga/35",
+          "image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image",
+          "dark_image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image/dark",
+          "colors": {
+            "primary": "#e2080e",
+            "secondary": "#8e0902"
+          },
+          "followers_count": 524181,
+          "category": {
+            "id": 30,
+            "name": "Germany",
+            "slug": "germany",
+            "link": "https://www.sofascore.com/football/germany",
+            "sport": {
+              "id": 1,
+              "name": "Football",
+              "slug": "football"
+            },
+            "country": {
+              "name": "Germany",
+              "alpha2": "DE",
+              "alpha3": "DEU",
+              "slug": "germany"
+            },
+            "flag_image_link": "https://img.sofascore.com/api/v1/country/DE/flag"
+          },
+          "live_activity_enabled": true,
+          "has_player_statistics": true,
+          "group": null,
+          "is_live": false
+        },
+        "season": {
+          "id": 28210,
+          "name": "Bundesliga 20/21",
+          "year": "20/21"
+        },
+        "time": {
+          "injury_time1": 1,
+          "injury_time2": 6,
+          "current_period_start_time": "2021-01-30T16:27:21Z"
+        },
+        "coverage": 1,
+        "has_highlights": false,
+        "has_player_statistics": true,
+        "has_player_heatmap": true,
+        "is_final_result_only": false,
+        "player": {
+          "team_id": 2547,
+          "is_on_bench": false,
+          "statistics": {
+            "rating": 6.8,
+            "minutes_played": 21
+          },
+          "incidents": null
+        }
+      },
+      {
+        "id": 8833547,
+        "custom_id": "Xabsgbb",
+        "slug": "1-fsv-mainz-05-1-fc-union-berlin",
+        "link": "https://www.sofascore.com/football/match/1-fsv-mainz-05-1-fc-union-berlin/Xabsgbb#id:8833547",
+        "start_time": "2021-02-06T14:30:00Z",
+        "status": {
+          "code": 100,
+          "type": "finished",
+          "description": "Ended"
+        },
+        "is_live": false,
+        "is_finished": true,
+        "winner_code": 1,
+        "home_team": {
+          "id": 2556,
+          "name": "1. FSV Mainz 05",
+          "short_name": "Mainz 05",
+          "code": "M05",
+          "slug": "1-fsv-mainz-05",
+          "link": "https://www.sofascore.com/team/football/1-fsv-mainz-05/2556",
+          "image_link": "https://img.sofascore.com/api/v1/team/2556/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#ff0000",
+            "secondary": "#ffffff",
+            "text": "#ffffff"
+          },
+          "followers_count": 100768
+        },
+        "away_team": {
+          "id": 2547,
+          "name": "1. FC Union Berlin",
+          "short_name": "Union Berlin",
+          "code": "FCU",
+          "slug": "1-fc-union-berlin",
+          "link": "https://www.sofascore.com/team/football/1-fc-union-berlin/2547",
+          "image_link": "https://img.sofascore.com/api/v1/team/2547/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#ff0000",
+            "secondary": "#ffffff",
+            "text": "#ffffff"
+          },
+          "followers_count": 118322
+        },
+        "home_score": {
+          "current": 1,
+          "display": 1,
+          "periods": {
+            "period1": 1,
+            "normaltime": 1
+          }
+        },
+        "away_score": {
+          "current": 0,
+          "display": 0,
+          "periods": {
+            "period1": 0,
+            "normaltime": 0
+          }
+        },
+        "home_red_cards": null,
+        "away_red_cards": 1,
+        "round": {
+          "number": 20,
+          "name": null,
+          "slug": null,
+          "cup_round_type": null
+        },
+        "tournament": {
+          "id": 35,
+          "name": "Bundesliga",
+          "slug": "bundesliga",
+          "link": "https://www.sofascore.com/tournament/football/germany/bundesliga/35",
+          "image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image",
+          "dark_image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image/dark",
+          "colors": {
+            "primary": "#e2080e",
+            "secondary": "#8e0902"
+          },
+          "followers_count": 524181,
+          "category": {
+            "id": 30,
+            "name": "Germany",
+            "slug": "germany",
+            "link": "https://www.sofascore.com/football/germany",
+            "sport": {
+              "id": 1,
+              "name": "Football",
+              "slug": "football"
+            },
+            "country": {
+              "name": "Germany",
+              "alpha2": "DE",
+              "alpha3": "DEU",
+              "slug": "germany"
+            },
+            "flag_image_link": "https://img.sofascore.com/api/v1/country/DE/flag"
+          },
+          "live_activity_enabled": true,
+          "has_player_statistics": true,
+          "group": null,
+          "is_live": false
+        },
+        "season": {
+          "id": 28210,
+          "name": "Bundesliga 20/21",
+          "year": "20/21"
+        },
+        "time": {
+          "injury_time1": 1,
+          "injury_time2": 3,
+          "current_period_start_time": "2021-02-06T16:21:42Z"
+        },
+        "coverage": 1,
+        "has_highlights": false,
+        "has_player_statistics": true,
+        "has_player_heatmap": true,
+        "is_final_result_only": false,
+        "player": {
+          "team_id": 2547,
+          "is_on_bench": true,
+          "statistics": null,
+          "incidents": null
+        }
+      },
+      {
+        "id": 8833695,
+        "custom_id": "FabsXab",
+        "slug": "1-fc-union-berlin-fc-schalke-04",
+        "link": "https://www.sofascore.com/football/match/1-fc-union-berlin-fc-schalke-04/FabsXab#id:8833695",
+        "start_time": "2021-02-13T17:30:00Z",
+        "status": {
+          "code": 100,
+          "type": "finished",
+          "description": "Ended"
+        },
+        "is_live": false,
+        "is_finished": true,
+        "winner_code": 3,
+        "home_team": {
+          "id": 2547,
+          "name": "1. FC Union Berlin",
+          "short_name": "Union Berlin",
+          "code": "FCU",
+          "slug": "1-fc-union-berlin",
+          "link": "https://www.sofascore.com/team/football/1-fc-union-berlin/2547",
+          "image_link": "https://img.sofascore.com/api/v1/team/2547/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#ff0000",
+            "secondary": "#ffffff",
+            "text": "#ffffff"
+          },
+          "followers_count": 118322
+        },
+        "away_team": {
+          "id": 2530,
+          "name": "FC Schalke 04",
+          "short_name": "Schalke",
+          "code": "S04",
+          "slug": "fc-schalke-04",
+          "link": "https://www.sofascore.com/team/football/fc-schalke-04/2530",
+          "image_link": "https://img.sofascore.com/api/v1/team/2530/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#0541cd",
+            "secondary": "#ffffff",
+            "text": "#ffffff"
+          },
+          "followers_count": 92240
+        },
+        "home_score": {
+          "current": 0,
+          "display": 0,
+          "periods": {
+            "period1": 0,
+            "normaltime": 0
+          }
+        },
+        "away_score": {
+          "current": 0,
+          "display": 0,
+          "periods": {
+            "period1": 0,
+            "normaltime": 0
+          }
+        },
+        "round": {
+          "number": 21,
+          "name": null,
+          "slug": null,
+          "cup_round_type": null
+        },
+        "tournament": {
+          "id": 35,
+          "name": "Bundesliga",
+          "slug": "bundesliga",
+          "link": "https://www.sofascore.com/tournament/football/germany/bundesliga/35",
+          "image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image",
+          "dark_image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image/dark",
+          "colors": {
+            "primary": "#e2080e",
+            "secondary": "#8e0902"
+          },
+          "followers_count": 524181,
+          "category": {
+            "id": 30,
+            "name": "Germany",
+            "slug": "germany",
+            "link": "https://www.sofascore.com/football/germany",
+            "sport": {
+              "id": 1,
+              "name": "Football",
+              "slug": "football"
+            },
+            "country": {
+              "name": "Germany",
+              "alpha2": "DE",
+              "alpha3": "DEU",
+              "slug": "germany"
+            },
+            "flag_image_link": "https://img.sofascore.com/api/v1/country/DE/flag"
+          },
+          "live_activity_enabled": true,
+          "has_player_statistics": true,
+          "group": null,
+          "is_live": false
+        },
+        "season": {
+          "id": 28210,
+          "name": "Bundesliga 20/21",
+          "year": "20/21"
+        },
+        "time": {
+          "injury_time1": 2,
+          "injury_time2": 3,
+          "current_period_start_time": "2021-02-13T19:23:30Z"
+        },
+        "coverage": 1,
+        "has_highlights": false,
+        "has_player_statistics": true,
+        "has_player_heatmap": true,
+        "is_final_result_only": false,
+        "player": {
+          "team_id": 2547,
+          "is_on_bench": false,
+          "statistics": {
+            "rating": 7,
+            "minutes_played": 90
+          },
+          "incidents": null
+        }
+      },
+      {
+        "id": 8833716,
+        "custom_id": "NabsXab",
+        "slug": "1-fc-union-berlin-sc-freiburg",
+        "link": "https://www.sofascore.com/football/match/1-fc-union-berlin-sc-freiburg/NabsXab#id:8833716",
+        "start_time": "2021-02-20T14:30:00Z",
+        "status": {
+          "code": 100,
+          "type": "finished",
+          "description": "Ended"
+        },
+        "is_live": false,
+        "is_finished": true,
+        "winner_code": 2,
+        "home_team": {
+          "id": 2538,
+          "name": "SC Freiburg",
+          "short_name": "Freiburg",
+          "code": "SCF",
+          "slug": "sc-freiburg",
+          "link": "https://www.sofascore.com/team/football/sc-freiburg/2538",
+          "image_link": "https://img.sofascore.com/api/v1/team/2538/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#cc3333",
+            "secondary": "#000000",
+            "text": "#000000"
+          },
+          "followers_count": 144602
+        },
+        "away_team": {
+          "id": 2547,
+          "name": "1. FC Union Berlin",
+          "short_name": "Union Berlin",
+          "code": "FCU",
+          "slug": "1-fc-union-berlin",
+          "link": "https://www.sofascore.com/team/football/1-fc-union-berlin/2547",
+          "image_link": "https://img.sofascore.com/api/v1/team/2547/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#ff0000",
+            "secondary": "#ffffff",
+            "text": "#ffffff"
+          },
+          "followers_count": 118322
+        },
+        "home_score": {
+          "current": 0,
+          "display": 0,
+          "periods": {
+            "period1": 0,
+            "normaltime": 0
+          }
+        },
+        "away_score": {
+          "current": 1,
+          "display": 1,
+          "periods": {
+            "period1": 0,
+            "normaltime": 1
+          }
+        },
+        "round": {
+          "number": 22,
+          "name": null,
+          "slug": null,
+          "cup_round_type": null
+        },
+        "tournament": {
+          "id": 35,
+          "name": "Bundesliga",
+          "slug": "bundesliga",
+          "link": "https://www.sofascore.com/tournament/football/germany/bundesliga/35",
+          "image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image",
+          "dark_image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image/dark",
+          "colors": {
+            "primary": "#e2080e",
+            "secondary": "#8e0902"
+          },
+          "followers_count": 524181,
+          "category": {
+            "id": 30,
+            "name": "Germany",
+            "slug": "germany",
+            "link": "https://www.sofascore.com/football/germany",
+            "sport": {
+              "id": 1,
+              "name": "Football",
+              "slug": "football"
+            },
+            "country": {
+              "name": "Germany",
+              "alpha2": "DE",
+              "alpha3": "DEU",
+              "slug": "germany"
+            },
+            "flag_image_link": "https://img.sofascore.com/api/v1/country/DE/flag"
+          },
+          "live_activity_enabled": true,
+          "has_player_statistics": true,
+          "group": null,
+          "is_live": false
+        },
+        "season": {
+          "id": 28210,
+          "name": "Bundesliga 20/21",
+          "year": "20/21"
+        },
+        "time": {
+          "injury_time2": 5,
+          "current_period_start_time": "2021-02-20T16:23:59Z"
+        },
+        "coverage": 1,
+        "has_highlights": false,
+        "has_player_statistics": true,
+        "has_player_heatmap": true,
+        "is_final_result_only": false,
+        "player": {
+          "team_id": 2547,
+          "is_on_bench": false,
+          "statistics": {
+            "rating": 7.1,
+            "minutes_played": 90
+          },
+          "incidents": null
+        }
+      },
+      {
+        "id": 8833657,
+        "custom_id": "Xabsubb",
+        "slug": "tsg-hoffenheim-1-fc-union-berlin",
+        "link": "https://www.sofascore.com/football/match/tsg-hoffenheim-1-fc-union-berlin/Xabsubb#id:8833657",
+        "start_time": "2021-02-28T12:30:00Z",
+        "status": {
+          "code": 100,
+          "type": "finished",
+          "description": "Ended"
+        },
+        "is_live": false,
+        "is_finished": true,
+        "winner_code": 3,
+        "home_team": {
+          "id": 2547,
+          "name": "1. FC Union Berlin",
+          "short_name": "Union Berlin",
+          "code": "FCU",
+          "slug": "1-fc-union-berlin",
+          "link": "https://www.sofascore.com/team/football/1-fc-union-berlin/2547",
+          "image_link": "https://img.sofascore.com/api/v1/team/2547/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#ff0000",
+            "secondary": "#ffffff",
+            "text": "#ffffff"
+          },
+          "followers_count": 118322
+        },
+        "away_team": {
+          "id": 2569,
+          "name": "TSG Hoffenheim",
+          "short_name": "Hoffenheim",
+          "code": "TSG",
+          "slug": "tsg-hoffenheim",
+          "link": "https://www.sofascore.com/team/football/tsg-hoffenheim/2569",
+          "image_link": "https://img.sofascore.com/api/v1/team/2569/image",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "gender": "M",
+          "is_national": false,
+          "colors": {
+            "primary": "#1f5da6",
+            "secondary": "#ffffff",
+            "text": "#ffffff"
+          },
+          "followers_count": 105204
+        },
+        "home_score": {
+          "current": 1,
+          "display": 1,
+          "periods": {
+            "period1": 1,
+            "normaltime": 1
+          }
+        },
+        "away_score": {
+          "current": 1,
+          "display": 1,
+          "periods": {
+            "period1": 1,
+            "normaltime": 1
+          }
+        },
+        "round": {
+          "number": 23,
+          "name": null,
+          "slug": null,
+          "cup_round_type": null
+        },
+        "tournament": {
+          "id": 35,
+          "name": "Bundesliga",
+          "slug": "bundesliga",
+          "link": "https://www.sofascore.com/tournament/football/germany/bundesliga/35",
+          "image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image",
+          "dark_image_link": "https://img.sofascore.com/api/v1/unique-tournament/35/image/dark",
+          "colors": {
+            "primary": "#e2080e",
+            "secondary": "#8e0902"
+          },
+          "followers_count": 524181,
+          "category": {
+            "id": 30,
+            "name": "Germany",
+            "slug": "germany",
+            "link": "https://www.sofascore.com/football/germany",
+            "sport": {
+              "id": 1,
+              "name": "Football",
+              "slug": "football"
+            },
+            "country": {
+              "name": "Germany",
+              "alpha2": "DE",
+              "alpha3": "DEU",
+              "slug": "germany"
+            },
+            "flag_image_link": "https://img.sofascore.com/api/v1/country/DE/flag"
+          },
+          "live_activity_enabled": true,
+          "has_player_statistics": true,
+          "group": null,
+          "is_live": false
+        },
+        "season": {
+          "id": 28210,
+          "name": "Bundesliga 20/21",
+          "year": "20/21"
+        },
+        "time": {
+          "injury_time1": 1,
+          "injury_time2": 4,
+          "current_period_start_time": "2021-02-28T14:22:41Z"
+        },
+        "coverage": 1,
+        "has_highlights": false,
+        "has_player_statistics": true,
+        "has_player_heatmap": true,
+        "is_final_result_only": false,
+        "player": {
+          "team_id": 2547,
+          "is_on_bench": false,
+          "statistics": {
+            "rating": 6.9,
+            "minutes_played": 90
+          },
+          "incidents": null
+        }
+      }
+    ]
+  },
+  "record": {
+    "season": "2020/21",
+    "season_id": 28210,
+    "team_id": 2547,
+    "tournament_id": 35,
+    "numbers": {
+      "appearances": 4,
+      "goals": -1
+    }
+  }
+}

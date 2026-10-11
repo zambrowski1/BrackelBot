@@ -3,11 +3,13 @@
 import re
 from datetime import date, datetime, timezone
 from .errors import UpdateError
+from .goalkeeper import decreased
 
 
 def pair_valid(value):
     return (isinstance(value,dict) and set(value)=={'appearances','goals'}
-            and all(type(n) is int and 0<=n<=10000 for n in value.values()))
+            and type(value['appearances']) is int and 0 <= value['appearances'] <= 10000
+            and type(value['goals']) is int and -10000 <= value['goals'] <= 10000)
 
 
 def validate_anchor(anchor):
@@ -16,7 +18,10 @@ def validate_anchor(anchor):
         raise UpdateError('anchor_invalid','База требует клуб, сезон, точную строку, обе пары и подтверждающий источник')
     if not pair_valid(anchor['career']) or not pair_valid(anchor['season_stats']):
         raise UpdateError('anchor_invalid','База содержит неизвестные или неверные числа')
-    if any(anchor['career'][k] < anchor['season_stats'][k] for k in anchor['career']):
+    metric = anchor.get('goal_metric', 'conceded' if anchor['career']['goals'] < 0 or anchor['season_stats']['goals'] < 0 else 'scored')
+    if metric not in {'scored', 'conceded'} or any((pair['goals'] > 0 if metric == 'conceded' else pair['goals'] < 0) for pair in (anchor['career'], anchor['season_stats'])):
+        raise UpdateError('anchor_invalid', 'База смешивает забитые и пропущенные голы')
+    if decreased(anchor['career'], anchor['season_stats']):
         raise UpdateError('anchor_invalid','Карьерный итог меньше включённого сезонного показателя')
     if (type(anchor['team_id']) is not int or anchor['team_id']<=0 or type(anchor['season']) is not int
         or not 1000 <= anchor['season'] <= 9999 or not isinstance(anchor['period'],str)
@@ -60,12 +65,16 @@ def normalize_dataset(dataset, *, expected_season=None):
                 if league['id']!=78 or league['season']!=dataset['season']: continue
                 if type(tid) is not int or tid<=0 or not isinstance(team['name'],str) or not team['name'].strip(): raise ValueError()
                 if not isinstance(stat['games'],dict) or not isinstance(stat['goals'],dict): raise ValueError()
-                pair={'appearances':stat['games'].get('appearences'),'goals':stat['goals'].get('total')}
-                if any(v is not None and (type(v) is not int or v<0 or v>10000) for v in pair.values()): raise ValueError()
+                keeper = str(stat['games'].get('position', '')).casefold() in {'goalkeeper', 'goalie', 'gk', 'g'}
+                raw_goals = stat['goals'].get('conceded' if keeper else 'total')
+                if raw_goals is not None and (type(raw_goals) is not int or not 0 <= raw_goals <= 10000): raise ValueError()
+                pair={'appearances':stat['games'].get('appearences'),'goals':-raw_goals if keeper and raw_goals is not None else raw_goals}
+                if pair['appearances'] is not None and (type(pair['appearances']) is not int or not 0 <= pair['appearances'] <= 10000): raise ValueError()
                 key=(pid,tid,78,dataset['season'])
                 value={'api_id':pid,'team_id':tid,'team_name':team['name'],'league':78,
                        'season':dataset['season'],'stats':pair,'fetched_at':dataset['fetched_at'],
                        'status':'known' if pair_valid(pair) else 'needs_review'}
+                value['goal_metric'] = 'conceded' if keeper else 'scored'
                 if dataset.get('provider') == 'highlightly':
                     url = f"https://soccer.highlightly.net/players/{pid}/statistics"
                     if dataset.get('source_url') != url:
@@ -87,9 +96,12 @@ def career_from_anchor(anchor, observation):
         raise UpdateError('needs_review','База относится к другому клубу или сезону')
     if not pair_valid(observation['stats']):
         raise UpdateError('needs_review','null в API не является нулём')
+    metric = anchor.get('goal_metric', 'conceded' if anchor['career']['goals'] < 0 or anchor['season_stats']['goals'] < 0 else 'scored')
+    if metric != observation.get('goal_metric', 'scored'):
+        raise UpdateError('goal_metric_mismatch', 'База и API используют разные показатели голов')
     if observation['fetched_at'][:10] < anchor['as_of']:
         raise UpdateError('needs_review','Наблюдение старше подтверждённой базы')
-    if any(observation['stats'][k] < anchor['season_stats'][k] for k in anchor['career']):
+    if decreased(observation['stats'], anchor['season_stats']):
         raise UpdateError('needs_review','Сезонные данные уменьшились; требуется проверка исправления API')
     return {k:anchor['career'][k]+observation['stats'][k]-anchor['season_stats'][k] for k in anchor['career']}
 
@@ -97,7 +109,7 @@ def career_from_anchor(anchor, observation):
 def update_operation(mapping, anchor, observation, old):
     new = career_from_anchor(anchor,observation)
     if not pair_valid(old): raise UpdateError('needs_review','Исходные карьерные числа неизвестны')
-    if any(new[k]<old[k] for k in new):
+    if decreased(new,old):
         raise UpdateError('needs_review','Вычисленный итог меньше Википедии; требуется проверка')
     as_of=observation['fetched_at'][:10]
     return {'id':f"api-{mapping['api_id']}-{observation['team_id']}-{observation['season']}",

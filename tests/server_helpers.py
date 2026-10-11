@@ -12,7 +12,7 @@ MAPPING={'api_id':990001,'qid':'Q990001','title':TITLE,'wiki_name':'Кальви
          'monitoring':'active','verified_at':utcnow(),'last_confirmed_statistics':{}}
 ANCHOR={'team_id':15755,'season':2026,'period':'2026—{{н.в.}}','career_wikitext':AUGSBURG,
         'career':{'appearances':4,'goals':1},'season_stats':{'appearances':4,'goals':1},
-        'as_of':date.today().isoformat(),'evidence_url':'https://example.org/verified-test-fixture'}
+        'as_of':utcnow()[:10],'evidence_url':'https://example.org/verified-test-fixture'}
 
 
 def player_row(appearances=5,goals=2,pid=990001,tid=15755):

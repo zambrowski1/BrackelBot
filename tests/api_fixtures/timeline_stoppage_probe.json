@@ -1,0 +1,1534 @@
+{
+  "pid": 856076,
+  "match": {
+    "id": 10388462,
+    "is_finished": true,
+    "status": {
+      "code": 100,
+      "type": "finished",
+      "description": "Ended"
+    },
+    "home_team": {
+      "id": 36360,
+      "name": "RB Leipzig",
+      "short_name": "Leipzig",
+      "code": "RBL",
+      "slug": "rb-leipzig",
+      "link": "https://www.sofascore.com/team/football/rb-leipzig/36360",
+      "image_link": "https://img.sofascore.com/api/v1/team/36360/image",
+      "sport": {
+        "id": 1,
+        "name": "Football",
+        "slug": "football"
+      },
+      "country": {
+        "name": "Germany",
+        "alpha2": "DE",
+        "alpha3": "DEU",
+        "slug": "germany"
+      },
+      "gender": "M",
+      "is_national": false,
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#dd0000",
+        "text": "#dd0000"
+      },
+      "followers_count": 352930
+    },
+    "away_team": {
+      "id": 2538,
+      "name": "SC Freiburg",
+      "short_name": "Freiburg",
+      "code": "SCF",
+      "slug": "sc-freiburg",
+      "link": "https://www.sofascore.com/team/football/sc-freiburg/2538",
+      "image_link": "https://img.sofascore.com/api/v1/team/2538/image",
+      "sport": {
+        "id": 1,
+        "name": "Football",
+        "slug": "football"
+      },
+      "country": {
+        "name": "Germany",
+        "alpha2": "DE",
+        "alpha3": "DEU",
+        "slug": "germany"
+      },
+      "gender": "M",
+      "is_national": false,
+      "colors": {
+        "primary": "#cc3333",
+        "secondary": "#000000",
+        "text": "#000000"
+      },
+      "followers_count": 144871
+    },
+    "home_score": {
+      "current": 3,
+      "display": 3,
+      "periods": {
+        "period1": 0,
+        "period2": 3,
+        "normaltime": 3
+      }
+    },
+    "away_score": {
+      "current": 1,
+      "display": 1,
+      "periods": {
+        "period1": 0,
+        "period2": 1,
+        "normaltime": 1
+      }
+    },
+    "player": {
+      "team_id": 36360,
+      "is_on_bench": false,
+      "statistics": {
+        "rating": 6.6,
+        "minutes_played": 13
+      },
+      "incidents": null
+    }
+  },
+  "lineups": {
+    "match_id": 10388462,
+    "is_confirmed": true,
+    "home": {
+      "players": [
+        {
+          "is_substitute": false,
+          "position": "G",
+          "statistics": {
+            "total_pass": 31,
+            "accurate_pass": 24,
+            "total_long_balls": 9,
+            "accurate_long_balls": 2,
+            "accurate_own_half_passes": 22,
+            "total_own_half_passes": 22,
+            "accurate_opposition_half_passes": 2,
+            "total_opposition_half_passes": 9,
+            "total_clearance": 2,
+            "ball_recovery": 11,
+            "good_high_claim": 1,
+            "saved_shots_from_inside_the_box": 1,
+            "saves": 1,
+            "punches": 2,
+            "minutes_played": 90,
+            "touches": 39,
+            "rating": 6.6,
+            "possession_lost_ctrl": 7,
+            "expected_goals": 0,
+            "expected_goals_on_target": 0,
+            "expected_assists": 0.00050855,
+            "total_shots": 0,
+            "goals_prevented": -0.4499
+          },
+          "player": {
+            "id": 96832
+          }
+        },
+        {
+          "is_substitute": false,
+          "position": "D",
+          "statistics": {
+            "total_pass": 56,
+            "accurate_pass": 45,
+            "total_long_balls": 9,
+            "accurate_long_balls": 2,
+            "accurate_own_half_passes": 32,
+            "total_own_half_passes": 35,
+            "accurate_opposition_half_passes": 13,
+            "total_opposition_half_passes": 21,
+            "aerial_lost": 3,
+            "aerial_won": 4,
+            "duel_lost": 6,
+            "duel_won": 7,
+            "total_contest": 2,
+            "won_contest": 1,
+            "on_target_scoring_attempt": 1,
+            "blocked_scoring_attempt": 1,
+            "goals": 1,
+            "total_clearance": 2,
+            "ball_recovery": 6,
+            "unsuccessful_touch": 2,
+            "was_fouled": 2,
+            "fouls": 2,
+            "minutes_played": 90,
+            "touches": 69,
+            "rating": 7,
+            "possession_lost_ctrl": 14,
+            "expected_goals": 0.5459,
+            "expected_goals_on_target": 0.908,
+            "expected_assists": 0.0152257,
+            "total_shots": 2
+          },
+          "player": {
+            "id": 945063
+          }
+        },
+        {
+          "is_substitute": false,
+          "position": "D",
+          "statistics": {
+            "total_pass": 88,
+            "accurate_pass": 81,
+            "total_long_balls": 4,
+            "accurate_long_balls": 3,
+            "accurate_own_half_passes": 61,
+            "total_own_half_passes": 64,
+            "accurate_opposition_half_passes": 20,
+            "total_opposition_half_passes": 24,
+            "aerial_lost": 2,
+            "aerial_won": 1,
+            "duel_lost": 4,
+            "duel_won": 6,
+            "challenge_lost": 1,
+            "total_contest": 2,
+            "won_contest": 1,
+            "shot_off_target": 1,
+            "total_clearance": 2,
+            "interception_won": 2,
+            "ball_recovery": 5,
+            "total_tackle": 2,
+            "won_tackle": 2,
+            "was_fouled": 2,
+            "minutes_played": 90,
+            "touches": 103,
+            "rating": 6.9,
+            "possession_lost_ctrl": 8,
+            "expected_goals": 0.1339,
+            "expected_goals_on_target": 0,
+            "expected_assists": 0.0112962,
+            "total_shots": 1
+          },
+          "player": {
+            "id": 136924
+          }
+        },
+        {
+          "is_substitute": false,
+          "position": "D",
+          "statistics": {
+            "total_pass": 25,
+            "accurate_pass": 25,
+            "accurate_own_half_passes": 18,
+            "total_own_half_passes": 18,
+            "accurate_opposition_half_passes": 7,
+            "total_opposition_half_passes": 7,
+            "aerial_lost": 1,
+            "aerial_won": 1,
+            "duel_lost": 1,
+            "duel_won": 2,
+            "total_contest": 1,
+            "won_contest": 1,
+            "ball_recovery": 1,
+            "minutes_played": 23,
+            "touches": 27,
+            "rating": 6.6,
+            "expected_goals": 0,
+            "expected_goals_on_target": 0,
+            "expected_assists": 0.00565611,
+            "total_shots": 0
+          },
+          "player": {
+            "id": 964994
+          }
+        },
+        {
+          "is_substitute": false,
+          "position": "D",
+          "statistics": {
+            "total_pass": 53,
+            "accurate_pass": 42,
+            "total_long_balls": 3,
+            "accurate_long_balls": 1,
+            "accurate_own_half_passes": 26,
+            "total_own_half_passes": 29,
+            "accurate_opposition_half_passes": 18,
+            "total_opposition_half_passes": 28,
+            "total_cross": 4,
+            "accurate_cross": 2,
+            "aerial_lost": 1,
+            "aerial_won": 1,
+            "duel_lost": 3,
+            "duel_won": 2,
+            "challenge_lost": 1,
+            "total_clearance": 1,
+            "interception_won": 1,
+            "ball_recovery": 5,
+            "unsuccessful_touch": 3,
+            "was_fouled": 1,
+            "fouls": 1,
+            "minutes_played": 90,
+            "touches": 79,
+            "rating": 6.7,
+            "possession_lost_ctrl": 18,
+            "expected_goals": 0,
+            "expected_goals_on_target": 0,
+            "expected_assists": 0.0690043,
+            "key_pass": 1,
+            "total_shots": 0
+          },
+          "player": {
+            "id": 103364
+          }
+        },
+        {
+          "is_substitute": false,
+          "position": "M",
+          "statistics": {
+            "total_pass": 42,
+            "accurate_pass": 33,
+            "goal_assist": 1,
+            "accurate_own_half_passes": 12,
+            "total_own_half_passes": 14,
+            "accurate_opposition_half_passes": 25,
+            "total_opposition_half_passes": 35,
+            "total_cross": 7,
+            "accurate_cross": 4,
+            "duel_lost": 4,
+            "duel_won": 5,
+            "challenge_lost": 1,
+            "total_contest": 1,
+            "big_chance_created": 2,
+            "on_target_scoring_attempt": 1,
+            "hit_woodwork": 1,
+            "ball_recovery": 7,
+            "total_tackle": 2,
+            "won_tackle": 2,
+            "unsuccessful_touch": 3,
+            "was_fouled": 3,
+            "fouls": 2,
+            "minutes_played": 83,
+            "touches": 69,
+            "rating": 8.4,
+            "possession_lost_ctrl": 17,
+            "expected_goals": 0.0425,
+            "expected_goals_on_target": 0.321,
+            "expected_assists": 0.558094,
+            "key_pass": 4,
+            "total_shots": 1
+          },
+          "player": {
+            "id": 869856
+          }
+        },
+        {
+          "is_substitute": false,
+          "position": "M",
+          "statistics": {
+            "total_pass": 75,
+            "accurate_pass": 66,
+            "total_long_balls": 12,
+            "accurate_long_balls": 8,
+            "accurate_own_half_passes": 41,
+            "total_own_half_passes": 44,
+            "accurate_opposition_half_passes": 25,
+            "total_opposition_half_passes": 31,
+            "aerial_lost": 2,
+            "aerial_won": 1,
+            "duel_lost": 5,
+            "duel_won": 4,
+            "challenge_lost": 1,
+            "dispossessed": 1,
+            "total_contest": 1,
+            "total_clearance": 5,
+            "interception_won": 1,
+            "ball_recovery": 8,
+            "total_tackle": 2,
+            "won_tackle": 1,
+            "unsuccessful_touch": 2,
+            "was_fouled": 1,
+            "minutes_played": 90,
+            "touches": 90,
+            "rating": 7.3,
+            "possession_lost_ctrl": 13,
+            "expected_goals": 0,
+            "expected_goals_on_target": 0,
+            "expected_assists": 0.0358885,
+            "key_pass": 3,
+            "total_shots": 0
+          },
+          "player": {
+            "id": 791079
+          }
+        },
+        {
+          "is_substitute": false,
+          "position": "M",
+          "statistics": {
+            "total_pass": 48,
+            "accurate_pass": 45,
+            "accurate_own_half_passes": 26,
+            "total_own_half_passes": 28,
+            "accurate_opposition_half_passes": 19,
+            "total_opposition_half_passes": 20,
+            "aerial_lost": 2,
+            "duel_lost": 5,
+            "challenge_lost": 1,
+            "dispossessed": 2,
+            "interception_won": 2,
+            "ball_recovery": 6,
+            "unsuccessful_touch": 1,
+            "minutes_played": 83,
+            "touches": 56,
+            "rating": 6.3,
+            "possession_lost_ctrl": 6,
+            "expected_goals": 0,
+            "expected_goals_on_target": 0,
+            "expected_assists": 0.0162687,
+            "total_shots": 0
+          },
+          "player": {
+            "id": 84251
+          }
+        },
+        {
+          "is_substitute": false,
+          "position": "M",
+          "statistics": {
+            "total_pass": 21,
+            "accurate_pass": 18,
+            "accurate_own_half_passes": 6,
+            "total_own_half_passes": 7,
+            "accurate_opposition_half_passes": 12,
+            "total_opposition_half_passes": 14,
+            "aerial_lost": 1,
+            "aerial_won": 1,
+            "duel_lost": 5,
+            "duel_won": 2,
+            "dispossessed": 1,
+            "total_contest": 4,
+            "won_contest": 1,
+            "shot_off_target": 1,
+            "on_target_scoring_attempt": 1,
+            "ball_recovery": 2,
+            "unsuccessful_touch": 1,
+            "minutes_played": 60,
+            "touches": 32,
+            "rating": 6.4,
+            "possession_lost_ctrl": 8,
+            "expected_goals": 0.0428,
+            "expected_goals_on_target": 0.0617,
+            "expected_assists": 0.0727291,
+            "total_shots": 2
+          },
+          "player": {
+            "id": 789071
+          }
+        },
+        {
+          "is_substitute": false,
+          "position": "F",
+          "statistics": {
+            "total_pass": 22,
+            "accurate_pass": 16,
+            "accurate_own_half_passes": 2,
+            "total_own_half_passes": 2,
+            "accurate_opposition_half_passes": 14,
+            "total_opposition_half_passes": 21,
+            "total_cross": 1,
+            "aerial_lost": 3,
+            "duel_lost": 6,
+            "duel_won": 5,
+            "dispossessed": 1,
+            "total_contest": 3,
+            "won_contest": 2,
+            "big_chance_created": 1,
+            "shot_off_target": 1,
+            "on_target_scoring_attempt": 1,
+            "was_fouled": 3,
+            "fouls": 1,
+            "minutes_played": 83,
+            "touches": 34,
+            "rating": 7.1,
+            "possession_lost_ctrl": 9,
+            "expected_goals": 0.186,
+            "expected_goals_on_target": 0.5454,
+            "expected_assists": 0.207591,
+            "key_pass": 3,
+            "total_shots": 2
+          },
+          "player": {
+            "id": 190159
+          }
+        },
+        {
+          "is_substitute": false,
+          "position": "F",
+          "statistics": {
+            "total_pass": 19,
+            "accurate_pass": 17,
+            "total_long_balls": 1,
+            "accurate_long_balls": 1,
+            "accurate_own_half_passes": 7,
+            "total_own_half_passes": 8,
+            "accurate_opposition_half_passes": 10,
+            "total_opposition_half_passes": 11,
+            "aerial_lost": 1,
+            "aerial_won": 1,
+            "duel_lost": 3,
+            "duel_won": 5,
+            "total_contest": 1,
+            "big_chance_missed": 2,
+            "shot_off_target": 1,
+            "on_target_scoring_attempt": 3,
+            "blocked_scoring_attempt": 2,
+            "hit_woodwork": 2,
+            "goals": 1,
+            "ball_recovery": 1,
+            "unsuccessful_touch": 1,
+            "was_fouled": 4,
+            "fouls": 1,
+            "penalty_won": 1,
+            "total_offside": 1,
+            "minutes_played": 90,
+            "touches": 34,
+            "rating": 7.3,
+            "possession_lost_ctrl": 4,
+            "expected_goals": 1.1559,
+            "expected_goals_on_target": 1.7772,
+            "expected_assists": 0.0743041,
+            "key_pass": 1,
+            "total_shots": 6
+          },
+          "player": {
+            "id": 769333
+          }
+        },
+        {
+          "is_substitute": true,
+          "position": "D",
+          "statistics": {
+            "total_pass": 25,
+            "accurate_pass": 17,
+            "total_long_balls": 1,
+            "accurate_own_half_passes": 6,
+            "total_own_half_passes": 7,
+            "accurate_opposition_half_passes": 11,
+            "total_opposition_half_passes": 18,
+            "aerial_won": 2,
+            "duel_lost": 1,
+            "duel_won": 7,
+            "challenge_lost": 1,
+            "total_contest": 1,
+            "won_contest": 1,
+            "shot_off_target": 1,
+            "interception_won": 2,
+            "ball_recovery": 5,
+            "total_tackle": 2,
+            "won_tackle": 2,
+            "unsuccessful_touch": 3,
+            "was_fouled": 2,
+            "minutes_played": 67,
+            "touches": 39,
+            "rating": 7,
+            "possession_lost_ctrl": 11,
+            "expected_goals": 0.0691,
+            "expected_goals_on_target": 0,
+            "expected_assists": 0.0533574,
+            "key_pass": 1,
+            "total_shots": 1
+          },
+          "player": {
+            "id": 319857
+          }
+        },
+        {
+          "is_substitute": true,
+          "position": "F",
+          "statistics": {
+            "total_pass": 10,
+            "accurate_pass": 8,
+            "total_long_balls": 1,
+            "accurate_long_balls": 1,
+            "accurate_own_half_passes": 1,
+            "total_own_half_passes": 3,
+            "accurate_opposition_half_passes": 7,
+            "total_opposition_half_passes": 7,
+            "duel_lost": 1,
+            "duel_won": 3,
+            "on_target_scoring_attempt": 1,
+            "goals": 1,
+            "ball_recovery": 1,
+            "was_fouled": 3,
+            "fouls": 1,
+            "minutes_played": 30,
+            "touches": 14,
+            "rating": 7.1,
+            "possession_lost_ctrl": 2,
+            "expected_goals": 0.7884,
+            "expected_goals_on_target": 0.9891,
+            "expected_assists": 0.0428061,
+            "total_shots": 1
+          },
+          "player": {
+            "id": 51785
+          }
+        },
+        {
+          "is_substitute": true,
+          "position": "D",
+          "statistics": {
+            "total_pass": 1,
+            "total_own_half_passes": 1,
+            "duel_lost": 1,
+            "duel_won": 1,
+            "total_tackle": 1,
+            "won_tackle": 1,
+            "unsuccessful_touch": 1,
+            "fouls": 1,
+            "minutes_played": 13,
+            "touches": 3,
+            "rating": 6.6,
+            "possession_lost_ctrl": 2,
+            "expected_goals": 0,
+            "expected_goals_on_target": 0,
+            "expected_assists": 0,
+            "total_shots": 0
+          },
+          "player": {
+            "id": 856076
+          }
+        },
+        {
+          "is_substitute": true,
+          "position": "M",
+          "statistics": {
+            "total_pass": 7,
+            "accurate_pass": 6,
+            "total_long_balls": 1,
+            "accurate_long_balls": 1,
+            "accurate_own_half_passes": 6,
+            "total_own_half_passes": 7,
+            "minutes_played": 13,
+            "touches": 8,
+            "rating": 6.5,
+            "possession_lost_ctrl": 1,
+            "expected_goals": 0,
+            "expected_goals_on_target": 0,
+            "expected_assists": 9.642e-05,
+            "total_shots": 0
+          },
+          "player": {
+            "id": 822708
+          }
+        },
+        {
+          "is_substitute": true,
+          "position": "F",
+          "statistics": {
+            "total_pass": 4,
+            "accurate_pass": 2,
+            "accurate_own_half_passes": 1,
+            "total_own_half_passes": 1,
+            "accurate_opposition_half_passes": 1,
+            "total_opposition_half_passes": 3,
+            "aerial_lost": 1,
+            "aerial_won": 1,
+            "duel_lost": 1,
+            "duel_won": 2,
+            "ball_recovery": 1,
+            "unsuccessful_touch": 1,
+            "was_fouled": 1,
+            "minutes_played": 13,
+            "touches": 6,
+            "rating": 6.6,
+            "possession_lost_ctrl": 3,
+            "expected_goals": 0,
+            "expected_goals_on_target": 0,
+            "expected_assists": 0.00020688,
+            "total_shots": 0
+          },
+          "player": {
+            "id": 135264
+          }
+        },
+        {
+          "is_substitute": true,
+          "position": "G",
+          "statistics": {
+            "expected_goals_on_target": 0,
+            "total_shots": 0
+          },
+          "player": {
+            "id": 22209
+          }
+        },
+        {
+          "is_substitute": true,
+          "position": "D",
+          "statistics": {
+            "expected_goals_on_target": 0,
+            "total_shots": 0
+          },
+          "player": {
+            "id": 319853
+          }
+        },
+        {
+          "is_substitute": true,
+          "position": "F",
+          "statistics": {
+            "expected_goals_on_target": 0,
+            "total_shots": 0
+          },
+          "player": {
+            "id": 1001967
+          }
+        },
+        {
+          "is_substitute": true,
+          "position": "D",
+          "statistics": {
+            "expected_goals_on_target": 0,
+            "total_shots": 0
+          },
+          "player": {
+            "id": 280435
+          }
+        }
+      ]
+    },
+    "away": {
+      "players": [
+        {
+          "is_substitute": false,
+          "position": "G",
+          "statistics": {
+            "total_pass": 37,
+            "accurate_pass": 29,
+            "total_long_balls": 18,
+            "accurate_long_balls": 10,
+            "accurate_own_half_passes": 23,
+            "total_own_half_passes": 26,
+            "accurate_opposition_half_passes": 6,
+            "total_opposition_half_passes": 11,
+            "ball_recovery": 10,
+            "saved_shots_from_inside_the_box": 3,
+            "penalty_faced": 1,
+            "saves": 6,
+            "minutes_played": 90,
+            "touches": 50,
+            "rating": 7.1,
+            "possession_lost_ctrl": 8,
+            "expected_goals": 0,
+            "expected_goals_on_target": 0,
+            "expected_assists": 0.0224426,
+            "total_shots": 0,
+            "goals_prevented": 1.6024
+          },
+          "player": {
+            "id": 171919
+          }
+        },
+        {
+          "is_substitute": false,
+          "position": "D",
+          "statistics": {
+            "total_pass": 36,
+            "accurate_pass": 22,
+            "total_long_balls": 7,
+            "accurate_long_balls": 5,
+            "accurate_own_half_passes": 18,
+            "total_own_half_passes": 22,
+            "accurate_opposition_half_passes": 4,
+            "total_opposition_half_passes": 14,
+            "aerial_won": 1,
+            "duel_lost": 3,
+            "duel_won": 2,
+            "challenge_lost": 1,
+            "total_contest": 1,
+            "won_contest": 1,
+            "on_target_scoring_attempt": 1,
+            "goals": 1,
+            "total_clearance": 1,
+            "outfielder_block": 1,
+            "ball_recovery": 2,
+            "fouls": 2,
+            "minutes_played": 90,
+            "touches": 43,
+            "rating": 7,
+            "possession_lost_ctrl": 15,
+            "expected_goals": 0.0559,
+            "expected_goals_on_target": 0.2843,
+            "expected_assists": 0.00807277,
+            "total_shots": 1
+          },
+          "player": {
+            "id": 142525
+          }
+        },
+        {
+          "is_substitute": false,
+          "position": "D",
+          "statistics": {
+            "total_pass": 49,
+            "accurate_pass": 39,
+            "total_long_balls": 2,
+            "accurate_own_half_passes": 34,
+            "total_own_half_passes": 37,
+            "accurate_opposition_half_passes": 5,
+            "total_opposition_half_passes": 12,
+            "aerial_won": 2,
+            "duel_lost": 1,
+            "duel_won": 6,
+            "total_clearance": 7,
+            "outfielder_block": 2,
+            "ball_recovery": 5,
+            "total_tackle": 2,
+            "was_fouled": 2,
+            "fouls": 1,
+            "minutes_played": 90,
+            "touches": 63,
+            "rating": 6.8,
+            "possession_lost_ctrl": 10,
+            "expected_goals": 0,
+            "expected_goals_on_target": 0,
+            "expected_assists": 0.00783207,
+            "total_shots": 0
+          },
+          "player": {
+            "id": 142259
+          }
+        },
+        {
+          "is_substitute": false,
+          "position": "D",
+          "statistics": {
+            "total_pass": 69,
+            "accurate_pass": 62,
+            "total_long_balls": 9,
+            "accurate_long_balls": 6,
+            "accurate_own_half_passes": 47,
+            "total_own_half_passes": 50,
+            "accurate_opposition_half_passes": 15,
+            "total_opposition_half_passes": 19,
+            "aerial_won": 1,
+            "duel_lost": 1,
+            "duel_won": 3,
+            "total_contest": 1,
+            "won_contest": 1,
+            "ball_recovery": 6,
+            "was_fouled": 1,
+            "fouls": 1,
+            "minutes_played": 90,
+            "touches": 77,
+            "rating": 6.4,
+            "possession_lost_ctrl": 7,
+            "expected_goals": 0,
+            "expected_goals_on_target": 0,
+            "expected_assists": 0.00443391,
+            "total_shots": 0
+          },
+          "player": {
+            "id": 576266
+          }
+        },
+        {
+          "is_substitute": false,
+          "position": "M",
+          "statistics": {
+            "total_pass": 34,
+            "accurate_pass": 24,
+            "total_long_balls": 7,
+            "accurate_long_balls": 5,
+            "accurate_own_half_passes": 15,
+            "total_own_half_passes": 21,
+            "accurate_opposition_half_passes": 9,
+            "total_opposition_half_passes": 13,
+            "aerial_lost": 1,
+            "aerial_won": 2,
+            "duel_lost": 5,
+            "duel_won": 2,
+            "total_contest": 1,
+            "total_clearance": 2,
+            "interception_won": 1,
+            "ball_recovery": 4,
+            "unsuccessful_touch": 2,
+            "fouls": 3,
+            "minutes_played": 90,
+            "touches": 54,
+            "rating": 6.4,
+            "possession_lost_ctrl": 15,
+            "expected_goals": 0,
+            "expected_goals_on_target": 0,
+            "expected_assists": 0.00826416,
+            "total_shots": 0
+          },
+          "player": {
+            "id": 1014222
+          }
+        },
+        {
+          "is_substitute": false,
+          "position": "M",
+          "statistics": {
+            "total_pass": 12,
+            "accurate_pass": 9,
+            "accurate_own_half_passes": 3,
+            "total_own_half_passes": 3,
+            "accurate_opposition_half_passes": 6,
+            "total_opposition_half_passes": 10,
+            "total_cross": 1,
+            "aerial_won": 2,
+            "duel_won": 5,
+            "total_clearance": 1,
+            "interception_won": 1,
+            "ball_recovery": 5,
+            "total_tackle": 2,
+            "won_tackle": 2,
+            "unsuccessful_touch": 2,
+            "was_fouled": 1,
+            "minutes_played": 90,
+            "touches": 21,
+            "rating": 6.9,
+            "possession_lost_ctrl": 6,
+            "expected_goals": 0,
+            "expected_goals_on_target": 0,
+            "expected_assists": 0.119813,
+            "key_pass": 2,
+            "total_shots": 0
+          },
+          "player": {
+            "id": 569784
+          }
+        },
+        {
+          "is_substitute": false,
+          "position": "M",
+          "statistics": {
+            "total_pass": 37,
+            "accurate_pass": 31,
+            "total_long_balls": 2,
+            "accurate_long_balls": 1,
+            "accurate_own_half_passes": 16,
+            "total_own_half_passes": 19,
+            "accurate_opposition_half_passes": 15,
+            "total_opposition_half_passes": 18,
+            "aerial_lost": 1,
+            "aerial_won": 1,
+            "duel_lost": 5,
+            "duel_won": 7,
+            "challenge_lost": 2,
+            "total_clearance": 1,
+            "interception_won": 1,
+            "ball_recovery": 5,
+            "total_tackle": 4,
+            "won_tackle": 2,
+            "unsuccessful_touch": 1,
+            "penalty_conceded": 1,
+            "was_fouled": 2,
+            "fouls": 2,
+            "minutes_played": 83,
+            "touches": 48,
+            "rating": 6.6,
+            "possession_lost_ctrl": 7,
+            "expected_goals": 0,
+            "expected_goals_on_target": 0,
+            "expected_assists": 0.0125174,
+            "total_shots": 0
+          },
+          "player": {
+            "id": 49639
+          }
+        },
+        {
+          "is_substitute": false,
+          "position": "M",
+          "statistics": {
+            "total_pass": 13,
+            "accurate_pass": 10,
+            "total_long_balls": 1,
+            "accurate_long_balls": 1,
+            "accurate_own_half_passes": 4,
+            "total_own_half_passes": 4,
+            "accurate_opposition_half_passes": 6,
+            "total_opposition_half_passes": 9,
+            "aerial_lost": 1,
+            "duel_lost": 6,
+            "duel_won": 5,
+            "total_contest": 4,
+            "won_contest": 2,
+            "ball_recovery": 4,
+            "total_tackle": 3,
+            "won_tackle": 1,
+            "unsuccessful_touch": 2,
+            "fouls": 3,
+            "minutes_played": 59,
+            "touches": 27,
+            "rating": 6.4,
+            "possession_lost_ctrl": 7,
+            "expected_goals": 0,
+            "expected_goals_on_target": 0,
+            "expected_assists": 0.0271877,
+            "total_shots": 0
+          },
+          "player": {
+            "id": 790965
+          }
+        },
+        {
+          "is_substitute": false,
+          "position": "M",
+          "statistics": {
+            "total_pass": 21,
+            "accurate_pass": 15,
+            "total_long_balls": 2,
+            "accurate_long_balls": 1,
+            "accurate_own_half_passes": 8,
+            "total_own_half_passes": 9,
+            "accurate_opposition_half_passes": 7,
+            "total_opposition_half_passes": 16,
+            "total_cross": 4,
+            "aerial_lost": 2,
+            "duel_lost": 5,
+            "dispossessed": 2,
+            "total_clearance": 1,
+            "ball_recovery": 1,
+            "fouls": 1,
+            "minutes_played": 56,
+            "touches": 32,
+            "rating": 6.1,
+            "possession_lost_ctrl": 12,
+            "expected_goals": 0,
+            "expected_goals_on_target": 0,
+            "expected_assists": 0.00528218,
+            "total_shots": 0
+          },
+          "player": {
+            "id": 142231
+          }
+        },
+        {
+          "is_substitute": false,
+          "position": "F",
+          "statistics": {
+            "total_pass": 16,
+            "accurate_pass": 12,
+            "accurate_own_half_passes": 6,
+            "total_own_half_passes": 8,
+            "accurate_opposition_half_passes": 6,
+            "total_opposition_half_passes": 8,
+            "aerial_lost": 3,
+            "aerial_won": 1,
+            "duel_lost": 5,
+            "duel_won": 1,
+            "on_target_scoring_attempt": 1,
+            "ball_recovery": 2,
+            "fouls": 2,
+            "minutes_played": 59,
+            "touches": 18,
+            "rating": 6.5,
+            "possession_lost_ctrl": 4,
+            "expected_goals": 0.0645,
+            "expected_goals_on_target": 0.2658,
+            "expected_assists": 0.00599726,
+            "total_shots": 1
+          },
+          "player": {
+            "id": 927405
+          }
+        },
+        {
+          "is_substitute": false,
+          "position": "F",
+          "statistics": {
+            "total_pass": 13,
+            "accurate_pass": 2,
+            "total_long_balls": 1,
+            "accurate_own_half_passes": 2,
+            "total_own_half_passes": 4,
+            "total_opposition_half_passes": 9,
+            "aerial_lost": 3,
+            "aerial_won": 3,
+            "duel_lost": 9,
+            "duel_won": 4,
+            "challenge_lost": 3,
+            "dispossessed": 1,
+            "total_clearance": 1,
+            "unsuccessful_touch": 1,
+            "was_fouled": 1,
+            "fouls": 2,
+            "minutes_played": 55,
+            "touches": 20,
+            "rating": 6.4,
+            "possession_lost_ctrl": 13,
+            "expected_goals": 0,
+            "expected_goals_on_target": 0,
+            "expected_assists": 0.00017877,
+            "total_shots": 0
+          },
+          "player": {
+            "id": 111483
+          }
+        },
+        {
+          "is_substitute": true,
+          "position": "F",
+          "statistics": {
+            "total_pass": 10,
+            "accurate_pass": 8,
+            "accurate_own_half_passes": 2,
+            "total_own_half_passes": 2,
+            "accurate_opposition_half_passes": 6,
+            "total_opposition_half_passes": 8,
+            "aerial_lost": 1,
+            "aerial_won": 4,
+            "duel_lost": 5,
+            "duel_won": 6,
+            "dispossessed": 2,
+            "total_contest": 2,
+            "won_contest": 1,
+            "shot_off_target": 1,
+            "ball_recovery": 1,
+            "unsuccessful_touch": 1,
+            "was_fouled": 1,
+            "fouls": 1,
+            "minutes_played": 35,
+            "touches": 17,
+            "rating": 6.6,
+            "possession_lost_ctrl": 6,
+            "expected_goals": 0.0571,
+            "expected_goals_on_target": 0,
+            "expected_assists": 0.500529,
+            "total_shots": 1
+          },
+          "player": {
+            "id": 1006387
+          }
+        },
+        {
+          "is_substitute": true,
+          "position": "M",
+          "statistics": {
+            "total_pass": 12,
+            "accurate_pass": 11,
+            "total_long_balls": 1,
+            "accurate_long_balls": 1,
+            "accurate_own_half_passes": 6,
+            "total_own_half_passes": 6,
+            "accurate_opposition_half_passes": 5,
+            "total_opposition_half_passes": 7,
+            "total_cross": 1,
+            "duel_lost": 1,
+            "duel_won": 3,
+            "total_contest": 1,
+            "won_contest": 1,
+            "ball_recovery": 3,
+            "total_tackle": 1,
+            "won_tackle": 1,
+            "unsuccessful_touch": 2,
+            "was_fouled": 1,
+            "fouls": 1,
+            "minutes_played": 34,
+            "touches": 20,
+            "rating": 6.5,
+            "possession_lost_ctrl": 4,
+            "expected_goals": 0,
+            "expected_goals_on_target": 0,
+            "expected_assists": 0.0105899,
+            "total_shots": 0
+          },
+          "player": {
+            "id": 355088
+          }
+        },
+        {
+          "is_substitute": true,
+          "position": "M",
+          "statistics": {
+            "total_pass": 15,
+            "accurate_pass": 12,
+            "total_long_balls": 4,
+            "accurate_long_balls": 2,
+            "accurate_own_half_passes": 9,
+            "total_own_half_passes": 9,
+            "accurate_opposition_half_passes": 3,
+            "total_opposition_half_passes": 8,
+            "total_cross": 2,
+            "duel_lost": 2,
+            "challenge_lost": 1,
+            "fouls": 1,
+            "minutes_played": 31,
+            "touches": 17,
+            "rating": 6.3,
+            "possession_lost_ctrl": 5,
+            "expected_goals": 0,
+            "expected_goals_on_target": 0,
+            "expected_assists": 0.00341915,
+            "total_shots": 0
+          },
+          "player": {
+            "id": 171961
+          }
+        },
+        {
+          "is_substitute": true,
+          "position": "F",
+          "statistics": {
+            "total_pass": 3,
+            "total_own_half_passes": 1,
+            "total_opposition_half_passes": 2,
+            "duel_won": 1,
+            "total_tackle": 1,
+            "won_tackle": 1,
+            "minutes_played": 31,
+            "touches": 4,
+            "rating": 6.5,
+            "possession_lost_ctrl": 3,
+            "expected_goals": 0,
+            "expected_goals_on_target": 0,
+            "expected_assists": 0,
+            "total_shots": 0
+          },
+          "player": {
+            "id": 280009
+          }
+        },
+        {
+          "is_substitute": true,
+          "position": "M",
+          "statistics": {
+            "total_pass": 6,
+            "accurate_pass": 5,
+            "total_long_balls": 1,
+            "accurate_own_half_passes": 4,
+            "total_own_half_passes": 4,
+            "accurate_opposition_half_passes": 1,
+            "total_opposition_half_passes": 2,
+            "aerial_lost": 1,
+            "duel_lost": 3,
+            "duel_won": 1,
+            "interception_won": 1,
+            "ball_recovery": 1,
+            "total_tackle": 1,
+            "fouls": 2,
+            "minutes_played": 13,
+            "touches": 8,
+            "rating": 6.6,
+            "possession_lost_ctrl": 1,
+            "expected_goals": 0,
+            "expected_goals_on_target": 0,
+            "expected_assists": 0.0005282,
+            "total_shots": 0
+          },
+          "player": {
+            "id": 877842
+          }
+        },
+        {
+          "is_substitute": true,
+          "position": "G",
+          "statistics": {
+            "expected_goals_on_target": 0,
+            "total_shots": 0
+          },
+          "player": {
+            "id": 164959
+          }
+        },
+        {
+          "is_substitute": true,
+          "position": "D",
+          "statistics": {
+            "expected_goals_on_target": 0,
+            "total_shots": 0
+          },
+          "player": {
+            "id": 891651
+          }
+        },
+        {
+          "is_substitute": true,
+          "position": "M",
+          "statistics": {
+            "expected_goals_on_target": 0,
+            "total_shots": 0
+          },
+          "player": {
+            "id": 1131338
+          }
+        },
+        {
+          "is_substitute": true,
+          "position": "F",
+          "statistics": {
+            "expected_goals_on_target": 0,
+            "total_shots": 0
+          },
+          "player": {
+            "id": 20826
+          }
+        }
+      ]
+    }
+  },
+  "incidents": {
+    "match_id": 10388462,
+    "count": 24,
+    "incidents": [
+      {
+        "type": "period",
+        "class": null,
+        "text": "FT",
+        "time": 90,
+        "added_time": 999,
+        "home_score": 3,
+        "away_score": 1,
+        "is_live": false
+      },
+      {
+        "type": "card",
+        "class": "yellow",
+        "time": 90,
+        "added_time": 5,
+        "is_home": true,
+        "rescinded": false,
+        "player": {
+          "id": 769333
+        }
+      },
+      {
+        "type": "injuryTime",
+        "class": null,
+        "time": 90,
+        "added_time": 0,
+        "length": 5
+      },
+      {
+        "type": "card",
+        "class": "yellow",
+        "time": 88,
+        "is_home": false,
+        "rescinded": false,
+        "player": {
+          "id": 355088
+        }
+      },
+      {
+        "type": "substitution",
+        "class": "regular",
+        "time": 83,
+        "is_home": false,
+        "player_in": {
+          "id": 877842
+        },
+        "player_out": {
+          "id": 49639
+        }
+      },
+      {
+        "type": "substitution",
+        "class": "regular",
+        "time": 83,
+        "is_home": true,
+        "player_in": {
+          "id": 856076
+        },
+        "player_out": {
+          "id": 190159
+        }
+      },
+      {
+        "type": "substitution",
+        "class": "regular",
+        "time": 83,
+        "is_home": true,
+        "player_in": {
+          "id": 135264
+        },
+        "player_out": {
+          "id": 869856
+        }
+      },
+      {
+        "type": "substitution",
+        "class": "regular",
+        "time": 83,
+        "is_home": true,
+        "player_in": {
+          "id": 822708
+        },
+        "player_out": {
+          "id": 84251
+        }
+      },
+      {
+        "type": "goal",
+        "class": "penalty",
+        "time": 78,
+        "home_score": 3,
+        "away_score": 1,
+        "is_home": true,
+        "player": {
+          "id": 51785
+        }
+      },
+      {
+        "type": "card",
+        "class": "yellow",
+        "time": 66,
+        "is_home": true,
+        "rescinded": false,
+        "player": {
+          "id": 136924
+        }
+      },
+      {
+        "type": "goal",
+        "class": "regular",
+        "time": 66,
+        "home_score": 2,
+        "away_score": 1,
+        "is_home": false,
+        "player": {
+          "id": 142525
+        }
+      },
+      {
+        "type": "substitution",
+        "class": "regular",
+        "time": 60,
+        "is_home": true,
+        "player_in": {
+          "id": 51785
+        },
+        "player_out": {
+          "id": 789071
+        }
+      },
+      {
+        "type": "substitution",
+        "class": "regular",
+        "time": 59,
+        "is_home": false,
+        "player_in": {
+          "id": 171961
+        },
+        "player_out": {
+          "id": 790965
+        }
+      },
+      {
+        "type": "substitution",
+        "class": "regular",
+        "time": 59,
+        "is_home": false,
+        "player_in": {
+          "id": 280009
+        },
+        "player_out": {
+          "id": 927405
+        }
+      },
+      {
+        "type": "goal",
+        "class": "regular",
+        "time": 56,
+        "home_score": 2,
+        "away_score": 0,
+        "is_home": true,
+        "player": {
+          "id": 769333
+        }
+      },
+      {
+        "type": "substitution",
+        "class": "regular",
+        "time": 56,
+        "is_home": false,
+        "player_in": {
+          "id": 355088
+        },
+        "player_out": {
+          "id": 142231
+        }
+      },
+      {
+        "type": "substitution",
+        "class": "regular",
+        "time": 55,
+        "is_home": false,
+        "player_in": {
+          "id": 1006387
+        },
+        "player_out": {
+          "id": 111483
+        }
+      },
+      {
+        "type": "goal",
+        "class": "regular",
+        "time": 54,
+        "home_score": 1,
+        "away_score": 0,
+        "is_home": true,
+        "player": {
+          "id": 945063
+        }
+      },
+      {
+        "type": "card",
+        "class": "yellow",
+        "time": 46,
+        "is_home": false,
+        "rescinded": false,
+        "player": {
+          "id": 1014222
+        }
+      },
+      {
+        "type": "period",
+        "class": null,
+        "text": "HT",
+        "time": 45,
+        "added_time": 999,
+        "home_score": 0,
+        "away_score": 0,
+        "is_live": false
+      },
+      {
+        "type": "injuryTime",
+        "class": null,
+        "time": 45,
+        "added_time": 0,
+        "length": 3
+      },
+      {
+        "type": "card",
+        "class": "yellow",
+        "time": 43,
+        "is_home": false,
+        "rescinded": false,
+        "player": {
+          "id": 927405
+        }
+      },
+      {
+        "type": "card",
+        "class": "yellow",
+        "time": 41,
+        "is_home": false,
+        "rescinded": false,
+        "player": {
+          "id": 790965
+        }
+      },
+      {
+        "type": "substitution",
+        "class": "injury",
+        "time": 23,
+        "is_home": true,
+        "player_in": {
+          "id": 319857
+        },
+        "player_out": {
+          "id": 964994
+        }
+      }
+    ]
+  }
+}

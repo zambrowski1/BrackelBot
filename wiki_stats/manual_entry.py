@@ -6,6 +6,7 @@ from pathlib import Path
 import json
 from uuid import uuid4
 import mwparserfromhell
+from .test_pages import is_test_page
 from .errors import UpdateError
 from .schema_validator import validate_package
 from .wikitext_parser import WikitextParser
@@ -26,7 +27,7 @@ def load_article_snapshot(path):
         datetime.fromisoformat(timestamp.replace('Z', '+00:00'))
         with text_path.open(encoding='utf-8', newline='') as stream:
             text = stream.read()
-        return PageSnapshot(title, revid, timestamp, text, 2 if title == 'Участник:Zambrowski/testbot' else 0)
+        return PageSnapshot(title, revid, timestamp, text, 2 if is_test_page(title) else 0)
     except (OSError, ValueError, KeyError, TypeError, AttributeError) as exc:
         raise UpdateError('invalid_snapshot', f'Не удалось открыть снимок статьи: {exc}') from exc
 
@@ -83,7 +84,7 @@ def article_rows(snapshot):
                 name = str(mwparserfromhell.parse(row.club).strip_code()).strip() or row.club
                 for index, category in enumerate(table.categories):
                     games = row.values[str(2 + 2 * index)].numeric()[0].value
-                    goals = row.values[str(3 + 2 * index)].numeric()[0].value
+                    goals = row.values[str(3 + 2 * index)].numeric(signed=True)[0].value
                     rows.append(StatRow(name, row.club, 'club_table', '', row.season, category, games, goals))
         except UpdateError as exc:
             warnings.append(f'Таблица сезонов: {exc}')
@@ -94,11 +95,13 @@ def article_rows(snapshot):
 
 def build_manual_package(snapshot, row, appearances, goals, source_url, as_of, note='', *, bundesliga=False):
     player, available, _ = article_rows(snapshot)
+    from .goalkeeper import validate_goal_values
+    validate_goal_values(WikitextParser(snapshot.text), player, {'goals': goals})
     if row not in available:
         raise UpdateError('invalid_target', 'Выбранная строка отсутствует в исходном снимке')
     if not source_url.strip() or not as_of.strip():
         raise UpdateError('invalid_input', 'Укажите ссылку на источник и дату охвата данных (ГГГГ-ММ-ДД)')
-    if snapshot.title != 'Участник:Zambrowski/testbot' and not bundesliga:
+    if not is_test_page(snapshot.title) and not bundesliga:
         raise UpdateError('invalid_input', 'Подтвердите, что игрок относится к сфере задачи: Бундеслига')
     target = {'structure': row.structure}
     if row.structure == 'career':

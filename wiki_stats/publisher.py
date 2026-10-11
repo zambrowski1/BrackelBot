@@ -1,4 +1,5 @@
 # SPDX-License-Identifier: MIT
+from .test_pages import is_test_page
 from .errors import UpdateError
 from .models import Mode
 from .transactions import plan_fingerprint, approval_fingerprint, clear_approvals
@@ -18,8 +19,8 @@ class Publisher:
             raise UpdateError('publishing_disabled','Публикация доступна только в Manual; Dry Run и Automatic не публикуют')
 
     def _gate(self, plan):
-        if plan.snapshot.title != 'Участник:Zambrowski/testbot':
-            raise UpdateError('page_not_allowed','Публикация в основном пространстве запрещена. Разрешена только Участник:Zambrowski/testbot')
+        if not is_test_page(plan.snapshot.title) or plan.snapshot.namespace != 2:
+            raise UpdateError('page_not_allowed','Публикация в основном пространстве запрещена. Разрешены только testbot и testbot1–testbot5 участника Zambrowski')
 
     def _backup(self, snapshot):
         return str(save_backup(snapshot,self.backup_dir))

@@ -3,6 +3,7 @@ import json
 import time
 from pathlib import Path
 import requests
+from .test_pages import is_test_page
 from .errors import UpdateError
 from .models import PageSnapshot
 
@@ -50,7 +51,7 @@ class WikiClient:
                     raise UpdateError("page_not_found", "Статья не существует")
                 if "redirect" in page:
                     raise UpdateError("redirect_not_supported", "Укажите точное название статьи, а не перенаправление")
-                if not (page.get("ns") == 0 or (page.get("ns") == 2 and page.get("title") == "Участник:Zambrowski/testbot")):
+                if not (page.get("ns") == 0 or (page.get("ns") == 2 and is_test_page(page.get("title")))):
                     raise UpdateError("namespace_not_supported", "Разрешены статьи и только согласованная личная тестовая страница")
                 rev = page["revisions"][0]
                 return PageSnapshot(page["title"], rev["revid"], rev["timestamp"], rev["slots"]["main"]["content"], page.get('ns',0), data.get('curtimestamp'))
@@ -69,7 +70,7 @@ class WikiClient:
         if post and params.get('action')=='edit':
             if self.publication_policy:
                 self.publication_policy.gate_page(params.get('title'))
-            elif params.get('title')!='Участник:Zambrowski/testbot':
+            elif not is_test_page(params.get('title')):
                 raise UpdateError('page_not_allowed','Запись в основное пространство запрещена на уровне API-клиента')
         time.sleep(max(0, self.interval-(time.monotonic()-self.last_request)))
         self.last_request = time.monotonic()
@@ -171,15 +172,15 @@ class WikiClient:
 
     def save_test_page(self, snapshot, text, summary):
         # A second independent hard gate, even if the publisher is bypassed.
-        if snapshot.title != 'Участник:Zambrowski/testbot' or snapshot.namespace != 2:
-            raise UpdateError('page_not_allowed','Запись разрешена только на Участник:Zambrowski/testbot')
+        if not is_test_page(snapshot.title) or snapshot.namespace != 2:
+            raise UpdateError('page_not_allowed','Запись разрешена только на testbot и testbot1–testbot5 участника Zambrowski')
         return self._save_page(snapshot,text,summary)
 
     def save_allowed_page(self, snapshot, text, summary):
         if not self.publication_policy:
             raise UpdateError('page_not_allowed','Не установлена политика серверной публикации')
         self.publication_policy.gate_page(snapshot.title)
-        if not (snapshot.namespace==0 or (snapshot.title=='Участник:Zambrowski/testbot' and snapshot.namespace==2)):
+        if not (snapshot.namespace==0 or (is_test_page(snapshot.title) and snapshot.namespace==2)):
             raise UpdateError('page_not_allowed','Пространство страницы не разрешено')
         return self._save_page(snapshot,text,summary)
 
@@ -211,7 +212,7 @@ class FixtureClient:
         for meta in Path(directory).glob("*.json"):
             data = json.loads(meta.read_text(encoding="utf-8"))
             with meta.with_suffix(".wiki").open(encoding="utf-8", newline="") as stream:
-                self.pages[data["title"]] = PageSnapshot(data["title"], data["revid"], data["timestamp"], stream.read(),2 if data['title']=='Участник:Zambrowski/testbot' else 0)
+                self.pages[data["title"]] = PageSnapshot(data["title"], data["revid"], data["timestamp"], stream.read(),2 if is_test_page(data['title']) else 0)
 
     def fetch_page(self, title):
         try:

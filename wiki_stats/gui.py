@@ -14,6 +14,7 @@ from .manual_dialog import ManualStatsDialog
 from .audit_logger import AuditLogger, make_report, audit_report
 from .models import Mode
 from .transactions import approve_change, reject_change, TEST_TITLE
+from .test_pages import is_test_page
 from .publisher import Publisher
 from .backup import save_backup, plan_restore, default_backup_dir
 
@@ -70,7 +71,7 @@ class MainWindow(QMainWindow):
         layout = QVBoxLayout(central)
         self.setCentralWidget(central)
         label = QLabel("Источники статистики предоставлены пользователем; ссылки клубов/сборных проверяются через Wikipedia и Wikidata.\n"
-                       "Публикация разрешена только на Участник:Zambrowski/testbot. Основное пространство и Automatic заблокированы.")
+                       "Публикация разрешена только на testbot и testbot1–testbot5 участника Zambrowski. Основное пространство и Automatic заблокированы.")
         label.setWordWrap(True)
         layout.addWidget(label)
         account_bar = QHBoxLayout()
@@ -157,7 +158,7 @@ class MainWindow(QMainWindow):
         self.login_button.setEnabled(not busy)
         self.logout_button.setEnabled(not busy and bool(getattr(self.client,'authenticated_user',None)))
         self.restore_button.setEnabled(not busy)
-        self.backup_button.setEnabled(not busy and any(p.snapshot.title==TEST_TITLE for p in self.plans))
+        self.backup_button.setEnabled(not busy and any(is_test_page(p.snapshot.title) for p in self.plans))
         self.publish_button.setEnabled(not busy and self.mode_box.currentData()==Mode.MANUAL.value
                                        and bool(getattr(self.client,'authenticated_user',None))
                                        and any(p.publishable and any(c.decision=='approved' for c in p.changes) for p in self.plans))
@@ -376,8 +377,8 @@ class MainWindow(QMainWindow):
         self.refresh_status()
 
     def backup(self):
-        snapshot=next((p.snapshot for p in self.plans if p.snapshot.title==TEST_TITLE),None)
-        if snapshot:
+        snapshots=[p.snapshot for p in self.plans if is_test_page(p.snapshot.title)]
+        for snapshot in snapshots:
             try:
                 path=save_backup(snapshot);self.status.setText('Исходная версия сохранена: '+str(path))
                 self.logger.log('backup_saved',title=snapshot.title,revid=snapshot.revid,path=str(path))

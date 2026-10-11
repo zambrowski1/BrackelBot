@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.1",
+  "package_id": "test-sbmatches",
+  "generated_at": "2026-02-02T00:00:00Z",
+  "is_test": true,
+  "articles": [
+    {
+      "title": "Участник:Zambrowski/testbot",
+      "player": "Тест",
+      "base_revid": 10,
+      "operations": [
+        {
+          "id": "match-1",
+          "type": "update_sbmatch",
+          "entity": {
+            "name": "Германия U18",
+            "kind": "national_team",
+            "wikitext": "[[Сборная Германии по футболу (до 18 лет)|Германию U18]]"
+          },
+          "target": {
+            "structure": "sbmatches",
+            "age": 18,
+            "match_index": 1
+          },
+          "as_of": "2026-02-01",
+          "sources": [
+            {
+              "url": "https://example.org/match",
+              "coverage_as_of": "2026-02-01",
+              "provenance": "user_provided"
+            }
+          ],
+          "payload": {
+            "match": {
+              "дата": "01-01-2026",
+              "соперник": "Ирландия",
+              "счёт": "2:1",
+              "голы": "1",
+              "соревнование": "Товарищеский матч"
+            },
+            "expected_match": {
+              "дата": "01-01-2026",
+              "соперник": "Ирландия",
+              "счёт": "2:1",
+              "голы": "0",
+              "соревнование": "Товарищеский матч"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "schema_version": "1.1",
+  "package_id": "sofascore-155201002",
+  "generated_at": "2026-10-11T19:58:02.268902+00:00",
+  "articles": [
+    {
+      "title": "Лено, Бернд",
+      "base_revid": 155201002,
+      "subject_scope": "football_statistics",
+      "player": "Бернд Лено",
+      "operations": [
+        {
+          "id": "bind-card-name",
+          "type": "bind_infobox_name",
+          "group_id": "sofascore-reconciliation",
+          "entity": {
+            "name": "Бернд Лено",
+            "wikidata_id": "Q309966",
+            "wikitext": "{{Футболист}}"
+          },
+          "target": {
+            "structure": "career"
+          },
+          "as_of": "2026-10-11",
+          "sources": [
+            {
+              "url": "https://www.wikidata.org/wiki/Q309966",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-11",
+              "note": "Статья и профиль игрока проверены по QID и дате рождения; дата в карточке не меняется"
+            }
+          ],
+          "payload": {
+            "expected_sha256": "19ea7263dd4a489ef99e4b40b4f0d399378c55d48550853cb14fe2e599b6f52b"
+          }
+        },
+        {
+          "as_of": "2026-10-11",
+          "group_id": "sofascore-reconciliation",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/103335",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-11",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-1",
+          "type": "update_stats",
+          "entity": {
+            "name": "Фулхэм",
+            "wikitext": "{{Флаг Англии|20px}} [[Фулхэм (футбольный клуб)|Фулхэм]]"
+          },
+          "target": {
+            "structure": "career",
+            "field": "клубы",
+            "period": "2022—{{н.в.}}"
+          },
+          "season": null,
+          "competition": {
+            "name": "Чемпионат",
+            "category": "all",
+            "scope": "league"
+          },
+          "expected": {
+            "appearances": 148,
+            "goals": -217
+          },
+          "new": {
+            "appearances": 156,
+            "goals": -227
+          }
+        },
+        {
+          "as_of": "2026-10-11",
+          "group_id": "sofascore-reconciliation",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/103335",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-11",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-2",
+          "type": "update_date",
+          "entity": {
+            "name": "Фулхэм",
+            "kind": "club",
+            "wikidata_id": "Q18708",
+            "page_title": "Фулхэм (футбольный клуб)",
+            "wikitext": "{{Флаг Англии|20px}} [[Фулхэм (футбольный клуб)|Фулхэм]]"
+          },
+          "target": {
+            "structure": "career",
+            "field": "клубы"
+          },
+          "payload": {
+            "field": "обновление данных о клубе",
+            "expected_value": "11.5.2026",
+            "statistics_as_of": "2026-10-10"
+          }
+        }
+      ],
+      "review_warnings": [
+        "Не восстановлены строки сезонов: Арсенал (Лондон) 2020/21 (не подтверждены: Кубки, Еврокубки), Арсенал (Лондон) 2021/22 (не подтверждены: Кубки), Фулхэм 2022/23 (не подтверждены: Кубки), Фулхэм 2023/24 (не подтверждены: Кубки), Фулхэм 2024/25 (не подтверждены: Кубки), Фулхэм 2025/26 (не подтверждены: Кубки), Фулхэм 2026/27 (не подтверждены: Кубки, Еврокубки); полнота таблицы не подтверждена.",
+        "Часть статистики сборных не подтверждена полной сверкой матчей. Неподтверждённые показатели сохранены; причины указаны в отчёте."
+      ]
+    }
+  ]
+}

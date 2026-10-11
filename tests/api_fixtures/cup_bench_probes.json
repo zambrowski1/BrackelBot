@@ -1,0 +1,960 @@
+[
+  {
+    "pid": 856076,
+    "match": {
+      "id": 7822221,
+      "custom_id": "bbbsydb",
+      "slug": "borussia-dortmund-spvgg-greuther-furth",
+      "link": "https://www.sofascore.com/football/match/borussia-dortmund-spvgg-greuther-furth/bbbsydb#id:7822221",
+      "start_time": "2018-08-20T18:45:00Z",
+      "status": {
+        "code": 110,
+        "type": "finished",
+        "description": "AET"
+      },
+      "is_live": false,
+      "is_finished": true,
+      "winner_code": 2,
+      "home_team": {
+        "id": 2551,
+        "name": "SpVgg Greuther Fürth",
+        "short_name": "Fürth",
+        "code": "SGF",
+        "slug": "spvgg-greuther-furth",
+        "link": "https://www.sofascore.com/team/football/spvgg-greuther-furth/2551",
+        "image_link": "https://img.sofascore.com/api/v1/team/2551/image",
+        "sport": {
+          "id": 1,
+          "name": "Football",
+          "slug": "football"
+        },
+        "country": {
+          "name": "Germany",
+          "alpha2": "DE",
+          "alpha3": "DEU",
+          "slug": "germany"
+        },
+        "gender": "M",
+        "is_national": false,
+        "colors": {
+          "primary": "#ffffff",
+          "secondary": "#009900",
+          "text": "#009900"
+        },
+        "followers_count": 18835
+      },
+      "away_team": {
+        "id": 2673,
+        "name": "Borussia Dortmund",
+        "short_name": "Dortmund",
+        "code": "BVB",
+        "slug": "borussia-dortmund",
+        "link": "https://www.sofascore.com/team/football/borussia-dortmund/2673",
+        "image_link": "https://img.sofascore.com/api/v1/team/2673/image",
+        "sport": {
+          "id": 1,
+          "name": "Football",
+          "slug": "football"
+        },
+        "country": {
+          "name": "Germany",
+          "alpha2": "DE",
+          "alpha3": "DEU",
+          "slug": "germany"
+        },
+        "gender": "M",
+        "is_national": false,
+        "colors": {
+          "primary": "#ffe600",
+          "secondary": "#000000",
+          "text": "#000000"
+        },
+        "followers_count": 1313824
+      },
+      "home_score": {
+        "current": 1,
+        "display": 1,
+        "periods": {
+          "period1": 0,
+          "period2": 1,
+          "normaltime": 1,
+          "overtime": 0
+        }
+      },
+      "away_score": {
+        "current": 2,
+        "display": 2,
+        "periods": {
+          "period1": 0,
+          "period2": 1,
+          "normaltime": 1,
+          "overtime": 1
+        }
+      },
+      "round": {
+        "number": 7,
+        "name": "Round 1",
+        "slug": "round-1",
+        "cup_round_type": null
+      },
+      "tournament": {
+        "id": 217,
+        "name": "DFB Pokal",
+        "slug": "dfb-pokal",
+        "link": "https://www.sofascore.com/tournament/football/germany/dfb-pokal/217",
+        "image_link": "https://img.sofascore.com/api/v1/unique-tournament/217/image",
+        "dark_image_link": "https://img.sofascore.com/api/v1/unique-tournament/217/image/dark",
+        "colors": {
+          "primary": "#ffcc00",
+          "secondary": "#666666"
+        },
+        "followers_count": 77976,
+        "category": {
+          "id": 30,
+          "name": "Germany",
+          "slug": "germany",
+          "link": "https://www.sofascore.com/football/germany",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "flag_image_link": "https://img.sofascore.com/api/v1/country/DE/flag"
+        },
+        "live_activity_enabled": true,
+        "has_player_statistics": true,
+        "group": null,
+        "is_live": false
+      },
+      "season": {
+        "id": 17297,
+        "name": "DFB Pokal 18/19",
+        "year": "18/19"
+      },
+      "time": {
+        "injury_time3": 1,
+        "current_period_start_time": "2018-08-20T21:22:22Z"
+      },
+      "coverage": 1,
+      "has_highlights": false,
+      "has_player_statistics": true,
+      "has_player_heatmap": true,
+      "is_final_result_only": false,
+      "cup_matches_in_round": 1,
+      "player": {
+        "team_id": 2551,
+        "is_on_bench": true,
+        "statistics": null,
+        "incidents": null
+      }
+    },
+    "lineups": {
+      "match_id": 7822221,
+      "is_confirmed": true,
+      "home": {
+        "formation": "4-1-4-1",
+        "players": [
+          {
+            "player": {
+              "id": 856076
+            },
+            "team_id": 36360,
+            "position": "M",
+            "jersey_number": 11,
+            "is_substitute": true,
+            "is_captain": false,
+            "statistics": {
+              "total_shots": 0
+            }
+          }
+        ],
+        "missing_players": [],
+        "support_staff": [],
+        "kit_colors": {
+          "player": {
+            "primary": "ffffff",
+            "number": "ffffff",
+            "outline": "808080"
+          },
+          "goalkeeper": {
+            "primary": "000000",
+            "number": "ffffff",
+            "outline": "000000"
+          }
+        }
+      },
+      "away": {
+        "formation": "4-3-3",
+        "players": [],
+        "missing_players": [],
+        "support_staff": [],
+        "kit_colors": {
+          "player": {
+            "primary": "ffff00",
+            "number": "000000",
+            "outline": "ffff00"
+          },
+          "goalkeeper": {
+            "primary": "660099",
+            "number": "ffffff",
+            "outline": "660099"
+          }
+        }
+      },
+      "statistical_version": null
+    },
+    "incidents": {
+      "match_id": 7822221,
+      "count": 19,
+      "incidents": [
+        {
+          "type": "period",
+          "class": null,
+          "text": "ET",
+          "home_score": 1,
+          "away_score": 2,
+          "is_live": false,
+          "time": 120,
+          "added_time": 999,
+          "time_seconds": 7200,
+          "period_time_seconds": 900
+        },
+        {
+          "type": "goal",
+          "class": "regular",
+          "home_score": 1,
+          "away_score": 2,
+          "player": {
+            "id": 37092
+          },
+          "assist1": {
+            "id": 851100
+          },
+          "football_passing_network_action": [],
+          "id": 123726093,
+          "time": 120,
+          "is_home": false
+        },
+        {
+          "type": "card",
+          "class": "yellow",
+          "player": {
+            "id": 383560
+          },
+          "player_name": "Manuel Akanji",
+          "reason": "Foul",
+          "rescinded": false,
+          "id": 118961619,
+          "time": 115,
+          "is_home": false
+        },
+        {
+          "type": "card",
+          "class": "yellow",
+          "player": {
+            "id": 877838
+          },
+          "player_name": "Elias Abouchabaka",
+          "reason": "Foul",
+          "rescinded": false,
+          "id": 118961612,
+          "time": 110,
+          "is_home": true
+        },
+        {
+          "type": "card",
+          "class": "yellow",
+          "player": {
+            "id": 51133
+          },
+          "player_name": "Mario Maloča",
+          "reason": "Foul",
+          "rescinded": false,
+          "id": 118961611,
+          "time": 108,
+          "is_home": true
+        },
+        {
+          "type": "injuryTime",
+          "class": null,
+          "length": 1,
+          "time": 105,
+          "added_time": 0
+        },
+        {
+          "type": "substitution",
+          "class": "regular",
+          "player_in": {
+            "id": 246999
+          },
+          "player_out": {
+            "id": 254119
+          },
+          "id": 118960097,
+          "time": 97,
+          "injury": false,
+          "is_home": false
+        },
+        {
+          "type": "substitution",
+          "class": "regular",
+          "player_in": {
+            "id": 877838
+          },
+          "player_out": {
+            "id": 254191
+          },
+          "id": 118960096,
+          "time": 97,
+          "injury": false,
+          "is_home": true
+        },
+        {
+          "type": "period",
+          "class": null,
+          "text": "FT",
+          "home_score": 1,
+          "away_score": 1,
+          "is_live": false,
+          "time": 90,
+          "added_time": 999,
+          "time_seconds": 5400,
+          "period_time_seconds": 2700
+        },
+        {
+          "type": "goal",
+          "class": "regular",
+          "home_score": 1,
+          "away_score": 1,
+          "player": {
+            "id": 35612
+          },
+          "assist1": {
+            "id": 37092
+          },
+          "football_passing_network_action": [],
+          "id": 123726054,
+          "time": 90,
+          "added_time": 5,
+          "is_home": false
+        },
+        {
+          "type": "substitution",
+          "class": "regular",
+          "player_in": {
+            "id": 110377
+          },
+          "player_out": {
+            "id": 940393
+          },
+          "id": 118960059,
+          "time": 90,
+          "injury": false,
+          "is_home": true
+        },
+        {
+          "type": "substitution",
+          "class": "regular",
+          "player_in": {
+            "id": 851100
+          },
+          "player_out": {
+            "id": 817957
+          },
+          "id": 118960043,
+          "time": 78,
+          "injury": false,
+          "is_home": false
+        },
+        {
+          "type": "goal",
+          "class": "regular",
+          "home_score": 1,
+          "away_score": 0,
+          "player": {
+            "id": 230378
+          },
+          "assist1": {
+            "id": 102983
+          },
+          "football_passing_network_action": [],
+          "id": 123726025,
+          "time": 77,
+          "is_home": true
+        },
+        {
+          "type": "substitution",
+          "class": "regular",
+          "player_in": {
+            "id": 35612
+          },
+          "player_out": {
+            "id": 66477
+          },
+          "id": 118960025,
+          "time": 74,
+          "injury": false,
+          "is_home": false
+        },
+        {
+          "type": "substitution",
+          "class": "regular",
+          "player_in": {
+            "id": 817968
+          },
+          "player_out": {
+            "id": 786187
+          },
+          "id": 118960023,
+          "time": 70,
+          "injury": false,
+          "is_home": true
+        },
+        {
+          "type": "substitution",
+          "class": "regular",
+          "player_in": {
+            "id": 171927
+          },
+          "player_out": {
+            "id": 66518
+          },
+          "id": 118960016,
+          "time": 64,
+          "injury": false,
+          "is_home": false
+        },
+        {
+          "type": "substitution",
+          "class": "regular",
+          "player_in": {
+            "id": 237048
+          },
+          "player_out": {
+            "id": 41728
+          },
+          "id": 118959977,
+          "time": 46,
+          "injury": false,
+          "is_home": true
+        },
+        {
+          "type": "period",
+          "class": null,
+          "text": "HT",
+          "home_score": 0,
+          "away_score": 0,
+          "is_live": false,
+          "time": 45,
+          "added_time": 999,
+          "time_seconds": 2700,
+          "period_time_seconds": 2700
+        },
+        {
+          "type": "card",
+          "class": "yellow",
+          "player": {
+            "id": 230378
+          },
+          "player_name": "Sebastian Ernst",
+          "reason": "Foul",
+          "rescinded": false,
+          "id": 118961489,
+          "time": 38,
+          "is_home": true
+        }
+      ],
+      "kit_colors": {
+        "home": {
+          "player": {
+            "primary": "ffffff",
+            "number": "ffffff",
+            "outline": "808080"
+          },
+          "goalkeeper": {
+            "primary": "000000",
+            "number": "ffffff",
+            "outline": "000000"
+          }
+        },
+        "away": {
+          "player": {
+            "primary": "ffff00",
+            "number": "000000",
+            "outline": "ffff00"
+          },
+          "goalkeeper": {
+            "primary": "660099",
+            "number": "ffffff",
+            "outline": "660099"
+          }
+        }
+      }
+    }
+  },
+  {
+    "pid": 856076,
+    "match": {
+      "id": 8247810,
+      "custom_id": "Tabsbbb",
+      "slug": "spvgg-greuther-furth-msv-duisburg",
+      "link": "https://www.sofascore.com/football/match/spvgg-greuther-furth-msv-duisburg/Tabsbbb#id:8247810",
+      "start_time": "2019-08-11T16:30:00Z",
+      "status": {
+        "code": 100,
+        "type": "finished",
+        "description": "Ended"
+      },
+      "is_live": false,
+      "is_finished": true,
+      "winner_code": 1,
+      "home_team": {
+        "id": 2543,
+        "name": "MSV Duisburg",
+        "short_name": "Duisburg",
+        "code": "MSV",
+        "slug": "msv-duisburg",
+        "link": "https://www.sofascore.com/team/football/msv-duisburg/2543",
+        "image_link": "https://img.sofascore.com/api/v1/team/2543/image",
+        "sport": {
+          "id": 1,
+          "name": "Football",
+          "slug": "football"
+        },
+        "country": {
+          "name": "Germany",
+          "alpha2": "DE",
+          "alpha3": "DEU",
+          "slug": "germany"
+        },
+        "gender": "M",
+        "is_national": false,
+        "colors": {
+          "primary": "#ffffff",
+          "secondary": "#0033ff",
+          "text": "#0033ff"
+        },
+        "followers_count": 11979
+      },
+      "away_team": {
+        "id": 2551,
+        "name": "SpVgg Greuther Fürth",
+        "short_name": "Fürth",
+        "code": "SGF",
+        "slug": "spvgg-greuther-furth",
+        "link": "https://www.sofascore.com/team/football/spvgg-greuther-furth/2551",
+        "image_link": "https://img.sofascore.com/api/v1/team/2551/image",
+        "sport": {
+          "id": 1,
+          "name": "Football",
+          "slug": "football"
+        },
+        "country": {
+          "name": "Germany",
+          "alpha2": "DE",
+          "alpha3": "DEU",
+          "slug": "germany"
+        },
+        "gender": "M",
+        "is_national": false,
+        "colors": {
+          "primary": "#ffffff",
+          "secondary": "#009900",
+          "text": "#009900"
+        },
+        "followers_count": 18835
+      },
+      "home_score": {
+        "current": 2,
+        "display": 2,
+        "periods": {
+          "period1": 2,
+          "period2": 0,
+          "normaltime": 2
+        }
+      },
+      "away_score": {
+        "current": 0,
+        "display": 0,
+        "periods": {
+          "period1": 0,
+          "period2": 0,
+          "normaltime": 0
+        }
+      },
+      "round": {
+        "number": 7,
+        "name": "Round 1",
+        "slug": "round-1",
+        "cup_round_type": null
+      },
+      "tournament": {
+        "id": 217,
+        "name": "DFB Pokal",
+        "slug": "dfb-pokal",
+        "link": "https://www.sofascore.com/tournament/football/germany/dfb-pokal/217",
+        "image_link": "https://img.sofascore.com/api/v1/unique-tournament/217/image",
+        "dark_image_link": "https://img.sofascore.com/api/v1/unique-tournament/217/image/dark",
+        "colors": {
+          "primary": "#ffcc00",
+          "secondary": "#666666"
+        },
+        "followers_count": 77976,
+        "category": {
+          "id": 30,
+          "name": "Germany",
+          "slug": "germany",
+          "link": "https://www.sofascore.com/football/germany",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "Germany",
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "slug": "germany"
+          },
+          "flag_image_link": "https://img.sofascore.com/api/v1/country/DE/flag"
+        },
+        "live_activity_enabled": true,
+        "has_player_statistics": true,
+        "group": null,
+        "is_live": false
+      },
+      "season": {
+        "id": 23877,
+        "name": "DFB Pokal 19/20",
+        "year": "19/20"
+      },
+      "time": {
+        "current_period_start_time": "2019-08-11T18:21:10Z"
+      },
+      "coverage": 1,
+      "has_highlights": false,
+      "has_player_statistics": true,
+      "has_player_heatmap": true,
+      "is_final_result_only": false,
+      "cup_matches_in_round": 1,
+      "player": {
+        "team_id": 2551,
+        "is_on_bench": true,
+        "statistics": null,
+        "incidents": null
+      }
+    },
+    "lineups": {
+      "match_id": 8247810,
+      "is_confirmed": true,
+      "home": {
+        "formation": "4-2-3-1",
+        "players": [],
+        "missing_players": [],
+        "support_staff": [],
+        "kit_colors": {
+          "player": {
+            "primary": "ffffff",
+            "number": "0033ff",
+            "outline": "ffffff"
+          },
+          "goalkeeper": {
+            "primary": "000000",
+            "number": "ffffff",
+            "outline": "000000"
+          }
+        }
+      },
+      "away": {
+        "formation": "4-1-3-2",
+        "players": [
+          {
+            "player": {
+              "id": 856076
+            },
+            "team_id": 36360,
+            "position": "M",
+            "jersey_number": 11,
+            "is_substitute": true,
+            "is_captain": false,
+            "statistics": {
+              "total_shots": 0
+            }
+          }
+        ],
+        "missing_players": [],
+        "support_staff": [],
+        "kit_colors": {
+          "player": {
+            "primary": "009900",
+            "number": "ffffff",
+            "outline": "009900"
+          },
+          "goalkeeper": {
+            "primary": "ffff00",
+            "number": "000000",
+            "outline": "ffff00"
+          }
+        }
+      },
+      "statistical_version": null
+    },
+    "incidents": {
+      "match_id": 8247810,
+      "count": 16,
+      "incidents": [
+        {
+          "type": "period",
+          "class": null,
+          "text": "FT",
+          "home_score": 2,
+          "away_score": 0,
+          "is_live": false,
+          "time": 90,
+          "added_time": 999,
+          "time_seconds": 5400,
+          "period_time_seconds": 2700
+        },
+        {
+          "type": "substitution",
+          "class": "regular",
+          "player_in": {
+            "id": 939858
+          },
+          "player_out": {
+            "id": 877297
+          },
+          "id": 119359414,
+          "time": 90,
+          "added_time": 2,
+          "injury": false,
+          "is_home": true
+        },
+        {
+          "type": "card",
+          "class": "yellow",
+          "player": {
+            "id": 253687
+          },
+          "player_name": "Paul Seguin",
+          "reason": "Foul",
+          "rescinded": false,
+          "id": 119260920,
+          "time": 90,
+          "added_time": 1,
+          "is_home": false
+        },
+        {
+          "type": "card",
+          "class": "yellow",
+          "player": {
+            "id": 222770
+          },
+          "player_name": "Marius Funk",
+          "reason": "Foul",
+          "rescinded": false,
+          "id": 119260916,
+          "time": 89,
+          "is_home": false
+        },
+        {
+          "type": "card",
+          "class": "yellow",
+          "player": {
+            "id": 15166
+          },
+          "player_name": "Mërgim Mavraj",
+          "reason": "Foul",
+          "rescinded": false,
+          "id": 119260900,
+          "time": 82,
+          "is_home": false
+        },
+        {
+          "type": "substitution",
+          "class": "regular",
+          "player_in": {
+            "id": 253943
+          },
+          "player_out": {
+            "id": 254443
+          },
+          "id": 119359384,
+          "time": 79,
+          "injury": false,
+          "is_home": true
+        },
+        {
+          "type": "card",
+          "class": "yellow",
+          "player": {
+            "id": 842527
+          },
+          "player_name": "Joshua Bitter",
+          "reason": "Foul",
+          "rescinded": false,
+          "id": 119260894,
+          "time": 78,
+          "is_home": true
+        },
+        {
+          "type": "substitution",
+          "class": "regular",
+          "player_in": {
+            "id": 990201
+          },
+          "player_out": {
+            "id": 335357
+          },
+          "id": 119359379,
+          "time": 74,
+          "injury": false,
+          "is_home": false
+        },
+        {
+          "type": "card",
+          "class": "yellow",
+          "player": {
+            "id": 171885
+          },
+          "player_name": "Maximilian Sauer",
+          "reason": "Foul",
+          "rescinded": false,
+          "id": 119260884,
+          "time": 69,
+          "is_home": false
+        },
+        {
+          "type": "substitution",
+          "class": "regular",
+          "player_in": {
+            "id": 856668
+          },
+          "player_out": {
+            "id": 254191
+          },
+          "id": 119359328,
+          "time": 62,
+          "injury": false,
+          "is_home": false
+        },
+        {
+          "type": "substitution",
+          "class": "regular",
+          "player_in": {
+            "id": 168959
+          },
+          "player_out": {
+            "id": 237048
+          },
+          "id": 119359323,
+          "time": 59,
+          "injury": false,
+          "is_home": false
+        },
+        {
+          "type": "card",
+          "class": "yellow",
+          "player": {
+            "id": 254125
+          },
+          "player_name": "Maximilian Wittek",
+          "reason": "Foul",
+          "rescinded": false,
+          "id": 119260785,
+          "time": 46,
+          "is_home": false
+        },
+        {
+          "type": "period",
+          "class": null,
+          "text": "HT",
+          "home_score": 2,
+          "away_score": 0,
+          "is_live": false,
+          "time": 45,
+          "added_time": 999,
+          "time_seconds": 2700,
+          "period_time_seconds": 2700
+        },
+        {
+          "type": "card",
+          "class": "yellow",
+          "player": {
+            "id": 4723
+          },
+          "player_name": "Marco Caligiuri",
+          "reason": "Foul",
+          "rescinded": false,
+          "id": 119260722,
+          "time": 44,
+          "is_home": false
+        },
+        {
+          "type": "goal",
+          "class": "regular",
+          "home_score": 2,
+          "away_score": 0,
+          "player": {
+            "id": 125268
+          },
+          "assist1": {
+            "id": 254443
+          },
+          "football_passing_network_action": [],
+          "id": 126315378,
+          "time": 14,
+          "is_home": true
+        },
+        {
+          "type": "goal",
+          "class": "regular",
+          "home_score": 1,
+          "away_score": 0,
+          "player": {
+            "id": 877297
+          },
+          "assist1": {
+            "id": 842527
+          },
+          "football_passing_network_action": [],
+          "id": 126315306,
+          "time": 4,
+          "is_home": true
+        }
+      ],
+      "kit_colors": {
+        "home": {
+          "player": {
+            "primary": "ffffff",
+            "number": "0033ff",
+            "outline": "ffffff"
+          },
+          "goalkeeper": {
+            "primary": "000000",
+            "number": "ffffff",
+            "outline": "000000"
+          }
+        },
+        "away": {
+          "player": {
+            "primary": "009900",
+            "number": "ffffff",
+            "outline": "009900"
+          },
+          "goalkeeper": {
+            "primary": "ffff00",
+            "number": "000000",
+            "outline": "ffff00"
+          }
+        }
+      }
+    }
+  }
+]

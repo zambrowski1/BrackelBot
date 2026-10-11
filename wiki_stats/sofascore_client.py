@@ -12,10 +12,13 @@ import time
 import requests
 
 from .errors import UpdateError
+from .sofascore_limits import DEFAULT_MATCH_PAGES
 
 HOST = 'sofascore-scraper-1000-free-calls.p.rapidapi.com'
 PATHS = {'/search', '/players/details', '/players/statistics-seasons',
-         '/players/statistics', '/players/matches', '/players/transfer-history'}
+         '/players/statistics', '/players/matches', '/players/transfer-history', '/matches/player-statistics',
+         '/matches/lineups', '/matches/incidents'}
+PATHS.update({'/tournaments/seasons', '/tournaments/matches', '/players/national-team-statistics'})
 
 
 class _SofascoreAccount:
@@ -111,6 +114,24 @@ class _SofascoreAccount:
     def seasons(self, player_id):
         return self.request('/players/statistics-seasons', {'player_id': player_id}, ttl=86400)
 
+    def national_statistics(self, player_id):
+        return self.request('/players/national-team-statistics', {'player_id': player_id})
+
+    def match_secondary_source(self, match_id):
+        """Operator-supplied public HTML is checked independently on every use."""
+        return self.store.get('secondary_match',str(match_id))
+
+    def national_secondary_source(self, player_id):
+        """Public federation HTML; identity and completeness are checked at use."""
+        return self.store.get('secondary_national', str(player_id))
+
+    def club_secondary_source(self, player_id):
+        """Identity-bound public club season lists, verified on every use."""
+        return self.store.get('secondary_club', str(player_id))
+
+    def club_career_secondary_source(self, player_id):
+        return self.store.get('secondary_club_career', str(player_id))
+
     def statistics(self, player_id, tournament_id, season_id, part='regularSeason'):
         return self.request('/players/statistics', {'player_id': player_id,
             'tournament_id': tournament_id, 'season_id': season_id, 'type': part})
@@ -118,7 +139,47 @@ class _SofascoreAccount:
     def transfers(self, player_id):
         return self.request('/players/transfer-history', {'player_id': player_id}, ttl=86400)
 
-    def matches(self, player_id, max_pages=12):
+    def match_statistics(self, player_id, match_id):
+        return self.request('/matches/player-statistics', {'player_id': player_id, 'match_id': match_id})
+
+    def match_lineups(self, match_id):
+        return self.request('/matches/lineups', {'match_id': match_id})
+
+    def match_incidents(self, match_id):
+        return self.request('/matches/incidents', {'match_id': match_id})
+
+    def tournament_seasons(self, tournament_id):
+        return self.request('/tournaments/seasons', {'tournament_id': tournament_id}, ttl=86400)
+
+    def tournament_matches(self, tournament_id, season_id, max_pages=DEFAULT_MATCH_PAGES, *, request_budget=None):
+        matches, seen = [], set()
+        for page in range(1, max_pages+1):
+            if request_budget is not None:
+                if request_budget['remaining'] <= 0:
+                    raise UpdateError('match_request_cap', 'Исчерпан лимит проверки календаря турнира')
+                request_budget['remaining'] -= 1
+            data = self.request('/tournaments/matches', {'tournament_id': tournament_id,
+                'season_id': season_id, 'span': 'last', 'page': page})
+            rows = data.get('matches')
+            if (type(data.get('tournament_id')) is not int or data['tournament_id'] != tournament_id
+                    or type(data.get('season_id')) is not int or data['season_id'] != season_id
+                    or type(data.get('page')) is not int or data['page'] != page
+                    or not isinstance(rows, list) or type(data.get('has_next_page')) is not bool
+                    or type(data.get('count')) is not int or data['count'] != len(rows)):
+                raise UpdateError('incomplete_matches', 'Неверная страница календаря турнира Sofascore')
+            ids = [r.get('id') for r in rows]
+            if any(type(i) is not int or i <= 0 or i in seen for i in ids) or len(ids) != len(set(ids)):
+                raise UpdateError('incomplete_matches', 'Неоднозначные матчи календаря турнира Sofascore')
+            seen.update(ids);matches.extend(rows)
+            if not data['has_next_page']:
+                return {'tournament_id': tournament_id, 'season_id': season_id,
+                        'matches': matches, 'complete': True, 'pages': page}
+            if not rows:
+                raise UpdateError('incomplete_matches', 'Пустая промежуточная страница календаря')
+        return {'tournament_id': tournament_id, 'season_id': season_id,
+                'matches': matches, 'complete': False, 'pages': max_pages}
+
+    def matches(self, player_id, max_pages=DEFAULT_MATCH_PAGES):
         matches, seen = [], set()
         for page in range(1, max_pages+1):
             data = self.request('/players/matches', {'player_id': player_id, 'span': 'last', 'page': page})
@@ -159,6 +220,7 @@ class SofascoreClient(_SofascoreAccount):
         if len(set(keys))!=len(keys):
             raise UpdateError('api_key_configuration','Один ключ указан несколько раз')
         self.store,self.clock,self.session = store,clock,session or requests.Session()
+        self.missing_responses = {}
         self.accounts = [_SofascoreAccount(store,k,self.session,clock) for k in keys]
         for account in self.accounts: account.secrets = keys
 
@@ -182,6 +244,9 @@ class SofascoreClient(_SofascoreAccount):
         cached = self.store.get('cache',cache_key)
         if not fresh and cached and 0<=self.clock()-cached['at']<ttl:
             return cached['data']
+        missing=self.missing_responses.get(cache_key)
+        if not fresh and missing and 0<=self.clock()-missing[0]<300:
+            raise UpdateError('api_not_found',missing[1])
         if self.store.get('api_state','cooldown',0)>self.clock():
             raise UpdateError('api_rate_limited','Sofascore просит подождать; переключение ключей не выполняется')
         for account in self.accounts:
@@ -190,6 +255,8 @@ class SofascoreClient(_SofascoreAccount):
             try:
                 return account.request(path,params,fresh=fresh,ttl=ttl)
             except UpdateError as exc:
+                if exc.code=='api_not_found':
+                    self.missing_responses[cache_key]=(self.clock(),str(exc))
                 if exc.code not in {'quota_exhausted','api_authentication'}:
                     raise
         if all(self.store.get('key_health',a.account,{}).get('disabled') for a in self.accounts):

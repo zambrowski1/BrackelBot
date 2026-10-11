@@ -81,7 +81,7 @@ def test_user_example_reproduces_columns_dates_collapse_and_totals(renderer):
     result=renderer(example())
     assert 'wikitable mw-collapsible mw-collapsed' in result
     assert 'max-width:100%;' in result and 'min-width' not in result and 'colspan="6"' in result
-    assert '13-11-2016' in result and '17-05-2017' in result
+    assert '13 ноября 2016' in result and '17 мая 2017' in result
     for name in ('№','Дата','Соперник','Счёт','Голы','Соревнование'):
         assert f'<th scope="col">{name}</th>' in result
     assert 'Итого: 6 матчей / 0 голов; 5 побед, 1 ничья, 0 поражений' in result
@@ -113,7 +113,7 @@ def test_leap_date_and_multiple_goals(renderer):
     args={'заголовок':'Матчи игрока','дата1':'2024-02-29','соперник1':'Команда',
           'счёт1':'3:1','голы1':'2','соревнование1':'Товарищеский матч'}
     result=renderer(args)
-    assert '29-02-2024' in result and '1 матч / 2 гола; 1 победа' in result
+    assert '29 февраля 2024' in result and '1 матч / 2 гола; 1 победа' in result
 
 
 def test_compact_example_matches_verbose_example(renderer):
@@ -134,7 +134,6 @@ def test_compact_with_nested_links_references_and_shootout(renderer):
 
 @pytest.mark.parametrize('row,extra',[
     ('2024-01-01 ;; Команда ;; 1:0',{}),
-    ('2024-01-01 ;; Команда ;; 1:0 ;;',{}),
     ('2024-01-01 ;; Команда ;; 1:0 ;; 0 ;; Кубок ;; лишнее',{}),
     ('2024-01-01 ;; Команда ;; 1:0 ;; 0',{'дата1':'2024-01-01'}),
     ('2024-01-01 ;; Команда ;; 1:0 ;; 0',{'соревнование1':'Кубок'}),
@@ -159,19 +158,19 @@ def national_args(country='Ирландия',age='18'):
 
 def test_ireland_u18_keeps_correct_age_without_wrong_english_redirect(renderer):
     result=renderer(national_args())
-    assert '{{Флаг Ирландии|20px}} [[Сборная Ирландии по футболу (до 18 лет)|Ирландия (до 18 лет)]]' in result
+    assert '{{Флаг Ирландии|20px}} [[Сборная Ирландии по футболу (до 18 лет)|Ирландия (до 18)]]' in result
     assert 'under-19' not in result and '{{нп5' not in result
 
 
 def test_existing_russian_youth_article_preferred(renderer):
     result=renderer(national_args('Франция'))
-    assert '[[Сборная Франции по футболу (до 18 лет)|Франция (до 18 лет)]]' in result
+    assert '[[Сборная Франции по футболу (до 18 лет)|Франция (до 18)]]' in result
     assert '{{нп5' not in result
 
 
 def test_missing_russian_article_uses_verified_same_age_foreign_article(renderer):
     result=renderer(national_args('Австрия'))
-    assert '{{нп5|Сборная Австрии по футболу (до 18 лет)|Австрия (до 18 лет)|en|Austria national under-18 football team}}' in result
+    assert '{{нп5|Сборная Австрии по футболу (до 18 лет)|Австрия (до 18)|en|Austria national under-18 football team}}' in result
 
 
 def test_senior_default_and_explicit_overrides(renderer):
@@ -192,7 +191,7 @@ def test_unknown_short_country_needs_explicit_link(renderer):
 
 def test_redirect_without_safe_foreign_article_not_followed(renderer):
     result=renderer(national_args(age='16'))
-    assert '{{Флаг Ирландии|20px}} Ирландия (до 16 лет)' in result
+    assert '{{Флаг Ирландии|20px}} Ирландия (до 16)' in result
     assert '[[Сборная Ирландии' not in result
 
 
@@ -203,7 +202,7 @@ def test_auto_example_keeps_match_totals_and_ages(renderer):
     result=renderer(args)
     assert 'Итого: 6 матчей / 0 голов; 5 побед, 1 ничья, 0 поражений' in result
     assert '{{Флаг Ирландии|20px}}' in result
-    assert 'Ирландия (до 18 лет)' in result and 'Австрия (до 18 лет)' in result
+    assert 'Ирландия (до 18)' in result and 'Австрия (до 18)' in result
     assert 'under-19' not in result
 
 
@@ -242,24 +241,24 @@ def test_repeated_country_uses_single_title_lookup_and_template_expansion():
 ])
 def test_country_aliases_codes_and_historical_teams(renderer,value,name):
     result=renderer(national_args(value))
-    assert name+' (до 18 лет)' in result
+    assert name+' (до 18)' in result
 
 
 def test_german_exact_age_fallback(renderer):
     result=renderer(national_args('Германия'))
     assert '|de|Deutsche Fußballnationalmannschaft (U-18-Junioren)' in result
-    assert 'Германия (до 18 лет)' in result
+    assert 'Германия (до 18)' in result
 
 
 def test_age21_uses_correct_russian_grammar(renderer):
     result=renderer(national_args('Ирландия',age='21'))
-    assert 'Ирландия (до 21 года)' in result and 'до 21 лет' not in result
+    assert 'Ирландия (до 21)' in result and 'до 21 лет' not in result
 
 
 def test_named_olympic_article_used_for_under23(renderer):
     result=renderer(national_args('Бразилия',age='23'))
     assert 'Олимпийская сборная Бразилии по футболу' in result
-    assert 'Бразилия (до 23 лет)' in result
+    assert 'Бразилия (до 23)' in result
 
 
 def test_entire_catalogue_all_ages_and_aliases_render(renderer):
@@ -277,12 +276,12 @@ def test_entire_catalogue_all_ages_and_aliases_render(renderer):
                 expected=r'under-'+age+r'\b' if field=='foreign' else r'U-'+age+r'\b'
                 assert re.search(expected,title), (name,age,title)
     for alias,name in catalogue['aliases'].items():
-        assert name+' (до 18 лет)' in renderer(national_args(alias))
+        assert name+' (до 18)' in renderer(national_args(alias))
 
 
 def test_unverified_flag_is_not_fabricated(renderer):
     result=renderer(national_args('Падания'))
-    assert 'Падания (до 18 лет)' in result
+    assert 'Падания (до 18)' in result
     assert '{{Флаг' not in result
 
 
@@ -313,7 +312,7 @@ def test_unverified_flag_is_not_fabricated(renderer):
 ])
 def test_human_spelling_variants_and_typos(renderer,value,name):
     result=renderer(national_args(value))
-    assert name+' (до 18 лет)' in result
+    assert name+' (до 18)' in result
 
 
 @pytest.mark.parametrize('value',['Корея','Конго','Congo','Korea','Великобритания','UK','Виргинские острова'])
@@ -326,7 +325,7 @@ def test_ambiguous_abbreviations_require_clarification_even_for_seniors(renderer
 @pytest.mark.parametrize('value',['Мали','Мальта','Нигер','Нигерия','Гвинея','Гайана','Доминика','Доминиканская Республика'])
 def test_real_country_names_never_fuzzy_corrected_to_another_team(renderer,value):
     result=renderer(national_args(value))
-    assert value+' (до 18 лет)' in result
+    assert value+' (до 18)' in result
 
 
 @pytest.mark.parametrize('value',['Мли','Нигр','Ирлнд','GR','UAS'])
@@ -370,3 +369,44 @@ def test_day_first_sort_is_chronological_not_alphabetical(renderer):
 def test_invalid_day_first_date_rejected(renderer,date):
     with pytest.raises(lupa.LuaError,match='дата'):
         renderer({**national_args(),'матч1':f'{date} ;; Ирландия ;; 1:0 ;; 0'})
+
+
+@pytest.mark.parametrize('day', ['11-09-2006', '11.09.2006', '2006-09-11'])
+@pytest.mark.parametrize('metric', ['голы', 'пропущенные голы'])
+@pytest.mark.parametrize('value', [None, '', '0'])
+def test_display_date_and_zero_statistic(renderer, day, metric, value):
+    args = {'заголовок': 'Матчи', 'статистика': metric, 'дата1': day,
+            'соперник1': 'Франция', 'счёт1': '0:0', 'соревнование': 'Кубок'}
+    if value is not None:
+        args[metric + '1'] = value
+    result = renderer(args)
+    assert '<td>11 сентября 2006</td>' in result
+    assert '<td>—</td>' in result
+    assert ('Пропущенные голы' if metric == 'пропущенные голы' else 'Голы') in result
+    assert ('0 пропущенных голов' if metric == 'пропущенные голы' else '0 голов') in result
+
+
+@pytest.mark.parametrize('compact', [True, False])
+def test_keeper_conceded_uses_opponent_score_and_summary(renderer, compact):
+    args = {'заголовок': 'Матчи', 'статистика': 'пропущенные голы', 'соревнование': 'Кубок'}
+    if compact:
+        args['матч1'] = '11.09.2006 ;; Франция ;; 0:3 ;; 2'
+    else:
+        args.update({'дата1': '11.09.2006', 'соперник1': 'Франция', 'счёт1': '0:3', 'пропущенные голы1': '2'})
+    result = renderer(args)
+    assert '<td>2</td>' in result and '2 пропущенных гола' in result
+    assert '0 побед, 0 ничьих, 1 поражение' in result
+    if compact:
+        args['матч1'] = '11.09.2006 ;; Франция ;; 0:3 ;; 4'
+    else:
+        args['пропущенные голы1'] = '4'
+    with pytest.raises(lupa.LuaError):
+        renderer(args)
+
+
+@pytest.mark.parametrize('metric,inactive', [('голы', 'пропущенные голы'), ('пропущенные голы', 'голы')])
+def test_inactive_statistic_does_not_silently_disappear(renderer, metric, inactive):
+    args = {'заголовок': 'Матчи', 'статистика': metric, 'дата1': '11-09-2006',
+            'соперник1': 'Франция', 'счёт1': '1:1', 'соревнование': 'Кубок', inactive+'1': '1'}
+    with pytest.raises(lupa.LuaError):
+        renderer(args)

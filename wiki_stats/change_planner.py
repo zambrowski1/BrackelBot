@@ -1,4 +1,5 @@
 # SPDX-License-Identifier: MIT
+from .test_pages import is_test_page
 from .errors import UpdateError
 from .models import ChangeResult, ArticlePlan
 from .schema_validator import validate_package
@@ -70,7 +71,7 @@ def plan_article(snapshot, article, schema_version='1.0', resolver=None):
                 c.error_layer = 'source' if c.status.startswith('source_') else 'data'
         plan.article = deepcopy(article)
         plan.schema_version = '1.0'
-        plan.publishable = snapshot.title == TEST_TITLE and bool(plan.groups) and not plan.warnings
+        plan.publishable = is_test_page(snapshot.title) and snapshot.namespace == 2 and bool(plan.groups) and not plan.warnings
         plan.content_fingerprint = plan_fingerprint(plan)
         return plan
     groups = OrderedDict()
@@ -90,7 +91,8 @@ def plan_article(snapshot, article, schema_version='1.0', resolver=None):
                     raise UpdateError('revision_conflict','Статья изменилась после подготовки пакета')
                 if any(s['coverage_as_of']!=op['as_of'] for s in op['sources']):
                     raise UpdateError('source_coverage_mismatch','Источники заявляют несовместимый охват')
-                if len({x['as_of'] for x in operations})!=1:
+                formatting = {'bind_infobox_name','migrate_career_template','migrate_club_table','normalize_club_table','normalize_statistics_layout'}
+                if len({x['as_of'] for x in operations if x['type'] not in formatting})>1:
                     raise UpdateError('source_coverage_mismatch','Связанные операции должны иметь одну дату охвата')
                 staged,status = execute_operation(staged,article['player'],op,resolver)
                 c = ChangeResult(op['id'],deepcopy(op),status,
@@ -137,9 +139,9 @@ def plan_article(snapshot, article, schema_version='1.0', resolver=None):
                     c.status='patch_conflict'; c.message='Группы пересекаются. Свяжите эти операции одним group_id.'; c.patches=[];c.diff=''
     ready_patches=[p for g in transactions if g.status=='ready' for p in g.patches]
     preview=apply_patches(snapshot.text,ready_patches,structural=True)
-    warnings=arithmetic_warnings(preview)
+    warnings=list(dict.fromkeys(arithmetic_warnings(preview)+article.get('review_warnings',[])))
     plan=ArticlePlan(snapshot,results,preview,generate_diff(snapshot.text,preview,snapshot.title),warnings,
-                     snapshot.title==TEST_TITLE and any(g.status=='ready' for g in transactions) and not warnings,
+                     is_test_page(snapshot.title) and snapshot.namespace == 2 and any(g.status=='ready' for g in transactions) and not warnings,
                      deepcopy(article),schema_version,transactions)
     plan.content_fingerprint=plan_fingerprint(plan)
     return plan

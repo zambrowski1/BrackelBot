@@ -1,0 +1,1918 @@
+{
+  "number": 1,
+  "title": "Лено, Бернд",
+  "revid": 155201002,
+  "input": {
+    "number": 1,
+    "requested_title": "Лено, Бернд",
+    "title": "Лено, Бернд",
+    "revid": 155201002,
+    "timestamp": "2026-09-19T19:22:27Z",
+    "namespace": 0,
+    "starttimestamp": "2026-10-11T17:29:01Z",
+    "wiki_name": null,
+    "dates": {
+      "обновление данных о клубе": "11.5.2026",
+      "обновление данных о сборной": "28.11.2023"
+    },
+    "season_labels": [],
+    "has_klstat": false,
+    "has_sbmatches": false,
+    "qid": "Q309966",
+    "en_name": "Bernd Leno",
+    "birth_claims": [
+      "1992-03-04"
+    ]
+  },
+  "wiki_edits": 0,
+  "release_sha256": "local-development",
+  "mapping": {
+    "qid": "Q309966",
+    "title": "Лено, Бернд",
+    "wiki_name": "Бернд Лено",
+    "birth_date": "1992-03-04",
+    "api_id": 103335
+  },
+  "source_profile": {
+    "id": 103335,
+    "name": "Bernd Leno",
+    "date_of_birth": "1992-03-04",
+    "position": "G",
+    "team": {
+      "id": 43,
+      "name": "Fulham",
+      "short_name": "Fulham",
+      "code": "FUL",
+      "slug": "fulham",
+      "link": "https://www.sofascore.com/team/football/fulham/43",
+      "image_link": "https://img.sofascore.com/api/v1/team/43/image",
+      "sport": {
+        "id": 1,
+        "name": "Football",
+        "slug": "football"
+      },
+      "country": {
+        "name": "England",
+        "alpha2": "EN",
+        "alpha3": "ENG",
+        "slug": "england"
+      },
+      "gender": "M",
+      "is_national": false,
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#000000",
+        "text": "#000000"
+      },
+      "followers_count": 313283,
+      "primary_tournament": {
+        "id": 17,
+        "name": "Premier League",
+        "slug": "premier-league",
+        "link": "https://www.sofascore.com/tournament/football/england/premier-league/17",
+        "image_link": "https://img.sofascore.com/api/v1/unique-tournament/17/image",
+        "dark_image_link": "https://img.sofascore.com/api/v1/unique-tournament/17/image/dark",
+        "colors": {
+          "primary": "#3c1c5a",
+          "secondary": "#f80158"
+        },
+        "followers_count": 1214670,
+        "category": {
+          "id": 1,
+          "name": "England",
+          "slug": "england",
+          "link": "https://www.sofascore.com/football/england",
+          "sport": {
+            "id": 1,
+            "name": "Football",
+            "slug": "football"
+          },
+          "country": {
+            "name": "England",
+            "alpha2": "EN",
+            "alpha3": "ENG",
+            "slug": "england"
+          },
+          "flag_image_link": "https://img.sofascore.com/api/v1/country/EN/flag"
+        },
+        "live_activity_enabled": true
+      }
+    }
+  },
+  "collection": {
+    "provider": "sofascore",
+    "player_id": 103335,
+    "statistics_since": 2020,
+    "old_seasons_policy": "preserve_existing",
+    "confirmed_match_date": "2026-10-10",
+    "covered_statistics": 7,
+    "review": [
+      {
+        "code": "competition_unmapped",
+        "tournament_id": 11
+      },
+      {
+        "code": "competition_unmapped",
+        "tournament_id": 10783
+      },
+      {
+        "code": "competition_unmapped",
+        "tournament_id": 1295
+      },
+      {
+        "code": "competition_unmapped",
+        "tournament_id": 1337
+      },
+      {
+        "code": "competition_unmapped",
+        "tournament_id": 454
+      },
+      {
+        "code": "source_cache_missing",
+        "season": "2023/24",
+        "tournament_id": 21
+      },
+      {
+        "code": "source_cache_missing",
+        "season": "2021/22",
+        "tournament_id": 21
+      },
+      {
+        "code": "incomplete_statistics",
+        "season": "2021/22",
+        "tournament_id": 19
+      },
+      {
+        "code": "source_cache_missing",
+        "season": "2020/21",
+        "tournament_id": 679
+      },
+      {
+        "code": "source_cache_missing",
+        "season": "2020/21",
+        "tournament_id": 21
+      },
+      {
+        "code": "incomplete_statistics",
+        "season": "2020/21",
+        "tournament_id": 19
+      },
+      {
+        "code": "article_club_identity_unproven",
+        "wikitext": "{{фарм-клуб}}{{Флаг Германии|20px}} Штутгарт II",
+        "message": "Нужна единственная однозначная ссылка на клуб"
+      },
+      {
+        "code": "new_row_needs_all_categories",
+        "qid": "Q9617",
+        "season": "2020/21",
+        "missing_categories": [
+          "Кубки",
+          "Еврокубки"
+        ]
+      },
+      {
+        "code": "zero_from_complete_match_history",
+        "season": "2021/22",
+        "category": "Еврокубки",
+        "qid": "Q9617"
+      },
+      {
+        "code": "new_row_needs_all_categories",
+        "qid": "Q9617",
+        "season": "2021/22",
+        "missing_categories": [
+          "Кубки"
+        ]
+      },
+      {
+        "code": "zero_from_complete_match_history",
+        "season": "2022/23",
+        "category": "Еврокубки",
+        "qid": "Q18708"
+      },
+      {
+        "code": "new_row_needs_all_categories",
+        "qid": "Q18708",
+        "season": "2022/23",
+        "missing_categories": [
+          "Кубки"
+        ]
+      },
+      {
+        "code": "zero_from_complete_match_history",
+        "season": "2023/24",
+        "category": "Еврокубки",
+        "qid": "Q18708"
+      },
+      {
+        "code": "new_row_needs_all_categories",
+        "qid": "Q18708",
+        "season": "2023/24",
+        "missing_categories": [
+          "Кубки"
+        ]
+      },
+      {
+        "code": "zero_from_complete_match_history",
+        "season": "2024/25",
+        "category": "Еврокубки",
+        "qid": "Q18708"
+      },
+      {
+        "code": "new_row_needs_all_categories",
+        "qid": "Q18708",
+        "season": "2024/25",
+        "missing_categories": [
+          "Кубки"
+        ]
+      },
+      {
+        "code": "zero_from_complete_match_history",
+        "season": "2025/26",
+        "category": "Еврокубки",
+        "qid": "Q18708"
+      },
+      {
+        "code": "new_row_needs_all_categories",
+        "qid": "Q18708",
+        "season": "2025/26",
+        "missing_categories": [
+          "Кубки"
+        ]
+      },
+      {
+        "code": "new_row_needs_all_categories",
+        "qid": "Q18708",
+        "season": "2026/27",
+        "missing_categories": [
+          "Кубки",
+          "Еврокубки"
+        ]
+      },
+      {
+        "code": "section_needs_confirmed_evidence"
+      },
+      {
+        "code": "national_scope_unproven",
+        "team_id": 4711
+      }
+    ],
+    "match_recovery_failures": [
+      {
+        "code": "source_cache_missing",
+        "season": "2018",
+        "team_id": 4711,
+        "tournament_id": 11,
+        "match_id": 6827890,
+        "remaining": 468
+      },
+      {
+        "code": "national_match_unproven",
+        "team_id": 4711,
+        "match_id": 6827890,
+        "remaining": 468
+      }
+    ],
+    "national_scopes": [],
+    "youth_national_scopes": [],
+    "secondary_club_scopes": [],
+    "quota": {
+      "football_api_requests": 0,
+      "mode": "cache_only"
+    }
+  },
+  "changes": [
+    {
+      "id": "bind-card-name",
+      "operation": {
+        "id": "bind-card-name",
+        "type": "bind_infobox_name",
+        "group_id": "sofascore-reconciliation",
+        "entity": {
+          "name": "Бернд Лено",
+          "wikidata_id": "Q309966",
+          "wikitext": "{{Футболист}}"
+        },
+        "target": {
+          "structure": "career"
+        },
+        "as_of": "2026-10-11",
+        "sources": [
+          {
+            "url": "https://www.wikidata.org/wiki/Q309966",
+            "provenance": "user_provided",
+            "coverage_as_of": "2026-10-11",
+            "note": "Статья и профиль игрока проверены по QID и дате рождения; дата в карточке не меняется"
+          }
+        ],
+        "payload": {
+          "expected_sha256": "19ea7263dd4a489ef99e4b40b4f0d399378c55d48550853cb14fe2e599b6f52b"
+        }
+      },
+      "status": "ready",
+      "message": "Структура и данные проверены; источники статистики предоставлены пользователем",
+      "patches": [
+        {
+          "start": 20,
+          "end": 20,
+          "before": "",
+          "after": "| имя = Бернд Лено\n",
+          "field": "structure"
+        }
+      ],
+      "diff": "--- Лено, Бернд (исходный)\n+++ Лено, Бернд (предпросмотр)\n@@ -1,5 +1,6 @@\n {{ФИО}}\n {{Футболист\n+| имя = Бернд Лено\n | изображение = 20180602 FIFA Friendly Match Austria vs. Germany Bernd Leno 850 0646.jpg\n | рост = 190\n | позиция = [[Вратарь (футбол)|вратарь]]\n\nСвязанная группа (публикуется целиком):\n--- Лено, Бернд (исходный)\n+++ Лено, Бернд (предпросмотр)\n@@ -1,5 +1,6 @@\n {{ФИО}}\n {{Футболист\n+| имя = Бернд Лено\n | изображение = 20180602 FIFA Friendly Match Austria vs. Germany Bernd Leno 850 0646.jpg\n | рост = 190\n | позиция = [[Вратарь (футбол)|вратарь]]\n@@ -15,7 +16,7 @@\n   |2011|{{аренда}}{{Флаг Германии|20px}} [[Байер 04]]|16 (−22)\n   |2012—2018|{{Флаг Германии|20px}} [[Байер 04]]|210 (−258)\n   |2018—2022|{{Флаг Англии|20px}} [[Арсенал (футбольный клуб, Лондон)|Арсенал]]|101 (−127)\n-  |2022—{{н.в.}}|{{Флаг Англии|20px}} [[Фулхэм (футбольный клуб)|Фулхэм]]|148 (−217)\n+  |2022—{{н.в.}}|{{Флаг Англии|20px}} [[Фулхэм (футбольный клуб)|Фулхэм]]|156 (-227)\n   }}\n | национальная сборная = {{спортивная карьера\n   |2008—2009|{{Флаг Германии|20px}} [[Сборная Германии по футболу (до 17 лет)|Германия (до 17)]]|4 (−?)\n@@ -28,7 +29,7 @@\n {{медаль|Золото|[[Кубок конфедераций 2017|Россия 2017]]}} \n {{турнир|[[Чемпионат Европы по футболу|Чемпионаты Европы]]}}\n {{Бронза Евро 2016}}\n-| обновление данных о клубе = 11.5.2026\n+| обновление данных о клубе = 10.10.2026\n | обновление данных о сборной = 28.11.2023\n }}\n '''Бернд Ле́но''' ({{lang-de|Bernd Leno}}; {{ВД-Преамбула}}) — [[Германия|немецкий]] [[футбол]]ист, [[Вратарь (футбол)|вратарь]] английского клуба «[[Фулхэм (футбольный клуб)|Фулхэм]]» и [[Сборная Германии по футболу|сборной Германии]].\n",
+      "source_verification": "user_provided_not_independently_verified",
+      "decision": "pending",
+      "group_id": "sofascore-reconciliation",
+      "review_fingerprint": "",
+      "error_layer": "data"
+    },
+    {
+      "id": "ss-1",
+      "operation": {
+        "as_of": "2026-10-11",
+        "group_id": "sofascore-reconciliation",
+        "sources": [
+          {
+            "url": "https://www.sofascore.com/football/player/103335",
+            "provenance": "sofascore",
+            "coverage_as_of": "2026-10-11",
+            "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+          }
+        ],
+        "id": "ss-1",
+        "type": "update_stats",
+        "entity": {
+          "name": "Фулхэм",
+          "wikitext": "{{Флаг Англии|20px}} [[Фулхэм (футбольный клуб)|Фулхэм]]"
+        },
+        "target": {
+          "structure": "career",
+          "field": "клубы",
+          "period": "2022—{{н.в.}}"
+        },
+        "season": null,
+        "competition": {
+          "name": "Чемпионат",
+          "category": "all",
+          "scope": "league"
+        },
+        "expected": {
+          "appearances": 148,
+          "goals": -217
+        },
+        "new": {
+          "appearances": 156,
+          "goals": -227
+        }
+      },
+      "status": "ready",
+      "message": "Структура и данные проверены; источники статистики предоставлены пользователем",
+      "patches": [
+        {
+          "start": 916,
+          "end": 918,
+          "before": "48",
+          "after": "56",
+          "field": "structure"
+        },
+        {
+          "start": 920,
+          "end": 921,
+          "before": "−",
+          "after": "-",
+          "field": "structure"
+        },
+        {
+          "start": 922,
+          "end": 923,
+          "before": "1",
+          "after": "2",
+          "field": "structure"
+        }
+      ],
+      "diff": "--- Лено, Бернд (исходный)\n+++ Лено, Бернд (предпросмотр)\n@@ -16,7 +16,7 @@\n   |2011|{{аренда}}{{Флаг Германии|20px}} [[Байер 04]]|16 (−22)\n   |2012—2018|{{Флаг Германии|20px}} [[Байер 04]]|210 (−258)\n   |2018—2022|{{Флаг Англии|20px}} [[Арсенал (футбольный клуб, Лондон)|Арсенал]]|101 (−127)\n-  |2022—{{н.в.}}|{{Флаг Англии|20px}} [[Фулхэм (футбольный клуб)|Фулхэм]]|148 (−217)\n+  |2022—{{н.в.}}|{{Флаг Англии|20px}} [[Фулхэм (футбольный клуб)|Фулхэм]]|156 (-227)\n   }}\n | национальная сборная = {{спортивная карьера\n   |2008—2009|{{Флаг Германии|20px}} [[Сборная Германии по футболу (до 17 лет)|Германия (до 17)]]|4 (−?)\n\nСвязанная группа (публикуется целиком):\n--- Лено, Бернд (исходный)\n+++ Лено, Бернд (предпросмотр)\n@@ -1,5 +1,6 @@\n {{ФИО}}\n {{Футболист\n+| имя = Бернд Лено\n | изображение = 20180602 FIFA Friendly Match Austria vs. Germany Bernd Leno 850 0646.jpg\n | рост = 190\n | позиция = [[Вратарь (футбол)|вратарь]]\n@@ -15,7 +16,7 @@\n   |2011|{{аренда}}{{Флаг Германии|20px}} [[Байер 04]]|16 (−22)\n   |2012—2018|{{Флаг Германии|20px}} [[Байер 04]]|210 (−258)\n   |2018—2022|{{Флаг Англии|20px}} [[Арсенал (футбольный клуб, Лондон)|Арсенал]]|101 (−127)\n-  |2022—{{н.в.}}|{{Флаг Англии|20px}} [[Фулхэм (футбольный клуб)|Фулхэм]]|148 (−217)\n+  |2022—{{н.в.}}|{{Флаг Англии|20px}} [[Фулхэм (футбольный клуб)|Фулхэм]]|156 (-227)\n   }}\n | национальная сборная = {{спортивная карьера\n   |2008—2009|{{Флаг Германии|20px}} [[Сборная Германии по футболу (до 17 лет)|Германия (до 17)]]|4 (−?)\n@@ -28,7 +29,7 @@\n {{медаль|Золото|[[Кубок конфедераций 2017|Россия 2017]]}} \n {{турнир|[[Чемпионат Европы по футболу|Чемпионаты Европы]]}}\n {{Бронза Евро 2016}}\n-| обновление данных о клубе = 11.5.2026\n+| обновление данных о клубе = 10.10.2026\n | обновление данных о сборной = 28.11.2023\n }}\n '''Бернд Ле́но''' ({{lang-de|Bernd Leno}}; {{ВД-Преамбула}}) — [[Германия|немецкий]] [[футбол]]ист, [[Вратарь (футбол)|вратарь]] английского клуба «[[Фулхэм (футбольный клуб)|Фулхэм]]» и [[Сборная Германии по футболу|сборной Германии]].\n",
+      "source_verification": "user_provided_not_independently_verified",
+      "decision": "pending",
+      "group_id": "sofascore-reconciliation",
+      "review_fingerprint": "",
+      "error_layer": "data"
+    },
+    {
+      "id": "ss-2",
+      "operation": {
+        "as_of": "2026-10-11",
+        "group_id": "sofascore-reconciliation",
+        "sources": [
+          {
+            "url": "https://www.sofascore.com/football/player/103335",
+            "provenance": "sofascore",
+            "coverage_as_of": "2026-10-11",
+            "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+          }
+        ],
+        "id": "ss-2",
+        "type": "update_date",
+        "entity": {
+          "name": "Фулхэм",
+          "kind": "club",
+          "wikidata_id": "Q18708",
+          "page_title": "Фулхэм (футбольный клуб)",
+          "wikitext": "{{Флаг Англии|20px}} [[Фулхэм (футбольный клуб)|Фулхэм]]"
+        },
+        "target": {
+          "structure": "career",
+          "field": "клубы"
+        },
+        "payload": {
+          "field": "обновление данных о клубе",
+          "expected_value": "11.5.2026",
+          "statistics_as_of": "2026-10-10"
+        }
+      },
+      "status": "ready",
+      "message": "Структура и данные проверены; источники статистики предоставлены пользователем",
+      "patches": [
+        {
+          "start": 1682,
+          "end": 1682,
+          "before": "",
+          "after": "0.",
+          "field": "structure"
+        },
+        {
+          "start": 1683,
+          "end": 1685,
+          "before": ".5",
+          "after": "0",
+          "field": "structure"
+        }
+      ],
+      "diff": "--- Лено, Бернд (исходный)\n+++ Лено, Бернд (предпросмотр)\n@@ -29,7 +29,7 @@\n {{медаль|Золото|[[Кубок конфедераций 2017|Россия 2017]]}} \n {{турнир|[[Чемпионат Европы по футболу|Чемпионаты Европы]]}}\n {{Бронза Евро 2016}}\n-| обновление данных о клубе = 11.5.2026\n+| обновление данных о клубе = 10.10.2026\n | обновление данных о сборной = 28.11.2023\n }}\n '''Бернд Ле́но''' ({{lang-de|Bernd Leno}}; {{ВД-Преамбула}}) — [[Германия|немецкий]] [[футбол]]ист, [[Вратарь (футбол)|вратарь]] английского клуба «[[Фулхэм (футбольный клуб)|Фулхэм]]» и [[Сборная Германии по футболу|сборной Германии]].\n\nСвязанная группа (публикуется целиком):\n--- Лено, Бернд (исходный)\n+++ Лено, Бернд (предпросмотр)\n@@ -1,5 +1,6 @@\n {{ФИО}}\n {{Футболист\n+| имя = Бернд Лено\n | изображение = 20180602 FIFA Friendly Match Austria vs. Germany Bernd Leno 850 0646.jpg\n | рост = 190\n | позиция = [[Вратарь (футбол)|вратарь]]\n@@ -15,7 +16,7 @@\n   |2011|{{аренда}}{{Флаг Германии|20px}} [[Байер 04]]|16 (−22)\n   |2012—2018|{{Флаг Германии|20px}} [[Байер 04]]|210 (−258)\n   |2018—2022|{{Флаг Англии|20px}} [[Арсенал (футбольный клуб, Лондон)|Арсенал]]|101 (−127)\n-  |2022—{{н.в.}}|{{Флаг Англии|20px}} [[Фулхэм (футбольный клуб)|Фулхэм]]|148 (−217)\n+  |2022—{{н.в.}}|{{Флаг Англии|20px}} [[Фулхэм (футбольный клуб)|Фулхэм]]|156 (-227)\n   }}\n | национальная сборная = {{спортивная карьера\n   |2008—2009|{{Флаг Германии|20px}} [[Сборная Германии по футболу (до 17 лет)|Германия (до 17)]]|4 (−?)\n@@ -28,7 +29,7 @@\n {{медаль|Золото|[[Кубок конфедераций 2017|Россия 2017]]}} \n {{турнир|[[Чемпионат Европы по футболу|Чемпионаты Европы]]}}\n {{Бронза Евро 2016}}\n-| обновление данных о клубе = 11.5.2026\n+| обновление данных о клубе = 10.10.2026\n | обновление данных о сборной = 28.11.2023\n }}\n '''Бернд Ле́но''' ({{lang-de|Bernd Leno}}; {{ВД-Преамбула}}) — [[Германия|немецкий]] [[футбол]]ист, [[Вратарь (футбол)|вратарь]] английского клуба «[[Фулхэм (футбольный клуб)|Фулхэм]]» и [[Сборная Германии по футболу|сборной Германии]].\n",
+      "source_verification": "user_provided_not_independently_verified",
+      "decision": "pending",
+      "group_id": "sofascore-reconciliation",
+      "review_fingerprint": "",
+      "error_layer": "data"
+    }
+  ],
+  "warnings": [
+    "Не восстановлены строки сезонов: Арсенал (Лондон) 2020/21 (не подтверждены: Кубки, Еврокубки), Арсенал (Лондон) 2021/22 (не подтверждены: Кубки), Фулхэм 2022/23 (не подтверждены: Кубки), Фулхэм 2023/24 (не подтверждены: Кубки), Фулхэм 2024/25 (не подтверждены: Кубки), Фулхэм 2025/26 (не подтверждены: Кубки), Фулхэм 2026/27 (не подтверждены: Кубки, Еврокубки); полнота таблицы не подтверждена.",
+    "Часть статистики сборных не подтверждена полной сверкой матчей. Неподтверждённые показатели сохранены; причины указаны в отчёте."
+  ],
+  "replay": {
+    "diff_empty": true,
+    "preview_equal": true,
+    "statuses": {}
+  },
+  "audit": {
+    "refs_preserved": true,
+    "comments_preserved": true,
+    "birthday_unchanged": true,
+    "old_seasons_preserved": true,
+    "sbmatches_valid": true,
+    "sbmatches_counts": [],
+    "arithmetic_before": [],
+    "arithmetic_after": [],
+    "new_arithmetic_errors": [],
+    "idempotent": true
+  },
+  "changed": true,
+  "football_api_requests": 0,
+  "source_observations": [
+    {
+      "path": "/players/details",
+      "params": {
+        "player_id": 103335
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/details",
+      "params": {
+        "player_id": 103335
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/details",
+      "params": {
+        "player_id": 103335
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/statistics-seasons",
+      "params": {
+        "player_id": 103335
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/statistics",
+      "params": {
+        "player_id": 103335,
+        "tournament_id": 17,
+        "season_id": 96668,
+        "type": "overall"
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/statistics",
+      "params": {
+        "player_id": 103335,
+        "tournament_id": 17,
+        "season_id": 76986,
+        "type": "overall"
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/statistics",
+      "params": {
+        "player_id": 103335,
+        "tournament_id": 17,
+        "season_id": 61627,
+        "type": "overall"
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/statistics",
+      "params": {
+        "player_id": 103335,
+        "tournament_id": 21,
+        "season_id": 52393,
+        "type": "overall"
+      },
+      "cache": false
+    },
+    {
+      "path": "/players/statistics",
+      "params": {
+        "player_id": 103335,
+        "tournament_id": 17,
+        "season_id": 52186,
+        "type": "overall"
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/statistics",
+      "params": {
+        "player_id": 103335,
+        "tournament_id": 17,
+        "season_id": 41886,
+        "type": "overall"
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/statistics",
+      "params": {
+        "player_id": 103335,
+        "tournament_id": 21,
+        "season_id": 37177,
+        "type": "overall"
+      },
+      "cache": false
+    },
+    {
+      "path": "/players/statistics",
+      "params": {
+        "player_id": 103335,
+        "tournament_id": 19,
+        "season_id": 39384,
+        "type": "overall"
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/statistics",
+      "params": {
+        "player_id": 103335,
+        "tournament_id": 17,
+        "season_id": 37036,
+        "type": "overall"
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/statistics",
+      "params": {
+        "player_id": 103335,
+        "tournament_id": 679,
+        "season_id": 29343,
+        "type": "overall"
+      },
+      "cache": false
+    },
+    {
+      "path": "/players/statistics",
+      "params": {
+        "player_id": 103335,
+        "tournament_id": 21,
+        "season_id": 29404,
+        "type": "overall"
+      },
+      "cache": false
+    },
+    {
+      "path": "/players/statistics",
+      "params": {
+        "player_id": 103335,
+        "tournament_id": 19,
+        "season_id": 34650,
+        "type": "overall"
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/statistics",
+      "params": {
+        "player_id": 103335,
+        "tournament_id": 17,
+        "season_id": 29415,
+        "type": "overall"
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/matches",
+      "params": {
+        "player_id": 103335,
+        "span": "last",
+        "page": 1
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/matches",
+      "params": {
+        "player_id": 103335,
+        "span": "last",
+        "page": 2
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/matches",
+      "params": {
+        "player_id": 103335,
+        "span": "last",
+        "page": 3
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/matches",
+      "params": {
+        "player_id": 103335,
+        "span": "last",
+        "page": 4
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/matches",
+      "params": {
+        "player_id": 103335,
+        "span": "last",
+        "page": 5
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/matches",
+      "params": {
+        "player_id": 103335,
+        "span": "last",
+        "page": 6
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/matches",
+      "params": {
+        "player_id": 103335,
+        "span": "last",
+        "page": 7
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/matches",
+      "params": {
+        "player_id": 103335,
+        "span": "last",
+        "page": 8
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/matches",
+      "params": {
+        "player_id": 103335,
+        "span": "last",
+        "page": 9
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/matches",
+      "params": {
+        "player_id": 103335,
+        "span": "last",
+        "page": 10
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/matches",
+      "params": {
+        "player_id": 103335,
+        "span": "last",
+        "page": 11
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/matches",
+      "params": {
+        "player_id": 103335,
+        "span": "last",
+        "page": 12
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/matches",
+      "params": {
+        "player_id": 103335,
+        "span": "last",
+        "page": 13
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/matches",
+      "params": {
+        "player_id": 103335,
+        "span": "last",
+        "page": 14
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/matches",
+      "params": {
+        "player_id": 103335,
+        "span": "last",
+        "page": 15
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/matches",
+      "params": {
+        "player_id": 103335,
+        "span": "last",
+        "page": 16
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/matches",
+      "params": {
+        "player_id": 103335,
+        "span": "last",
+        "page": 17
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/matches",
+      "params": {
+        "player_id": 103335,
+        "span": "last",
+        "page": 18
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/matches",
+      "params": {
+        "player_id": 103335,
+        "span": "last",
+        "page": 19
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/matches",
+      "params": {
+        "player_id": 103335,
+        "span": "last",
+        "page": 20
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/matches",
+      "params": {
+        "player_id": 103335,
+        "span": "last",
+        "page": 21
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/matches",
+      "params": {
+        "player_id": 103335,
+        "span": "last",
+        "page": 22
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/matches",
+      "params": {
+        "player_id": 103335,
+        "span": "last",
+        "page": 23
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/matches",
+      "params": {
+        "player_id": 103335,
+        "span": "last",
+        "page": 24
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/matches",
+      "params": {
+        "player_id": 103335,
+        "span": "last",
+        "page": 25
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/matches",
+      "params": {
+        "player_id": 103335,
+        "span": "last",
+        "page": 26
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/matches",
+      "params": {
+        "player_id": 103335,
+        "span": "last",
+        "page": 27
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/transfer-history",
+      "params": {
+        "player_id": 103335
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/national-team-statistics",
+      "params": {
+        "player_id": 103335
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/national-team-statistics",
+      "params": {
+        "player_id": 103335
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/player-statistics",
+      "params": {
+        "player_id": 103335,
+        "match_id": 5124572
+      },
+      "cache": false
+    },
+    {
+      "path": "/matches/lineups",
+      "params": {
+        "match_id": 5124572
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/incidents",
+      "params": {
+        "match_id": 5124572
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/player-statistics",
+      "params": {
+        "player_id": 103335,
+        "match_id": 5124576
+      },
+      "cache": false
+    },
+    {
+      "path": "/matches/lineups",
+      "params": {
+        "match_id": 5124576
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/incidents",
+      "params": {
+        "match_id": 5124576
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/player-statistics",
+      "params": {
+        "player_id": 103335,
+        "match_id": 6964896
+      },
+      "cache": false
+    },
+    {
+      "path": "/matches/lineups",
+      "params": {
+        "match_id": 6964896
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/incidents",
+      "params": {
+        "match_id": 6964896
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/player-statistics",
+      "params": {
+        "player_id": 103335,
+        "match_id": 6970071
+      },
+      "cache": false
+    },
+    {
+      "path": "/matches/lineups",
+      "params": {
+        "match_id": 6970071
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/incidents",
+      "params": {
+        "match_id": 6970071
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/player-statistics",
+      "params": {
+        "player_id": 103335,
+        "match_id": 6996098
+      },
+      "cache": false
+    },
+    {
+      "path": "/matches/lineups",
+      "params": {
+        "match_id": 6996098
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/incidents",
+      "params": {
+        "match_id": 6996098
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/player-statistics",
+      "params": {
+        "player_id": 103335,
+        "match_id": 6996099
+      },
+      "cache": false
+    },
+    {
+      "path": "/matches/lineups",
+      "params": {
+        "match_id": 6996099
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/incidents",
+      "params": {
+        "match_id": 6996099
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/player-statistics",
+      "params": {
+        "player_id": 103335,
+        "match_id": 6964816
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/lineups",
+      "params": {
+        "match_id": 6964816
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/incidents",
+      "params": {
+        "match_id": 6964816
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/player-statistics",
+      "params": {
+        "player_id": 103335,
+        "match_id": 6964826
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/lineups",
+      "params": {
+        "match_id": 6964826
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/incidents",
+      "params": {
+        "match_id": 6964826
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/player-statistics",
+      "params": {
+        "player_id": 103335,
+        "match_id": 6964835
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/lineups",
+      "params": {
+        "match_id": 6964835
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/incidents",
+      "params": {
+        "match_id": 6964835
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/player-statistics",
+      "params": {
+        "player_id": 103335,
+        "match_id": 7019685
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/lineups",
+      "params": {
+        "match_id": 7019685
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/incidents",
+      "params": {
+        "match_id": 7019685
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/player-statistics",
+      "params": {
+        "player_id": 103335,
+        "match_id": 7019688
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/lineups",
+      "params": {
+        "match_id": 7019688
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/incidents",
+      "params": {
+        "match_id": 7019688
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/player-statistics",
+      "params": {
+        "player_id": 103335,
+        "match_id": 7019691
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/lineups",
+      "params": {
+        "match_id": 7019691
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/incidents",
+      "params": {
+        "match_id": 7019691
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/player-statistics",
+      "params": {
+        "player_id": 103335,
+        "match_id": 7137760
+      },
+      "cache": false
+    },
+    {
+      "path": "/matches/lineups",
+      "params": {
+        "match_id": 7137760
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/incidents",
+      "params": {
+        "match_id": 7137760
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/player-statistics",
+      "params": {
+        "player_id": 103335,
+        "match_id": 6827890
+      },
+      "cache": false
+    },
+    {
+      "path": "/matches/lineups",
+      "params": {
+        "match_id": 6827890
+      },
+      "cache": false
+    },
+    {
+      "path": "/players/details",
+      "params": {
+        "player_id": 103335
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/statistics-seasons",
+      "params": {
+        "player_id": 103335
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/statistics",
+      "params": {
+        "player_id": 103335,
+        "tournament_id": 17,
+        "season_id": 96668,
+        "type": "overall"
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/statistics",
+      "params": {
+        "player_id": 103335,
+        "tournament_id": 17,
+        "season_id": 76986,
+        "type": "overall"
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/statistics",
+      "params": {
+        "player_id": 103335,
+        "tournament_id": 17,
+        "season_id": 61627,
+        "type": "overall"
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/statistics",
+      "params": {
+        "player_id": 103335,
+        "tournament_id": 21,
+        "season_id": 52393,
+        "type": "overall"
+      },
+      "cache": false
+    },
+    {
+      "path": "/players/statistics",
+      "params": {
+        "player_id": 103335,
+        "tournament_id": 17,
+        "season_id": 52186,
+        "type": "overall"
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/statistics",
+      "params": {
+        "player_id": 103335,
+        "tournament_id": 17,
+        "season_id": 41886,
+        "type": "overall"
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/statistics",
+      "params": {
+        "player_id": 103335,
+        "tournament_id": 21,
+        "season_id": 37177,
+        "type": "overall"
+      },
+      "cache": false
+    },
+    {
+      "path": "/players/statistics",
+      "params": {
+        "player_id": 103335,
+        "tournament_id": 19,
+        "season_id": 39384,
+        "type": "overall"
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/statistics",
+      "params": {
+        "player_id": 103335,
+        "tournament_id": 17,
+        "season_id": 37036,
+        "type": "overall"
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/statistics",
+      "params": {
+        "player_id": 103335,
+        "tournament_id": 679,
+        "season_id": 29343,
+        "type": "overall"
+      },
+      "cache": false
+    },
+    {
+      "path": "/players/statistics",
+      "params": {
+        "player_id": 103335,
+        "tournament_id": 21,
+        "season_id": 29404,
+        "type": "overall"
+      },
+      "cache": false
+    },
+    {
+      "path": "/players/statistics",
+      "params": {
+        "player_id": 103335,
+        "tournament_id": 19,
+        "season_id": 34650,
+        "type": "overall"
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/statistics",
+      "params": {
+        "player_id": 103335,
+        "tournament_id": 17,
+        "season_id": 29415,
+        "type": "overall"
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/matches",
+      "params": {
+        "player_id": 103335,
+        "span": "last",
+        "page": 1
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/matches",
+      "params": {
+        "player_id": 103335,
+        "span": "last",
+        "page": 2
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/matches",
+      "params": {
+        "player_id": 103335,
+        "span": "last",
+        "page": 3
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/matches",
+      "params": {
+        "player_id": 103335,
+        "span": "last",
+        "page": 4
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/matches",
+      "params": {
+        "player_id": 103335,
+        "span": "last",
+        "page": 5
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/matches",
+      "params": {
+        "player_id": 103335,
+        "span": "last",
+        "page": 6
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/matches",
+      "params": {
+        "player_id": 103335,
+        "span": "last",
+        "page": 7
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/matches",
+      "params": {
+        "player_id": 103335,
+        "span": "last",
+        "page": 8
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/matches",
+      "params": {
+        "player_id": 103335,
+        "span": "last",
+        "page": 9
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/matches",
+      "params": {
+        "player_id": 103335,
+        "span": "last",
+        "page": 10
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/matches",
+      "params": {
+        "player_id": 103335,
+        "span": "last",
+        "page": 11
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/matches",
+      "params": {
+        "player_id": 103335,
+        "span": "last",
+        "page": 12
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/matches",
+      "params": {
+        "player_id": 103335,
+        "span": "last",
+        "page": 13
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/matches",
+      "params": {
+        "player_id": 103335,
+        "span": "last",
+        "page": 14
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/matches",
+      "params": {
+        "player_id": 103335,
+        "span": "last",
+        "page": 15
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/matches",
+      "params": {
+        "player_id": 103335,
+        "span": "last",
+        "page": 16
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/matches",
+      "params": {
+        "player_id": 103335,
+        "span": "last",
+        "page": 17
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/matches",
+      "params": {
+        "player_id": 103335,
+        "span": "last",
+        "page": 18
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/matches",
+      "params": {
+        "player_id": 103335,
+        "span": "last",
+        "page": 19
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/matches",
+      "params": {
+        "player_id": 103335,
+        "span": "last",
+        "page": 20
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/matches",
+      "params": {
+        "player_id": 103335,
+        "span": "last",
+        "page": 21
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/matches",
+      "params": {
+        "player_id": 103335,
+        "span": "last",
+        "page": 22
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/matches",
+      "params": {
+        "player_id": 103335,
+        "span": "last",
+        "page": 23
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/matches",
+      "params": {
+        "player_id": 103335,
+        "span": "last",
+        "page": 24
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/matches",
+      "params": {
+        "player_id": 103335,
+        "span": "last",
+        "page": 25
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/matches",
+      "params": {
+        "player_id": 103335,
+        "span": "last",
+        "page": 26
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/matches",
+      "params": {
+        "player_id": 103335,
+        "span": "last",
+        "page": 27
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/transfer-history",
+      "params": {
+        "player_id": 103335
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/national-team-statistics",
+      "params": {
+        "player_id": 103335
+      },
+      "cache": true
+    },
+    {
+      "path": "/players/national-team-statistics",
+      "params": {
+        "player_id": 103335
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/player-statistics",
+      "params": {
+        "player_id": 103335,
+        "match_id": 5124572
+      },
+      "cache": false
+    },
+    {
+      "path": "/matches/lineups",
+      "params": {
+        "match_id": 5124572
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/incidents",
+      "params": {
+        "match_id": 5124572
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/player-statistics",
+      "params": {
+        "player_id": 103335,
+        "match_id": 5124576
+      },
+      "cache": false
+    },
+    {
+      "path": "/matches/lineups",
+      "params": {
+        "match_id": 5124576
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/incidents",
+      "params": {
+        "match_id": 5124576
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/player-statistics",
+      "params": {
+        "player_id": 103335,
+        "match_id": 6964896
+      },
+      "cache": false
+    },
+    {
+      "path": "/matches/lineups",
+      "params": {
+        "match_id": 6964896
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/incidents",
+      "params": {
+        "match_id": 6964896
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/player-statistics",
+      "params": {
+        "player_id": 103335,
+        "match_id": 6970071
+      },
+      "cache": false
+    },
+    {
+      "path": "/matches/lineups",
+      "params": {
+        "match_id": 6970071
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/incidents",
+      "params": {
+        "match_id": 6970071
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/player-statistics",
+      "params": {
+        "player_id": 103335,
+        "match_id": 6996098
+      },
+      "cache": false
+    },
+    {
+      "path": "/matches/lineups",
+      "params": {
+        "match_id": 6996098
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/incidents",
+      "params": {
+        "match_id": 6996098
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/player-statistics",
+      "params": {
+        "player_id": 103335,
+        "match_id": 6996099
+      },
+      "cache": false
+    },
+    {
+      "path": "/matches/lineups",
+      "params": {
+        "match_id": 6996099
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/incidents",
+      "params": {
+        "match_id": 6996099
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/player-statistics",
+      "params": {
+        "player_id": 103335,
+        "match_id": 6964816
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/lineups",
+      "params": {
+        "match_id": 6964816
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/incidents",
+      "params": {
+        "match_id": 6964816
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/player-statistics",
+      "params": {
+        "player_id": 103335,
+        "match_id": 6964826
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/lineups",
+      "params": {
+        "match_id": 6964826
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/incidents",
+      "params": {
+        "match_id": 6964826
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/player-statistics",
+      "params": {
+        "player_id": 103335,
+        "match_id": 6964835
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/lineups",
+      "params": {
+        "match_id": 6964835
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/incidents",
+      "params": {
+        "match_id": 6964835
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/player-statistics",
+      "params": {
+        "player_id": 103335,
+        "match_id": 7019685
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/lineups",
+      "params": {
+        "match_id": 7019685
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/incidents",
+      "params": {
+        "match_id": 7019685
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/player-statistics",
+      "params": {
+        "player_id": 103335,
+        "match_id": 7019688
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/lineups",
+      "params": {
+        "match_id": 7019688
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/incidents",
+      "params": {
+        "match_id": 7019688
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/player-statistics",
+      "params": {
+        "player_id": 103335,
+        "match_id": 7019691
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/lineups",
+      "params": {
+        "match_id": 7019691
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/incidents",
+      "params": {
+        "match_id": 7019691
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/player-statistics",
+      "params": {
+        "player_id": 103335,
+        "match_id": 7137760
+      },
+      "cache": false
+    },
+    {
+      "path": "/matches/lineups",
+      "params": {
+        "match_id": 7137760
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/incidents",
+      "params": {
+        "match_id": 7137760
+      },
+      "cache": true
+    },
+    {
+      "path": "/matches/player-statistics",
+      "params": {
+        "player_id": 103335,
+        "match_id": 6827890
+      },
+      "cache": false
+    },
+    {
+      "path": "/matches/lineups",
+      "params": {
+        "match_id": 6827890
+      },
+      "cache": false
+    }
+  ],
+  "verdict": "partial_preview"
+}

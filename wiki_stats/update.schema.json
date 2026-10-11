@@ -84,7 +84,7 @@
         },
         "goals": {
           "type": "integer",
-          "minimum": 0,
+          "minimum": -100000,
           "maximum": 100000
         }
       }
@@ -102,7 +102,7 @@
           "type": "string",
           "minLength": 1,
           "maxLength": 255,
-          "pattern": "^(?:[^:#\\[\\]{}|\\n\\r]+|Участник:Zambrowski/testbot)$"
+          "pattern": "^(?:[^:#\\[\\]{}|\\n\\r]+|Участник:Zambrowski/testbot[1-5]?)$"
         },
         "player": {
           "type": "string",
@@ -323,7 +323,7 @@
         },
         "goals": {
           "type": "integer",
-          "minimum": 0,
+          "minimum": -100000,
           "maximum": 100000
         }
       }
@@ -340,7 +340,7 @@
         },
         "goals": {
           "type": "integer",
-          "minimum": 0,
+          "minimum": -100000,
           "maximum": 100000
         }
       },
@@ -445,7 +445,14 @@
             "remove_table_club",
             "create_statistics_section",
             "update_shirt_number",
-            "update_table_date"
+            "update_table_date",
+            "migrate_career_template",
+            "repair_career_duplicates",
+            "repair_duplicate_season",
+            "migrate_club_table",
+            "bind_infobox_name",
+            "normalize_club_table",
+            "normalize_statistics_layout"
           ]
         },
         "entity": {
@@ -534,7 +541,12 @@
                   "user_provided",
                   "api_football",
                   "highlightly",
-                  "sofascore"
+                  "sofascore",
+                  "dfb",
+                  "dfl",
+                  "club_official",
+                  "sfv",
+                  "uefa"
                 ]
               },
               "coverage_as_of": {
@@ -676,11 +688,26 @@
                   "period": {
                     "type": "string",
                     "minLength": 1
+                  },
+                  "restore_unknown_end": {
+                    "const": true
+                  },
+                  "arrival_date": {
+                    "type": "string",
+                    "format": "date"
                   }
                 },
                 "required": [
                   "period"
-                ]
+                ],
+                "dependentRequired": {
+                  "restore_unknown_end": [
+                    "arrival_date"
+                  ],
+                  "arrival_date": [
+                    "restore_unknown_end"
+                  ]
+                }
               }
             }
           }
@@ -952,13 +979,28 @@
                   "insert_after_club": {
                     "type": "string",
                     "minLength": 1
+                  },
+                  "insert_before_club": {
+                    "type": "string",
+                    "minLength": 1
                   }
                 },
                 "required": [
                   "complete",
                   "categories",
-                  "league_wikitext",
-                  "insert_after_club"
+                  "league_wikitext"
+                ],
+                "oneOf": [
+                  {
+                    "required": [
+                      "insert_after_club"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "insert_before_club"
+                    ]
+                  }
                 ]
               }
             }
@@ -1071,7 +1113,7 @@
                   "categories": {
                     "type": "array",
                     "minItems": 1,
-                    "maxItems": 4,
+                    "maxItems": 5,
                     "uniqueItems": true,
                     "items": {
                       "type": "string",
@@ -1178,11 +1220,26 @@
                     "type": "integer",
                     "minimum": 1,
                     "maximum": 99
+                  },
+                  "expected_raw": {
+                    "type": "string",
+                    "pattern": "^(?:[?—–-]?|0)$"
                   }
                 },
                 "required": [
-                  "expected_number",
                   "number"
+                ],
+                "oneOf": [
+                  {
+                    "required": [
+                      "expected_number"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "expected_raw"
+                    ]
+                  }
                 ]
               }
             }
@@ -1220,6 +1277,248 @@
               }
             }
           }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "migrate_career_template"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "payload"
+            ],
+            "properties": {
+              "target": {
+                "properties": {
+                  "structure": {
+                    "const": "career"
+                  }
+                }
+              },
+              "payload": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "fields"
+                ],
+                "properties": {
+                  "fields": {
+                    "type": "array",
+                    "minItems": 1,
+                    "uniqueItems": true,
+                    "items": {
+                      "enum": [
+                        "молодёжные клубы",
+                        "клубы",
+                        "национальная сборная"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "repair_career_duplicates"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "payload"
+            ],
+            "properties": {
+              "payload": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "expected_stats": {
+                    "type": "array",
+                    "minItems": 2,
+                    "maxItems": 20,
+                    "items": {
+                      "$ref": "#/$defs/full_stats"
+                    }
+                  },
+                  "stats": {
+                    "$ref": "#/$defs/full_stats"
+                  }
+                },
+                "required": [
+                  "expected_stats",
+                  "stats"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "repair_duplicate_season"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "payload"
+            ],
+            "properties": {
+              "payload": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "expected_rows": {
+                    "type": "array",
+                    "minItems": 2,
+                    "maxItems": 20,
+                    "items": {
+                      "type": "object",
+                      "minProperties": 1,
+                      "additionalProperties": {
+                        "$ref": "#/$defs/full_stats"
+                      }
+                    }
+                  },
+                  "categories": {
+                    "type": "object",
+                    "minProperties": 1,
+                    "additionalProperties": {
+                      "$ref": "#/$defs/full_stats"
+                    }
+                  }
+                },
+                "required": [
+                  "expected_rows",
+                  "categories"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "migrate_club_table"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "payload"
+            ],
+            "properties": {
+              "payload": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "expected_sha256"
+                ],
+                "properties": {
+                  "expected_sha256": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{64}$"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "bind_infobox_name"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "payload"
+            ],
+            "properties": {
+              "payload": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "expected_sha256"
+                ],
+                "properties": {
+                  "expected_sha256": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{64}$"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "normalize_club_table"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "payload"
+            ],
+            "properties": {
+              "payload": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "expected_sha256"
+                ],
+                "properties": {
+                  "expected_sha256": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{64}$"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "normalize_statistics_layout"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "payload"
+            ],
+            "properties": {
+              "payload": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "expected_sha256"
+                ],
+                "properties": {
+                  "expected_sha256": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{64}$"
+                  }
+                }
+              }
+            }
+          }
         }
       ]
     },
@@ -1231,7 +1530,7 @@
           "type": "string",
           "minLength": 1,
           "maxLength": 255,
-          "pattern": "^(?:[^:#\\[\\]{}|\\n\\r]+|Участник:Zambrowski/testbot)$"
+          "pattern": "^(?:[^:#\\[\\]{}|\\n\\r]+|Участник:Zambrowski/testbot[1-5]?)$"
         },
         "player": {
           "type": "string",
@@ -1246,14 +1545,41 @@
           "pattern": "^Q[1-9][0-9]*$"
         },
         "subject_scope": {
-          "const": "bundesliga"
+          "enum": [
+            "bundesliga",
+            "football_statistics"
+          ]
+        },
+        "collection_result": {
+          "const": "no_confirmed_changes"
         },
         "operations": {
           "type": "array",
-          "minItems": 1,
+          "minItems": 0,
           "maxItems": 500,
           "items": {
-            "$ref": "#/$defs/operation"
+            "oneOf": [
+              {
+                "$ref": "#/$defs/operation"
+              },
+              {
+                "$ref": "#/$defs/sbmatch_operation"
+              },
+              {
+                "$ref": "#/$defs/sbmatch_repair"
+              },
+              {
+                "$ref": "#/$defs/sbmatch_create"
+              }
+            ]
+          }
+        },
+        "review_warnings": {
+          "type": "array",
+          "maxItems": 100,
+          "items": {
+            "type": "string",
+            "minLength": 1
           }
         }
       },
@@ -1266,9 +1592,41 @@
         {
           "if": {
             "properties": {
+              "operations": {
+                "maxItems": 0
+              }
+            },
+            "required": [
+              "operations"
+            ]
+          },
+          "then": {
+            "required": [
+              "collection_result",
+              "base_revid"
+            ]
+          },
+          "else": {
+            "not": {
+              "required": [
+                "collection_result"
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
               "title": {
                 "not": {
-                  "const": "Участник:Zambrowski/testbot"
+                  "enum": [
+                    "Участник:Zambrowski/testbot",
+                    "Участник:Zambrowski/testbot1",
+                    "Участник:Zambrowski/testbot2",
+                    "Участник:Zambrowski/testbot3",
+                    "Участник:Zambrowski/testbot4",
+                    "Участник:Zambrowski/testbot5"
+                  ]
                 }
               }
             }
@@ -1280,6 +1638,537 @@
           }
         }
       ]
+    },
+    "sbmatch_row": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "дата",
+        "соперник",
+        "счёт",
+        "соревнование"
+      ],
+      "properties": {
+        "дата": {
+          "type": "string",
+          "minLength": 1
+        },
+        "соперник": {
+          "type": "string",
+          "minLength": 1
+        },
+        "счёт": {
+          "type": "string",
+          "minLength": 1
+        },
+        "голы": {
+          "type": "string"
+        },
+        "соревнование": {
+          "type": "string",
+          "minLength": 1
+        },
+        "пенальти": {
+          "type": "string"
+        },
+        "пропущенные голы": {
+          "type": "string"
+        }
+      }
+    },
+    "sbmatch_operation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "type",
+        "entity",
+        "target",
+        "as_of",
+        "sources",
+        "payload"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "entity": {
+          "$ref": "#/$defs/entity"
+        },
+        "as_of": {
+          "type": "string",
+          "format": "date"
+        },
+        "sources": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "url",
+              "provenance",
+              "coverage_as_of"
+            ],
+            "properties": {
+              "url": {
+                "type": "string",
+                "format": "uri",
+                "pattern": "^https?://[^/\\s]+"
+              },
+              "provenance": {
+                "enum": [
+                  "user_provided",
+                  "api_football",
+                  "highlightly",
+                  "sofascore",
+                  "dfb",
+                  "dfl",
+                  "club_official",
+                  "sfv",
+                  "uefa"
+                ]
+              },
+              "coverage_as_of": {
+                "type": "string",
+                "format": "date"
+              },
+              "note": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "group_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "enum": [
+            "update_sbmatch",
+            "add_sbmatch"
+          ]
+        },
+        "target": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "structure",
+            "age",
+            "match_index"
+          ],
+          "properties": {
+            "structure": {
+              "const": "sbmatches"
+            },
+            "age": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 1,
+              "maximum": 99
+            },
+            "match_index": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 500
+            }
+          }
+        },
+        "payload": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "match"
+          ],
+          "properties": {
+            "match": {
+              "$ref": "#/$defs/sbmatch_row"
+            },
+            "expected_match": {
+              "$ref": "#/$defs/sbmatch_row"
+            }
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "update_sbmatch"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "payload": {
+                "required": [
+                  "expected_match"
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "sbmatch_repair": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "type",
+        "entity",
+        "target",
+        "as_of",
+        "sources",
+        "payload"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "entity": {
+          "$ref": "#/$defs/entity"
+        },
+        "as_of": {
+          "type": "string",
+          "format": "date"
+        },
+        "sources": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "url",
+              "provenance",
+              "coverage_as_of"
+            ],
+            "properties": {
+              "url": {
+                "type": "string",
+                "format": "uri",
+                "pattern": "^https?://[^/\\s]+"
+              },
+              "provenance": {
+                "enum": [
+                  "user_provided",
+                  "api_football",
+                  "highlightly",
+                  "sofascore",
+                  "dfb",
+                  "sfv",
+                  "uefa"
+                ]
+              },
+              "coverage_as_of": {
+                "type": "string",
+                "format": "date"
+              },
+              "note": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "group_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "const": "repair_sbmatches"
+        },
+        "target": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "structure",
+            "age"
+          ],
+          "properties": {
+            "structure": {
+              "const": "sbmatches"
+            },
+            "age": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 1,
+              "maximum": 99
+            }
+          }
+        },
+        "payload": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "expected_template_sha256",
+            "label",
+            "matches"
+          ],
+          "properties": {
+            "expected_template_sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "label": {
+              "type": "string",
+              "maxLength": 150,
+              "minLength": 1
+            },
+            "matches": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 300,
+              "items": {
+                "$ref": "#/$defs/sbmatch_row"
+              }
+            },
+            "complete": {
+              "type": "boolean"
+            },
+            "totals": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "appearances",
+                "goals"
+              ],
+              "properties": {
+                "appearances": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 300
+                },
+                "goals": {
+                  "type": "integer",
+                  "minimum": -2000,
+                  "maximum": 2000
+                }
+              }
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "required": [
+                  "complete"
+                ],
+                "properties": {
+                  "complete": {
+                    "const": true
+                  }
+                }
+              },
+              "then": {
+                "required": [
+                  "totals"
+                ]
+              },
+              "else": {
+                "properties": {
+                  "label": {
+                    "pattern": "^Полигонная выборка:"
+                  },
+                  "matches": {
+                    "maxItems": 20
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "sbmatch_create": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "type",
+        "entity",
+        "target",
+        "as_of",
+        "sources",
+        "payload"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "entity": {
+          "$ref": "#/$defs/entity"
+        },
+        "as_of": {
+          "type": "string",
+          "format": "date"
+        },
+        "sources": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "url",
+              "provenance",
+              "coverage_as_of"
+            ],
+            "properties": {
+              "url": {
+                "type": "string",
+                "format": "uri",
+                "pattern": "^https?://[^/\\s]+"
+              },
+              "provenance": {
+                "enum": [
+                  "user_provided",
+                  "api_football",
+                  "highlightly",
+                  "sofascore",
+                  "dfb",
+                  "sfv",
+                  "uefa"
+                ]
+              },
+              "coverage_as_of": {
+                "type": "string",
+                "format": "date"
+              },
+              "note": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "group_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "const": "create_sbmatches"
+        },
+        "target": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "structure",
+            "age"
+          ],
+          "properties": {
+            "structure": {
+              "const": "sbmatches"
+            },
+            "age": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 1,
+              "maximum": 99
+            }
+          }
+        },
+        "payload": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "label",
+            "matches",
+            "complete",
+            "totals",
+            "metric"
+          ],
+          "properties": {
+            "label": {
+              "type": "string",
+              "maxLength": 150,
+              "minLength": 1
+            },
+            "matches": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 300,
+              "items": {
+                "$ref": "#/$defs/sbmatch_row"
+              }
+            },
+            "complete": {
+              "const": true
+            },
+            "totals": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "appearances",
+                "goals"
+              ],
+              "properties": {
+                "appearances": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 300
+                },
+                "goals": {
+                  "type": "integer",
+                  "minimum": -2000,
+                  "maximum": 2000
+                }
+              }
+            },
+            "metric": {
+              "enum": [
+                "голы",
+                "пропущенные голы"
+              ]
+            },
+            "expected_native_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "native_team_gen": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "required": [
+                  "complete"
+                ],
+                "properties": {
+                  "complete": {
+                    "const": true
+                  }
+                }
+              },
+              "then": {
+                "required": [
+                  "totals"
+                ]
+              },
+              "else": {
+                "properties": {
+                  "label": {
+                    "pattern": "^Полигонная выборка:"
+                  },
+                  "matches": {
+                    "maxItems": 20
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
     }
   }
 }

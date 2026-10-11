@@ -90,7 +90,7 @@ def prepare_table(snapshot, evidence, resolver):
                     raise UpdateError('league_mismatch','Существующий сезон относится к другой лиге; требуется проверка')
                 for i,category in enumerate(table.categories):
                     old={'appearances':ref.values()[str(2+2*i)].numeric()[0].value,
-                         'goals':ref.values()[str(3+2*i)].numeric()[0].value}
+                         'goals':ref.values()[str(3+2*i)].numeric(signed=True)[0].value}
                     new=row['categories'][category]
                     if old!=new:
                         add('update_stats',entity,season=season,competition={'name':category,'category':category,'scope':'category'},

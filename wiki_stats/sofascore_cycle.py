@@ -912,7 +912,7 @@ def _prepare_statistics(snapshot, mapping, api, wiki, resolver, *, max_requests=
             ent = deepcopy(league[0]['entity'])
             payload = {'complete': True, 'categories': categories,
                        'league_wikitext': LEAGUE_LINKS[league[0]['tournament_id']]}
-            if missing:payload['allow_unknown']=True
+            if missing:payload.update(allow_unknown=True,unknown_as_zero=True)
             if blocks:
                 ent['wikitext'] = blocks[0].club
                 earlier = sorted((r for r in blocks if table_season_name(r.season) < label),key=lambda r:table_season_name(r.season))
@@ -1142,10 +1142,10 @@ def _prepare_statistics(snapshot, mapping, api, wiki, resolver, *, max_requests=
                 from .competition_notes import column_notes
                 header_notes=column_notes(records,list(clubs.values()),categories)
                 add('create_statistics_section', {'name': 'КлСтат', 'wikitext': '{{КлСтат}}'},
-                    {'structure': 'club_table'}, payload={'complete': True, 'full_career': False,'allow_unknown':statistics_since is not None,
+                    {'structure': 'club_table'}, payload={'complete': True, 'full_career': False,'allow_unknown':statistics_since is not None,'unknown_as_zero':statistics_since is not None,
                     'statistics_as_of': confirmed, 'categories': categories, 'clubs': list(clubs.values()),'header_notes':header_notes,
                     'source_url':'https://www.sofascore.com/football/player/'+(profile.get('slug')+'/' if isinstance(profile.get('slug'),str) and re.fullmatch(r'[a-z0-9-]+',profile['slug']) else '')+str(mapping['api_id'])})
-                issues.append({'code': 'partial_section', 'message': 'Известные сезонные показатели скопированы; неизвестные ячейки обозначены длинным тире, полного итога карьеры нет'})
+                issues.append({'code': 'partial_section', 'message': 'Известные сезонные показатели скопированы; недоступные ячейки показаны нулями по настройке пользователя, пропуски сохранены в отчёте'})
             else:
                 issues.append({'code':'section_needs_confirmed_evidence'})
         else:
@@ -1165,7 +1165,7 @@ def _prepare_statistics(snapshot, mapping, api, wiki, resolver, *, max_requests=
     missing_rows = [r for r in issues if r['code']=='new_row_needs_all_categories']
     source_warnings = []
     unknown_cells=[i for i in issues if i['code']=='unknown_table_cells']
-    if unknown_cells:source_warnings.append('Неизвестные ячейки новых сезонов и неподтверждённые новые итоги обозначены длинным тире; прежние итоги сохраняются. Подробности в отчёте.')
+    if unknown_cells:source_warnings.append('Недоступные ячейки новых сезонов показаны нулями по настройке пользователя; итоги рассчитаны по показанным значениям. Пропуски данных перечислены в отчёте.')
     uncovered = [i for i in issues if i['code']=='category_not_covered']
     if uncovered:
         source_warnings.append('Не подтверждены '+str(len(uncovered))+' графы существующих клубных строк; '

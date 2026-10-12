@@ -41,7 +41,7 @@ def numbers(table, payload):
         raise UpdateError('incomplete_statistics','Нельзя создавать строку без единого показателя')
     if any((v is None and not payload.get('allow_unknown')) or (v is not None and (type(v) is not int or not (-10000 if i % 2 else 0) <= v <= 10000)) for i, v in enumerate(values)):
         raise UpdateError('incomplete_statistics', 'Неизвестные показатели нельзя заменять нулями')
-    return values
+    return [0 if v is None else v for v in values] if payload.get('unknown_as_zero') else values
 
 
 def season_key(season):

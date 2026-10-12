@@ -75,7 +75,7 @@ def render_section(payload, resolver, as_of):
             if title not in checked_leagues:
                 resolver.client.get_page_identity(title)
                 checked_leagues.add(title)
-            values=numbers(SimpleNamespace(categories=categories),{'categories':row['categories'],'complete':True,'allow_unknown':payload.get('allow_unknown',False)})
+            values=numbers(SimpleNamespace(categories=categories),{'categories':row['categories'],'complete':True,'allow_unknown':payload.get('allow_unknown',False),'unknown_as_zero':payload.get('unknown_as_zero',False)})
             parsed.append((league,row['season'],values))
             total=[sum_known([a,b]) for a,b in zip(total,values)]
         single_league=len({r[0] for r in parsed})==1

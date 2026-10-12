@@ -37,9 +37,9 @@ def test_new_table_has_all_competitions_and_combines_domestic_cups_once():
     assert '{{КлСтат/Итого|' not in plan.preview
 
 
-def test_missing_cup_does_not_become_zero_or_a_league_only_table():
+def test_missing_cup_is_displayed_as_zero_and_remains_missing_in_report():
     api=AllCompetitions();api.missing_cup=True
     _,plan,report=prepare(api)
     assert [category_label(c) for c in WikitextParser(plan.preview).club_table().categories]==['Чемпионат','Кубки','Еврокубки','Прочие']
-    assert '{{КлСтат/Сезон|2026/27|5|2|—|—|5|2|5|2|игры=—|голы=—}}' in plan.preview
+    assert '{{КлСтат/Сезон|2026/27|5|2|0|0|5|2|5|2}}' in plan.preview
     assert any(i['code']=='unknown_table_cells' and 'Кубки' in i['missing_categories'] for i in report['review'])

@@ -47,6 +47,20 @@ def partial_table():
     return BARE+render_section(payload,resolver(),'2026-10-08')
 
 
+def test_zero_display_sums_known_values_without_changing_source_payload():
+    data=evidence()
+    payload={**data['create_section'],'clubs':data['clubs'],'complete':True,'allow_unknown':True,'unknown_as_zero':True}
+    payload['clubs'][0]['rows'][0]['categories']['Кубок']=None
+    original=deepcopy(payload)
+    text=render_section(payload,resolver(),'2026-10-08')
+    assert payload==original
+    assert '—' not in text and '?' not in text
+    table=WikitextParser(text).club_table()
+    assert table.seasons[0].values['4'].numeric()[0].value==0
+    assert '{{КлСтат/ИтогоЗаКлуб||4|1|0|0|0|0}}' in text
+    assert not arithmetic_warnings(text)
+
+
 def test_unknowns_render_as_em_dashes_with_no_native_question_mark_totals():
     text=partial_table()
     assert '?' not in text and '|—|—|' in text

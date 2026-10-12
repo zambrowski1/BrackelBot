@@ -1266,6 +1266,7 @@ def _prepare_statistics(snapshot, mapping, api, wiki, resolver, *, max_requests=
         warning='Не подтверждены флаги части клубов; причины указаны в отчёте.'
         article.setdefault('review_warnings',[]).append(warning)
     if flag_op:
+        flag_op['group_id']='sofascore-reconciliation'
         article.pop('collection_result',None)
         article['operations'].append(flag_op)
         validate_package(package)

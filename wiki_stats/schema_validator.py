@@ -47,7 +47,7 @@ def validate_package(package: dict) -> None:
                     raise UpdateError('invalid_input','Для замены шаблона нужны base_revid и target.structure=career')
             if op['type']=='migrate_club_table' and (article.get('base_revid') is None or op['target']['structure']!='club_table'):
                 raise UpdateError('invalid_input','Для переноса клубной таблицы нужны base_revid и club_table')
-            if op['type'] in {'normalize_club_table','normalize_statistics_layout','normalize_club_flags'} and (article.get('base_revid') is None or op['target']['structure']!='club_table'):
+            if op['type'] in {'normalize_club_table','normalize_statistics_layout','normalize_club_flags','normalize_season_links'} and (article.get('base_revid') is None or op['target']['structure']!='club_table'):
                 raise UpdateError('invalid_input','Для изменения оформления таблицы нужны base_revid и club_table')
             if op['type']=='update_career_period' and op.get('payload',{}).get('restore_unknown_end') and article.get('base_revid') is None:
                 raise UpdateError('invalid_input','Восстановление неизвестного периода требует base_revid')

@@ -54,6 +54,8 @@ def reference_identity(client, text):
             if len(template.params)!=4 or language not in {'de','en'}: raise ValueError()
         except ValueError:
             raise UpdateError('needs_review','Нужны четыре явных параметра нп5 и проверяемый языковой раздел') from None
+        if not callable(getattr(client,'get_foreign_page_identity',None)):
+            raise UpdateError('entity_unverified','Клиент не поддерживает проверку иноязычной статьи')
         page=client.get_foreign_page_identity(foreign,language)
         resolved=EntityResolver(client).resolve({'name':title,'kind':'club','wikidata_id':page['qid'],
                                                 'page_title':title,'display_name':display})

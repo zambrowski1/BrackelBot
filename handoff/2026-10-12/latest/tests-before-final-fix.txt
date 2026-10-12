@@ -1,0 +1,63 @@
+........................................................................ [  4%]
+........................................................................ [  9%]
+........................................................................ [ 13%]
+.............F.......................................................... [ 18%]
+...........................................F............................ [ 22%]
+........................................................................ [ 27%]
+........................................................................ [ 32%]
+........................................................................ [ 36%]
+........................................................................ [ 41%]
+........................................................................ [ 45%]
+........................................................................ [ 50%]
+........................................................................ [ 55%]
+........................................................................ [ 59%]
+........................................................................ [ 64%]
+........................................................................ [ 68%]
+........................................................................ [ 73%]
+........................................................................ [ 77%]
+........................................................................ [ 82%]
+........................................................................ [ 87%]
+........................................................................ [ 91%]
+........................................................................ [ 96%]
+..........................................................               [100%]
+================================== FAILURES ===================================
+__________ test_reserve_source_identity_updates_only_its_literal_row __________
+tests\test_dfb_club_pipeline.py:76: in test_reserve_source_identity_updates_only_its_literal_row
+    _,plan,_=prepare(text)
+             ^^^^^^^^^^^^^
+tests\test_sofascore.py:187: in prepare
+    return prepare_player(snapshot(text), {'api_id': 1, 'qid': 'Q114406918', 'title': 'Игрок',
+wiki_stats\sofascore_cycle.py:263: in prepare_player
+    return _prepare_statistics(snapshot,mapping,api,wiki,resolver,
+wiki_stats\sofascore_cycle.py:1261: in _prepare_statistics
+    try:flag_op,flag_issues=prepare_club_flags(plan.preview,mapping['wiki_name'],now.date().isoformat(),resolver)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+wiki_stats\club_flags.py:42: in prepare
+    identity=reference_identity(resolver.client,label)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+wiki_stats\entity_resolver.py:57: in reference_identity
+    page=client.get_foreign_page_identity(foreign,language)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AttributeError: 'Wiki' object has no attribute 'get_foreign_page_identity'
+___ test_pipeline_corrects_stale_reserve_cup_without_erasing_other_columns ____
+tests\test_dfb_reserve_cup.py:105: in test_pipeline_corrects_stale_reserve_cup_without_erasing_other_columns
+    _,plan,report=prepare(text)
+                  ^^^^^^^^^^^^^
+tests\test_sofascore.py:187: in prepare
+    return prepare_player(snapshot(text), {'api_id': 1, 'qid': 'Q114406918', 'title': 'Игрок',
+wiki_stats\sofascore_cycle.py:263: in prepare_player
+    return _prepare_statistics(snapshot,mapping,api,wiki,resolver,
+wiki_stats\sofascore_cycle.py:1261: in _prepare_statistics
+    try:flag_op,flag_issues=prepare_club_flags(plan.preview,mapping['wiki_name'],now.date().isoformat(),resolver)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+wiki_stats\club_flags.py:42: in prepare
+    identity=reference_identity(resolver.client,label)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+wiki_stats\entity_resolver.py:57: in reference_identity
+    page=client.get_foreign_page_identity(foreign,language)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AttributeError: 'Wiki' object has no attribute 'get_foreign_page_identity'
+=========================== short test summary info ===========================
+FAILED tests/test_dfb_club_pipeline.py::test_reserve_source_identity_updates_only_its_literal_row
+FAILED tests/test_dfb_reserve_cup.py::test_pipeline_corrects_stale_reserve_cup_without_erasing_other_columns
+2 failed, 1568 passed, 1 skipped in 222.12s (0:03:42)

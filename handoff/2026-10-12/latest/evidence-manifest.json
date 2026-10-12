@@ -1,0 +1,700 @@
+{
+  "files": [
+    {
+      "path": "bundesliga-three-2026-10-12/171961/after.wiki",
+      "bytes": 16126,
+      "sha256": "ed6db9bedf33e9da859ceb1ba60655c548e92e7ffd826c1d644bd4a3d5cfcffc"
+    },
+    {
+      "path": "bundesliga-three-2026-10-12/171961/before.wiki",
+      "bytes": 13148,
+      "sha256": "17ea54cf606077ef47cd49af2e38ca136031206bd9e7cac3b3cb4a7647533e12"
+    },
+    {
+      "path": "bundesliga-three-2026-10-12/171961/changes.diff",
+      "bytes": 5833,
+      "sha256": "0606aa3d49ffd39bce27e4837ecad7d32e6a9bfa43b980f2860cea778dea3ff3"
+    },
+    {
+      "path": "bundesliga-three-2026-10-12/171961/debug-after.wiki",
+      "bytes": 17225,
+      "sha256": "9b26bf227f9fb6357b48a8fa7ae449ed08eeb46e60c359a062ff28102066ec96"
+    },
+    {
+      "path": "bundesliga-three-2026-10-12/171961/final/after-api.wiki",
+      "bytes": 17078,
+      "sha256": "66743fe92e8e6eb25a4d9142fcd68b82d5abf0017c3cfcb820ff96b94e318b1c"
+    },
+    {
+      "path": "bundesliga-three-2026-10-12/171961/final/old-club-block.wiki",
+      "bytes": 2910,
+      "sha256": "012ed4898a0f66fba0233d5044897c95015d12a2f23a45bacedf77a1b5614bd8"
+    },
+    {
+      "path": "bundesliga-three-2026-10-12/171961/final/package.json",
+      "bytes": 22519,
+      "sha256": "32ac29049f680ed872a89482b4a688c6234dcc2eb7918901399165076c2ae3da"
+    },
+    {
+      "path": "bundesliga-three-2026-10-12/171961/final/prepared-input.wiki",
+      "bytes": 13263,
+      "sha256": "8ebc886761c6c575973575d36f14df8a36d684cc687c896e02e1a2add41885d6"
+    },
+    {
+      "path": "bundesliga-three-2026-10-12/171961/final/report.json",
+      "bytes": 105960,
+      "sha256": "9434f26d393b0656724fb81ef0b00f3d0fc8f45219e4638cc69fa81de475c026"
+    },
+    {
+      "path": "bundesliga-three-2026-10-12/171961/final/source-table.json",
+      "bytes": 10439,
+      "sha256": "4e826b4fe16a81936ba5e85c98a362d5066efbd2b3507a6f84599e328c45ceda"
+    },
+    {
+      "path": "bundesliga-three-2026-10-12/171961/package.json",
+      "bytes": 17223,
+      "sha256": "13a7000d901c243d05894ee457974cd66367f8ebcee4be6192217779a74541b0"
+    },
+    {
+      "path": "bundesliga-three-2026-10-12/171961/report.json",
+      "bytes": 113817,
+      "sha256": "d7d33c996827d2cd1c0e26925828e40380ea55783ee5a19b5476f760eff24921"
+    },
+    {
+      "path": "bundesliga-three-2026-10-12/174345/after.wiki",
+      "bytes": 10768,
+      "sha256": "505929002269cc16e263c2c3b33821bd7b3ae3e7e68e15e6afce8e05d32cc215"
+    },
+    {
+      "path": "bundesliga-three-2026-10-12/174345/before.wiki",
+      "bytes": 10597,
+      "sha256": "03fb083ddc81654575b32b5bd7f8f807d0259172b0de2b48fe31353906a8527b"
+    },
+    {
+      "path": "bundesliga-three-2026-10-12/174345/changes.diff",
+      "bytes": 3971,
+      "sha256": "892061ec96a2587b349caf463fa00b3da738da827c69f679c5c0d8872f149f3c"
+    },
+    {
+      "path": "bundesliga-three-2026-10-12/174345/debug-after.wiki",
+      "bytes": 10915,
+      "sha256": "84e0ce756633764f009e4a36025fd8b522e09923b94d1382dee598a536ba5a30"
+    },
+    {
+      "path": "bundesliga-three-2026-10-12/174345/final/after-api.wiki",
+      "bytes": 9502,
+      "sha256": "9e0d35a4b51affc78f437898a50f6f7725d3abcd6af69b6fef273f45152d43d3"
+    },
+    {
+      "path": "bundesliga-three-2026-10-12/174345/final/old-club-block.wiki",
+      "bytes": 2656,
+      "sha256": "4015eb03e938f8951590c728738b99f43016021d3318df6e5387212ea4b2a506"
+    },
+    {
+      "path": "bundesliga-three-2026-10-12/174345/final/package.json",
+      "bytes": 8677,
+      "sha256": "c3c3adba0fb47a748fe24a54bc18a1964b78e5589519af7d323931e0f3c50618"
+    },
+    {
+      "path": "bundesliga-three-2026-10-12/174345/final/prepared-input.wiki",
+      "bytes": 8112,
+      "sha256": "aa2cdfe6f3daf4101af1b08a08c01e4bfc4bce6e0513936698bc3451e5345aaf"
+    },
+    {
+      "path": "bundesliga-three-2026-10-12/174345/final/report.json",
+      "bytes": 17071,
+      "sha256": "5daa16fb9294fb79665e59011d771c4902d36cd8cb22cf69c0cbe28ba99c4c7d"
+    },
+    {
+      "path": "bundesliga-three-2026-10-12/174345/final/source-table.json",
+      "bytes": 6340,
+      "sha256": "8255373a949c1f867862d0f288b34c53704c70074230394e339857f2a8010be0"
+    },
+    {
+      "path": "bundesliga-three-2026-10-12/174345/package.json",
+      "bytes": 22000,
+      "sha256": "77e715c7551bbb56b4971c684289549ee2b00edb8c40d7d2c342fc2d04cb2c6d"
+    },
+    {
+      "path": "bundesliga-three-2026-10-12/174345/report.json",
+      "bytes": 139696,
+      "sha256": "402c53188b9e72cd053ccfda5ed7c8a6920e4b101e38109340bb4d422d351efd"
+    },
+    {
+      "path": "bundesliga-three-2026-10-12/67647/after.wiki",
+      "bytes": 28524,
+      "sha256": "6f3846805510cbb32b1eb373ad90bab2102317027a8c69333a9ecf6c07dace14"
+    },
+    {
+      "path": "bundesliga-three-2026-10-12/67647/before.wiki",
+      "bytes": 28524,
+      "sha256": "6f3846805510cbb32b1eb373ad90bab2102317027a8c69333a9ecf6c07dace14"
+    },
+    {
+      "path": "bundesliga-three-2026-10-12/67647/changes.diff",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "bundesliga-three-2026-10-12/67647/debug-after.wiki",
+      "bytes": 27873,
+      "sha256": "c47f4e6d88888e3a74698e7ad2028d1a524e95bcc8ec47a732f30e26a728d057"
+    },
+    {
+      "path": "bundesliga-three-2026-10-12/67647/final/after-api.wiki",
+      "bytes": 26309,
+      "sha256": "27275d2ac91575d9ab64e3f1db04121837925387d15cdb9f6da80bf29acda343"
+    },
+    {
+      "path": "bundesliga-three-2026-10-12/67647/final/old-club-block.wiki",
+      "bytes": 4545,
+      "sha256": "c4dc6bcd9a5cc5f4a38ba822bb7366b409acb84c842fbd9353faf6cb8c1e7f79"
+    },
+    {
+      "path": "bundesliga-three-2026-10-12/67647/final/package.json",
+      "bytes": 16227,
+      "sha256": "1a21ffd2c9b4ac2f636df2e674a34dfee385f84b6f3f738a3a06d8bc9598b47b"
+    },
+    {
+      "path": "bundesliga-three-2026-10-12/67647/final/prepared-input.wiki",
+      "bytes": 23979,
+      "sha256": "093aa5322899ae71e9642de7183a6f778b4e71a9e6e32fb8a324192eb758f1cd"
+    },
+    {
+      "path": "bundesliga-three-2026-10-12/67647/final/report.json",
+      "bytes": 48918,
+      "sha256": "1f00652eb61276befd6d44f73a60ff3f73309d75549d2bb744c530eedef86217"
+    },
+    {
+      "path": "bundesliga-three-2026-10-12/67647/final/source-table.json",
+      "bytes": 10235,
+      "sha256": "f04a316a7438cbf18cccc356d812c2af3501e4cf75b4309a7d99ae06d0c88e4c"
+    },
+    {
+      "path": "bundesliga-three-2026-10-12/67647/national-reconstructed-matches.json",
+      "bytes": 20994,
+      "sha256": "12c9020f8c539a5ae00314a359f0c9b5e8eeabe7f4d4fd12a9703a617b742268"
+    },
+    {
+      "path": "bundesliga-three-2026-10-12/67647/package.json",
+      "bytes": 11817,
+      "sha256": "c625700b7142754ae86f4ab845215ed2effdf25ce91489deb86276e1f781698e"
+    },
+    {
+      "path": "bundesliga-three-2026-10-12/67647/report.json",
+      "bytes": 38690,
+      "sha256": "ab01b9fe0a02ebeda4444a94ca142d764210865d688cf231bd21e5f6783ff02f"
+    },
+    {
+      "path": "bundesliga-three-2026-10-12/cache.json",
+      "bytes": 18832706,
+      "sha256": "c22bc568dcf77ef09b8acba5f7ea16e314bb50724f7966c33efa62ccdde80a1b"
+    },
+    {
+      "path": "bundesliga-three-2026-10-12/candidates.json",
+      "bytes": 2781,
+      "sha256": "97cdc6bbf5e7e9fe55867c8929be5639e09262f41d180fcd5b1a33cfd6ccc98e"
+    },
+    {
+      "path": "bundesliga-three-2026-10-12/failed-cache.json",
+      "bytes": 3221,
+      "sha256": "8433c52de30f39d11ba61cb5cfbf077a63cb46d4cfd1b8fc1604da480e27962b"
+    },
+    {
+      "path": "bundesliga-three-2026-10-12/selected.json",
+      "bytes": 1120,
+      "sha256": "4c77e1b7ae4af1bcf7930309bbf5df0846446c09da4ca9e66a9dddb24fa71300"
+    },
+    {
+      "path": "bundesliga-three-2026-10-12/summary.json",
+      "bytes": 1852,
+      "sha256": "840f52b054ba63292c492e8b9e6e9ae11062a82e8f252796187d11859998c8c7"
+    },
+    {
+      "path": "bundesliga-three-2026-10-12/Грифо.wiki",
+      "bytes": 13148,
+      "sha256": "17ea54cf606077ef47cd49af2e38ca136031206bd9e7cac3b3cb4a7647533e12"
+    },
+    {
+      "path": "bundesliga-three-2026-10-12/Крамарич.wiki",
+      "bytes": 28524,
+      "sha256": "6f3846805510cbb32b1eb373ad90bab2102317027a8c69333a9ecf6c07dace14"
+    },
+    {
+      "path": "bundesliga-three-2026-10-12/Центнер.wiki",
+      "bytes": 10597,
+      "sha256": "03fb083ddc81654575b32b5bd7f8f807d0259172b0de2b48fe31353906a8527b"
+    },
+    {
+      "path": "club-flag-live-identities.json",
+      "bytes": 2750134,
+      "sha256": "707c600c65fa8500ad89eb03a4ddd1249cdc962081969f12854c15a819e3ea17"
+    },
+    {
+      "path": "football-reserve-class.json",
+      "bytes": 7913,
+      "sha256": "b80431c4164b03b8d8017fa076f7273285e0cc86a52307951f0a7f4784f56205"
+    },
+    {
+      "path": "mainz-reserve-identity.json",
+      "bytes": 55452,
+      "sha256": "ea750bdfff6153fe29addaac8ab533a2498548bc8f4c0bed96fdf615a5842d05"
+    },
+    {
+      "path": "schick-ready-2026-10-12/api-package-after-reviewed-correction.json",
+      "bytes": 41099,
+      "sha256": "c09b89d6be1230c0f3d5ac59723960928150ab2d284f80d46a95ede7b06b3330"
+    },
+    {
+      "path": "schick-ready-2026-10-12/before.wiki",
+      "bytes": 25023,
+      "sha256": "df68d79b4c0504aab91d8a2a380eab729b779a800396ef80ae0594f2ffa3487e"
+    },
+    {
+      "path": "schick-ready-2026-10-12/changes.diff",
+      "bytes": 34852,
+      "sha256": "d1717ae982cdce290a0bd9b310feed5a55b6e385471aeacee074772fdf6f1518"
+    },
+    {
+      "path": "schick-ready-2026-10-12/README.md",
+      "bytes": 1739,
+      "sha256": "0293a0cfe0aa952f6177f0a43e41468c5b383669aeb5b8333c2e09976910aa4d"
+    },
+    {
+      "path": "schick-ready-2026-10-12/report.json",
+      "bytes": 121090,
+      "sha256": "2c5438980cf01f5c1e537622b692959f516d3faa47a57eefdd9e9844af1ede0f"
+    },
+    {
+      "path": "schick-ready-2026-10-12/СбМатчи Шика.wiki",
+      "bytes": 16321,
+      "sha256": "07c585619b8ba588251d2ef2973949ed57593003ce4c145fbb7341cf9485c589"
+    },
+    {
+      "path": "schick-ready-2026-10-12/Шик — готовая статья.wiki",
+      "bytes": 35805,
+      "sha256": "862a4a745fc1cd9eb82a0e589728b6cb8f3c3d22aaf0603006ef0718c2ab7e87"
+    },
+    {
+      "path": "schick-sbmatches-api-2026-10-12/after.wiki",
+      "bytes": 29250,
+      "sha256": "cfa189e11b82b7aa6fe471f7f1232ec8be9a7352d8ce667cb5ef66ab51b0632e"
+    },
+    {
+      "path": "schick-sbmatches-api-2026-10-12/before.wiki",
+      "bytes": 29250,
+      "sha256": "cfa189e11b82b7aa6fe471f7f1232ec8be9a7352d8ce667cb5ef66ab51b0632e"
+    },
+    {
+      "path": "schick-sbmatches-api-2026-10-12/changes.diff",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "schick-sbmatches-api-2026-10-12/failed-cache.json",
+      "bytes": 1916,
+      "sha256": "842a6d2e5046f862f5945dae46213ccc1261fffa9b3d0f0958dcdeb958fc549d"
+    },
+    {
+      "path": "schick-sbmatches-api-2026-10-12/fresh-cache.json",
+      "bytes": 4041378,
+      "sha256": "0e6bc6a6a55b16634beab240e72bb4c1b471e7b40f26d91bae257361bd27cbeb"
+    },
+    {
+      "path": "schick-sbmatches-api-2026-10-12/input.wiki",
+      "bytes": 29250,
+      "sha256": "cfa189e11b82b7aa6fe471f7f1232ec8be9a7352d8ce667cb5ef66ab51b0632e"
+    },
+    {
+      "path": "schick-sbmatches-api-2026-10-12/latest-live.json",
+      "bytes": 98,
+      "sha256": "a365922a863aeb3e72089ff14db0c1ee46bb984a4528da1c806ce54b6607c036"
+    },
+    {
+      "path": "schick-sbmatches-api-2026-10-12/latest-live.wiki",
+      "bytes": 25023,
+      "sha256": "df68d79b4c0504aab91d8a2a380eab729b779a800396ef80ae0594f2ffa3487e"
+    },
+    {
+      "path": "schick-sbmatches-api-2026-10-12/mapping.json",
+      "bytes": 147,
+      "sha256": "be011560795e04a89974a0f2602b6c7cf07fabde8f064645c231edcc7db591d8"
+    },
+    {
+      "path": "schick-sbmatches-api-2026-10-12/package.json",
+      "bytes": 1249,
+      "sha256": "beda51ecda9b9a4b975c7ce76b2aa9f570a220575a8ec21784ac81da144f26ab"
+    },
+    {
+      "path": "schick-sbmatches-api-2026-10-12/README.md",
+      "bytes": 1865,
+      "sha256": "06303d19a00c10ee8b8bc6cede7c42accbc75ee5bd06024d6ce6a030ec8c9a25"
+    },
+    {
+      "path": "schick-sbmatches-api-2026-10-12/report.json",
+      "bytes": 332794,
+      "sha256": "9600f559940ff21d2c68a7bfd168dc16ca7e4d904213e49617e2ef8abd1f2583"
+    },
+    {
+      "path": "schick-sbmatches-api-2026-10-12/seed-cache.json",
+      "bytes": 4041378,
+      "sha256": "0e6bc6a6a55b16634beab240e72bb4c1b471e7b40f26d91bae257361bd27cbeb"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/01.wiki",
+      "bytes": 99073,
+      "sha256": "10b0aba2b2a27b519444bfac26068e02a263a3ea5c80c8d774f43600a7413c3c"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/02.wiki",
+      "bytes": 160752,
+      "sha256": "2cf07d3f2887f62717e4726191101abc5e128b4504c8561ddc512d83ed2d7e92"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/03.wiki",
+      "bytes": 67493,
+      "sha256": "aff061beec125f0a6d27c80c6b7e78349753751364b7169a97d0105ee22d9b4f"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/04.wiki",
+      "bytes": 59131,
+      "sha256": "eb7de715cf49d1a1cc37e553254953ed64a5c0c14f63e4ce116e5a425764f6ab"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/05.wiki",
+      "bytes": 545447,
+      "sha256": "509b1ce86fa84fb1ababb47e2f8386c171d372026e4d6cf6ad02d3bed5b03ed0"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/06.wiki",
+      "bytes": 145826,
+      "sha256": "a07298ffd3b99f603c71974a2439f8c547e7f3f27dd6abf097d7c6f00700e6d3"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/07.wiki",
+      "bytes": 322591,
+      "sha256": "2f6337c1889a2a268c0b7f9a92f6de93a76f2ad1565f5fecbb0e8a530725fa58"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/08.wiki",
+      "bytes": 534709,
+      "sha256": "109c1a86ab7c2a72c337a2b24ef158f02c3a3a8e4688ca211b43a989bf36ed60"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/09.wiki",
+      "bytes": 45658,
+      "sha256": "0d39ca9a7af6d908439ed28573de684d5d37aefd9c9fd5a31e2e7256602dfe4e"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/10.wiki",
+      "bytes": 463435,
+      "sha256": "f7e9174197eea246f9a7ac09c9d34dd3b0a0995c9f2fc432132f70b5ffee172a"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/11.wiki",
+      "bytes": 185256,
+      "sha256": "354db5080dfb56ddd3d9976e1c8157e6f7ca3921a813dd15a84c8e0634722bfa"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/12.wiki",
+      "bytes": 237356,
+      "sha256": "883d8d762962667d37d0d4b60c22f0b81d8ff858a6dadd169d79d03c511b22b1"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/13.wiki",
+      "bytes": 278928,
+      "sha256": "9bd002394669c5f4187b66a75674ff3add690b9c18ebc2cc6536860facc5cece"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/14.wiki",
+      "bytes": 264254,
+      "sha256": "929bae77859f7c0032121cd3a30e5539f3148eb103200e5dbb38b89929856354"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/15.wiki",
+      "bytes": 326557,
+      "sha256": "436077cfa3c49b9986a5ea23daef1b9541aaceaa1c00638e580681c367e8b454"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/16.wiki",
+      "bytes": 110606,
+      "sha256": "7e4a216f86afce685ebdc91a44957c8bab1d0e2a05b7614646ca8565b04c2793"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/17.wiki",
+      "bytes": 293722,
+      "sha256": "3981086961826fb4f95cb927264bb83cec2b91c88e4962acae80e470c204fafd"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/18.wiki",
+      "bytes": 341506,
+      "sha256": "d4d352d34b0e2b5f9eea6c707f2abf0ca3b0330ba5115838fb4a43604573dbed"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/19.wiki",
+      "bytes": 205180,
+      "sha256": "0c8236eb38c7951534732ac13333e8e20f118be017f9f7fd469b8fe44ca0edd5"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/20.wiki",
+      "bytes": 183934,
+      "sha256": "9f54defc46b63470f777a97cf3c15b02ba2bee3527bdcf3be3169d40f50707cf"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/21.wiki",
+      "bytes": 109499,
+      "sha256": "05d242b18cab3d4aae1ef5b20bae57802e077b50c45dfc6d8b1b9c16e8d1052e"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/22.wiki",
+      "bytes": 100658,
+      "sha256": "043391e24d68a6be3e313971bdb99c9be797d6b189ab1b97a004f9d60c9b36e4"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/23.wiki",
+      "bytes": 91909,
+      "sha256": "b6b671aa06303d03a2d734e7709e45e50546065d6170fa7d4f96d8310f1f0bd0"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/24.wiki",
+      "bytes": 294409,
+      "sha256": "8950a3e22443303908df5a3d236a6138eee1f03757e64855b68380a11fc262c0"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/25.wiki",
+      "bytes": 81842,
+      "sha256": "d38ec0bceff9db3dba2c64e83e423441e11efbff872fc8883424699cc5559263"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/26.wiki",
+      "bytes": 76875,
+      "sha256": "bd6d8b3758aed74054489a448b88b50d9f73a25017b0f248162d0eaa0387266b"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/27.wiki",
+      "bytes": 32152,
+      "sha256": "1af3a5169b3989dc0af4a14a9d64d4880e883ca74a78b4e741437a2543ff7850"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/28.wiki",
+      "bytes": 101905,
+      "sha256": "dbcd9cb373498dda699d9ef821b440f493fdbbc76f00f5a42a4fa6f47e89acc5"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/29.wiki",
+      "bytes": 46059,
+      "sha256": "eaf6a740d6ca9d6bc8a8fd2e270b74bf4ed7facaf13e652b6b0fb5c0bab6b7fc"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/30.wiki",
+      "bytes": 216411,
+      "sha256": "1ec96646855ea125ada48558151274bffd48e3db2c5ceb3c9d45ae8f9e8c59df"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/31.wiki",
+      "bytes": 366746,
+      "sha256": "38a37a2cfc1066a23227338537bd1cb2b61c7535d779e1991ad9b6374bd67791"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/32.wiki",
+      "bytes": 179567,
+      "sha256": "4333b93205896f9a1a65074f10f7f5810236cc1bc9404a9e89625786119a71e1"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/33.wiki",
+      "bytes": 87759,
+      "sha256": "829c26f64701dbc99096fe18d54a41b97017d8c770069544e30543fac7382e64"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/34.wiki",
+      "bytes": 66685,
+      "sha256": "939a56795dad844a56df85b0a795edc7d862cccb5b437e06d8ad3ed44cbb1083"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/35.wiki",
+      "bytes": 205558,
+      "sha256": "e159284d9a61b814fb520ff335ad5e913fac02c34d72168718f25703c2981760"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/36.wiki",
+      "bytes": 58403,
+      "sha256": "36509e9c259aa83862db12c86ed94e550cd8d1d026e145d08da45da748a9722b"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/37.wiki",
+      "bytes": 90746,
+      "sha256": "7e5930d9f27d12066316a124abdafe4de2394c28daa8fa9849e9bea119854ae4"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/38.wiki",
+      "bytes": 54907,
+      "sha256": "f0b4ff0a08d29a680e2547df32796e5f49030196a4de403d4ec1fac2785e5a49"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/39.wiki",
+      "bytes": 58902,
+      "sha256": "9c8f6cf318d4064f4eb280d750e3783f0f9ba8c6de4a1a77e6b0b1bcac7d58c2"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/40.wiki",
+      "bytes": 26491,
+      "sha256": "f21f0e18b95d18702ed3f76eff79053a4f6a3d72bc476ea6e49cdd1565405fee"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/41.wiki",
+      "bytes": 28683,
+      "sha256": "fbe757bda7034ea11501ab8010004bb78bbbc9b9fa847d649c852faf5c1ab87b"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/42.wiki",
+      "bytes": 14648,
+      "sha256": "f7a015c5d7448b1527c7c46f48d749bfa1327e792b515e86ed3e6a658df4e4ef"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/43.wiki",
+      "bytes": 73565,
+      "sha256": "a38caf894504ebd5cde8060d60a85076bd3bac0bbc65fa4289274cc68c375599"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/44.wiki",
+      "bytes": 25486,
+      "sha256": "7481d6641a4f343a65ccafbfeb4a035c615dbb9673dbe5139f849f993bf89c10"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/45.wiki",
+      "bytes": 116396,
+      "sha256": "0030018359ccde49f8c5152c21d502563df530a1f6aa05e394156c30c0186140"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/46.wiki",
+      "bytes": 13288,
+      "sha256": "a82ea16743246dca5442788f738ec69b57db4697fd2442f8254f156ab0aaf096"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/47.wiki",
+      "bytes": 22005,
+      "sha256": "a7b4c8a580fc76d1660ef3488093a556755d55c66dbe6bda928e0ee46160484b"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/48.wiki",
+      "bytes": 10672,
+      "sha256": "189b5511fb63f0a7f8d1fede23b1937be475e491406c72f8617d7daed097412d"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/49.wiki",
+      "bytes": 29470,
+      "sha256": "d4d14719688a9f50173edb5f3fd4ed1853d69e865a60e70c9b7fcc6aa0cc4ef9"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/50.wiki",
+      "bytes": 175465,
+      "sha256": "faefbf6df7df82d4baae6edfb6344b02b0e151055115d9f5b2167410f3e8437c"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/51.wiki",
+      "bytes": 152262,
+      "sha256": "cedede4585e6c17efbbd2331c89684b8bc16dbf70c60eb08e056348295834c26"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/52.wiki",
+      "bytes": 18030,
+      "sha256": "066452bbf1662de52856090ae68b1fce8d0ea2c05cabeef4ca886b42e6360ebd"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/53.wiki",
+      "bytes": 137873,
+      "sha256": "bc5352537414e77aeaf09ab7387eb3fafe2d182a9fe2bbd80754bc057b8cf6fa"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/54.wiki",
+      "bytes": 156839,
+      "sha256": "3aad3d93b6c2caa102117c2303c68e4dfe6d75a931fa7d8782dbb9f0360b961d"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/55.wiki",
+      "bytes": 31502,
+      "sha256": "d1a44be2252ca43d0f7567c5b69e3f6024801b216d8488ea413c3005df1729a9"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/56.wiki",
+      "bytes": 60115,
+      "sha256": "66655d75804e2e7315d5bc02f49dc21821c123819ddc743bb754ecdb77d74e25"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/57.wiki",
+      "bytes": 41307,
+      "sha256": "045afa905ee418b93f9e01c13580ca219a70cf95b70485ef1cc883ccaff95592"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/58.wiki",
+      "bytes": 239044,
+      "sha256": "40c466cbaac8e90cb5f1026bf35e1f8f747bc24723f56b73760d0d05294f2da0"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/59.wiki",
+      "bytes": 87304,
+      "sha256": "8294e839c9938258baa78b61076f9c2a8f83c66a2765da190c3744f91dafae53"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/60.wiki",
+      "bytes": 11869,
+      "sha256": "f70f5bf65b6ba15110e39d383f1e7400b8e5b45442455ac1b94ba64e7b645bcb"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/61.wiki",
+      "bytes": 20675,
+      "sha256": "0bc4a983c92fe8c583e11ad6f7ea1bbd424d552155bc6926f7e15d42557f106f"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/62.wiki",
+      "bytes": 9081,
+      "sha256": "473d521a0b6b5005ae30165ecd3d0b1923440bfe1e4a02e51593d9de1cd4da00"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/63.wiki",
+      "bytes": 1113,
+      "sha256": "02ae7dabf3ebf349d03a1e4214cf6681c9fdb9a09bb7993474658b70691ba192"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/64.wiki",
+      "bytes": 140330,
+      "sha256": "7f1231c6698177f230e75d2a3254027ac70af9d747040f39d4407153143c469d"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/65.wiki",
+      "bytes": 36401,
+      "sha256": "8c1a65beac363b7b4d8b4914f2d24fb298b10110b65730c2e6245dcc12188dff"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/66.wiki",
+      "bytes": 19092,
+      "sha256": "64a5d8355a7ed3f7f2ab7e2c73ec04fd9c4015883f109405c6e39f33ebe5a4b3"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/67.wiki",
+      "bytes": 11737,
+      "sha256": "d0bfb6cf7005c7c64cf00c6c1e491a4c4af990f8949ad6b55ffc696b071ae6b3"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/68.wiki",
+      "bytes": 129338,
+      "sha256": "ee28daf993d198b566f042a16574ce9ebd6e02bb027ef98114dcb40bc791df91"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/all-candidates.json",
+      "bytes": 258967,
+      "sha256": "31ea0c735bf0375142944241e2351664a535a78e33297663c7260d91806f776e"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/survey.json",
+      "bytes": 185131,
+      "sha256": "8a3ff9be5c7eaf76c9c8468feb1e81802d42fbf0684f7cbe9bb24e7109a8e90e"
+    },
+    {
+      "path": "fifty-article-survey-2026-10-12/updated-survey.json",
+      "bytes": 190213,
+      "sha256": "587382be2cc77e592338cf49f78b35afebd5a71134dfe7f82c2566e790d6b641"
+    }
+  ],
+  "redacted_credential_fields": 0
+}

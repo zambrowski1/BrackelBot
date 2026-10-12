@@ -62,6 +62,40 @@ def table_season_name(value):
     return normalize_table_season(value)
 
 
+def other_season_clubs(history, record, now):
+    """Positive appearances contradict a single-club season aggregate.
+
+    Detection needs no extra protocol requests and does not infer anything
+    from absent history. A transfer aggregate must not be assigned wholesale
+    to the team attached to the provider's response.
+    """
+    from .sofascore_match_stats import excluded_league_round
+    teams = set()
+    for match in history.get('matches', []):
+        if ((match.get('tournament') or {}).get('id') != record['tournament_id']
+                or (match.get('season') or {}).get('id') != record['season_id']):
+            continue
+        if not match.get('is_finished') or (match.get('status') or {}).get('type') != 'finished':
+            continue
+        try:
+            day = datetime.fromisoformat(match['start_time'].replace('Z', '+00:00'))
+        except (KeyError, TypeError, ValueError):
+            continue
+        if day.tzinfo is None or day > now:
+            continue
+        if record['tournament_id'] in LEAGUES and excluded_league_round(record['tournament_id'], match.get('round') or {}):
+            continue
+        player = match.get('player') or {}
+        minutes = (player.get('statistics') or {}).get('minutes_played')
+        team = player.get('team_id')
+        if (type(minutes) not in (int, float) or not 0 < minutes <= 130
+                or type(team) is not int or team == record['team_id']):
+            continue
+        if sum((match.get(side) or {}).get('id') == team for side in ('home_team', 'away_team')) == 1:
+            teams.add(team)
+    return sorted(teams)
+
+
 def european_history_covered(history, records, season, now):
     """The category includes every European competition, including qualifiers."""
     if history.get('complete') is not True:
@@ -541,6 +575,14 @@ def _prepare_statistics(snapshot, mapping, api, wiki, resolver, *, max_requests=
         raise UpdateError('identity_mismatch','История переходов другого игрока')
     for record in records:
         year=int(record['season'][:4])
+        other_clubs = other_season_clubs(history, record, now) if statistics_since is not None else []
+        if other_clubs:
+            fail_scope(record['season'], record['tournament_id'])
+            issues.append({'code': 'multi_club_season_unproven', 'season': record['season'],
+                           'team_id': record['team_id'], 'tournament_id': record['tournament_id'],
+                           'other_team_ids': other_clubs,
+                           'message': 'Сезонный итог относится к нескольким клубам; нужен подтверждённый раздельный итог'})
+            continue
         split=any(date(year,7,1).isoformat()<str(t.get('transfer_date',''))[:10]<date(year+1,7,1).isoformat()
             and record['team_id'] in {(t.get('transfer_from') or {}).get('id'),(t.get('transfer_to') or {}).get('id')}
             for t in transfers.get('transfers',[]))

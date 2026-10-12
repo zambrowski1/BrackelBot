@@ -1,0 +1,50 @@
+{
+  "files": [
+    {
+      "path": "Грифо — готовая статья.wiki",
+      "bytes": 17892,
+      "sha256": "184eeb7354017dede6237338f69a9ca66034ba98207774c843a2744bc3eaca0b"
+    },
+    {
+      "path": "Документация СбМатчи.wiki",
+      "bytes": 164331,
+      "sha256": "acd97f5776e5e49bade9389db1d4bf5aa077f909f475084f584a640cadc39ac3"
+    },
+    {
+      "path": "Как перенести.txt",
+      "bytes": 2761,
+      "sha256": "28bf9bc3bb0153d7c4a7f834e12a22e943e2798f0727f1cf051802cd04912cef"
+    },
+    {
+      "path": "Крамарич — готовая статья.wiki",
+      "bytes": 29260,
+      "sha256": "a3d8fcfa6dfec118602873a17f4e9dba194feaa18a87234190681d0bbf290d91"
+    },
+    {
+      "path": "Модуль СбМатчи.lua",
+      "bytes": 225069,
+      "sha256": "7bdc853654e259871d243c324af06b829284e5fdb645d0f08ede9971fd36b8ac"
+    },
+    {
+      "path": "Проверка порядка отметок.json",
+      "bytes": 408,
+      "sha256": "3f5b3f42031584f1398dea8765baa9cd9c82aa875481905e2cb489b9f64477b6"
+    },
+    {
+      "path": "Проверка флагов.json",
+      "bytes": 2576,
+      "sha256": "c4eb489127abebeff62dc09ffec7c6d3432148daa078cbbd4ae2788908bdad56"
+    },
+    {
+      "path": "Центнер — готовая статья.wiki",
+      "bytes": 11791,
+      "sha256": "4ad56e0671876d195633e9ab3fb74f3e91abc8fc4813d0336f3f9c03af1b75b4"
+    },
+    {
+      "path": "Шик — готовая статья.wiki",
+      "bytes": 31937,
+      "sha256": "4180ef2d68934982ac69d14954992ad7159b95ac4bbf3a6253a497f9f02beb70"
+    }
+  ],
+  "archive_sha256": "b44d7544531f553a63d067f243eca4cfe4cce4a819e665303be957b700ca866f"
+}

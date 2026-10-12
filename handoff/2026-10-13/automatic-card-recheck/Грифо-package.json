@@ -142,7 +142,10 @@
                         "appearances": 1,
                         "goals": 0
                       },
-                      "Еврокубки": null
+                      "Еврокубки": {
+                        "appearances": 0,
+                        "goals": 0
+                      }
                     }
                   }
                 ]
@@ -252,7 +255,10 @@
                         "appearances": 2,
                         "goals": 3
                       },
-                      "Еврокубки": null
+                      "Еврокубки": {
+                        "appearances": 0,
+                        "goals": 0
+                      }
                     }
                   },
                   {
@@ -263,8 +269,14 @@
                         "appearances": 16,
                         "goals": 6
                       },
-                      "Кубки": null,
-                      "Еврокубки": null
+                      "Кубки": {
+                        "appearances": 0,
+                        "goals": 0
+                      },
+                      "Еврокубки": {
+                        "appearances": 0,
+                        "goals": 0
+                      }
                     }
                   },
                   {
@@ -279,7 +291,10 @@
                         "appearances": 1,
                         "goals": 0
                       },
-                      "Еврокубки": null
+                      "Еврокубки": {
+                        "appearances": 0,
+                        "goals": 0
+                      }
                     }
                   },
                   {
@@ -294,7 +309,10 @@
                         "appearances": 2,
                         "goals": 0
                       },
-                      "Еврокубки": null
+                      "Еврокубки": {
+                        "appearances": 0,
+                        "goals": 0
+                      }
                     }
                   },
                   {
@@ -309,7 +327,10 @@
                         "appearances": 6,
                         "goals": 4
                       },
-                      "Еврокубки": null
+                      "Еврокубки": {
+                        "appearances": 0,
+                        "goals": 0
+                      }
                     }
                   },
                   {
@@ -360,7 +381,10 @@
                         "appearances": 3,
                         "goals": 2
                       },
-                      "Еврокубки": null
+                      "Еврокубки": {
+                        "appearances": 0,
+                        "goals": 0
+                      }
                     }
                   },
                   {
@@ -419,7 +443,10 @@
                         "appearances": 1,
                         "goals": 0
                       },
-                      "Еврокубки": null
+                      "Еврокубки": {
+                        "appearances": 0,
+                        "goals": 0
+                      }
                     }
                   }
                 ]

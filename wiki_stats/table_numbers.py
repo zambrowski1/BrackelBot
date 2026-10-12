@@ -18,10 +18,21 @@ def row_totals(values):
     return ''
 
 
-def club_total(values):
+def season_totals(row, width):
+    """Use an explicit season total when the tournament breakdown is unknown."""
+    result=[]
+    for j,key in enumerate(('игры','голы')):
+        total=sum_known(row[str(2+i)].numeric(signed=bool(i%2))[0].value for i in range(j,width,2))
+        if total is None and key in row:
+            total=row[key].numeric(signed=bool(j))[0].value
+        result.append(total)
+    return result
+
+
+def club_total(values, overall=None):
     if all(v is not None for v in values):
         return '{{КлСтат/ИтогоЗаКлуб||'+'|'.join(map(display,values))+'}}'
     # The native subtotal template does not forward explicit games/goals to
     # КлСтат/Стат. Render its ordinary row to avoid a visible #expr question mark.
-    cells=[*values,sum_known(values[::2]),sum_known(values[1::2])]
+    cells=[*values,*(overall if overall is not None else [sum_known(values[::2]),sum_known(values[1::2])])]
     return '|- style="font-weight:bold;"\n! scope="row" colspan="2" | Итого\n| '+' || '.join(map(display,cells))+'\n|-'

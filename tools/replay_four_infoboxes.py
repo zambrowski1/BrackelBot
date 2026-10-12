@@ -26,6 +26,9 @@ BASE = ROOT/'handoff/2026-10-12/latest'
 OUT = ROOT/'handoff/2026-10-13/automatic-card-recheck'
 EXPECTED = {'Грифо': '227 (60)', 'Крамарич': '310 (135)', 'Центнер': '210 (-314)', 'Шик': '154 (85)'}
 NATIONAL = {'Грифо':'9 (4)', 'Крамарич':'119 (36)', 'Шик':'56 (26)'}
+TABLE_EXPECTED = {('Фрайбург','2016/17'):[32,9],('Фрайбург','2018/19'):[16,6],
+                  ('Фрайбург','2020/21'):[33,9],('Фрайбург','2021/22'):[40,13],
+                  ('Фрайбург','2024/25'):[37,10],('Хоффенхайм','2019/20'):[2,0]}
 
 
 class EmptyStore:
@@ -164,6 +167,17 @@ def main():
             careers = result.get('after_card', {}).get('клубы')
             actual = careers[-1][-1].replace('−','-') if isinstance(careers,list) and careers else None
             result['current_club_card_passed'] = actual == EXPECTED[short]
+            if short=='Грифо' and 'after_card' in result:
+                from wiki_stats.table_numbers import season_totals
+                from wiki_stats.season_labels import normalize_table_season
+                table=WikitextParser(plan.preview).club_table()
+                checked=[]
+                for (club,season),wanted in TABLE_EXPECTED.items():
+                    rows=[row for row in table.seasons if club in row.club and normalize_table_season(row.season)==season]
+                    total=season_totals(rows[0].values,2*len(table.categories)) if len(rows)==1 else None
+                    checked.append({'club':club,'season':season,'actual':total,'expected':wanted,'passed':total==wanted})
+                result['season_total_checks']=checked
+                result['season_totals_passed']=all(check['passed'] for check in checked)
             raw_date = result.get('after_card',{}).get('обновление данных о клубе','')
             try: result['current_club_date_passed'] = datetime.strptime(raw_date,'%d.%m.%Y').date().isoformat() == updated
             except ValueError: result['current_club_date_passed'] = False
@@ -174,7 +188,7 @@ def main():
             print(json.dumps({k:v for k,v in result.items() if k not in ('changes','review','before_card','missing_cached_requests')},ensure_ascii=False),flush=True)
     (OUT/'report.json').write_text(json.dumps({'wikipedia_edits':0,'football_api_requests':0,'wikimedia_reads':wiki.total_reads,'wiki_read_attempts':wiki.attempts,'articles':results},ensure_ascii=False,indent=2),encoding='utf8')
     (OUT/'wikimedia-read-evidence.json').write_text(json.dumps(wiki.fresh,ensure_ascii=False,indent=2),encoding='utf8')
-    return 0 if all(a['current_club_card_passed'] and a['current_club_date_passed'] and a.get('national_card_passed',True) and a.get('idempotent') and a.get('references_preserved') and not a.get('new_arithmetic_errors') for a in results) else 1
+    return 0 if all(a['current_club_card_passed'] and a['current_club_date_passed'] and a.get('national_card_passed',True) and a.get('season_totals_passed',True) and a.get('idempotent') and a.get('references_preserved') and not a.get('new_arithmetic_errors') for a in results) else 1
 
 
 if __name__ == '__main__': sys.exit(main())

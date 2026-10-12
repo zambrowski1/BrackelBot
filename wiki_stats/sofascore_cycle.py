@@ -844,15 +844,12 @@ def _prepare_statistics(snapshot, mapping, api, wiki, resolver, *, max_requests=
         rows = [r for r in records if r['season']==label and r['resolved'].qid==qid and r['category']==category]
         if not rows:
             if (label,category) in failed_categories:return None
-            if statistics_since is not None:
-                # No season response is unknown, never an inferred zero.
-                return None
             if (closed_spell and (qid,label)==(closed_spell['qid'],closed_spell['season'])
                     and category in {cup_category,'Стыковые матчи','Прочие'}):
                 return closed_spell['numbers']
             league=[r for r in records if r['season']==label and r['resolved'].qid==qid and r['tournament_id'] in LEAGUES]
             zero=absent_category_zero(history,league[0],'Национальный кубок' if category==cup_category else category,now) if len(league)==1 else None
-            if (zero is None and category=='Прочие' and len(league)==1
+            if (statistics_since is None and zero is None and category=='Прочие' and len(league)==1
                     and league[0]['resolved'].flag=='Германии'):
                 key=(qid,label)
                 if key not in current_other_cache:

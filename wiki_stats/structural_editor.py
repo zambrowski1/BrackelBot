@@ -63,12 +63,14 @@ def select_career(parser, player, op, new_period=None):
 
 
 def recompute_totals(text):
-    from .table_numbers import sum_known
+    from .table_numbers import sum_known, season_totals, club_total
     parser = WikitextParser(text)
     table = parser.club_table()
     width = len(table.categories)*2
     sums = {club:[0]*width for club in table.totals}
+    overall = {club:[0,0] for club in table.totals}
     for row in table.seasons:
+        overall[row.club]=[sum_known([a,b]) for a,b in zip(overall[row.club],season_totals(row.values,width))]
         for i in range(width):
             sums[row.club][i] = sum_known([sums[row.club][i],row.values[str(i+2)].numeric(signed=bool(i % 2))[0].value])
     patches = []
@@ -90,11 +92,24 @@ def recompute_totals(text):
             wanted=sum_known(values[str(first+i)].numeric(signed=bool(i%2))[0].value for i in range(j,width,2))
             if ref.name=='клстат/итогозаклуб':
                 club=next(c for c,l in table_layout(parser).items() if l['total'].start==ref.start)
-                wanted=sum_known(sums[club][i] for i in range(j,width,2))
+                wanted=overall[club][j]
             elif ref.name=='клстат/итого':wanted=sum_known(sum_known(v[i] for v in sums.values()) for i in range(j,width,2))
             number=values[key].numeric(signed=bool(j))[0]
             if wanted is not None and number.value!=wanted:patches.append(number.patch(wanted,'explicit_total'))
-    return apply_patches(text,patches,structural=True)
+    result=apply_patches(text,patches,structural=True)
+    # Native ИтогоЗаКлуб does not forward explicit overall overrides. A raw
+    # subtotal can show a known overall without inventing its missing breakdown.
+    fresh=WikitextParser(result); replacements=[]
+    for club,layout in table_layout(fresh).items():
+        ref=layout['total']; values=ref.values()
+        if any(v is None for v in sums[club]) and any(v is not None for v in overall[club]):
+            if any(mw.parse(v.text).filter_comments() or mw.parse(v.text).filter_tags() or mw.parse(v.text).filter_templates() for v in values.values()):
+                continue
+            rendered=club_total([values[str(i+2)].numeric(signed=bool(i%2))[0].value for i in range(width)],overall[club])
+            if '\r\n' in result:rendered=rendered.replace('\n','\r\n')
+            if str(ref.node)!=rendered:
+                replacements.append(Patch(ref.start,ref.start+len(str(ref.node)),str(ref.node),rendered,'club_overall'))
+    return apply_patches(result,replacements,structural=True)
 
 
 def append_career(text, parser, player, op, resolver):
@@ -325,6 +340,26 @@ def execute_operation(text,player,op,resolver=None):
         patches = [numbers[f].patch(op['new'][f],f) for f in op['new'] if numbers[f].value!=op['new'][f]]
         result = apply_patches(text,patches,structural=op['target']['structure']=='club_table')
         if op['target']['structure']=='club_table':
+            fresh=WikitextParser(result); table=fresh.club_table()
+            row=next(r for r in table.seasons if r.club==op['entity']['wikitext'].strip() and r.season==op['season'].strip())
+            # An older independent total cannot survive changed components
+            # while their new full sum is still unknown.
+            from .table_numbers import sum_known
+            invalid=[]
+            for j,key in enumerate(('игры','голы')):
+                if key in row.values and sum_known(row.values[str(2+i)].numeric(signed=bool(i%2))[0].value for i in range(j,2*len(table.categories),2)) is None:
+                    number=row.values[key].numeric(signed=bool(j))[0]
+                    if number.value is not None:invalid.append(number.patch(None,'stale_season_total'))
+            result=apply_patches(result,invalid,structural=True)
+            if invalid:
+                changed=WikitextParser(result)
+                subtotal=table_layout(changed)[row.club]['total'].values()
+                stale=[]
+                for j,key in enumerate(('игры','голы')):
+                    if key in subtotal:
+                        number=subtotal[key].numeric(signed=bool(j))[0]
+                        if number.value is not None:stale.append(number.patch(None,'stale_club_total'))
+                result=apply_patches(result,stale,structural=True)
             result = recompute_totals(result)
         return result,'ready'
     if kind=='update_career_period':

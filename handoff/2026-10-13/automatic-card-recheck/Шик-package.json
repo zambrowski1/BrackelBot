@@ -141,7 +141,10 @@
                         "appearances": 5,
                         "goals": 0
                       },
-                      "Прочие": null
+                      "Прочие": {
+                        "appearances": 0,
+                        "goals": 0
+                      }
                     }
                   }
                 ]
@@ -171,7 +174,10 @@
                         "appearances": 5,
                         "goals": 3
                       },
-                      "Прочие": null
+                      "Прочие": {
+                        "appearances": 0,
+                        "goals": 0
+                      }
                     }
                   },
                   {
@@ -190,7 +196,10 @@
                         "appearances": 3,
                         "goals": 0
                       },
-                      "Прочие": null
+                      "Прочие": {
+                        "appearances": 0,
+                        "goals": 0
+                      }
                     }
                   },
                   {
@@ -228,7 +237,10 @@
                         "appearances": 9,
                         "goals": 5
                       },
-                      "Прочие": null
+                      "Прочие": {
+                        "appearances": 0,
+                        "goals": 0
+                      }
                     }
                   },
                   {

@@ -68,6 +68,9 @@ def parser():
     ss.add_argument('--max-statistics',type=int,default=DEFAULT_STATISTICS);ss.add_argument('--max-match-pages',type=int,default=DEFAULT_MATCH_PAGES)
     ss.add_argument('--max-match-requests',type=int,default=DEFAULT_MATCH_REQUESTS)
     ss.add_argument('--statistics-since',type=int,default=0,help='Первый сезон КлСтат; 0 (по умолчанию) — все доступные сезоны без пересчёта по протоколам.')
+    national=sub.add_parser('prepare-national-table',help='Перевести старую таблицу сборной в СбМатчи без изменения данных')
+    national.add_argument('title');national.add_argument('--player',required=True)
+    national.add_argument('--fixtures');national.add_argument('--output-dir',default='national-migration')
     clubs=sub.add_parser('club-list');clubs.add_argument('--tier',type=int,choices=(1,2,3));clubs.add_argument('--season',type=int,default=2026)
     run=sub.add_parser('run');run.add_argument('--season',type=int,default=2026)
     modes=run.add_mutually_exclusive_group()
@@ -107,6 +110,26 @@ def main(argv=None):
                          'wikitext':ResolvedEntity(club['title'],club['qid'],club['flag'],club.get('display_name',club['name']),'club',
                                                    foreign_language=club.get('foreign_language'),foreign_title=club.get('foreign_title')).wikitext})
         print(json.dumps(rows,ensure_ascii=False,indent=2));return 0
+    if args.command=='prepare-national-table':
+        from datetime import datetime,timezone
+        from .national_table_migration import prepare_migration
+        from .audit_logger import make_report
+        try:
+            wiki=FixtureClient(args.fixtures) if args.fixtures else WikiClient()
+            snapshot=wiki.fetch_page(args.title)
+            now=datetime.now(timezone.utc)
+            pkg,plan=prepare_migration(snapshot,args.player,now.date().isoformat())
+            root=Path(args.output_dir);root.mkdir(parents=True,exist_ok=True)
+            (root/'before.wiki').write_text(snapshot.text,encoding='utf-8')
+            (root/'after.wiki').write_text(plan.preview,encoding='utf-8')
+            (root/'changes.diff').write_text(plan.diff,encoding='utf-8')
+            write_json(root/'package.json',pkg)
+            write_json(root/'report.json',make_report(pkg,[plan],[]))
+            print(plan.diff)
+            print('Подготовлен только перенос формата. Запросов к футбольному API и публикации нет.')
+            return 0 if all(c.status in {'ready','already_applied'} for c in plan.changes) else 1
+        except UpdateError as exc:
+            print(str(exc),file=sys.stderr);return 1
     store=None
     try:
         if args.provider == 'paused' and args.command in {'run','check-api','api-quotas','search-player','inspect-player','check-league','player-confirm','club-confirm','prepare-player'}:

@@ -1633,6 +1633,9 @@
               },
               {
                 "$ref": "#/$defs/sbmatch_create"
+              },
+              {
+                "$ref": "#/$defs/sbmatch_migrate"
               }
             ]
           }
@@ -2253,6 +2256,127 @@
           ],
           "minimum": -100000,
           "maximum": 100000
+        }
+      }
+    },
+    "sbmatch_migrate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "type",
+        "entity",
+        "target",
+        "as_of",
+        "sources",
+        "payload"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "entity": {
+          "$ref": "#/$defs/entity"
+        },
+        "as_of": {
+          "type": "string",
+          "format": "date"
+        },
+        "sources": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "url",
+              "provenance",
+              "coverage_as_of"
+            ],
+            "properties": {
+              "url": {
+                "type": "string",
+                "format": "uri",
+                "pattern": "^https?://[^/\\s]+"
+              },
+              "provenance": {
+                "enum": [
+                  "user_provided",
+                  "api_football",
+                  "highlightly",
+                  "sofascore",
+                  "dfb",
+                  "sfv",
+                  "uefa"
+                ]
+              },
+              "coverage_as_of": {
+                "type": "string",
+                "format": "date"
+              },
+              "note": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "group_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "const": "migrate_sbmatches"
+        },
+        "target": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "structure",
+            "age"
+          ],
+          "properties": {
+            "structure": {
+              "const": "sbmatches"
+            },
+            "age": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 1,
+              "maximum": 99
+            }
+          }
+        },
+        "payload": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "expected_native_sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "replacement_sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "matches_sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "match_count": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 500
+            }
+          },
+          "required": [
+            "expected_native_sha256",
+            "replacement_sha256",
+            "matches_sha256",
+            "match_count"
+          ]
         }
       }
     }

@@ -5,7 +5,7 @@ import mwparserfromhell as mw
 from .errors import UpdateError
 
 
-def possible_national_statistics(text):
+def possible_national_statistics(text, *, ignore_heading_only=False):
     """Conservative duplicate guard, including unfamiliar templates/tables.
 
     The footballer's infobox and narrative international career are not
@@ -28,7 +28,7 @@ def possible_national_statistics(text):
                 return True
     for heading in code.filter_headings():
         title = str(heading.title).strip().casefold()
-        if 'сборн' in title and any(x in title for x in ('статист','матчи','выступлен')):
+        if not ignore_heading_only and 'сборн' in title and any(x in title for x in ('статист','матчи','выступлен')):
             return True
     # A table/template may omit the team name and rely on its section heading.
     headings = list(re.finditer(r'(?m)^(={2,6})\s*([^=\r\n]+?)\s*\1\s*$', text))
@@ -39,9 +39,11 @@ def possible_national_statistics(text):
         body = mw.parse(text[heading.end():end])
         if any(str(t.tag).casefold() == 'table' for t in body.filter_tags()):
             return True
+        if ignore_heading_only and 'карьер' in heading[2].casefold():
+            continue
         for template in body.filter_templates():
             name = str(template.name).strip().casefold()
-            if name in {'main','основная статья','см. также','флаг','флагификация'} or name.startswith(('cite','флаг ')):
+            if name in {'main','основная статья','см. также','флаг','флагификация','обновлено'} or name.startswith(('cite','флаг ')):
                 continue
             if template.params:
                 return True

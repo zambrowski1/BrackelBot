@@ -27,7 +27,7 @@ class TemplateRef:
             key = str(p.name).strip()
             if key in result:
                 raise UpdateError("ambiguous_target", f"Повторный параметр {key}")
-            result[key] = ValueRef(p.value, offset)
+            result[key] = ValueRef(p.value, offset, self.name in {'клстат/сезон','клстат/итогозаклуб','клстат/итого'})
             offset += len(str(p.value))
         return result
 
@@ -48,6 +48,7 @@ class InlineLeagueRef:
 class ValueRef:
     code: object
     start: int
+    table_cell: bool = False
 
     @property
     def text(self):
@@ -69,19 +70,20 @@ class ValueRef:
         match = re.fullmatch(pattern, str(nodes[0]))
         if not match:
             raise UpdateError("unsupported_structure", "Поддерживаются только целые числа и пары матчей (голов)")
-        return [NumberRef(0 if match[g] in {'-','—','–'} else int(match[g].replace('−','-')), self.start + match.start(g), self.start + match.end(g), match[g])
+        return [NumberRef(None if self.table_cell and match[g]=='—' else 0 if match[g] in {'-','—','–'} else int(match[g].replace('−','-')), self.start + match.start(g), self.start + match.end(g), match[g])
                 for g in range(1, 3 if pair else 2)]
 
 
 @dataclass
 class NumberRef:
-    value: int
+    value: int | None
     start: int
     end: int
     text: str
 
     def patch(self, value: int, field: str):
-        return Patch(self.start, self.end, self.text, str(value), field)
+        from .table_numbers import display
+        return Patch(self.start, self.end, self.text, display(value), field)
 
 
 def top_templates(code, start=0):
@@ -121,6 +123,30 @@ class ClubTable:
     grand_total: list[ValueRef]
 
 
+RAW_TOTAL = re.compile(r'(?m)^\|- style="font-weight:bold;"\r?\n! scope="row" colspan="2" \| Итого\r?\n\| ([^\r\n]+)\r?\n\|-(?=\r?\n|$)')
+
+
+@dataclass
+class RawTotalRef:
+    node: str
+    start: int
+
+    name = 'клстат/итогозаклуб'
+
+    def values(self):
+        match=RAW_TOTAL.fullmatch(self.node)
+        cells=match[1].split(' || ')
+        if len(cells)<4 or len(cells)%2 or any(not re.fullmatch(r'-?[0-9]+|—',c) for c in cells):
+            raise UpdateError('unsupported_structure','Неизвестная строка клубного итога')
+        result={'1':ValueRef(mw.parse('Итого'),self.start+self.node.index('Итого'),True)}
+        offset=self.start+match.start(1)
+        for i,cell in enumerate(cells):
+            key=str(i+2) if i<len(cells)-2 else ('игры' if i==len(cells)-2 else 'голы')
+            result[key]=ValueRef(mw.parse(cell),offset,True)
+            offset+=len(cell)+4
+        return result
+
+
 class WikitextParser:
     def __init__(self, text):
         self.text = text
@@ -128,6 +154,22 @@ class WikitextParser:
         if str(self.code) != text:
             raise UpdateError("unsupported_structure", "Парсер изменил исходный викитекст")
         self.templates = top_templates(self.code)
+        self.raw_totals=[RawTotalRef(m[0],m.start()) for m in RAW_TOTAL.finditer(text)]
+        self.templates=sorted(self.templates+self.raw_totals,key=lambda t:t.start)
+
+    def table_nodes(self):
+        offset=0
+        for node in self.code.nodes:
+            text=str(node)
+            if isinstance(node,Text):
+                pos=0
+                for match in RAW_TOTAL.finditer(text):
+                    if match.start()>pos:yield Text(text[pos:match.start()]),None
+                    yield match[0],RawTotalRef(match[0],offset+match.start())
+                    pos=match.end()
+                if pos<len(text):yield Text(text[pos:]),None
+            else:yield node,None
+            offset+=len(text)
 
     def infobox(self, player):
         matches = [t for t in self.templates if t.name == "футболист"]
@@ -174,8 +216,8 @@ class WikitextParser:
                 raise UpdateError("unsupported_structure", "Нужен явный положительный параметр сезоны")
             return int(params["сезоны"].text.strip())
 
-        for node in self.code.nodes:
-            ref = TemplateRef(node, offset) if isinstance(node, Template) else None
+        for node,raw_ref in self.table_nodes():
+            ref = raw_ref or (TemplateRef(node, offset) if isinstance(node, Template) else None)
             offset += len(str(node))
             if ref and ref.start == header.start:
                 active = True

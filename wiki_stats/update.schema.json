@@ -501,7 +501,7 @@
         "expected": {
           "oneOf": [
             {
-              "$ref": "#/$defs/partial_stats"
+              "$ref": "#/$defs/table_expected_stats"
             },
             {
               "type": "null"
@@ -760,7 +760,14 @@
                     "type": "object",
                     "minProperties": 1,
                     "additionalProperties": {
-                      "$ref": "#/$defs/full_stats"
+                      "oneOf": [
+                        {
+                          "$ref": "#/$defs/full_stats"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
                     }
                   },
                   "league_wikitext": {
@@ -777,6 +784,9 @@
                   "insert_before_season": {
                     "type": "string",
                     "minLength": 1
+                  },
+                  "allow_unknown": {
+                    "type": "boolean"
                   }
                 },
                 "required": [
@@ -895,7 +905,7 @@
             ],
             "properties": {
               "expected": {
-                "$ref": "#/$defs/partial_stats"
+                "$ref": "#/$defs/table_expected_stats"
               },
               "payload": {
                 "type": "object",
@@ -928,7 +938,7 @@
             ],
             "properties": {
               "expected": {
-                "$ref": "#/$defs/partial_stats"
+                "$ref": "#/$defs/table_expected_stats"
               },
               "payload": {
                 "type": "object",
@@ -969,7 +979,14 @@
                     "type": "object",
                     "minProperties": 1,
                     "additionalProperties": {
-                      "$ref": "#/$defs/full_stats"
+                      "oneOf": [
+                        {
+                          "$ref": "#/$defs/full_stats"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
                     }
                   },
                   "league_wikitext": {
@@ -983,6 +1000,9 @@
                   "insert_before_club": {
                     "type": "string",
                     "minLength": 1
+                  },
+                  "allow_unknown": {
+                    "type": "boolean"
                   }
                 },
                 "required": [
@@ -1107,7 +1127,10 @@
                     "type": "boolean"
                   },
                   "statistics_as_of": {
-                    "type": "string",
+                    "type": [
+                      "string",
+                      "null"
+                    ],
                     "format": "date"
                   },
                   "categories": {
@@ -1164,7 +1187,14 @@
                                 "type": "object",
                                 "minProperties": 1,
                                 "additionalProperties": {
-                                  "$ref": "#/$defs/full_stats"
+                                  "oneOf": [
+                                    {
+                                      "$ref": "#/$defs/full_stats"
+                                    },
+                                    {
+                                      "type": "null"
+                                    }
+                                  ]
                                 }
                               }
                             },
@@ -1181,6 +1211,9 @@
                         "rows"
                       ]
                     }
+                  },
+                  "allow_unknown": {
+                    "type": "boolean"
                   }
                 },
                 "required": [
@@ -2167,6 +2200,29 @@
               }
             }
           ]
+        }
+      }
+    },
+    "table_expected_stats": {
+      "type": "object",
+      "additionalProperties": false,
+      "minProperties": 1,
+      "properties": {
+        "appearances": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100000
+        },
+        "goals": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": -100000,
+          "maximum": 100000
         }
       }
     }

@@ -62,37 +62,38 @@ def select_career(parser, player, op, new_period=None):
 
 
 def recompute_totals(text):
+    from .table_numbers import sum_known
     parser = WikitextParser(text)
     table = parser.club_table()
     width = len(table.categories)*2
     sums = {club:[0]*width for club in table.totals}
     for row in table.seasons:
         for i in range(width):
-            sums[row.club][i] += row.values[str(i+2)].numeric(signed=bool(i % 2))[0].value
+            sums[row.club][i] = sum_known([sums[row.club][i],row.values[str(i+2)].numeric(signed=bool(i % 2))[0].value])
     patches = []
     for club, values in table.totals.items():
         for i,value in enumerate(values):
             number = value.numeric(signed=bool(i % 2))[0]
-            if number.value != sums[club][i]:
+            if sums[club][i] is not None and number.value != sums[club][i]:
                 patches.append(number.patch(sums[club][i],'club_total'))
     for i,value in enumerate(table.grand_total):
-        total = sum(v[i] for v in sums.values())
+        total = sum_known(v[i] for v in sums.values())
         number = value.numeric(signed=bool(i % 2))[0]
-        if number.value != total:
+        if total is not None and number.value != total:
             patches.append(number.patch(total,'career_total'))
     for ref in parser.templates:
         if ref.name not in {'клстат/сезон','клстат/итогозаклуб','клстат/итого'}:continue
         values=ref.values();first=1 if ref.name=='клстат/итого' else 2
         for j,key in enumerate(('игры','голы')):
             if key not in values:continue
-            wanted=sum(values[str(first+i)].numeric(signed=bool(i%2))[0].value for i in range(j,width,2))
+            wanted=sum_known(values[str(first+i)].numeric(signed=bool(i%2))[0].value for i in range(j,width,2))
             if ref.name=='клстат/итогозаклуб':
                 club=next(c for c,l in table_layout(parser).items() if l['total'].start==ref.start)
-                wanted=sum(sums[club][i] for i in range(j,width,2))
-            elif ref.name=='клстат/итого':wanted=sum(sum(v[i] for v in sums.values()) for i in range(j,width,2))
+                wanted=sum_known(sums[club][i] for i in range(j,width,2))
+            elif ref.name=='клстат/итого':wanted=sum_known(sum_known(v[i] for v in sums.values()) for i in range(j,width,2))
             number=values[key].numeric(signed=bool(j))[0]
-            if number.value!=wanted:patches.append(number.patch(wanted,'explicit_total'))
-    return apply_patches(text,patches)
+            if wanted is not None and number.value!=wanted:patches.append(number.patch(wanted,'explicit_total'))
+    return apply_patches(text,patches,structural=True)
 
 
 def append_career(text, parser, player, op, resolver):
@@ -309,7 +310,7 @@ def execute_operation(text,player,op,resolver=None):
         if op['target']['structure']=='club_table' and arithmetic_warnings(text):
             raise UpdateError('totals_mismatch','Исходные итоги не совпадают; требуется явный update_totals с полными данными')
         patches = [numbers[f].patch(op['new'][f],f) for f in op['new'] if numbers[f].value!=op['new'][f]]
-        result = apply_patches(text,patches)
+        result = apply_patches(text,patches,structural=op['target']['structure']=='club_table')
         if op['target']['structure']=='club_table':
             result = recompute_totals(result)
         return result,'ready'

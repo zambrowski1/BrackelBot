@@ -61,6 +61,8 @@ def validate_package(package: dict) -> None:
             if date.fromisoformat(op["as_of"]) > generated:
                 raise UpdateError("invalid_input", "Дата охвата позже даты формирования пакета")
             if op["type"] in {"update_stats", "add_competition"} and (op["type"] == "update_stats" or package['schema_version'] == '1.1'):
+                if op['target']['structure']!='club_table' and any(v is None for v in op['expected'].values()):
+                    raise UpdateError('invalid_input','Неизвестные исходные числа допустимы только в ячейках КлСтат')
                 if set(op["expected"]) != set(op["new"]):
                     raise UpdateError("invalid_input", "expected и new должны содержать одинаковые поля")
                 target = op["target"]

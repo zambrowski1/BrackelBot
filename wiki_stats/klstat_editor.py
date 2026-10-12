@@ -36,8 +36,10 @@ def same_league_name(left, right):
 def numbers(table, payload):
     if payload.get('complete') is not True or set(payload['categories']) != set(table.categories):
         raise UpdateError('incomplete_statistics', 'Нужны подтверждённые данные по всем категориям таблицы')
-    values = [payload['categories'][c][f] for c in table.categories for f in ('appearances','goals')]
-    if any(type(v) is not int or not (-10000 if i % 2 else 0) <= v <= 10000 for i, v in enumerate(values)):
+    values = [None if payload['categories'][c] is None else payload['categories'][c][f] for c in table.categories for f in ('appearances','goals')]
+    if all(v is None for v in values):
+        raise UpdateError('incomplete_statistics','Нельзя создавать строку без единого показателя')
+    if any((v is None and not payload.get('allow_unknown')) or (v is not None and (type(v) is not int or not (-10000 if i % 2 else 0) <= v <= 10000)) for i, v in enumerate(values)):
         raise UpdateError('incomplete_statistics', 'Неизвестные показатели нельзя заменять нулями')
     return values
 
@@ -80,17 +82,23 @@ def clean_deletion(fragment):
 
 
 def row_text(ref, season, values):
+    from .table_numbers import display,sum_known,row_totals
     from .wikitext_parser import WikitextParser
     text = str(ref.node)
     params = WikitextParser(text).templates[0].values()
     # References and comments must not migrate from another season.
     if any(len(v.code.nodes) != 1 for v in params.values()):
-        return '{{КлСтат/Сезон|'+season+'|'+'|'.join(map(str,values))+'}}'
+        return '{{КлСтат/Сезон|'+season+'|'+'|'.join(map(display,values))+row_totals(values)+'}}'
     patches = [exact_patch(params['1'], season, 'season')]
-    patches += [exact_patch(params[str(i+2)], str(n), 'stat') for i,n in enumerate(values)]
+    patches += [exact_patch(params[str(i+2)], display(n), 'stat') for i,n in enumerate(values)]
     for j,key in enumerate(('игры','голы')):
-        if key in params:patches.append(exact_patch(params[key],str(sum(values[j::2])),'row_total'))
-    return apply_patches(text, patches, structural=True)
+        if key in params:patches.append(exact_patch(params[key],display(sum_known(values[j::2])),'row_total'))
+    result=apply_patches(text, patches, structural=True)
+    if any(v is None for v in values):
+        node=mw.parse(result).filter_templates()[0]
+        for j,key in enumerate(('игры','голы')):node.add(key,display(sum_known(values[j::2])))
+        result=str(node)
+    return result
 
 
 def insert_season(text, parser, op):
@@ -182,11 +190,12 @@ def edit_table(text, parser, op, resolver):
         if previous is None:
             raise UpdateError('target_not_found','Не найден блок клуба-якоря')
         newline = '\r\n' if '\r\n' in text else '\n'
-        stats = '|'.join(map(str,values))
+        from .table_numbers import display,row_totals,club_total
+        stats = '|'.join(map(display,values))
         body = newline.join([
             '{{КлСтат/Клуб|'+club+'|'+league+'|сезоны=1}}',
-            '{{КлСтат/Сезон|'+op['season']+'|'+stats+'}}',
-            '{{КлСтат/ИтогоЗаКлуб||'+stats+'}}'])
+            '{{КлСтат/Сезон|'+op['season']+'|'+stats+row_totals(values)+'}}',
+            club_total(values)])
         addition = body+newline if before else newline+body
         end = previous['club'].start if before else previous['total'].start+len(str(previous['total'].node))
         return refresh_confirmed_range(recompute_totals(apply_patches(text,[Patch(end,end,'',addition,'new_table_club')],structural=True))), 'ready'

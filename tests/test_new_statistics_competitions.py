@@ -38,5 +38,6 @@ def test_new_table_has_all_competitions_and_combines_domestic_cups_once():
 def test_missing_cup_does_not_become_zero_or_a_league_only_table():
     api=AllCompetitions();api.missing_cup=True
     _,plan,report=prepare(api)
-    assert '{{КлСтат|' not in plan.preview
-    assert any(i['code']=='new_row_needs_all_categories' and 'Кубки' in i['missing_categories'] for i in report['review'])
+    assert '{{КлСтат|Чемпионат|Кубки|Еврокубки|Прочие}}' in plan.preview
+    assert '{{КлСтат/Сезон|2026/27|5|2|—|—|5|2|5|2|игры=—|голы=—}}' in plan.preview
+    assert any(i['code']=='unknown_table_cells' and 'Кубки' in i['missing_categories'] for i in report['review'])

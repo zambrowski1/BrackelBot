@@ -11,6 +11,9 @@ from .klstat_editor import numbers, season_key, league_link
 
 
 def render_section(payload, resolver, as_of):
+    from .table_numbers import display,sum_known,row_totals,club_total
+    if payload.get('allow_unknown') and payload['full_career']:
+        raise UpdateError('incomplete_statistics','Таблица с неизвестными ячейками не заявляет полный итог карьеры')
     categories=payload['categories']
     if not 1 <= len(categories) <= 5 or len(set(categories)) != len(categories):
         raise UpdateError('incomplete_statistics','Нужны 1–5 разных категорий соревнований')
@@ -22,11 +25,11 @@ def render_section(payload, resolver, as_of):
             raise UpdateError('unsupported_structure','Неподдерживаемый заголовок категории')
     if resolver is None:
         raise UpdateError('entity_unverified','Нужны проверенные ссылки клубов и лиг')
-    day=date.fromisoformat(payload['statistics_as_of'])
-    if day > date.fromisoformat(as_of):
+    day=date.fromisoformat(payload['statistics_as_of']) if payload['statistics_as_of'] else None
+    if day and day > date.fromisoformat(as_of):
         raise UpdateError('source_coverage_mismatch','Дата статистики позднее даты охвата источников')
-    lines=['== Статистика выступлений ==','', '=== Клубная статистика ===',
-           '{{обновлено|'+day.isoformat()+'}}']
+    lines=['== Статистика выступлений ==','', '=== Клубная статистика ===']
+    if day:lines.append('{{обновлено|'+day.isoformat()+'}}')
     body=['{{КлСтат|'+'|'.join(categories)+'}}']
     grand=[0]*(2*len(categories)); seen=set(); years=[]; checked_leagues=set()
     for club in payload['clubs']:
@@ -53,9 +56,9 @@ def render_section(payload, resolver, as_of):
             if title not in checked_leagues:
                 resolver.client.get_page_identity(title)
                 checked_leagues.add(title)
-            values=numbers(SimpleNamespace(categories=categories),{'categories':row['categories'],'complete':True})
+            values=numbers(SimpleNamespace(categories=categories),{'categories':row['categories'],'complete':True,'allow_unknown':payload.get('allow_unknown',False)})
             parsed.append((league,row['season'],values))
-            total=[a+b for a,b in zip(total,values)]
+            total=[sum_known([a,b]) for a,b in zip(total,values)]
         single_league=len({r[0] for r in parsed})==1
         if single_league:body[club_index]='{{КлСтат/Клуб|'+name+'|'+parsed[0][0]+'|сезоны='+str(len(rows))+'}}'
         i=0
@@ -64,10 +67,10 @@ def render_section(payload, resolver, as_of):
             while end<len(parsed) and parsed[end][0]==parsed[i][0]: end+=1
             if not single_league:body.append('{{КлСтат/Лига|'+parsed[i][0]+'|сезоны='+str(end-i)+'}}')
             for league,season,values in parsed[i:end]:
-                body.append('{{КлСтат/Сезон|'+season+'|'+'|'.join(map(str,values))+'}}')
+                body.append('{{КлСтат/Сезон|'+season+'|'+'|'.join(map(display,values))+row_totals(values)+'}}')
             i=end
-        body.append('{{КлСтат/ИтогоЗаКлуб||'+'|'.join(map(str,total))+'}}')
-        grand=[a+b for a,b in zip(grand,total)]
+        body.append(club_total(total))
+        grand=[sum_known([a,b]) for a,b in zip(grand,total)]
     if not years:
         raise UpdateError('incomplete_statistics','Нет подтверждённых сезонов')
     # The native total template always says "Всего за карьеру". A bounded

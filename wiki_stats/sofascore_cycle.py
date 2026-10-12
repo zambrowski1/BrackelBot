@@ -563,6 +563,11 @@ def _prepare_statistics(snapshot, mapping, api, wiki, resolver, *, max_requests=
                     'statistics_appearances':record['numbers']['appearances'],
                     'history_appearances':len(club_matches) if club_matches is not None else None})
                 continue
+        if statistics_since is not None and record['tournament_id'] != 242:
+            # Primary mode copies the explicit tournament aggregate after
+            # player/club/season checks. No protocol-by-protocol recount.
+            verified.append(record)
+            continue
         if record['tournament_id'] in EUROPEAN_CUPS:
             if statistics_since is not None:
                 # Copy this tournament's explicit aggregate. This mode does
@@ -702,6 +707,9 @@ def _prepare_statistics(snapshot, mapping, api, wiki, resolver, *, max_requests=
         rows = [r for r in records if r['season']==label and r['resolved'].qid==qid and r['category']==category]
         if not rows:
             if (label,category) in failed_categories:return None
+            if statistics_since is not None:
+                # No season response is unknown, never an inferred zero.
+                return None
             if (closed_spell and (qid,label)==(closed_spell['qid'],closed_spell['season'])
                     and category in {cup_category,'Стыковые матчи','Прочие'}):
                 return closed_spell['numbers']
@@ -892,16 +900,19 @@ def _prepare_statistics(snapshot, mapping, api, wiki, resolver, *, max_requests=
             selected = [r for r in records if r['resolved'].qid == qid and r['season']==label]
             categories = {c: category_numbers(qid, label, c) for c in table.categories}
             league = [r for r in selected if r['tournament_id'] in LEAGUES]
-            if len(league)!=1 or any(numbers is None for numbers in categories.values()):
+            if len(league)!=1 or statistics_since is None and any(numbers is None for numbers in categories.values()):
                 issues.append({'code': 'new_row_needs_all_categories', 'qid': qid, 'season': label,
                     'missing_categories': [c for c, value in categories.items() if value is None],
                     'league_status': 'missing' if not league else 'ambiguous' if len(league)>1 else 'confirmed'})
                 continue
+            missing=[c for c,n in categories.items() if n is None]
+            if missing:issues.append({'code':'unknown_table_cells','qid':qid,'season':label,'missing_categories':missing})
             blocks = [r for r in table.seasons if row_entity(r.club)==qid]
             blocks += planned_rows.get(qid,[])
             ent = deepcopy(league[0]['entity'])
             payload = {'complete': True, 'categories': categories,
                        'league_wikitext': LEAGUE_LINKS[league[0]['tournament_id']]}
+            if missing:payload['allow_unknown']=True
             if blocks:
                 ent['wikitext'] = blocks[0].club
                 earlier = sorted((r for r in blocks if table_season_name(r.season) < label),key=lambda r:table_season_name(r.season))
@@ -944,7 +955,7 @@ def _prepare_statistics(snapshot, mapping, api, wiki, resolver, *, max_requests=
                 if len(old_rows)!=1:return None
                 a=old_rows[0].values['2'].numeric()[0].value
                 g=old_rows[0].values['3'].numeric(signed=True)[0].value
-                if a<0 or (g>0 if goalkeeper else g<0):return None
+                if a is None or g is None or a<0 or (g>0 if goalkeeper else g<0):return None
                 preserved.append({'appearances':a,'goals':g})
             first=statistics_since
         if sorted(years) != list(range(first, last+1)):
@@ -1110,26 +1121,28 @@ def _prepare_statistics(snapshot, mapping, api, wiki, resolver, *, max_requests=
         issues.append({'code': 'match_date_unconfirmed'})
     if not table:
         league_records = [r for r in records if r['tournament_id'] in LEAGUES]
-        if confirmed and league_records:
+        if league_records and (confirmed or statistics_since is not None):
             clubs = {}
             categories = [league_category] + [c for c in (cup_category,european_category,other_category)
                 if any(category_for(tid)==c for _,tid,*_ in queries)]
             for record in sorted(league_records,key=lambda r:r['season']):
                 qid = record['resolved'].qid
                 values = {c:category_numbers(qid,record['season'],c) for c in categories}
-                if any(v is None for v in values.values()):
+                if statistics_since is None and any(v is None for v in values.values()):
                     issues.append({'code':'new_row_needs_all_categories','qid':qid,
                         'season':record['season'],'missing_categories':[c for c,v in values.items() if v is None]})
                     continue
+                missing=[c for c,v in values.items() if v is None]
+                if missing:issues.append({'code':'unknown_table_cells','qid':qid,'season':record['season'],'missing_categories':missing})
                 block = clubs.setdefault(qid, {'entity': record['entity'], 'rows': []})
                 block['rows'].append({'season': record['season'],
                     'league_wikitext': LEAGUE_LINKS[record['tournament_id']],
                     'categories': values})
             if clubs:
                 add('create_statistics_section', {'name': 'КлСтат', 'wikitext': '{{КлСтат}}'},
-                    {'structure': 'club_table'}, payload={'complete': True, 'full_career': False,
+                    {'structure': 'club_table'}, payload={'complete': True, 'full_career': False,'allow_unknown':statistics_since is not None,
                     'statistics_as_of': confirmed, 'categories': categories, 'clubs': list(clubs.values())})
-                issues.append({'code': 'partial_section', 'message': 'Созданы только строки с подтверждёнными категориями; полного итога карьеры нет'})
+                issues.append({'code': 'partial_section', 'message': 'Известные сезонные показатели скопированы; неизвестные ячейки обозначены длинным тире, полного итога карьеры нет'})
             else:
                 issues.append({'code':'section_needs_confirmed_evidence'})
         else:
@@ -1148,6 +1161,8 @@ def _prepare_statistics(snapshot, mapping, api, wiki, resolver, *, max_requests=
                     {'structure': 'club_table'}, payload={'expected_value': old, 'statistics_as_of': table_date})
     missing_rows = [r for r in issues if r['code']=='new_row_needs_all_categories']
     source_warnings = []
+    unknown_cells=[i for i in issues if i['code']=='unknown_table_cells']
+    if unknown_cells:source_warnings.append('Неизвестные ячейки новых сезонов и неподтверждённые новые итоги обозначены длинным тире; прежние итоги сохраняются. Подробности в отчёте.')
     uncovered = [i for i in issues if i['code']=='category_not_covered']
     if uncovered:
         source_warnings.append('Не подтверждены '+str(len(uncovered))+' графы существующих клубных строк; '
@@ -1227,6 +1242,7 @@ def _prepare_statistics(snapshot, mapping, api, wiki, resolver, *, max_requests=
     # The adapter prepares review diffs; automatic mainspace source attestation
     # is deliberately not fabricated by a manually prepared sandbox plan.
     return package, plan, {'provider': 'sofascore', 'player_id': mapping['api_id'],
+        'collection_mode':'season_aggregates' if statistics_since is not None else 'match_verified',
         'statistics_since':statistics_since,'old_seasons_policy':'preserve_existing' if statistics_since is not None else 'verify_full_history',
         'confirmed_match_date': confirmed, 'covered_statistics': len(records), 'review': issues,
         'match_recovery_failures':match_budget.get('failures',[]),

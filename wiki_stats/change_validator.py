@@ -28,6 +28,7 @@ def references(text):
 
 
 def arithmetic_warnings(text):
+    from .table_numbers import sum_known
     parser = WikitextParser(text)
     if not any(t.name == "клстат" for t in parser.templates):
         return []
@@ -39,18 +40,20 @@ def arithmetic_warnings(text):
     sums = defaultdict(lambda: [0]*width)
     for row in table.seasons:
         for i in range(width):
-            sums[row.club][i] += row.values[str(i+2)].numeric(signed=bool(i % 2))[0].value
+            sums[row.club][i] = sum_known([sums[row.club][i],row.values[str(i+2)].numeric(signed=bool(i % 2))[0].value])
     warnings = []
     for club, values in table.totals.items():
-        if [v.numeric(signed=bool(i % 2))[0].value for i, v in enumerate(values)] != sums[club]:
+        actual=[v.numeric(signed=bool(i % 2))[0].value for i,v in enumerate(values)]
+        if any(wanted is not None and actual[i]!=wanted for i,wanted in enumerate(sums[club])):
             warnings.append(f"Итог клуба не равен сумме сезонов: {club}")
-    grand = [sum(v[i] for v in sums.values()) for i in range(width)]
-    if table.grand_total and [v.numeric(signed=bool(i % 2))[0].value for i, v in enumerate(table.grand_total)] != grand:
+    grand = [sum_known(v[i] for v in sums.values()) for i in range(width)]
+    if table.grand_total and any(wanted is not None and table.grand_total[i].numeric(signed=bool(i%2))[0].value!=wanted for i,wanted in enumerate(grand)):
         warnings.append("Итог карьеры не равен сумме сезонов")
     for ref in parser.templates:
         if ref.name!='клстат/сезон':continue
         values=ref.values()
         for j,key in enumerate(('игры','голы')):
-            if key in values and values[key].numeric(signed=bool(j))[0].value!=sum(values[str(2+i)].numeric(signed=bool(i%2))[0].value for i in range(j,width,2)):
+            wanted=sum_known(values[str(2+i)].numeric(signed=bool(i%2))[0].value for i in range(j,width,2))
+            if key in values and wanted is not None and values[key].numeric(signed=bool(j))[0].value!=wanted:
                 warnings.append('Общий итог сезона не равен сумме турниров: '+values['1'].text.strip())
     return warnings

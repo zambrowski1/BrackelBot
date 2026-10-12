@@ -13,10 +13,15 @@ def flagged_label(label,flag):
     if not flag or any(c in flag for c in '|{}[]<>\r\n'):
         raise UpdateError('flag_unverified','Неподдерживаемое название флага')
     code=mw.parse(label)
+    markers=[]
     for template in list(code.filter_templates(recursive=False)):
         name=str(template.name).strip().casefold()
         if name.startswith('флаг ') or name in {'флаг','flagicon','флагификация'}:code.remove(template)
-    return '{{Флаг '+flag+'|20px}} '+str(code).strip()
+        elif name in {'аренда','фарм-клуб'}:
+            if template.params:raise UpdateError('needs_review','Сложная отметка аренды или фарм-клуба требует проверки')
+            markers.append(str(template));code.remove(template)
+    prefix=''.join(markers)+' ' if markers else ''
+    return '{{Флаг '+flag+'|20px}} '+prefix+str(code).strip()
 
 
 def club_headers(text):

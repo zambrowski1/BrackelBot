@@ -56,3 +56,17 @@ def test_full_sofascore_cycle_flags_old_retained_headers_and_replays():
     assert all(c.status in {'ready','already_applied'} for c in plan.changes)
     assert '{{КлСтат/Клуб|{{Флаг Германии|20px}}' in plan.preview
     assert not full_cycle(plan.preview.replace('| дата рождения = 22.08.1999\n',''))[1].diff
+
+
+@pytest.mark.parametrize('marker',['аренда','фарм-клуб'])
+@pytest.mark.parametrize('label',['{{MARKER}} {{Флаг Германии|20px}} [[Клуб|Подпись]]',
+    '{{Флаг Германии|20px}} [[Клуб|Подпись]] {{MARKER}}',
+    '{{Флаг Германии|20px}} {{MARKER}}[[Клуб|Подпись]]'])
+def test_flag_then_role_marker_then_club_for_every_original_marker_position(marker,label):
+    old=label.replace('MARKER',marker)+'<!--сохранить--><ref>Источник</ref>'
+    expected='{{Флаг Германии|20px}} {{'+marker+'}} [[Клуб|Подпись]]<!--сохранить--><ref>Источник</ref>'
+    new=flagged_label(old,'Германии')
+    prefix=expected[:expected.index('<!--')]
+    assert new.startswith(prefix) and new[len(prefix):].strip()=='<!--сохранить--><ref>Источник</ref>'
+    assert references(new)==references(old)
+    assert flagged_label(new,'Германии')==new

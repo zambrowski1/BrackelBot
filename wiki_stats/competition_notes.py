@@ -5,6 +5,7 @@ from .competition_labels import category_label
 # Sofascore IDs are provider-specific, not interchangeable with API-Football.
 LINKS = {
     217: '[[Кубок Германии по футболу|Кубок Германии]]',
+    307: '[[Кубок Хорватии по футболу|Кубок Хорватии]]',
     19: '[[Кубок Англии по футболу|Кубок Англии]]',
     21: '[[Кубок Английской футбольной лиги]]',
     328: '[[Кубок Италии по футболу|Кубок Италии]]',
@@ -26,7 +27,7 @@ def column_notes(records, clubs, categories):
         category=record['category']
         if key not in included or category not in categories:
             continue
-        if category_label(category) not in {'Кубки','Кубок','Национальный кубок','Кубок Германии','Кубок лиги','Еврокубки','Прочие'}:
+        if category_label(category) not in {'Кубки','Кубок','Кубок страны','Национальный кубок','Кубок Германии','Кубок лиги','Еврокубки','Прочие','Остальные'}:
             continue
         block=next(b for b in clubs if b['entity']['wikidata_id']==key[0])
         row=next(r for r in block['rows'] if r['season']==key[1])

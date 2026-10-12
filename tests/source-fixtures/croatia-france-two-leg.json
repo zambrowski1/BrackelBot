@@ -1,0 +1,171 @@
+{
+  "id": 13157484,
+  "custom_id": "GObspUb",
+  "slug": "croatia-france",
+  "link": "https://www.sofascore.com/football/match/croatia-france/GObspUb#id:13157484",
+  "start_time": "2025-03-23T19:45:00Z",
+  "status": {
+    "code": 120,
+    "type": "finished",
+    "description": "AP"
+  },
+  "is_live": false,
+  "is_finished": true,
+  "winner_code": 1,
+  "home_team": {
+    "id": 4481,
+    "name": "France",
+    "short_name": "France",
+    "code": "FRA",
+    "slug": "france",
+    "link": "https://www.sofascore.com/team/football/france/4481",
+    "image_link": "https://img.sofascore.com/api/v1/team/4481/image",
+    "sport": {
+      "id": 1,
+      "name": "Football",
+      "slug": "football"
+    },
+    "country": {
+      "name": "France",
+      "alpha2": "FR",
+      "alpha3": "FRA",
+      "slug": "france"
+    },
+    "gender": "M",
+    "is_national": true,
+    "colors": {
+      "primary": "#01509e",
+      "secondary": "#e30613",
+      "text": "#e30613"
+    },
+    "followers_count": 1923685,
+    "ranking": 3
+  },
+  "away_team": {
+    "id": 4715,
+    "name": "Croatia",
+    "short_name": "Croatia",
+    "code": "CRO",
+    "slug": "croatia",
+    "link": "https://www.sofascore.com/team/football/croatia/4715",
+    "image_link": "https://img.sofascore.com/api/v1/team/4715/image",
+    "sport": {
+      "id": 1,
+      "name": "Football",
+      "slug": "football"
+    },
+    "country": {
+      "name": "Croatia",
+      "alpha2": "HR",
+      "alpha3": "HRV",
+      "slug": "croatia"
+    },
+    "gender": "M",
+    "is_national": true,
+    "colors": {
+      "primary": "#ff0000",
+      "secondary": "#ffffff",
+      "text": "#ffffff"
+    },
+    "followers_count": 506719,
+    "ranking": 14
+  },
+  "home_score": {
+    "current": 7,
+    "display": 2,
+    "periods": {
+      "period1": 0,
+      "period2": 2,
+      "normaltime": 2,
+      "extra1": 0,
+      "extra2": 0,
+      "overtime": 0,
+      "penalties": 5,
+      "aggregated": 2
+    }
+  },
+  "away_score": {
+    "current": 4,
+    "display": 0,
+    "periods": {
+      "period1": 0,
+      "period2": 0,
+      "normaltime": 0,
+      "extra1": 0,
+      "extra2": 0,
+      "overtime": 0,
+      "penalties": 4,
+      "aggregated": 2
+    }
+  },
+  "round": {
+    "number": 27,
+    "name": "Quarterfinals",
+    "slug": "quarterfinals",
+    "cup_round_type": 4
+  },
+  "tournament": {
+    "id": 10783,
+    "name": "UEFA Nations League",
+    "slug": "uefa-nations-league",
+    "link": "https://www.sofascore.com/tournament/football/europe/uefa-nations-league/10783",
+    "image_link": "https://img.sofascore.com/api/v1/unique-tournament/10783/image",
+    "dark_image_link": "https://img.sofascore.com/api/v1/unique-tournament/10783/image/dark",
+    "colors": {
+      "primary": "#3a4179",
+      "secondary": "#e5a422"
+    },
+    "followers_count": 311748,
+    "category": {
+      "id": 1465,
+      "name": "Europe",
+      "slug": "europe",
+      "link": "https://www.sofascore.com/football/europe",
+      "sport": {
+        "id": 1,
+        "name": "Football",
+        "slug": "football"
+      },
+      "country": null,
+      "flag_image_link": "https://img.sofascore.com/api/v1/country/europe/flag"
+    },
+    "live_activity_enabled": true,
+    "has_player_statistics": true,
+    "group": {
+      "id": 70578,
+      "name": "UEFA Nations League, Finals",
+      "slug": "uefa-nations-league-finals",
+      "is_group": false
+    },
+    "is_live": false
+  },
+  "season": {
+    "id": 58337,
+    "name": "UEFA Nations League 24/25",
+    "year": "24/25"
+  },
+  "time": {
+    "injury_time1": 2,
+    "injury_time2": 5,
+    "injury_time3": 1,
+    "injury_time4": 0,
+    "current_period_start_time": "2025-03-23T22:05:18Z"
+  },
+  "coverage": -1,
+  "has_highlights": false,
+  "has_player_statistics": true,
+  "has_player_heatmap": true,
+  "is_final_result_only": false,
+  "aggregated_winner_code": 1,
+  "previous_leg_event_id": 13157483,
+  "cup_matches_in_round": 2,
+  "player": {
+    "team_id": 4715,
+    "is_on_bench": false,
+    "statistics": {
+      "rating": 6.6,
+      "minutes_played": 71
+    },
+    "incidents": null
+  }
+}

@@ -74,9 +74,16 @@ def format_scope(scope,resolve_team,*,goalkeeper=False):
         away_pens=(match['away_score'].get('periods') or {}).get('penalties')
         if home_pens is not None or away_pens is not None:
             if (type(home_pens) is not int or type(away_pens) is not int or home_pens<0 or away_pens<0
-                    or home_pens==away_pens or verified['own_score']!=verified['opponent_score']):
+                    or home_pens==away_pens):
                 raise UpdateError('national_match_score_mismatch','Не подтверждена серия пенальти')
-            row['пенальти']=f'{home_pens}:{away_pens}' if own_home else f'{away_pens}:{home_pens}'
+            penalties=f'{home_pens}:{away_pens}' if own_home else f'{away_pens}:{home_pens}'
+            if verified['own_score']!=verified['opponent_score']:
+                from .sofascore_score import two_leg_aggregate,match_score
+                aggregate=two_leg_aggregate(match)
+                if aggregate is None or match_score(match) is None:
+                    raise UpdateError('national_match_score_mismatch','Не подтверждена ничья по сумме двух матчей')
+                row['примечание']=f'По сумме двух матчей {aggregate[0]}:{aggregate[1]}; серия пенальти {penalties}'
+            else:row['пенальти']=penalties
         rows.append(row)
         url=match.get('link')
         if not isinstance(url,str) or not url.startswith('https://www.sofascore.com/'):

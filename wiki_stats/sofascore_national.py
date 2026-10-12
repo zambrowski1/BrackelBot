@@ -39,9 +39,9 @@ def embedded_numbers(row, team_id, *, goalkeeper=False, goals_closed=False):
 
 
 def collect_national_scope(pid, team_id, history, api, budget, now, *, goalkeeper=False):
-    def fail(code, mid=None):
+    def fail(code, mid=None, **details):
         budget.setdefault('failures', []).append({'code':code,'team_id':team_id,
-            'match_id':mid,'remaining':budget['remaining']})
+            'match_id':mid,'remaining':budget['remaining'],**details})
         return None
     if history.get('complete') is not True:return fail('national_history_incomplete')
     if not hasattr(api,'national_statistics'):return fail('national_adapter_unsupported')
@@ -62,7 +62,7 @@ def collect_national_scope(pid, team_id, history, api, budget, now, *, goalkeepe
             return fail('national_aggregate_unproven')
         all_rows=history.get('matches')
         if not isinstance(all_rows,list):return fail('national_history_incomplete')
-        rows=[];seen=set()
+        rows=[];seen=set();club_opponents=[]
         for row in all_rows:
             if not isinstance(row,dict):return fail('national_history_invalid')
             if (row.get('player') or {}).get('team_id')!=team_id:continue
@@ -76,8 +76,16 @@ def collect_national_scope(pid, team_id, history, api, budget, now, *, goalkeepe
             teams=[row.get(k) or {} for k in ('home_team','away_team')]
             if (sum(t.get('id')==team_id for t in teams)!=1
                     or any(type(t.get('id')) is not int or t['id']<=0
-                           or t.get('is_national') is not True
                            or (t.get('sport') or {}).get('slug')!='football' for t in teams)):
+                return fail('national_match_identity_mismatch',mid)
+            own=next(t for t in teams if t['id']==team_id)
+            opponent=next(t for t in teams if t['id']!=team_id)
+            if own.get('is_national') is True and opponent.get('is_national') is False:
+                # The history can include exhibition games against clubs.
+                # Only an explicit club flag permits exclusion; missing or
+                # contradictory team identity still stops the whole scope.
+                club_opponents.append(mid);continue
+            if any(t.get('is_national') is not True for t in teams):
                 return fail('national_match_identity_mismatch',mid)
             rows.append((day,row))
         verified=[];absences=[];total={'appearances':0,'goals':0}
@@ -109,11 +117,13 @@ def collect_national_scope(pid, team_id, history, api, budget, now, *, goalkeepe
                              'own_score':own_score,'opponent_score':other_score})
         if (total['appearances']!=expected['appearances']
                 or not goalkeeper and total['goals']!=expected['goals']):
-            return fail('national_aggregate_mismatch')
+            return fail('national_aggregate_mismatch',expected={'appearances':expected['appearances'],'goals':expected['goals']},
+                        observed=dict(total),excluded_club_match_ids=club_opponents)
         # Aggregate "goals" means scored goals, never keeper concessions.
         # Concessions are derived only from the independently verified games.
         return {'complete':True,'team':team,'numbers':total,'matches':verified,
                 'verified_absence_match_ids':absences,'source_aggregate':expected,
+                'excluded_club_match_ids':club_opponents,
                 'statistics_as_of':verified[-1]['date'] if verified else None}
     except UpdateError as exc:
         if exc.code in {'quota_exhausted','api_rate_limited','api_authentication'}:budget['remaining']=0

@@ -22,8 +22,8 @@ from .sofascore_limits import DEFAULT_STATISTICS, DEFAULT_MATCH_PAGES, DEFAULT_M
 
 # The regularSeason query keeps relegation playoffs out of infobox totals.
 GERMAN_LEAGUES = {35, 44, 491, 42, 493, 1079, 1085}
-LEAGUES = GERMAN_LEAGUES | {38,17,23,34,8,37,52,172,242}
-CUPS = {217,19,328,96,329}
+LEAGUES = GERMAN_LEAGUES | {38,17,23,34,8,37,52,170,172,242}
+CUPS = {217,19,307,328,96,329}
 LEAGUE_CUPS = {21}
 EUROPEAN_CUPS = {7, 679, 17015}
 SUPER_CUPS = {799}
@@ -42,6 +42,7 @@ LEAGUE_LINKS = {35: '[[Чемпионат Германии по футболу|�
                 37:'[[Чемпионат Нидерландов по футболу|Эредивизи]]',
                 52:'[[Чемпионат Турции по футболу|Суперлига]]',
                 172:'[[Чемпионат Чехии по футболу|Первая лига]]',
+                170:'[[Чемпионат Хорватии по футболу|Первая лига]]',
                 242:'[[MLS]]'}
 
 
@@ -438,11 +439,11 @@ def _prepare_statistics(snapshot, mapping, api, wiki, resolver, *, max_requests=
     league_category=category_names.get('Чемпионат',category_names.get('Лига','Чемпионат'))
     cup_category = None
     if table:
-        supported = {'Национальный кубок', 'Кубок Германии','Кубок','Кубки'}
+        supported = {'Национальный кубок', 'Кубок Германии','Кубок','Кубки','Кубок страны'}
         matches = [c for c in table.categories if category_label(c) in supported]
         cup_category = matches[0] if len(matches) == 1 else None
     european_category = category_names.get('Еврокубки')
-    other_category = category_names.get('Прочие')
+    other_category = category_names.get('Прочие',category_names.get('Остальные'))
     league_cup_category = category_names.get('Кубок лиги')
     if not table:
         cup_category = 'Кубки'
@@ -992,12 +993,23 @@ def _prepare_statistics(snapshot, mapping, api, wiki, resolver, *, max_requests=
                     competition={'name':'Чемпионат','category':'all','scope':'league'},expected=old,new=new)
             modern_closed_coverage.add((period,text))
     club_consistent = False
+    current_total = None
     if current_rows and len({r[0] for r in current_rows})==1 and len({r[1] for r in current_rows})==1:
         period, text, value = current_rows[0]
         first = validate_period(period)
+        stint_start=f'{first}-01-01'
+        if arrival:
+            try:arrival_day=date.fromisoformat(arrival['transfer_date'][:10])
+            except (KeyError,TypeError,ValueError):arrival_day=None
+            if arrival_day and arrival_day.year==first and arrival_day<=now.date():
+                # A loan return followed by a permanent arrival in the same
+                # calendar year belongs to the previous stint, not this one.
+                stint_start=arrival_day.isoformat()
         departed = any(t.get('transfer_from',{}).get('id')==current['id']
-                       and str(t.get('transfer_date',''))[:4]>=str(first) for t in transfers['transfers'])
+                       and stint_start<=str(t.get('transfer_date',''))[:10]<=now.date().isoformat()
+                       for t in transfers['transfers'])
         new = None if departed else total(resolved_current.qid, first, current_season)
+        current_total = new
         if new:
             old = dict(zip(('appearances', 'goals'), [n.value for n in value.numeric(pair=True)]))
             if len(current_rows)>1:
@@ -1084,6 +1096,8 @@ def _prepare_statistics(snapshot, mapping, api, wiki, resolver, *, max_requests=
     def career_covered(period, team):
         first = validate_period(period)
         if is_active_period(period):
+            if resolved_current is not None and row_entity(team)==resolved_current.qid and current_total is None:
+                return False
             last = current_season
         else:
             if statistics_since is not None:

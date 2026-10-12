@@ -114,3 +114,28 @@ def test_one_run_updates_keeper_card_and_klstat_and_adds_national_matches(monkey
 def test_invalid_boundary_is_rejected_before_source_access(boundary):
     with pytest.raises(UpdateError) as exc:prepare_player(snapshot(),{},None,None,None,statistics_since=boundary,now=NOW)
     assert exc.value.code=='season_boundary_invalid'
+
+
+def test_same_year_loan_return_before_permanent_arrival_does_not_block_current_stint():
+    class Returned(Seasons):
+        def transfers(self,pid):
+            return {'player_id':pid,'transfers':[
+                {'transfer_date':'2019-06-30','transfer_from':{'id':2600},'transfer_to':{'id':99}},
+                {'transfer_date':'2019-09-02','transfer_from':{'id':99},'transfer_to':{'id':2600}}]}
+    _,plan,report=run(article(),Returned())
+    assert '45 (15)' in plan.preview
+    assert not any(i['code']=='career_incomplete' for i in report['review'])
+    assert 'обновление данных о клубе = 08.10.2026' in plan.preview
+    assert not run(plan.preview,Returned())[1].diff
+
+
+def test_departure_inside_the_current_period_blocks_numbers_and_card_date():
+    class Departed(Seasons):
+        def transfers(self,pid):
+            return {'player_id':pid,'transfers':[
+                {'transfer_date':'2019-09-02','transfer_from':{'id':99},'transfer_to':{'id':2600}},
+                {'transfer_date':'2024-06-30','transfer_from':{'id':2600},'transfer_to':{'id':99}}]}
+    _,plan,report=run(article(),Departed())
+    assert '| 4 (1)<ref name="x"/>' in plan.preview
+    assert 'обновление данных о клубе = 04.10.2026' in plan.preview
+    assert any(i['code']=='global_date_incomplete_coverage' for i in report['review'])

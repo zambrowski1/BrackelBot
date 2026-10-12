@@ -90,3 +90,31 @@ def test_extra_shootout_rounds_never_change_the_playing_score(playing_goals, kic
     for side in ('home_score', 'away_score'):
         row[side]['current'] = playing_goals
     assert match_score(row) == (playing_goals, playing_goals)
+
+
+TWO_LEG=json.loads((Path(__file__).parent/'source-fixtures/croatia-france-two-leg.json').read_text(encoding='utf8'))
+
+
+def test_actual_two_leg_shootout_keeps_the_second_leg_loss_separate_from_kicks():
+    from wiki_stats.national_match_format import format_scope
+    from wiki_stats.sbmatches_editor import validate_row
+    assert match_score(TWO_LEG)==(2,0)
+    scope={'complete':True,'team':{'id':4715},'numbers':{'appearances':1,'goals':0},'statistics_as_of':'2025-03-23',
+           'matches':[{'match':TWO_LEG,'date':'2025-03-23','numbers':{'appearances':1,'goals':0},'own_score':0,'opponent_score':2}]}
+    rows,_=format_scope(scope,lambda team:{'wikitext':'Франция'})
+    assert rows[0]['счёт']=='0:2' and 'пенальти' not in rows[0]
+    assert rows[0]['примечание']=='По сумме двух матчей 2:2; серия пенальти 4:5'
+    validate_row(rows[0])
+
+
+@pytest.mark.parametrize('fault',['previous_leg','round_size','aggregate','missing_aggregate','negative_previous_score','current'])
+def test_two_leg_exception_requires_complete_consistent_aggregate_proof(fault):
+    row=deepcopy(TWO_LEG)
+    if fault=='previous_leg':row.pop('previous_leg_event_id')
+    elif fault=='round_size':row['cup_matches_in_round']=True
+    elif fault=='aggregate':row['away_score']['periods']['aggregated']=3
+    elif fault=='missing_aggregate':row['home_score']['periods'].pop('aggregated')
+    elif fault=='negative_previous_score':
+        for side in ('home_score','away_score'):row[side]['periods']['aggregated']=1
+    else:row['home_score']['current']=2
+    assert match_score(row) is None

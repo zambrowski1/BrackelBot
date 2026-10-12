@@ -132,3 +132,26 @@ def test_actual_orban_full_history_and_public_match_responses_prove_72_appearanc
         assert result['complete'] and result['numbers']=={'appearances':72,'goals':6}
         assert len(result['matches'])==72 and len({m['match']['id'] for m in result['matches']})==72
         assert not budget.get('failures')
+
+
+def test_exhibition_against_an_explicit_club_is_excluded_and_reported():
+    api=NationalAPI();extra=deepcopy(api.rows[0]);extra['id']=99;extra['away_team']['is_national']=False
+    api.rows.append(extra)
+    result=evaluate(api)
+    assert result['complete'] and result['numbers']=={'appearances':2,'goals':2}
+    assert result['excluded_club_match_ids']==[99] and 99 not in api.calls
+
+
+def test_unknown_opponent_flag_is_not_treated_as_a_club_exhibition():
+    api=NationalAPI();extra=deepcopy(api.rows[0]);extra['id']=99;extra['away_team'].pop('is_national')
+    api.rows.append(extra);budget={'remaining':10}
+    assert evaluate(api,budget) is None
+    assert budget['failures'][-1]['code']=='national_match_identity_mismatch'
+
+
+def test_aggregate_conflict_reports_expected_and_observed_counts():
+    api=NationalAPI();api.expected['statistics'][0]['goals']=3;budget={'remaining':10}
+    assert evaluate(api,budget) is None
+    failure=budget['failures'][-1]
+    assert failure['expected']=={'appearances':2,'goals':3}
+    assert failure['observed']=={'appearances':2,'goals':2}

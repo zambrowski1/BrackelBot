@@ -138,7 +138,7 @@ class API:
     def quota_status(self): return {'remaining': 999}
 
 
-@pytest.mark.parametrize('tid,league_title', [(1079,'Региональная лига «Юго-Запад»'),(1085,'Региональная лига «Бавария»')])
+@pytest.mark.parametrize('tid,league_title', [(1079,'Региональная лига «Юго-Запад»'),(1085,'Региональная лига «Бавария»'),(170,'Чемпионат Хорватии по футболу|Первая лига')])
 def test_regional_season_is_collected_and_builds_its_own_league_table(tid,league_title):
     class Regional(API):
         def seasons(self,pid):

@@ -1228,6 +1228,10 @@
                         "maxLength": 500
                       }
                     }
+                  },
+                  "source_url": {
+                    "type": "string",
+                    "pattern": "^https://www\\.sofascore\\.com/football/player/(?:[a-z0-9-]+/)?[1-9][0-9]*$"
                   }
                 },
                 "required": [

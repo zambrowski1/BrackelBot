@@ -1,5 +1,6 @@
 # SPDX-License-Identifier: MIT
 """Create a source-covered club table; existing statistics require review."""
+import re
 from datetime import date
 from types import SimpleNamespace
 import mwparserfromhell as mw
@@ -30,6 +31,11 @@ def render_section(payload, resolver, as_of):
         raise UpdateError('source_coverage_mismatch','Дата статистики позднее даты охвата источников')
     lines=['== Статистика выступлений ==','', '=== Клубная статистика ===']
     if day:lines.append('{{обновлено|'+day.isoformat()+'}}')
+    source=payload.get('source_url')
+    if source:
+        if not re.fullmatch(r'https://www\.sofascore\.com/football/player/(?:[a-z0-9-]+/)?[1-9][0-9]*',source):
+            raise UpdateError('invalid_input','Нужна ссылка на профиль футболиста Sofascore')
+        lines.append('Источник: ['+source+' Sofascore].')
     notes=payload.get('header_notes',{})
     if set(notes)-set(categories):
         raise UpdateError('invalid_input','Пояснение относится к отсутствующей колонке')

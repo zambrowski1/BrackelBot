@@ -69,9 +69,9 @@ def test_missing_pre_boundary_base_does_not_replace_career_with_recent_subtotal(
     assert '| 4 (1)<ref name="x"/>' in plan.preview
     assert not any(c.operation.get('target',{}).get('structure')=='career' and c.operation['type']=='update_stats' for c in plan.changes)
 
-def test_cli_uses_2020_boundary_by_default():
+def test_cli_uses_all_available_seasons_by_default():
     args=parser().parse_args(['--provider','sofascore','prepare-player','1','--title','T','--identity-title','I','--qid','Q1','--wiki-name','N'])
-    assert args.statistics_since==2020
+    assert args.statistics_since==0
 
 def test_one_run_updates_keeper_card_and_klstat_and_adds_national_matches(monkeypatch):
     from tests.test_sofascore_national import NationalAPI

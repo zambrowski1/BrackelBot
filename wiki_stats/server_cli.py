@@ -67,7 +67,7 @@ def parser():
     ss.add_argument('--package-out',default='sofascore-package.json');ss.add_argument('--report',default='sofascore-report.json')
     ss.add_argument('--max-statistics',type=int,default=DEFAULT_STATISTICS);ss.add_argument('--max-match-pages',type=int,default=DEFAULT_MATCH_PAGES)
     ss.add_argument('--max-match-requests',type=int,default=DEFAULT_MATCH_REQUESTS)
-    ss.add_argument('--statistics-since',type=int,default=2020,help='Первый сезон КлСтат для обновления; по умолчанию 2020/21. Более ранние строки сохраняются.')
+    ss.add_argument('--statistics-since',type=int,default=0,help='Первый сезон КлСтат; 0 (по умолчанию) — все доступные сезоны без пересчёта по протоколам.')
     clubs=sub.add_parser('club-list');clubs.add_argument('--tier',type=int,choices=(1,2,3));clubs.add_argument('--season',type=int,default=2026)
     run=sub.add_parser('run');run.add_argument('--season',type=int,default=2026)
     modes=run.add_mutually_exclusive_group()

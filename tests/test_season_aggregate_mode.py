@@ -18,6 +18,28 @@ MAPPING={'api_id':1,'qid':'Q114406918','title':'Игрок','wiki_name':'Кал�
 NOW=datetime(2026,10,9,tzinfo=timezone.utc)
 
 
+def test_all_seasons_includes_2016_transfer_without_protocol_recount():
+    class OldSeason(API):
+        def seasons(self,pid):
+            return {'player_id':pid,'tournament_seasons':[{'tournament':{'id':35},'seasons':[{'id':16,'year':'16/17'}]}]}
+        def matches(self,*args,**kwargs):return {'complete':False,'matches':[]}
+        def transfers(self,pid):
+            return {'player_id':pid,'transfers':[{'transfer_date':'2016-08-01','transfer_from':{'id':99},'transfer_to':{'id':2600}}]}
+        def match_statistics(self,*args):raise AssertionError('No old match recount')
+    text=MINI.split('{{КлСтат|')[0].replace('| имя =','| дата рождения = 22.08.1999\n| имя =')
+    _,plan,report=prepare_player(snapshot(text),MAPPING,OldSeason(),Wiki(),Resolver(),statistics_since=0,now=NOW)
+    assert '{{КлСтат/Сезон|2016/17|5|2}}' in plan.preview
+    assert 'Источник: [https://www.sofascore.com/football/player/1 Sofascore].' in plan.preview
+    assert not any(i['code']=='split_season_unproven' for i in report['review'])
+
+
+def test_source_link_rejects_markup_and_wrong_hosts():
+    data=evidence();payload={**data['create_section'],'clubs':data['clubs']}
+    from wiki_stats.errors import UpdateError
+    for url in ['https://example.com/1','https://www.sofascore.com/football/player/1] {{Шаблон}}']:
+        with pytest.raises(UpdateError):render_section({**payload,'source_url':url},resolver(),'2026-10-08')
+
+
 def partial_table():
     d=evidence()
     payload={**d['create_section'],'clubs':d['clubs'],'complete':True,'allow_unknown':True}

@@ -215,7 +215,7 @@ def _numbers(response, pid, tid, sid, part, *, goalkeeper=False):
 
 
 def prepare_player(snapshot, mapping, api, wiki, resolver, *, max_requests=DEFAULT_STATISTICS, max_match_pages=DEFAULT_MATCH_PAGES, max_match_requests=DEFAULT_MATCH_REQUESTS, statistics_since=None, now=None):
-    if statistics_since is not None and (type(statistics_since) is not int or not 1900<=statistics_since<=2100):
+    if statistics_since is not None and (type(statistics_since) is not int or statistics_since!=0 and not 1900<=statistics_since<=2100):
         raise UpdateError('season_boundary_invalid','Неверный первый сезон обновления')
     if type(max_match_requests) is not int or not 0<=max_match_requests<=2000:
         raise UpdateError('request_limit_invalid','Лимит обращений к матчевой статистике должен быть от 0 до 2000')
@@ -543,7 +543,7 @@ def _prepare_statistics(snapshot, mapping, api, wiki, resolver, *, max_requests=
         split=any(date(year,7,1).isoformat()<str(t.get('transfer_date',''))[:10]<date(year+1,7,1).isoformat()
             and record['team_id'] in {(t.get('transfer_from') or {}).get('id'),(t.get('transfer_to') or {}).get('id')}
             for t in transfers.get('transfers',[]))
-        if split:
+        if split and statistics_since is None:
             club_matches = played_matches(history, record, now, european=record['tournament_id'] in EUROPEAN_CUPS,
                 league=record['tournament_id'] in LEAGUES)
             if club_matches is None or len(club_matches)!=record['numbers']['appearances']:
@@ -1143,7 +1143,8 @@ def _prepare_statistics(snapshot, mapping, api, wiki, resolver, *, max_requests=
                 header_notes=column_notes(records,list(clubs.values()),categories)
                 add('create_statistics_section', {'name': 'КлСтат', 'wikitext': '{{КлСтат}}'},
                     {'structure': 'club_table'}, payload={'complete': True, 'full_career': False,'allow_unknown':statistics_since is not None,
-                    'statistics_as_of': confirmed, 'categories': categories, 'clubs': list(clubs.values()),'header_notes':header_notes})
+                    'statistics_as_of': confirmed, 'categories': categories, 'clubs': list(clubs.values()),'header_notes':header_notes,
+                    'source_url':'https://www.sofascore.com/football/player/'+(profile.get('slug')+'/' if isinstance(profile.get('slug'),str) and re.fullmatch(r'[a-z0-9-]+',profile['slug']) else '')+str(mapping['api_id'])})
                 issues.append({'code': 'partial_section', 'message': 'Известные сезонные показатели скопированы; неизвестные ячейки обозначены длинным тире, полного итога карьеры нет'})
             else:
                 issues.append({'code':'section_needs_confirmed_evidence'})

@@ -1,0 +1,112 @@
+{
+  "provider_requests": 38,
+  "quota_before": {
+    "provider": "sofascore",
+    "keys": [
+      {
+        "slot": 1,
+        "id": "7981174997a9c62dbcc1",
+        "limit": 1000,
+        "remaining": 0,
+        "reset_at": 1794211221.7668097,
+        "confirmed": true,
+        "disabled": false,
+        "usable_remaining": 0
+      },
+      {
+        "slot": 2,
+        "id": "aeff5f2ab2f06a672d74",
+        "limit": 1000,
+        "remaining": 0,
+        "reset_at": 1794221456.3880374,
+        "confirmed": true,
+        "disabled": false,
+        "usable_remaining": 0
+      },
+      {
+        "slot": 3,
+        "id": "4609559e4d95cf741fff",
+        "limit": 1000,
+        "remaining": 0,
+        "reset_at": 1794221536.6183634,
+        "confirmed": true,
+        "disabled": false,
+        "usable_remaining": 0
+      },
+      {
+        "slot": 4,
+        "id": "5a3e9077ac02bdf76193",
+        "limit": 1000,
+        "remaining": 275,
+        "reset_at": 1794457746.209528,
+        "confirmed": true,
+        "disabled": false,
+        "usable_remaining": 275
+      }
+    ],
+    "limit": 4000,
+    "remaining": 275,
+    "confirmed": true,
+    "reset_at": 1794211221.7668097,
+    "cooldown_until": 0
+  },
+  "quota_after": {
+    "provider": "sofascore",
+    "keys": [
+      {
+        "slot": 1,
+        "id": "7981174997a9c62dbcc1",
+        "limit": 1000,
+        "remaining": 0,
+        "reset_at": 1794211221.7668097,
+        "confirmed": true,
+        "disabled": false,
+        "usable_remaining": 0
+      },
+      {
+        "slot": 2,
+        "id": "aeff5f2ab2f06a672d74",
+        "limit": 1000,
+        "remaining": 0,
+        "reset_at": 1794221456.3880374,
+        "confirmed": true,
+        "disabled": false,
+        "usable_remaining": 0
+      },
+      {
+        "slot": 3,
+        "id": "4609559e4d95cf741fff",
+        "limit": 1000,
+        "remaining": 0,
+        "reset_at": 1794221536.6183634,
+        "confirmed": true,
+        "disabled": false,
+        "usable_remaining": 0
+      },
+      {
+        "slot": 4,
+        "id": "5a3e9077ac02bdf76193",
+        "limit": 1000,
+        "remaining": 237,
+        "reset_at": 1794457743.2059278,
+        "confirmed": true,
+        "disabled": false,
+        "usable_remaining": 237
+      }
+    ],
+    "limit": 4000,
+    "remaining": 237,
+    "confirmed": true,
+    "reset_at": 1794211221.7668097,
+    "cooldown_until": 0
+  },
+  "issues": [
+    {
+      "year": "24/25",
+      "tid": 7,
+      "sid": 61644,
+      "code": "api_unavailable"
+    }
+  ],
+  "responses": 37
+}

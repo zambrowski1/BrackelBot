@@ -1,0 +1,568 @@
+{
+  "schema_version": "1.1",
+  "package_id": "sofascore-154428580",
+  "generated_at": "2026-10-13T00:00:00+00:00",
+  "articles": [
+    {
+      "title": "Штиллер, Анджело",
+      "base_revid": 154428580,
+      "subject_scope": "football_statistics",
+      "player": "Анджело Штиллер",
+      "operations": [
+        {
+          "id": "shared-infobox-0-sofascore-club-table",
+          "type": "migrate_career_template",
+          "group_id": "sofascore-club-table",
+          "entity": {
+            "name": "Анджело Штиллер",
+            "wikitext": "{{Футболист}}"
+          },
+          "target": {
+            "structure": "career"
+          },
+          "as_of": "2026-10-13",
+          "sources": [
+            {
+              "url": "https://ru.wikipedia.org/wiki/Шаблон:Футбольная_карьера",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-13",
+              "note": "Футбольная карьера перенаправляет на Спортивную карьеру; меняется только имя шаблона"
+            }
+          ],
+          "payload": {
+            "fields": [
+              "молодёжные клубы",
+              "клубы",
+              "национальная сборная"
+            ]
+          }
+        },
+        {
+          "as_of": "2026-10-13",
+          "group_id": "sofascore-club-table",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/901882",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-1",
+          "type": "update_totals",
+          "entity": {
+            "name": "КлСтат",
+            "wikitext": "{{КлСтат}}"
+          },
+          "target": {
+            "structure": "club_table"
+          },
+          "payload": {
+            "complete": true
+          }
+        },
+        {
+          "as_of": "2026-10-13",
+          "group_id": "sofascore-club-table",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/901882",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-2",
+          "type": "update_stats",
+          "entity": {
+            "name": "Штутгарт",
+            "wikitext": "[[Штутгарт (футбольный клуб)|Штутгарт]]"
+          },
+          "target": {
+            "structure": "club_table"
+          },
+          "season": "[[Чемпионат Германии по футболу 2024/2025|2024/25]]",
+          "competition": {
+            "name": "Кубки{{efn|''[[Кубок Германии по футболу|Кубок Германии]], [[Суперкубок Германии по футболу|Суперкубок Германии]]''}}",
+            "category": "Кубки{{efn|''[[Кубок Германии по футболу|Кубок Германии]], [[Суперкубок Германии по футболу|Суперкубок Германии]]''}}",
+            "scope": "category"
+          },
+          "expected": {
+            "appearances": 7,
+            "goals": 2
+          },
+          "new": {
+            "appearances": 6,
+            "goals": 2
+          }
+        },
+        {
+          "as_of": "2026-10-13",
+          "group_id": "sofascore-club-table",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/901882",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-3",
+          "type": "update_stats",
+          "entity": {
+            "name": "Штутгарт",
+            "wikitext": "[[Штутгарт (футбольный клуб)|Штутгарт]]"
+          },
+          "target": {
+            "structure": "club_table"
+          },
+          "season": "[[Чемпионат Германии по футболу 2025/2026|2025/26]]",
+          "competition": {
+            "name": "Чемпионат",
+            "category": "Чемпионат",
+            "scope": "category"
+          },
+          "expected": {
+            "appearances": 25,
+            "goals": 1
+          },
+          "new": {
+            "appearances": 34,
+            "goals": 2
+          }
+        },
+        {
+          "as_of": "2026-10-13",
+          "group_id": "sofascore-club-table",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/901882",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-4",
+          "type": "update_stats",
+          "entity": {
+            "name": "Штутгарт",
+            "wikitext": "[[Штутгарт (футбольный клуб)|Штутгарт]]"
+          },
+          "target": {
+            "structure": "club_table"
+          },
+          "season": "[[Чемпионат Германии по футболу 2025/2026|2025/26]]",
+          "competition": {
+            "name": "Кубки{{efn|''[[Кубок Германии по футболу|Кубок Германии]], [[Суперкубок Германии по футболу|Суперкубок Германии]]''}}",
+            "category": "Кубки{{efn|''[[Кубок Германии по футболу|Кубок Германии]], [[Суперкубок Германии по футболу|Суперкубок Германии]]''}}",
+            "scope": "category"
+          },
+          "expected": {
+            "appearances": 5,
+            "goals": 0
+          },
+          "new": {
+            "appearances": 6,
+            "goals": 0
+          }
+        },
+        {
+          "as_of": "2026-10-13",
+          "group_id": "sofascore-club-table",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/901882",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-5",
+          "type": "add_season",
+          "entity": {
+            "name": "Штутгарт",
+            "kind": "club",
+            "wikidata_id": "Q4512",
+            "page_title": "Штутгарт (футбольный клуб)",
+            "wikitext": "[[Штутгарт (футбольный клуб)|Штутгарт]]"
+          },
+          "target": {
+            "structure": "club_table"
+          },
+          "season": "2026/27",
+          "payload": {
+            "complete": true,
+            "categories": {
+              "Чемпионат": {
+                "appearances": 5,
+                "goals": 0
+              },
+              "Кубки{{efn|''[[Кубок Германии по футболу|Кубок Германии]], [[Суперкубок Германии по футболу|Суперкубок Германии]]''}}": {
+                "appearances": 1,
+                "goals": 0
+              },
+              "Континент.{{efn|''[[Лига чемпионов УЕФА]]''}}": null
+            },
+            "league_wikitext": "[[Чемпионат Германии по футболу|Бундеслига]]",
+            "allow_unknown": true,
+            "unknown_as_zero": false,
+            "insert_after_season": "[[Чемпионат Германии по футболу 2025/2026|2025/26]]"
+          }
+        },
+        {
+          "id": "normalize-club-flags",
+          "type": "normalize_club_flags",
+          "group_id": "sofascore-club-table",
+          "entity": {
+            "name": "Анджело Штиллер",
+            "wikitext": "{{КлСтат}}"
+          },
+          "target": {
+            "structure": "club_table"
+          },
+          "as_of": "2026-10-13",
+          "sources": [
+            {
+              "url": "https://www.wikidata.org/wiki/Q22707",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-13",
+              "note": "Страна клуба и шаблон флага проверены через Википедию и Wikidata"
+            },
+            {
+              "url": "https://www.wikidata.org/wiki/Q4512",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-13",
+              "note": "Страна клуба и шаблон флага проверены через Википедию и Wikidata"
+            }
+          ],
+          "payload": {
+            "clubs": [
+              {
+                "expected_wikitext": "[[Хоффенхайм (футбольный клуб)|Хоффенхайм]]",
+                "occurrences": 1,
+                "flag": "Германии",
+                "entity": {
+                  "name": "Хоффенхайм (футбольный клуб)",
+                  "kind": "club",
+                  "page_title": "Хоффенхайм (футбольный клуб)",
+                  "wikidata_id": "Q22707"
+                }
+              },
+              {
+                "expected_wikitext": "[[Штутгарт (футбольный клуб)|Штутгарт]]",
+                "occurrences": 1,
+                "flag": "Германии",
+                "entity": {
+                  "name": "Штутгарт (футбольный клуб)",
+                  "kind": "club",
+                  "page_title": "Штутгарт (футбольный клуб)",
+                  "wikidata_id": "Q4512"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "normalize-season-links",
+          "type": "normalize_season_links",
+          "group_id": "sofascore-club-table",
+          "entity": {
+            "name": "Анджело Штиллер",
+            "wikitext": "{{КлСтат}}"
+          },
+          "target": {
+            "structure": "club_table"
+          },
+          "as_of": "2026-10-13",
+          "sources": [
+            {
+              "url": "https://ru.wikipedia.org/wiki/%D0%A7%D0%B5%D0%BC%D0%BF%D0%B8%D0%BE%D0%BD%D0%B0%D1%82_%D0%93%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B8%D0%B8_%D0%BF%D0%BE_%D1%84%D1%83%D1%82%D0%B1%D0%BE%D0%BB%D1%83_2022/2023",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-13",
+              "note": "Существующая статья соответствующей лиги и сезона"
+            },
+            {
+              "url": "https://ru.wikipedia.org/wiki/%D0%A7%D0%B5%D0%BC%D0%BF%D0%B8%D0%BE%D0%BD%D0%B0%D1%82_%D0%93%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B8%D0%B8_%D0%BF%D0%BE_%D1%84%D1%83%D1%82%D0%B1%D0%BE%D0%BB%D1%83_2023/2024",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-13",
+              "note": "Существующая статья соответствующей лиги и сезона"
+            },
+            {
+              "url": "https://ru.wikipedia.org/wiki/%D0%A7%D0%B5%D0%BC%D0%BF%D0%B8%D0%BE%D0%BD%D0%B0%D1%82_%D0%93%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B8%D0%B8_%D0%BF%D0%BE_%D1%84%D1%83%D1%82%D0%B1%D0%BE%D0%BB%D1%83_2024/2025",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-13",
+              "note": "Существующая статья соответствующей лиги и сезона"
+            }
+          ],
+          "payload": {
+            "seasons": [
+              {
+                "club": "{{Флаг Германии|20px}} [[Хоффенхайм (футбольный клуб)|Хоффенхайм]]",
+                "league": "[[Чемпионат Германии по футболу|Бундеслига]]",
+                "expected_wikitext": "[[Чемпионат Германии по футболу 2022/2023|2022/23]]",
+                "page_title": "Чемпионат Германии по футболу 2022/2023"
+              },
+              {
+                "club": "{{Флаг Германии|20px}} [[Хоффенхайм (футбольный клуб)|Хоффенхайм]]",
+                "league": "[[Чемпионат Германии по футболу|Бундеслига]]",
+                "expected_wikitext": "[[Чемпионат Германии по футболу 2023/2024|2023/24]]",
+                "page_title": "Чемпионат Германии по футболу 2023/2024"
+              },
+              {
+                "club": "{{Флаг Германии|20px}} [[Штутгарт (футбольный клуб)|Штутгарт]]",
+                "league": "[[Чемпионат Германии по футболу|Бундеслига]]",
+                "expected_wikitext": "[[Чемпионат Германии по футболу 2023/2024|2023/24]]",
+                "page_title": "Чемпионат Германии по футболу 2023/2024"
+              },
+              {
+                "club": "{{Флаг Германии|20px}} [[Штутгарт (футбольный клуб)|Штутгарт]]",
+                "league": "[[Чемпионат Германии по футболу|Бундеслига]]",
+                "expected_wikitext": "[[Чемпионат Германии по футболу 2024/2025|2024/25]]",
+                "page_title": "Чемпионат Германии по футболу 2024/2025"
+              }
+            ]
+          }
+        },
+        {
+          "id": "shared-infobox-0-sofascore-card-club",
+          "type": "migrate_career_template",
+          "group_id": "sofascore-card-club",
+          "entity": {
+            "name": "Анджело Штиллер",
+            "wikitext": "{{Футболист}}"
+          },
+          "target": {
+            "structure": "career"
+          },
+          "as_of": "2026-10-13",
+          "sources": [
+            {
+              "url": "https://ru.wikipedia.org/wiki/Шаблон:Футбольная_карьера",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-13",
+              "note": "Футбольная карьера перенаправляет на Спортивную карьеру; меняется только имя шаблона"
+            }
+          ],
+          "payload": {
+            "fields": [
+              "молодёжные клубы",
+              "клубы",
+              "национальная сборная"
+            ]
+          }
+        },
+        {
+          "as_of": "2026-10-13",
+          "group_id": "sofascore-card-club",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/901882",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-6",
+          "type": "update_stats",
+          "entity": {
+            "name": "{{Флаг Германии|20px}} [[Хоффенхайм (футбольный клуб)|Хоффенхайм]]",
+            "wikitext": "{{Флаг Германии|20px}} [[Хоффенхайм (футбольный клуб)|Хоффенхайм]]"
+          },
+          "target": {
+            "structure": "career",
+            "field": "клубы",
+            "period": "2021—2023"
+          },
+          "season": null,
+          "competition": {
+            "name": "Чемпионат",
+            "category": "all",
+            "scope": "league"
+          },
+          "expected": {
+            "appearances": 47,
+            "goals": 3
+          },
+          "new": {
+            "appearances": 46,
+            "goals": 3
+          }
+        },
+        {
+          "as_of": "2026-10-13",
+          "group_id": "sofascore-card-club",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/901882",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-7",
+          "type": "update_stats",
+          "entity": {
+            "name": "Штутгарт",
+            "wikitext": "{{Флаг Германии|20px}} [[Штутгарт (футбольный клуб)|Штутгарт]]"
+          },
+          "target": {
+            "structure": "career",
+            "field": "клубы",
+            "period": "2023—{{н.в.}}"
+          },
+          "season": null,
+          "competition": {
+            "name": "Чемпионат",
+            "category": "all",
+            "scope": "league"
+          },
+          "expected": {
+            "appearances": 88,
+            "goals": 3
+          },
+          "new": {
+            "appearances": 102,
+            "goals": 4
+          }
+        },
+        {
+          "as_of": "2026-10-13",
+          "group_id": "sofascore-card-club",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/901882",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-8",
+          "type": "update_date",
+          "entity": {
+            "name": "Штутгарт",
+            "kind": "club",
+            "wikidata_id": "Q4512",
+            "page_title": "Штутгарт (футбольный клуб)",
+            "wikitext": "{{Флаг Германии|20px}} [[Штутгарт (футбольный клуб)|Штутгарт]]"
+          },
+          "target": {
+            "structure": "career",
+            "field": "клубы"
+          },
+          "payload": {
+            "field": "обновление данных о клубе",
+            "expected_value": "07.03.2026",
+            "statistics_as_of": "2026-10-10"
+          }
+        },
+        {
+          "id": "shared-infobox-0-sofascore-card-national-aggregate-national-card-4711",
+          "type": "migrate_career_template",
+          "group_id": "sofascore-card-national-aggregate-national-card-4711",
+          "entity": {
+            "name": "Анджело Штиллер",
+            "wikitext": "{{Футболист}}"
+          },
+          "target": {
+            "structure": "career"
+          },
+          "as_of": "2026-10-13",
+          "sources": [
+            {
+              "url": "https://ru.wikipedia.org/wiki/Шаблон:Футбольная_карьера",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-13",
+              "note": "Футбольная карьера перенаправляет на Спортивную карьеру; меняется только имя шаблона"
+            }
+          ],
+          "payload": {
+            "fields": [
+              "молодёжные клубы",
+              "клубы",
+              "национальная сборная"
+            ]
+          }
+        },
+        {
+          "as_of": "2026-10-13",
+          "group_id": "sofascore-card-national-aggregate-national-card-4711",
+          "entity": {
+            "name": "Германия",
+            "wikitext": "{{Флаг Германии|20px}} [[Сборная Германии по футболу|Германия]]",
+            "page_title": "Сборная Германии по футболу",
+            "wikidata_id": "Q43310",
+            "kind": "national_team",
+            "age": null
+          },
+          "target": {
+            "structure": "career",
+            "field": "национальная сборная",
+            "period": "2024—{{н.в.}}"
+          },
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/901882",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Итог основной сборной из API; дата последнего подтверждённого выхода. Полный список матчей не заявляется."
+            }
+          ],
+          "id": "aggregate-national-numbers-4711",
+          "type": "update_stats",
+          "season": null,
+          "competition": {
+            "name": "Матчи сборной",
+            "category": "all",
+            "scope": "national_all"
+          },
+          "expected": {
+            "appearances": 5,
+            "goals": 0
+          },
+          "new": {
+            "appearances": 9,
+            "goals": 0
+          }
+        },
+        {
+          "as_of": "2026-10-13",
+          "group_id": "sofascore-card-national-aggregate-national-card-4711",
+          "entity": {
+            "name": "Германия",
+            "wikitext": "{{Флаг Германии|20px}} [[Сборная Германии по футболу|Германия]]",
+            "page_title": "Сборная Германии по футболу",
+            "wikidata_id": "Q43310",
+            "kind": "national_team",
+            "age": null
+          },
+          "target": {
+            "structure": "career",
+            "field": "национальная сборная",
+            "period": "2024—{{н.в.}}"
+          },
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/901882",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Итог основной сборной из API; дата последнего подтверждённого выхода. Полный список матчей не заявляется."
+            }
+          ],
+          "id": "aggregate-national-date-4711",
+          "type": "update_date",
+          "payload": {
+            "field": "обновление данных о сборной",
+            "expected_value": "04.09.2025",
+            "statistics_as_of": "2026-06-25"
+          }
+        }
+      ],
+      "review_warnings": [
+        "Недоступные ячейки новых сезонов показаны нулями по настройке пользователя; итоги рассчитаны по показанным значениям. Пропуски данных перечислены в отчёте.",
+        "Не подтверждены 9 графы существующих клубных строк; исходные значения сохранены. Полнота таблицы не подтверждена; сезоны: [[Чемпионат Германии по футболу 2020/2021|2020/21]], [[Чемпионат Германии по футболу 2021/2022|2021/22]], [[Чемпионат Германии по футболу 2022/2023|2022/23]], [[Чемпионат Германии по футболу 2023/2024|2023/24]], [[Чемпионат Германии по футболу 2024/2025|2024/25]], [[Чемпионат Германии по футболу 2025/2026|2025/26]]. Подробности указаны в отчёте.",
+        "Часть статистики сборных не подтверждена полной сверкой матчей. Неподтверждённые показатели сохранены; причины указаны в отчёте.",
+        "Не подтверждены флаги части клубов; причины указаны в отчёте."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,424 @@
+{
+  "schema_version": "1.1",
+  "package_id": "sofascore-154460381",
+  "generated_at": "2026-10-13T00:00:00+00:00",
+  "articles": [
+    {
+      "title": "Раум, Давид",
+      "base_revid": 154460381,
+      "subject_scope": "football_statistics",
+      "player": "Давид Раум",
+      "operations": [
+        {
+          "as_of": "2026-10-13",
+          "group_id": "sofascore-card-club",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/856076",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-1",
+          "type": "update_stats",
+          "entity": {
+            "name": "{{Флаг Германии|20px}} [[Гройтер Фюрт]]",
+            "wikitext": "{{Флаг Германии|20px}} [[Гройтер Фюрт]]"
+          },
+          "target": {
+            "structure": "career",
+            "field": "клубы",
+            "period": "2017—2021"
+          },
+          "season": null,
+          "competition": {
+            "name": "Чемпионат",
+            "category": "all",
+            "scope": "league"
+          },
+          "expected": {
+            "appearances": 94,
+            "goals": 4
+          },
+          "new": {
+            "appearances": 89,
+            "goals": 4
+          }
+        },
+        {
+          "as_of": "2026-10-13",
+          "group_id": "sofascore-card-club",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/856076",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-2",
+          "type": "update_stats",
+          "entity": {
+            "name": "РБ Лейпциг",
+            "wikitext": "{{Флаг Германии|20px}} [[РБ Лейпциг]]"
+          },
+          "target": {
+            "structure": "career",
+            "field": "клубы",
+            "period": "2022—{{н. в.}}"
+          },
+          "season": null,
+          "competition": {
+            "name": "Чемпионат",
+            "category": "all",
+            "scope": "league"
+          },
+          "expected": {
+            "appearances": 111,
+            "goals": 6
+          },
+          "new": {
+            "appearances": 116,
+            "goals": 6
+          }
+        },
+        {
+          "as_of": "2026-10-13",
+          "group_id": "sofascore-card-club",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/856076",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-3",
+          "type": "update_date",
+          "entity": {
+            "name": "РБ Лейпциг",
+            "kind": "club",
+            "wikidata_id": "Q702455",
+            "page_title": "РБ Лейпциг",
+            "wikitext": "{{Флаг Германии|20px}} [[РБ Лейпциг|РБ Лейпциг]]"
+          },
+          "target": {
+            "structure": "career",
+            "field": "клубы"
+          },
+          "payload": {
+            "field": "обновление данных о клубе",
+            "expected_value": "9.5.2026",
+            "statistics_as_of": "2026-10-10"
+          }
+        },
+        {
+          "as_of": "2026-10-13",
+          "group_id": "sofascore-club-table",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/856076",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-4",
+          "type": "create_statistics_section",
+          "entity": {
+            "name": "КлСтат",
+            "wikitext": "{{КлСтат}}"
+          },
+          "target": {
+            "structure": "club_table"
+          },
+          "payload": {
+            "complete": true,
+            "full_career": false,
+            "allow_unknown": true,
+            "unknown_as_zero": false,
+            "show_career_total": true,
+            "statistics_as_of": "2026-10-10",
+            "categories": [
+              "Чемпионат",
+              "Кубки",
+              "Еврокубки",
+              "Прочие"
+            ],
+            "clubs": [
+              {
+                "entity": {
+                  "name": "Гройтер Фюрт",
+                  "kind": "club",
+                  "wikidata_id": "Q153539",
+                  "page_title": "Гройтер Фюрт",
+                  "wikitext": "{{Флаг Германии|20px}} [[Гройтер Фюрт|Гройтер Фюрт]]"
+                },
+                "rows": [
+                  {
+                    "season": "2016/17",
+                    "league_wikitext": "[[Вторая Бундеслига]]",
+                    "categories": {
+                      "Чемпионат": {
+                        "appearances": 5,
+                        "goals": 0
+                      },
+                      "Кубки": null,
+                      "Еврокубки": null,
+                      "Прочие": null
+                    }
+                  },
+                  {
+                    "season": "2017/18",
+                    "league_wikitext": "[[Вторая Бундеслига]]",
+                    "categories": {
+                      "Чемпионат": {
+                        "appearances": 20,
+                        "goals": 1
+                      },
+                      "Кубки": {
+                        "appearances": 2,
+                        "goals": 2
+                      },
+                      "Еврокубки": {
+                        "appearances": 0,
+                        "goals": 0
+                      },
+                      "Прочие": {
+                        "appearances": 0,
+                        "goals": 0
+                      }
+                    }
+                  },
+                  {
+                    "season": "2018/19",
+                    "league_wikitext": "[[Вторая Бундеслига]]",
+                    "categories": {
+                      "Чемпионат": {
+                        "appearances": 16,
+                        "goals": 1
+                      },
+                      "Кубки": null,
+                      "Еврокубки": {
+                        "appearances": 0,
+                        "goals": 0
+                      },
+                      "Прочие": {
+                        "appearances": 0,
+                        "goals": 0
+                      }
+                    }
+                  },
+                  {
+                    "season": "2019/20",
+                    "league_wikitext": "[[Вторая Бундеслига]]",
+                    "categories": {
+                      "Чемпионат": {
+                        "appearances": 19,
+                        "goals": 1
+                      },
+                      "Кубки": null,
+                      "Еврокубки": {
+                        "appearances": 0,
+                        "goals": 0
+                      },
+                      "Прочие": {
+                        "appearances": 0,
+                        "goals": 0
+                      }
+                    }
+                  },
+                  {
+                    "season": "2020/21",
+                    "league_wikitext": "[[Вторая Бундеслига]]",
+                    "categories": {
+                      "Чемпионат": {
+                        "appearances": 34,
+                        "goals": 1
+                      },
+                      "Кубки": {
+                        "appearances": 3,
+                        "goals": 0
+                      },
+                      "Еврокубки": {
+                        "appearances": 0,
+                        "goals": 0
+                      },
+                      "Прочие": {
+                        "appearances": 0,
+                        "goals": 0
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "entity": {
+                  "name": "Хоффенхайм",
+                  "kind": "club",
+                  "wikidata_id": "Q22707",
+                  "page_title": "Хоффенхайм (футбольный клуб)",
+                  "wikitext": "{{Флаг Германии|20px}} [[Хоффенхайм (футбольный клуб)|Хоффенхайм]]"
+                },
+                "rows": [
+                  {
+                    "season": "2021/22",
+                    "league_wikitext": "[[Чемпионат Германии по футболу|Бундеслига]]",
+                    "categories": {
+                      "Чемпионат": {
+                        "appearances": 32,
+                        "goals": 3
+                      },
+                      "Кубки": {
+                        "appearances": 3,
+                        "goals": 0
+                      },
+                      "Еврокубки": {
+                        "appearances": 0,
+                        "goals": 0
+                      },
+                      "Прочие": {
+                        "appearances": 0,
+                        "goals": 0
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "entity": {
+                  "name": "РБ Лейпциг",
+                  "kind": "club",
+                  "wikidata_id": "Q702455",
+                  "page_title": "РБ Лейпциг",
+                  "wikitext": "{{Флаг Германии|20px}} [[РБ Лейпциг|РБ Лейпциг]]"
+                },
+                "rows": [
+                  {
+                    "season": "2022/23",
+                    "league_wikitext": "[[Чемпионат Германии по футболу|Бундеслига]]",
+                    "categories": {
+                      "Чемпионат": {
+                        "appearances": 28,
+                        "goals": 0
+                      },
+                      "Кубки": {
+                        "appearances": 4,
+                        "goals": 0
+                      },
+                      "Еврокубки": {
+                        "appearances": 8,
+                        "goals": 0
+                      },
+                      "Прочие": {
+                        "appearances": 0,
+                        "goals": 0
+                      }
+                    }
+                  },
+                  {
+                    "season": "2023/24",
+                    "league_wikitext": "[[Чемпионат Германии по футболу|Бундеслига]]",
+                    "categories": {
+                      "Чемпионат": {
+                        "appearances": 31,
+                        "goals": 2
+                      },
+                      "Кубки": {
+                        "appearances": 1,
+                        "goals": 0
+                      },
+                      "Еврокубки": {
+                        "appearances": 7,
+                        "goals": 1
+                      },
+                      "Прочие": null
+                    }
+                  },
+                  {
+                    "season": "2024/25",
+                    "league_wikitext": "[[Чемпионат Германии по футболу|Бундеслига]]",
+                    "categories": {
+                      "Чемпионат": {
+                        "appearances": 22,
+                        "goals": 1
+                      },
+                      "Кубки": {
+                        "appearances": 3,
+                        "goals": 0
+                      },
+                      "Еврокубки": {
+                        "appearances": 4,
+                        "goals": 0
+                      },
+                      "Прочие": {
+                        "appearances": 0,
+                        "goals": 0
+                      }
+                    }
+                  },
+                  {
+                    "season": "2025/26",
+                    "league_wikitext": "[[Чемпионат Германии по футболу|Бундеслига]]",
+                    "categories": {
+                      "Чемпионат": {
+                        "appearances": 30,
+                        "goals": 3
+                      },
+                      "Кубки": {
+                        "appearances": 4,
+                        "goals": 0
+                      },
+                      "Еврокубки": {
+                        "appearances": 0,
+                        "goals": 0
+                      },
+                      "Прочие": {
+                        "appearances": 0,
+                        "goals": 0
+                      }
+                    }
+                  },
+                  {
+                    "season": "2026/27",
+                    "league_wikitext": "[[Чемпионат Германии по футболу|Бундеслига]]",
+                    "categories": {
+                      "Чемпионат": {
+                        "appearances": 5,
+                        "goals": 0
+                      },
+                      "Кубки": {
+                        "appearances": 1,
+                        "goals": 0
+                      },
+                      "Еврокубки": {
+                        "appearances": 1,
+                        "goals": 0
+                      },
+                      "Прочие": null
+                    }
+                  }
+                ]
+              }
+            ],
+            "header_notes": {
+              "Кубки": [
+                "[[Кубок Германии по футболу|Кубок Германии]]"
+              ],
+              "Еврокубки": [
+                "[[Лига чемпионов УЕФА]]"
+              ]
+            },
+            "source_url": "https://www.sofascore.com/football/player/david-raum/856076"
+          }
+        }
+      ],
+      "review_warnings": [
+        "Недоступные ячейки новых сезонов показаны нулями по настройке пользователя; итоги рассчитаны по показанным значениям. Пропуски данных перечислены в отчёте.",
+        "Общая дата статистики сборных сохранена: полный охват всех сборных ещё не подтверждён.",
+        "Часть статистики сборных не подтверждена полной сверкой матчей. Неподтверждённые показатели сохранены; причины указаны в отчёте."
+      ]
+    }
+  ]
+}

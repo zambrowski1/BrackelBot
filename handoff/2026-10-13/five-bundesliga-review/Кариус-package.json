@@ -1,0 +1,346 @@
+{
+  "schema_version": "1.1",
+  "package_id": "sofascore-155506812",
+  "generated_at": "2026-10-13T00:00:00+00:00",
+  "articles": [
+    {
+      "title": "Кариус, Лорис",
+      "base_revid": 155506812,
+      "subject_scope": "football_statistics",
+      "player": "Лорис Кариус",
+      "operations": [
+        {
+          "as_of": "2026-10-13",
+          "group_id": "sofascore-club-table",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/174135",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-1",
+          "type": "add_table_club",
+          "entity": {
+            "name": "Шальке 04",
+            "kind": "club",
+            "wikidata_id": "Q32494",
+            "page_title": "Шальке 04",
+            "wikitext": "{{Флаг Германии|20px}} [[Шальке 04|Шальке 04]]"
+          },
+          "target": {
+            "structure": "club_table"
+          },
+          "season": "2024/25",
+          "payload": {
+            "complete": true,
+            "categories": {
+              "Чемпионат": {
+                "appearances": 4,
+                "goals": -5
+              },
+              "Кубки<ref>''[[Кубок Германии по футболу|Кубок Германии]], [[Кубок Англии по футболу|Кубок Англии]], [[Кубок Футбольной лиги|Кубок лиги]], [[Кубок французской лиги по футболу|Кубок Лиги]].''</ref>": {
+                "appearances": 0,
+                "goals": 0
+              },
+              "Еврокубки<ref>''[[Лига чемпионов УЕФА]], [[Лига Европы УЕФА]].''</ref>": null
+            },
+            "league_wikitext": "[[Вторая Бундеслига]]",
+            "allow_unknown": true,
+            "unknown_as_zero": false,
+            "insert_after_club": "[[Ньюкасл Юнайтед]]"
+          }
+        },
+        {
+          "as_of": "2026-10-13",
+          "group_id": "sofascore-club-table",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/174135",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-2",
+          "type": "add_season",
+          "entity": {
+            "name": "Шальке 04",
+            "kind": "club",
+            "wikidata_id": "Q32494",
+            "page_title": "Шальке 04",
+            "wikitext": "{{Флаг Германии|20px}} [[Шальке 04|Шальке 04]]"
+          },
+          "target": {
+            "structure": "club_table"
+          },
+          "season": "2025/26",
+          "payload": {
+            "complete": true,
+            "categories": {
+              "Чемпионат": {
+                "appearances": 30,
+                "goals": -24
+              },
+              "Кубки<ref>''[[Кубок Германии по футболу|Кубок Германии]], [[Кубок Англии по футболу|Кубок Англии]], [[Кубок Футбольной лиги|Кубок лиги]], [[Кубок французской лиги по футболу|Кубок Лиги]].''</ref>": {
+                "appearances": 1,
+                "goals": -4
+              },
+              "Еврокубки<ref>''[[Лига чемпионов УЕФА]], [[Лига Европы УЕФА]].''</ref>": null
+            },
+            "league_wikitext": "[[Вторая Бундеслига]]",
+            "allow_unknown": true,
+            "unknown_as_zero": false,
+            "insert_after_season": "2024/25"
+          }
+        },
+        {
+          "as_of": "2026-10-13",
+          "group_id": "sofascore-club-table",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/174135",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-3",
+          "type": "add_season",
+          "entity": {
+            "name": "Шальке 04",
+            "kind": "club",
+            "wikidata_id": "Q32494",
+            "page_title": "Шальке 04",
+            "wikitext": "{{Флаг Германии|20px}} [[Шальке 04|Шальке 04]]"
+          },
+          "target": {
+            "structure": "club_table"
+          },
+          "season": "2026/27",
+          "payload": {
+            "complete": true,
+            "categories": {
+              "Чемпионат": {
+                "appearances": 5,
+                "goals": -6
+              },
+              "Кубки<ref>''[[Кубок Германии по футболу|Кубок Германии]], [[Кубок Англии по футболу|Кубок Англии]], [[Кубок Футбольной лиги|Кубок лиги]], [[Кубок французской лиги по футболу|Кубок Лиги]].''</ref>": {
+                "appearances": 1,
+                "goals": -2
+              },
+              "Еврокубки<ref>''[[Лига чемпионов УЕФА]], [[Лига Европы УЕФА]].''</ref>": null
+            },
+            "league_wikitext": "[[Чемпионат Германии по футболу|Бундеслига]]",
+            "allow_unknown": true,
+            "unknown_as_zero": false,
+            "insert_after_season": "2025/26"
+          }
+        },
+        {
+          "id": "normalize-club-flags",
+          "type": "normalize_club_flags",
+          "group_id": "sofascore-club-table",
+          "entity": {
+            "name": "Лорис Кариус",
+            "wikitext": "{{КлСтат}}"
+          },
+          "target": {
+            "structure": "club_table"
+          },
+          "as_of": "2026-10-13",
+          "sources": [
+            {
+              "url": "https://www.wikidata.org/wiki/Q105254",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-13",
+              "note": "Страна клуба и шаблон флага проверены через Википедию и Wikidata"
+            },
+            {
+              "url": "https://www.wikidata.org/wiki/Q172567",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-13",
+              "note": "Страна клуба и шаблон флага проверены через Википедию и Wikidata"
+            },
+            {
+              "url": "https://www.wikidata.org/wiki/Q141971",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-13",
+              "note": "Страна клуба и шаблон флага проверены через Википедию и Wikidata"
+            },
+            {
+              "url": "https://www.wikidata.org/wiki/Q18716",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-13",
+              "note": "Страна клуба и шаблон флага проверены через Википедию и Wikidata"
+            }
+          ],
+          "payload": {
+            "clubs": [
+              {
+                "expected_wikitext": "[[Майнц 05]]",
+                "occurrences": 1,
+                "flag": "Германии",
+                "entity": {
+                  "name": "Майнц 05",
+                  "kind": "club",
+                  "page_title": "Майнц 05",
+                  "wikidata_id": "Q105254"
+                }
+              },
+              {
+                "expected_wikitext": "{{аренда}}[[Бешикташ (футбольный клуб)|Бешикташ]]",
+                "occurrences": 1,
+                "flag": "Турции",
+                "entity": {
+                  "name": "Бешикташ (футбольный клуб)",
+                  "kind": "club",
+                  "page_title": "Бешикташ (футбольный клуб)",
+                  "wikidata_id": "Q172567"
+                }
+              },
+              {
+                "expected_wikitext": "{{аренда}}[[Унион (футбольный клуб, Берлин)|Унион]]",
+                "occurrences": 1,
+                "flag": "Германии",
+                "entity": {
+                  "name": "Унион (футбольный клуб, Берлин)",
+                  "kind": "club",
+                  "page_title": "Унион (футбольный клуб, Берлин)",
+                  "wikidata_id": "Q141971"
+                }
+              },
+              {
+                "expected_wikitext": "[[Ньюкасл Юнайтед]]",
+                "occurrences": 1,
+                "flag": "Англии",
+                "entity": {
+                  "name": "Ньюкасл Юнайтед",
+                  "kind": "club",
+                  "page_title": "Ньюкасл Юнайтед",
+                  "wikidata_id": "Q18716"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "normalize-season-links",
+          "type": "normalize_season_links",
+          "group_id": "sofascore-club-table",
+          "entity": {
+            "name": "Лорис Кариус",
+            "wikitext": "{{КлСтат}}"
+          },
+          "target": {
+            "structure": "club_table"
+          },
+          "as_of": "2026-10-13",
+          "sources": [
+            {
+              "url": "https://ru.wikipedia.org/wiki/%D0%A7%D0%B5%D0%BC%D0%BF%D0%B8%D0%BE%D0%BD%D0%B0%D1%82_%D0%93%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B8%D0%B8_%D0%BF%D0%BE_%D1%84%D1%83%D1%82%D0%B1%D0%BE%D0%BB%D1%83_2012/2013",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-13",
+              "note": "Существующая статья соответствующей лиги и сезона"
+            },
+            {
+              "url": "https://ru.wikipedia.org/wiki/%D0%A7%D0%B5%D0%BC%D0%BF%D0%B8%D0%BE%D0%BD%D0%B0%D1%82_%D0%93%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B8%D0%B8_%D0%BF%D0%BE_%D1%84%D1%83%D1%82%D0%B1%D0%BE%D0%BB%D1%83_2014/2015",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-13",
+              "note": "Существующая статья соответствующей лиги и сезона"
+            }
+          ],
+          "payload": {
+            "seasons": [
+              {
+                "club": "[[Майнц 05]]",
+                "league": "[[Чемпионат Германии по футболу|Бундеслига]]",
+                "expected_wikitext": "[[Чемпионат Германии по футболу 2012/2013|2012/13]]",
+                "page_title": "Чемпионат Германии по футболу 2012/2013"
+              },
+              {
+                "club": "[[Майнц 05]]",
+                "league": "[[Чемпионат Германии по футболу|Бундеслига]]",
+                "expected_wikitext": "[[Чемпионат Германии по футболу 2014/2015|2014/15]]",
+                "page_title": "Чемпионат Германии по футболу 2014/2015"
+              }
+            ]
+          }
+        },
+        {
+          "as_of": "2026-10-13",
+          "group_id": "sofascore-card-club",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/174135",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-4",
+          "type": "update_stats",
+          "entity": {
+            "name": "Шальке 04",
+            "wikitext": "{{Флаг Германии|20px}} [[Шальке 04]]"
+          },
+          "target": {
+            "structure": "career",
+            "field": "клубы",
+            "period": "2025—{{н.в.}}"
+          },
+          "season": null,
+          "competition": {
+            "name": "Чемпионат",
+            "category": "all",
+            "scope": "league"
+          },
+          "expected": {
+            "appearances": 35,
+            "goals": -33
+          },
+          "new": {
+            "appearances": 35,
+            "goals": -30
+          }
+        },
+        {
+          "as_of": "2026-10-13",
+          "group_id": "sofascore-card-club",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/174135",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-5",
+          "type": "update_date",
+          "entity": {
+            "name": "Шальке 04",
+            "kind": "club",
+            "wikidata_id": "Q32494",
+            "page_title": "Шальке 04",
+            "wikitext": "{{Флаг Германии|20px}} [[Шальке 04|Шальке 04]]"
+          },
+          "target": {
+            "structure": "career",
+            "field": "клубы"
+          },
+          "payload": {
+            "field": "обновление данных о клубе",
+            "expected_value": "19.04.2026",
+            "statistics_as_of": "2026-10-11"
+          }
+        }
+      ],
+      "review_warnings": [
+        "Недоступные ячейки новых сезонов показаны нулями по настройке пользователя; итоги рассчитаны по показанным значениям. Пропуски данных перечислены в отчёте.",
+        "Не подтверждены 38 графы существующих клубных строк; исходные значения сохранены. Полнота таблицы не подтверждена; сезоны: 2011/12, 2012/13, 2013/14, [[Чемпионат Англии по футболу 2016/2017|2016/17]], [[Чемпионат Англии по футболу 2017/2018|2017/18]], [[Чемпионат Англии по футболу 2022/2023|2022/23]], [[Чемпионат Англии по футболу 2023/2024|2023/24]], [[Чемпионат Германии по футболу 2012/2013|2012/13]], [[Чемпионат Германии по футболу 2013/2014|2013/14]], [[Чемпионат Германии по футболу 2014/2015|2014/15]], [[Чемпионат Германии по футболу 2015/2016|2015/16]], [[Чемпионат Германии по футболу 2020/2021|2020/21]], [[Чемпионат Турции по футболу 2018/2019|2018/19]], [[Чемпионат Турции по футболу 2019/2020|2019/20]]. Подробности указаны в отчёте.",
+        "Не подтверждены флаги части клубов; причины указаны в отчёте."
+      ]
+    }
+  ]
+}

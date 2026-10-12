@@ -1,0 +1,2126 @@
+{
+  "generated_at": "2026-10-12T16:20:51.082121+00:00",
+  "catalogue_coverage": {
+    "category_traversal_complete": true,
+    "categories": 354,
+    "discovered_titles": 3748,
+    "included_season_articles": 2077,
+    "league_entities_or_title_groups": 253,
+    "countries_with_wikidata_identity": 115,
+    "limitation": "Complete traversal of discovered category roots plus Wikidata league-season query; uncategorized or untyped pages cannot be guaranteed."
+  },
+  "football_provider_requests": 0,
+  "wikipedia_writes": 0,
+  "files": [
+    {
+      "path": "CONTINUE_HERE.md",
+      "bytes": 15843,
+      "sha256": "80e15306c1572c74f57bd323e4b963fdf2f5e2317f13427433c3950fba29dd20"
+    },
+    {
+      "path": "docs/SEASON_CATALOGUE.md",
+      "bytes": 7005,
+      "sha256": "9248c340af9250848ecfc548012ba00e57d69fb7921e54e534580792ef96feba"
+    },
+    {
+      "path": "docs/SEASON_LINKS.md",
+      "bytes": 3725,
+      "sha256": "b1903701248ddd28936f9f4c5caf3260a35ca1591c0a331a66df048ae060ffe6"
+    },
+    {
+      "path": "handoff/season-catalogue/article-check.txt",
+      "bytes": 363,
+      "sha256": "9e88b2eb05192470afac2713376fa8d5cf63f207a11b5d64fa4ec23424542048"
+    },
+    {
+      "path": "handoff/season-catalogue/catalogue-tests.txt",
+      "bytes": 101,
+      "sha256": "aee1c639250552bd866f40b6915ee7b92a51151cff50ff08f057164bf037c685"
+    },
+    {
+      "path": "handoff/season-catalogue/catalogue.csv",
+      "bytes": 327873,
+      "sha256": "0e27b63c28fab227d729bb43bb2ebe7a7d1072aca6bd62e88fdf836fe8f4ebfd"
+    },
+    {
+      "path": "handoff/season-catalogue/coverage.csv",
+      "bytes": 401412,
+      "sha256": "30b6d06ad7af0cb0f338c832f1cec091861ac32e25d9d4bbe8acdd955e9e2a3a"
+    },
+    {
+      "path": "handoff/season-catalogue/discovery.json",
+      "bytes": 822385,
+      "sha256": "d0ae484f101781ad31c0a5c778e0295111beea1c6fd39cd92fe8a5f0695c3fb4"
+    },
+    {
+      "path": "handoff/season-catalogue/draft-check.txt",
+      "bytes": 2734,
+      "sha256": "96c942d5a499f12ca6034076b4b7f47b6d9d2f92059037bf043122ade7d2462a"
+    },
+    {
+      "path": "handoff/season-catalogue/league-redirect-responses/179c58de865512adc9967d21cfc0152b9859d3e5055f67cb8914e1d4f589ea93.json",
+      "bytes": 6030,
+      "sha256": "9e070ae0178e4d5c8af958c59ea2907a944436d731e162af378b0bb95f06273e"
+    },
+    {
+      "path": "handoff/season-catalogue/league-redirect-responses/1911143b630e9f4d0b7be6af3aadac6aa24b2846139b148b6db893ca928094b5.json",
+      "bytes": 3881,
+      "sha256": "cc7ce84cbb07325a5b92f9db3432535f7492d2815318ed298026106cff5ca6b3"
+    },
+    {
+      "path": "handoff/season-catalogue/league-redirect-responses/19b4e7ec090e175f0322554558671777e3b7ed7316f8d55b48dd37977563f91a.json",
+      "bytes": 4218,
+      "sha256": "0981f67e2fb1f7d3c8c24527245009106ef661c03eb787b5b259180087cb9b5f"
+    },
+    {
+      "path": "handoff/season-catalogue/league-redirect-responses/22d21423da85922a2f6b855785076885f3e7341d62eb4a45cfcae2fa1b09d128.json",
+      "bytes": 4963,
+      "sha256": "851a953f4ec5de4e2ec13946b36fc91f1255923411e1d1afb247003f1f9bc64a"
+    },
+    {
+      "path": "handoff/season-catalogue/league-redirect-responses/3ef8e168f8beae5c3b4919bb2a2c8e14857cf29748a709cdfb2a074405179b8e.json",
+      "bytes": 4578,
+      "sha256": "4267e84faf303807ca3791c5728e7b9248f1ff7756f46e5bb3cab18c06bfbc1e"
+    },
+    {
+      "path": "handoff/season-catalogue/league-redirect-responses/46b553864a129854928ccf5148f0901c0ad5a596f56b1a980720107ac0594312.json",
+      "bytes": 4834,
+      "sha256": "9acab51824465f1fe477dbf4bb4ca10f710adcf65af184d7ff20985da20a3cc0"
+    },
+    {
+      "path": "handoff/season-catalogue/league-redirect-responses/4e078a2ee9203ea4459d2c29cf144ecfde5c21e49504afe50ca38c923d3f467e.json",
+      "bytes": 4198,
+      "sha256": "bb1dd77d2e69afd3a93aec94c3147b0dad6f09b6cf6cf727cea5078f581dabf2"
+    },
+    {
+      "path": "handoff/season-catalogue/league-redirect-responses/57629af8df12492accad00881c9611c66ecdfcb3f018251498120dba4202714f.json",
+      "bytes": 4264,
+      "sha256": "e0e6eef7b539b4ad3a3328e16b6116d66ff287c9d914e161eb37f4e5685485fe"
+    },
+    {
+      "path": "handoff/season-catalogue/league-redirect-responses/5ac0edb313f669935accf2690288483d734ffce6f2062739fc0e286d8d8db678.json",
+      "bytes": 3866,
+      "sha256": "f5255ddcb784d7eb3659d5d27d05790136e3b336daf38c430e9953b9d9cd4894"
+    },
+    {
+      "path": "handoff/season-catalogue/league-redirect-responses/5ea0c03e674ea08d536854e96535aa464f4f3f66d4c95b80b374c9c632ebff2a.json",
+      "bytes": 4604,
+      "sha256": "aa465f4fb9a539d693b895b451c601aab72afe4a0b35623fbd8ac6d135e02395"
+    },
+    {
+      "path": "handoff/season-catalogue/league-redirect-responses/62efdf47f3c06300bf85b23edf0cbe2b38e23c51aa9b00cbeaf124cdcabd3b54.json",
+      "bytes": 4234,
+      "sha256": "9f97926b2f9006bb723a8bd2c600df3c716781956de676f2e182f82f48ff9607"
+    },
+    {
+      "path": "handoff/season-catalogue/league-redirect-responses/680e7c0e7ab9a0284b050402d0185fe87ee1b1c0b2eece8e9f55e256f590a1ab.json",
+      "bytes": 4662,
+      "sha256": "26b09385f91e46e2f528d102ddd4df8c8f90d7725ee6cb1158fdc3a51de43c8c"
+    },
+    {
+      "path": "handoff/season-catalogue/league-redirect-responses/83f818945a9b9d343ee752a8bbaeacfcf7d0c92265029ddf3478a31370327eba.json",
+      "bytes": 4049,
+      "sha256": "2753ec293a35fc09e25ef3d39de69ac840a15eb28f1d4600d65a24c87d1f04bf"
+    },
+    {
+      "path": "handoff/season-catalogue/league-redirect-responses/87ae84a530c27c3a08a1d64e27cf498152b2b6606f763915d326e1d46d842755.json",
+      "bytes": 3351,
+      "sha256": "822bb4f566ab49e74fe89620ae511af8efeb93dec829c91d769ef2299186a962"
+    },
+    {
+      "path": "handoff/season-catalogue/league-redirect-responses/88f6de054bbc0d5dfc672671be05407c23111c0c3558a4e0b9d47a74a0447fff.json",
+      "bytes": 6030,
+      "sha256": "43f07bd6cdc2744394d91309c1fd839bb22c1ca2c95ceeacc48f8564d75a55ab"
+    },
+    {
+      "path": "handoff/season-catalogue/league-redirect-responses/8ebf3d7ad39e74c7dbcbf8e10d6d2de22f9494084e8e6cfefb24a9e3da3f8b20.json",
+      "bytes": 5192,
+      "sha256": "458a4be8bb6052eee32175639fcd80acc321dab38fdfaed2df2aff19bba8595f"
+    },
+    {
+      "path": "handoff/season-catalogue/league-redirect-responses/920a459a8c05c61e22e0850f18dd2a37053cb9badd955ad7bc57f126a8c0951f.json",
+      "bytes": 3399,
+      "sha256": "fe582876d2c2d3fcc0f07708ab19cc36581ee134b2b6f646a6e69a5a74b4234c"
+    },
+    {
+      "path": "handoff/season-catalogue/league-redirect-responses/93bbd5144390326e9d3c3d1fca3f5577bf6c03ab4cc8d818ac9b716fcd2db3e2.json",
+      "bytes": 3857,
+      "sha256": "eec8e6d43f8c412424eb4c5039e9bf4daa6b489726377f84db410d01bcdce202"
+    },
+    {
+      "path": "handoff/season-catalogue/league-redirect-responses/ae3525fd0f53a08b259c03a68275a0c5bfec8138650c5196150fc98096784126.json",
+      "bytes": 4470,
+      "sha256": "90fbc6a8b7ea799165411bad3556cb9ffb84ea7a950afa635c6fce71df3b605d"
+    },
+    {
+      "path": "handoff/season-catalogue/league-redirect-responses/d37c57942e480465e6d1159bf4597c55a1a80a4c9ad3d1829ead51e9ea15e4c5.json",
+      "bytes": 3821,
+      "sha256": "5707b501375cf791e90113ac316853478da33c808d26a4a85c80cb37e18b182f"
+    },
+    {
+      "path": "handoff/season-catalogue/league-redirect-responses/de6612d8c111a3816b447a9c4de0558bb60d1d6705a206631ee7ed08b6ae15a7.json",
+      "bytes": 3328,
+      "sha256": "659422aa26e903888f781573eabfda0a2cbb3127999636472429c1980aac02f7"
+    },
+    {
+      "path": "handoff/season-catalogue/league-redirect-responses/e7865d50494659bb6ab082c3baa9f11d26b2a2c7c79033f68f7d5486a59da85f.json",
+      "bytes": 4673,
+      "sha256": "7df6179136cc7edea1d11c6b3e97b52b480f768c4df54e11e5c95fc36feb4f0e"
+    },
+    {
+      "path": "handoff/season-catalogue/league-redirect-responses/ee51ee25ed7326cc3ca8ad0533d725fd81e6b54cbe75921733ecff54d9bc8e2d.json",
+      "bytes": 5853,
+      "sha256": "2632659ae625ca4575faa0219b6001dfab4e461a9e546b8826775b92f57817f9"
+    },
+    {
+      "path": "handoff/season-catalogue/league-redirects.json",
+      "bytes": 33745,
+      "sha256": "1d2db9c8c00bb2e013e1e81bf3e6f4fd3f6bbce6d6df65f2dd033e7d8fd7ccf2"
+    },
+    {
+      "path": "handoff/season-catalogue/offline-rebuild.txt",
+      "bytes": 1373,
+      "sha256": "19d7573bbee315d49f4abb7e5ff7143e8e7732de632c1cef61fa2d4907579205"
+    },
+    {
+      "path": "handoff/season-catalogue/package-build.txt",
+      "bytes": 1191,
+      "sha256": "f52022eec9fbcb53ca2d6f546e305a690b3116fc6230d7c6b27905b950329060"
+    },
+    {
+      "path": "handoff/season-catalogue/package-check.txt",
+      "bytes": 138,
+      "sha256": "2b6d092448f7844e6db768b995d23f0089515294a2dba3d25794a12cbe6d657b"
+    },
+    {
+      "path": "handoff/season-catalogue/progress.json",
+      "bytes": 62,
+      "sha256": "0f5aa9ad5fe47f3d272c64a7184d2cc28cda46f07a5961c6e7e785db83e5c54c"
+    },
+    {
+      "path": "handoff/season-catalogue/README.md",
+      "bytes": 4156,
+      "sha256": "e8a2af5923b66596f66d8385d90d371fd96e65c27f4d18018ab0601bc5e48f5c"
+    },
+    {
+      "path": "handoff/season-catalogue/related-season-responses/0000.json",
+      "bytes": 237799,
+      "sha256": "8afb190b9258176031b3d60be69b74f225fe47fbf7019be593599d9e225952a7"
+    },
+    {
+      "path": "handoff/season-catalogue/related-season-responses/0075.json",
+      "bytes": 385226,
+      "sha256": "7feccebaac04b4cea3867c253acd0f539f49609d24c60dbbe4d98134442e9270"
+    },
+    {
+      "path": "handoff/season-catalogue/related-season-responses/0150.json",
+      "bytes": 400719,
+      "sha256": "01535b0f0616b2bfdb22267a55a6e7d9f346ea2a587695c019dc03781cb865cb"
+    },
+    {
+      "path": "handoff/season-catalogue/related-season-responses/0225.json",
+      "bytes": 356813,
+      "sha256": "292f6a6af4afa1fb439c41347834e43bc7c8bc18cbe897b08b21b726e368aeb0"
+    },
+    {
+      "path": "handoff/season-catalogue/related-season-responses/0300.json",
+      "bytes": 332934,
+      "sha256": "1b9cc9aae23dcd8c14abf2b2a4d97e4356e15dd4c8397b3c2c20d9ac94ce637c"
+    },
+    {
+      "path": "handoff/season-catalogue/related-season-responses/0375.json",
+      "bytes": 245265,
+      "sha256": "8c7123d330eb56c26cece2680eabb7e5a5e119ab9f0f2120641cfaf316a6349d"
+    },
+    {
+      "path": "handoff/season-catalogue/related-season-results.json",
+      "bytes": 1853776,
+      "sha256": "6bd9f8422666b1242be15b96d8398f9ad1152ac78040e3f9b15af1cd8b7939ec"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/0022945ab0485309b8aab35b65c90b1f4223d1b480bcd508bd86050ef41009cb.json.gz",
+      "bytes": 506,
+      "sha256": "d317e9f4e804eca26f936e9fa302d2d68abce432233448d4f32d3fa5068cc0a5"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/0055a82c47d55a633d162146610707f490fc8ada765888269e35a9c9c36a50cc.json.gz",
+      "bytes": 430,
+      "sha256": "faa995545193420b828ed8f80a90169c8e0f3aea59337a12c47847561e91f17c"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/00607ee9d060d3486c282054d076e72b17e71b401690a8e666c21d7c65624435.json.gz",
+      "bytes": 316,
+      "sha256": "f9e200455bfe2aca801ae8a90b49ae08a9b7c0a7b4b60fbe78c2f1642d0cfc48"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/0126683d74258738fd1f8e61741ed4dc4d5b5903da062de9791125c9ac7f5d0f.json.gz",
+      "bytes": 517,
+      "sha256": "52fe048521b3f9aa3e5cd31af96bffd79563f9720bab8c496b4cb2e5afb63473"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/029867bfcda63d4d51119e138185a076f9b6af4b71e5ccfcd3f906e66fd5c946.json.gz",
+      "bytes": 656,
+      "sha256": "81d5b6a2e36e9e12f5f0ec75b4db9f1508c283be593047c3ab887a1e16a4f566"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/066d342418d53d9e95243341b4e5145f620f950bcf24cc1bcb5ad3105eb3e1e4.json.gz",
+      "bytes": 548,
+      "sha256": "8266f7e1639a2a17ae92c2ebb15644cf701b062d659b727215004af1d141ce1a"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/06eaed26f0afdd150415b4dca5031dbf02d68957d1ee816ab977a97eca13ec19.json.gz",
+      "bytes": 349,
+      "sha256": "6842ec2d4f7b6e3808609df74c1fd5e5a36c2ad1f99a532fa12ac14be9a62830"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/06f78e5ae30071ce2f4723f8484e9d62e93e93b183304466b2b262b2dad40773.json.gz",
+      "bytes": 643,
+      "sha256": "1681c8c7bba5154a3a6209e18347f187ec21faf9a85bfb6fe4335431d12e2452"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/071354ef0e81736debcc14d1a98f7e82bfa8bef8e253cfd36aebe2e91c449d8a.json.gz",
+      "bytes": 500,
+      "sha256": "acb173d22ee396a65fbf1848d9b0653001b98ac20f52ce33544c0279a0c15821"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/0757bd8bd66e976a00bf37f1bcbb39ae3b2d30d100ccc0ef97005118caf19ee0.json.gz",
+      "bytes": 343,
+      "sha256": "eefb4c8ce0abca75d216b3683cf074397a68762b0e5f88c50e2ef4756475bb74"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/079224757cf3f8b8c326faf6ee25f47176c70f786d2404b6618bedb2e0baee15.json.gz",
+      "bytes": 1481,
+      "sha256": "82967a72ce1478c7892cf7c21a4694089abaf63fac7792316ad96b833f7b0084"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/08119fc578bfc364194bcadda1e735410c0ceb08bc8bf319adbf1bc414c8c156.json.gz",
+      "bytes": 386,
+      "sha256": "4c9a6ab5fd4da9fdd78ed55acfd321767945d281d11cb20a3a713bef9035558f"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/086394dcdb118d7a8011882ce1cbca975c6a0f78bad05136b9c6d538ee127f52.json.gz",
+      "bytes": 543,
+      "sha256": "6a4ac5793353b7008733983464d126414f83849c5892920ea438a3cd80bb2e2b"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/0a898263efb8f8f75e4038822e13b9fb4404a7f69254fdc23887027311b4667d.json.gz",
+      "bytes": 866,
+      "sha256": "2075df84b3b8eca395be18a1927a93fc94f5261e6afd7f2a2b57e0edf5fc1bc0"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/0b3af20ce638672cfa48d5c3044c80c5d2f848edf6bbc7edd9aa45bfc89a95b2.json.gz",
+      "bytes": 524,
+      "sha256": "b0a52db01400e0e0f96bd7e234dada2d038bd959e5b9b3ede55dda65e6064424"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/0d15671b31c246c3581850533e4e5b67ad1fdb809b19f9151e1c1502d3c40ae9.json.gz",
+      "bytes": 390,
+      "sha256": "e23917386407623a7c75c43ed841c05392642da791f1913b29a48e7f386b71ad"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/0db61f6d6db58a649af3e3b26de74a7db56b74d31224e1f86cefc2b417f147ce.json.gz",
+      "bytes": 1341,
+      "sha256": "d8ebdace41042044ffe233d3679695114131631473830f546b88d32edbf8df56"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/0dc8648a71a146e5b561b5500ebe05cc1f58dcd891b82f1a72bdecabc8508595.json.gz",
+      "bytes": 1101,
+      "sha256": "40c68cd0d090f5a4b47234d630700275844c4a22e3f0804f89d150a3b0839297"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/0ea18bcd6a0bb2790b41b52fad4cf20cc9da6d78674dc9db36caf34a8dde37c0.json.gz",
+      "bytes": 359,
+      "sha256": "13f4943a6648b71f5bab5836cbcce4d7e66aa2eb0f0cafed03a4da19bcb0ec02"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/0f01cb7b9ad9fa9e53ad678d833852350e17e549cee49681ca433dd321405b49.json.gz",
+      "bytes": 420,
+      "sha256": "b6c31706af6bb5fa5940c5d2fb798a1071557a1bb5ca5ca7e67373882198c90f"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/0f816de1fe754ad22fc37d6fbf10236f31fd3871bce04426ad5a5e4c7b72b32b.json.gz",
+      "bytes": 494,
+      "sha256": "6bac0d284a4eef4d6b2bccf6d7eddd2b756698baa108623dbc0b43607e1a1d31"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/10c86d10a8eb244f2bd30a98013e3a16703f2ddcce60e48b79d0ff72038d68c0.json.gz",
+      "bytes": 296,
+      "sha256": "c18dc43718dbca661dc433457d63111529243f2a8b532d6889eca199dc9c12b7"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/129906cff313a98570f73eabc0ea597a58837d4e858b65522066a9df2af9c8df.json.gz",
+      "bytes": 341,
+      "sha256": "b20e885f973ee9c5aa4d0b6b77264c4b2aa5fad7166d219b04be8e74cbb5dd54"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/13defe5cd16d511d5b5a50727e146ab26669860fac58615d874d023e128826bc.json.gz",
+      "bytes": 531,
+      "sha256": "f49e36c0eaf6b798cb26c7f0b4c6a8b01f3db0a4c05c16c424c1766ab7462ccb"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/14da057af13937eb6d7035b7b51f2a4ea58384c80ed4b61a0a00d781a1f8e6bf.json.gz",
+      "bytes": 472,
+      "sha256": "85744338fdf456d62c19e12401fd3e115fa492dd930fdd13d2968d4797e9b02f"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/150e5fb65fdeffadf1a61c0b02e3e722afe6d3695b39649ce41e9fead8cb042b.json.gz",
+      "bytes": 454,
+      "sha256": "20faed14da9cd8975f078b45da222c14e326ec0c1ec0e6f703f099a12e2604de"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/16aec74e0f78cc7cc5c535ca5a98c2625b2e28987d1ba2746378424206d8e88b.json.gz",
+      "bytes": 382,
+      "sha256": "34817f0fc32dd8f72ccb7a7a6034d508ea8dd5ac55b3758146575c43ffdd5fa6"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/16d0ab9997d9598d373d9f82fe945adc771d19435c0f34695dfa3c20e3577f9c.json.gz",
+      "bytes": 1193,
+      "sha256": "eeeba9193bb918f179cbc781093984e319d0ddfed2a81a84df5bcb74d1382527"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/17013b27813801aae23c3a6cb2876a3194d18f374b64b66649977aa2ef5cef04.json.gz",
+      "bytes": 947,
+      "sha256": "ac72b598ecb1f06e3de743968bc2708ef60eea2ea25eb6e7bdad65303a739471"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/182c6f5e638712b505d014a6f2a277b250bc0e85417bdd0edc3edfdcb66819fb.json.gz",
+      "bytes": 463,
+      "sha256": "822d899365cc329ef9ab39e844b5d4d86530caa4a46569f267fe6981c6073830"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/187a8be341dbe211ad805bc4b1d1410750e519747eaa7235324776c43ff4ca7b.json.gz",
+      "bytes": 351,
+      "sha256": "3f0cd47373f9434135862a49a17e970010b01beba73f67fffd68d58e6957c416"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/1a01234ec81c4224ce50cc403595b0113b30b5346bc997661712ee91297a40d5.json.gz",
+      "bytes": 338,
+      "sha256": "6dc48926eb08531c518473cf6b918ae061e7beb12e28546a96114a79a3f85b6a"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/1b28ae6bbf20a5690b00d1bc66505b48b0a0e38118a03efaff753e3095a96050.json.gz",
+      "bytes": 457,
+      "sha256": "2a911adc092783a65da221435d299698b301998202d96238a7fb17a444e93c30"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/1b50d5421f01d67548abb95ea1211a7def17e1198785a9e21e097c0ccefcbc54.json.gz",
+      "bytes": 498,
+      "sha256": "ccd844abbb37a8651b1f0ff0dde17caace5c83aa8d21df6c0705b367b5a4b309"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/1b8aab61c8c61c29a0767398ed04df71068af463fd6ad9351b3cd84acd075834.json.gz",
+      "bytes": 665,
+      "sha256": "3da931bf0c1e96dad9ca1569c428777379aae6eff96545319bf42b83f3dfef1a"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/1be2c0b325d8683b7c4ad7b71ca6d72eb73bf1f2d63ffc330e2b00c298db5eab.json.gz",
+      "bytes": 421,
+      "sha256": "02f4372c698f32afc30848f41f779220e6e374fd88f8536b7a3b2f0292479326"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/1bfe10565cd77a6166c01454cbefa7e85c18b9a2d2487b21b647ca711536c4ec.json.gz",
+      "bytes": 754,
+      "sha256": "310b13a153fb0d0f6049cbe36984e95a8e5c54be25bc36183e0c9be3bf6a279c"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/1c81bcef260b68dc6eb14f6982b6ae6352e7194692988d0c762e55cffdecef06.json.gz",
+      "bytes": 322,
+      "sha256": "77b604b9572ddc7edf520038792970b2d186b3598fa99dc3fa0d40dafe30ed4f"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/1c8cb8c03fbcdf61fd2a2476043aadf61d9b269ddc9537ade2e289e47d4a0075.json.gz",
+      "bytes": 422,
+      "sha256": "aa2787955194e8c1fcb66866dac87a958e22cedb265ee77a6bd46d03c3380948"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/1cb41cf2817445ea45aaaf969575b777c402cdb5d01f06fa611f191a4472bb40.json.gz",
+      "bytes": 575,
+      "sha256": "0475717bc86335231d40deee4d19f08738d2df63374b68fe13a7a9414295cfa9"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/1cd0cb5817c6ed694a4b195376d6047bf3b8a54e8dd8bd2a66e18a3849aac959.json.gz",
+      "bytes": 301,
+      "sha256": "7af8052390fe5314efcc0e8f2485f7a9e259f309bfbad8c01ba54f4c5fb1aa18"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/1d075432d4e0a38ff9f93df3f676cf87ff31bda7855c0a56662f3682992203fc.json.gz",
+      "bytes": 1022,
+      "sha256": "ad23d8dd10f6c12c33179ac89ea402a90c98712cfec6f883e246a8d695de13d4"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/1e0abca306771966f54ea3b0636e9258e20a76ba75b6a0a4f38caef472e3f53b.json.gz",
+      "bytes": 627,
+      "sha256": "278dfefda25838a697fea3092f91b49c3d37910a7c1e951fd813603a2e59ac31"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/1ec2c5334bbf135f1c4fcef56e0161ace2260c7445110b4a84e4289448e9a48b.json.gz",
+      "bytes": 387,
+      "sha256": "fbbe1c5c7148f2b447ca8f9060174cfd47f714a622c15513e09f3dec49e84cf3"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/1f01fdbdec7798b9a8e98241e9924f2054acd2270836927415627b68b1af140f.json.gz",
+      "bytes": 450,
+      "sha256": "180071ebeb29c732fea9b82d51f5957bff08ae580c8bdaf58e079e2ffaa80d83"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/1fa887b81768ca6138a4c1616b45b13ce33a27d21ded6a7a56dda634e4800056.json.gz",
+      "bytes": 377,
+      "sha256": "acee2cc9d1603bcea6fd4245c192fb8ac78b7acad406445e1d4feeb71eb5bc05"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/1fdedfbff192e4ade56d0272ac76f9bdcef8bb17e1666eb6f06062dff7ab9552.json.gz",
+      "bytes": 316,
+      "sha256": "6b407fbf8f2502208035ca0d57d3a89d1b7725a1019914fe5e84cb5bed2276f9"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/2091ffa093f2a1a4e79b378b4f9c42a0450bf25270d73de03ba3678d241b072f.json.gz",
+      "bytes": 322,
+      "sha256": "17715eb65d0235a09145ce909e5fea630e8d65af18edc15f2518935e09788474"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/242214e71026122ce03cf7e7efbe49565d5fc54a0f546171f099397698087510.json.gz",
+      "bytes": 439,
+      "sha256": "9fefb41c9bc3fc31059b6ca165d83f786348647c60c626ea6cdbffff4e3005bc"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/256a9ac2fc0b1f59ef53322184e5cac21679c4c77462131097c0765792a86abc.json.gz",
+      "bytes": 645,
+      "sha256": "143ac858979da730dac1c9173cb9bf3c53aa6685a6132f6b0661531a0a99cc85"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/2591797b4abbedb5a9b78efd9083a738dd3fe58f87aad941eccb1cbbac391b6d.json.gz",
+      "bytes": 581,
+      "sha256": "4b8141910e9baf7ff5a3665179fc9d977fb42882ace5cf370a6c8c509e0f183c"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/263074abaa7d571e2138a4899e046c1ee53640098dfe794fe363d92a442ad13e.json.gz",
+      "bytes": 539,
+      "sha256": "90e8f65403c7fe0f1f7fed7d9691629cdbb2dc3ecb0b2893e8717d10adcc46e3"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/26781d676b267a3c48ea48de5e0acb28e216ec1f4806bacc6a0cf04a67f466b5.json.gz",
+      "bytes": 563,
+      "sha256": "6cdc64369a372e37de53392272e6c99db1c9fcedead817f4749e7c1ae67d42ec"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/2971783f414604d87faefef775053dcc6995d71b70a9e8e38b22242cd5bf97e3.json.gz",
+      "bytes": 335,
+      "sha256": "6c942296b810bbb32540d0727ba114b4b0055707df0924251dd831458ffebda0"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/2979c8ac26658162fec844d9964d7bc7f52b272e9ba5ec5b0031f37132df2b41.json.gz",
+      "bytes": 681,
+      "sha256": "473b4bd359e15a1816a70c96e48194fd61ae6935148b99a289ce3163c0801d01"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/29db62bd85ad32c6f568d4d92b1421e59cc5540ea1ba9e7a78cb35f5fca914a6.json.gz",
+      "bytes": 672,
+      "sha256": "83058aae3a205d6a25594adbc784318f39de03f28c7af5ecc788907ffabcb109"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/2bdd1fb1ca1c786a48a9751c2966c904bf87bcdea77ed427f7f74e68641a0c23.json.gz",
+      "bytes": 605,
+      "sha256": "87e3e0d00be8c1309eae8b66bdd4b3d90b58548a22767a79f2a96272de712523"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/2be2d10ddf24bd4fecb39ec116e9d148a6b5584c5d70e1c595345ef02a043919.json.gz",
+      "bytes": 604,
+      "sha256": "9bb614c8a75c6f137ad53adad6640e056f47061d7ea58da1c672e7895e94ab8c"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/2cc6e6cf6244bafbc33ca67c46becbe614ff6371d0c94826fa61fda5b8d609c8.json.gz",
+      "bytes": 350,
+      "sha256": "f6e0dd8baff72d029b35635b1db0a33e8a544e3bb0f2a5a5c3e22d08e7041431"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/2de9299e2a1ccb81cbbd77da35d121fa2b14056da3f712caa26585d9b448c130.json.gz",
+      "bytes": 586,
+      "sha256": "1a0784d45abcd6fb66a7c84385ef751a49a6cfc54010c651299e6d8944fe2530"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/2e4b786476999aaca8930bd0bc24b98d49e1adb74bd8b5240b5ccd1d9872c7ff.json.gz",
+      "bytes": 461,
+      "sha256": "a03824713dffae6766ba17a2e13c7ead54cf08d5763c02777d0ce9c474f93600"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/2ebbded9cfbbfbb7ec6b89308385eccef9e5372bdec47691af8fa4af4ec9d974.json.gz",
+      "bytes": 423,
+      "sha256": "51cc0150791b48796503773525d163152bcf80ccf67c0bccc19d0a24704a1779"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/3082c5f87b635a060ce94520e4999ef95b65ea164d61a71ebf204effc8995917.json.gz",
+      "bytes": 518,
+      "sha256": "0bf76f01921b3d770d7f779b2381d8b39a58feb1cdc4771b4be2c37c582f367d"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/30e4a53ca90511e1cb3e0d062af2d4dc1ecaa4356f261761d3f84ff10015c02a.json.gz",
+      "bytes": 441,
+      "sha256": "6ed8cf72e68c51c7cc7573a59bb9fc1e18497c29dabed116b41f66ce11498cb6"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/30e7658fa7c99a4f0f8e6b25b5d63c9ea90da041dabaa5c0d1d08830d36148c4.json.gz",
+      "bytes": 648,
+      "sha256": "6a7787ec4754bdc465967e794733044db86d6fecc37cd7f916707a3b9c849fa0"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/33c5d7b26f365c379c585ddbf545014458ef9dec42bcceac4f5ff036e6b522d2.json.gz",
+      "bytes": 323,
+      "sha256": "95094acf8e1e4d4c22bb0bb204a07d32a2a6a9ffe0f59fd2146a858ff06cd1c5"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/3468f70edfe0e8e0b2e46b6b24a5f6d0d3b04cbfd09aeb4191ce2f26fcd67a2d.json.gz",
+      "bytes": 414,
+      "sha256": "5459ce20e2d275584efe663a819fd0fa685dfd543b3f9df16d37cd154699e27f"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/34d44734e55bced9380a5d48f97b139464cd50a5df5798a2c9bb4486d3e790e1.json.gz",
+      "bytes": 515,
+      "sha256": "b85c9dd84acddcd02715434a5a103f42ef77b804223dd64b05aa0d1a510cb980"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/34e992a2f43c7fa0b818f7765a2bbf922456b2892dcda6f008da3435a6e3a935.json.gz",
+      "bytes": 444,
+      "sha256": "7d385c36ea94dfe523dc7ab0efcf4a02fe2b4ef14e6314334264a532f228821b"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/35c6b1436d2653f1226186d755f08d7387e4d70b0caf71f7efe260b65218ab82.json.gz",
+      "bytes": 520,
+      "sha256": "9d11b984c73f6115648a7f92b2a930ada40b00c14b38e8cef2d80ab146b26fdc"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/35d0c1d2f70e847aa7dad8a9a2402a67cfcf97f3469ecafaa3d9a736d52a3712.json.gz",
+      "bytes": 392,
+      "sha256": "1ef2d67f76412e6158f20b4a73fab55c55fc0b63a42fe05c16b5fa48129eb3ad"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/36310a89d78bbbd837d5ff9b882d6b953f58c8a548c75676d273a4979266aeec.json.gz",
+      "bytes": 373,
+      "sha256": "4ab38b58ec6bd9d0d82bf69e7201746fc763fc00f806ba044825b018224c45ef"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/38cd92e50a1320800ad3c99da0ebb52ca5b68506477b2e74c938daf46a2608bc.json.gz",
+      "bytes": 388,
+      "sha256": "729be7c1b39fd913f80c520ad01407c7a6e80545a0f6c5109e92a030c226e40d"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/38ffa9f58a9195f0534799ae93e710a315a2106f26b47a933a15049e2b118f2c.json.gz",
+      "bytes": 447,
+      "sha256": "76d77838260b2d9ed69e36bcfacff90272adf120bd786343d9d8a46c761b5932"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/39fdbd8ebaa77302f51c73ac4ab6d92e0cbd404c1878db4cd50e44de17743351.json.gz",
+      "bytes": 632,
+      "sha256": "9cbb6502476d464c523dd19a20555afd62c59c08a9d3055d7d63e2d626abbc2f"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/3a2e87b6a47b5524cdc96175a75d4ada7e8410f1fdf48e2cdaa6b6c371be8494.json.gz",
+      "bytes": 517,
+      "sha256": "d07ec5545019190e00fbae3cda6a2a29b2a72688e45e68ff67ba178fe716f4dc"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/3ae3ba3ef096fb91b8997a166058735392af3007d6cd0c46ea2b643efe97222c.json.gz",
+      "bytes": 406,
+      "sha256": "0a542052497667344a82665cb3d20be479f86d90125aa2161d3c0e7fcb35f79b"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/3ba5a36a3d9ef67c894118fbb9ab13562f4d6fad57e6ef4db8354a40f0f9dd7b.json.gz",
+      "bytes": 377,
+      "sha256": "ec5fa59538512630856e9904fdeb6809f730d9e121337b3439225c22214546a2"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/3bb224fb12d32296d3c0cc7028809122cb45579fb1d1c4cfd98b613cdf3be75f.json.gz",
+      "bytes": 618,
+      "sha256": "a38ff0b0307e9f68f701569a2815c87cbb2141253c62169aed9db2e85ca5d032"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/3c5b776418cb2d8bfe0777fcd3ea36097af96eb444bb7e449054c81e366ee1b3.json.gz",
+      "bytes": 491,
+      "sha256": "8214a254beab0214556028540738b9aa1f8b353123035361252b8ce1800a3b32"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/3ccc13586a291b20633d076be0fdc20b183e372985b01992a5a20e7bec5b3c42.json.gz",
+      "bytes": 1603,
+      "sha256": "93055386536de1fdd8da6faf99fc27a6f054c5bcd42d115874cc2788d97aa00d"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/3d29bcf271c3bc76ac7adc69b2c6b4b43874a5f4f7dab1cb1b1ecd0a32ba0fb2.json.gz",
+      "bytes": 308,
+      "sha256": "473d1d644879b260d7ce83a4a0800541cecc4b12616ea6674a2d69d4bae36d51"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/3db247e1d97d62dac276be70efedf157cd6f6f7e3c6126e734a9136b5df2c31a.json.gz",
+      "bytes": 322,
+      "sha256": "448f0b789f406a55872d1cb3c675a47c2edee4d64af6eca10c3f38dbf34aa488"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/408198a747747fe45af3029260087c15b016d589d48ab113b68b8f3423a8e94b.json.gz",
+      "bytes": 415,
+      "sha256": "6e34cd6c409b8c31885c08cd8f2dc3b466bbe745cf24f4e29fa2e7551339d72d"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/4302c84e64a77cce9887a4a4700e522b7fef4cb2f9b099ecbb6b11b705634b84.json.gz",
+      "bytes": 572,
+      "sha256": "00c25253080065e07e2aeaa901a7b243781fe916c8ef8870b7504f2b986077c1"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/43a669cae9588481622bac514090207a0e99075ee31962128d66a28bdae39ff1.json.gz",
+      "bytes": 349,
+      "sha256": "0c652aa41a93a5882e3ff9ae8cb467a183e5fc976fedbecae1003c8b78122ffb"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/43b06ce54c89094421805a845fe3322f232ecab20947a19cd1ef1eb74e9b30fb.json.gz",
+      "bytes": 485,
+      "sha256": "ff33f63aff29c6c41bff9839cd8f4faac1435719ca415aa710a9ceb85d55cada"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/4423fc8243b3ae988fa0a9b3e9645a97d7769facdcfe8a863e7ced7834e6927b.json.gz",
+      "bytes": 318,
+      "sha256": "1cccd62379b68a9aadd6e78ad45912938e0d6d779056be1e0cdcba2fd1ff904d"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/44514e7b67d2bc4c4c6f055cc301da4adade68ca698cee79b52ffee8501317b9.json.gz",
+      "bytes": 421,
+      "sha256": "593c63921145df39c586018e7bf611d02084452802dab6d40489ec3042095550"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/453cb315c44857eb7a63d845ac3b3284c836fad4d05d218040a57ddf070da3b8.json.gz",
+      "bytes": 509,
+      "sha256": "4e218687b04e1e84b847a1d9e9b65e5ed7eb7f63e6bcf5f4e926ffe9e003849f"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/45e262d3b6fad44213b5e93aec005cce395e2d012f030673e895b757f2426652.json.gz",
+      "bytes": 567,
+      "sha256": "46403fd7084c284caa41ef0438f917110faca10d38a8e445b4ce713eb893cd47"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/4a447e31d3244e1dbde0a514afbcf0f2e264730b5b7d95c7c7e4a9dbcdcf56f2.json.gz",
+      "bytes": 387,
+      "sha256": "498c73b4eae87a53c396d8de9be0cf42b8566afd414dc1b23038149682c96549"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/4a6000a56b6685f577adf4130df5505016a05adca7d2e6c54aea329fb75bb542.json.gz",
+      "bytes": 1478,
+      "sha256": "59dbc5bb6564d58f13dd465e10538b1ded194e93a12a1e6e91ea534cf05849d3"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/4b0b5c434dafa098ae2500816a1a1836215b435cb3e56e9f1f632d9d031c5a04.json.gz",
+      "bytes": 452,
+      "sha256": "88137e0fa2e5df355b88853c2a56b90aa3ddbe816033d4930ca996658c45911b"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/4c13bddcd310ce1048cbba0fa87c32569a98642dd151c130cddfa4c52fc05ea5.json.gz",
+      "bytes": 420,
+      "sha256": "fb95fe2c5b04a8caf9dac2f46fbf382b5081eee2e6d3270e492955f63c6f04dc"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/4cc6659854ad64da5bd78e4cdc30d0721d520645fc8f527324fd9fddbd7c166d.json.gz",
+      "bytes": 347,
+      "sha256": "d046ee97d135891984e330c06bb2458a4818f702c0c1adb1d0b99ba1fb918218"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/4d838dabcc122f189225d9df71999196d93bc702c98f64b1408d8245fc1339e5.json.gz",
+      "bytes": 421,
+      "sha256": "0ed5301bb16880986a601f04664354989036a884262c83d98be82e489e9cdeaa"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/4f20fa5c6f872996f6acc3a4ca20f2e4e8f8f338defd0a0cab7ecb8772722ec8.json.gz",
+      "bytes": 1280,
+      "sha256": "5db6927345b7d7a054b940ebe0045b0b6d01fbe16c9272a8e5300efe97eeb836"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/5023b2f53fdbe236bada277eb6c43fe1a78a9065356ca0bb9ace74f9d5c34fd5.json.gz",
+      "bytes": 1135,
+      "sha256": "d80d765dc7c1824d7a7febe4853bee6fd853378b078d17c74e3664c167e16393"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/507ea432ebf1808b0a0e466cfbdd7f1d88a02fef40ec8258dc477621b8fa26cd.json.gz",
+      "bytes": 1164,
+      "sha256": "ae0379e44a6e95a9e63ccec792ca3e1fc69c6b1d51b83c2910fced0e9b1e15fe"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/513b2d66a20590a95d7411b1e67d1f9603611265f13c5965f7288980eb909031.json.gz",
+      "bytes": 341,
+      "sha256": "ea7529a5a9a05a99102dd881009c7245af99921176ede070ad360d6b63493c98"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/52d7c12d8970573e990f929a87a8ed22eff6f32c68c186485c2aa7c682c12199.json.gz",
+      "bytes": 308,
+      "sha256": "b59d52ce3cafc9cb933b38a7d7af75da568d9bcb70b87e83e71681bb9598838c"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/535a0498d40594fc14e7c1059176208c70b44d67d37f81424eac147590eca287.json.gz",
+      "bytes": 421,
+      "sha256": "692e13bcf6f9ece09edbdf53877a636bf19e53e8a660570d53b22a4a2f4fa69f"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/541c6aeb0ff1c1c42f045f461005b658d36e87739c41112f922087d68c403b8b.json.gz",
+      "bytes": 441,
+      "sha256": "5ee3a56f92ee877e734958f2089c2ffb729b36c31660d1f77d37769b2cab8579"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/54487f154dd7cd423328040cc2e45d5b29ed6d5f977b83b0ea5be2f0e0341e3d.json.gz",
+      "bytes": 322,
+      "sha256": "3d98ac48fd9f98858f47f2c379415aead3f3354942994f2f4e699fa493869ac3"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/5477ec32026349e44915e9e3585f8d529aa7364611dc161fc918956f83a6da56.json.gz",
+      "bytes": 867,
+      "sha256": "a6886f6a308022773fe74b67a7a0665c15da4620fbd5e32ab12acc02ccfee6aa"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/5614b2f2b64a852dd0efc8bf2f986b9a574f09dce462c0275d64966209c52fb3.json.gz",
+      "bytes": 399,
+      "sha256": "9248fe8c7cffa834ff8a10ebe568f8370bd6b04a18eac8d6772d295b835ace52"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/566914733631100cc17723f4de15d0246297932d0206f2c17522e0547f1a556f.json.gz",
+      "bytes": 1675,
+      "sha256": "7bd0cd44b83b4a6ad04722da5db3e0fb5d1233ecb61f0cafdf9be3955b3f4177"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/56fb4c04738e418110a5e58b4d92ccac98f0861eb6712923a0ca6041e2e6c22f.json.gz",
+      "bytes": 287,
+      "sha256": "2bcdb2a63bd3a0422f6333036ba7e09026755b411cfe7577a14f3afc7e6185d6"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/57cddc50a0043b60257fce62d17536b4b70f668422a5ba8334f3fe229ff14c30.json.gz",
+      "bytes": 536,
+      "sha256": "fc8e052ec90ddf1c8d4bd0a562b145c2fdde6a6d13d9007f0005f96102e23b4f"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/586f4cfd33f0b184c693450869784aa458a34b0234d709a14e3e1e12283a501f.json.gz",
+      "bytes": 502,
+      "sha256": "771ad7ddb51570976e1631012aa786a93d048035450472723c240a3af0bcdc50"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/5abf98508d231b5fc53b05f763a2f36df44046739bb64ef80ed657b2a75b5266.json.gz",
+      "bytes": 385,
+      "sha256": "aeedef900950148a9b1652274c539a24194a6f5bee246addd64d6eee14bd09cd"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/5b60eebdd373af55eb627dc7ccb98c93ad44e41bb95a6a90d9aa1a736fbb451a.json.gz",
+      "bytes": 433,
+      "sha256": "1e1660ddf760adaea55ae0745f5c53ea4ca5715df5a21420b3e1a7f396b7c318"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/5c362a835e0ccaef1e6cdfacb9402d0c5fc4e6598d4bb49251c7b62d2212487d.json.gz",
+      "bytes": 1452,
+      "sha256": "42ea42532df17f3ac6de650003e3a793e3f79c83fc197141b3c71b48678d2261"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/5d10d68f5cf6d62845d97025b9ddb9a380a662d09984a50296168fb80d4841a5.json.gz",
+      "bytes": 622,
+      "sha256": "517686b0f7df349de67179619601f9c4e3fa2aa75d29290a39d8eee0e234a344"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/61aa99522e0e8648616afa2e089dfe972ae8842d88efb6b37d622b9bbfde163c.json.gz",
+      "bytes": 612,
+      "sha256": "0bb7e079d475ccd20c260010d3207d6e78fc926f62301ad3511725bf26d24802"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/61ce81c6cd2051c3e2d0efa2d7e94b51c6bbcef3da892874862b373ae422aeaa.json.gz",
+      "bytes": 546,
+      "sha256": "f8608fad916d1b42995dd0c68509efba270128efc297c285d0f9cf52221cc8fc"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/623e837dc7f57481996d32578066f4fd6ea3ce470bf0c270fd09090608169c05.json.gz",
+      "bytes": 476,
+      "sha256": "428ddce74f5a28ab547365a71dc81889afc00de42012fd5e67b256791035ad63"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/6252123f6dbed1653e9668054daa845064e5bc93731b5275f1216d1372982080.json.gz",
+      "bytes": 966,
+      "sha256": "e4aa258e630ed6f75ac5b27d450606a5e4756ba3136a2fda3a4727f4e908fbf8"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/63a548b8b3bc5ac55b26451d3e5f9504a3ca1981cce9cc9ce3f0098597041cd7.json.gz",
+      "bytes": 376,
+      "sha256": "b43f7a4a23f1ae7df6e7eed12fa2200529c788c861b76959a0a11ad4360f96d4"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/6449224459e07351f4c47eafcee2799468b8c9a23cae793b980dc479227bfc43.json.gz",
+      "bytes": 362,
+      "sha256": "575d88bc2d46401f9b9be72a4446baf553f527b836bc85fa723865533680e3cf"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/64686506f0ebe93d6b0d4a8d29e902983c0d06a3288a55cae3e9d3fed713c8a5.json.gz",
+      "bytes": 374,
+      "sha256": "3e279dea9ea81e2a52f1d3f24fb42373c465dbab4e13882c3514e71813b2ed91"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/66eae12162cd00a2132a44d88b79ffe67ff7267c5c9d72c72a91c03acf6de602.json.gz",
+      "bytes": 1104,
+      "sha256": "5de96ddc7376ce52cba747bf0ab31e9ff89edeaaaf2a5f501e19ea7244a47141"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/670d1776f65766553786aca65545eb46665944391ab25821a0c6918ab1438535.json.gz",
+      "bytes": 393,
+      "sha256": "582bdb698bc8fed1e6cd5eca01b2273cf0b21670c90597f114231ee62846eea7"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/6773127cea5844c14369d6b5df6e928bd680f1725a9ecdf6ad00837d03276f31.json.gz",
+      "bytes": 499,
+      "sha256": "caa24a8707ee5a859b2e0cbfeffe1e01eb67bfe69a8705ba78a169e3b565792a"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/68ad528ea81147dd487fdef17b849427d8963eb02c4bebfaa1101299b5bb1871.json.gz",
+      "bytes": 349,
+      "sha256": "9c625f04de5cd56e66e8245ced947b507a8ebdf95eff5754d4f594db40337499"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/6917888e83ec33a9f8e88ae159896b536546718091da25899a13ef2d562a88a8.json.gz",
+      "bytes": 401,
+      "sha256": "7e6c3feefbd634eb254fcfe624948e783bd5e76dbfddb3d787d2db7f0502b61f"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/6ab1eec2b685f21718e3388ec443c6b10adbbff8888512cbb293e8e166b2119e.json.gz",
+      "bytes": 550,
+      "sha256": "ce6f352c78c5b05f0a5adf4a9520b075079b338df1b386c1903d7ccf76b12a32"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/6b5d081e5ba26bcff26a2cf5ed1f8efaf739c1dc9e4f9a9fd796228bc4ba7ae7.json.gz",
+      "bytes": 334,
+      "sha256": "ca66acd194a54e9a6d022492cd0b02ffed5f2b09e3318e697a86ca1d3891559f"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/6bac65f4eda35a9fc5a5d4d88b8d2509d9613774e71ff8b0a769c43509d0cfa1.json.gz",
+      "bytes": 396,
+      "sha256": "8d535a86040f9a6270ccee2924d0d6c3e5de4f1cb3940c27f30c0dac29c90dee"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/6baf3e47074f8fd1f56bd0e40608809630bd9ed32dde0e3ee446bdbdcdca9279.json.gz",
+      "bytes": 448,
+      "sha256": "b9e23c087f84c894323952e6247eb674f31f6c9917a1f8a166a7dea545001c4e"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/6cf40fcbbddd72b2624b97436f6400c6bf40251b8afa50a60b3764f2c15a4543.json.gz",
+      "bytes": 631,
+      "sha256": "7c465f5e12d4cf4d4cb7d924da7d4848b0e5bbf057172d287ecfe254a241a914"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/6d6697b6a0a7803f2ad6ace8cbcb8ccd10d43c90e477f77f4a292ed4de98a97d.json.gz",
+      "bytes": 551,
+      "sha256": "c233f4d9c828b679e41c4ec37364acd62fc779c13275e51c41238391cfa2715f"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/6e76efc917befb6caaeddedf30cb236be292b3aed724829a7062277b88262729.json.gz",
+      "bytes": 563,
+      "sha256": "b99bf5564c776af3831c3b626bdd5859ee6de3947fd5e7a7a4f18221bf12f05b"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/6e8b93e3ba1729c0c10462032ed5aebb52b2f34b57559d7d9a034a535d98f3cd.json.gz",
+      "bytes": 560,
+      "sha256": "b4b64aabd581e921e4794e924a44fe8a58615045de97822538c3fbc15ff2dae1"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/6e99e2909013745abccb8110271fc4d0a0f8b2c3689ebe4198194525071a5837.json.gz",
+      "bytes": 394,
+      "sha256": "12212db62abc7bcf4980e9ae4e9e9d600611048500d7448fb9c344cc29ca2e80"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/6ebd5796b66a55253091d06d523cad4381ae3d57ac1b2e2c1def31924fba69cf.json.gz",
+      "bytes": 908,
+      "sha256": "758bc1e8a11d493a2697e276ace268076caeec7ca43c6a6af6babc869d12b011"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/6f23dcf8fe743af873046958576646828db16990e8da8dfcdd6e523a0bfb8d5b.json.gz",
+      "bytes": 662,
+      "sha256": "a3d57afc5e1c9a0f281e31bb30bbcbae194aa9ece71fe8bd4ddc971774a0309b"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/6f5158bbca2238419e7e0bb6dedf18dfed80ae9cdbd17ef9722c4cf2012a54be.json.gz",
+      "bytes": 388,
+      "sha256": "7802b9a3f405b9cc65f109598f6454a18e27a3119a6d5d8bfd58106a43656c91"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/6fe3a364d5280a2cc4b52159d94220d4b93c63f03dd0f20c3942962bba7ace08.json.gz",
+      "bytes": 337,
+      "sha256": "0ae0ad60ff98e676b691b94a975759a451e40a2fd11707790c1903a702799dcf"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/6ff406d8752cca341b0570b25b3d04c3378adcba45861312ee4540f3e0bac519.json.gz",
+      "bytes": 401,
+      "sha256": "e2d1bdc9bbaabb98fa7c8149c1d66e17afa39ce25f6d2d18e46f0202f3309a48"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/704d8e3ec023e83a77ea5fe13c4bc2c547ce5c7b8f85a5f838bf5534278d3b22.json.gz",
+      "bytes": 1511,
+      "sha256": "f0a49f741d7a1f5f51eafa5c3b010071921f7d3a3d06b5cfc77a1289a84c8252"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/70af2b0cd37d575d195ef59aa2f65a906c0b07cca68e1357583d382b5477b23e.json.gz",
+      "bytes": 389,
+      "sha256": "76aabdf635599df6c5ad17ec17fb2c99308b92c76db3198852f3ae0837fb980a"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/717c9c779d456c378da15732833f2e0116b6681a1cbba37d2aa45581c6299cc8.json.gz",
+      "bytes": 608,
+      "sha256": "5fbf5d630670485a7aa59f1b120af53a6ac41a1ee84d96a462ecb7932a98e4ee"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/71c592aa4e33ca183132811edede4b6373c13d5012d3358809e0db20bede5ef3.json.gz",
+      "bytes": 509,
+      "sha256": "7b68bef2cda07f8329289cd873c16f9171544eb686916c5a7a154d7c6da300d1"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/72575ea9afa7a0a94cfd6df83617d504520df031d68f1491198329e856fd6695.json.gz",
+      "bytes": 801,
+      "sha256": "ef4b05e9c9163220b87b82a70cbe1fbda86bf2ced8978e982fe96a8a7b340cc7"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/73a7c773f968fffa90cabea0a518367030ea4d458e1b9555527bd7166579d007.json.gz",
+      "bytes": 505,
+      "sha256": "aad3eb62a8f59d3ac4d0a30dc504509d581422fe0c1619c8584b87065a476072"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/74764be8b176ee06688eeea8bd5df34a0d3812431889bc2908433fab1f37980e.json.gz",
+      "bytes": 444,
+      "sha256": "a1b7f4cda780f81764413ed7e34324312298dd195ea624f54a48c411cd647fc7"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/74b3fc05ce12172c0b6e9067feacfabff5d7ca5f3b18fbb6ebae9925a0e948b7.json.gz",
+      "bytes": 547,
+      "sha256": "9a7389f6e6a2b070232b64960688d3a4eb9f0f45947adb01a64a7084b284d455"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/75a730961a3e2fb37aece1d9a473f19ac7ae6eae75905fb3130367098ca0ea73.json.gz",
+      "bytes": 497,
+      "sha256": "788bcd0a2ef7cb0dfdedfe27aa829e2784a72cb0fc32957d14c6bbef53fb939e"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/78614fc4d34fdc902ae2b6e2418c951f07310483bde217fdf43a7b816b326cc9.json.gz",
+      "bytes": 576,
+      "sha256": "8827a3f3d72a2e4ab0365fcfce708971679d0bc9fa150776375df2333f49a6e4"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/786941b2fc06392861fb80371f32b0087290b678643aae87029470316d1d822c.json.gz",
+      "bytes": 512,
+      "sha256": "96ce03512ca17672d0c29efe91b23798470b4fe32ea9147f5e874330f093741b"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/78dc7fdbbe3fe602bde556414d6aec8fe08681ef4f571310f9a5f7df3ee9833a.json.gz",
+      "bytes": 546,
+      "sha256": "2f1f07376b0c2b3df6d190d3dc7b5a038be410c0c09a3c71e8f4e506133fb58a"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/790a40c305fad5c5cb1ac52634ce185f270226c947328e67f96e0dde701a4f55.json.gz",
+      "bytes": 389,
+      "sha256": "39852ce6f72bb9b225e89239fc4be958aaf4448a9d9f10a1d5350b994cf5e3da"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/797ed9717587f5197ff92049936b3fcd9d693613889ff15e5b842e1babef16bb.json.gz",
+      "bytes": 534,
+      "sha256": "89b60e4f65682f961d828e05d35ac142f15747e9df3e829fe27f28bf48cc9eff"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/79c6f3e1d840baaae6592df9645deda689bfdcfcc33a99a5b31b6a57838081c1.json.gz",
+      "bytes": 781,
+      "sha256": "f5cb554121c79e6f3ffecc8c4fea161a722154cbdab3ae17b5f76ac8c04b1e40"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/7cb8dd0826d8f989bdaa7a0886732b8ad076b8769c29f073a79974245f698996.json.gz",
+      "bytes": 1545,
+      "sha256": "0082ee6d808ae3396c021fb8ffcc5a94b0c2f226c93c3650ba30c714da53aab8"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/7cce2dd0d8072247d1d1f6a5f39546e98fd3c65e29b417a5d818cdef88a1249b.json.gz",
+      "bytes": 329,
+      "sha256": "827830a5c241b7f83e38eb31d3825d28916827517cb670336688b82864715816"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/7d7080a7245dc8c31351eb3edd23d962a89116dc8ccc2147246a24cb9024231f.json.gz",
+      "bytes": 287,
+      "sha256": "0d07f243f694a2690d1293c079e5f13c7d44e294813b426af8fd21ccd4591813"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/7e3ff7fe3b9eb63fe04ac8d54805ee0224456e9fcc5c73eb6e8d2335b69f117f.json.gz",
+      "bytes": 483,
+      "sha256": "c34d4fff3ebc86c65d379d4402787972ef8137bf53d88f04656ff80f0bed5eb4"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/7e9c00ec4654897aeb8779ff6adcadea2236d92f1b60f000a61ac6e589050578.json.gz",
+      "bytes": 1015,
+      "sha256": "1c60ce9952f05880365bb910363a1ddebd291086a56af4fe31a697021da5f8ab"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/80192a8b36bf1cdd83c0921c9ade290b8203453f0fe388258fe79f190e4f7cdc.json.gz",
+      "bytes": 596,
+      "sha256": "5d63a992fe7f954356cbb4f46216c5e64c42558a7c9d95d6edf533523561e849"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/80632f250f1ef1d7d7b2a1b9aa1c3461f1e8729651cf207539ee9981048a0ec0.json.gz",
+      "bytes": 496,
+      "sha256": "23e023b86681d340b6d0603c8e9c59892d69ba17494de98650a8b80cf741f74b"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/809207435a585b0fdfcf6c0c7d280765f17632583993483f3392227581c3eefd.json.gz",
+      "bytes": 391,
+      "sha256": "ba3de26c659f5bc1ea98d1539e13752b28695131ffd7471df58f012c3dcd8a8e"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/811e9c5fa9d7057fdd560d40fc776fe5cf4be599813371bed3c0b77dda6c11c4.json.gz",
+      "bytes": 508,
+      "sha256": "ca1d02d3f56d864348dc94aefe49679a3e61f5d1eeb3ef321032fe8f69c80d9b"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/82a15f73e63cdce1fd2e463345f5a11a2a832f15e11707b8022090cb5d8c2605.json.gz",
+      "bytes": 1017,
+      "sha256": "cd3bf81981ee9d37b15d0b2c001002ad32ba2340d5b683ef110cf686233caf3b"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/83c3efb068e6bd7ce995a8ceee29eb0b9970df7f2d301fce415b433923c769f1.json.gz",
+      "bytes": 1117,
+      "sha256": "626bfd6a72ea5023e79e28bb685c08c08ead31e19b2bd46503af8980beb32e11"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/84aad654c3141bf5c6b957e648b1084b37f68f3023dbaf96e138cdd83824a40e.json.gz",
+      "bytes": 399,
+      "sha256": "2fba577a5a7b2867476babfe5e7f7f41c68a33f6f89cda408653a42505cb3b30"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/84d44dde171d9a91408b96a92289ad20bf5de13982eeaa0af662a7ac81d00c3b.json.gz",
+      "bytes": 481,
+      "sha256": "1805856821635f24355a6ff03b8d39ec5419f8ade3bd2ff378cc8d26ad1b7703"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/84fda8f388c652f60a9ac8816b353df9e19f40d4bec9271a7421859583eae573.json.gz",
+      "bytes": 460,
+      "sha256": "6591005c67041fc6fa88ad136b28c140ab14009438695c5c85341ba1c83a905b"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/85c3b8fed00944afa5fe01b8904018746fa23961b66b161e51a4280479f76178.json.gz",
+      "bytes": 402,
+      "sha256": "f445ddf3bc1a2bf10b55f07d4f9c45fb91355ebe3e169cb29a97ab4fe3a715ac"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/85c860a637d1ae1bec75bc0dd3d3a90a6754470283c2278349531955971ee274.json.gz",
+      "bytes": 515,
+      "sha256": "3ef82396cc53b9673dc9facd22412152b8cfda8da9117f07c42e499e29857d81"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/8699be709e40fae8fcfa1f027ead850bad51bb960afd3368d8534b9f8a1b76db.json.gz",
+      "bytes": 515,
+      "sha256": "50848741c5abbb2e745f7f52faaf756865f2dbab6fdd8862b3152b15ba77715f"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/86b1122e63a6f33b71907bdcb03a2a69f4cfd4db19f5c8dd23b32e905ee006a8.json.gz",
+      "bytes": 641,
+      "sha256": "ecfc850766b0df4746c542a2981464a0e33ace48c810f11aa9befe7d764beac6"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/8727bc190bf3200cb033df053de87fbe833f7d599008bb8e46b71bd165e4c612.json.gz",
+      "bytes": 378,
+      "sha256": "2ecbf08f87e22f8d822987af7c66a8ed496366f18bf1344eaaeb1370af72526a"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/88fe98a666d2eea7d3bc78e2c3494763a89d5c9411847fbe328fce6fe4203a58.json.gz",
+      "bytes": 623,
+      "sha256": "31a63a35700ac7f29882d4aa170afa9e816ab31ded501ceac6f21987cff59685"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/899d5c1e6c834f8b56d6c0217f381c20bd6ff2cb9912fd36ffd889ac62712e84.json.gz",
+      "bytes": 662,
+      "sha256": "ce503ff3ea38542bfd7cf8673751c452189a3057b44e5d78a659f676c2f39014"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/8ab85a4b1d7978d107d040e68429e43c7884d300cf609981b5497e7d78f382e8.json.gz",
+      "bytes": 549,
+      "sha256": "e7c16a8cbabafc8c8ab83ebc0c72ceff94f9595526dfbde645ffb4a8db645a39"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/8c4052a573222abc5694eb5538c8be17daece7aa6b1e648e0bef445d00968501.json.gz",
+      "bytes": 522,
+      "sha256": "062ada71a6b17f51669531b0cce8515c333b794c4229fd6947107af8d0c7237b"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/8cc1466ba573ddd160ed96b7a74be44d52cddcd7af1d09ca0f4d19addc21536f.json.gz",
+      "bytes": 469,
+      "sha256": "a90afa0d4b15c35b1af54c69c0f7de1797a21c38fa8901d40f80b6971969a6e1"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/8d4037a24e0981e1a0828a9e8ae9f8afd94202fb9ee08d44506c802972ec3cf0.json.gz",
+      "bytes": 508,
+      "sha256": "52e3eec80554182966b0f8dd9c674e00f6b4f95a00ec8af39f5710104acba882"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/8d6919548acf902fbbf8a9b288439d539f815dcd6cfe25a533b3ba55d1047e3a.json.gz",
+      "bytes": 1209,
+      "sha256": "291379728ba00c1847c8196edbbf2cf43e8e3870e5795df2620f11f5e75f5016"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/8df9fb09a07231aa66d09ec43427c7056515e990cbd0a836690fac41ee82abd0.json.gz",
+      "bytes": 654,
+      "sha256": "4313293bcdc4e5f78adde934f1ecbed220f8f35c180feace5202effbdf9f0372"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/8e5026978bc05e1cb4baaf7447494e82f94b1cd6aa61476a0cad45f2fb7ed16b.json.gz",
+      "bytes": 404,
+      "sha256": "7c3db979bb0daff5d50ecab005db56317c33cde1fc814948e5fa9a87ff6af29c"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/8e573c06072907019f7333afb7c024774589469e9cfb28fee46ce928e79ff043.json.gz",
+      "bytes": 429,
+      "sha256": "2f9364e80d46fac5089a5ee95a4deb17ff58f2618fbc1f96f070a57e2bf81502"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/8f05538e197382df1542e9c942add9eeb9f3abde4d1c5afd9925e5bf6e6fd167.json.gz",
+      "bytes": 505,
+      "sha256": "46cfee2f47a5e9ea623bb559796f7103f70938344873641e58acffa308aa295f"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/8f1d084d378ecb039813345fee41802622e6107d7837b24507dd2ce904db759c.json.gz",
+      "bytes": 393,
+      "sha256": "ee90975b98d01c1efac74748ea81bd1cf9d36abf5081b7630de44f733afbc273"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/91329ea96f0b2d5e9e8a636730d4d59716563fca3e5a1312efef485f1118d79f.json.gz",
+      "bytes": 421,
+      "sha256": "cac2e6342ad40b9060eeec814571ef2c4c5dd3e9008a653978d00fa9bd30e016"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/915bc7df3d608c50c8dda47f512eae6acf15cd44096f4dcf6b8db7b782e0796a.json.gz",
+      "bytes": 324,
+      "sha256": "e809fb3ec28de8ca10a0b415175a9616e22688323551950c2de3d65d5504dd8b"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/93b6abd04111ee98c84313ecded13087b4136fff61832c261bbc6cbbd9d6894c.json.gz",
+      "bytes": 382,
+      "sha256": "d036d4b1b116ccca5c2cc501ad2140d7dda94732e6c3485e7673b5771f4fec63"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/93c6587201c2c33ba6ad0331074dc18019b94e140a5346777b0f3513afac2242.json.gz",
+      "bytes": 434,
+      "sha256": "bae602a795f9cee3c4447c1e8307a868298a0703068ef361c09acb2955300912"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/93d2f10a212a5f9d75180d70d49d77ee03512725f2e7ddc64ae40cc94b78a1bd.json.gz",
+      "bytes": 379,
+      "sha256": "4fd43f10b833e0e85b91b63f821605912829041d85e7f64fd39a827aa31f6014"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/945540a25401b5c791d66f194f460f92d9d6e021c89fd4987fcb9017ca9910ca.json.gz",
+      "bytes": 523,
+      "sha256": "438ce1de5276379c41a2b85986dd66734bae8b284176da16aa206e66f39588c6"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/948fd20a9a9f9d0893b9afb5efb8f33254ad48dcbff434f243f8d95950e45a5d.json.gz",
+      "bytes": 1137,
+      "sha256": "881717c9afff002f290a2f4987ea3f5053635055427ba295a383926c6dead5cc"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/949ab4f7d77976851a51331d826b22c26ef91544a23b197acdadff32f754cc2b.json.gz",
+      "bytes": 702,
+      "sha256": "84a258edbe5ebed62d8ecfceffb3a113b93d92e141d169807346a2f305dc9ec0"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/94b5fa342d5c673a557ce3cf0cee1adb2ccbc9ed62dd45bb25c365ffb81724ee.json.gz",
+      "bytes": 389,
+      "sha256": "f534439b2090b483aa887d74e3f943509edbf56cbef8e974529c454ff2bad4ac"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/95442d4b9c5600398b5220ebce7ade6c6cfeb0b24ab6ec667c647adc09b3c931.json.gz",
+      "bytes": 347,
+      "sha256": "0ddec1cf4a922f101c18dacdf7590148c5b7fae3829b92cfc3c0e2fe84732e2c"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/956d54cc019d67c243ff5d2db11ffeebcd79e6db04e8ea15a6eb2d6985c22e12.json.gz",
+      "bytes": 543,
+      "sha256": "c2546b10d0bdeb6d027d43c5401b21aeed93bac249b9d0c549e18afb52522707"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/95a80420addb898f20cff5050555885519b3c5fc7bd3a61054b17da5ca8ffa4f.json.gz",
+      "bytes": 453,
+      "sha256": "c9fbd63b734047b8f38ab6d6d0ad3f972f337aeb6d298ad3e941f18bb655c7b0"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/95cafddb834bfad062cc9b008ca730b2e2f7ad77a6cf41cf24672facc7e78e8e.json.gz",
+      "bytes": 402,
+      "sha256": "49c6ff7f48c30791f64f8d199098656221357797abebccfc0af46bd0aede07f1"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/95d133a0609048aa116fa80c9692c855569e404ebf2bbf2c1704340bc6217b5b.json.gz",
+      "bytes": 594,
+      "sha256": "60ff52a02d07932495077c8531ce5d6537e05500b4b73f750977dc424dd5cc95"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/966fe0c4a01b3e67f81b67f5b90f250918f394253b5768ae54b7c663dacbdde8.json.gz",
+      "bytes": 678,
+      "sha256": "af1a6254a94d66ee45ab5b44d4b49a1ef2aeb52452c2fcf5a91a7e5be2a48ec2"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/9713ca4389ca4a2d90349dd0751ab3737828a22303b0f56a65bd09f3a967e036.json.gz",
+      "bytes": 582,
+      "sha256": "2709fdf0383857ffbdaa9cda3dac4f9e510044aa18e206d591eb319f98641d46"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/9881beaad2a0b4b36fce74396a7bb02e78a94a562e927b3e9c2064705c69d96a.json.gz",
+      "bytes": 318,
+      "sha256": "5baf662bd09b11892c0438a06417752e36bf54910e9361ddb5ca218efc13d526"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/98acdabba0b743c3d959a0b783b3606a043da78ebcd9c92453d5cbcb9cb6efb0.json.gz",
+      "bytes": 613,
+      "sha256": "000172990530cfb7ed1257fa5c5a39d90d13be1eca7313f8f641cdfa24629422"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/9918a9586a1c32f92b38474471703e47c3d70167544a20df7c63db6e43c7ffc0.json.gz",
+      "bytes": 320,
+      "sha256": "13ba35b01ee9ba9ddee1b115ba82e269c2c903341cbcb06d0e22eeafa8910c51"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/994a97e7b64d0bc260eeac537192aa0e5719cf541bac4093b05cee2fe3ce350d.json.gz",
+      "bytes": 495,
+      "sha256": "266ecf30525917d5a5fab7a9da37654450cf46af67d7c8c90578e9429aa9d0a9"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/9a8550a0341cd3bf0192a2b3f6b95e66303153ec3251eed8862c84ce9efe8272.json.gz",
+      "bytes": 639,
+      "sha256": "80bd9a051ce6c7d7f046fd34f99e9b01eb0e9c1f527357e162c121a33e85077b"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/9bf71e105ccd5e21fef8d216c7798b3fff9cde019468bfa5ceec48f8ab9df7b7.json.gz",
+      "bytes": 1138,
+      "sha256": "635183db3595793a5096acb6ca8fb56cee4c4607ce00e3162098dc919599e843"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/9c1f7a2fe6682a3bba5517837204d06e46f409bf160a4c762abd7fe56c7f87cb.json.gz",
+      "bytes": 378,
+      "sha256": "98166bc406a6f87d18a0d908b429a842484cd608981f3b64d912cb577f9abd74"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/9d19be8fad10242f58a1ac97781cf8ad4fc2bbeecc9b24581ffe29f6895f914c.json.gz",
+      "bytes": 355,
+      "sha256": "6b2e656c11ae6136876b59989c45c72bee6ee4605971320cdc1ac360813c0e5b"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/9d89456742577803a0f5fdbc7a35f203a415e29b2f292e5aa6b6ec942ab15d69.json.gz",
+      "bytes": 335,
+      "sha256": "f464fc2efa217ad292ebeadb161473d2a076a901345be19d2addd7f4e0761955"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/9da590463256f4671ce01c8845c391250d9192bbfcc61eb359b90ca9bb6af7d8.json.gz",
+      "bytes": 338,
+      "sha256": "8b4ed968b37d223738230e7650ed889d4290efe721149f4890935b5362af6d31"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/9de20d5b2c21a470ebb1a2396210e6a3a758a986ce58fd4abf7f1c361ead66cf.json.gz",
+      "bytes": 1558,
+      "sha256": "d38564af9bfe27e5853210c0599f8363031a5e22907369ca40bb9e511f62b219"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/9ecea642e8c4e7e3a1cbdba08adb64f859ee21fa94056d3a1e02a7bbc6666cbf.json.gz",
+      "bytes": 570,
+      "sha256": "f1b13d06532ecdcc4ed79707bf60ed8eca6b0de38e150c9610ce98db99734cfe"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/9f3018cfa28727d953046ac32b310f0870388b42c711eb00e75e5d9ee5b06e32.json.gz",
+      "bytes": 316,
+      "sha256": "5b2e0bb9381a4a5e378f22840185f81e0d27f3eba3fe88d1846df111d6655c77"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/9fe10f3e42024841bdefa2c5ac2e7577b72365f432797b72883c7349652df54d.json.gz",
+      "bytes": 367,
+      "sha256": "5adb906b97b649dbfb603cb909358ecf5f0e55533dae42830d8fddefa5d65710"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/a098e2108ea9f431cf0c2ab45b4320f9d37bd60c1de6b0fcfddc8556e2d9f74b.json.gz",
+      "bytes": 1035,
+      "sha256": "a83c68dab4a1c2f20bc42060437fc992b12fc4ac0805ea8b3217e08c9ed16b78"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/a1903849a48bd2202fdc4caa405c989f6a43e9e57c5bc7dad9d51086c9d3562d.json.gz",
+      "bytes": 553,
+      "sha256": "01eedfc8eba14e93b3460aa6bb6841b3a387590c8c96c93d488dd0e3c78aceb7"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/a44c057cfe28cf132010874ddef1c772bfcd243d54357bb69fb0ef3dc362b533.json.gz",
+      "bytes": 436,
+      "sha256": "3d5599d274f67c37a4f704156d811c52c9747839e7b09b4c192005b855caee75"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/a486fd34e226aef6a8d956ee1ae99210dc4df3ce2c287d23b24c94d5b9efc546.json.gz",
+      "bytes": 308,
+      "sha256": "eb268d624e329f3de77cd39a8d61a972a62b549d52054da3f9a1b49ab842c1b2"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/a4d336dfe29eae29c055be86a810b92de5582b98e3530a1ce7e9f5fc18d4fab3.json.gz",
+      "bytes": 577,
+      "sha256": "e8b329d3c65cbe344af8ed96f56027c81f543b94d0c2541710926627ffa4d870"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/a5a7577d86f55f87a2730038e12e5c8e469b9676d07b3b3d1772d68d5e4f1925.json.gz",
+      "bytes": 398,
+      "sha256": "f42dbdd7f2be0772f0b737c6909e15c20876f62edd7efd5107f433f8f9b1ce76"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/a6148b8492e0321d8a8c1855ff4642fafdc54089c505f3a881d9ecc839ef12a6.json.gz",
+      "bytes": 428,
+      "sha256": "1ad6269d396be2929d9e8a7d0089c2a5de9675ff99acfa5772a8fc89eb5ce270"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/a6673cdbf2f67315513a722a7ffff5aa8ee17c2c58ee1bc4cd780f26606af9c7.json.gz",
+      "bytes": 420,
+      "sha256": "c60e9827ed27da33f487e4a5923e08decbbffe5c0e8416bf4407b0d088bfc17f"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/a71e0fa717dbfa3069d7129e2c3636a5f2335e8e70c53a78e4274409e60ff74a.json.gz",
+      "bytes": 801,
+      "sha256": "1eb56a09bc8b412fada5ccc48ee02986c0aed67bfafe48f9d05531fe709c603a"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/a81de78a07ee138e37ef894638df59422624967282278178b31c4199024071d9.json.gz",
+      "bytes": 386,
+      "sha256": "77bd751f0cd09776b2b0c7bccfa3dff66f342c09f3e30edf2ae397ab5187ce8f"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/a911f8614606834fc688b60900e3cef9febe65b7f610d300b9e523abe63ed293.json.gz",
+      "bytes": 378,
+      "sha256": "66d7b48fac7f97374727f9633375ed50f000e4150141546d432813240cea0eb0"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/a99287ad0f24a648a49e0fd6fcdd4173a3179d9dfb3b9b88835a52faeced95a7.json.gz",
+      "bytes": 1471,
+      "sha256": "b31c5ac1939dae05f4434208c643a96c87b6b71c82e62771d63c789dfd154116"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/abbd09449b48b346cf2e266f390860307eb10ff2a98357a47a7052fe51d80cf2.json.gz",
+      "bytes": 570,
+      "sha256": "8b21e0c3b9fbb51a87521daf4b8097fc992ab3a1a5173a4847d02b7fd42b606f"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/abd9343f02104d03b32f60008004cbfbd06f6b6caf7d7f82092aadc967b7842b.json.gz",
+      "bytes": 409,
+      "sha256": "4fa60e4a3c6631fac32e9cc261f41758e95e261e30a2fada9004f014ab27c57e"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/abd96d21da23822e56cf30e11561aed1bf9665f6f6f24773aa6ef082af02d088.json.gz",
+      "bytes": 549,
+      "sha256": "019d9a67d36221d3387603156ca77545573816f67e06c10c48faa3cd0101b310"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/ac079cf8ac6aac9b7164c241e35a9d04cd5215661b88a39d9a9859523f6356aa.json.gz",
+      "bytes": 538,
+      "sha256": "600ae039b78da2dcd1c4ce664163b9793f626e089d930b99451427142c3f56f9"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/ac99e080ff91be4563817c28e5ef610dc9466693e9c8d2abeca699100be1511e.json.gz",
+      "bytes": 434,
+      "sha256": "37fca7a03637bec10aafdcbd0da4d8af53f0ef366360a33cc3634776f283490f"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/aea4ff7afc29b02e000c2232a22030078e13010f8f1e4a42d828309375101d1c.json.gz",
+      "bytes": 681,
+      "sha256": "50e9c5504ccebeb60f1e50b9b4237c19c92be42dceaa310ad82ac89513523ac9"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/af1dccc1c9f30a53a0a2c4b23f9c4d7318559fe8ace6564a5c8a52db3a4fa822.json.gz",
+      "bytes": 322,
+      "sha256": "ace85773cc2fb1055c1c315787f83a36548fbd138d8f60112881996bdc22b745"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/af400524ccd5f59e8bcec701a5b7e4851c49ae02d3e84f47cad068c5fb53c1ed.json.gz",
+      "bytes": 960,
+      "sha256": "9b2c6b17614f2594299dbd2afeb429dd9cb7df35e0502d924dff34d17e381bee"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/b01d001d30d4090ba1e227edfe05dc7473c8caa68eab0a74d3000ca5eee37881.json.gz",
+      "bytes": 515,
+      "sha256": "27021526f492383fb389e2da7a0a4dd1279024b71ac79bafb1fede4752832238"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/b0d130452dd3a88bda497129a3427281b2d750fabb50fa05f249d4ac1b9e73ad.json.gz",
+      "bytes": 321,
+      "sha256": "edc8ba417a907a2897dfaee289636957c063353bfa5488d34a2c8b95acbb1ae8"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/b115180fa0a7ed3397467ad379f3576203960a716d5c295f24d29a6fd55f2218.json.gz",
+      "bytes": 411,
+      "sha256": "8a2bc3391ce49fc1ddd5e21ba3a8e8f5e21cdabc996b0506d3c2dac55eafad7c"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/b175e3429f5d9d7201117d36b60fc269a2a761f4604c5da81f357b6ac239fb43.json.gz",
+      "bytes": 1193,
+      "sha256": "3075f7f2873ce44ff8252ce1e829ed83ba1e5a4d4d11d544e9fe7d4cf35f3e23"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/b243f3ff4649fdb73d30a04119d10d86829c13a036a32a4eb18fb731fa91e464.json.gz",
+      "bytes": 642,
+      "sha256": "c0da23e02513ae240c027c7f1ec7bb5bdc0d7572555e48be5837166704ed8fd3"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/b258354d0ba3d5dcd70a9315233bda16b47ea63ae9cae43895d8d959edbb3943.json.gz",
+      "bytes": 355,
+      "sha256": "e9ceb73ca852065dc9984cd261ad8124a20387fcd3296a14ad369a700eb7bb99"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/b3395310ca8bb77baa6be7954ffe7e2853d35894b190ff548fd765e1b4e1eb07.json.gz",
+      "bytes": 1108,
+      "sha256": "5cad634299be6be26f0d700798844a473746bd711fe7284840e1b4574ac8084d"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/b3994be66e6210981637ef4db4972d0d3b960ef8acf51f618b7e1ce419ecca93.json.gz",
+      "bytes": 320,
+      "sha256": "0c70ba5c31a0f659fd16b3f41e0da6b079018f7d9394a3c0ec43a176fccfb18e"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/b3a17113a771db1844ba936210a40f000eba9be64345e6fe4545979cb8d190a7.json.gz",
+      "bytes": 460,
+      "sha256": "2f2c996ce1e0dd3d247fa862c79c3fe71cadc6ac68bdd0c4925c14ab1f52a394"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/b5354472c11ae0e234989bbc0454fc9263e17064cbf8d17e60d70bcd5fe1b076.json.gz",
+      "bytes": 364,
+      "sha256": "c6aa2a843d2ad53e0ffa446907f13ce905a219a55cdb6dd73c49b71f4d29faf4"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/b5cfd2c357f5662eb768ad67ad4925e725c049ae0b4e170b426428895d726a9d.json.gz",
+      "bytes": 1086,
+      "sha256": "64722f6d325bf9dcc2a8184ed695ddc18f0fd25c29f2070d652a4256eccc6248"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/b815923b678b704942c30115f120db3e18727ac2f81f0086c3cfd220e5af12c1.json.gz",
+      "bytes": 423,
+      "sha256": "729396d803303e93e23e2e8073eacd4a5c12de8d0da400caccf7019fed62f45a"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/b8d49dbcb7aaae51d7b2b41538c18b7c9183b84d6f2d8fc45b1b3263b3516672.json.gz",
+      "bytes": 498,
+      "sha256": "372a80e43a08c93bf129a76bdea4d7b42c0d56fd318a66f306e8a8253f4d5ab0"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/ba75c671380514fc5a8217c88fdf82ea00e837f221d84066c167c9f0657bcee2.json.gz",
+      "bytes": 941,
+      "sha256": "1541b82e5fb766c8bb4754a76bfb21a2991a092e7f2ff60a4abf9b51cc8e47d9"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/bbfc7034f3fa0a947aa412766a18c3dc7612a07c31ae50e6ddd586ef1ff65828.json.gz",
+      "bytes": 301,
+      "sha256": "ae06f662235738f3bc6c25f7ff796ae26149a8c23ec4a821d0f2d65884ad001c"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/bcc0a734647473d9a3ac63a9fdaed3824e1933e163a57a2540e1d3ac6d26b4dd.json.gz",
+      "bytes": 320,
+      "sha256": "b3a9ee760f6bd102fe1b8a6666495162b3d45883329845e62a21f0d6015cd3f0"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/bd1cf65e171e291b8f742388139d0126bf0f5a85b6ce23f77fb2dbff45981ec9.json.gz",
+      "bytes": 411,
+      "sha256": "5aca6197d8d6787835383cafa523012be284ec84dbfb368818c1346bdc23b340"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/bd73b3624813618cb2832222d077b7a0ed369780ec0ffe223e35c7a8dee1158b.json.gz",
+      "bytes": 573,
+      "sha256": "dfe26872c1f19414cba2577cb9e9c17a4f7cb32c7bb4cfa5d4f83c217ae9ace1"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/be05a6347ef8333b4041b5cfdb9be24542aa96885fbf0ce2292c01036cfdd5c7.json.gz",
+      "bytes": 377,
+      "sha256": "3c76f8c6c2f83244a5cb6c0368785b52de5e737e9052b8cdc870537a55ce25ec"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/bf4aaa5221cd9673efbe50026102da30d3fce0ad3d8f3ae6535efa62729490be.json.gz",
+      "bytes": 404,
+      "sha256": "75120ae2d9f9e81c3782c6282c91e8f03b365b51cf17bdd3d7ca6a07f74ff800"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/c007e709c01c4878459967d8078631b36ac6bf610d37ba09db75b76cebe7a938.json.gz",
+      "bytes": 434,
+      "sha256": "9dc0f3ce50e734a4d50aab475a151b5f661f6ed7af2fa7f8ef0f661bdb55ee21"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/c067b31de0620a84c836e7e8e623023f909e2e4f049ae18b8d54da1f97a06b3f.json.gz",
+      "bytes": 472,
+      "sha256": "40a896344880c319678440a0cce98603c7082e512095e0de7bb437482109aa8a"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/c0e934e201d0ba3c2fbde42310d7d9de97372d285081968887515662fd30dbf9.json.gz",
+      "bytes": 306,
+      "sha256": "d3f13d6c1070e5325f53b61c75e183ac7b807c3fc694e658548bf5b4021bc9e1"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/c18bdda8f4daad401d05475a2d1d81144ef3ad6aad827aea3ee81cff448ceab4.json.gz",
+      "bytes": 1240,
+      "sha256": "42ba40cae3958182fab574d3a529683545a864b461a9847ff8842f83f88ee170"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/c21d8c16acbdc51df1e0fdc702addca08a76e084e4be92ef7b3c132ad21a1bd7.json.gz",
+      "bytes": 547,
+      "sha256": "dd7ad668ac0e7fcf60ab2d9544ec976cf1a05159c005f8703e93453d55cc747c"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/c32ca959dba1ed5e0813e46fcacff1406c9acc0731a760af7a2dd2082451de96.json.gz",
+      "bytes": 418,
+      "sha256": "8d9596a4710ed779b89624e908a8d2c7a8ef327ebe71e11582302b89e996899c"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/c345694697c2a83c4debce4ecb8aef9b73431804283db9db138dc75364d30bd1.json.gz",
+      "bytes": 372,
+      "sha256": "1d84a97f8b500ca34136d7f6c5e2ad04e6b690e4374a553fcf499f88228dd33b"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/c3c174c0327fd082d77b55d211a7d252b2e1c468ab480d4e49f95f8a5cec25e2.json.gz",
+      "bytes": 764,
+      "sha256": "5769110aa75a604c11fa555875f1a4fbbf83bb96f4b07e5aa4568cba114786b7"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/c3d2a9594027674669d1c4f7208a1c1651b7fda4951d49a3fa0d866eae80b4e2.json.gz",
+      "bytes": 681,
+      "sha256": "ff141e3cced3e8d97099cd8c3e3c659543064f30a5cf58b58d8b49248fa913c3"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/c423e54f76407c77306f94d15a5456ee0b3884a84474e1e996692b5d7c9f2154.json.gz",
+      "bytes": 468,
+      "sha256": "b56e3d1006404a2da122c546ace31db187195a4f7c3331b4376d4857d3521452"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/c553e39b95d7ea98215c0e5e32a657f3b54720f06905d74ab7541ac32fe978ac.json.gz",
+      "bytes": 526,
+      "sha256": "18cf4700d9c5661f69376b6b6b705d2d1b823e5c42848007aaa507303d94ea47"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/c637f202edd465dbbbdf5ac3db115d0dcd34bd6af48e15b02299c57cd38942ae.json.gz",
+      "bytes": 463,
+      "sha256": "8d77950720ed8b18d4f232b5fcf6647df9a5bf457c21c63eeeed4040eb69d7f6"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/c6d0fe37251c300f9d9294daea5db006d4436e7b30a99556af77d483b6137dfb.json.gz",
+      "bytes": 449,
+      "sha256": "772823a8913bb198cd9c3964b9168cb341e293e206719475e5689fd89218cb76"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/c7235b03ec2c2c6f0b221bbb7ba8357124cf4108f667acff1d6ed69608a6c0fb.json.gz",
+      "bytes": 616,
+      "sha256": "5c956b02762630525ebb3db2fc552bd93924b3912b1f0d8c851372093cefdb9a"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/c7a6466af88e07002662f79437615b4adefb92bc9ff463f1c767fe2ac01e739a.json.gz",
+      "bytes": 323,
+      "sha256": "6f0c6f15cee0aeed4241135e4fff088494093136ca49893f1cb8ff67d6c16293"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/c7cf1241239a8b007ddfbaf1f42e346ef37996b2e8a0ca793fb0b265b447f3b9.json.gz",
+      "bytes": 302,
+      "sha256": "6372a8aea1ff2f0530435ad6d578dacba5f7a2277737b288f68fce53825283fe"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/c82a7955448020f71e3c073e3144c8545fc6081125764826b9f3bb8d9c8b75eb.json.gz",
+      "bytes": 300,
+      "sha256": "b8732737f8d91f730daa58463ee7a70a3126cffc03fe570c2a197a7291d27520"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/c82b72e9a03f2061e8127b93fda998bd940b77fa756f33ae9399fad1271ef58c.json.gz",
+      "bytes": 623,
+      "sha256": "a7bff40f15a0dca52d174a1911c9a6c80f3cfbba1fa2b4195ab626e8784f2f09"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/ca6ed8baf7e4a35a47337aafe32e662fd688ed520396e35711be1a3c27e24129.json.gz",
+      "bytes": 820,
+      "sha256": "7ce08eba1be2756c72032dd21f831a29bf5b2050918aebb668480e184c4d54ff"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/caeca413e577133b9ac3cc75da9915a36d14c53392a791184491d3b07c7d3e23.json.gz",
+      "bytes": 565,
+      "sha256": "7c65e6e8b73899a4ffa4adeb6ca9abd84f924ebc18fc541fbe1dd856eddfe479"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/cbfbd37a4052457ac3a9302ccd78b3d73fe2d7310c23e6c6943a8e0af6bb969f.json.gz",
+      "bytes": 1003,
+      "sha256": "fdc604e0404890e2f4c3e558030711fd6c7c756a2463ba199178a1a48791b562"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/cc8ac12410f144d0be97e5228e324835017aa7160b369f071570dc005dc0ba39.json.gz",
+      "bytes": 836,
+      "sha256": "c5d7208dc6d5da91a4610706ca92782a8fa331d7b5f40aa7de70189dbb3d22a6"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/cd0122f90cf9b5f99443dfec0278e3f61e79bfe4759fefb0ce7b80ff2d6005a2.json.gz",
+      "bytes": 461,
+      "sha256": "f2dd392a39bca4429fa252f52a3e7afb9a97c560c4588d963ba699b3d265dab7"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/cd6ede8ec7434021e05c4ca362b2007fb5a2adae4a0550c9452081bdb918ea02.json.gz",
+      "bytes": 1053,
+      "sha256": "ffedd9729248a1667fc918c3a63cae121decaef1e7d5b2b4bcb37a0ca548b4f3"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/cd9a749da18618a8f5f298830a340d29b6e095e034dd7636d7a0918d7182eae0.json.gz",
+      "bytes": 359,
+      "sha256": "53029aa64545cdcfc684af04b2c20cb1907196272ca10b2845c453cc7134dede"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/ceb824fd82e1ff9da3e16c903b5900f1c30826668b495b3408c30532cc6f6d21.json.gz",
+      "bytes": 322,
+      "sha256": "9dff376d6cb42df4f2867d128acebde8d73cd35e07029916faa0d8f925ba168e"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/ced6eabb5687b43c57daa4ade17ae6648d9e9cd296c063b4db269620efaf2eb7.json.gz",
+      "bytes": 403,
+      "sha256": "4934b61ef0481f6c251f76d42375d73ab2c67a110bc05784b8dd59b792cf86ad"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/ceeb4e25f68738009128324c6778e1bfb09860d1a111c2c7ecefe6a1402da4ee.json.gz",
+      "bytes": 424,
+      "sha256": "e5a32b6e76f59d1bdfcdac10b38489c105faff45d882058138c78eb9d873e47e"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/cf06a398ef640f61f475ba0af35780ea2230f3142a2ec61eaec890c48c2be1f1.json.gz",
+      "bytes": 428,
+      "sha256": "1690892bf11ca4d82c5af802ffce37ae1d00a1f75ea6669fb7bd4e4d3ee91dcd"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/cf1a01b01f5c08e667c0f694ec1e5c296eea8dc4899ee73f82138263c1a1a115.json.gz",
+      "bytes": 362,
+      "sha256": "8c957449ff6a07912e208b85e505f0d978f2fdd6aecbcb0c7d2771baea76cc5c"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/cf37f63438b53a61843097143d0377614157603308f8948b6336cf63e347bec6.json.gz",
+      "bytes": 377,
+      "sha256": "c6ba276bc18e9a098952ce6e2340c32e124047d375e8996b269d0cdaa1b597c2"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/cf79c342f68c7c1eaf2701f58747dcb96ffa7ce8b3b5eb4a387f393e2b04afde.json.gz",
+      "bytes": 547,
+      "sha256": "f3978ab5bc40ee90fc436eed45a993e77efbad3185ae01bf372c7c645ceb8873"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/cfccfb8fd7416a1529c4d0c2e20783696430aa882645769fccda6ac72e2a4a5f.json.gz",
+      "bytes": 1210,
+      "sha256": "cb371cabde395172bb2c1b52d7b3e79c4d645bd1c79e70e6262dc8d6f2b14555"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/d10265c8fa0310d5a893c156b0f3eae94baf4b8497dd359dee7b8ac98adf02c2.json.gz",
+      "bytes": 495,
+      "sha256": "c724b16efdaa9561ced34b7396ea76d368b25d183e525cbbe06468dd16e87b0b"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/d251ee896b0c28baf593f254f38bc61a57c8fd93e7a578a49e2f685ed51a0f94.json.gz",
+      "bytes": 1249,
+      "sha256": "12d09b3bc2882b4b156f2971c0d9fb13d82b02026895035b6c6eb46001a43a73"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/d382a7ccfdbeeb20e91521dcdca5a68e95200ae1da0f2d916a35ddcc275734b7.json.gz",
+      "bytes": 960,
+      "sha256": "640fbfe2f1cd60a8d96d0dd091c60b5c82164185c50147b05e369cabe7848170"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/d54c420bd0199753d5e5dba1a51e400d7cbef2e4aefe9b7d1b4d57c985a4a060.json.gz",
+      "bytes": 442,
+      "sha256": "0dfeaf0726c3b1920ce098979b9bbe6e562d57acfe00e23e6bf56f18a2212cbb"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/d6ca33b114126429901a49d8a970fa9372404ac5566bb57ccfe654c5740c0866.json.gz",
+      "bytes": 458,
+      "sha256": "96490dc435524b42f2de678d06839712212908fae228f708ce9ec5ef649ef287"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/d70dc3aa975fcd8c92cec2ba5568d4d3ed3c7923843d7d4dfe023cfc7ee21a13.json.gz",
+      "bytes": 453,
+      "sha256": "b9ee25775393115ec92eb8feb92b7781fa171405a27332bcc2221f994ed4e5b6"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/d79b5dfca526bdabfbdfd0bdbc695b8c51d82049eca80ad8be122ee8b7bfc2e0.json.gz",
+      "bytes": 542,
+      "sha256": "17c7a69babfc731ae15dd98f8b2f9355ac114ed5bde9776b1a95985a7ed01275"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/d87b63800dd0b007a520b71170eae7cd1288aedea309514b5af1ca97d9a6ec1a.json.gz",
+      "bytes": 523,
+      "sha256": "ecc388f6d3c90509e8931ac99410ca3883d769726e2fd11e03001278d8fc3aea"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/d91216e90fa73922ff817c7a3dcf32fd494f225a51ff36afc9938caa11adbde3.json.gz",
+      "bytes": 615,
+      "sha256": "d8771ad0a47057302ec94f4b413b01cf03e0e3796fe2b9fae37c61cf084575b6"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/d924bb87921e44f47662b24e89cdd454f6562ab3aff76226b7849ce5c8abb2a7.json.gz",
+      "bytes": 320,
+      "sha256": "0fed850263008086c4bcd00afdb63762bc1622837252e32f16167f3480850cad"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/d99f9ec4f335c77c0343af77565e6c00403e5549ac4a33252e49102b9738acdc.json.gz",
+      "bytes": 1343,
+      "sha256": "488b7da1d87456a6647e6e2f9c8085ace6d9a1c1916c61ebb1dff13db7342ad5"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/d9b7ceca62f88b311323bae3e59585434f2dfb08259065f0535d70635333ef09.json.gz",
+      "bytes": 692,
+      "sha256": "abe98d15302665b5cd567069f947a57ccf440735531d7e5b601603e5536fecc9"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/d9f35a32756ce5afdf21da9adbff91463cef6e152f903705bb0ae05723d9f5aa.json.gz",
+      "bytes": 350,
+      "sha256": "d25808c189d1bbea08d69cf43c05c339211207562b31b749a623e9f1ec1d88df"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/da660774c5d1d20ee82203845dbe9b029624e6790bc0b9f704d387370ddc8d06.json.gz",
+      "bytes": 500,
+      "sha256": "79aab7c1ea8e8c0e87b29d27334b926a0dd5a524f7913191850fc9f4ec799448"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/db01d6af41478959bfbe297569fb61e65c28590e00f6e8d45d35527006aebec1.json.gz",
+      "bytes": 823,
+      "sha256": "98e64892861b33c7b74fa547db6e34e9209b3ed0f426a849dae49583f032e819"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/dc0caa91fc1b18d1812c750e33a5b817864c05c80fa1679630a9b0a9e01b6a93.json.gz",
+      "bytes": 378,
+      "sha256": "0be6b50f8c645609b35c76d9d5f274e3b97c8a97eaa1dfa04678e06c4ac6a7ef"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/dc78a9b5e98c354aefcbf9f8a3db68c35451b6e7b159bee010113d557d7a2ba3.json.gz",
+      "bytes": 547,
+      "sha256": "cbe1fba87207f5463cabe0e396a9178baa64dc895546bc6afcc6abfe72c072da"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/dd1adaa80a03aee6178b756a045c61e439a82508a7ce8e1127f4ef70dbf437b4.json.gz",
+      "bytes": 470,
+      "sha256": "cb9a5292b94924e84f7c17121f9ca38370e9054cb46d11f2ac785f8560fee0a4"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/de097aff80bf503378434b1ac877906807e5f4bce6f692d158dde05c8f493dce.json.gz",
+      "bytes": 339,
+      "sha256": "3f569b9e4dc24d3266a2c9fe6ff584a1fa7640bc727504826ae2357d8c68fe32"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/deb1d98475aa743f6ad0e300759528836bbc072c2138115aa285bc7193f48fc1.json.gz",
+      "bytes": 321,
+      "sha256": "3d98e5ab8eac74454326cf38198a7293ceeb5aaeadf63bcc5ede8800a36bc38a"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/df27613ca7053dbdab29c1dd7d17c117fb517a63a5fb005c09145e8939642b87.json.gz",
+      "bytes": 321,
+      "sha256": "7588f78e62c587b980bb374a1c6eee35a35c27f2cc62151ffc92b9cdae911a31"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/e1a3ff272f6fab3845ec4d69a0e526c002182b8adea809b5b4ff5ab5fc711439.json.gz",
+      "bytes": 569,
+      "sha256": "33e32c8300fe6fde70ebf85aff1842d12e891da9f5ac6a7566030b9cbe0f94d6"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/e2cfa99ed046d7db2a8c4ba66ceffd53f71cc5ca18422d345ab5416a86408522.json.gz",
+      "bytes": 587,
+      "sha256": "d2ab872c6491932fd059599e4cd35905bc661ea90fba85d82b50d77cdb6f3bf7"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/e2e98c539392ce86e22fbeff9e5a46c449e3822eccc0def79d4cef95983712b2.json.gz",
+      "bytes": 392,
+      "sha256": "4bea655e204f4544ac6e511dd58c61bef32ae1daa8a08f5b5eed080cbe1089c1"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/e4692d94fa20d1a57e564964e57bb986d8437ee3fd6342cec6d2d0ade2f13985.json.gz",
+      "bytes": 445,
+      "sha256": "885a5b1267b070a768192bb2ec8eda66416b42dda515477dd6b014bcccd1504f"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/e4cee02fdadb9a7f86ebff6f2c023be3b10a44e44072b9359824cf8f527729dd.json.gz",
+      "bytes": 447,
+      "sha256": "3ba6409141af83a7aa293f26780bacc6add76cb5015a6c3bed899c1c1ec8fb8b"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/e510d283e1f6af9531d7732c62127dcb4d6e61e7ee14c10f5f233981c2fc53df.json.gz",
+      "bytes": 387,
+      "sha256": "00fdac65afab15e3253d3d7a7a3f6471c5012eb150d6241e078b7f39117f4172"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/e6e719eeeb0b9779c989d8285b9d74968e9ab1cb81ff2d2ec424f9abd5c02fec.json.gz",
+      "bytes": 514,
+      "sha256": "2304f8063e6f6a7e09d1683e3c96077080d261fc741b05c323adcc0eb462f241"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/e70b861407ee688a994e3e043acf005c2bab8cbe350a98ed59c995f6e598bafc.json.gz",
+      "bytes": 368,
+      "sha256": "628976eefbf41ca8b2566881baa213fa83a192a56ab7a1e3a99bc029edac36f1"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/e871f6d6e5bd5c727afbcde2b95bde1a8aec64086471c830dcbf6ba95443c42a.json.gz",
+      "bytes": 552,
+      "sha256": "ebadd88256d4f61c43f621d6ffab836687c1b874179a5a57f777dcfd11fa0f9a"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/e9fddcf105b131195ebd43e4f854801c002a7457372fcb34e6a0ff4299a2bf29.json.gz",
+      "bytes": 1591,
+      "sha256": "affdc1b0eb5b2f987702fcc4ae1600ce75598e738dd32f1df606a0fec9be0e68"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/ea43a55be308d9cf13745951b5d4f85b3c317884cb3748701f354789e21c9b9c.json.gz",
+      "bytes": 422,
+      "sha256": "8893cd37540b106bd2c601f76cb3ae6f128b9a9d9b12be37b4850aee605eff1a"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/ea45ede360babc2e7f7d7966c245d4286af9d07fdbbf083b5bb735a49ab37d7a.json.gz",
+      "bytes": 444,
+      "sha256": "3f54b9298712b7e671deba8387531e304e1450a97551e328aa1f2587f902cbf6"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/ea7787be0f276440649352a431f09d734e02bb43a1e49bf4dd5f56dd1f17c2ec.json.gz",
+      "bytes": 366,
+      "sha256": "7b6de75c7e204c9e8558abb52fcf30f97a2342986f5c7b82ac21d6052e85f233"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/eb01c9ff55d2fa729029f6a561082c9148f03ae380cb65010a9c5b9477e0400b.json.gz",
+      "bytes": 579,
+      "sha256": "51c8f66e8bc997138c2538fd98d5f9a40ec32fdd5949518fb7ac730c25df3004"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/eb2ec5a1cf1e141d1ab7859b162a2ef395f81348b9231696ad4afa6f41a3ccbf.json.gz",
+      "bytes": 419,
+      "sha256": "327edb1e5c53b9766b34cce3926bd5d418319f41fad3a455e7d35799035e437e"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/ebe1f0ab1cc1e6ac9332323994b25d3073b2715d95c9c587587691854587ea7b.json.gz",
+      "bytes": 750,
+      "sha256": "1b7838a6a5da46388ae381a3309aa525f71257bb468038f1ce74577721414fb7"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/edb156bd3de2232bd047c243abc1a2b21e3ca8e8a183cfb936940ba96834326c.json.gz",
+      "bytes": 480,
+      "sha256": "152d256b376b4efa70449362436d339ecb44e861ebad41509e78685e2710d5df"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/edfc8f62a2826c081be7ea57fa9a20b4412dcbe9daa93c3db60cd2e01383cb8b.json.gz",
+      "bytes": 586,
+      "sha256": "47c23e7412ba0c058f7ee85f4201f661659c166c835890f2f667617ef27df530"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/ee2848ff0bda64052ace285ff8656eca0a33c97187186e4a9486f10cc751bd58.json.gz",
+      "bytes": 289,
+      "sha256": "10c7cc7a2a58562df1af2d8e5710c37dba4b8988213e498c951d147779eaf822"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/ee7b0dd63b4baf753167cf919aad3fe4baff0b158ddcbd7f95c8a81ec7f75c79.json.gz",
+      "bytes": 399,
+      "sha256": "bcce227e67dffccefe8952fc8cc301bbaaa415cae768b46fd139dec712d90324"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/ee86203a18a7e116e51e6bf5b9fb4ad7ab338c43255cf160a74eaa962bfae604.json.gz",
+      "bytes": 486,
+      "sha256": "63762059b72f08eb6ba4f3f5cddce52dd1efec521e78eded93dcb43f87e839b0"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/eecdc5d5c23c1b2aa60544b99596410e1ba334dad6627bdebe2d649ffed825e6.json.gz",
+      "bytes": 385,
+      "sha256": "850a8419254629c3c9b28d43bbf1cbab28a0965e7cee9fd569d2cd46f5405411"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/efe76566a2ca776405e2de6bcc45297ef31fe516cfd965ba179517982f5feaeb.json.gz",
+      "bytes": 307,
+      "sha256": "544f90bc199f7ad16b2e397bd6426201f34ee49886dd2573891a067fe7e33c29"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/f171c42f03750a9c1d605b5e11fbef34c392734fd87cec76b192ef1aaa36ee4e.json.gz",
+      "bytes": 1341,
+      "sha256": "9fb4bc1d0404a4954dc1f5031a8e64ae2563ecd9460fc6da77762d2f410bd70f"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/f1c0578876473e468facb566b26043fa6f39e0d7075001d77304697ffe764ca6.json.gz",
+      "bytes": 544,
+      "sha256": "af864ee642095ad595337692984cba2a092ec1bc03e317bd7151506420d8b448"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/f2cd7e84de7e19ae1104a656601633c91975a9d5211ab72c99b2c3184dd2c2ef.json.gz",
+      "bytes": 387,
+      "sha256": "f68a0251c279464fe1d557c6349b0bf88436eec2b942409bc5171e58d9dc0a59"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/f362eecbbe1ecc99e3797b65b217968d4bf51ded6b8b326aaca3223df60d02d8.json.gz",
+      "bytes": 380,
+      "sha256": "de83ddba716df801cb12fbcb3acfd6f7dc3f265a5f79becea326cea2d55ff22c"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/f388f31996a5f7a365ad7174b315e19cc7dde080bc4cf5f6b3541802a8a75bb1.json.gz",
+      "bytes": 304,
+      "sha256": "d992e5917c28035d77c2ae31143a5aeb52d2332b12e250aff68f41a345ddacb3"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/f3b2c8302321b23b4f3538d1c45aa214c24f83341a17331ee63ef18a6bf84748.json.gz",
+      "bytes": 325,
+      "sha256": "19e2091e7c597e4ec4ae187b8b672e60640f9a70e690a938cdd4ed02670401b4"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/f406b279e5b156415b61bf1a939f2334d0572bbdfd64e73e4951fe8ba75f5cc5.json.gz",
+      "bytes": 302,
+      "sha256": "280f971e0dbe4d31d8a3110bdaf6b3c8b5ee8ddd23e2f8c866deee812b6b55cb"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/f4251139e6705e91d710fe062dd5554867b7f14e5988218e2bbfce4e3b0bcacc.json.gz",
+      "bytes": 613,
+      "sha256": "341064dd6b689185f6a0fe5e8b006cd29bdb64f321c39b2a04ad4a1c5e7f4baf"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/f4dbf6277c6e3fc921dd8d3fc269d14768c0415b0b443b6c3eead20f84364a83.json.gz",
+      "bytes": 323,
+      "sha256": "323d2226c9fef53809847f0afcf768ca066fb012d86504ee67eb8829b7bef25d"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/f67bbbfb52e883bd377149af324efc3daca5adbc2357bf33e28f4d9d54ed4f8b.json.gz",
+      "bytes": 682,
+      "sha256": "b6f5c695c405b7b42e7f6d5edf4f5d6208ebb8293eed684804e93c59973f6fc2"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/f693cb948d5ac8eeef35c3e69e30c238d5ecbbee1615102440b8e12f4efe3061.json.gz",
+      "bytes": 554,
+      "sha256": "fe189a7b17d90e7c5983ad8d69246b2d1732453cc41460813b53fc89e4c9d2e3"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/f7145bc9d3c1713c86727ade3b365e556ac5b50a737a66eb39b3e5166d93ebb9.json.gz",
+      "bytes": 337,
+      "sha256": "c38c54c8df24cb0c7090563e0455f4cfe9c1ff45780686cf77f9ef5844b67ce2"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/f78ac5f354fcf6762dc662237f81eb5b9d54dca62bbd293df1d65835b3e3d1a1.json.gz",
+      "bytes": 391,
+      "sha256": "e8b80d856cfc5e60e2eabbbd086d9b1d18d98db989ead087f9e50616b1cda352"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/f8be26186906b0e6b397b3a2f26802b2564a3425aeae86773341cc3f08b25a1e.json.gz",
+      "bytes": 773,
+      "sha256": "9091dbab2e17aabacb1cb972f5dec67eef926f7bbaff9e6d1cf9c4b8e2969810"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/fa4bebe216edb76af17086604fc90d07986acf20bc7cce1aad12326a92d83632.json.gz",
+      "bytes": 457,
+      "sha256": "f5fc150ec05126a97c6a16a8c737984728c6aac0e71f4098197e4059875cc854"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/fad30a8a497df63d672c0000bab072b56b0bf6074c0d00cbbffc1f3a14cc7fe4.json.gz",
+      "bytes": 421,
+      "sha256": "1b5daa09d681a3a7d6afadd20b693c47ca2116f6bc47ed93dd3c8af109d32cf7"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/fb149cc86b18a6b709d9b6a62c2db6cdf825e5fd379e8f694a86b546540fadcc.json.gz",
+      "bytes": 376,
+      "sha256": "92e398e049108b0ee8ecce4bc9b67a5c6a2de826044d87c10f89137cfb75d85e"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/fb58e8f923061dda1dd0a31efe56bced2869d2468d9fd036924a810775cc4d9b.json.gz",
+      "bytes": 652,
+      "sha256": "d34b3d31ca8f66fe3a23055c3670da97b15855d6163968d5dab63ead2f2330f8"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/fb69edbf05813cc23aaa19b38f96b851bc12846f668517f6581008932416cc2a.json.gz",
+      "bytes": 515,
+      "sha256": "0257c2179583ec5133582e187f927d025af0e53d1af2201e95e488ae7a89bfdc"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/fbf30a057e82fc52e43c6fc112881919300e0fd08e2cdde971f23f7cc834f544.json.gz",
+      "bytes": 409,
+      "sha256": "a1590c2832f743578c47b4f1cac2a532ce30492330e4c76842f9e69e54896533"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/fc1112959f51163140a8fc16958f924fdc57ce3d5f93e92a79b8c03a72d4ddc1.json.gz",
+      "bytes": 323,
+      "sha256": "6868eb37fef6664e7743440b25b32c9ff5d91b2b0209a852fe850f39434ec140"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/fc83018dbe3a178f92546522e39ad0eef8ce82cfb563ccd1f808d209ac6d1cb3.json.gz",
+      "bytes": 358,
+      "sha256": "5562012af5815ee83224d3eec61ff5c288e4005b1f0990aa8e28534177571352"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/fd629d7a03f0aafc9f60d5cb3d820bb0f2e2838e9a1fcf20ec443576ec3e965c.json.gz",
+      "bytes": 5504,
+      "sha256": "f366b138d5323b6cd7e3e1c155660b30e904cfcb3cd3012eb2e016cd3a217c4a"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/ff009e38a982d7bc6012f931cc6d43e73936d15e6820b308e89976aea56c94b6.json.gz",
+      "bytes": 543,
+      "sha256": "f6e14c007c999d9f0af1799a447c2e0517e8f68c3f5dc764ee2e69655ec3d8b3"
+    },
+    {
+      "path": "handoff/season-catalogue/responses/ff66a891ffa23a2c0dca4698a36a0fc747f6c6d4121b2a198ee90d71b4ce9bcd.json.gz",
+      "bytes": 565,
+      "sha256": "6060a816ea544c61eac4eb6a910b30f686c60d1aeade349157e7db3fb48b1351"
+    },
+    {
+      "path": "handoff/season-catalogue/review.json",
+      "bytes": 243865,
+      "sha256": "67019b0a3c9ef422a178ddb390367e419b0a80cca0b7a8fdbe7b37dcbcac8807"
+    },
+    {
+      "path": "handoff/season-catalogue/tests.txt",
+      "bytes": 1897,
+      "sha256": "58e7ac56b7dabc21a5936e7979080d9b62f258ab12800ca2baf4edd1b495e083"
+    },
+    {
+      "path": "handoff/season-catalogue/validation.txt",
+      "bytes": 132,
+      "sha256": "3ac9ef5f3d3bb4663f9e8f504694c5e683395711aefb800f0094b20cb6651332"
+    },
+    {
+      "path": "handoff/season-catalogue/wikidata-entities.json.gz",
+      "bytes": 232210,
+      "sha256": "b5d116c4481c2b387ff35f04232e777eca933ce3a7186be6339eeb24ef07b7b6"
+    },
+    {
+      "path": "handoff/season-catalogue/wikidata-query.rq",
+      "bytes": 472,
+      "sha256": "50892c726a9cd622a56f6ef3b71c0e765346582d86ed51b908ced4e3a5230764"
+    },
+    {
+      "path": "handoff/season-catalogue/wikidata-results.json",
+      "bytes": 3052464,
+      "sha256": "cfd616082e8af204a830b69c68abea63de3af29214fb2f92145606c20966cacf"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 991,
+      "sha256": "1a2bc336f422e96e7546757be53c572d1e68e0e012722540d45353bc04904262"
+    },
+    {
+      "path": "tests/test_season_catalogue.py",
+      "bytes": 3990,
+      "sha256": "8531fb48376fd9020592416dfde82784812a0b31e06d8eb291140c7db91dd75b"
+    },
+    {
+      "path": "tools/build_season_catalogue.py",
+      "bytes": 7214,
+      "sha256": "07468e442b7b1e43fa11b583651016b92ec5aa014783ae00a72441a18d7cc0c9"
+    },
+    {
+      "path": "tools/check_season_catalogue.py",
+      "bytes": 5401,
+      "sha256": "0b7a58e97192d74d5f508c6f2eba45f2aadb7be4f7f054f4778507ec7eaf03c9"
+    },
+    {
+      "path": "tools/compile_season_catalogue.py",
+      "bytes": 8770,
+      "sha256": "a3455f3117450bf60f1c61387b38898676099d16ec1a96a560d1ca748d1685ae"
+    },
+    {
+      "path": "tools/fetch_season_league_entities.py",
+      "bytes": 2119,
+      "sha256": "f0671dd5f0cad1a6f91e8082519a64144ce606102a5fc14ae88ddc18479834c7"
+    },
+    {
+      "path": "tools/fetch_season_league_redirects.py",
+      "bytes": 2444,
+      "sha256": "59a5a4eec57808dfedde74186ccd83d3aca216886f0c36fedd7a0b6f96cb1a43"
+    },
+    {
+      "path": "tools/query_related_league_seasons.py",
+      "bytes": 2256,
+      "sha256": "8c166a3227d2716324af8441ac7bf59658ae36c434211f2b4c1fc6ea49f80401"
+    },
+    {
+      "path": "tools/query_season_wikidata.py",
+      "bytes": 1362,
+      "sha256": "04b9967ce4036e8be4081f3224c38da1f278d4cfdcc765802d093365c7f23e79"
+    },
+    {
+      "path": "wiki_stats/season_catalogue.json",
+      "bytes": 1422683,
+      "sha256": "52746e5e72379f09671c482cc0c23f5decb189539c1e15af44fc509a4a06d896"
+    },
+    {
+      "path": "wiki_stats/season_catalogue.py",
+      "bytes": 2279,
+      "sha256": "5b3e49684fe441364d8eaa9c7ee073992ffc2b4703d2429352db05d1b276fbf3"
+    },
+    {
+      "path": "wiki_stats/season_links.py",
+      "bytes": 8524,
+      "sha256": "e9ac86f548c90321124dc369a6cade7700a41e4ad987955dd33611762b29ca78"
+    }
+  ]
+}

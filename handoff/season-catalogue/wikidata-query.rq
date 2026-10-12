@@ -1,0 +1,11 @@
+SELECT DISTINCT ?article ?season ?league ?leagueArticle ?country WHERE {
+ {SELECT ?season ?article WHERE {
+  ?season wdt:P31 wd:Q27020041.
+  ?article schema:about ?season; schema:isPartOf <https://ru.wikipedia.org/>.
+  FILTER(REGEX(STR(?article), "20(1[0-9]|2[0-6])"))
+ }}
+ ?season wdt:P3450 ?league.
+ ?league wdt:P641 wd:Q2736.
+ OPTIONAL {?leagueArticle schema:about ?league; schema:isPartOf <https://ru.wikipedia.org/>.}
+ OPTIONAL {?league wdt:P17 ?country.}
+}

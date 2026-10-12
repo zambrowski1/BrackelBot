@@ -1,0 +1,128 @@
+{
+  "params": {
+    "action": "query",
+    "prop": "redirects",
+    "titles": "Afghanistan Champions League|Bhutan National League|Chilean First B Division|Liga1|MLS|Philippines Football League|Q137711009|TFF Second League|Torneo Descentralizado|Английская Премьер-лига",
+    "rdnamespace": 0,
+    "rdprop": "title",
+    "rdlimit": 500
+  },
+  "checked_at": "2026-10-12T16:07:03.995666+00:00",
+  "response": {
+    "batchcomplete": true,
+    "query": {
+      "pages": [
+        {
+          "ns": 0,
+          "title": "Torneo Descentralizado",
+          "missing": true
+        },
+        {
+          "ns": 0,
+          "title": "TFF Second League",
+          "missing": true
+        },
+        {
+          "ns": 0,
+          "title": "Q137711009",
+          "missing": true
+        },
+        {
+          "ns": 0,
+          "title": "Philippines Football League",
+          "missing": true
+        },
+        {
+          "ns": 0,
+          "title": "Liga1",
+          "missing": true
+        },
+        {
+          "ns": 0,
+          "title": "Chilean First B Division",
+          "missing": true
+        },
+        {
+          "ns": 0,
+          "title": "Bhutan National League",
+          "missing": true
+        },
+        {
+          "ns": 0,
+          "title": "Afghanistan Champions League",
+          "missing": true
+        },
+        {
+          "pageid": 271760,
+          "ns": 0,
+          "title": "Английская Премьер-лига",
+          "redirects": [
+            {
+              "ns": 0,
+              "title": "Чемпионат Англии (футбол)"
+            },
+            {
+              "ns": 0,
+              "title": "Английская премьер-лига"
+            },
+            {
+              "ns": 0,
+              "title": "Английская Премьер-Лига"
+            },
+            {
+              "ns": 0,
+              "title": "FA Premier League"
+            },
+            {
+              "ns": 0,
+              "title": "Premier League"
+            },
+            {
+              "ns": 0,
+              "title": "Английская футбольная премьер-лига"
+            },
+            {
+              "ns": 0,
+              "title": "Английская премьер лига"
+            },
+            {
+              "ns": 0,
+              "title": "English Premier League"
+            },
+            {
+              "ns": 0,
+              "title": "АФПЛ"
+            },
+            {
+              "ns": 0,
+              "title": "Премьер-лига (Англия)"
+            }
+          ]
+        },
+        {
+          "pageid": 1141417,
+          "ns": 0,
+          "title": "MLS",
+          "redirects": [
+            {
+              "ns": 0,
+              "title": "Главная лига футбола"
+            },
+            {
+              "ns": 0,
+              "title": "Главная Футбольная Лига США"
+            },
+            {
+              "ns": 0,
+              "title": "Major League Soccer"
+            },
+            {
+              "ns": 0,
+              "title": "МЛС"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

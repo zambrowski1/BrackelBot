@@ -1,0 +1,19 @@
+{"seed_categories": 121}
+{"categories": 20, "pending": 121, "pages": 678, "new_wiki_requests": 0}
+{"categories": 40, "pending": 128, "pages": 799, "new_wiki_requests": 0}
+{"categories": 60, "pending": 113, "pages": 943, "new_wiki_requests": 0}
+{"categories": 80, "pending": 172, "pages": 1038, "new_wiki_requests": 0}
+{"categories": 100, "pending": 257, "pages": 1065, "new_wiki_requests": 0}
+{"categories": 120, "pending": 239, "pages": 1200, "new_wiki_requests": 0}
+{"categories": 140, "pending": 219, "pages": 1411, "new_wiki_requests": 0}
+{"categories": 160, "pending": 199, "pages": 1694, "new_wiki_requests": 0}
+{"categories": 180, "pending": 177, "pages": 1745, "new_wiki_requests": 0}
+{"categories": 200, "pending": 157, "pages": 1745, "new_wiki_requests": 0}
+{"categories": 220, "pending": 137, "pages": 1759, "new_wiki_requests": 0}
+{"categories": 240, "pending": 129, "pages": 1778, "new_wiki_requests": 0}
+{"categories": 260, "pending": 156, "pages": 1788, "new_wiki_requests": 0}
+{"categories": 280, "pending": 138, "pages": 1808, "new_wiki_requests": 0}
+{"categories": 300, "pending": 130, "pages": 1833, "new_wiki_requests": 0}
+{"categories": 320, "pending": 68, "pages": 1888, "new_wiki_requests": 0}
+{"categories": 340, "pending": 32, "pages": 1940, "new_wiki_requests": 0}
+{"done": true, "categories": 354, "pages": 2040, "network": 0}

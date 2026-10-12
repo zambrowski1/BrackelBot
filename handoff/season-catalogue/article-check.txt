@@ -1,0 +1,5 @@
+Грифо — готовая статья.wiki clubs= 5 national= [(9, 4)]
+Крамарич — готовая статья.wiki clubs= 5 national= []
+Центнер — готовая статья.wiki clubs= 3 national= []
+Шик — готовая статья.wiki clubs= 6 national= [(56, 26)]
+OK: four articles; no network requests or Wikipedia edits

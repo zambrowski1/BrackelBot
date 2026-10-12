@@ -56,7 +56,10 @@ def candidates(league,season):
  title=str(links[0].title).strip();key=season_key(season)
  full=key[:4]+'/'+str(int(key[:4])+1) if '/' in key else key
  roots=ROOTS.get(title,[title])
- return list(dict.fromkeys(root+' '+suffix for root in roots for suffix in dict.fromkeys([full,key]))),full
+ from .season_catalogue import lookup
+ known=[page for name in dict.fromkeys([title,*roots]) for page in lookup(name,key)]
+ guessed=[root+' '+suffix for root in roots for suffix in dict.fromkeys([full,key])]
+ return list(dict.fromkeys([*known,*guessed])),full
 
 
 def verify_title(wiki,requested,allowed):

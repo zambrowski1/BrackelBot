@@ -57,6 +57,9 @@ def test_actual_api_scope_updates_a_matching_old_subset_and_replays_without_chan
     _,result=read_matches(t)
     assert len(result)==56 and sum(int(r['голы']) for r in result)==26
     assert result[0]['примечание']=='Сохранить заметку редактора'
-    assert references(plan.preview)==references(text)
+    from wiki_stats.sbmatches_source import profile_citation
+    citation=profile_citation(op['payload'],op['as_of'])
+    assert [r for r in references(plan.preview) if r!=citation]==references(text)
+    assert references(plan.preview).count(citation)==1
     assert not plan_article(replace(page,text=plan.preview),pkg['articles'][0],'1.1').diff
     assert full_repair(replace(page,text=plan.preview),{'wiki_name':'Патрик Шик','api_id':280609},source,wiki) is None

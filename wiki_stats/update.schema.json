@@ -2042,6 +2042,10 @@
               "type": "string",
               "format": "uri",
               "pattern": "^https://www\\.sofascore\\.com/football/player/(?:[^/\\s]+/)?[0-9]+$"
+            },
+            "source_access_date": {
+              "type": "string",
+              "format": "date"
             }
           },
           "allOf": [
@@ -2231,6 +2235,10 @@
               "type": "string",
               "format": "uri",
               "pattern": "^https://www\\.sofascore\\.com/football/player/(?:[^/\\s]+/)?[0-9]+$"
+            },
+            "source_access_date": {
+              "type": "string",
+              "format": "date"
             }
           },
           "allOf": [
@@ -2560,6 +2568,10 @@
               "type": "string",
               "format": "uri",
               "pattern": "^https://www\\.sofascore\\.com/football/player/(?:[^/\\s]+/)?[0-9]+$"
+            },
+            "source_access_date": {
+              "type": "string",
+              "format": "date"
             }
           },
           "required": [

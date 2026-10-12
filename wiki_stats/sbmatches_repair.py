@@ -4,7 +4,7 @@ import hashlib,re
 from datetime import date
 import mwparserfromhell as mw
 from .errors import UpdateError
-from .sbmatches_source import profile_citation
+from .sbmatches_source import profile_citation,merge_profile_citation
 from .wikitext_parser import WikitextParser
 from .sbmatches_editor import GENERAL, EXTRAS, read_matches, metric_field, validate_row
 
@@ -18,7 +18,7 @@ def repair(text,player,op):
     if len(selected)!=1:raise UpdateError('ambiguous_target','Нужен единственный СбМатчи с указанной сборной и возрастом')
     t=selected[0];values=t.values();payload=op['payload'];metric=metric_field(values)
     complete=payload.get('complete') is True
-    profile=profile_citation(payload)
+    profile=profile_citation(payload,op['as_of'])
     if (not complete and not payload['label'].startswith('Полигонная выборка:')
             or any(c in payload['label'] for c in '|{}<>\r\n')):
         raise UpdateError('invalid_input','Нужен явный полигонный заголовок либо подтверждённый полный список')
@@ -38,7 +38,7 @@ def repair(text,player,op):
     lines.extend(['|заголовок='+payload['label'],'|обновлено='+date.fromisoformat(op['as_of']).strftime('%d-%m-%Y')]);days=[];keys=set()
     old_source=values.get('источник')
     citation=old_source.text.strip() if old_source else ''
-    if profile and payload['source_url'] not in citation:citation+=(' ' if citation else '')+profile
+    if profile:citation=merge_profile_citation(citation,payload,op['as_of'])
     if citation:lines.append('|источник='+citation)
     for i,row in enumerate(payload['matches'],1):
         day=validate_row(row,metric);days.append(day);identity=(day,row['соперник'])

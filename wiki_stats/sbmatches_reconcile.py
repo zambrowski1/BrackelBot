@@ -9,7 +9,7 @@ from .wikitext_parser import WikitextParser
 from .sbmatches_editor import read_matches,metric_field,validate_row,match_date,GENERAL,EXTRAS
 from .change_validator import apply_patches,references
 from .models import Patch
-from .sbmatches_source import profile_citation,without_generated_match_links
+from .sbmatches_source import profile_citation,without_generated_match_links,merge_profile_citation,added_profile_references,has_profile_reference
 
 
 def sha(text):return hashlib.sha256(text.encode('utf-8')).hexdigest()
@@ -29,7 +29,7 @@ def selected(text,player,op):
 def compose(template,op):
     values,old=read_matches(template);metric=metric_field(values);p=op['payload']
     rows=p['matches'];indices=p['old_indices'];totals=p['totals']
-    profile=profile_citation(p)
+    profile=profile_citation(p,op['as_of'])
     if p.get('complete') is not True or len(rows)!=totals['appearances'] or len(rows)!=len(indices) or len(op['sources'])!=len(rows):
         raise UpdateError('national_aggregate_mismatch','Нужен полный список с итогом и источником каждого матча')
     used=[i for i in indices if i]
@@ -52,7 +52,7 @@ def compose(template,op):
         if profile:
             prior_source=values.get('источник')
             citation=prior_source.text.strip() if prior_source else ''
-            if p['source_url'] not in citation:citation+=(' ' if citation else '')+profile
+            citation=merge_profile_citation(citation,p,op['as_of'])
             if node.has('источник'):node.remove('источник')
             add('источник',citation)
     previous=None;identities=set()
@@ -85,7 +85,9 @@ def compose(template,op):
         if citation:add('источник'+str(i),citation)
     if 'источники' in values:add('источники',values['источники'].text.strip())
     rendered=str(node)
-    if references(str(template.node))!=references(rendered):raise UpdateError('integrity_error','Изменился порядок редакторских сносок')
+    raw=str(template.node)
+    apply_patches(raw,[Patch(0,len(raw),raw,rendered,'national_source')],structural=True,
+                  added_references=added_profile_references(raw,rendered,p,op['as_of']))
     old_comments=[str(c) for c in mw.parse(str(template.node)).filter_comments()]
     if old_comments!=[str(c) for c in mw.parse(rendered).filter_comments()]:raise UpdateError('integrity_error','Изменились комментарии СбМатчи')
     read_matches(next(t for t in WikitextParser(rendered).templates if t.name=='сбматчи'))
@@ -108,7 +110,7 @@ def reconcile(text,player,op):
         marker_ready=not p.get('external_updated_sha256') or bool(
             marker and marker.values().get('1') and
             match_date(marker.values()['1'].text.strip())>=date.fromisoformat(op['as_of']) and
-            (not p.get('source_url') or marker.values().get('2') and p['source_url'] in marker.values()['2'].text))
+            (not p.get('source_url') or marker.values().get('2') and has_profile_reference(marker.values()['2'].text,p['source_url'])))
         if marker_ready:return text,'already_applied'
         # The table can be unchanged while its external date/source needs updating.
         if sha(raw)!=p['expected_template_sha256']:
@@ -125,9 +127,11 @@ def reconcile(text,player,op):
         if not prior:raise UpdateError('invalid_input','Нет даты в Обновлено')
         value=max(match_date(prior.text.strip()),date.fromisoformat(op['as_of']))
         updated.add('1',value.isoformat(),preserve_spacing=False)
-        profile=profile_citation(p)
+        profile=profile_citation(p,op['as_of'])
         if profile:
             extra=str(updated.get('2').value).strip() if updated.has('2') else ''
-            if p['source_url'] not in extra:updated.add('2',(extra+' ' if extra else '')+profile,preserve_spacing=False)
+            updated.add('2',merge_profile_citation(extra,p,op['as_of']),preserve_spacing=False)
         patches.append(Patch(marker.start,marker.start+len(str(marker.node)),str(marker.node),str(updated),'national_date'))
-    return apply_patches(text,patches,structural=True),'ready'
+    allowed=[]
+    for patch in patches:allowed.extend(added_profile_references(patch.before,patch.after,p,op['as_of']))
+    return apply_patches(text,patches,structural=True,added_references=allowed),'ready'

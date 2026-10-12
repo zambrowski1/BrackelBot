@@ -77,6 +77,8 @@ def plan_article(snapshot, article, schema_version='1.0', resolver=None):
     groups = OrderedDict()
     for op in article['operations']:
         groups.setdefault(op.get('group_id') or op['id'],[]).append(op)
+    from .sbmatches_source import added_profile_references
+    national_references={}
     results, transactions = [], []
     for group_id, operations in groups.items():
         staged = snapshot.text
@@ -98,6 +100,8 @@ def plan_article(snapshot, article, schema_version='1.0', resolver=None):
                 c = ChangeResult(op['id'],deepcopy(op),status,
                                  'Структура и данные проверены; источники статистики предоставлены пользователем',
                                  minimal_patches(before,staged),generate_diff(before,staged,snapshot.title),group_id=group_id)
+                if op['type'] in {'create_sbmatches','repair_sbmatches','reconcile_sbmatches'}:
+                    national_references[(group_id,op['id'])]=added_profile_references(before,staged,op['payload'],op['as_of'])
                 changes.append(c)
             except UpdateError as exc:
                 failure = exc
@@ -139,11 +143,14 @@ def plan_article(snapshot, article, schema_version='1.0', resolver=None):
                     c.status='patch_conflict'; c.message='Группы пересекаются. Свяжите эти операции одним group_id.'; c.patches=[];c.diff=''
     ready_patches=[p for g in transactions if g.status=='ready' for p in g.patches]
     from .statistics_section import source_reference
+    from .sbmatches_source import added_profile_references
     added_refs=[]
     for change in results:
         if change.status=='ready' and change.operation['type']=='create_statistics_section':
             citation=source_reference(change.operation['payload'],change.operation['as_of'])
             if citation:added_refs.append(citation)
+        elif change.status=='ready' and change.operation['type'] in {'create_sbmatches','repair_sbmatches','reconcile_sbmatches'}:
+            added_refs.extend(national_references.get((change.group_id,change.id),[]))
     preview=apply_patches(snapshot.text,ready_patches,structural=True,added_references=added_refs)
     warnings=list(dict.fromkeys(arithmetic_warnings(preview)+article.get('review_warnings',[])))
     plan=ArticlePlan(snapshot,results,preview,generate_diff(snapshot.text,preview,snapshot.title),warnings,

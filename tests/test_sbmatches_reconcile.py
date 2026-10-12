@@ -101,10 +101,13 @@ def test_profile_source_replaces_generated_row_links_preserving_editor_reference
     op['payload']['replacement_sha256']=sha(compose(template(text),op))
     validate_package(package([op]))
     after,status=reconcile(text,PLAYER,op)
-    assert status=='ready' and references(after)==references(text)
+    from wiki_stats.sbmatches_source import profile_citation
+    citation=profile_citation(op['payload'],op['as_of'])
+    assert status=='ready' and [r for r in references(after) if r!=citation]==references(text)
+    assert references(after).count(citation)==1
     assert 'football/match/' not in after
     marker=external_marker(after,template(after))
-    assert 'football/player/280609 Sofascore' in marker.values()['2'].text
+    assert '|url=https://www.sofascore.com/football/player/280609|' in marker.values()['2'].text
     assert '<ref name="date">' in marker.values()['2'].text
     assert '<ref name="old">' in template(after).values()['источник1'].text
     assert reconcile(after,PLAYER,op)==(after,'already_applied')
@@ -123,6 +126,34 @@ def test_only_external_source_needs_updating():
     op['payload']['replacement_sha256']=sha(compose(template(after),op))
     assert op['payload']['replacement_sha256']==op['payload']['expected_template_sha256']
     final,status=reconcile(after,PLAYER,op)
-    assert status=='ready' and 'football/player/280609 Sofascore' in final
-    assert references(final)==references(TEXT)
+    from wiki_stats.sbmatches_source import profile_citation
+    citation=profile_citation(op['payload'],op['as_of'])
+    assert status=='ready' and citation in final
+    assert [r for r in references(final) if r!=citation]==references(TEXT)
     assert reconcile(final,PLAYER,op)==(final,'already_applied')
+
+
+def test_old_plain_profile_link_is_upgraded_to_cite_web_footnote():
+    op=operation();after,_=reconcile(TEXT,PLAYER,op)
+    after=after.replace('{{обновлено|2026-01-01|','{{обновлено|2026-01-01|[https://www.sofascore.com/football/player/280609 Sofascore] ')
+    op['payload'].update(expected_template_sha256=sha(str(template(after).node)),old_indices=[1,2],
+        external_updated_sha256=sha(str(external_marker(after,template(after)).node)),
+        source_url='https://www.sofascore.com/football/player/patrik-schick/280609',source_access_date='2026-10-12')
+    op['payload']['replacement_sha256']=sha(compose(template(after),op))
+    final,status=reconcile(after,PLAYER,op)
+    expected='<ref>{{Cite web|url=https://www.sofascore.com/football/player/patrik-schick/280609|title=Статистика выступлений футболиста|website=Sofascore|lang=en|access-date=2026-10-12}}</ref>'
+    assert status=='ready' and expected in external_marker(final,template(final)).values()['2'].text
+    assert '[https://www.sofascore.com/football/player/' not in final
+    assert final.count(expected)==1
+    assert reconcile(final,PLAYER,op)==(final,'already_applied')
+    page=snapshot(after);pkg=package([op]);pkg['articles'][0]['base_revid']=page.revid
+    plan=plan_article(page,pkg['articles'][0],'1.1')
+    assert plan.changes[0].status=='ready' and expected in plan.preview
+    assert not plan_article(replace(page,text=plan.preview),pkg['articles'][0],'1.1').diff
+
+
+def test_allowing_profile_reference_does_not_allow_unrelated_new_references():
+    op=operation();op['payload']['source_url']='https://www.sofascore.com/football/player/280609'
+    op['payload']['matches'][0]['примечание']='Новая заметка<ref>Непроверенная новая сноска</ref>'
+    with pytest.raises(UpdateError) as exc:compose(template(),op)
+    assert exc.value.code=='integrity_error'

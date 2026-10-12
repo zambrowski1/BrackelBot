@@ -7,6 +7,7 @@ from .wikitext_parser import WikitextParser
 from .sbmatches_repair import repair
 from .change_validator import apply_patches
 from .models import Patch
+from .sbmatches_source import added_profile_references
 
 def create(text,player,op):
     parser=WikitextParser(text);parser.infobox(player)
@@ -34,7 +35,8 @@ def create(text,player,op):
         block=replacement_block(text,payload['native_team_gen'])
         if hashlib.sha256(block[2].encode()).hexdigest()!=payload['expected_native_sha256']:
             raise UpdateError('old_value_mismatch','Старая таблица матчей сборной изменилась')
-        result=apply_patches(text,[Patch(block[0],block[1],block[2],table,'migrate_sbmatches')],structural=True)
+        result=apply_patches(text,[Patch(block[0],block[1],block[2],table,'migrate_sbmatches')],structural=True,
+                             added_references=added_profile_references(block[2],table,payload,op['as_of']))
         return result,'ready'
     if payload.get('expected_native_sha256'):
         raise UpdateError('old_value_mismatch','Исчезла старая таблица матчей сборной')
@@ -58,5 +60,6 @@ def create(text,player,op):
             prefix='=== Сборная ===\n'
         else:
             end=min(stops,default=len(text));prefix='== Статистика выступлений ==\n\n=== Сборная ===\n'
-    result=apply_patches(text,[Patch(end,end,'','\n'+prefix+table+'\n\n','create_sbmatches')],structural=True)
+    result=apply_patches(text,[Patch(end,end,'','\n'+prefix+table+'\n\n','create_sbmatches')],structural=True,
+                         added_references=added_profile_references('',table,payload,op['as_of']))
     return result,'ready'

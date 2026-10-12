@@ -4,6 +4,7 @@ import hashlib,re
 from datetime import date
 import mwparserfromhell as mw
 from .errors import UpdateError
+from .sbmatches_source import profile_citation
 from .wikitext_parser import WikitextParser
 from .sbmatches_editor import GENERAL, EXTRAS, read_matches, metric_field, validate_row
 
@@ -17,6 +18,7 @@ def repair(text,player,op):
     if len(selected)!=1:raise UpdateError('ambiguous_target','Нужен единственный СбМатчи с указанной сборной и возрастом')
     t=selected[0];values=t.values();payload=op['payload'];metric=metric_field(values)
     complete=payload.get('complete') is True
+    profile=profile_citation(payload)
     if (not complete and not payload['label'].startswith('Полигонная выборка:')
             or any(c in payload['label'] for c in '|{}<>\r\n')):
         raise UpdateError('invalid_input','Нужен явный полигонный заголовок либо подтверждённый полный список')
@@ -32,8 +34,12 @@ def repair(text,player,op):
         if key not in GENERAL and not re.fullmatch(r'(матч|дата|соперник|счёт|голы|соревнование|источник|пенальти|пропущенные голы|место|передачи|минуты|примечание)[1-9][0-9]*',key):raise UpdateError('unsupported_structure','Неизвестный параметр СбМатчи: '+key)
     nl='\r\n' if '\r\n' in str(t.node) else '\n';lines=['{{СбМатчи']
     for key,value in values.items():
-        if key in GENERAL and key not in {'заголовок','обновлено'}:lines.append('|'+key+'='+value.text.strip())
+        if key in GENERAL and key not in {'заголовок','обновлено','источник'}:lines.append('|'+key+'='+value.text.strip())
     lines.extend(['|заголовок='+payload['label'],'|обновлено='+date.fromisoformat(op['as_of']).strftime('%d-%m-%Y')]);days=[];keys=set()
+    old_source=values.get('источник')
+    citation=old_source.text.strip() if old_source else ''
+    if profile and payload['source_url'] not in citation:citation+=(' ' if citation else '')+profile
+    if citation:lines.append('|источник='+citation)
     for i,row in enumerate(payload['matches'],1):
         day=validate_row(row,metric);days.append(day);identity=(day,row['соперник'])
         if identity in keys or day>date.fromisoformat(op['as_of']):raise UpdateError('invalid_match','Повторный матч или дата за пределами источника')
@@ -43,7 +49,8 @@ def repair(text,player,op):
             if any(c in value for c in (';;','\n','\r','<','{{','}}')) or any(isinstance(n,mw.nodes.Text) and '|' in str(n) for n in code.nodes):raise UpdateError('invalid_match','Недопустимая разметка нового матча')
         source=op['sources'][i-1]['url']
         if any(c in source for c in '|{}<>[]\r\n'):raise UpdateError('invalid_input','Недопустимый URL источника')
-        lines.extend(['|матч'+str(i)+'='+' ;; '.join(row.get(f,'') for f in ('дата','соперник','счёт',metric,'соревнование')),'|источник'+str(i)+'=['+source+']'])
+        lines.append('|матч'+str(i)+'='+' ;; '.join(row.get(f,'') for f in ('дата','соперник','счёт',metric,'соревнование')))
+        if not profile:lines.append('|источник'+str(i)+'=['+source+']')
         for field in EXTRAS:
             if row.get(field):lines.append('|'+field+str(i)+'='+row[field])
         if row.get('пенальти'):lines.append('|пенальти'+str(i)+'='+row['пенальти'])

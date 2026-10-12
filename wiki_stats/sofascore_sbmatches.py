@@ -4,6 +4,7 @@ from datetime import datetime,timezone
 import hashlib
 import re
 from .errors import UpdateError
+from .sbmatches_source import without_generated_match_links
 from .wikitext_parser import WikitextParser
 from .sbmatches_editor import read_matches,metric_field
 from .sofascore_timeline import timeline_numbers
@@ -54,6 +55,7 @@ def full_repair(snapshot,mapping,scope,wiki,*,goalkeeper=False):
     if set(i for i in old_indices if i)!=set(by_key.values()):
         raise UpdateError('national_existing_match_unmatched','API не сопоставил все старые матчи; таблица сохранена')
     marker=external_marker(snapshot.text,template)
+    profile_url='https://www.sofascore.com/football/player/'+str(mapping['api_id'])
     metric=metric_field(values)
     # A replay must not rewrite compact rows merely to switch their format.
     # Compare the fields that this operation can change, including provenance
@@ -62,17 +64,18 @@ def full_repair(snapshot,mapping,scope,wiki,*,goalkeeper=False):
     date_current=bool(date_field and date_field.text.strip() and
                       match_date(date_field.text.strip()).isoformat()>=scope['statistics_as_of'])
     if date_current and old_indices==list(range(1,len(existing)+1)):
-        unchanged=True
+        overall=marker.values().get('2') if marker else values.get('источник')
+        unchanged=bool(overall and profile_url in overall.text)
         for i,(old,new,source) in enumerate(zip(existing,rows,sources),1):
             citation=values.get('источник'+str(i))
             if (old['счёт']!=new['счёт'] or old[metric]!=new[metric]
                     or new.get('пенальти') and new['пенальти']!=old.get('пенальти')
-                    or not citation or source['url'] not in citation.text):
+                    or citation and without_generated_match_links(citation.text)!=citation.text.strip()):
                 unchanged=False;break
         if unchanged:return None
     payload={'expected_template_sha256':sha(str(template.node)),
              'replacement_sha256':'0'*64,'complete':True,'totals':scope['numbers'],
-             'matches':rows,'old_indices':old_indices}
+             'matches':rows,'old_indices':old_indices,'source_url':profile_url}
     if marker:payload['external_updated_sha256']=sha(str(marker.node))
     operation={'id':'reconcile-full-sbmatches','type':'reconcile_sbmatches','group_id':'full-national-scope',
         'entity':{'name':own['name'],'kind':'national_team','age':None,'wikidata_id':own['wikidata_id'],
@@ -80,7 +83,7 @@ def full_repair(snapshot,mapping,scope,wiki,*,goalkeeper=False):
         'target':{'structure':'sbmatches','age':None},'as_of':scope['statistics_as_of'],
         'sources':sources,'payload':payload}
     payload['replacement_sha256']=sha(compose(template,operation))
-    if payload['replacement_sha256']==payload['expected_template_sha256']:
+    if not marker and payload['replacement_sha256']==payload['expected_template_sha256']:
         return None
     return operation
 
@@ -107,7 +110,8 @@ def create_missing(snapshot,mapping,scope,wiki,*,goalkeeper=False):
         'target':{'structure':'sbmatches','age':None},'as_of':scope['statistics_as_of'],
         'sources':sources,'payload':{'label':mapping['wiki_name']+': матчи за сборную '+own['gen'],
             'complete':True,'totals':scope['numbers'],'matches':rows,
-            'metric':'пропущенные голы' if goalkeeper else 'голы'}}
+            'metric':'пропущенные голы' if goalkeeper else 'голы',
+            'source_url':'https://www.sofascore.com/football/player/'+str(mapping['api_id'])}}
     from .native_national_table import replacement_block
     block=replacement_block(snapshot.text,own['gen'])
     if block:
@@ -162,4 +166,5 @@ def sample_repair(snapshot,mapping,history,api,wiki,now):
         'target':{'structure':'sbmatches','age':None},'as_of':now.date().isoformat(),
         'sources':[s for _,s in paired], 'payload':{'expected_template_sha256':hashlib.sha256(str(t.node).encode()).hexdigest(),
             'label':'Полигонная выборка: два подтверждённых матча Вилли Орбана за Венгрию',
-            'matches':[r for r,_ in paired]}}
+            'matches':[r for r,_ in paired],
+            'source_url':'https://www.sofascore.com/football/player/'+str(mapping['api_id'])}}

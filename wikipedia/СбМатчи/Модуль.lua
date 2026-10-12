@@ -2449,7 +2449,7 @@ end
 function p._render(args, frame)
     local last = 0
     local allowed = {['игрок']=true,['сборная']=true,['заголовок']=true,
-        ['цвета']=true,['обновлено']=true,['свёрнуто']=true,['источники']=true,
+        ['цвета']=true,['обновлено']=true,['свёрнуто']=true,['источники']=true,['источник']=true,
         ['соревнование']=true,['возраст']=true,['статистика']=true,['порядок']=true}
     for key,value in pairs(args) do
         key = tostring(key)
@@ -2539,7 +2539,7 @@ function p._render(args, frame)
         end
         if row['передачи']~='' and number(row['передачи'],'передачи'..i)>own then fail('передач больше голов сборной') end
         if row['минуты']~='' and number(row['минуты'],'минуты'..i)>130 then fail('неверное число минут') end
-        row.goals = goals==0 and '—' or goals
+        row.goals = goals
         rows[#rows+1]=row
     end
     local updated = trim(args['обновлено'])
@@ -2547,7 +2547,7 @@ function p._render(args, frame)
     if updated~='' then
         local iso = parseDate(updated)
         if iso<latest then fail('дата обновления раньше последнего матча') end
-        prefix = frame:expandTemplate{title='обновлено',args={iso}} .. '\n'
+        prefix = frame:expandTemplate{title='обновлено',args={iso,trim(args['источник'])}} .. '\n'
     end
     local collapsed = trim(args['свёрнуто'])
     if collapsed~='' and collapsed~='да' and collapsed~='нет' then

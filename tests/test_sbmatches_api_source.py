@@ -36,7 +36,7 @@ def test_actual_old_schick_list_conflict_preserves_the_entire_table():
     old=(ROOT/'fixtures/schick-national-legacy.wiki').read_text(encoding='utf8')
     text,_=migrate(old,'Патрик Шик',operation(old,'Патрик Шик','2026-10-12'))
     with pytest.raises(UpdateError) as exc:
-        full_repair(snapshot(text),{'wiki_name':'Патрик Шик'},scope(),Wiki())
+        full_repair(snapshot(text),{'wiki_name':'Патрик Шик','api_id':280609},scope(),Wiki())
     assert exc.value.code=='national_existing_match_unmatched'
     assert len(read_matches(next(t for t in WikitextParser(text).templates if t.name=='сбматчи'))[1])==50
 
@@ -48,7 +48,7 @@ def test_actual_api_scope_updates_a_matching_old_subset_and_replays_without_chan
     for key,value in first.items():text+='|'+key+'1='+value+'\n'
     text+='|примечание1=Сохранить заметку редактора\n|источник1=<ref>Старый источник</ref>\n}}\n== Примечания ==\n{{примечания}}'
     page=snapshot(text)
-    op=full_repair(page,{'wiki_name':'Патрик Шик'},source,wiki)
+    op=full_repair(page,{'wiki_name':'Патрик Шик','api_id':280609},source,wiki)
     pkg={'schema_version':'1.1','package_id':'real-source-replay','generated_at':'2026-10-12T00:00:00Z',
          'articles':[{'title':page.title,'base_revid':page.revid,'player':'Патрик Шик','operations':[op]}]}
     validate_package(pkg);plan=plan_article(page,pkg['articles'][0],'1.1')
@@ -59,4 +59,4 @@ def test_actual_api_scope_updates_a_matching_old_subset_and_replays_without_chan
     assert result[0]['примечание']=='Сохранить заметку редактора'
     assert references(plan.preview)==references(text)
     assert not plan_article(replace(page,text=plan.preview),pkg['articles'][0],'1.1').diff
-    assert full_repair(replace(page,text=plan.preview),{'wiki_name':'Патрик Шик'},source,wiki) is None
+    assert full_repair(replace(page,text=plan.preview),{'wiki_name':'Патрик Шик','api_id':280609},source,wiki) is None

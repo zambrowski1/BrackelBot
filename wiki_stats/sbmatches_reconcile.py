@@ -9,6 +9,7 @@ from .wikitext_parser import WikitextParser
 from .sbmatches_editor import read_matches,metric_field,validate_row,match_date,GENERAL,EXTRAS
 from .change_validator import apply_patches,references
 from .models import Patch
+from .sbmatches_source import profile_citation,without_generated_match_links
 
 
 def sha(text):return hashlib.sha256(text.encode('utf-8')).hexdigest()
@@ -28,6 +29,7 @@ def selected(text,player,op):
 def compose(template,op):
     values,old=read_matches(template);metric=metric_field(values);p=op['payload']
     rows=p['matches'];indices=p['old_indices'];totals=p['totals']
+    profile=profile_citation(p)
     if p.get('complete') is not True or len(rows)!=totals['appearances'] or len(rows)!=len(indices) or len(op['sources'])!=len(rows):
         raise UpdateError('national_aggregate_mismatch','Нужен полный список с итогом и источником каждого матча')
     used=[i for i in indices if i]
@@ -47,6 +49,12 @@ def compose(template,op):
         old_date=values.get('обновлено')
         if old_date and old_date.text.strip():day=max(day,match_date(old_date.text.strip()))
         add('обновлено',day.strftime('%d-%m-%Y'))
+        if profile:
+            prior_source=values.get('источник')
+            citation=prior_source.text.strip() if prior_source else ''
+            if p['source_url'] not in citation:citation+=(' ' if citation else '')+profile
+            if node.has('источник'):node.remove('источник')
+            add('источник',citation)
     previous=None;identities=set()
     for i,(incoming,index,source) in enumerate(zip(rows,indices,op['sources']),1):
         new_day=validate_row(incoming,metric)
@@ -72,9 +80,9 @@ def compose(template,op):
         if not re.fullmatch(r'https://www\.sofascore\.com/[^\s|{}<>\[\]]+',url):raise UpdateError('invalid_input','Нужна ссылка Sofascore на матч')
         old_source=values.get('источник'+str(index)) if index else None
         citation=old_source.text.strip() if old_source else ''
-        # Preserve editor citations and add an API link only when absent.
-        if url not in citation:citation+=(' ' if citation else '')+'['+url+']'
-        add('источник'+str(i),citation)
+        # Preserve editor citations; API evidence is not printed in each row.
+        if profile:citation=without_generated_match_links(citation)
+        if citation:add('источник'+str(i),citation)
     if 'источники' in values:add('источники',values['источники'].text.strip())
     rendered=str(node)
     if references(str(template.node))!=references(rendered):raise UpdateError('integrity_error','Изменился порядок редакторских сносок')
@@ -96,11 +104,15 @@ def reconcile(text,player,op):
     template=selected(text,player,op);p=op['payload'];raw=str(template.node)
     if sha(raw)==p['replacement_sha256']:
         read_matches(template)
-        if p.get('external_updated_sha256'):
-            marker=external_marker(text,template)
-            if not marker or not marker.values().get('1') or match_date(marker.values()['1'].text.strip())<date.fromisoformat(op['as_of']):
-                raise UpdateError('old_value_mismatch','Шаблон обновлён отдельно от его даты')
-        return text,'already_applied'
+        marker=external_marker(text,template) if p.get('external_updated_sha256') else None
+        marker_ready=not p.get('external_updated_sha256') or bool(
+            marker and marker.values().get('1') and
+            match_date(marker.values()['1'].text.strip())>=date.fromisoformat(op['as_of']) and
+            (not p.get('source_url') or marker.values().get('2') and p['source_url'] in marker.values()['2'].text))
+        if marker_ready:return text,'already_applied'
+        # The table can be unchanged while its external date/source needs updating.
+        if sha(raw)!=p['expected_template_sha256']:
+            raise UpdateError('old_value_mismatch','Шаблон обновлён отдельно от его даты или источника')
     if sha(raw)!=p['expected_template_sha256']:raise UpdateError('old_value_mismatch','СбМатчи изменился после подготовки diff')
     rendered=compose(template,op)
     if sha(rendered)!=p['replacement_sha256']:raise UpdateError('old_value_mismatch','Изменились ожидаемые данные обновления')
@@ -113,5 +125,9 @@ def reconcile(text,player,op):
         if not prior:raise UpdateError('invalid_input','Нет даты в Обновлено')
         value=max(match_date(prior.text.strip()),date.fromisoformat(op['as_of']))
         updated.add('1',value.isoformat(),preserve_spacing=False)
+        profile=profile_citation(p)
+        if profile:
+            extra=str(updated.get('2').value).strip() if updated.has('2') else ''
+            if p['source_url'] not in extra:updated.add('2',(extra+' ' if extra else '')+profile,preserve_spacing=False)
         patches.append(Patch(marker.start,marker.start+len(str(marker.node)),str(marker.node),str(updated),'national_date'))
     return apply_patches(text,patches,structural=True),'ready'

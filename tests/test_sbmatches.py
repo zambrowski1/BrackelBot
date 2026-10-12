@@ -47,7 +47,7 @@ redirectTitles={['Сборная Ирландии по футболу (до 16 �
 mw.title={new=function(name) return {exists=existingTitles[name] or false,
     isRedirect=redirectTitles[name] or false} end}
 testFrame={expandTemplate=function(self,spec)
-    if spec.title=='обновлено' then return '{{обновлено|'..spec.args[1]..'}}' end
+    if spec.title=='обновлено' then return '{{обновлено|'..spec.args[1]..(spec.args[2] and spec.args[2]~='' and '|'..spec.args[2] or '')..'}}' end
     if spec.title=='цвета сборной/Германия' then return 'background:#fff;color:#000;' end
     if spec.title:sub(1,#'Флаг ')=='Флаг ' then return '{{'..spec.title..'|20px}}' end
     if spec.title=='нп5' then
@@ -381,7 +381,7 @@ def test_display_date_and_zero_statistic(renderer, day, metric, value):
         args[metric + '1'] = value
     result = renderer(args)
     assert '<td>11 сентября 2006</td>' in result
-    assert '<td>—</td>' in result
+    assert '<td>0</td>' in result
     assert ('Пропущенные голы' if metric == 'пропущенные голы' else 'Голы') in result
     assert ('0 пропущенных голов' if metric == 'пропущенные голы' else '0 голов') in result
 
@@ -424,3 +424,13 @@ def test_explicit_source_order_preserves_rows_but_date_uses_latest_game(renderer
     args={**example(),'дата1':'2017-12-01','порядок':'исходный'}
     assert '1 декабря 2017' in renderer(args)
     with pytest.raises(lupa.LuaError):renderer({**args,'обновлено':'2017-11-01'})
+
+
+def test_shared_source_is_next_to_the_date_not_in_match_cells(renderer):
+    args={'заголовок':'Матчи','обновлено':'01-01-2026',
+          'источник':'[https://www.sofascore.com/football/player/280609 Sofascore]',
+          'матч1':'01-01-2026 ;; Франция ;; 0:0 ;; 0 ;; Товарищеский матч'}
+    result=renderer(args)
+    assert result.startswith('{{обновлено|2026-01-01|'+args['источник']+'}}')
+    assert result.count('Sofascore')==1 and '<td>0</td>' in result
+    assert 'Sofascore' not in result[result.index('<table'):]

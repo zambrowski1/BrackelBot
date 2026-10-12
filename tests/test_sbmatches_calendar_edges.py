@@ -14,7 +14,7 @@ def test_python_editor_and_lua_module_agree_on_calendar_edges(renderer,day,valid
     if valid:
         parsed=match_date(day)
         output=renderer(args)
-        assert str(parsed.year) in output and '<td>—</td>' in output
+        assert str(parsed.year) in output and '<td>0</td>' in output
     else:
         with pytest.raises(UpdateError):match_date(day)
         with pytest.raises(lupa.LuaError):renderer(args)
@@ -28,5 +28,5 @@ def test_mixed_date_formats_do_not_change_totals_or_sort_order(renderer,metric):
           'матч3':'2026-02-01 ;; Франция ;; 0:0 ;; 0'}
     output=renderer(args)
     assert output.index('31 декабря 2025')<output.index('1 января 2026')<output.index('1 февраля 2026')
-    assert output.count('<td>—</td>')==3
+    assert output.count('<td>0</td>')==3
     assert '3 матча' in output and '3 ничьи' in output

@@ -2037,6 +2037,11 @@
                   "maximum": 2000
                 }
               }
+            },
+            "source_url": {
+              "type": "string",
+              "format": "uri",
+              "pattern": "^https://www\\.sofascore\\.com/football/player/(?:[^/\\s]+/)?[0-9]+$"
             }
           },
           "allOf": [
@@ -2221,6 +2226,11 @@
             "native_team_gen": {
               "type": "string",
               "minLength": 1
+            },
+            "source_url": {
+              "type": "string",
+              "format": "uri",
+              "pattern": "^https://www\\.sofascore\\.com/football/player/(?:[^/\\s]+/)?[0-9]+$"
             }
           },
           "allOf": [
@@ -2545,6 +2555,11 @@
                 "minimum": 0,
                 "maximum": 500
               }
+            },
+            "source_url": {
+              "type": "string",
+              "format": "uri",
+              "pattern": "^https://www\\.sofascore\\.com/football/player/(?:[^/\\s]+/)?[0-9]+$"
             }
           },
           "required": [

@@ -56,7 +56,8 @@ def test_complete_api_list_corrects_numbers_adds_match_and_preserves_editor_deta
     assert rows[0]['место']=='[[Париж]]' and rows[0]['примечание']=='Вышел на замену'
     assert 'подробностями' in rows[0]['соревнование']
     assert '<ref name="old">' in values['источник1'].text
-    assert '#id:1' in values['источник1'].text
+    assert '#id:1' not in values['источник1'].text
+    assert 'источник2' not in values
     assert '{{обновлено|2026-01-01|' in after
     assert 'обновлено' not in values
     assert reconcile(after,PLAYER,op)==(after,'already_applied')
@@ -92,3 +93,36 @@ def test_plan_and_revision_recheck_are_idempotent():
     assert plan.changes[0].status=='ready'
     assert not plan_article(replace(page,text=plan.preview),pkg['articles'][0],'1.1').diff
     assert plan_article(replace(page,revid=page.revid+1),pkg['articles'][0],'1.1').changes[0].status=='revision_conflict'
+
+
+def test_profile_source_replaces_generated_row_links_preserving_editor_references():
+    text=TEXT.replace('</ref>\n}}','</ref> [https://www.sofascore.com/football/match/test#id:1]\n}}')
+    op=operation(text);op['payload']['source_url']='https://www.sofascore.com/football/player/280609'
+    op['payload']['replacement_sha256']=sha(compose(template(text),op))
+    validate_package(package([op]))
+    after,status=reconcile(text,PLAYER,op)
+    assert status=='ready' and references(after)==references(text)
+    assert 'football/match/' not in after
+    marker=external_marker(after,template(after))
+    assert 'football/player/280609 Sofascore' in marker.values()['2'].text
+    assert '<ref name="date">' in marker.values()['2'].text
+    assert '<ref name="old">' in template(after).values()['источник1'].text
+    assert reconcile(after,PLAYER,op)==(after,'already_applied')
+
+
+def test_invalid_profile_cannot_inject_wikitext():
+    op=operation();op['payload']['source_url']='https://www.sofascore.com/football/player/1]{{bad}}'
+    with pytest.raises(UpdateError):compose(template(),op)
+
+
+def test_only_external_source_needs_updating():
+    op=operation();after,_=reconcile(TEXT,PLAYER,op)
+    op['payload'].update(expected_template_sha256=sha(str(template(after).node)),
+                         old_indices=[1,2],external_updated_sha256=sha(str(external_marker(after,template(after)).node)),
+                         source_url='https://www.sofascore.com/football/player/280609')
+    op['payload']['replacement_sha256']=sha(compose(template(after),op))
+    assert op['payload']['replacement_sha256']==op['payload']['expected_template_sha256']
+    final,status=reconcile(after,PLAYER,op)
+    assert status=='ready' and 'football/player/280609 Sofascore' in final
+    assert references(final)==references(TEXT)
+    assert reconcile(final,PLAYER,op)==(final,'already_applied')

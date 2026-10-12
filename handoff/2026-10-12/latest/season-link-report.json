@@ -1,0 +1,67 @@
+{
+  "football_provider_requests": 0,
+  "wikipedia_edits": 0,
+  "wiki_read_batches": 7,
+  "articles": [
+    {
+      "file": "Грифо — готовая статья.wiki",
+      "status": "ready",
+      "changed_seasons": 15,
+      "issues": [],
+      "references_preserved": true,
+      "non_season_content_preserved": true,
+      "idempotent": true,
+      "before_sha256": "8af8476e5f140a1a6c85d2490222b6e3667b28023b270b82bdcbfac4d17790ab",
+      "after_sha256": "f78edf23df26409f305a3bd984078ec9e1ab16233fbb638ce2083bf9e045e652"
+    },
+    {
+      "file": "Крамарич — готовая статья.wiki",
+      "status": "ready",
+      "changed_seasons": 21,
+      "issues": [],
+      "references_preserved": true,
+      "non_season_content_preserved": true,
+      "idempotent": true,
+      "before_sha256": "a28110d222860cb5792ec98e9305395d168ec9a257eec9e1755f97037bf5531a",
+      "after_sha256": "427ce70de20a0c789e24aea132e23cb83cba97ef908a8150dc6741d3fbcaa6e0"
+    },
+    {
+      "file": "Центнер — готовая статья.wiki",
+      "status": "ready",
+      "changed_seasons": 12,
+      "issues": [
+        {
+          "code": "season_article_missing",
+          "league": "[[Региональная лига Германии по футболу|Региональная лига]]",
+          "season": "2012/13"
+        },
+        {
+          "code": "season_article_missing",
+          "league": "[[Региональная лига Германии по футболу|Региональная лига]]",
+          "season": "2013/14"
+        },
+        {
+          "code": "season_article_missing",
+          "league": "[[Третья лига Германии по футболу|Третья лига]]",
+          "season": "2016/17"
+        }
+      ],
+      "references_preserved": true,
+      "non_season_content_preserved": true,
+      "idempotent": true,
+      "before_sha256": "ba4255c85c999b6193704c5c92a5fe322d3497a6825be1f0675a7a398297a4b5",
+      "after_sha256": "1587a8e64afa00a6b3a7d238e6083bafa086b25dbd3430df35777bffead30d17"
+    },
+    {
+      "file": "Шик — готовая статья.wiki",
+      "status": "ready",
+      "changed_seasons": 14,
+      "issues": [],
+      "references_preserved": true,
+      "non_season_content_preserved": true,
+      "idempotent": true,
+      "before_sha256": "28ad07e690bb621616b72c9740d6b04e8862f2a638838b5c15a5ee2ee7addf01",
+      "after_sha256": "3a84f87942e87b59bc49086a923a3b6196501b0e8f09e94ff716546527db2d06"
+    }
+  ]
+}

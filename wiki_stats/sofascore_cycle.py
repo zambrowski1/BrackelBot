@@ -1273,6 +1273,17 @@ def _prepare_statistics(snapshot, mapping, api, wiki, resolver, *, max_requests=
         plan=plan_article(snapshot,article,'1.1',resolver)
     elif flag_issues:
         plan=plan_article(snapshot,article,'1.1',resolver)
+    from .season_links import prepare as prepare_season_links
+    try:
+        season_op,season_issues=prepare_season_links(plan.preview,mapping['wiki_name'],now.date().isoformat(),wiki)
+    except UpdateError as exc:
+        season_op=None;season_issues=[{'code':'season_link_unproven','reason':exc.code}]
+    issues.extend(season_issues)
+    if season_op:
+        article.pop('collection_result',None)
+        article['operations'].append(season_op)
+        validate_package(package)
+        plan=plan_article(snapshot,article,'1.1',resolver)
     # The adapter prepares review diffs; automatic mainspace source attestation
     # is deliberately not fabricated by a manually prepared sandbox plan.
     return package, plan, {'provider': 'sofascore', 'player_id': mapping['api_id'],

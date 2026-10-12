@@ -1,0 +1,1171 @@
+{
+  "checked_at": "2026-10-12T14:10:09.274679+00:00",
+  "endpoint": "https://ru.wikipedia.org/w/api.php",
+  "identities": {
+    "Вторая Бундеслига 2013/14": null,
+    "Вторая Бундеслига 2013/2014": {
+      "pageid": 4543296,
+      "ns": 0,
+      "title": "Вторая Бундеслига 2013/2014",
+      "contentmodel": "wikitext",
+      "pagelanguage": "ru",
+      "pagelanguagehtmlcode": "ru",
+      "pagelanguagedir": "ltr",
+      "touched": "2026-10-12T00:11:41Z",
+      "lastrevid": 154538512,
+      "length": 30521
+    },
+    "Вторая Бундеслига 2014/15": null,
+    "Вторая Бундеслига 2014/2015": {
+      "pageid": 5133490,
+      "ns": 0,
+      "title": "Вторая Бундеслига 2014/2015",
+      "contentmodel": "wikitext",
+      "pagelanguage": "ru",
+      "pagelanguagehtmlcode": "ru",
+      "pagelanguagedir": "ltr",
+      "touched": "2026-10-12T00:11:41Z",
+      "lastrevid": 154538782,
+      "length": 34922
+    },
+    "Вторая Бундеслига 2015/16": null,
+    "Вторая Бундеслига 2015/2016": {
+      "pageid": 5829899,
+      "ns": 0,
+      "title": "Вторая Бундеслига 2015/2016",
+      "contentmodel": "wikitext",
+      "pagelanguage": "ru",
+      "pagelanguagehtmlcode": "ru",
+      "pagelanguagedir": "ltr",
+      "touched": "2026-10-12T00:11:41Z",
+      "lastrevid": 154539147,
+      "length": 40356
+    },
+    "Региональная лига Германии по футболу 2012/13": null,
+    "Региональная лига Германии по футболу 2012/2013": null,
+    "Региональная лига Германии по футболу 2013/14": null,
+    "Региональная лига Германии по футболу 2013/2014": null,
+    "Третья лига Германии по футболу 2014/15": null,
+    "Третья лига Германии по футболу 2014/2015": {
+      "pageid": 5143584,
+      "ns": 0,
+      "title": "Третья лига Германии по футболу 2014/2015",
+      "contentmodel": "wikitext",
+      "pagelanguage": "ru",
+      "pagelanguagehtmlcode": "ru",
+      "pagelanguagedir": "ltr",
+      "touched": "2026-10-11T13:02:06Z",
+      "lastrevid": 149968386,
+      "length": 46501
+    },
+    "Третья лига Германии по футболу 2015/16": null,
+    "Третья лига Германии по футболу 2015/2016": {
+      "pageid": 5743448,
+      "ns": 0,
+      "title": "Третья лига Германии по футболу 2015/2016",
+      "contentmodel": "wikitext",
+      "pagelanguage": "ru",
+      "pagelanguagehtmlcode": "ru",
+      "pagelanguagedir": "ltr",
+      "touched": "2026-10-11T13:02:06Z",
+      "lastrevid": 142657947,
+      "length": 41344
+    },
+    "Третья лига Германии по футболу 2016/17": null,
+    "Третья лига Германии по футболу 2016/2017": null,
+    "Чемпионат Англии по футболу 2014/15": null,
+    "Чемпионат Англии по футболу 2014/2015": {
+      "pageid": 5001685,
+      "ns": 0,
+      "title": "Чемпионат Англии по футболу 2014/2015",
+      "contentmodel": "wikitext",
+      "pagelanguage": "ru",
+      "pagelanguagehtmlcode": "ru",
+      "pagelanguagedir": "ltr",
+      "touched": "2026-10-07T10:55:51Z",
+      "lastrevid": 154597758,
+      "length": 70786
+    },
+    "Чемпионат Англии по футболу 2015/16": null,
+    "Чемпионат Англии по футболу 2015/2016": {
+      "pageid": 5716793,
+      "ns": 0,
+      "title": "Чемпионат Англии по футболу 2015/2016",
+      "contentmodel": "wikitext",
+      "pagelanguage": "ru",
+      "pagelanguagehtmlcode": "ru",
+      "pagelanguagedir": "ltr",
+      "touched": "2026-10-07T10:55:58Z",
+      "lastrevid": 154354312,
+      "length": 108275
+    },
+    "Чемпионат Германии по футболу 2012/13": null,
+    "Чемпионат Германии по футболу 2012/2013": {
+      "pageid": 3920869,
+      "ns": 0,
+      "title": "Чемпионат Германии по футболу 2012/2013",
+      "contentmodel": "wikitext",
+      "pagelanguage": "ru",
+      "pagelanguagehtmlcode": "ru",
+      "pagelanguagedir": "ltr",
+      "touched": "2026-10-06T23:55:57Z",
+      "lastrevid": 155470365,
+      "length": 64265
+    },
+    "Чемпионат Германии по футболу 2015/16": null,
+    "Чемпионат Германии по футболу 2015/2016": {
+      "pageid": 5732531,
+      "ns": 0,
+      "title": "Чемпионат Германии по футболу 2015/2016",
+      "contentmodel": "wikitext",
+      "pagelanguage": "ru",
+      "pagelanguagehtmlcode": "ru",
+      "pagelanguagedir": "ltr",
+      "touched": "2026-10-07T09:03:39Z",
+      "lastrevid": 155474138,
+      "length": 65062
+    },
+    "Чемпионат Германии по футболу 2016/17": null,
+    "Чемпионат Германии по футболу 2016/2017": {
+      "pageid": 6340736,
+      "ns": 0,
+      "title": "Чемпионат Германии по футболу 2016/2017",
+      "contentmodel": "wikitext",
+      "pagelanguage": "ru",
+      "pagelanguagehtmlcode": "ru",
+      "pagelanguagedir": "ltr",
+      "touched": "2026-10-07T09:16:27Z",
+      "lastrevid": 155474271,
+      "length": 43463
+    },
+    "Чемпионат Германии по футболу 2017/18": null,
+    "Чемпионат Германии по футболу 2017/2018": {
+      "pageid": 7058300,
+      "ns": 0,
+      "title": "Чемпионат Германии по футболу 2017/2018",
+      "contentmodel": "wikitext",
+      "pagelanguage": "ru",
+      "pagelanguagehtmlcode": "ru",
+      "pagelanguagedir": "ltr",
+      "touched": "2026-10-10T10:28:48Z",
+      "lastrevid": 155474516,
+      "length": 23493
+    },
+    "Чемпионат Германии по футболу 2018/19": null,
+    "Чемпионат Германии по футболу 2018/2019": {
+      "pageid": 7486755,
+      "ns": 0,
+      "title": "Чемпионат Германии по футболу 2018/2019",
+      "contentmodel": "wikitext",
+      "pagelanguage": "ru",
+      "pagelanguagehtmlcode": "ru",
+      "pagelanguagedir": "ltr",
+      "touched": "2026-10-10T10:28:50Z",
+      "lastrevid": 155475607,
+      "length": 34905
+    },
+    "Чемпионат Германии по футболу 2019/20": null,
+    "Чемпионат Германии по футболу 2019/2020": {
+      "pageid": 7903769,
+      "ns": 0,
+      "title": "Чемпионат Германии по футболу 2019/2020",
+      "contentmodel": "wikitext",
+      "pagelanguage": "ru",
+      "pagelanguagehtmlcode": "ru",
+      "pagelanguagedir": "ltr",
+      "touched": "2026-10-10T10:28:55Z",
+      "lastrevid": 155475805,
+      "length": 32459
+    },
+    "Чемпионат Германии по футболу 2020/2021": {
+      "pageid": 8396452,
+      "ns": 0,
+      "title": "Чемпионат Германии по футболу 2020/2021",
+      "contentmodel": "wikitext",
+      "pagelanguage": "ru",
+      "pagelanguagehtmlcode": "ru",
+      "pagelanguagedir": "ltr",
+      "touched": "2026-10-10T10:29:04Z",
+      "lastrevid": 155475975,
+      "length": 45547
+    },
+    "Чемпионат Германии по футболу 2020/21": null,
+    "Чемпионат Германии по футболу 2021/2022": {
+      "pageid": 8831129,
+      "ns": 0,
+      "title": "Чемпионат Германии по футболу 2021/2022",
+      "contentmodel": "wikitext",
+      "pagelanguage": "ru",
+      "pagelanguagehtmlcode": "ru",
+      "pagelanguagedir": "ltr",
+      "touched": "2026-10-10T10:29:07Z",
+      "lastrevid": 155487396,
+      "length": 43125
+    },
+    "Чемпионат Германии по футболу 2021/22": null,
+    "Чемпионат Германии по футболу 2022/2023": {
+      "pageid": 9738605,
+      "ns": 0,
+      "title": "Чемпионат Германии по футболу 2022/2023",
+      "contentmodel": "wikitext",
+      "pagelanguage": "ru",
+      "pagelanguagehtmlcode": "ru",
+      "pagelanguagedir": "ltr",
+      "touched": "2026-10-10T10:29:11Z",
+      "lastrevid": 155487601,
+      "length": 56825
+    },
+    "Чемпионат Германии по футболу 2022/23": null,
+    "Чемпионат Германии по футболу 2023/2024": {
+      "pageid": 10236616,
+      "ns": 0,
+      "title": "Чемпионат Германии по футболу 2023/2024",
+      "contentmodel": "wikitext",
+      "pagelanguage": "ru",
+      "pagelanguagehtmlcode": "ru",
+      "pagelanguagedir": "ltr",
+      "touched": "2026-10-11T12:59:36Z",
+      "lastrevid": 155554704,
+      "length": 54991
+    },
+    "Чемпионат Германии по футболу 2023/24": null,
+    "Чемпионат Германии по футболу 2024/2025": {
+      "pageid": 10632182,
+      "ns": 0,
+      "title": "Чемпионат Германии по футболу 2024/2025",
+      "contentmodel": "wikitext",
+      "pagelanguage": "ru",
+      "pagelanguagehtmlcode": "ru",
+      "pagelanguagedir": "ltr",
+      "touched": "2026-10-09T13:10:31Z",
+      "lastrevid": 155487803,
+      "length": 83973
+    },
+    "Чемпионат Германии по футболу 2024/25": null,
+    "Чемпионат Германии по футболу 2025/2026": {
+      "pageid": 11110935,
+      "ns": 0,
+      "title": "Чемпионат Германии по футболу 2025/2026",
+      "contentmodel": "wikitext",
+      "pagelanguage": "ru",
+      "pagelanguagehtmlcode": "ru",
+      "pagelanguagedir": "ltr",
+      "touched": "2026-10-09T13:10:31Z",
+      "lastrevid": 155488040,
+      "length": 69814
+    },
+    "Чемпионат Германии по футболу 2025/26": null,
+    "Чемпионат Германии по футболу 2026/2027": {
+      "pageid": 11473063,
+      "ns": 0,
+      "title": "Чемпионат Германии по футболу 2026/2027",
+      "contentmodel": "wikitext",
+      "pagelanguage": "ru",
+      "pagelanguagehtmlcode": "ru",
+      "pagelanguagedir": "ltr",
+      "touched": "2026-10-11T17:27:37Z",
+      "lastrevid": 154747300,
+      "length": 10951
+    },
+    "Чемпионат Германии по футболу 2026/27": null,
+    "Чемпионат Италии по футболу 2016/17": null,
+    "Чемпионат Италии по футболу 2016/2017": {
+      "pageid": 6332516,
+      "ns": 0,
+      "title": "Чемпионат Италии по футболу 2016/2017",
+      "contentmodel": "wikitext",
+      "pagelanguage": "ru",
+      "pagelanguagehtmlcode": "ru",
+      "pagelanguagedir": "ltr",
+      "touched": "2026-10-07T10:56:03Z",
+      "lastrevid": 154468964,
+      "length": 61703
+    },
+    "Чемпионат Италии по футболу 2017/18": null,
+    "Чемпионат Италии по футболу 2017/2018": {
+      "pageid": 7048119,
+      "ns": 0,
+      "title": "Чемпионат Италии по футболу 2017/2018",
+      "contentmodel": "wikitext",
+      "pagelanguage": "ru",
+      "pagelanguagehtmlcode": "ru",
+      "pagelanguagedir": "ltr",
+      "touched": "2026-09-30T08:33:08Z",
+      "lastrevid": 154357664,
+      "length": 46392
+    },
+    "Чемпионат Италии по футболу 2018/19": null,
+    "Чемпионат Италии по футболу 2018/2019": {
+      "pageid": 7509425,
+      "ns": 0,
+      "title": "Чемпионат Италии по футболу 2018/2019",
+      "contentmodel": "wikitext",
+      "pagelanguage": "ru",
+      "pagelanguagehtmlcode": "ru",
+      "pagelanguagedir": "ltr",
+      "touched": "2026-09-30T08:33:34Z",
+      "lastrevid": 154357678,
+      "length": 60373
+    },
+    "Чемпионат Хорватии по футболу 2010/11": null,
+    "Чемпионат Хорватии по футболу 2010/2011": {
+      "pageid": 4746442,
+      "ns": 0,
+      "title": "Чемпионат Хорватии по футболу 2010/2011",
+      "contentmodel": "wikitext",
+      "pagelanguage": "ru",
+      "pagelanguagehtmlcode": "ru",
+      "pagelanguagedir": "ltr",
+      "touched": "2026-09-30T08:30:56Z",
+      "lastrevid": 132269748,
+      "length": 33850
+    },
+    "Чемпионат Хорватии по футболу 2011/12": null,
+    "Чемпионат Хорватии по футболу 2011/2012": {
+      "pageid": 3422845,
+      "ns": 0,
+      "title": "Чемпионат Хорватии по футболу 2011/2012",
+      "contentmodel": "wikitext",
+      "pagelanguage": "ru",
+      "pagelanguagehtmlcode": "ru",
+      "pagelanguagedir": "ltr",
+      "touched": "2026-09-30T08:29:26Z",
+      "lastrevid": 137470535,
+      "length": 33527
+    },
+    "Чемпионат Хорватии по футболу 2012/13": null,
+    "Чемпионат Хорватии по футболу 2012/2013": {
+      "pageid": 4745454,
+      "ns": 0,
+      "title": "Чемпионат Хорватии по футболу 2012/2013",
+      "contentmodel": "wikitext",
+      "pagelanguage": "ru",
+      "pagelanguagehtmlcode": "ru",
+      "pagelanguagedir": "ltr",
+      "touched": "2026-09-30T08:30:56Z",
+      "lastrevid": 132269750,
+      "length": 90205
+    },
+    "Чемпионат Хорватии по футболу 2013/14": null,
+    "Чемпионат Хорватии по футболу 2013/2014": {
+      "pageid": 4551012,
+      "ns": 0,
+      "title": "Чемпионат Хорватии по футболу 2013/2014",
+      "contentmodel": "wikitext",
+      "pagelanguage": "ru",
+      "pagelanguagehtmlcode": "ru",
+      "pagelanguagedir": "ltr",
+      "touched": "2026-10-07T10:55:46Z",
+      "lastrevid": 145572051,
+      "length": 81604
+    },
+    "Чемпионат Хорватии по футболу 2014/15": null,
+    "Чемпионат Хорватии по футболу 2014/2015": {
+      "pageid": 5130512,
+      "ns": 0,
+      "title": "Чемпионат Хорватии по футболу 2014/2015",
+      "contentmodel": "wikitext",
+      "pagelanguage": "ru",
+      "pagelanguagehtmlcode": "ru",
+      "pagelanguagedir": "ltr",
+      "touched": "2026-09-30T08:31:23Z",
+      "lastrevid": 149793627,
+      "length": 89082
+    },
+    "Чемпионат Чехии по футболу 2013/14": null,
+    "Чемпионат Чехии по футболу 2013/2014": {
+      "pageid": 4581106,
+      "ns": 0,
+      "title": "Чемпионат Чехии по футболу 2013/2014",
+      "contentmodel": "wikitext",
+      "pagelanguage": "ru",
+      "pagelanguagehtmlcode": "ru",
+      "pagelanguagedir": "ltr",
+      "touched": "2026-09-30T08:30:44Z",
+      "lastrevid": 146534379,
+      "length": 31135
+    },
+    "Чемпионат Чехии по футболу 2014/15": null,
+    "Чемпионат Чехии по футболу 2014/2015": {
+      "pageid": 5067857,
+      "ns": 0,
+      "title": "Чемпионат Чехии по футболу 2014/2015",
+      "contentmodel": "wikitext",
+      "pagelanguage": "ru",
+      "pagelanguagehtmlcode": "ru",
+      "pagelanguagedir": "ltr",
+      "touched": "2026-09-30T08:31:19Z",
+      "lastrevid": 149793232,
+      "length": 138698
+    },
+    "Чемпионат Чехии по футболу 2015/16": null,
+    "Чемпионат Чехии по футболу 2015/2016": {
+      "pageid": 5847680,
+      "ns": 0,
+      "title": "Чемпионат Чехии по футболу 2015/2016",
+      "contentmodel": "wikitext",
+      "pagelanguage": "ru",
+      "pagelanguagehtmlcode": "ru",
+      "pagelanguagedir": "ltr",
+      "touched": "2026-09-30T08:32:01Z",
+      "lastrevid": 149795689,
+      "length": 146476
+    }
+  },
+  "responses": [
+    {
+      "batchcomplete": true,
+      "query": {
+        "pages": [
+          {
+            "ns": 0,
+            "title": "Региональная лига Германии по футболу 2013/2014",
+            "missing": true,
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr"
+          },
+          {
+            "ns": 0,
+            "title": "Региональная лига Германии по футболу 2013/14",
+            "missing": true,
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr"
+          },
+          {
+            "ns": 0,
+            "title": "Региональная лига Германии по футболу 2012/2013",
+            "missing": true,
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr"
+          },
+          {
+            "ns": 0,
+            "title": "Региональная лига Германии по футболу 2012/13",
+            "missing": true,
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr"
+          },
+          {
+            "ns": 0,
+            "title": "Вторая Бундеслига 2015/16",
+            "missing": true,
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr"
+          },
+          {
+            "ns": 0,
+            "title": "Вторая Бундеслига 2014/15",
+            "missing": true,
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr"
+          },
+          {
+            "ns": 0,
+            "title": "Вторая Бундеслига 2013/14",
+            "missing": true,
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr"
+          },
+          {
+            "pageid": 4543296,
+            "ns": 0,
+            "title": "Вторая Бундеслига 2013/2014",
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr",
+            "touched": "2026-10-12T00:11:41Z",
+            "lastrevid": 154538512,
+            "length": 30521
+          },
+          {
+            "pageid": 5133490,
+            "ns": 0,
+            "title": "Вторая Бундеслига 2014/2015",
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr",
+            "touched": "2026-10-12T00:11:41Z",
+            "lastrevid": 154538782,
+            "length": 34922
+          },
+          {
+            "pageid": 5829899,
+            "ns": 0,
+            "title": "Вторая Бундеслига 2015/2016",
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr",
+            "touched": "2026-10-12T00:11:41Z",
+            "lastrevid": 154539147,
+            "length": 40356
+          }
+        ]
+      }
+    },
+    {
+      "batchcomplete": true,
+      "query": {
+        "pages": [
+          {
+            "ns": 0,
+            "title": "Чемпионат Англии по футболу 2015/16",
+            "missing": true,
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr"
+          },
+          {
+            "ns": 0,
+            "title": "Чемпионат Англии по футболу 2014/15",
+            "missing": true,
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr"
+          },
+          {
+            "ns": 0,
+            "title": "Третья лига Германии по футболу 2016/2017",
+            "missing": true,
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr"
+          },
+          {
+            "ns": 0,
+            "title": "Третья лига Германии по футболу 2016/17",
+            "missing": true,
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr"
+          },
+          {
+            "ns": 0,
+            "title": "Третья лига Германии по футболу 2015/16",
+            "missing": true,
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr"
+          },
+          {
+            "ns": 0,
+            "title": "Третья лига Германии по футболу 2014/15",
+            "missing": true,
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr"
+          },
+          {
+            "pageid": 5001685,
+            "ns": 0,
+            "title": "Чемпионат Англии по футболу 2014/2015",
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr",
+            "touched": "2026-10-07T10:55:51Z",
+            "lastrevid": 154597758,
+            "length": 70786
+          },
+          {
+            "pageid": 5143584,
+            "ns": 0,
+            "title": "Третья лига Германии по футболу 2014/2015",
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr",
+            "touched": "2026-10-11T13:02:06Z",
+            "lastrevid": 149968386,
+            "length": 46501
+          },
+          {
+            "pageid": 5716793,
+            "ns": 0,
+            "title": "Чемпионат Англии по футболу 2015/2016",
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr",
+            "touched": "2026-10-07T10:55:58Z",
+            "lastrevid": 154354312,
+            "length": 108275
+          },
+          {
+            "pageid": 5743448,
+            "ns": 0,
+            "title": "Третья лига Германии по футболу 2015/2016",
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr",
+            "touched": "2026-10-11T13:02:06Z",
+            "lastrevid": 142657947,
+            "length": 41344
+          }
+        ]
+      }
+    },
+    {
+      "batchcomplete": true,
+      "query": {
+        "pages": [
+          {
+            "ns": 0,
+            "title": "Чемпионат Германии по футболу 2018/19",
+            "missing": true,
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr"
+          },
+          {
+            "ns": 0,
+            "title": "Чемпионат Германии по футболу 2017/18",
+            "missing": true,
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr"
+          },
+          {
+            "ns": 0,
+            "title": "Чемпионат Германии по футболу 2016/17",
+            "missing": true,
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr"
+          },
+          {
+            "ns": 0,
+            "title": "Чемпионат Германии по футболу 2015/16",
+            "missing": true,
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr"
+          },
+          {
+            "ns": 0,
+            "title": "Чемпионат Германии по футболу 2012/13",
+            "missing": true,
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr"
+          },
+          {
+            "pageid": 3920869,
+            "ns": 0,
+            "title": "Чемпионат Германии по футболу 2012/2013",
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr",
+            "touched": "2026-10-06T23:55:57Z",
+            "lastrevid": 155470365,
+            "length": 64265
+          },
+          {
+            "pageid": 5732531,
+            "ns": 0,
+            "title": "Чемпионат Германии по футболу 2015/2016",
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr",
+            "touched": "2026-10-07T09:03:39Z",
+            "lastrevid": 155474138,
+            "length": 65062
+          },
+          {
+            "pageid": 6340736,
+            "ns": 0,
+            "title": "Чемпионат Германии по футболу 2016/2017",
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr",
+            "touched": "2026-10-07T09:16:27Z",
+            "lastrevid": 155474271,
+            "length": 43463
+          },
+          {
+            "pageid": 7058300,
+            "ns": 0,
+            "title": "Чемпионат Германии по футболу 2017/2018",
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr",
+            "touched": "2026-10-10T10:28:48Z",
+            "lastrevid": 155474516,
+            "length": 23493
+          },
+          {
+            "pageid": 7486755,
+            "ns": 0,
+            "title": "Чемпионат Германии по футболу 2018/2019",
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr",
+            "touched": "2026-10-10T10:28:50Z",
+            "lastrevid": 155475607,
+            "length": 34905
+          }
+        ]
+      }
+    },
+    {
+      "batchcomplete": true,
+      "query": {
+        "pages": [
+          {
+            "ns": 0,
+            "title": "Чемпионат Германии по футболу 2023/24",
+            "missing": true,
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr"
+          },
+          {
+            "ns": 0,
+            "title": "Чемпионат Германии по футболу 2022/23",
+            "missing": true,
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr"
+          },
+          {
+            "ns": 0,
+            "title": "Чемпионат Германии по футболу 2021/22",
+            "missing": true,
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr"
+          },
+          {
+            "ns": 0,
+            "title": "Чемпионат Германии по футболу 2020/21",
+            "missing": true,
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr"
+          },
+          {
+            "ns": 0,
+            "title": "Чемпионат Германии по футболу 2019/20",
+            "missing": true,
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr"
+          },
+          {
+            "pageid": 7903769,
+            "ns": 0,
+            "title": "Чемпионат Германии по футболу 2019/2020",
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr",
+            "touched": "2026-10-10T10:28:55Z",
+            "lastrevid": 155475805,
+            "length": 32459
+          },
+          {
+            "pageid": 8396452,
+            "ns": 0,
+            "title": "Чемпионат Германии по футболу 2020/2021",
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr",
+            "touched": "2026-10-10T10:29:04Z",
+            "lastrevid": 155475975,
+            "length": 45547
+          },
+          {
+            "pageid": 8831129,
+            "ns": 0,
+            "title": "Чемпионат Германии по футболу 2021/2022",
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr",
+            "touched": "2026-10-10T10:29:07Z",
+            "lastrevid": 155487396,
+            "length": 43125
+          },
+          {
+            "pageid": 9738605,
+            "ns": 0,
+            "title": "Чемпионат Германии по футболу 2022/2023",
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr",
+            "touched": "2026-10-10T10:29:11Z",
+            "lastrevid": 155487601,
+            "length": 56825
+          },
+          {
+            "pageid": 10236616,
+            "ns": 0,
+            "title": "Чемпионат Германии по футболу 2023/2024",
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr",
+            "touched": "2026-10-11T12:59:36Z",
+            "lastrevid": 155554704,
+            "length": 54991
+          }
+        ]
+      }
+    },
+    {
+      "batchcomplete": true,
+      "query": {
+        "pages": [
+          {
+            "ns": 0,
+            "title": "Чемпионат Италии по футболу 2017/18",
+            "missing": true,
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr"
+          },
+          {
+            "ns": 0,
+            "title": "Чемпионат Италии по футболу 2016/17",
+            "missing": true,
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr"
+          },
+          {
+            "ns": 0,
+            "title": "Чемпионат Германии по футболу 2026/27",
+            "missing": true,
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr"
+          },
+          {
+            "ns": 0,
+            "title": "Чемпионат Германии по футболу 2025/26",
+            "missing": true,
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr"
+          },
+          {
+            "ns": 0,
+            "title": "Чемпионат Германии по футболу 2024/25",
+            "missing": true,
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr"
+          },
+          {
+            "pageid": 6332516,
+            "ns": 0,
+            "title": "Чемпионат Италии по футболу 2016/2017",
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr",
+            "touched": "2026-10-07T10:56:03Z",
+            "lastrevid": 154468964,
+            "length": 61703
+          },
+          {
+            "pageid": 7048119,
+            "ns": 0,
+            "title": "Чемпионат Италии по футболу 2017/2018",
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr",
+            "touched": "2026-09-30T08:33:08Z",
+            "lastrevid": 154357664,
+            "length": 46392
+          },
+          {
+            "pageid": 10632182,
+            "ns": 0,
+            "title": "Чемпионат Германии по футболу 2024/2025",
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr",
+            "touched": "2026-10-09T13:10:31Z",
+            "lastrevid": 155487803,
+            "length": 83973
+          },
+          {
+            "pageid": 11110935,
+            "ns": 0,
+            "title": "Чемпионат Германии по футболу 2025/2026",
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr",
+            "touched": "2026-10-09T13:10:31Z",
+            "lastrevid": 155488040,
+            "length": 69814
+          },
+          {
+            "pageid": 11473063,
+            "ns": 0,
+            "title": "Чемпионат Германии по футболу 2026/2027",
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr",
+            "touched": "2026-10-11T17:27:37Z",
+            "lastrevid": 154747300,
+            "length": 10951
+          }
+        ]
+      }
+    },
+    {
+      "batchcomplete": true,
+      "query": {
+        "pages": [
+          {
+            "ns": 0,
+            "title": "Чемпионат Хорватии по футболу 2013/14",
+            "missing": true,
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr"
+          },
+          {
+            "ns": 0,
+            "title": "Чемпионат Хорватии по футболу 2012/13",
+            "missing": true,
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr"
+          },
+          {
+            "ns": 0,
+            "title": "Чемпионат Хорватии по футболу 2011/12",
+            "missing": true,
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr"
+          },
+          {
+            "ns": 0,
+            "title": "Чемпионат Хорватии по футболу 2010/11",
+            "missing": true,
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr"
+          },
+          {
+            "ns": 0,
+            "title": "Чемпионат Италии по футболу 2018/19",
+            "missing": true,
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr"
+          },
+          {
+            "pageid": 3422845,
+            "ns": 0,
+            "title": "Чемпионат Хорватии по футболу 2011/2012",
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr",
+            "touched": "2026-09-30T08:29:26Z",
+            "lastrevid": 137470535,
+            "length": 33527
+          },
+          {
+            "pageid": 4551012,
+            "ns": 0,
+            "title": "Чемпионат Хорватии по футболу 2013/2014",
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr",
+            "touched": "2026-10-07T10:55:46Z",
+            "lastrevid": 145572051,
+            "length": 81604
+          },
+          {
+            "pageid": 4745454,
+            "ns": 0,
+            "title": "Чемпионат Хорватии по футболу 2012/2013",
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr",
+            "touched": "2026-09-30T08:30:56Z",
+            "lastrevid": 132269750,
+            "length": 90205
+          },
+          {
+            "pageid": 4746442,
+            "ns": 0,
+            "title": "Чемпионат Хорватии по футболу 2010/2011",
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr",
+            "touched": "2026-09-30T08:30:56Z",
+            "lastrevid": 132269748,
+            "length": 33850
+          },
+          {
+            "pageid": 7509425,
+            "ns": 0,
+            "title": "Чемпионат Италии по футболу 2018/2019",
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr",
+            "touched": "2026-09-30T08:33:34Z",
+            "lastrevid": 154357678,
+            "length": 60373
+          }
+        ]
+      }
+    },
+    {
+      "batchcomplete": true,
+      "query": {
+        "pages": [
+          {
+            "ns": 0,
+            "title": "Чемпионат Чехии по футболу 2015/16",
+            "missing": true,
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr"
+          },
+          {
+            "ns": 0,
+            "title": "Чемпионат Чехии по футболу 2014/15",
+            "missing": true,
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr"
+          },
+          {
+            "ns": 0,
+            "title": "Чемпионат Чехии по футболу 2013/14",
+            "missing": true,
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr"
+          },
+          {
+            "ns": 0,
+            "title": "Чемпионат Хорватии по футболу 2014/15",
+            "missing": true,
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr"
+          },
+          {
+            "pageid": 4581106,
+            "ns": 0,
+            "title": "Чемпионат Чехии по футболу 2013/2014",
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr",
+            "touched": "2026-09-30T08:30:44Z",
+            "lastrevid": 146534379,
+            "length": 31135
+          },
+          {
+            "pageid": 5067857,
+            "ns": 0,
+            "title": "Чемпионат Чехии по футболу 2014/2015",
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr",
+            "touched": "2026-09-30T08:31:19Z",
+            "lastrevid": 149793232,
+            "length": 138698
+          },
+          {
+            "pageid": 5130512,
+            "ns": 0,
+            "title": "Чемпионат Хорватии по футболу 2014/2015",
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr",
+            "touched": "2026-09-30T08:31:23Z",
+            "lastrevid": 149793627,
+            "length": 89082
+          },
+          {
+            "pageid": 5847680,
+            "ns": 0,
+            "title": "Чемпионат Чехии по футболу 2015/2016",
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr",
+            "touched": "2026-09-30T08:32:01Z",
+            "lastrevid": 149795689,
+            "length": 146476
+          }
+        ]
+      }
+    }
+  ]
+}

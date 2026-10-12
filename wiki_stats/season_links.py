@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: MIT
-"""Draft season-link formatter, starting in 2010; live coverage still needs review."""
+"""Link confirmed league-season articles without discarding cell annotations."""
 from datetime import date
 import re
 from urllib.parse import quote
@@ -24,6 +24,16 @@ ROOTS={
  'MLS':['MLS в сезоне','MLS'],
 }
 
+SEASON = re.compile(r'(?<![0-9])(?:19|20)[0-9]{2}(?:[/–—-](?:(?:19|20)[0-9]{2}|[0-9]{2}))?(?![0-9])')
+
+
+def season_key(value):
+ code=mw.parse(value)
+ for node in list(code.filter_tags()):
+  if str(node.tag).strip().casefold()=='ref':code.remove(node,recursive=True)
+ for node in list(code.filter_comments()):code.remove(node,recursive=True)
+ return normalize_table_season(str(code))
+
 
 def season_rows(text):
  parser=WikitextParser(text)
@@ -43,7 +53,7 @@ def season_rows(text):
 def candidates(league,season):
  links=mw.parse(league).filter_wikilinks()
  if len(links)!=1:raise UpdateError('season_league_unproven','Нужна однозначная ссылка на лигу')
- title=str(links[0].title).strip();key=normalize_table_season(season)
+ title=str(links[0].title).strip();key=season_key(season)
  full=key[:4]+'/'+str(int(key[:4])+1) if '/' in key else key
  roots=ROOTS.get(title,[title])
  return list(dict.fromkeys(root+' '+suffix for root in roots for suffix in dict.fromkeys([full,key]))),full
@@ -63,13 +73,21 @@ def replacement(old,title,display):
  code=mw.parse(old);links=code.filter_wikilinks(recursive=False)
  if links:
   if len(links)!=1:raise UpdateError('unknown_season','Несколько ссылок в ячейке сезона')
-  links[0].title=title;links[0].text=display
+  link=links[0]
+  label=mw.parse(str(link.text if link.text is not None else link.title))
+  replaced=False
+  for node in label.nodes:
+   if isinstance(node,mw.nodes.Text):
+    new,count=SEASON.subn(lambda m:display,str(node),count=1)
+    if count:label.replace(node,new);replaced=True;break
+  if not replaced:raise UpdateError('unknown_season','Не найдена подпись сезона')
+  link.title=title;link.text=str(label)
  else:
   found=False
   for node in code.nodes:
    if isinstance(node,mw.nodes.Text):
     raw=str(node)
-    new,count=re.subn(r'(?<![0-9])(?:19|20)[0-9]{2}(?:[/–—-](?:(?:19|20)[0-9]{2}|[0-9]{2}))?(?![0-9])',lambda m:'[['+title+'|'+display+']]',raw,count=1)
+    new,count=SEASON.subn(lambda m:'[['+title+'|'+display+']]',raw,count=1)
     if count:code.replace(node,new);found=True;break
   if not found:raise UpdateError('unknown_season','Не найдена подпись сезона')
  return str(code)
@@ -78,9 +96,11 @@ def replacement(old,title,display):
 def prepare(text,player,day,wiki):
  changes=[];issues=[];cache={}
  for club,league,value in season_rows(text):
-  old=value.text.strip();key=normalize_table_season(old);year=int(key[:4])
-  if not 2010<=year<=date.fromisoformat(day).year:continue
+  old=value.text.strip();key=old
   try:
+   key=season_key(old);year=int(key[:4])
+   if not 2010<=year<=date.fromisoformat(day).year:continue
+   if not hasattr(wiki,'get_page_identity'):raise UpdateError('season_wiki_unavailable','Нет проверки статей сезонов')
    titles,display=candidates(league,old);chosen=None
    for title in titles:
     if title not in cache:
@@ -108,7 +128,7 @@ def execute(text,player,op,resolver):
  if resolver is None or not hasattr(resolver,'client'):raise UpdateError('entity_unverified','Нужна проверка статей сезонов')
  WikitextParser(text).infobox(player);rows=season_rows(text);patches=[];used=set()
  for change in op['payload']['seasons']:
-  old=change['expected_wikitext'];key=normalize_table_season(old)
+  old=change['expected_wikitext'];key=season_key(old)
   if not 2010<=int(key[:4])<=date.fromisoformat(op['as_of']).year:raise UpdateError('season_invalid','Сезон вне разрешённого диапазона')
   titles,display=candidates(change['league'],old)
   if change['page_title'] not in titles:raise UpdateError('season_link_target_mismatch','Статья не соответствует лиге и сезону')

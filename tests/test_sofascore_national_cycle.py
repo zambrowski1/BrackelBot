@@ -50,7 +50,7 @@ def test_complete_scope_updates_card_with_individual_sources_and_replays_without
     assert not any(i['code'] == 'national_global_date_incomplete_coverage' for i in issues)
 
 
-@pytest.mark.parametrize('problem', ['aggregate', 'missing_game', 'duplicate_team', 'later_period', 'closed_period', 'youth'])
+@pytest.mark.parametrize('problem', ['aggregate', 'missing_game', 'duplicate_team', 'later_period', 'youth'])
 def test_incomplete_or_mismatched_national_scope_preserves_card(problem):
     source = api(); text = TEXT
     if problem == 'aggregate': source.expected['statistics'][0]['goals'] = 3
@@ -140,3 +140,50 @@ def test_actual_orban_source_updates_card_from_all_72_verified_matches():
     result, status = execute_operation(text, MAPPING['wiki_name'], operations[0])
     assert status == 'ready' and '|72 (6)' in result
     assert not issues
+
+
+@pytest.mark.parametrize('period,old_caps,expected_period',[('2020',2,'2020—{{н. в.}}'),
+    ('2020—2026',2,'2020—2026'),('2020—2026',1,'2020—{{н. в.}}'),
+    ('2020—2025',6,'2020—{{н. в.}}')])
+def test_senior_period_preserves_explicit_end_until_new_matches(period,old_caps,expected_period):
+    from dataclasses import replace
+    from wiki_stats.change_planner import plan_article
+    text=TEXT.replace('2020—{{н.в.}}',period).replace('|6 (0)','|'+str(old_caps)+' (2)')
+    ops,issues,scopes=collect(text)
+    assert not issues
+    result=text
+    for op in ops:result,_=execute_operation(result,MAPPING['wiki_name'],op)
+    assert '|'+expected_period+'|' in result
+    assert '|2 (2)' in result
+    assert collect(result)[0]==[]
+    if ops:
+        page=snapshot(text)
+        article={'title':page.title,'base_revid':page.revid,'player':MAPPING['wiki_name'],'operations':ops}
+        plan=plan_article(page,article,'1.1')
+        assert all(c.status=='ready' for c in plan.changes)
+        assert not plan_article(replace(page,text=plan.preview),article,'1.1').diff
+
+
+def test_correcting_goals_alone_does_not_reopen_an_explicit_end():
+    text=TEXT.replace('2020—{{н.в.}}','2020—2026').replace('|6 (0)','|2 (0)')
+    ops,_,_=collect(text)
+    assert [op['type'] for op in ops]==['update_stats']
+    after,_=execute_operation(text,MAPPING['wiki_name'],ops[0])
+    assert '|2020—2026|' in after
+
+
+def test_reopening_period_caps_and_date_apply_as_one_replayable_group():
+    from dataclasses import replace
+    from wiki_stats.national_card_coverage import close_national_card
+    from wiki_stats.change_planner import plan_article
+    from wiki_stats.schema_validator import validate_package
+    text=TEXT.replace('2020—{{н.в.}}','2026—2026').replace('|6 (0)','|1 (0)')
+    page=snapshot(text);ops,_,scopes=collect(text)
+    ops,complete=close_national_card(page,MAPPING,ops,scopes,NOW)
+    assert complete and len({op['group_id'] for op in ops})==1
+    article={'title':page.title,'base_revid':page.revid,'player':MAPPING['wiki_name'],'operations':ops}
+    validate_package({'schema_version':'1.1','package_id':'senior-reopened-period','generated_at':NOW.isoformat(),'articles':[article]})
+    plan=plan_article(page,article,'1.1')
+    assert all(c.status=='ready' for c in plan.changes)
+    assert '|2026—{{н. в.}}|' in plan.preview and '|2 (2)' in plan.preview
+    assert not plan_article(replace(page,text=plan.preview),article,'1.1').diff

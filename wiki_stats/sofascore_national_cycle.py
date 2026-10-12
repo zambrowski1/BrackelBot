@@ -78,19 +78,30 @@ def prepare_nationals(snapshot, mapping, history, api, wiki, budget, now, *, goa
                 period, text, value = matches[0]
                 first = validate_period(period)
                 years = [int(v['date'][:4]) for v in scope['matches']]
-                last=now.year if is_active_period(period) else int(re.findall(r'(?:19|20)[0-9]{2}',period)[-1])
-                if min(years) < first or max(years)>last:
+                if min(years) < first:
                     issues.append({'code': 'national_career_period_unproven', 'team_id': team['id']})
                 else:
                     old = dict(zip(('appearances', 'goals'), [n.value for n in value.numeric(pair=True)]))
+                    new_period=period
+                    if not is_active_period(period):
+                        closed_years=re.findall(r'(?:19|20)[0-9]{2}',period)
+                        no_end=len(closed_years)==1
+                        new_matches=scope['numbers']['appearances']>old['appearances'] or max(years)>int(closed_years[-1])
+                        if no_end or new_matches:new_period=str(first)+'—{{н. в.}}'
+                    if new_period!=period:
+                        operations.append({'id':'national-period-'+str(team['id']),'type':'update_career_period',
+                            'group_id':'full-national-'+str(team['id']),
+                            'entity':{**{k:v for k,v in entity.items() if k!='gen'},'wikitext':text},
+                            'target':{'structure':'career','field':'национальная сборная','period':period},
+                            'as_of':scope['statistics_as_of'],'sources':sources,'payload':{'period':new_period}})
                     if first == min(years):
                         scope['career_binding'] = {'period': period, 'team': text,
-                            'qid': entity['wikidata_id'], 'numbers': old, 'verified_period': period}
+                            'qid': entity['wikidata_id'], 'numbers': old, 'verified_period': new_period}
                     if old != scope['numbers']:
                         operations.append({'id': 'national-card-'+str(team['id']), 'type': 'update_stats',
                             'group_id': 'full-national-'+str(team['id']),
                             'entity': {**{k: v for k, v in entity.items() if k != 'gen'}, 'wikitext': text},
-                            'target': {'structure': 'career', 'field': 'национальная сборная', 'period': period},
+                            'target': {'structure': 'career', 'field': 'национальная сборная', 'period': new_period},
                             'season': None, 'competition': {'name': 'Матчи сборной', 'category': 'all', 'scope': 'national_all'},
                             'as_of': scope['statistics_as_of'], 'sources': sources,
                             'expected': old, 'new': scope['numbers']})

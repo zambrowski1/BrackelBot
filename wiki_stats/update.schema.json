@@ -452,7 +452,8 @@
             "migrate_club_table",
             "bind_infobox_name",
             "normalize_club_table",
-            "normalize_statistics_layout"
+            "normalize_statistics_layout",
+            "normalize_club_flags"
           ]
         },
         "entity": {
@@ -1580,6 +1581,62 @@
                   "expected_sha256": {
                     "type": "string",
                     "pattern": "^[0-9a-f]{64}$"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "normalize_club_flags"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "payload"
+            ],
+            "properties": {
+              "payload": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "clubs"
+                ],
+                "properties": {
+                  "clubs": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "expected_wikitext",
+                        "occurrences",
+                        "flag",
+                        "entity"
+                      ],
+                      "properties": {
+                        "expected_wikitext": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "occurrences": {
+                          "type": "integer",
+                          "minimum": 1
+                        },
+                        "flag": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "entity": {
+                          "$ref": "#/$defs/entity"
+                        }
+                      }
+                    }
                   }
                 }
               }

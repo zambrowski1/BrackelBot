@@ -93,7 +93,7 @@ def plan_article(snapshot, article, schema_version='1.0', resolver=None):
                     raise UpdateError('revision_conflict','Статья изменилась после подготовки пакета')
                 if any(s['coverage_as_of']!=op['as_of'] for s in op['sources']):
                     raise UpdateError('source_coverage_mismatch','Источники заявляют несовместимый охват')
-                formatting = {'bind_infobox_name','migrate_career_template','migrate_club_table','normalize_club_table','normalize_statistics_layout'}
+                formatting = {'bind_infobox_name','migrate_career_template','migrate_club_table','normalize_club_table','normalize_statistics_layout','normalize_club_flags'}
                 if len({x['as_of'] for x in operations if x['type'] not in formatting})>1:
                     raise UpdateError('source_coverage_mismatch','Связанные операции должны иметь одну дату охвата')
                 staged,status = execute_operation(staged,article['player'],op,resolver)

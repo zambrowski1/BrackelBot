@@ -215,6 +215,9 @@ def execute_operation(text,player,op,resolver=None):
     if kind=='normalize_statistics_layout':
         from .statistics_layout import execute
         return execute(text,player,op)
+    if kind=='normalize_club_flags':
+        from .club_flags import execute
+        return execute(text,player,op,resolver)
     if kind=='normalize_club_table':
         from .klstat_normalization import execute
         return execute(text,player,op)

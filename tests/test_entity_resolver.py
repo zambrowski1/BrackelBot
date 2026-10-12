@@ -76,3 +76,25 @@ def test_unknown_flag_country_or_nonfootball_object_refused():
     client=IdentityClient();client.objects['Q902']={'sitelinks':{'ruwiki':{'title':'Не футбол'}},'claims':{}}
     with pytest.raises(UpdateError) as err:EntityResolver(client,CATALOGUE).resolve({'name':'Не футбол','kind':'club','wikidata_id':'Q902'})
     assert err.value.code=='unsupported_entity'
+
+
+@pytest.mark.parametrize('country,title,flag',[('Q408','Австралия','Австралии'),('Q262','Алжир','Алжира'),('Q148','Китай','Китая')])
+def test_country_flags_outside_the_initial_small_country_list(country,title,flag):
+    client=IdentityClient()
+    client.objects[country]={'sitelinks':{'ruwiki':{'title':title}}}
+    client.objects['Q901']={'sitelinks':{'ruwiki':{'title':'Новый клуб'}},'claims':{
+        'P31':[{'mainsnak':{'datavalue':{'value':{'id':'Q476028'}}}}],
+        'P17':[{'mainsnak':{'datavalue':{'value':{'id':country}}}}]}}
+    result=EntityResolver(client,[]).resolve({'name':'Новый клуб','kind':'club','wikidata_id':'Q901'})
+    assert result.flag==flag and '{{Флаг '+flag+'|20px}}' in result.wikitext
+    assert ('wiki','Шаблон:Флаг '+flag) in client.calls
+
+
+def test_reserve_team_uses_verified_football_subclass_and_its_own_country():
+    client=IdentityClient()
+    client.objects['Q103229495']={'claims':{'P279':[{'mainsnak':{'datavalue':{'value':{'id':'Q15944511'}}}}]}}
+    client.objects['Q16525419']={'sitelinks':{'ruwiki':{'title':'Майнц 05 II'}},'claims':{
+       'P31':[{'mainsnak':{'datavalue':{'value':{'id':'Q103229495'}}}}],
+       'P17':[{'mainsnak':{'datavalue':{'value':{'id':'Q183'}}}}]}}
+    result=EntityResolver(client,[]).resolve({'name':'Майнц 05 II','kind':'club','wikidata_id':'Q16525419'})
+    assert result.flag=='Германии' and result.qid=='Q16525419'

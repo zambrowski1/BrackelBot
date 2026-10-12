@@ -1256,6 +1256,22 @@ def _prepare_statistics(snapshot, mapping, api, wiki, resolver, *, max_requests=
     else:
         plan = ArticlePlan(snapshot, [], snapshot.text, '', source_warnings, article=article, schema_version='1.1')
         plan.content_fingerprint = plan_fingerprint(plan)
+    # Normalize retained old club headers as well as API-generated blocks.
+    from .club_flags import prepare as prepare_club_flags
+    try:flag_op,flag_issues=prepare_club_flags(plan.preview,mapping['wiki_name'],now.date().isoformat(),resolver)
+    except UpdateError as exc:
+        flag_op=None;flag_issues=[{'code':'club_flag_unproven','reason':exc.code,'message':str(exc)}]
+    issues.extend(flag_issues)
+    if flag_issues:
+        warning='Не подтверждены флаги части клубов; причины указаны в отчёте.'
+        article.setdefault('review_warnings',[]).append(warning)
+    if flag_op:
+        article.pop('collection_result',None)
+        article['operations'].append(flag_op)
+        validate_package(package)
+        plan=plan_article(snapshot,article,'1.1',resolver)
+    elif flag_issues:
+        plan=plan_article(snapshot,article,'1.1',resolver)
     # The adapter prepares review diffs; automatic mainspace source attestation
     # is deliberately not fabricated by a manually prepared sandbox plan.
     return package, plan, {'provider': 'sofascore', 'player_id': mapping['api_id'],

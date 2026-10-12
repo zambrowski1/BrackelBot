@@ -43,7 +43,7 @@ def reference_identity(client, text):
     links=code.filter_wikilinks()
     translations=[t for t in code.filter_templates() if str(t.name).strip().casefold() in {'нп','нп5','не переведено','iw'}]
     annotations = [t for t in code.filter_templates() if str(t.name).strip().casefold() in {'аренда','фарм-клуб'} and not t.params]
-    if any(not str(t.name).strip().casefold().startswith('флаг ') and t not in translations and t not in annotations for t in code.filter_templates()):
+    if any(not (str(t.name).strip().casefold().startswith('флаг ') or str(t.name).strip().casefold() in {'флаг','flagicon','флагификация'}) and t not in translations and t not in annotations for t in code.filter_templates()):
         raise UpdateError('needs_review','Аренда, резерв или сложная ссылка требуют проверки')
     if len(links)==1 and not translations:
         return client.get_page_identity(str(links[0].title).strip())
@@ -74,6 +74,8 @@ class EntityResolver:
         self.client = client
         self.catalogue = catalogue if catalogue is not None else json.loads(files('wiki_stats').joinpath('clubs.json').read_text(encoding='utf-8'))['clubs']
         self.cache = {}
+        self.country_flags = {}
+        self.football_types = {}
 
     def resolve(self, ref):
         key = json.dumps(ref,ensure_ascii=False,sort_keys=True)
@@ -125,7 +127,7 @@ class EntityResolver:
             if ref.get('age') != age:
                 raise UpdateError('entity_mismatch','Возрастная категория сборной не совпадает')
         else:
-            if page['title'].startswith('Сборная') or not (known or 'Q476028' in claim_ids(wd,'P31') or 'Q15944511' in claim_ids(wd,'P31')):
+            if page['title'].startswith('Сборная') or not (known or self.is_football_team(wd)):
                 raise UpdateError('unsupported_entity','Объект не подтверждён как футбольный клуб/команда')
         countries = claim_ids(wd,'P17')
         if known:
@@ -146,7 +148,7 @@ class EntityResolver:
             if len(home)!=1:
                 raise UpdateError('flag_unverified','Не подтверждена футбольная страна клуба Великобритании')
             countries=home
-        flags = {COUNTRIES[c] for c in countries if c in COUNTRIES}
+        flags = {self.country_flag(c) for c in countries}
         if len(flags) != 1:
             raise UpdateError('flag_unverified','Страна и флаг не определены однозначно')
         flag = next(iter(flags))
@@ -170,6 +172,40 @@ class EntityResolver:
         result = ResolvedEntity(page['title'],qid,flag,display,kind,age,team_variant=known.get('team_variant','primary') if known else 'primary')
         self.cache[key] = result
         return result
+
+    def is_football_team(self,entity):
+        roots={'Q476028','Q15944511'}
+        pending=[(qid,0) for qid in claim_ids(entity,'P31')];seen=set()
+        while pending and len(seen)<16:
+            qid,depth=pending.pop(0)
+            if qid in roots:return True
+            if qid in seen or depth>=3:continue
+            seen.add(qid)
+            if qid not in self.football_types:
+                try:self.football_types[qid]=claim_ids(self.client.get_wikidata_entity(qid),'P279')
+                except UpdateError as exc:
+                    if exc.code=='entity_not_found':continue
+                    raise
+            pending.extend((parent,depth+1) for parent in self.football_types[qid])
+        return False
+
+    def country_flag(self,qid):
+        if qid in COUNTRIES:return COUNTRIES[qid]
+        if qid in self.country_flags:return self.country_flags[qid]
+        country=self.client.get_wikidata_entity(qid)
+        title=country.get('sitelinks',{}).get('ruwiki',{}).get('title')
+        label=country.get('labels',{}).get('ru',{}).get('value')
+        catalogue=json.loads(files('wiki_stats').joinpath('national_teams.json').read_text(encoding='utf-8'))
+        candidates=set()
+        for name in (title,label):
+            canonical=catalogue['aliases'].get(name,name)
+            entry=catalogue['countries'].get(canonical)
+            if entry and entry.get('gen'):candidates.add(entry['gen'])
+        if len(candidates)!=1:raise UpdateError('flag_unverified','Не подтверждён шаблон флага страны '+str(qid))
+        flag=next(iter(candidates))
+        if any(c in flag for c in '|{}[]<>\r\n'):raise UpdateError('flag_unverified','Недопустимое название флага')
+        self.country_flags[qid]=flag
+        return flag
 
     def _foreign(self,ref,known,wd,qid,title):
         if ref['kind']!='club' or not title or not known:
@@ -195,7 +231,7 @@ class EntityResolver:
                 language,foreign=lang,candidate;break
         if not language:
             raise UpdateError('entity_unverified','Иноязычная статья и обратная ссылка Wikidata не подтвердили клуб')
-        flag=COUNTRIES.get(known['country_qid'])
+        flag=self.country_flag(known['country_qid'])
         if not flag or (ref.get('flag') and ref['flag']!=flag):
             raise UpdateError('flag_unverified','Не подтверждена страна клуба')
         display=ref.get('display_name') or known.get('display_name',known['name'])

@@ -1,0 +1,47 @@
+{
+  "type": "standard",
+  "title": "Центнер, Робин",
+  "displaytitle": "<span lang=\"ru\" dir=\"ltr\"><span class=\"mw-page-title-main\">Центнер, Робин</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q18027449",
+  "titles": {
+    "canonical": "Центнер,_Робин",
+    "normalized": "Центнер, Робин",
+    "display": "<span lang=\"ru\" dir=\"ltr\"><span class=\"mw-page-title-main\">Центнер, Робин</span></span>"
+  },
+  "pageid": 10398798,
+  "thumbnail": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/2020-09-20_Fu%C3%9Fball%2C_M%C3%A4nner%2C_1._Bundesliga%2C_RB_Leipzig_-_1._FSV_Mainz_05_1DX_1208_by_Stepro.jpg/330px-2020-09-20_Fu%C3%9Fball%2C_M%C3%A4nner%2C_1._Bundesliga%2C_RB_Leipzig_-_1._FSV_Mainz_05_1DX_1208_by_Stepro.jpg?utm_source=ru.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 330,
+    "height": 220
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/6/6b/2020-09-20_Fu%C3%9Fball%2C_M%C3%A4nner%2C_1._Bundesliga%2C_RB_Leipzig_-_1._FSV_Mainz_05_1DX_1208_by_Stepro.jpg?utm_source=ru.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "width": 3354,
+    "height": 2236
+  },
+  "lang": "ru",
+  "dir": "ltr",
+  "revision": "150050997",
+  "tid": "3106bba7-c237-11f0-a46f-844f29f82fb7",
+  "timestamp": "2025-11-15T15:24:35Z",
+  "content_urls": {
+    "desktop": {
+      "page": "https://ru.wikipedia.org/wiki/%D0%A6%D0%B5%D0%BD%D1%82%D0%BD%D0%B5%D1%80%2C_%D0%A0%D0%BE%D0%B1%D0%B8%D0%BD",
+      "revisions": "https://ru.wikipedia.org/wiki/%D0%A6%D0%B5%D0%BD%D1%82%D0%BD%D0%B5%D1%80%2C_%D0%A0%D0%BE%D0%B1%D0%B8%D0%BD?action=history",
+      "edit": "https://ru.wikipedia.org/wiki/%D0%A6%D0%B5%D0%BD%D1%82%D0%BD%D0%B5%D1%80%2C_%D0%A0%D0%BE%D0%B1%D0%B8%D0%BD?action=edit",
+      "talk": "https://ru.wikipedia.org/wiki/%D0%9E%D0%B1%D1%81%D1%83%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5:%D0%A6%D0%B5%D0%BD%D1%82%D0%BD%D0%B5%D1%80%2C_%D0%A0%D0%BE%D0%B1%D0%B8%D0%BD"
+    },
+    "mobile": {
+      "page": "https://ru.wikipedia.org/wiki/%D0%A6%D0%B5%D0%BD%D1%82%D0%BD%D0%B5%D1%80%2C_%D0%A0%D0%BE%D0%B1%D0%B8%D0%BD",
+      "revisions": "https://ru.wikipedia.org/wiki/Special:History/%D0%A6%D0%B5%D0%BD%D1%82%D0%BD%D0%B5%D1%80%2C_%D0%A0%D0%BE%D0%B1%D0%B8%D0%BD",
+      "edit": "https://ru.wikipedia.org/wiki/%D0%A6%D0%B5%D0%BD%D1%82%D0%BD%D0%B5%D1%80%2C_%D0%A0%D0%BE%D0%B1%D0%B8%D0%BD?action=edit",
+      "talk": "https://ru.wikipedia.org/wiki/%D0%9E%D0%B1%D1%81%D1%83%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5:%D0%A6%D0%B5%D0%BD%D1%82%D0%BD%D0%B5%D1%80%2C_%D0%A0%D0%BE%D0%B1%D0%B8%D0%BD"
+    }
+  },
+  "extract": "Робин Центнер — немецкий футболист, вратарь клуба «Майнц 05».",
+  "extract_html": "<p><b>Робин Центнер</b> — немецкий футболист, вратарь клуба «Майнц 05».</p>"
+}

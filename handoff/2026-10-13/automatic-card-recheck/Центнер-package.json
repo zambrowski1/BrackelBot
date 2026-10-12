@@ -1,0 +1,798 @@
+{
+  "schema_version": "1.1",
+  "package_id": "sofascore-1",
+  "generated_at": "2026-10-13T00:00:00+00:00",
+  "articles": [
+    {
+      "title": "Центнер, Робин",
+      "base_revid": 1,
+      "subject_scope": "football_statistics",
+      "player": "Робин Центнер",
+      "operations": [
+        {
+          "as_of": "2026-10-13",
+          "group_id": "sofascore-reconciliation",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/174345",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-1",
+          "type": "update_totals",
+          "entity": {
+            "name": "КлСтат",
+            "wikitext": "{{КлСтат}}"
+          },
+          "target": {
+            "structure": "club_table"
+          },
+          "payload": {
+            "complete": true
+          }
+        },
+        {
+          "as_of": "2026-10-13",
+          "group_id": "sofascore-reconciliation",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/174345",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-2",
+          "type": "update_stats",
+          "entity": {
+            "name": "Майнц 05",
+            "wikitext": "[[Майнц 05]]"
+          },
+          "target": {
+            "structure": "club_table"
+          },
+          "season": "[[Чемпионат Германии по футболу 2017/2018|2017/18]]",
+          "competition": {
+            "name": "Лига",
+            "category": "Лига",
+            "scope": "category"
+          },
+          "expected": {
+            "appearances": 15,
+            "goals": 0
+          },
+          "new": {
+            "appearances": 15,
+            "goals": -27
+          }
+        },
+        {
+          "as_of": "2026-10-13",
+          "group_id": "sofascore-reconciliation",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/174345",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-3",
+          "type": "update_stats",
+          "entity": {
+            "name": "Майнц 05",
+            "wikitext": "[[Майнц 05]]"
+          },
+          "target": {
+            "structure": "club_table"
+          },
+          "season": "[[Чемпионат Германии по футболу 2017/2018|2017/18]]",
+          "competition": {
+            "name": "Кубок",
+            "category": "Кубок",
+            "scope": "category"
+          },
+          "expected": {
+            "appearances": 2,
+            "goals": 0
+          },
+          "new": {
+            "appearances": 2,
+            "goals": -3
+          }
+        },
+        {
+          "as_of": "2026-10-13",
+          "group_id": "sofascore-reconciliation",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/174345",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-4",
+          "type": "update_stats",
+          "entity": {
+            "name": "Майнц 05",
+            "wikitext": "[[Майнц 05]]"
+          },
+          "target": {
+            "structure": "club_table"
+          },
+          "season": "[[Чемпионат Германии по футболу 2018/2019|2018/19]]",
+          "competition": {
+            "name": "Лига",
+            "category": "Лига",
+            "scope": "category"
+          },
+          "expected": {
+            "appearances": 10,
+            "goals": 0
+          },
+          "new": {
+            "appearances": 10,
+            "goals": -14
+          }
+        },
+        {
+          "as_of": "2026-10-13",
+          "group_id": "sofascore-reconciliation",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/174345",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-5",
+          "type": "update_stats",
+          "entity": {
+            "name": "Майнц 05",
+            "wikitext": "[[Майнц 05]]"
+          },
+          "target": {
+            "structure": "club_table"
+          },
+          "season": "[[Чемпионат Германии по футболу 2018/2019|2018/19]]",
+          "competition": {
+            "name": "Кубок",
+            "category": "Кубок",
+            "scope": "category"
+          },
+          "expected": {
+            "appearances": 1,
+            "goals": 0
+          },
+          "new": {
+            "appearances": 1,
+            "goals": -3
+          }
+        },
+        {
+          "as_of": "2026-10-13",
+          "group_id": "sofascore-reconciliation",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/174345",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-6",
+          "type": "update_stats",
+          "entity": {
+            "name": "Майнц 05",
+            "wikitext": "[[Майнц 05]]"
+          },
+          "target": {
+            "structure": "club_table"
+          },
+          "season": "[[Чемпионат Германии по футболу 2019/2020|2019/20]]",
+          "competition": {
+            "name": "Лига",
+            "category": "Лига",
+            "scope": "category"
+          },
+          "expected": {
+            "appearances": 22,
+            "goals": 0
+          },
+          "new": {
+            "appearances": 22,
+            "goals": -40
+          }
+        },
+        {
+          "as_of": "2026-10-13",
+          "group_id": "sofascore-reconciliation",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/174345",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-7",
+          "type": "update_stats",
+          "entity": {
+            "name": "Майнц 05",
+            "wikitext": "[[Майнц 05]]"
+          },
+          "target": {
+            "structure": "club_table"
+          },
+          "season": "[[Чемпионат Германии по футболу 2020/2021|2020/21]]",
+          "competition": {
+            "name": "Лига",
+            "category": "Лига",
+            "scope": "category"
+          },
+          "expected": {
+            "appearances": 31,
+            "goals": 0
+          },
+          "new": {
+            "appearances": 31,
+            "goals": -46
+          }
+        },
+        {
+          "as_of": "2026-10-13",
+          "group_id": "sofascore-reconciliation",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/174345",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-8",
+          "type": "update_stats",
+          "entity": {
+            "name": "Майнц 05",
+            "wikitext": "[[Майнц 05]]"
+          },
+          "target": {
+            "structure": "club_table"
+          },
+          "season": "[[Чемпионат Германии по футболу 2020/2021|2020/21]]",
+          "competition": {
+            "name": "Кубок",
+            "category": "Кубок",
+            "scope": "category"
+          },
+          "expected": {
+            "appearances": 2,
+            "goals": 0
+          },
+          "new": {
+            "appearances": 2,
+            "goals": -3
+          }
+        },
+        {
+          "as_of": "2026-10-13",
+          "group_id": "sofascore-reconciliation",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/174345",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-9",
+          "type": "update_stats",
+          "entity": {
+            "name": "Майнц 05",
+            "wikitext": "[[Майнц 05]]"
+          },
+          "target": {
+            "structure": "club_table"
+          },
+          "season": "[[Чемпионат Германии по футболу 2021/2022|2021/22]]",
+          "competition": {
+            "name": "Лига",
+            "category": "Лига",
+            "scope": "category"
+          },
+          "expected": {
+            "appearances": 32,
+            "goals": 0
+          },
+          "new": {
+            "appearances": 32,
+            "goals": -42
+          }
+        },
+        {
+          "as_of": "2026-10-13",
+          "group_id": "sofascore-reconciliation",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/174345",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-10",
+          "type": "update_stats",
+          "entity": {
+            "name": "Майнц 05",
+            "wikitext": "[[Майнц 05]]"
+          },
+          "target": {
+            "structure": "club_table"
+          },
+          "season": "[[Чемпионат Германии по футболу 2021/2022|2021/22]]",
+          "competition": {
+            "name": "Кубок",
+            "category": "Кубок",
+            "scope": "category"
+          },
+          "expected": {
+            "appearances": 3,
+            "goals": 0
+          },
+          "new": {
+            "appearances": 3,
+            "goals": -7
+          }
+        },
+        {
+          "as_of": "2026-10-13",
+          "group_id": "sofascore-reconciliation",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/174345",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-11",
+          "type": "update_stats",
+          "entity": {
+            "name": "Майнц 05",
+            "wikitext": "[[Майнц 05]]"
+          },
+          "target": {
+            "structure": "club_table"
+          },
+          "season": "[[Чемпионат Германии по футболу 2022/2023|2022/23]]",
+          "competition": {
+            "name": "Лига",
+            "category": "Лига",
+            "scope": "category"
+          },
+          "expected": {
+            "appearances": 26,
+            "goals": 0
+          },
+          "new": {
+            "appearances": 26,
+            "goals": -39
+          }
+        },
+        {
+          "as_of": "2026-10-13",
+          "group_id": "sofascore-reconciliation",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/174345",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-12",
+          "type": "update_stats",
+          "entity": {
+            "name": "Майнц 05",
+            "wikitext": "[[Майнц 05]]"
+          },
+          "target": {
+            "structure": "club_table"
+          },
+          "season": "[[Чемпионат Германии по футболу 2023/2024|2023/24]]",
+          "competition": {
+            "name": "Лига",
+            "category": "Лига",
+            "scope": "category"
+          },
+          "expected": {
+            "appearances": 9,
+            "goals": 0
+          },
+          "new": {
+            "appearances": 30,
+            "goals": -48
+          }
+        },
+        {
+          "as_of": "2026-10-13",
+          "group_id": "sofascore-reconciliation",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/174345",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-13",
+          "type": "update_stats",
+          "entity": {
+            "name": "Майнц 05",
+            "wikitext": "[[Майнц 05]]"
+          },
+          "target": {
+            "structure": "club_table"
+          },
+          "season": "[[Чемпионат Германии по футболу 2023/2024|2023/24]]",
+          "competition": {
+            "name": "Кубок",
+            "category": "Кубок",
+            "scope": "category"
+          },
+          "expected": {
+            "appearances": 2,
+            "goals": 0
+          },
+          "new": {
+            "appearances": 2,
+            "goals": -3
+          }
+        },
+        {
+          "as_of": "2026-10-13",
+          "group_id": "sofascore-reconciliation",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/174345",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-14",
+          "type": "add_season",
+          "entity": {
+            "name": "Майнц 05",
+            "kind": "club",
+            "wikidata_id": "Q105254",
+            "page_title": "Майнц 05",
+            "wikitext": "[[Майнц 05]]"
+          },
+          "target": {
+            "structure": "club_table"
+          },
+          "season": "2024/25",
+          "payload": {
+            "complete": true,
+            "categories": {
+              "Лига": {
+                "appearances": 32,
+                "goals": -41
+              },
+              "Кубок": {
+                "appearances": 2,
+                "goals": -5
+              }
+            },
+            "league_wikitext": "[[Чемпионат Германии по футболу|Бундеслига]]",
+            "insert_after_season": "[[Чемпионат Германии по футболу 2023/2024|2023/24]]"
+          }
+        },
+        {
+          "as_of": "2026-10-13",
+          "group_id": "sofascore-reconciliation",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/174345",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-15",
+          "type": "add_season",
+          "entity": {
+            "name": "Майнц 05",
+            "kind": "club",
+            "wikidata_id": "Q105254",
+            "page_title": "Майнц 05",
+            "wikitext": "[[Майнц 05]]"
+          },
+          "target": {
+            "structure": "club_table"
+          },
+          "season": "2025/26",
+          "payload": {
+            "complete": true,
+            "categories": {
+              "Лига": {
+                "appearances": 10,
+                "goals": -14
+              },
+              "Кубок": {
+                "appearances": 2,
+                "goals": -2
+              }
+            },
+            "league_wikitext": "[[Чемпионат Германии по футболу|Бундеслига]]",
+            "insert_after_season": "2024/25"
+          }
+        },
+        {
+          "as_of": "2026-10-13",
+          "group_id": "sofascore-reconciliation",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/174345",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-16",
+          "type": "add_season",
+          "entity": {
+            "name": "Майнц 05",
+            "kind": "club",
+            "wikidata_id": "Q105254",
+            "page_title": "Майнц 05",
+            "wikitext": "[[Майнц 05]]"
+          },
+          "target": {
+            "structure": "club_table"
+          },
+          "season": "2026/27",
+          "payload": {
+            "complete": true,
+            "categories": {
+              "Лига": {
+                "appearances": 2,
+                "goals": -3
+              },
+              "Кубок": {
+                "appearances": 1,
+                "goals": 0
+              }
+            },
+            "league_wikitext": "[[Чемпионат Германии по футболу|Бундеслига]]",
+            "insert_after_season": "2025/26"
+          }
+        },
+        {
+          "as_of": "2026-10-13",
+          "group_id": "sofascore-reconciliation",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/174345",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-17",
+          "type": "update_stats",
+          "entity": {
+            "name": "Майнц 05",
+            "wikitext": "{{Флаг Германии|20px}} [[Майнц 05]]"
+          },
+          "target": {
+            "structure": "career",
+            "field": "клубы",
+            "period": "2017—{{н.в.}}"
+          },
+          "season": null,
+          "competition": {
+            "name": "Чемпионат",
+            "category": "all",
+            "scope": "league"
+          },
+          "expected": {
+            "appearances": 145,
+            "goals": -232
+          },
+          "new": {
+            "appearances": 210,
+            "goals": -314
+          }
+        },
+        {
+          "as_of": "2026-10-13",
+          "group_id": "sofascore-reconciliation",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/174345",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-18",
+          "type": "update_date",
+          "entity": {
+            "name": "Майнц 05",
+            "kind": "club",
+            "wikidata_id": "Q105254",
+            "page_title": "Майнц 05",
+            "wikitext": "{{Флаг Германии|20px}} [[Майнц 05|Майнц 05]]"
+          },
+          "target": {
+            "structure": "career",
+            "field": "клубы"
+          },
+          "payload": {
+            "field": "обновление данных о клубе",
+            "expected_value": "04.11.2023",
+            "statistics_as_of": "2026-09-12"
+          }
+        },
+        {
+          "id": "normalize-club-flags",
+          "type": "normalize_club_flags",
+          "group_id": "sofascore-reconciliation",
+          "entity": {
+            "name": "Робин Центнер",
+            "wikitext": "{{КлСтат}}"
+          },
+          "target": {
+            "structure": "club_table"
+          },
+          "as_of": "2026-10-13",
+          "sources": [
+            {
+              "url": "https://www.wikidata.org/wiki/Q16525419",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-13",
+              "note": "Страна клуба и шаблон флага проверены через Википедию и Wikidata"
+            },
+            {
+              "url": "https://www.wikidata.org/wiki/Q157828",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-13",
+              "note": "Страна клуба и шаблон флага проверены через Википедию и Wikidata"
+            },
+            {
+              "url": "https://www.wikidata.org/wiki/Q105254",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-13",
+              "note": "Страна клуба и шаблон флага проверены через Википедию и Wikidata"
+            }
+          ],
+          "payload": {
+            "clubs": [
+              {
+                "expected_wikitext": "[[Майнц 05 II]]",
+                "occurrences": 1,
+                "flag": "Германии",
+                "entity": {
+                  "name": "Майнц 05 II",
+                  "kind": "club",
+                  "page_title": "Майнц 05 II",
+                  "wikidata_id": "Q16525419"
+                }
+              },
+              {
+                "expected_wikitext": "{{аренда}}[[Хольштайн (футбольный клуб)|Хольштайн]]",
+                "occurrences": 1,
+                "flag": "Германии",
+                "entity": {
+                  "name": "Хольштайн (футбольный клуб)",
+                  "kind": "club",
+                  "page_title": "Хольштайн (футбольный клуб)",
+                  "wikidata_id": "Q157828"
+                }
+              },
+              {
+                "expected_wikitext": "[[Майнц 05]]",
+                "occurrences": 1,
+                "flag": "Германии",
+                "entity": {
+                  "name": "Майнц 05",
+                  "kind": "club",
+                  "page_title": "Майнц 05",
+                  "wikidata_id": "Q105254"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "normalize-season-links",
+          "type": "normalize_season_links",
+          "group_id": "sofascore-reconciliation",
+          "entity": {
+            "name": "Робин Центнер",
+            "wikitext": "{{КлСтат}}"
+          },
+          "target": {
+            "structure": "club_table"
+          },
+          "as_of": "2026-10-13",
+          "sources": [
+            {
+              "url": "https://ru.wikipedia.org/wiki/%D0%A7%D0%B5%D0%BC%D0%BF%D0%B8%D0%BE%D0%BD%D0%B0%D1%82_%D0%93%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B8%D0%B8_%D0%BF%D0%BE_%D1%84%D1%83%D1%82%D0%B1%D0%BE%D0%BB%D1%83_2018/2019",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-13",
+              "note": "Существующая статья соответствующей лиги и сезона"
+            },
+            {
+              "url": "https://ru.wikipedia.org/wiki/%D0%A7%D0%B5%D0%BC%D0%BF%D0%B8%D0%BE%D0%BD%D0%B0%D1%82_%D0%93%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B8%D0%B8_%D0%BF%D0%BE_%D1%84%D1%83%D1%82%D0%B1%D0%BE%D0%BB%D1%83_2019/2020",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-13",
+              "note": "Существующая статья соответствующей лиги и сезона"
+            },
+            {
+              "url": "https://ru.wikipedia.org/wiki/%D0%A7%D0%B5%D0%BC%D0%BF%D0%B8%D0%BE%D0%BD%D0%B0%D1%82_%D0%93%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B8%D0%B8_%D0%BF%D0%BE_%D1%84%D1%83%D1%82%D0%B1%D0%BE%D0%BB%D1%83_2022/2023",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-13",
+              "note": "Существующая статья соответствующей лиги и сезона"
+            },
+            {
+              "url": "https://ru.wikipedia.org/wiki/%D0%A7%D0%B5%D0%BC%D0%BF%D0%B8%D0%BE%D0%BD%D0%B0%D1%82_%D0%93%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B8%D0%B8_%D0%BF%D0%BE_%D1%84%D1%83%D1%82%D0%B1%D0%BE%D0%BB%D1%83_2023/2024",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-13",
+              "note": "Существующая статья соответствующей лиги и сезона"
+            },
+            {
+              "url": "https://ru.wikipedia.org/wiki/%D0%A7%D0%B5%D0%BC%D0%BF%D0%B8%D0%BE%D0%BD%D0%B0%D1%82_%D0%93%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B8%D0%B8_%D0%BF%D0%BE_%D1%84%D1%83%D1%82%D0%B1%D0%BE%D0%BB%D1%83_2024/2025",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-13",
+              "note": "Существующая статья соответствующей лиги и сезона"
+            }
+          ],
+          "payload": {
+            "seasons": [
+              {
+                "club": "{{Флаг Германии|20px}} [[Майнц 05]]",
+                "league": "[[Чемпионат Германии по футболу|Бу́ндеслига]]",
+                "expected_wikitext": "[[Чемпионат Германии по футболу 2018/2019|2018/19]]",
+                "page_title": "Чемпионат Германии по футболу 2018/2019"
+              },
+              {
+                "club": "{{Флаг Германии|20px}} [[Майнц 05]]",
+                "league": "[[Чемпионат Германии по футболу|Бу́ндеслига]]",
+                "expected_wikitext": "[[Чемпионат Германии по футболу 2019/2020|2019/20]]",
+                "page_title": "Чемпионат Германии по футболу 2019/2020"
+              },
+              {
+                "club": "{{Флаг Германии|20px}} [[Майнц 05]]",
+                "league": "[[Чемпионат Германии по футболу|Бу́ндеслига]]",
+                "expected_wikitext": "[[Чемпионат Германии по футболу 2022/2023|2022/23]]",
+                "page_title": "Чемпионат Германии по футболу 2022/2023"
+              },
+              {
+                "club": "{{Флаг Германии|20px}} [[Майнц 05]]",
+                "league": "[[Чемпионат Германии по футболу|Бу́ндеслига]]",
+                "expected_wikitext": "[[Чемпионат Германии по футболу 2023/2024|2023/24]]",
+                "page_title": "Чемпионат Германии по футболу 2023/2024"
+              },
+              {
+                "club": "{{Флаг Германии|20px}} [[Майнц 05]]",
+                "league": "[[Чемпионат Германии по футболу|Бу́ндеслига]]",
+                "expected_wikitext": "2024/25",
+                "page_title": "Чемпионат Германии по футболу 2024/2025"
+              }
+            ]
+          }
+        }
+      ],
+      "review_warnings": [
+        "Не подтверждены 11 графы существующих клубных строк; исходные значения сохранены. Полнота таблицы не подтверждена; сезоны: [[Региональная лига Германии по футболу 2012/2013|2012/13]], [[Региональная лига Германии по футболу 2013/2014|2013/14]], [[Третья лига Германии по футболу 2014/2015|2014/15]], [[Третья лига Германии по футболу 2015/2016|2015/16]], [[Третья лига Германии по футболу 2016/2017|2016/17]], [[Чемпионат Германии по футболу 2019/2020|2019/20]]. Подробности указаны в отчёте."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "type": "standard",
+  "title": "Крамарич, Андрей",
+  "displaytitle": "<span lang=\"ru\" dir=\"ltr\"><span class=\"mw-page-title-main\">Крамарич, Андрей</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q502898",
+  "titles": {
+    "canonical": "Крамарич,_Андрей",
+    "normalized": "Крамарич, Андрей",
+    "display": "<span lang=\"ru\" dir=\"ltr\"><span class=\"mw-page-title-main\">Крамарич, Андрей</span></span>"
+  },
+  "pageid": 4739841,
+  "thumbnail": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Andrej_Kramari%C4%87_2018.jpg/330px-Andrej_Kramari%C4%87_2018.jpg?utm_source=ru.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 330,
+    "height": 492
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Andrej_Kramari%C4%87_2018.jpg?utm_source=ru.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "width": 666,
+    "height": 992
+  },
+  "lang": "ru",
+  "dir": "ltr",
+  "revision": "153171993",
+  "tid": "02d66801-52c0-11f1-b925-7e33922b182c",
+  "timestamp": "2026-05-18T13:46:46Z",
+  "description": "хорватский футболист",
+  "description_source": "central",
+  "content_urls": {
+    "desktop": {
+      "page": "https://ru.wikipedia.org/wiki/%D0%9A%D1%80%D0%B0%D0%BC%D0%B0%D1%80%D0%B8%D1%87%2C_%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B9",
+      "revisions": "https://ru.wikipedia.org/wiki/%D0%9A%D1%80%D0%B0%D0%BC%D0%B0%D1%80%D0%B8%D1%87%2C_%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B9?action=history",
+      "edit": "https://ru.wikipedia.org/wiki/%D0%9A%D1%80%D0%B0%D0%BC%D0%B0%D1%80%D0%B8%D1%87%2C_%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B9?action=edit",
+      "talk": "https://ru.wikipedia.org/wiki/%D0%9E%D0%B1%D1%81%D1%83%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5:%D0%9A%D1%80%D0%B0%D0%BC%D0%B0%D1%80%D0%B8%D1%87%2C_%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B9"
+    },
+    "mobile": {
+      "page": "https://ru.wikipedia.org/wiki/%D0%9A%D1%80%D0%B0%D0%BC%D0%B0%D1%80%D0%B8%D1%87%2C_%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B9",
+      "revisions": "https://ru.wikipedia.org/wiki/Special:History/%D0%9A%D1%80%D0%B0%D0%BC%D0%B0%D1%80%D0%B8%D1%87%2C_%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B9",
+      "edit": "https://ru.wikipedia.org/wiki/%D0%9A%D1%80%D0%B0%D0%BC%D0%B0%D1%80%D0%B8%D1%87%2C_%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B9?action=edit",
+      "talk": "https://ru.wikipedia.org/wiki/%D0%9E%D0%B1%D1%81%D1%83%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5:%D0%9A%D1%80%D0%B0%D0%BC%D0%B0%D1%80%D0%B8%D1%87%2C_%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B9"
+    }
+  },
+  "extract": "А́ндрей Кра́марич — хорватский футболист, нападающий немецкого клуба «Хоффенхайм» и сборной Хорватии. Участник трёх чемпионатов Европы и двух чемпионатов мира. Занимает пятое место в списке лучших бомбардиров сборной Хорватии.",
+  "extract_html": "<p><b>А́ндрей Кра́марич</b> — хорватский футболист, нападающий немецкого клуба «Хоффенхайм» и сборной Хорватии. Участник трёх чемпионатов Европы и двух чемпионатов мира. Занимает пятое место в списке лучших бомбардиров сборной Хорватии.</p>"
+}

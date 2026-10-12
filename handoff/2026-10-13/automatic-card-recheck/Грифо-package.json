@@ -1,0 +1,730 @@
+{
+  "schema_version": "1.1",
+  "package_id": "sofascore-1",
+  "generated_at": "2026-10-13T00:00:00+00:00",
+  "articles": [
+    {
+      "title": "Грифо, Винченцо",
+      "base_revid": 1,
+      "subject_scope": "football_statistics",
+      "player": "Винченцо Грифо",
+      "operations": [
+        {
+          "id": "bind-card-name",
+          "type": "bind_infobox_name",
+          "group_id": "sofascore-reconciliation",
+          "entity": {
+            "name": "Винченцо Грифо",
+            "wikidata_id": "Q1756602",
+            "wikitext": "{{Футболист}}"
+          },
+          "target": {
+            "structure": "career"
+          },
+          "as_of": "2026-10-13",
+          "sources": [
+            {
+              "url": "https://www.wikidata.org/wiki/Q1756602",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-13",
+              "note": "Статья и профиль игрока проверены по QID и дате рождения; дата в карточке не меняется"
+            }
+          ],
+          "payload": {
+            "expected_sha256": "cdc38546dd31e56781115a29b665e792f90a364ece929b1472a52a6f9a4b762a"
+          }
+        },
+        {
+          "id": "normalize-statistics-layout",
+          "type": "normalize_statistics_layout",
+          "group_id": "sofascore-reconciliation",
+          "entity": {
+            "name": "Винченцо Грифо",
+            "wikitext": "{{Футболист}}"
+          },
+          "target": {
+            "structure": "club_table"
+          },
+          "as_of": "2026-10-13",
+          "sources": [
+            {
+              "url": "https://ru.wikipedia.org/wiki/Википедия:Оформление_статей",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-13",
+              "note": "Порядок разделов по заданию владельца; статистические значения не меняются"
+            }
+          ],
+          "payload": {
+            "expected_sha256": "c0745d7122e293ec27906b0368c35a282ef000412f5f4b0c63f584bf817858dc"
+          }
+        },
+        {
+          "as_of": "2026-10-13",
+          "group_id": "sofascore-reconciliation",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/171961",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-1",
+          "type": "update_stats",
+          "entity": {
+            "name": "Фрайбург",
+            "wikitext": "{{Флаг Германии|20px}} [[Фрайбург (футбольный клуб)|Фрайбург]]"
+          },
+          "target": {
+            "structure": "career",
+            "field": "клубы",
+            "period": "2019—{{н.в.}}"
+          },
+          "season": null,
+          "competition": {
+            "name": "Чемпионат",
+            "category": "all",
+            "scope": "league"
+          },
+          "expected": {
+            "appearances": 185,
+            "goals": 53
+          },
+          "new": {
+            "appearances": 227,
+            "goals": 60
+          }
+        },
+        {
+          "as_of": "2026-10-13",
+          "group_id": "sofascore-reconciliation",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/171961",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-2",
+          "type": "update_date",
+          "entity": {
+            "name": "Фрайбург",
+            "kind": "club",
+            "wikidata_id": "Q106394",
+            "page_title": "Фрайбург (футбольный клуб)",
+            "wikitext": "{{Флаг Германии|20px}} [[Фрайбург (футбольный клуб)|Фрайбург]]"
+          },
+          "target": {
+            "structure": "career",
+            "field": "клубы"
+          },
+          "payload": {
+            "field": "обновление данных о клубе",
+            "expected_value": "14.04.2025",
+            "statistics_as_of": "2026-10-11"
+          }
+        },
+        {
+          "as_of": "2026-10-13",
+          "group_id": "sofascore-reconciliation",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/171961",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-3",
+          "type": "create_statistics_section",
+          "entity": {
+            "name": "КлСтат",
+            "wikitext": "{{КлСтат}}"
+          },
+          "target": {
+            "structure": "club_table"
+          },
+          "payload": {
+            "complete": true,
+            "full_career": false,
+            "allow_unknown": true,
+            "unknown_as_zero": false,
+            "show_career_total": true,
+            "statistics_as_of": "2026-10-11",
+            "categories": [
+              "Чемпионат",
+              "Кубки",
+              "Еврокубки"
+            ],
+            "clubs": [
+              {
+                "entity": {
+                  "name": "Хоффенхайм",
+                  "kind": "club",
+                  "wikidata_id": "Q22707",
+                  "page_title": "Хоффенхайм (футбольный клуб)",
+                  "wikitext": "{{Флаг Германии|20px}} [[Хоффенхайм (футбольный клуб)|Хоффенхайм]]"
+                },
+                "rows": [
+                  {
+                    "season": "2012/13",
+                    "league_wikitext": "[[Чемпионат Германии по футболу|Бундеслига]]",
+                    "categories": {
+                      "Чемпионат": {
+                        "appearances": 12,
+                        "goals": 0
+                      },
+                      "Кубки": null,
+                      "Еврокубки": null
+                    }
+                  },
+                  {
+                    "season": "2018/19",
+                    "league_wikitext": "[[Чемпионат Германии по футболу|Бундеслига]]",
+                    "categories": {
+                      "Чемпионат": {
+                        "appearances": 7,
+                        "goals": 1
+                      },
+                      "Кубки": {
+                        "appearances": 2,
+                        "goals": 0
+                      },
+                      "Еврокубки": {
+                        "appearances": 1,
+                        "goals": 0
+                      }
+                    }
+                  },
+                  {
+                    "season": "2019/20",
+                    "league_wikitext": "[[Чемпионат Германии по футболу|Бундеслига]]",
+                    "categories": {
+                      "Чемпионат": {
+                        "appearances": 1,
+                        "goals": 0
+                      },
+                      "Кубки": {
+                        "appearances": 1,
+                        "goals": 0
+                      },
+                      "Еврокубки": null
+                    }
+                  }
+                ]
+              },
+              {
+                "entity": {
+                  "name": "Хоффенхайм II",
+                  "kind": "club",
+                  "wikidata_id": "Q16637410",
+                  "page_title": "Хоффенхайм II",
+                  "wikitext": "{{Флаг Германии|20px}} [[Хоффенхайм II|Хоффенхайм II]]"
+                },
+                "rows": [
+                  {
+                    "season": "2013/14",
+                    "league_wikitext": "[[Региональная лига «Юго-Запад»]]",
+                    "categories": {
+                      "Чемпионат": {
+                        "appearances": 8,
+                        "goals": 4
+                      },
+                      "Кубки": null,
+                      "Еврокубки": null
+                    }
+                  }
+                ]
+              },
+              {
+                "entity": {
+                  "name": "Динамо (Дрезден)",
+                  "kind": "club",
+                  "wikidata_id": "Q141931",
+                  "page_title": "Динамо (футбольный клуб, Дрезден)",
+                  "wikitext": "{{Флаг Германии|20px}} [[Динамо (футбольный клуб, Дрезден)|Динамо (Дрезден)]]"
+                },
+                "rows": [
+                  {
+                    "season": "2013/14",
+                    "league_wikitext": "[[Вторая Бундеслига]]",
+                    "categories": {
+                      "Чемпионат": {
+                        "appearances": 13,
+                        "goals": 1
+                      },
+                      "Кубки": null,
+                      "Еврокубки": null
+                    }
+                  }
+                ]
+              },
+              {
+                "entity": {
+                  "name": "Франкфурт (Франкфурт-на-Майне)",
+                  "kind": "club",
+                  "wikidata_id": "Q157352",
+                  "page_title": "Франкфурт (футбольный клуб, Франкфурт-на-Майне)",
+                  "wikitext": "{{Флаг Германии|20px}} [[Франкфурт (футбольный клуб, Франкфурт-на-Майне)|Франкфурт (Франкфурт-на-Майне)]]"
+                },
+                "rows": [
+                  {
+                    "season": "2014/15",
+                    "league_wikitext": "[[Вторая Бундеслига]]",
+                    "categories": {
+                      "Чемпионат": {
+                        "appearances": 33,
+                        "goals": 7
+                      },
+                      "Кубки": null,
+                      "Еврокубки": null
+                    }
+                  }
+                ]
+              },
+              {
+                "entity": {
+                  "name": "Фрайбург",
+                  "kind": "club",
+                  "wikidata_id": "Q106394",
+                  "page_title": "Фрайбург (футбольный клуб)",
+                  "wikitext": "{{Флаг Германии|20px}} [[Фрайбург (футбольный клуб)|Фрайбург]]"
+                },
+                "rows": [
+                  {
+                    "season": "2015/16",
+                    "league_wikitext": "[[Вторая Бундеслига]]",
+                    "categories": {
+                      "Чемпионат": {
+                        "appearances": 31,
+                        "goals": 14
+                      },
+                      "Кубки": {
+                        "appearances": 1,
+                        "goals": 0
+                      },
+                      "Еврокубки": null
+                    }
+                  },
+                  {
+                    "season": "2016/17",
+                    "league_wikitext": "[[Чемпионат Германии по футболу|Бундеслига]]",
+                    "categories": {
+                      "Чемпионат": {
+                        "appearances": 30,
+                        "goals": 6
+                      },
+                      "Кубки": {
+                        "appearances": 2,
+                        "goals": 3
+                      },
+                      "Еврокубки": null
+                    }
+                  },
+                  {
+                    "season": "2018/19",
+                    "league_wikitext": "[[Чемпионат Германии по футболу|Бундеслига]]",
+                    "categories": {
+                      "Чемпионат": {
+                        "appearances": 16,
+                        "goals": 6
+                      },
+                      "Кубки": null,
+                      "Еврокубки": null
+                    }
+                  },
+                  {
+                    "season": "2019/20",
+                    "league_wikitext": "[[Чемпионат Германии по футболу|Бундеслига]]",
+                    "categories": {
+                      "Чемпионат": {
+                        "appearances": 26,
+                        "goals": 4
+                      },
+                      "Кубки": {
+                        "appearances": 1,
+                        "goals": 0
+                      },
+                      "Еврокубки": null
+                    }
+                  },
+                  {
+                    "season": "2020/21",
+                    "league_wikitext": "[[Чемпионат Германии по футболу|Бундеслига]]",
+                    "categories": {
+                      "Чемпионат": {
+                        "appearances": 31,
+                        "goals": 9
+                      },
+                      "Кубки": {
+                        "appearances": 2,
+                        "goals": 0
+                      },
+                      "Еврокубки": null
+                    }
+                  },
+                  {
+                    "season": "2021/22",
+                    "league_wikitext": "[[Чемпионат Германии по футболу|Бундеслига]]",
+                    "categories": {
+                      "Чемпионат": {
+                        "appearances": 34,
+                        "goals": 9
+                      },
+                      "Кубки": {
+                        "appearances": 6,
+                        "goals": 4
+                      },
+                      "Еврокубки": null
+                    }
+                  },
+                  {
+                    "season": "2022/23",
+                    "league_wikitext": "[[Чемпионат Германии по футболу|Бундеслига]]",
+                    "categories": {
+                      "Чемпионат": {
+                        "appearances": 33,
+                        "goals": 15
+                      },
+                      "Кубки": {
+                        "appearances": 5,
+                        "goals": 0
+                      },
+                      "Еврокубки": {
+                        "appearances": 8,
+                        "goals": 2
+                      }
+                    }
+                  },
+                  {
+                    "season": "2023/24",
+                    "league_wikitext": "[[Чемпионат Германии по футболу|Бундеслига]]",
+                    "categories": {
+                      "Чемпионат": {
+                        "appearances": 32,
+                        "goals": 8
+                      },
+                      "Кубки": {
+                        "appearances": 2,
+                        "goals": 0
+                      },
+                      "Еврокубки": {
+                        "appearances": 10,
+                        "goals": 4
+                      }
+                    }
+                  },
+                  {
+                    "season": "2024/25",
+                    "league_wikitext": "[[Чемпионат Германии по футболу|Бундеслига]]",
+                    "categories": {
+                      "Чемпионат": {
+                        "appearances": 34,
+                        "goals": 8
+                      },
+                      "Кубки": {
+                        "appearances": 3,
+                        "goals": 2
+                      },
+                      "Еврокубки": null
+                    }
+                  },
+                  {
+                    "season": "2025/26",
+                    "league_wikitext": "[[Чемпионат Германии по футболу|Бундеслига]]",
+                    "categories": {
+                      "Чемпионат": {
+                        "appearances": 33,
+                        "goals": 7
+                      },
+                      "Кубки": {
+                        "appearances": 5,
+                        "goals": 2
+                      },
+                      "Еврокубки": {
+                        "appearances": 15,
+                        "goals": 5
+                      }
+                    }
+                  },
+                  {
+                    "season": "2026/27",
+                    "league_wikitext": "[[Чемпионат Германии по футболу|Бундеслига]]",
+                    "categories": {
+                      "Чемпионат": {
+                        "appearances": 4,
+                        "goals": 0
+                      },
+                      "Кубки": {
+                        "appearances": 1,
+                        "goals": 0
+                      },
+                      "Еврокубки": null
+                    }
+                  }
+                ]
+              },
+              {
+                "entity": {
+                  "name": "Боруссия (Мёнхенгладбах)",
+                  "kind": "club",
+                  "wikidata_id": "Q101959",
+                  "page_title": "Боруссия (футбольный клуб, Мёнхенгладбах)",
+                  "wikitext": "{{Флаг Германии|20px}} [[Боруссия (футбольный клуб, Мёнхенгладбах)|Боруссия (Мёнхенгладбах)]]"
+                },
+                "rows": [
+                  {
+                    "season": "2017/18",
+                    "league_wikitext": "[[Чемпионат Германии по футболу|Бундеслига]]",
+                    "categories": {
+                      "Чемпионат": {
+                        "appearances": 17,
+                        "goals": 0
+                      },
+                      "Кубки": {
+                        "appearances": 1,
+                        "goals": 0
+                      },
+                      "Еврокубки": null
+                    }
+                  }
+                ]
+              }
+            ],
+            "header_notes": {
+              "Кубки": [
+                "[[Кубок Германии по футболу|Кубок Германии]]"
+              ],
+              "Еврокубки": [
+                "[[Лига Европы УЕФА]]",
+                "[[Лига чемпионов УЕФА]]"
+              ]
+            },
+            "source_url": "https://www.sofascore.com/football/player/vincenzo-grifo/171961"
+          }
+        },
+        {
+          "id": "national-card-date",
+          "type": "update_date",
+          "group_id": "sofascore-reconciliation",
+          "entity": {
+            "name": "Статистика сборных",
+            "wikitext": "{{Флаг Италии|20px}} [[Сборная Италии по футболу|Италия]]",
+            "kind": "national_team",
+            "wikidata_id": "Q676899"
+          },
+          "target": {
+            "structure": "career",
+            "field": "национальная сборная"
+          },
+          "as_of": "2026-10-13",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/match/usa-italy/hUbszUb#id:8030844",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2023-03-26"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/liechtenstein-italy/hUbsFWb#id:8079025",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2023-03-26"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/moldova-italy/hUbsHVb#id:8803185",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2023-03-26"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/estonia-italy/hUbsjVb#id:9135431",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2023-03-26"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/northern-ireland-italy/hUbsLVb#id:9223761",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2023-03-26"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/san-marino-italy/hUbsIWb#id:9512296",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2023-03-26"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/italy-albania/PTbshUb#id:10751615",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2023-03-26"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/austria-italy/hUbstUb#id:10751626",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2023-03-26"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/italy-malta/IObshUb#id:10752394",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2023-03-26"
+            }
+          ],
+          "payload": {
+            "field": "обновление данных о сборной",
+            "expected_value": "26.3.2023",
+            "statistics_as_of": "2023-03-26"
+          }
+        },
+        {
+          "id": "normalize-season-links",
+          "type": "normalize_season_links",
+          "group_id": "sofascore-reconciliation",
+          "entity": {
+            "name": "Винченцо Грифо",
+            "wikitext": "{{КлСтат}}"
+          },
+          "target": {
+            "structure": "club_table"
+          },
+          "as_of": "2026-10-13",
+          "sources": [
+            {
+              "url": "https://ru.wikipedia.org/wiki/%D0%A7%D0%B5%D0%BC%D0%BF%D0%B8%D0%BE%D0%BD%D0%B0%D1%82_%D0%93%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B8%D0%B8_%D0%BF%D0%BE_%D1%84%D1%83%D1%82%D0%B1%D0%BE%D0%BB%D1%83_2012/2013",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-13",
+              "note": "Существующая статья соответствующей лиги и сезона"
+            },
+            {
+              "url": "https://ru.wikipedia.org/wiki/%D0%A7%D0%B5%D0%BC%D0%BF%D0%B8%D0%BE%D0%BD%D0%B0%D1%82_%D0%93%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B8%D0%B8_%D0%BF%D0%BE_%D1%84%D1%83%D1%82%D0%B1%D0%BE%D0%BB%D1%83_2018/2019",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-13",
+              "note": "Существующая статья соответствующей лиги и сезона"
+            },
+            {
+              "url": "https://ru.wikipedia.org/wiki/%D0%A7%D0%B5%D0%BC%D0%BF%D0%B8%D0%BE%D0%BD%D0%B0%D1%82_%D0%93%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B8%D0%B8_%D0%BF%D0%BE_%D1%84%D1%83%D1%82%D0%B1%D0%BE%D0%BB%D1%83_2019/2020",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-13",
+              "note": "Существующая статья соответствующей лиги и сезона"
+            },
+            {
+              "url": "https://ru.wikipedia.org/wiki/%D0%92%D1%82%D0%BE%D1%80%D0%B0%D1%8F_%D0%91%D1%83%D0%BD%D0%B4%D0%B5%D1%81%D0%BB%D0%B8%D0%B3%D0%B0_2013/2014",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-13",
+              "note": "Существующая статья соответствующей лиги и сезона"
+            },
+            {
+              "url": "https://ru.wikipedia.org/wiki/%D0%92%D1%82%D0%BE%D1%80%D0%B0%D1%8F_%D0%91%D1%83%D0%BD%D0%B4%D0%B5%D1%81%D0%BB%D0%B8%D0%B3%D0%B0_2014/2015",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-13",
+              "note": "Существующая статья соответствующей лиги и сезона"
+            },
+            {
+              "url": "https://ru.wikipedia.org/wiki/%D0%92%D1%82%D0%BE%D1%80%D0%B0%D1%8F_%D0%91%D1%83%D0%BD%D0%B4%D0%B5%D1%81%D0%BB%D0%B8%D0%B3%D0%B0_2015/2016",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-13",
+              "note": "Существующая статья соответствующей лиги и сезона"
+            },
+            {
+              "url": "https://ru.wikipedia.org/wiki/%D0%A7%D0%B5%D0%BC%D0%BF%D0%B8%D0%BE%D0%BD%D0%B0%D1%82_%D0%93%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B8%D0%B8_%D0%BF%D0%BE_%D1%84%D1%83%D1%82%D0%B1%D0%BE%D0%BB%D1%83_2022/2023",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-13",
+              "note": "Существующая статья соответствующей лиги и сезона"
+            },
+            {
+              "url": "https://ru.wikipedia.org/wiki/%D0%A7%D0%B5%D0%BC%D0%BF%D0%B8%D0%BE%D0%BD%D0%B0%D1%82_%D0%93%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B8%D0%B8_%D0%BF%D0%BE_%D1%84%D1%83%D1%82%D0%B1%D0%BE%D0%BB%D1%83_2023/2024",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-13",
+              "note": "Существующая статья соответствующей лиги и сезона"
+            },
+            {
+              "url": "https://ru.wikipedia.org/wiki/%D0%A7%D0%B5%D0%BC%D0%BF%D0%B8%D0%BE%D0%BD%D0%B0%D1%82_%D0%93%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B8%D0%B8_%D0%BF%D0%BE_%D1%84%D1%83%D1%82%D0%B1%D0%BE%D0%BB%D1%83_2024/2025",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-13",
+              "note": "Существующая статья соответствующей лиги и сезона"
+            }
+          ],
+          "payload": {
+            "seasons": [
+              {
+                "club": "{{Флаг Германии|20px}} [[Хоффенхайм (футбольный клуб)|Хоффенхайм]]",
+                "league": "[[Чемпионат Германии по футболу|Бундеслига]]",
+                "expected_wikitext": "2012/13",
+                "page_title": "Чемпионат Германии по футболу 2012/2013"
+              },
+              {
+                "club": "{{Флаг Германии|20px}} [[Хоффенхайм (футбольный клуб)|Хоффенхайм]]",
+                "league": "[[Чемпионат Германии по футболу|Бундеслига]]",
+                "expected_wikitext": "2018/19",
+                "page_title": "Чемпионат Германии по футболу 2018/2019"
+              },
+              {
+                "club": "{{Флаг Германии|20px}} [[Хоффенхайм (футбольный клуб)|Хоффенхайм]]",
+                "league": "[[Чемпионат Германии по футболу|Бундеслига]]",
+                "expected_wikitext": "2019/20",
+                "page_title": "Чемпионат Германии по футболу 2019/2020"
+              },
+              {
+                "club": "{{Флаг Германии|20px}} [[Динамо (футбольный клуб, Дрезден)|Динамо (Дрезден)]]",
+                "league": "[[Вторая Бундеслига]]",
+                "expected_wikitext": "2013/14",
+                "page_title": "Вторая Бундеслига 2013/2014"
+              },
+              {
+                "club": "{{Флаг Германии|20px}} [[Франкфурт (футбольный клуб, Франкфурт-на-Майне)|Франкфурт (Франкфурт-на-Майне)]]",
+                "league": "[[Вторая Бундеслига]]",
+                "expected_wikitext": "2014/15",
+                "page_title": "Вторая Бундеслига 2014/2015"
+              },
+              {
+                "club": "{{Флаг Германии|20px}} [[Фрайбург (футбольный клуб)|Фрайбург]]",
+                "league": "[[Вторая Бундеслига]]",
+                "expected_wikitext": "2015/16",
+                "page_title": "Вторая Бундеслига 2015/2016"
+              },
+              {
+                "club": "{{Флаг Германии|20px}} [[Фрайбург (футбольный клуб)|Фрайбург]]",
+                "league": "[[Чемпионат Германии по футболу|Бундеслига]]",
+                "expected_wikitext": "2018/19",
+                "page_title": "Чемпионат Германии по футболу 2018/2019"
+              },
+              {
+                "club": "{{Флаг Германии|20px}} [[Фрайбург (футбольный клуб)|Фрайбург]]",
+                "league": "[[Чемпионат Германии по футболу|Бундеслига]]",
+                "expected_wikitext": "2019/20",
+                "page_title": "Чемпионат Германии по футболу 2019/2020"
+              },
+              {
+                "club": "{{Флаг Германии|20px}} [[Фрайбург (футбольный клуб)|Фрайбург]]",
+                "league": "[[Чемпионат Германии по футболу|Бундеслига]]",
+                "expected_wikitext": "2022/23",
+                "page_title": "Чемпионат Германии по футболу 2022/2023"
+              },
+              {
+                "club": "{{Флаг Германии|20px}} [[Фрайбург (футбольный клуб)|Фрайбург]]",
+                "league": "[[Чемпионат Германии по футболу|Бундеслига]]",
+                "expected_wikitext": "2023/24",
+                "page_title": "Чемпионат Германии по футболу 2023/2024"
+              },
+              {
+                "club": "{{Флаг Германии|20px}} [[Фрайбург (футбольный клуб)|Фрайбург]]",
+                "league": "[[Чемпионат Германии по футболу|Бундеслига]]",
+                "expected_wikitext": "2024/25",
+                "page_title": "Чемпионат Германии по футболу 2024/2025"
+              }
+            ]
+          }
+        }
+      ],
+      "review_warnings": [
+        "Недоступные ячейки новых сезонов показаны нулями по настройке пользователя; итоги рассчитаны по показанным значениям. Пропуски данных перечислены в отчёте.",
+        "Часть статистики сборных не подтверждена полной сверкой матчей. Неподтверждённые показатели сохранены; причины указаны в отчёте."
+      ]
+    }
+  ]
+}

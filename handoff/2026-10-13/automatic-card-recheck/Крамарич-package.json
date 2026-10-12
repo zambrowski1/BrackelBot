@@ -1,0 +1,477 @@
+{
+  "schema_version": "1.1",
+  "package_id": "sofascore-1",
+  "generated_at": "2026-10-13T00:00:00+00:00",
+  "articles": [
+    {
+      "title": "Крамарич, Андрей",
+      "base_revid": 1,
+      "subject_scope": "football_statistics",
+      "player": "Андрей Крамарич",
+      "operations": [
+        {
+          "id": "normalize-club-table",
+          "type": "normalize_club_table",
+          "group_id": "sofascore-reconciliation",
+          "entity": {
+            "name": "Андрей Крамарич",
+            "wikitext": "{{КлСтат}}"
+          },
+          "target": {
+            "structure": "club_table"
+          },
+          "as_of": "2026-10-13",
+          "sources": [
+            {
+              "url": "https://ru.wikipedia.org/wiki/Шаблон:КлубнаяСтатистика/Лига",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-13",
+              "note": "Проверенное перенаправление КлСтат/Лига; показатели периодов сохраняются и складываются"
+            }
+          ],
+          "payload": {
+            "expected_sha256": "2d4e63e7cb882db3dbea04f2f08663d721501ef66eda6f18b9157988694ca0dd"
+          }
+        },
+        {
+          "as_of": "2026-10-13",
+          "group_id": "sofascore-reconciliation",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/67647",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-1",
+          "type": "update_totals",
+          "entity": {
+            "name": "КлСтат",
+            "wikitext": "{{КлСтат}}"
+          },
+          "target": {
+            "structure": "club_table"
+          },
+          "payload": {
+            "complete": true
+          }
+        },
+        {
+          "as_of": "2026-10-13",
+          "group_id": "sofascore-reconciliation",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/67647",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-2",
+          "type": "update_stats",
+          "entity": {
+            "name": "Хоффенхайм",
+            "wikitext": "[[Хоффенхайм (футбольный клуб)|Хоффенхайм]]"
+          },
+          "target": {
+            "structure": "club_table"
+          },
+          "season": "[[Чемпионат Германии по футболу 2017/2018|2017/18]]",
+          "competition": {
+            "name": "Еврокубки",
+            "category": "Еврокубки",
+            "scope": "category"
+          },
+          "expected": {
+            "appearances": 6,
+            "goals": 0
+          },
+          "new": {
+            "appearances": 4,
+            "goals": 0
+          }
+        },
+        {
+          "as_of": "2026-10-13",
+          "group_id": "sofascore-reconciliation",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/67647",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-3",
+          "type": "add_season",
+          "entity": {
+            "name": "Хоффенхайм",
+            "kind": "club",
+            "wikidata_id": "Q22707",
+            "page_title": "Хоффенхайм (футбольный клуб)",
+            "wikitext": "[[Хоффенхайм (футбольный клуб)|Хоффенхайм]] {{аренда}}"
+          },
+          "target": {
+            "structure": "club_table"
+          },
+          "season": "2024/25",
+          "payload": {
+            "complete": true,
+            "categories": {
+              "Лига": {
+                "appearances": 32,
+                "goals": 11
+              },
+              "Кубок страны": {
+                "appearances": 3,
+                "goals": 0
+              },
+              "Еврокубки": {
+                "appearances": 6,
+                "goals": 0
+              },
+              "Остальные<ref>Остальные официальные матчи</ref>": null
+            },
+            "league_wikitext": "[[Чемпионат Германии по футболу|Бундеслига]]",
+            "allow_unknown": true,
+            "unknown_as_zero": false,
+            "insert_after_season": "[[Чемпионат Германии по футболу 2023/2024|2023/24]]"
+          }
+        },
+        {
+          "as_of": "2026-10-13",
+          "group_id": "sofascore-reconciliation",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/67647",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-4",
+          "type": "add_season",
+          "entity": {
+            "name": "Хоффенхайм",
+            "kind": "club",
+            "wikidata_id": "Q22707",
+            "page_title": "Хоффенхайм (футбольный клуб)",
+            "wikitext": "[[Хоффенхайм (футбольный клуб)|Хоффенхайм]] {{аренда}}"
+          },
+          "target": {
+            "structure": "club_table"
+          },
+          "season": "2025/26",
+          "payload": {
+            "complete": true,
+            "categories": {
+              "Лига": {
+                "appearances": 34,
+                "goals": 14
+              },
+              "Кубок страны": {
+                "appearances": 2,
+                "goals": 1
+              },
+              "Еврокубки": null,
+              "Остальные<ref>Остальные официальные матчи</ref>": null
+            },
+            "league_wikitext": "[[Чемпионат Германии по футболу|Бундеслига]]",
+            "allow_unknown": true,
+            "unknown_as_zero": false,
+            "insert_after_season": "2024/25"
+          }
+        },
+        {
+          "as_of": "2026-10-13",
+          "group_id": "sofascore-reconciliation",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/67647",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-5",
+          "type": "add_season",
+          "entity": {
+            "name": "Хоффенхайм",
+            "kind": "club",
+            "wikidata_id": "Q22707",
+            "page_title": "Хоффенхайм (футбольный клуб)",
+            "wikitext": "[[Хоффенхайм (футбольный клуб)|Хоффенхайм]] {{аренда}}"
+          },
+          "target": {
+            "structure": "club_table"
+          },
+          "season": "2026/27",
+          "payload": {
+            "complete": true,
+            "categories": {
+              "Лига": {
+                "appearances": 5,
+                "goals": 0
+              },
+              "Кубок страны": null,
+              "Еврокубки": {
+                "appearances": 1,
+                "goals": 0
+              },
+              "Остальные<ref>Остальные официальные матчи</ref>": null
+            },
+            "league_wikitext": "[[Чемпионат Германии по футболу|Бундеслига]]",
+            "allow_unknown": true,
+            "unknown_as_zero": false,
+            "insert_after_season": "2025/26"
+          }
+        },
+        {
+          "as_of": "2026-10-13",
+          "group_id": "sofascore-reconciliation",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/67647",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-6",
+          "type": "update_stats",
+          "entity": {
+            "name": "Хоффенхайм",
+            "wikitext": "{{Флаг Германии|20px}} [[Хоффенхайм (футбольный клуб)|Хоффенхайм]]"
+          },
+          "target": {
+            "structure": "career",
+            "field": "клубы",
+            "period": "2016—{{н.в.}}"
+          },
+          "season": null,
+          "competition": {
+            "name": "Чемпионат",
+            "category": "all",
+            "scope": "league"
+          },
+          "expected": {
+            "appearances": 293,
+            "goals": 130
+          },
+          "new": {
+            "appearances": 310,
+            "goals": 135
+          }
+        },
+        {
+          "as_of": "2026-10-13",
+          "group_id": "sofascore-reconciliation",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/67647",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-7",
+          "type": "update_date",
+          "entity": {
+            "name": "Хоффенхайм",
+            "kind": "club",
+            "wikidata_id": "Q22707",
+            "page_title": "Хоффенхайм (футбольный клуб)",
+            "wikitext": "{{Флаг Германии|20px}} [[Хоффенхайм (футбольный клуб)|Хоффенхайм]]"
+          },
+          "target": {
+            "structure": "career",
+            "field": "клубы"
+          },
+          "payload": {
+            "field": "обновление данных о клубе",
+            "expected_value": "14.02.2026",
+            "statistics_as_of": "2026-10-10"
+          }
+        },
+        {
+          "id": "normalize-club-flags",
+          "type": "normalize_club_flags",
+          "group_id": "sofascore-reconciliation",
+          "entity": {
+            "name": "Андрей Крамарич",
+            "wikitext": "{{КлСтат}}"
+          },
+          "target": {
+            "structure": "club_table"
+          },
+          "as_of": "2026-10-13",
+          "sources": [
+            {
+              "url": "https://www.wikidata.org/wiki/Q172803",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-13",
+              "note": "Страна клуба и шаблон флага проверены через Википедию и Wikidata"
+            },
+            {
+              "url": "https://www.wikidata.org/wiki/Q959086",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-13",
+              "note": "Страна клуба и шаблон флага проверены через Википедию и Wikidata"
+            },
+            {
+              "url": "https://www.wikidata.org/wiki/Q318969",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-13",
+              "note": "Страна клуба и шаблон флага проверены через Википедию и Wikidata"
+            },
+            {
+              "url": "https://www.wikidata.org/wiki/Q22707",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-13",
+              "note": "Страна клуба и шаблон флага проверены через Википедию и Wikidata"
+            },
+            {
+              "url": "https://www.wikidata.org/wiki/Q22707",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-13",
+              "note": "Страна клуба и шаблон флага проверены через Википедию и Wikidata"
+            }
+          ],
+          "payload": {
+            "clubs": [
+              {
+                "expected_wikitext": "[[Динамо (футбольный клуб, Загреб)|Динамо (Загреб)]]",
+                "occurrences": 1,
+                "flag": "Хорватии",
+                "entity": {
+                  "name": "Динамо (футбольный клуб, Загреб)",
+                  "kind": "club",
+                  "page_title": "Динамо (футбольный клуб, Загреб)",
+                  "wikidata_id": "Q172803"
+                }
+              },
+              {
+                "expected_wikitext": "[[Локомотива]] {{аренда}}",
+                "occurrences": 1,
+                "flag": "Хорватии",
+                "entity": {
+                  "name": "Локомотива",
+                  "kind": "club",
+                  "page_title": "Локомотива",
+                  "wikidata_id": "Q959086"
+                }
+              },
+              {
+                "expected_wikitext": "[[Риека (футбольный клуб)|Риека]]",
+                "occurrences": 1,
+                "flag": "Хорватии",
+                "entity": {
+                  "name": "Риека (футбольный клуб)",
+                  "kind": "club",
+                  "page_title": "Риека (футбольный клуб)",
+                  "wikidata_id": "Q318969"
+                }
+              },
+              {
+                "expected_wikitext": "[[Хоффенхайм (футбольный клуб)|Хоффенхайм]] {{аренда}}",
+                "occurrences": 1,
+                "flag": "Германии",
+                "entity": {
+                  "name": "Хоффенхайм (футбольный клуб)",
+                  "kind": "club",
+                  "page_title": "Хоффенхайм (футбольный клуб)",
+                  "wikidata_id": "Q22707"
+                }
+              },
+              {
+                "expected_wikitext": "[[Хоффенхайм (футбольный клуб)|Хоффенхайм]]",
+                "occurrences": 1,
+                "flag": "Германии",
+                "entity": {
+                  "name": "Хоффенхайм (футбольный клуб)",
+                  "kind": "club",
+                  "page_title": "Хоффенхайм (футбольный клуб)",
+                  "wikidata_id": "Q22707"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "normalize-season-links",
+          "type": "normalize_season_links",
+          "group_id": "sofascore-reconciliation",
+          "entity": {
+            "name": "Андрей Крамарич",
+            "wikitext": "{{КлСтат}}"
+          },
+          "target": {
+            "structure": "club_table"
+          },
+          "as_of": "2026-10-13",
+          "sources": [
+            {
+              "url": "https://ru.wikipedia.org/wiki/%D0%A7%D0%B5%D0%BC%D0%BF%D0%B8%D0%BE%D0%BD%D0%B0%D1%82_%D0%93%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B8%D0%B8_%D0%BF%D0%BE_%D1%84%D1%83%D1%82%D0%B1%D0%BE%D0%BB%D1%83_2018/2019",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-13",
+              "note": "Существующая статья соответствующей лиги и сезона"
+            },
+            {
+              "url": "https://ru.wikipedia.org/wiki/%D0%A7%D0%B5%D0%BC%D0%BF%D0%B8%D0%BE%D0%BD%D0%B0%D1%82_%D0%93%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B8%D0%B8_%D0%BF%D0%BE_%D1%84%D1%83%D1%82%D0%B1%D0%BE%D0%BB%D1%83_2019/2020",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-13",
+              "note": "Существующая статья соответствующей лиги и сезона"
+            },
+            {
+              "url": "https://ru.wikipedia.org/wiki/%D0%A7%D0%B5%D0%BC%D0%BF%D0%B8%D0%BE%D0%BD%D0%B0%D1%82_%D0%93%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B8%D0%B8_%D0%BF%D0%BE_%D1%84%D1%83%D1%82%D0%B1%D0%BE%D0%BB%D1%83_2022/2023",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-13",
+              "note": "Существующая статья соответствующей лиги и сезона"
+            },
+            {
+              "url": "https://ru.wikipedia.org/wiki/%D0%A7%D0%B5%D0%BC%D0%BF%D0%B8%D0%BE%D0%BD%D0%B0%D1%82_%D0%93%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B8%D0%B8_%D0%BF%D0%BE_%D1%84%D1%83%D1%82%D0%B1%D0%BE%D0%BB%D1%83_2023/2024",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-13",
+              "note": "Существующая статья соответствующей лиги и сезона"
+            }
+          ],
+          "payload": {
+            "seasons": [
+              {
+                "club": "[[Хоффенхайм (футбольный клуб)|Хоффенхайм]]",
+                "league": "[[Чемпионат Германии по футболу|Бундеслига]]",
+                "expected_wikitext": "[[Чемпионат Германии по футболу 2018/2019|2018/19]]",
+                "page_title": "Чемпионат Германии по футболу 2018/2019"
+              },
+              {
+                "club": "[[Хоффенхайм (футбольный клуб)|Хоффенхайм]]",
+                "league": "[[Чемпионат Германии по футболу|Бундеслига]]",
+                "expected_wikitext": "[[Чемпионат Германии по футболу 2019/2020|2019/20]]",
+                "page_title": "Чемпионат Германии по футболу 2019/2020"
+              },
+              {
+                "club": "[[Хоффенхайм (футбольный клуб)|Хоффенхайм]]",
+                "league": "[[Чемпионат Германии по футболу|Бундеслига]]",
+                "expected_wikitext": "[[Чемпионат Германии по футболу 2022/2023|2022/23]]",
+                "page_title": "Чемпионат Германии по футболу 2022/2023"
+              },
+              {
+                "club": "[[Хоффенхайм (футбольный клуб)|Хоффенхайм]]",
+                "league": "[[Чемпионат Германии по футболу|Бундеслига]]",
+                "expected_wikitext": "[[Чемпионат Германии по футболу 2023/2024|2023/24]]",
+                "page_title": "Чемпионат Германии по футболу 2023/2024"
+              }
+            ]
+          }
+        }
+      ],
+      "review_warnings": [
+        "Недоступные ячейки новых сезонов показаны нулями по настройке пользователя; итоги рассчитаны по показанным значениям. Пропуски данных перечислены в отчёте.",
+        "Не подтверждены 60 графы существующих клубных строк; исходные значения сохранены. Полнота таблицы не подтверждена; сезоны: [[Чемпионат Англии по футболу 2014/2015|2014/15]], [[Чемпионат Англии по футболу 2015/2016|2015/16]], [[Чемпионат Германии по футболу 2015/2016|2015/16]], [[Чемпионат Германии по футболу 2016/2017|2016/17]], [[Чемпионат Германии по футболу 2017/2018|2017/18]], [[Чемпионат Германии по футболу 2018/2019|2018/19]], [[Чемпионат Германии по футболу 2019/2020|2019/20]], [[Чемпионат Германии по футболу 2020/2021|2020/21]], [[Чемпионат Германии по футболу 2021/2022|2021/22]], [[Чемпионат Германии по футболу 2022/2023|2022/23]], [[Чемпионат Германии по футболу 2023/2024|2023/24]], [[Чемпионат Хорватии по футболу 2008/2009|2008/09]], [[Чемпионат Хорватии по футболу 2009/2010|2009/10]], [[Чемпионат Хорватии по футболу 2010/2011|2010/11]], [[Чемпионат Хорватии по футболу 2011/2012|2011/12]], [[Чемпионат Хорватии по футболу 2012/2013|2012/13]], [[Чемпионат Хорватии по футболу 2013/2014|2013/14]], [[Чемпионат Хорватии по футболу 2014/2015|2014/15]]. Подробности указаны в отчёте.",
+        "Часть статистики сборных не подтверждена полной сверкой матчей. Неподтверждённые показатели сохранены; причины указаны в отчёте.",
+        "Не подтверждены флаги части клубов; причины указаны в отчёте."
+      ]
+    }
+  ]
+}

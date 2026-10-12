@@ -1,0 +1,746 @@
+{
+  "schema_version": "1.1",
+  "package_id": "sofascore-1",
+  "generated_at": "2026-10-13T00:00:00+00:00",
+  "articles": [
+    {
+      "title": "Шик, Патрик",
+      "base_revid": 1,
+      "subject_scope": "football_statistics",
+      "player": "Патрик Шик",
+      "operations": [
+        {
+          "id": "normalize-statistics-layout",
+          "type": "normalize_statistics_layout",
+          "group_id": "sofascore-reconciliation",
+          "entity": {
+            "name": "Патрик Шик",
+            "wikitext": "{{Футболист}}"
+          },
+          "target": {
+            "structure": "club_table"
+          },
+          "as_of": "2026-10-13",
+          "sources": [
+            {
+              "url": "https://ru.wikipedia.org/wiki/Википедия:Оформление_статей",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-13",
+              "note": "Порядок разделов по заданию владельца; статистические значения не меняются"
+            }
+          ],
+          "payload": {
+            "expected_sha256": "df68d79b4c0504aab91d8a2a380eab729b779a800396ef80ae0594f2ffa3487e"
+          }
+        },
+        {
+          "as_of": "2026-10-13",
+          "group_id": "sofascore-reconciliation",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/280609",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-1",
+          "type": "update_stats",
+          "entity": {
+            "name": "Байер 04",
+            "wikitext": "{{Флаг Германии|20px}} [[Байер 04]]"
+          },
+          "target": {
+            "structure": "career",
+            "field": "клубы",
+            "period": "2020—{{н. в.}}"
+          },
+          "season": null,
+          "competition": {
+            "name": "Чемпионат",
+            "category": "all",
+            "scope": "league"
+          },
+          "expected": {
+            "appearances": 149,
+            "goals": 80
+          },
+          "new": {
+            "appearances": 154,
+            "goals": 85
+          }
+        },
+        {
+          "as_of": "2026-10-13",
+          "group_id": "sofascore-reconciliation",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/280609",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-2",
+          "type": "update_date",
+          "entity": {
+            "name": "Байер 04",
+            "kind": "club",
+            "wikidata_id": "Q104761",
+            "page_title": "Байер 04",
+            "wikitext": "{{Флаг Германии|20px}} [[Байер 04|Байер 04]]"
+          },
+          "target": {
+            "structure": "career",
+            "field": "клубы"
+          },
+          "payload": {
+            "field": "обновление данных о клубе",
+            "expected_value": "16.5.2026",
+            "statistics_as_of": "2026-10-10"
+          }
+        },
+        {
+          "as_of": "2026-10-13",
+          "group_id": "sofascore-reconciliation",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/280609",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-3",
+          "type": "create_statistics_section",
+          "entity": {
+            "name": "КлСтат",
+            "wikitext": "{{КлСтат}}"
+          },
+          "target": {
+            "structure": "club_table"
+          },
+          "payload": {
+            "complete": true,
+            "full_career": false,
+            "allow_unknown": true,
+            "unknown_as_zero": false,
+            "show_career_total": true,
+            "statistics_as_of": "2026-10-10",
+            "categories": [
+              "Чемпионат",
+              "Кубки",
+              "Еврокубки",
+              "Прочие"
+            ],
+            "clubs": [
+              {
+                "entity": {
+                  "name": "Рома",
+                  "kind": "club",
+                  "wikidata_id": "Q2739",
+                  "page_title": "Рома (футбольный клуб)",
+                  "wikitext": "{{Флаг Италии|20px}} [[Рома (футбольный клуб)|Рома]]"
+                },
+                "rows": [
+                  {
+                    "season": "2017/18",
+                    "league_wikitext": "[[Чемпионат Италии по футболу (Серия A)|Серия A]]",
+                    "categories": {
+                      "Чемпионат": {
+                        "appearances": 22,
+                        "goals": 2
+                      },
+                      "Кубки": {
+                        "appearances": 1,
+                        "goals": 1
+                      },
+                      "Еврокубки": {
+                        "appearances": 3,
+                        "goals": 0
+                      },
+                      "Прочие": null
+                    }
+                  },
+                  {
+                    "season": "2018/19",
+                    "league_wikitext": "[[Чемпионат Италии по футболу (Серия A)|Серия A]]",
+                    "categories": {
+                      "Чемпионат": {
+                        "appearances": 24,
+                        "goals": 3
+                      },
+                      "Кубки": {
+                        "appearances": 2,
+                        "goals": 2
+                      },
+                      "Еврокубки": {
+                        "appearances": 6,
+                        "goals": 0
+                      },
+                      "Прочие": null
+                    }
+                  }
+                ]
+              },
+              {
+                "entity": {
+                  "name": "РБ Лейпциг",
+                  "kind": "club",
+                  "wikidata_id": "Q702455",
+                  "page_title": "РБ Лейпциг",
+                  "wikitext": "{{Флаг Германии|20px}} [[РБ Лейпциг|РБ Лейпциг]]"
+                },
+                "rows": [
+                  {
+                    "season": "2019/20",
+                    "league_wikitext": "[[Чемпионат Германии по футболу|Бундеслига]]",
+                    "categories": {
+                      "Чемпионат": {
+                        "appearances": 22,
+                        "goals": 10
+                      },
+                      "Кубки": {
+                        "appearances": 1,
+                        "goals": 0
+                      },
+                      "Еврокубки": {
+                        "appearances": 5,
+                        "goals": 0
+                      },
+                      "Прочие": null
+                    }
+                  }
+                ]
+              },
+              {
+                "entity": {
+                  "name": "Байер 04",
+                  "kind": "club",
+                  "wikidata_id": "Q104761",
+                  "page_title": "Байер 04",
+                  "wikitext": "{{Флаг Германии|20px}} [[Байер 04|Байер 04]]"
+                },
+                "rows": [
+                  {
+                    "season": "2020/21",
+                    "league_wikitext": "[[Чемпионат Германии по футболу|Бундеслига]]",
+                    "categories": {
+                      "Чемпионат": {
+                        "appearances": 29,
+                        "goals": 9
+                      },
+                      "Кубки": {
+                        "appearances": 2,
+                        "goals": 1
+                      },
+                      "Еврокубки": {
+                        "appearances": 5,
+                        "goals": 3
+                      },
+                      "Прочие": null
+                    }
+                  },
+                  {
+                    "season": "2021/22",
+                    "league_wikitext": "[[Чемпионат Германии по футболу|Бундеслига]]",
+                    "categories": {
+                      "Чемпионат": {
+                        "appearances": 27,
+                        "goals": 24
+                      },
+                      "Кубки": {
+                        "appearances": 1,
+                        "goals": 0
+                      },
+                      "Еврокубки": {
+                        "appearances": 3,
+                        "goals": 0
+                      },
+                      "Прочие": null
+                    }
+                  },
+                  {
+                    "season": "2022/23",
+                    "league_wikitext": "[[Чемпионат Германии по футболу|Бундеслига]]",
+                    "categories": {
+                      "Чемпионат": {
+                        "appearances": 14,
+                        "goals": 3
+                      },
+                      "Кубки": {
+                        "appearances": 1,
+                        "goals": 1
+                      },
+                      "Еврокубки": {
+                        "appearances": 8,
+                        "goals": 0
+                      },
+                      "Прочие": null
+                    }
+                  },
+                  {
+                    "season": "2023/24",
+                    "league_wikitext": "[[Чемпионат Германии по футболу|Бундеслига]]",
+                    "categories": {
+                      "Чемпионат": {
+                        "appearances": 20,
+                        "goals": 7
+                      },
+                      "Кубки": {
+                        "appearances": 4,
+                        "goals": 1
+                      },
+                      "Еврокубки": {
+                        "appearances": 9,
+                        "goals": 5
+                      },
+                      "Прочие": null
+                    }
+                  },
+                  {
+                    "season": "2024/25",
+                    "league_wikitext": "[[Чемпионат Германии по футболу|Бундеслига]]",
+                    "categories": {
+                      "Чемпионат": {
+                        "appearances": 31,
+                        "goals": 21
+                      },
+                      "Кубки": {
+                        "appearances": 5,
+                        "goals": 4
+                      },
+                      "Еврокубки": {
+                        "appearances": 8,
+                        "goals": 1
+                      },
+                      "Прочие": {
+                        "appearances": 1,
+                        "goals": 1
+                      }
+                    }
+                  },
+                  {
+                    "season": "2025/26",
+                    "league_wikitext": "[[Чемпионат Германии по футболу|Бундеслига]]",
+                    "categories": {
+                      "Чемпионат": {
+                        "appearances": 28,
+                        "goals": 16
+                      },
+                      "Кубки": {
+                        "appearances": 5,
+                        "goals": 2
+                      },
+                      "Еврокубки": {
+                        "appearances": 9,
+                        "goals": 4
+                      },
+                      "Прочие": null
+                    }
+                  },
+                  {
+                    "season": "2026/27",
+                    "league_wikitext": "[[Чемпионат Германии по футболу|Бундеслига]]",
+                    "categories": {
+                      "Чемпионат": {
+                        "appearances": 5,
+                        "goals": 5
+                      },
+                      "Кубки": {
+                        "appearances": 1,
+                        "goals": 1
+                      },
+                      "Еврокубки": {
+                        "appearances": 1,
+                        "goals": 0
+                      },
+                      "Прочие": null
+                    }
+                  }
+                ]
+              }
+            ],
+            "header_notes": {
+              "Еврокубки": [
+                "[[Лига Европы УЕФА]]",
+                "[[Лига чемпионов УЕФА]]"
+              ],
+              "Кубки": [
+                "[[Кубок Германии по футболу|Кубок Германии]]",
+                "[[Кубок Италии по футболу|Кубок Италии]]"
+              ],
+              "Прочие": [
+                "[[Суперкубок Германии по футболу|Суперкубок Германии]]"
+              ]
+            },
+            "source_url": "https://www.sofascore.com/football/player/patrik-schick/280609"
+          }
+        },
+        {
+          "id": "national-card-date",
+          "type": "update_date",
+          "group_id": "sofascore-reconciliation",
+          "entity": {
+            "name": "Статистика сборных",
+            "wikitext": "{{Флаг Чехии|20px}} [[Сборная Чехии по футболу|Чехия]]",
+            "kind": "national_team",
+            "wikidata_id": "Q483868"
+          },
+          "target": {
+            "structure": "career",
+            "field": "национальная сборная"
+          },
+          "as_of": "2026-10-13",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/match/czechia-malta/IObsoUb#id:7059561",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-06-25"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/azerbaijan-czechia/oUbsRUb#id:6828154",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-06-25"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/czechia-norway/AObsoUb#id:6828171",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-06-25"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/belgium-czechia/oUbsrUb#id:7419807",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-06-25"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/czechia-norway/AObsoUb#id:6828279",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-06-25"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/uruguay-czechia/oUbsAUb#id:7744437",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-06-25"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/china-czechia/oUbsfVb#id:7761237",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-06-25"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/australia-czechia/oUbsQUb#id:7775866",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-06-25"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/nigeria-czechia/oUbsKVb#id:7775854",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-06-25"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/czechia-ukraine/bUbsoUb#id:7697173",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-06-25"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/czechia-slovakia/XTbsoUb#id:7697221",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-06-25"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/czechia-ukraine/bUbsoUb#id:7697266",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-06-25"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/czechia-poland/dUbsoUb#id:8030838",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-06-25"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/czechia-slovakia/XTbsoUb#id:7697250",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-06-25"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/czechia-england/nUbsoUb#id:8078343",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-06-25"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/brazil-czechia/oUbsYUb#id:8153922",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-06-25"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/bulgaria-czechia/oUbsqUb#id:8078460",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-06-25"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/montenegro-czechia/oUbsORc#id:8078485",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-06-25"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/kosovo-czechia/oUbsBNlb#id:8078546",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-06-25"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/montenegro-czechia/oUbsORc#id:8078574",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-06-25"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/czechia-england/nUbsoUb#id:8078637",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-06-25"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/northern-ireland-czechia/oUbsLVb#id:8431178",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-06-25"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/estonia-czechia/oUbsjVb#id:9223748",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-06-25"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/czechia-wales/cUbsoUb#id:9223729",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-06-25"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/czechia-italy/hUbsoUb#id:9531254",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-06-25"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/czechia-albania/PTbsoUb#id:9538744",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-06-25"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/czechia-scotland/VTbsoUb#id:8602458",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-06-25"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/croatia-czechia/oUbspUb#id:8513117",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-06-25"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/czechia-england/nUbsoUb#id:8513134",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-06-25"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/czechia-netherlands/fUbsoUb#id:8594241",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-06-25"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/czechia-denmark/BObsoUb#id:8594151",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-06-25"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/czechia-wales/cUbsoUb#id:9223864",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-06-25"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/belarus-czechia/oUbsTUb#id:9223876",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-06-25"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/czechia-portugal/eUbsoUb#id:10023353",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-06-25"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/czechia-switzerland/ZTbsoUb#id:10023364",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-06-25"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/czechia-norway/AObsoUb#id:12021299",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-06-25"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/armenia-czechia/oUbsPUb#id:12021304",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-06-25"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/north-macedonia-czechia/oUbsCVb#id:12325288",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-06-25"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/czechia-portugal/eUbsoUb#id:11873989",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-06-25"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/georgia-czechia/oUbsnVb#id:12198160",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-06-25"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/georgia-czechia/oUbsnVb#id:12057880",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-06-25"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/czechia-ukraine/bUbsoUb#id:12057875",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-06-25"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/faroe-islands-czechia/oUbskVb#id:13233408",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-06-25"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/gibraltar-czechia/oUbsoKbb#id:13233419",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-06-25"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/montenegro-czechia/oUbsORc#id:13233426",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-06-25"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/croatia-czechia/oUbspUb#id:13233446",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-06-25"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/montenegro-czechia/oUbsORc#id:13233470",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-06-25"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/saudi-arabia-czechia/oUbsJWb#id:14587770",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-06-25"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/san-marino-czechia/oUbsIWb#id:14758120",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-06-25"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/gibraltar-czechia/oUbsoKbb#id:13233684",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-06-25"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/czechia-ireland/TTbsoUb#id:15126912",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-06-25"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/czechia-denmark/BObsoUb#id:15129795",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-06-25"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/guatemala-czechia/oUbsndc#id:16143339",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-06-25"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/south-korea-czechia/oUbsKUb#id:15186720",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-06-25"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/south-africa-czechia/oUbsLUb#id:15186731",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-06-25"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/mexico-czechia/oUbsGVb#id:15186732",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-06-25"
+            }
+          ],
+          "payload": {
+            "field": "обновление данных о сборной",
+            "expected_value": null,
+            "statistics_as_of": "2026-06-25"
+          }
+        }
+      ],
+      "review_warnings": [
+        "Недоступные ячейки новых сезонов показаны нулями по настройке пользователя; итоги рассчитаны по показанным значениям. Пропуски данных перечислены в отчёте.",
+        "Часть статистики сборных не подтверждена полной сверкой матчей. Неподтверждённые показатели сохранены; причины указаны в отчёте."
+      ]
+    }
+  ]
+}

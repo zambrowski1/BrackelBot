@@ -76,3 +76,10 @@ def test_actual_full_orban_scope_formats_72_distinct_games_with_own_score_orient
     assert san_marino['соперник']=='Сан-Марино' and san_marino['счёт']=='3:0'
     assert san_marino['голы']=='0'
     assert any(r['соревнование']=='Финальные матчи ЧЕ-2020' for r in rows)
+
+
+def test_sofascore_nigeria_code_does_not_confuse_it_with_niger():
+    source={**team(),'id':4785,'name':'Nigeria','code':'NIG'}
+    assert NationalTeamIdentity(Wiki()).resolve(source)['name']=='Нигерия'
+    source['name']='Niger'
+    with pytest.raises(UpdateError):NationalTeamIdentity(Wiki()).resolve(source)

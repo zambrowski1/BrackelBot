@@ -3,8 +3,8 @@
 local p = {}
 local months = {'января','февраля','марта','апреля','мая','июня',
     'июля','августа','сентября','октября','ноября','декабря'}
-local fields = {'дата','соперник','счёт','голы','соревнование','источник','пенальти','пропущенные голы'}
-local indexedFields = {'матч','дата','соперник','счёт','голы','соревнование','источник','пенальти','пропущенные голы'}
+local fields = {'дата','соперник','счёт','голы','соревнование','источник','пенальти','пропущенные голы','место','передачи','минуты','примечание'}
+local indexedFields = {'матч','дата','соперник','счёт','голы','соревнование','источник','пенальти','пропущенные голы','место','передачи','минуты','примечание'}
 
 local function trim(value)
     return mw.text.trim(tostring(value or ''))
@@ -2450,7 +2450,7 @@ function p._render(args, frame)
     local last = 0
     local allowed = {['игрок']=true,['сборная']=true,['заголовок']=true,
         ['цвета']=true,['обновлено']=true,['свёрнуто']=true,['источники']=true,
-        ['соревнование']=true,['возраст']=true,['статистика']=true}
+        ['соревнование']=true,['возраст']=true,['статистика']=true,['порядок']=true}
     for key,value in pairs(args) do
         key = tostring(key)
         if trim(value)~='' and not allowed[key] then
@@ -2484,6 +2484,10 @@ function p._render(args, frame)
         end
         title = 'Матчи ' .. args['игрок'] .. ' за ' .. args['сборная']
     end
+    local ordering=trim(args['порядок'])
+    if ordering~='' and ordering~='исходный' and ordering~='хронологический' then fail('неизвестный порядок матчей') end
+    local latest=nil
+    local extraColumns = {}
     local rows, totals, previous = {}, {games=last,goals=0,wins=0,draws=0,losses=0}, nil
     for i=1,last do
         local row = {}
@@ -2512,7 +2516,8 @@ function p._render(args, frame)
         end
         row['соперник']=opponent(row['соперник'],age,frame,opponentCache)
         local iso,display = parseDate(row['дата'])
-        if previous and iso<previous then fail('матчи должны идти по датам') end
+        if ordering~='исходный' and previous and iso<previous then fail('матчи должны идти по датам') end
+        if not latest or iso>latest then latest=iso end
         previous = iso
         row.date, row.iso = display, iso
         local own,other = score(row['счёт'],'счёт'..i)
@@ -2529,6 +2534,11 @@ function p._render(args, frame)
         if own>other then totals.wins=totals.wins+1
         elseif own<other then totals.losses=totals.losses+1
         else totals.draws=totals.draws+1 end
+        for _,field in ipairs({'место','передачи','минуты','примечание'}) do
+            if row[field]~='' then extraColumns[field]=true end
+        end
+        if row['передачи']~='' and number(row['передачи'],'передачи'..i)>own then fail('передач больше голов сборной') end
+        if row['минуты']~='' and number(row['минуты'],'минуты'..i)>130 then fail('неверное число минут') end
         row.goals = goals==0 and '—' or goals
         rows[#rows+1]=row
     end
@@ -2536,7 +2546,7 @@ function p._render(args, frame)
     local prefix = ''
     if updated~='' then
         local iso = parseDate(updated)
-        if iso<previous then fail('дата обновления раньше последнего матча') end
+        if iso<latest then fail('дата обновления раньше последнего матча') end
         prefix = frame:expandTemplate{title='обновлено',args={iso}} .. '\n'
     end
     local collapsed = trim(args['свёрнуто'])
@@ -2546,7 +2556,14 @@ function p._render(args, frame)
     local tab = mw.html.create('table'):addClass('wikitable mw-collapsible')
     if collapsed~='нет' then tab:addClass('mw-collapsed') end
     tab:cssText('text-align:center; font-size:95%; max-width:100%;')
-    local heading = tab:tag('tr'):tag('th'):attr('colspan',6)
+    local columnSpec = {{'index','№'},{'date','Дата'}}
+    if extraColumns['место'] then table.insert(columnSpec,{'место','Место проведения'}) end
+    for _,col in ipairs({{'соперник','Соперник'},{'score','Счёт'},{'goals',metric=='голы' and 'Голы' or 'Пропущенные голы'}}) do table.insert(columnSpec,col) end
+    if extraColumns['передачи'] then table.insert(columnSpec,{'передачи','Передачи'}) end
+    if extraColumns['минуты'] then table.insert(columnSpec,{'минуты','Минуты'}) end
+    table.insert(columnSpec,{'competition','Соревнование'})
+    if extraColumns['примечание'] then table.insert(columnSpec,{'примечание','Примечания'}) end
+    local heading = tab:tag('tr'):tag('th'):attr('colspan',#columnSpec)
     local palette = trim(args['цвета'])
     if palette~='' then
         if palette:find('[|{}<>\n\r]') then fail('неверное название палитры сборной') end
@@ -2554,14 +2571,18 @@ function p._render(args, frame)
     end
     heading:wikitext(title)
     local columns = tab:tag('tr')
-    for _,name in ipairs({'№','Дата','Соперник','Счёт',metric=='голы' and 'Голы' or 'Пропущенные голы','Соревнование'}) do
-        columns:tag('th'):attr('scope','col'):wikitext(name)
+    for _,column in ipairs(columnSpec) do
+        columns:tag('th'):attr('scope','col'):wikitext(column[2])
     end
     for i,row in ipairs(rows) do
-        local tr = tab:tag('tr')
-        for j,value in ipairs({i,row.date,row['соперник'],row.score,row.goals,row['соревнование']..row['источник']}) do
-            local cell = tr:tag('td')
-            if j==4 then cell:cssText('white-space:nowrap;') end
+        row.index=i
+        row.competition=row['соревнование']..row['источник']
+        local tr=tab:tag('tr')
+        for _,column in ipairs(columnSpec) do
+            local cell=tr:tag('td')
+            if column[1]=='score' then cell:cssText('white-space:nowrap;') end
+            local value=row[column[1]]
+            if value==nil or value=='' then value='—' end
             cell:wikitext(tostring(value))
         end
     end

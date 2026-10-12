@@ -45,12 +45,50 @@ class NationalTeamIdentity:
         self.catalogue=catalogue or json.loads(files('wiki_stats').joinpath('national_teams.json').read_text(encoding='utf-8'))
         self.cache={}
 
+    def text_identity(self,text):
+        """Resolve editor links, football flags and plain countries against verified teams."""
+        import mwparserfromhell as mw
+        code=mw.parse(text)
+        for tag in list(code.filter_tags()):
+            if str(tag.tag).strip().casefold()=='ref':code.remove(tag)
+        links=code.filter_wikilinks();templates=code.filter_templates()
+        football=[t for t in templates if str(t.name).strip().casefold()=='футбол']
+        others=[t for t in templates if t not in football and not str(t.name).strip().casefold().startswith('флаг ')]
+        if others or len(links)>1 or len(football)>1 or links and football:
+            raise UpdateError('national_identity_mismatch','Неоднозначная запись соперника в СбМатчи')
+        if links:
+            title=str(links[0].title).strip()
+            if not title.startswith('Сборная ') or 'по футболу' not in title:
+                raise UpdateError('national_identity_mismatch','Ссылка соперника не на футбольную сборную')
+            for verified in self.cache.values():
+                if verified['page_title']==title:return {'title':title,'qid':verified['wikidata_id']}
+            return self.wiki.get_page_identity(title)
+        if football:
+            t=football[0]
+            if not t.has('1') or any(str(p.name).strip().casefold() in {'жен','ж','пол'} and str(p.value).strip() for p in t.params):
+                raise UpdateError('national_identity_mismatch','Не подтверждена категория сборной соперника')
+            name=str(t.get('1').value).strip()
+        else:name=code.strip_code().strip()
+        aliases={k.casefold():v for k,v in self.catalogue['aliases'].items()}
+        names={k.casefold():k for k in self.catalogue['countries']}
+        country=names.get(name.casefold()) or aliases.get(name.casefold())
+        if not country:raise UpdateError('national_identity_mismatch','Неизвестная сборная в записи матча: '+name)
+        verified=self.cache.get(country)
+        if verified is None:
+            ref=self.catalogue['countries'][country]
+            ru=self.wiki.get_page_identity(ref['title']);en=self.wiki.get_foreign_page_identity(ref['english_title'],'en')
+            if not valid_qid(ru.get('qid')) or ru.get('qid')!=en.get('qid'):
+                raise UpdateError('national_identity_mismatch','Не совпали статьи сборной соперника')
+            verified={'page_title':ru['title'],'wikidata_id':ru['qid']}
+        return {'title':verified['page_title'],'qid':verified['wikidata_id']}
+
     def country_name(self,team):
         if (type(team.get('id')) is not int or team['id']<=0 or team.get('is_national') is not True
                 or team.get('gender')!='M' or (team.get('sport') or {}).get('slug')!='football'):
             raise UpdateError('national_identity_mismatch','Не подтверждена мужская футбольная сборная')
         name=self.catalogue['aliases'].get(team.get('name'))
-        code_name=self.catalogue['aliases'].get(team.get('code'))
+        # Sofascore uses NIG for Nigeria; the generic catalogue uses it for Niger.
+        code_name={'NIG':'Нигерия'}.get(team.get('code')) or self.catalogue['aliases'].get(team.get('code'))
         if not name or code_name and code_name!=name:
             raise UpdateError('national_identity_mismatch','Название и код сборной не подтверждены')
         return name

@@ -12,8 +12,21 @@ COMPETITIONS={1:'EURO',16:'FIFA World Cup',11:'World Cup Qual. UEFA',
 def competition_label(row):
     tournament=row.get('tournament') or {}
     tid=tournament.get('id')
-    if type(tid) is not int or COMPETITIONS.get(tid)!=tournament.get('name'):
-        raise UpdateError('national_competition_unproven','Не подтверждено название соревнования')
+    if type(tid) is not int or tid<=0:
+        raise UpdateError('national_competition_unproven','Не подтверждено соревнование')
+    name=tournament.get('name')
+    if tid not in COMPETITIONS:
+        if name in COMPETITIONS.values():
+            raise UpdateError('national_competition_unproven','Известное название получено с другим ID')
+        # Use the provider's explicit name; never invent a Russian article.
+        if not isinstance(name,str) or not name.strip() or len(name)>150 or any(c in name for c in '|{}<>[]\r\n'):
+            raise UpdateError('national_competition_unproven','Нет безопасного имени соревнования')
+        year=str((row.get('season') or {}).get('year',''))
+        if not re.fullmatch(r'(?:19|20)\d{2}(?:/(?:\d{2}|(?:19|20)\d{2}))?',year):
+            raise UpdateError('national_competition_unproven','Не подтверждён сезон соревнования')
+        return name.strip()+' — '+year
+    if COMPETITIONS[tid]!=name:
+        raise UpdateError('national_competition_unproven','Название не совпало с известным ID соревнования')
     label=str((row.get('season') or {}).get('year',''))
     if tid==851:return 'Товарищеский матч'
     if tid==10783:
@@ -23,7 +36,7 @@ def competition_label(row):
         first+=2000 if first<100 else 0;last+=2000 if last<100 else 0
         if first<2018 or last!=first+1:raise UpdateError('national_competition_unproven','Неверный сезон Лиги наций')
         return f'Лига наций УЕФА {first}/{last}'
-    if not re.fullmatch(r'20\d{2}',label):
+    if not re.fullmatch(r'(?:19|20)\d{2}',label):
         raise UpdateError('national_competition_unproven','Не подтверждён год турнира')
     year=int(label)
     if tid in (1,27):

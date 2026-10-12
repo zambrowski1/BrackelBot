@@ -8,9 +8,10 @@ from .models import Patch
 from .change_validator import apply_patches
 from .wikitext_parser import WikitextParser
 
+EXTRAS = ('место','передачи','минуты','примечание')
 FIELDS = ('дата', 'соперник', 'счёт', 'голы', 'соревнование')
-INDEXED = (*FIELDS, 'матч', 'источник', 'пенальти', 'пропущенные голы')
-GENERAL = {'игрок', 'сборная', 'заголовок', 'цвета', 'обновлено', 'свёрнуто', 'источники', 'соревнование', 'возраст', 'статистика'}
+INDEXED = (*FIELDS, 'матч', 'источник', 'пенальти', 'пропущенные голы', *EXTRAS)
+GENERAL = {'игрок', 'сборная', 'заголовок', 'цвета', 'обновлено', 'свёрнуто', 'источники', 'соревнование', 'возраст', 'статистика', 'порядок'}
 
 
 def match_date(value):
@@ -41,6 +42,10 @@ def validate_row(row, metric='голы'):
     own, other = map(int, score.groups())
     if max(own, other, int(raw)) > 1000 or int(raw) > (own if metric == 'голы' else other):
         raise UpdateError('invalid_match', 'Значение статистики больше счёта сборной или число слишком велико')
+    for extra,limit in [('передачи',own),('минуты',130)]:
+        value=row.get(extra,'').strip()
+        if value and (not re.fullmatch(r'[0-9]+',value) or int(value)>limit):
+            raise UpdateError('invalid_match','Неверное значение '+extra)
     penalties = row.get('пенальти', '')
     if penalties:
         pair = re.fullmatch(r'([0-9]+)\s*:\s*([0-9]+)', penalties)
@@ -60,7 +65,8 @@ def metric_field(values):
 
 def normalized_row(row, metric):
     return {**{f: row.get(f, '') for f in ('дата', 'соперник', 'счёт', metric, 'соревнование')},
-            'пенальти': row.get('пенальти', '')}
+            'пенальти': row.get('пенальти', ''),
+            **{key:row[key] for key in EXTRAS if row.get(key,'').strip()}}
 
 
 def read_matches(template):
@@ -71,15 +77,17 @@ def read_matches(template):
     for key, value in values.items():
         if not value.text.strip() or key in GENERAL:
             continue
-        found = re.fullmatch(r'(матч|дата|соперник|счёт|голы|соревнование|источник|пенальти|пропущенные голы)([1-9][0-9]*)', key)
+        found = re.fullmatch(r'(матч|дата|соперник|счёт|голы|соревнование|источник|пенальти|пропущенные голы|место|передачи|минуты|примечание)([1-9][0-9]*)', key)
         if not found or int(found[2]) > 500:
             raise UpdateError('unsupported_structure', 'Неизвестный параметр СбМатчи: ' + key)
         indices.add(int(found[2]))
     if not indices or indices != set(range(1, max(indices) + 1)):
         raise UpdateError('unsupported_structure', 'Пропущены номера матчей СбМатчи')
-    rows, previous = [], None
+    ordering=values.get('порядок').text.strip() if values.get('порядок') else ''
+    if ordering not in {'','исходный','хронологический'}:raise UpdateError('unsupported_structure','Неизвестный порядок матчей')
+    rows, previous, latest = [], None, None
     for index in sorted(indices):
-        row = {f: values[f + str(index)].text.strip() if f + str(index) in values else '' for f in (*fields, 'пенальти', 'голы', 'пропущенные голы')}
+        row = {f: values[f + str(index)].text.strip() if f + str(index) in values else '' for f in (*fields, 'пенальти', 'голы', 'пропущенные голы', *EXTRAS)}
         compact = values.get('матч' + str(index))
         if compact and compact.text.strip():
             if any(row[f] for f in (*fields, 'голы', 'пропущенные голы')):
@@ -90,11 +98,12 @@ def read_matches(template):
             row.update(dict(zip(fields, parts)))
         row['соревнование'] = row['соревнование'] or (values['соревнование'].text.strip() if 'соревнование' in values else '')
         day = validate_row(row, metric)
-        if previous and day < previous:
+        if ordering!='исходный' and previous and day < previous:
             raise UpdateError('invalid_match', 'Матчи должны идти по датам')
         previous = day
+        latest=max(latest,day) if latest else day
         rows.append(normalized_row(row, metric))
-    if 'обновлено' in values and values['обновлено'].text.strip() and match_date(values['обновлено'].text.strip()) < previous:
+    if 'обновлено' in values and values['обновлено'].text.strip() and match_date(values['обновлено'].text.strip()) < latest:
         raise UpdateError('invalid_match', 'Дата обновления раньше последнего матча')
     return values, rows
 
@@ -120,7 +129,10 @@ def execute_match(text, player, op):
     metric = metric_field(values)
     fields = ('дата', 'соперник', 'счёт', metric, 'соревнование')
     index = target['match_index']
-    new = op['payload']['match']
+    new = dict(op['payload']['match'])
+    if op['type']!='add_sbmatch' and index<=len(rows):
+        for field in EXTRAS:
+            if field not in new and field in rows[index-1]:new[field]=rows[index-1][field]
     day = validate_row(new, metric)
     if day > date.fromisoformat(op['as_of']):
         raise UpdateError('source_coverage_mismatch', 'Матч позже даты охвата источника')
@@ -144,7 +156,7 @@ def execute_match(text, player, op):
             raise UpdateError('old_value_mismatch', 'Исходный матч не совпал')
     staged = rows + [desired] if adding else [desired if n == index - 1 else r for n, r in enumerate(rows)]
     dates = [validate_row(r, metric) for r in staged]
-    if dates != sorted(dates):
+    if dates != sorted(dates) and not (values.get('порядок') and values['порядок'].text.strip()=='исходный'):
         raise UpdateError('invalid_match', 'Изменение нарушает порядок дат')
     if adding and any(match_date(r['дата']) == day and r['соперник'] == new['соперник'] for r in rows):
         raise UpdateError('duplicate_match', 'Матч с этой датой и соперником уже есть')
@@ -168,6 +180,8 @@ def execute_match(text, player, op):
             replace(f + str(index), new.get(f, ''))
     if new.get('пенальти') or not adding and 'пенальти' + str(index) in values:
         replace('пенальти' + str(index), new.get('пенальти', ''))
+    for field in EXTRAS:
+        if field in new:replace(field+str(index),new[field])
     if adding:
         replace('источник' + str(index), '[' + op['sources'][0]['url'] + ']')
     if 'обновлено' in values:

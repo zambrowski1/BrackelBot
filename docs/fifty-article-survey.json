@@ -1,0 +1,502 @@
+[
+  {
+    "title": "Пеле",
+    "revid": 154768147,
+    "source": "https://ru.wikipedia.org/w/index.php?oldid=154768147",
+    "has_klstat": false,
+    "has_sbmatches": false,
+    "recognized_formats": {},
+    "migration_status": "Нужно подтвердить имя: в карточке нет параметра «имя»"
+  },
+  {
+    "title": "Зидан, Зинедин",
+    "revid": 155510932,
+    "source": "https://ru.wikipedia.org/w/index.php?oldid=155510932",
+    "has_klstat": false,
+    "has_sbmatches": false,
+    "recognized_formats": {
+      "match_list": 1
+    },
+    "migration_status": "Старый итог не совпал со строками таблицы"
+  },
+  {
+    "title": "Платини, Мишель",
+    "revid": 154895615,
+    "source": "https://ru.wikipedia.org/w/index.php?oldid=154895615",
+    "has_klstat": false,
+    "has_sbmatches": false,
+    "recognized_formats": {},
+    "migration_status": "Нет распознаваемого старого списка матчей"
+  },
+  {
+    "title": "Беккенбауэр, Франц",
+    "revid": 155266487,
+    "source": "https://ru.wikipedia.org/w/index.php?oldid=155266487",
+    "has_klstat": false,
+    "has_sbmatches": false,
+    "recognized_formats": {},
+    "migration_status": "Нет распознаваемого старого списка матчей"
+  },
+  {
+    "title": "Марадона, Диего",
+    "revid": 155359100,
+    "source": "https://ru.wikipedia.org/w/index.php?oldid=155359100",
+    "has_klstat": true,
+    "has_sbmatches": false,
+    "recognized_formats": {},
+    "migration_status": "Нет распознаваемого старого списка матчей"
+  },
+  {
+    "title": "Роналдо",
+    "revid": 155241023,
+    "source": "https://ru.wikipedia.org/w/index.php?oldid=155241023",
+    "has_klstat": false,
+    "has_sbmatches": false,
+    "recognized_formats": {},
+    "migration_status": "Нет распознаваемого старого списка матчей"
+  },
+  {
+    "title": "Кройф, Йохан",
+    "revid": 154899231,
+    "source": "https://ru.wikipedia.org/w/index.php?oldid=154899231",
+    "has_klstat": false,
+    "has_sbmatches": false,
+    "recognized_formats": {},
+    "migration_status": "Нет распознаваемого старого списка матчей"
+  },
+  {
+    "title": "Месси, Лионель",
+    "revid": 155548852,
+    "source": "https://ru.wikipedia.org/w/index.php?oldid=155548852",
+    "has_klstat": false,
+    "has_sbmatches": false,
+    "recognized_formats": {},
+    "migration_status": "Нет распознаваемого старого списка матчей"
+  },
+  {
+    "title": "Мюллер, Герд",
+    "revid": 154902595,
+    "source": "https://ru.wikipedia.org/w/index.php?oldid=154902595",
+    "has_klstat": false,
+    "has_sbmatches": false,
+    "recognized_formats": {},
+    "migration_status": "Нет распознаваемого старого списка матчей"
+  },
+  {
+    "title": "Это’о, Самюэль",
+    "revid": 155510685,
+    "source": "https://ru.wikipedia.org/w/index.php?oldid=155510685",
+    "has_klstat": true,
+    "has_sbmatches": false,
+    "recognized_formats": {
+      "match_list": 1
+    },
+    "migration_status": "Повторный матч в старой таблице"
+  },
+  {
+    "title": "Роналдиньо",
+    "revid": 155504299,
+    "source": "https://ru.wikipedia.org/w/index.php?oldid=155504299",
+    "has_klstat": true,
+    "has_sbmatches": false,
+    "recognized_formats": {
+      "match_list": 2
+    },
+    "migration_status": "Есть другая возможная статистика сборной; перенос отменён"
+  },
+  {
+    "title": "Дрогба, Дидье",
+    "revid": 154599052,
+    "source": "https://ru.wikipedia.org/w/index.php?oldid=154599052",
+    "has_klstat": false,
+    "has_sbmatches": false,
+    "recognized_formats": {
+      "match_list": 1
+    },
+    "migration_status": "Минуты голов требуют отдельного сохранения"
+  },
+  {
+    "title": "Неймар",
+    "revid": 155467771,
+    "source": "https://ru.wikipedia.org/w/index.php?oldid=155467771",
+    "has_klstat": false,
+    "has_sbmatches": false,
+    "recognized_formats": {
+      "match_list": 3
+    },
+    "migration_status": "Нужна единственная распознаваемая таблица сборной"
+  },
+  {
+    "title": "Левандовский, Роберт",
+    "revid": 155416541,
+    "source": "https://ru.wikipedia.org/w/index.php?oldid=155416541",
+    "has_klstat": true,
+    "has_sbmatches": false,
+    "recognized_formats": {
+      "match_list": 1
+    },
+    "migration_status": "Нужно подтвердить имя: в карточке нет параметра «имя»"
+  },
+  {
+    "title": "Мане, Садио",
+    "revid": 153899538,
+    "source": "https://ru.wikipedia.org/w/index.php?oldid=153899538",
+    "has_klstat": true,
+    "has_sbmatches": false,
+    "recognized_formats": {},
+    "migration_status": "Нужно подтвердить имя: в карточке нет параметра «имя»"
+  },
+  {
+    "title": "Кейн, Гарри",
+    "revid": 155469337,
+    "source": "https://ru.wikipedia.org/w/index.php?oldid=155469337",
+    "has_klstat": false,
+    "has_sbmatches": false,
+    "recognized_formats": {
+      "match_list": 1
+    },
+    "migration_status": "Старый итог не совпал со строками таблицы"
+  },
+  {
+    "title": "Мбаппе, Килиан",
+    "revid": 155540118,
+    "source": "https://ru.wikipedia.org/w/index.php?oldid=155540118",
+    "has_klstat": true,
+    "has_sbmatches": false,
+    "recognized_formats": {
+      "match_list": 1
+    },
+    "migration_status": "Неверная серия пенальти"
+  },
+  {
+    "title": "Холанн, Эрлинг",
+    "revid": 155439772,
+    "source": "https://ru.wikipedia.org/w/index.php?oldid=155439772",
+    "has_klstat": true,
+    "has_sbmatches": false,
+    "recognized_formats": {
+      "match_list": 2
+    },
+    "migration_status": "Нужна единственная распознаваемая таблица сборной"
+  },
+  {
+    "title": "Хонда, Кэйсукэ",
+    "revid": 155199757,
+    "source": "https://ru.wikipedia.org/w/index.php?oldid=155199757",
+    "has_klstat": true,
+    "has_sbmatches": false,
+    "recognized_formats": {
+      "match_list": 1
+    },
+    "migration_status": "Старый итог не совпал со строками таблицы"
+  },
+  {
+    "title": "Кагава, Синдзи",
+    "revid": 151413383,
+    "source": "https://ru.wikipedia.org/w/index.php?oldid=151413383",
+    "has_klstat": false,
+    "has_sbmatches": false,
+    "recognized_formats": {},
+    "migration_status": "Нет распознаваемого старого списка матчей"
+  },
+  {
+    "title": "Сон Хын Мин",
+    "revid": 155504413,
+    "source": "https://ru.wikipedia.org/w/index.php?oldid=155504413",
+    "has_klstat": true,
+    "has_sbmatches": false,
+    "recognized_formats": {
+      "match_list": 1
+    },
+    "migration_status": "Старый итог не совпал со строками таблицы"
+  },
+  {
+    "title": "Яшин, Лев Иванович",
+    "revid": 155373543,
+    "source": "https://ru.wikipedia.org/w/index.php?oldid=155373543",
+    "has_klstat": false,
+    "has_sbmatches": false,
+    "recognized_formats": {
+      "match_list": 1
+    },
+    "migration_status": "Не подтверждён заголовок списка матчей"
+  },
+  {
+    "title": "Буффон, Джанлуиджи",
+    "revid": 154911653,
+    "source": "https://ru.wikipedia.org/w/index.php?oldid=154911653",
+    "has_klstat": false,
+    "has_sbmatches": false,
+    "recognized_formats": {},
+    "migration_status": "Нет распознаваемого старого списка матчей"
+  },
+  {
+    "title": "Акинфеев, Игорь Владимирович",
+    "revid": 155467828,
+    "source": "https://ru.wikipedia.org/w/index.php?oldid=155467828",
+    "has_klstat": false,
+    "has_sbmatches": false,
+    "recognized_formats": {
+      "match_list": 1
+    },
+    "migration_status": "Пропущены или повторены номера матчей"
+  },
+  {
+    "title": "Чех, Петр",
+    "revid": 154281413,
+    "source": "https://ru.wikipedia.org/w/index.php?oldid=154281413",
+    "has_klstat": true,
+    "has_sbmatches": false,
+    "recognized_formats": {
+      "match_list": 1
+    },
+    "migration_status": "Нужно подтвердить имя: в карточке нет параметра «имя»"
+  },
+  {
+    "title": "Нойер, Мануэль",
+    "revid": 155568353,
+    "source": "https://ru.wikipedia.org/w/index.php?oldid=155568353",
+    "has_klstat": false,
+    "has_sbmatches": false,
+    "recognized_formats": {
+      "match_list": 1
+    },
+    "migration_status": "Старый итог не совпал со строками таблицы"
+  },
+  {
+    "title": "Тер Стеген, Марк-Андре",
+    "revid": 155376783,
+    "source": "https://ru.wikipedia.org/w/index.php?oldid=155376783",
+    "has_klstat": false,
+    "has_sbmatches": false,
+    "recognized_formats": {
+      "match_list": 1
+    },
+    "migration_status": "Неверный счёт или пропущенные голы"
+  },
+  {
+    "title": "Куртуа, Тибо",
+    "revid": 155441263,
+    "source": "https://ru.wikipedia.org/w/index.php?oldid=155441263",
+    "has_klstat": true,
+    "has_sbmatches": false,
+    "recognized_formats": {
+      "match_list": 1
+    },
+    "migration_status": "Нужно подтвердить имя: в карточке нет параметра «имя»"
+  },
+  {
+    "title": "Облак, Ян",
+    "revid": 154560224,
+    "source": "https://ru.wikipedia.org/w/index.php?oldid=154560224",
+    "has_klstat": true,
+    "has_sbmatches": false,
+    "recognized_formats": {},
+    "migration_status": "Нет распознаваемого старого списка матчей"
+  },
+  {
+    "title": "Касильяс, Икер",
+    "revid": 154522942,
+    "source": "https://ru.wikipedia.org/w/index.php?oldid=154522942",
+    "has_klstat": false,
+    "has_sbmatches": false,
+    "recognized_formats": {},
+    "migration_status": "Нужно подтвердить имя: в карточке нет параметра «имя»"
+  },
+  {
+    "title": "Гинтер, Маттиас",
+    "revid": 155416790,
+    "source": "https://ru.wikipedia.org/w/index.php?oldid=155416790",
+    "has_klstat": false,
+    "has_sbmatches": false,
+    "recognized_formats": {},
+    "migration_status": "Этот формат таблицы требует ручного переноса"
+  },
+  {
+    "title": "Крамарич, Андрей",
+    "revid": 153171993,
+    "source": "https://ru.wikipedia.org/w/index.php?oldid=153171993",
+    "has_klstat": true,
+    "has_sbmatches": false,
+    "recognized_formats": {},
+    "migration_status": "Нет распознаваемого старого списка матчей"
+  },
+  {
+    "title": "Бауман, Оливер",
+    "revid": 155358685,
+    "source": "https://ru.wikipedia.org/w/index.php?oldid=155358685",
+    "has_klstat": true,
+    "has_sbmatches": false,
+    "recognized_formats": {},
+    "migration_status": "Нет распознаваемого старого списка матчей"
+  },
+  {
+    "title": "Пулишич, Кристиан",
+    "revid": 154434937,
+    "source": "https://ru.wikipedia.org/w/index.php?oldid=154434937",
+    "has_klstat": true,
+    "has_sbmatches": false,
+    "recognized_formats": {},
+    "migration_status": "Нет распознаваемого старого списка матчей"
+  },
+  {
+    "title": "Шик, Патрик",
+    "revid": 155437529,
+    "source": "https://ru.wikipedia.org/w/index.php?oldid=155437529",
+    "has_klstat": false,
+    "has_sbmatches": false,
+    "recognized_formats": {
+      "match_list": 1
+    },
+    "migration_status": "Перенос проверен: 50 матчей"
+  },
+  {
+    "title": "Орбан, Вилли",
+    "revid": 154997743,
+    "source": "https://ru.wikipedia.org/w/index.php?oldid=154997743",
+    "has_klstat": false,
+    "has_sbmatches": false,
+    "recognized_formats": {
+      "annual_summary": 1
+    },
+    "migration_status": "Нет распознаваемого старого списка матчей"
+  },
+  {
+    "title": "Грифо, Винченцо",
+    "revid": 148499429,
+    "source": "https://ru.wikipedia.org/w/index.php?oldid=148499429",
+    "has_klstat": false,
+    "has_sbmatches": false,
+    "recognized_formats": {
+      "match_list": 1
+    },
+    "migration_status": "Нужно подтвердить имя: в карточке нет параметра «имя»"
+  },
+  {
+    "title": "Рейна, Джованни",
+    "revid": 155054860,
+    "source": "https://ru.wikipedia.org/w/index.php?oldid=155054860",
+    "has_klstat": false,
+    "has_sbmatches": false,
+    "recognized_formats": {},
+    "migration_status": "Нет распознаваемого старого списка матчей"
+  },
+  {
+    "title": "Центнер, Робин",
+    "revid": 150050997,
+    "source": "https://ru.wikipedia.org/w/index.php?oldid=150050997",
+    "has_klstat": true,
+    "has_sbmatches": false,
+    "recognized_formats": {},
+    "migration_status": "Нет распознаваемого старого списка матчей"
+  },
+  {
+    "title": "Браккельман, Кальвин",
+    "revid": 155497901,
+    "source": "https://ru.wikipedia.org/w/index.php?oldid=155497901",
+    "has_klstat": true,
+    "has_sbmatches": false,
+    "recognized_formats": {
+      "match_list": 2
+    },
+    "migration_status": "Нужна единственная распознаваемая таблица сборной"
+  },
+  {
+    "title": "Донован, Лэндон",
+    "revid": 155517131,
+    "source": "https://ru.wikipedia.org/w/index.php?oldid=155517131",
+    "has_klstat": false,
+    "has_sbmatches": false,
+    "recognized_formats": {
+      "match_list": 1
+    },
+    "migration_status": "Старый итог не совпал со строками таблицы"
+  },
+  {
+    "title": "Марта (футболистка)",
+    "revid": 154922939,
+    "source": "https://ru.wikipedia.org/w/index.php?oldid=154922939",
+    "has_klstat": false,
+    "has_sbmatches": false,
+    "recognized_formats": {},
+    "migration_status": "Нет распознаваемого старого списка матчей"
+  },
+  {
+    "title": "Демпси, Клинт",
+    "revid": 150689717,
+    "source": "https://ru.wikipedia.org/w/index.php?oldid=150689717",
+    "has_klstat": true,
+    "has_sbmatches": false,
+    "recognized_formats": {
+      "match_list": 1
+    },
+    "migration_status": "Есть другая возможная статистика сборной; перенос отменён"
+  },
+  {
+    "title": "Рапино, Меган",
+    "revid": 154598294,
+    "source": "https://ru.wikipedia.org/w/index.php?oldid=154598294",
+    "has_klstat": true,
+    "has_sbmatches": false,
+    "recognized_formats": {
+      "match_list": 1
+    },
+    "migration_status": "Нужен явный заголовок таблицы с именем сборной"
+  },
+  {
+    "title": "Принц, Биргит",
+    "revid": 152471452,
+    "source": "https://ru.wikipedia.org/w/index.php?oldid=152471452",
+    "has_klstat": false,
+    "has_sbmatches": false,
+    "recognized_formats": {},
+    "migration_status": "Нет распознаваемого старого списка матчей"
+  },
+  {
+    "title": "Сава, Хомарэ",
+    "revid": 152471462,
+    "source": "https://ru.wikipedia.org/w/index.php?oldid=152471462",
+    "has_klstat": false,
+    "has_sbmatches": false,
+    "recognized_formats": {},
+    "migration_status": "Нет распознаваемого старого списка матчей"
+  },
+  {
+    "title": "Мияма, Ая",
+    "revid": 149922950,
+    "source": "https://ru.wikipedia.org/w/index.php?oldid=149922950",
+    "has_klstat": false,
+    "has_sbmatches": false,
+    "recognized_formats": {},
+    "migration_status": "Нет распознаваемого старого списка матчей"
+  },
+  {
+    "title": "Силва, Тиагу",
+    "revid": 150971534,
+    "source": "https://ru.wikipedia.org/w/index.php?oldid=150971534",
+    "has_klstat": false,
+    "has_sbmatches": false,
+    "recognized_formats": {},
+    "migration_status": "Нужно подтвердить имя: в карточке нет параметра «имя»"
+  },
+  {
+    "title": "Морган, Алекс",
+    "revid": 154560936,
+    "source": "https://ru.wikipedia.org/w/index.php?oldid=154560936",
+    "has_klstat": false,
+    "has_sbmatches": false,
+    "recognized_formats": {
+      "goals_list": 1
+    },
+    "migration_status": "Нет распознаваемого старого списка матчей"
+  },
+  {
+    "title": "Путельяс, Алексия",
+    "revid": 155532252,
+    "source": "https://ru.wikipedia.org/w/index.php?oldid=155532252",
+    "has_klstat": false,
+    "has_sbmatches": false,
+    "recognized_formats": {},
+    "migration_status": "Нужно подтвердить имя: в карточке нет параметра «имя»"
+  }
+]

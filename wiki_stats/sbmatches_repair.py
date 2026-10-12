@@ -5,7 +5,7 @@ from datetime import date
 import mwparserfromhell as mw
 from .errors import UpdateError
 from .wikitext_parser import WikitextParser
-from .sbmatches_editor import GENERAL, read_matches, metric_field, validate_row
+from .sbmatches_editor import GENERAL, EXTRAS, read_matches, metric_field, validate_row
 
 
 def repair(text,player,op):
@@ -29,7 +29,7 @@ def repair(text,player,op):
             raise UpdateError('source_scope_mismatch','Полный список должен совпасть с подтверждённым числом выступлений')
     if len(op['sources'])!=len(payload['matches']):raise UpdateError('source_scope_mismatch','Каждому матчу нужен отдельный источник')
     for key in values:
-        if key not in GENERAL and not re.fullmatch(r'(матч|дата|соперник|счёт|голы|соревнование|источник|пенальти|пропущенные голы)[1-9][0-9]*',key):raise UpdateError('unsupported_structure','Неизвестный параметр СбМатчи: '+key)
+        if key not in GENERAL and not re.fullmatch(r'(матч|дата|соперник|счёт|голы|соревнование|источник|пенальти|пропущенные голы|место|передачи|минуты|примечание)[1-9][0-9]*',key):raise UpdateError('unsupported_structure','Неизвестный параметр СбМатчи: '+key)
     nl='\r\n' if '\r\n' in str(t.node) else '\n';lines=['{{СбМатчи']
     for key,value in values.items():
         if key in GENERAL and key not in {'заголовок','обновлено'}:lines.append('|'+key+'='+value.text.strip())
@@ -44,6 +44,8 @@ def repair(text,player,op):
         source=op['sources'][i-1]['url']
         if any(c in source for c in '|{}<>[]\r\n'):raise UpdateError('invalid_input','Недопустимый URL источника')
         lines.extend(['|матч'+str(i)+'='+' ;; '.join(row.get(f,'') for f in ('дата','соперник','счёт',metric,'соревнование')),'|источник'+str(i)+'=['+source+']'])
+        for field in EXTRAS:
+            if row.get(field):lines.append('|'+field+str(i)+'='+row[field])
         if row.get('пенальти'):lines.append('|пенальти'+str(i)+'='+row['пенальти'])
     if days!=sorted(days):raise UpdateError('invalid_match','Нарушен порядок дат')
     if complete:

@@ -166,3 +166,23 @@ def test_empty_goal_payload_allowed_and_preserved(value):
     result = plan(pkg)
     assert result.changes[0].status in ('ready', 'already_applied')
     assert plan(pkg, result.preview).changes[0].status == 'already_applied'
+
+
+def test_point_update_preserves_unspecified_extras_and_replays():
+    raw=text().replace('|источник1=','|место1=[[Прага]]\n|примечание1=Сохранить\n|источник1=')
+    pkg=package();pkg['articles'][0]['operations'][0]['payload']['expected_match'].update(место='[[Прага]]',примечание='Сохранить')
+    result=plan(pkg,raw)
+    assert result.changes[0].status=='ready'
+    assert '|место1=[[Прага]]' in result.preview and '|примечание1=Сохранить' in result.preview
+    assert plan(pkg,result.preview).changes[0].status=='already_applied'
+
+
+def test_point_update_and_add_write_explicit_extras():
+    pkg=package();pkg['articles'][0]['operations'][0]['payload']['match']['место']='[[Прага]]'
+    result=plan(pkg)
+    assert result.changes[0].status=='ready' and '|место1=[[Прага]]' in result.preview
+    assert plan(pkg,result.preview).changes[0].status=='already_applied'
+    pkg=package('add_sbmatch');pkg['articles'][0]['operations'][0]['payload']['match']['минуты']='90'
+    result=plan(pkg)
+    assert result.changes[0].status=='ready' and '|минуты2=90' in result.preview
+    assert plan(pkg,result.preview).changes[0].status=='already_applied'

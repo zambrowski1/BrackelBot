@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: MIT
-"""Replace an explicitly fictional sandbox fixture with a verified historical sample."""
+"""Prepare complete national-list reconciliation and explicit sandbox samples."""
 from datetime import datetime,timezone
 import hashlib
 import re
@@ -19,7 +19,6 @@ def full_repair(snapshot,mapping,scope,wiki,*,goalkeeper=False):
         return None
     from .national_team_identity import NationalTeamIdentity
     from .national_match_format import format_scope
-    from .entity_resolver import reference_identity
     resolver=NationalTeamIdentity(wiki)
     own=resolver.resolve(scope['team'])
     selected=[]
@@ -27,7 +26,7 @@ def full_repair(snapshot,mapping,scope,wiki,*,goalkeeper=False):
         if template.name!='сбматчи':continue
         values=template.values();team=values.get('сборная');age=values.get('возраст')
         if not team or age and age.text.strip():continue
-        if reference_identity(wiki,team.text.strip()).get('qid')==own['wikidata_id']:
+        if resolver.text_identity(team.text.strip()).get('qid')==own['wikidata_id']:
             selected.append((template,team.text.strip()))
     if len(selected)!=1:return None
     template,team_text=selected[0]
@@ -38,13 +37,53 @@ def full_repair(snapshot,mapping,scope,wiki,*,goalkeeper=False):
                         for side in ('home_team','away_team')])
     rows,sources=format_scope(scope,resolver.resolve,goalkeeper=goalkeeper)
     if not rows:return None
-    return {'id':'repair-full-sbmatches','type':'repair_sbmatches','group_id':'full-national-scope',
+    from .sbmatches_reconcile import compose,sha,external_marker
+    values,existing=read_matches(template)
+    by_key={}
+    from .sbmatches_editor import match_date
+    for index,row in enumerate(existing,1):
+        key=(match_date(row['дата']),resolver.text_identity(row['соперник'])['qid'])
+        if key in by_key:raise UpdateError('duplicate_match','Повторный старый матч СбМатчи')
+        by_key[key]=index
+    old_indices=[]
+    for verified,row in zip(scope['matches'],rows):
+        game=verified['match']
+        opponent=game['away_team' if game['home_team']['id']==scope['team']['id'] else 'home_team']
+        key=(match_date(row['дата']),resolver.resolve(opponent)['wikidata_id'])
+        old_indices.append(by_key.get(key,0))
+    if set(i for i in old_indices if i)!=set(by_key.values()):
+        raise UpdateError('national_existing_match_unmatched','API не сопоставил все старые матчи; таблица сохранена')
+    marker=external_marker(snapshot.text,template)
+    metric=metric_field(values)
+    # A replay must not rewrite compact rows merely to switch their format.
+    # Compare the fields that this operation can change, including provenance
+    # and the date, before constructing a replacement template.
+    date_field=marker.values().get('1') if marker else values.get('обновлено')
+    date_current=bool(date_field and date_field.text.strip() and
+                      match_date(date_field.text.strip()).isoformat()>=scope['statistics_as_of'])
+    if date_current and old_indices==list(range(1,len(existing)+1)):
+        unchanged=True
+        for i,(old,new,source) in enumerate(zip(existing,rows,sources),1):
+            citation=values.get('источник'+str(i))
+            if (old['счёт']!=new['счёт'] or old[metric]!=new[metric]
+                    or new.get('пенальти') and new['пенальти']!=old.get('пенальти')
+                    or not citation or source['url'] not in citation.text):
+                unchanged=False;break
+        if unchanged:return None
+    payload={'expected_template_sha256':sha(str(template.node)),
+             'replacement_sha256':'0'*64,'complete':True,'totals':scope['numbers'],
+             'matches':rows,'old_indices':old_indices}
+    if marker:payload['external_updated_sha256']=sha(str(marker.node))
+    operation={'id':'reconcile-full-sbmatches','type':'reconcile_sbmatches','group_id':'full-national-scope',
         'entity':{'name':own['name'],'kind':'national_team','age':None,'wikidata_id':own['wikidata_id'],
                   'page_title':own['page_title'],'wikitext':team_text},
         'target':{'structure':'sbmatches','age':None},'as_of':scope['statistics_as_of'],
-        'sources':sources,'payload':{'expected_template_sha256':hashlib.sha256(str(template.node).encode()).hexdigest(),
-            'label':mapping['wiki_name']+': матчи за сборную '+own['gen'],
-            'complete':True,'totals':scope['numbers'],'matches':rows}}
+        'sources':sources,'payload':payload}
+    payload['replacement_sha256']=sha(compose(template,operation))
+    if payload['replacement_sha256']==payload['expected_template_sha256']:
+        return None
+    return operation
+
 
 
 def create_missing(snapshot,mapping,scope,wiki,*,goalkeeper=False):

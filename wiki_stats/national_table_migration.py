@@ -46,12 +46,8 @@ def old_date(value):
 
 
 def team_identity(text,player,caption):
-    caption_code=mw.parse(caption)
-    for tag in list(caption_code.filter_tags()):
-        if str(tag.tag).strip().casefold()=='ref':caption_code.remove(tag)
-    caption=str(caption_code)
-    if not re.match(r'^Матчи за сборную ',plain(caption),re.I):
-        raise UpdateError('needs_review','Именной заголовок таблицы требует отдельной проверки игрока')
+    from .national_table_formats import caption_person
+    suffix=caption_person(caption,player)
     box=WikitextParser(text).infobox(player)
     field=box.get('национальная сборная')
     candidates={}
@@ -61,8 +57,8 @@ def team_identity(text,player,caption):
             m=re.fullmatch(r'Сборная (.+?) по футболу(?: \(до (\d+) (?:лет|года)\))?',title)
             if not m:continue
             age=int(m[2]) if m[2] else None
-            suffix=m[1]+(' до '+str(age)+' '+('года' if age==21 else 'лет') if age else '')
-            if re.fullmatch(r'Матчи за сборную '+re.escape(suffix),plain(caption),re.I):
+            expected=m[1]+(' до '+str(age)+' '+('года' if age==21 else 'лет') if age else '')
+            if suffix.casefold()==expected.casefold():
                 candidates[title]=(str(link),age)
     if len(candidates)!=1:
         raise UpdateError('national_identity_mismatch','Заголовок таблицы не совпал с единственной сборной в карточке')
@@ -70,35 +66,82 @@ def team_identity(text,player,caption):
     return {'name':title,'kind':'national_team','wikitext':link,'age':age}
 
 
-def parse_table(text,player):
+def other_blocks(text,player,entity):
+    from .national_table_formats import classify,table_parts
+    for table in mw.parse(text).filter_tags():
+        if str(table.tag).casefold()!='table':continue
+        kind=classify(table)
+        if kind=='annual_summary':text=text.replace(str(table),'',1)
+        elif kind=='match_list':
+            try:
+                caption,_,_=table_parts(table);other=team_identity(text,player,caption)
+                if other['age']!=entity['age']:text=text.replace(str(table),'',1)
+            except UpdateError:pass
+    for template in WikitextParser(text).templates:
+        if template.name!='сбматчи':continue
+        values=template.values();age=values.get('возраст');team=values.get('сборная')
+        if age and team and age.text.strip().isdigit() and int(age.text.strip())!=entity['age']:
+            links=team.code.filter_wikilinks()
+            box=WikitextParser(text).infobox(player).get('национальная сборная')
+            if len(links)==1 and box and str(links[0].title) in {str(x.title) for x in box.code.filter_wikilinks()}:
+                read_matches(template);text=text.replace(str(template.node),'',1)
+    return possible_national_statistics(text,ignore_heading_only=True)
+
+
+def old_summary(tail,rows,metric):
+    nodes=list(mw.parse(tail).nodes);prefix='';bold=None;count=0
+    for n in nodes:
+        if isinstance(n,mw.nodes.Text) and not str(n).strip():prefix+=str(n);count+=1;continue
+        if isinstance(n,mw.nodes.Tag) and str(n.tag).casefold()=='b' and plain(str(n.contents)).startswith('Итого:'):
+            bold=n;count+=1
+        break
+    if bold is None:return '',[]
+    span=prefix+str(bold)
+    for n in nodes[count:]:
+        if isinstance(n,mw.nodes.Tag) and str(n.tag).casefold()=='ref':span+=str(n)
+        elif isinstance(n,mw.nodes.Text) and str(n).startswith('.'):
+            span+='.';break
+        else:break
+    from .national_table_formats import visible
+    nums=[int(x.replace('−','-')) for x in re.findall(r'[-−]?\d+',visible(str(bold.contents)))]
+    won=sum(int(r['счёт'].split(':')[0])>int(r['счёт'].split(':')[1]) for r in rows)
+    draw=sum(r['счёт'].split(':')[0]==r['счёт'].split(':')[1] for r in rows)
+    expected=[len(rows),sum(int(r[metric]) for r in rows),won,draw,len(rows)-won-draw]
+    if len(nums) not in {2,5} or nums!=expected[:len(nums)] or mw.parse(span).filter_comments():
+        raise UpdateError('needs_review','Старый итог не совпал со строками таблицы')
+    return span,references(span)
+
+
+def parse_table(text,player,age=None):
     found=find_tables(text)
+    if len(found)>1:
+        selected=[]
+        from .national_table_formats import table_parts
+        for offset,candidate in found:
+            if not isinstance(candidate,mw.nodes.Tag):continue
+            try:
+                caption,_,_=table_parts(candidate);identity=team_identity(text,player,caption)
+                if identity['age']==age:selected.append((offset,candidate))
+            except UpdateError:pass
+        found=selected
     if len(found)!=1:raise UpdateError('ambiguous_target','Нужна единственная распознаваемая таблица сборной')
     offset,node=found[0]
     if not isinstance(node,mw.nodes.Tag):raise UpdateError('needs_review','Этот формат таблицы требует ручного переноса')
     raw=str(node)
     if mw.parse(raw).filter_comments():raise UpdateError('needs_review','Комментарии внутри старой таблицы требуют ручного переноса')
-    if re.match(r"\s*'''Итого:",text[offset+len(raw):]):
-        raise UpdateError('needs_review','Отдельную строку итогов сначала нужно проверить вручную')
-    parts=[n for n in node.contents.nodes if not isinstance(n,mw.nodes.Text) or str(n).strip()]
-    if len(parts)<3 or any(not isinstance(n,mw.nodes.Tag) for n in parts):raise UpdateError('needs_review','Неизвестная структура таблицы сборной')
-    caption=parts[0]
-    if str(caption.tag).casefold()!='th':raise UpdateError('needs_review','Не найден заголовок таблицы')
-    heading=str(caption.contents).strip()
+    from .national_table_formats import table_parts,columns
+    heading,headers,parts=table_parts(node)
+    if not heading:raise UpdateError('needs_review','Нужен явный заголовок таблицы с именем сборной')
     entity=team_identity(text,player,heading)
-    header=parts[1]
-    cells=list(header.contents.nodes) if str(header.tag).casefold()=='tr' else []
-    cells=[c for c in cells if not isinstance(c,mw.nodes.Text) or str(c).strip()]
-    labels=[plain(str(c.contents)).casefold() if isinstance(c,mw.nodes.Tag) and str(c.tag).casefold()=='th' else '' for c in cells]
-    expected=[{'№','номер'},{'дата'},{'оппонент','соперник'},{'счёт','счет'},{'голы','пропущенные голы'},{'соревнование'}]
-    if len(labels)!=6 or any(label not in allowed for label,allowed in zip(labels,expected)):
-        raise UpdateError('needs_review','Неизвестные столбцы матчей сборной')
-    metric=labels[4]
-    rows=[]; sources=[]; previous=None; identities=set()
-    for number,row in enumerate(parts[2:],1):
+    fields=columns(headers)
+    metric='голы' if 'голы' in fields else 'пропущенные голы'
+    heading+=''.join(ref for header in headers for ref in references(str(header)))
+    rows=[]; sources=[]; previous=None; identities=set(); unordered=False
+    for number,row in enumerate(parts,1):
         if str(row.tag).casefold()!='tr':raise UpdateError('needs_review','Неизвестная строка таблицы')
         cells=[c for c in row.contents.nodes if not isinstance(c,mw.nodes.Text) or str(c).strip()]
-        if len(cells)!=6 or any(not isinstance(c,mw.nodes.Tag) or str(c.tag).casefold()!='td' for c in cells):
-            raise UpdateError('needs_review','Нужны шесть ячеек в каждой строке')
+        if len(cells)!=len(fields) or any(not isinstance(c,mw.nodes.Tag) or str(c.tag).casefold() not in {'td','th'} for c in cells):
+            raise UpdateError('needs_review','Число ячеек строки не совпало с заголовками')
         values=[]; refs=[]
         for cell in cells:
             if any(str(a.name).strip().casefold() in {'colspan','rowspan'} for a in cell.attributes):
@@ -109,21 +152,31 @@ def parse_table(text,player):
             for tag in list(code.filter_tags()):
                 if str(tag.tag).strip().casefold()=='ref':refs.append(str(tag));code.remove(tag)
             values.append(str(code).strip())
-        if plain(values[0])!=str(number):raise UpdateError('invalid_match','Пропущены или повторены номера матчей')
+        data=dict(zip(fields,values))
+        if plain(data['index'])!=str(number):raise UpdateError('invalid_match','Пропущены или повторены номера матчей')
         if len(rows)>=500:raise UpdateError('needs_review','Слишком большая таблица сборной')
-        score=plain(values[3]);goals=plain(values[4])
-        goals='0' if goals in {'','-','—','–'} else goals
-        item={'дата':old_date(values[1]),'соперник':values[2],'счёт':score,metric:goals,'соревнование':values[5]}
+        from .national_table_formats import score_and_penalties,extra_time_note
+        score,penalties=score_and_penalties(data['счёт'])
+        goals=plain(data[metric]);goals='0' if goals in {'','-','—','–'} else goals
+        if mw.parse(data[metric]).filter_templates():raise UpdateError('needs_review','Минуты голов требуют отдельного сохранения')
+        item={'дата':old_date(data['дата']),'соперник':data['соперник'],'счёт':score,metric:goals,'соревнование':data['соревнование']}
+        for extra in ('место','передачи','минуты','примечание'):
+            if data.get(extra):item[extra]=data[extra]
+        note=extra_time_note(data['счёт'])
+        if note:item['примечание']=(item.get('примечание','')+'; ' if item.get('примечание') else '')+note
+        if penalties:item['пенальти']=penalties
         day=validate_row(item,metric)
-        if previous and day<previous:raise UpdateError('invalid_match','Нарушен порядок матчей')
+        if previous and day<previous:unordered=True
         identity=(day,item['соперник'])
         if identity in identities:raise UpdateError('invalid_match','Повторный матч в старой таблице')
         identities.add(identity)
         previous=day
         rows.append(item);sources.append(''.join(refs))
     if not rows:raise UpdateError('needs_review','Нет строк матчей')
+    summary,summary_refs=old_summary(text[offset+len(raw):],rows,metric)
+    raw+=summary
     remaining=text[:offset]+text[offset+len(raw):]
-    if possible_national_statistics(remaining,ignore_heading_only=True):
+    if other_blocks(remaining,player,entity):
         raise UpdateError('ambiguous_target','Есть другая возможная статистика сборной; перенос отменён')
     nl='\r\n' if '\r\n' in raw else '\n'
     template=mw.nodes.Template('СбМатчи'+nl)
@@ -131,26 +184,26 @@ def parse_table(text,player):
     add('игрок',player);add('сборная',entity['wikitext'])
     if entity['age']:add('возраст',entity['age'])
     add('заголовок',heading);add('статистика',metric)
+    if unordered:add('порядок','исходный')
     add('свёрнуто','да' if 'collapsed' in str(node.attributes).casefold() else 'нет')
     for i,(item,source) in enumerate(zip(rows,sources),1):
         for key,value in item.items():add(key+str(i),value)
         if source:add('источник'+str(i),source)
+    if summary_refs:add('источники',''.join(summary_refs))
     rendered=str(template)
     new=next(t for t in WikitextParser(rendered).templates if t.name=='сбматчи')
     _,converted=read_matches(new)
-    normalized=[{**r,'пенальти':''} for r in rows]
+    normalized=[{**r,'пенальти':r.get('пенальти','')} for r in rows]
     if converted!=normalized or references(raw)!=references(rendered):
         raise UpdateError('integrity_error','Перенос изменил матчи или источники')
     fingerprint=digest(json.dumps({'rows':rows,'sources':sources},ensure_ascii=False,sort_keys=True))
     return offset,raw,rendered,entity,len(rows),fingerprint
 
 
-def operation(text,player,day):
+def operation(text,player,day,age=None):
     found=find_tables(text)
     if not found:return None
-    if any(t.name=='сбматчи' for t in WikitextParser(text).templates):
-        raise UpdateError('ambiguous_target','Есть и СбМатчи, и старая таблица; автоматическое удаление запрещено')
-    _,raw,rendered,entity,count,rows_sha=parse_table(text,player)
+    _,raw,rendered,entity,count,rows_sha=parse_table(text,player,age)
     return {'id':'migrate-national-table','type':'migrate_sbmatches','group_id':'national-table-migration',
         'entity':entity,'target':{'structure':'sbmatches','age':entity['age']},'as_of':day,
         'sources':[{'url':'https://ru.wikipedia.org/wiki/Шаблон:СбМатчи','provenance':'user_provided','coverage_as_of':day,
@@ -160,14 +213,14 @@ def operation(text,player,day):
 
 def migrate(text,player,op):
     parser=WikitextParser(text);parser.infobox(player)
-    existing=[t for t in parser.templates if t.name=='сбматчи']
+    existing=[t for t in parser.templates if t.name=='сбматчи' and t.values().get('сборная') and t.values()['сборная'].text.strip()==op['entity']['wikitext'].strip() and (t.values().get('возраст').text.strip() if t.values().get('возраст') else '')==(str(op['target']['age']) if op['target']['age'] else '')]
     if existing:
-        if len(existing)==1 and not find_tables(text) and digest(str(existing[0].node))==op['payload']['replacement_sha256']:
+        if len(existing)==1 and digest(str(existing[0].node))==op['payload']['replacement_sha256']:
             rest=text[:existing[0].start]+text[existing[0].start+len(str(existing[0].node)):]
-            if not possible_national_statistics(rest,ignore_heading_only=True):
+            if not other_blocks(rest,player,op['entity']):
                 read_matches(existing[0]);return text,'already_applied'
         raise UpdateError('ambiguous_target','Нельзя заменить или продублировать существующий СбМатчи')
-    offset,raw,rendered,entity,count,rows_sha=parse_table(text,player)
+    offset,raw,rendered,entity,count,rows_sha=parse_table(text,player,op['target']['age'])
     p=op['payload']
     if digest(raw)!=p['expected_native_sha256'] or digest(rendered)!=p['replacement_sha256'] or rows_sha!=p['matches_sha256'] or count!=p['match_count']:
         raise UpdateError('old_value_mismatch','Старая таблица изменилась после подготовки переноса')
@@ -176,10 +229,10 @@ def migrate(text,player,op):
     return apply_patches(text,[Patch(offset,offset+len(raw),raw,rendered,'national_table_migration')],structural=True),'ready'
 
 
-def prepare_migration(snapshot,player,day):
+def prepare_migration(snapshot,player,day,age=None):
     from .schema_validator import validate_package
     from .change_planner import plan_article
-    op=operation(snapshot.text,player,day)
+    op=operation(snapshot.text,player,day,age)
     if op is None:raise UpdateError('migration_not_needed','Не найдена старая таблица для переноса')
     op['sources'][0]['url']='https://ru.wikipedia.org/w/index.php?oldid='+str(snapshot.revid)
     article={'title':snapshot.title,'base_revid':snapshot.revid,'player':player,

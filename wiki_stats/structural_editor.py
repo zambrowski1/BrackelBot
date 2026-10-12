@@ -232,6 +232,9 @@ def execute_operation(text,player,op,resolver=None):
     if kind=='repair_sbmatches':
         from .sbmatches_repair import repair
         return repair(text,player,op)
+    if kind=='reconcile_sbmatches':
+        from .sbmatches_reconcile import reconcile
+        return reconcile(text,player,op)
     if kind=='migrate_sbmatches':
         from .national_table_migration import migrate
         return migrate(text,player,op)

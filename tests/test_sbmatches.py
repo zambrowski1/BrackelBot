@@ -410,3 +410,17 @@ def test_inactive_statistic_does_not_silently_disappear(renderer, metric, inacti
             'соперник1': 'Франция', 'счёт1': '1:1', 'соревнование': 'Кубок', inactive+'1': '1'}
     with pytest.raises(lupa.LuaError):
         renderer(args)
+
+
+def test_optional_columns_are_rendered_without_changing_default_layout(renderer):
+    args={**example(), 'место1':'[[Прага]]','передачи1':'1','минуты1':'90','примечание1':'Вышел на замену'}
+    html=renderer(args)
+    assert 'colspan="10"' in html
+    for value in ('Место','Передачи','Минуты','Примечания','[[Прага]]','Вышел на замену'):
+        assert value in html
+
+
+def test_explicit_source_order_preserves_rows_but_date_uses_latest_game(renderer):
+    args={**example(),'дата1':'2017-12-01','порядок':'исходный'}
+    assert '1 декабря 2017' in renderer(args)
+    with pytest.raises(lupa.LuaError):renderer({**args,'обновлено':'2017-11-01'})

@@ -56,8 +56,8 @@ def find_tables(text):
     for node in mw.parse(text).nodes:
         raw=str(node)
         if isinstance(node,mw.nodes.Tag) and str(node.tag).casefold()=='table':
-            visible=node.contents.strip_code()
-            if (re.search(r'Матчи[^\r\n]*за сборную',visible) and all(k in visible for k in ('Дата','Счёт','Соревнование'))):
+            from .national_table_formats import classify
+            if classify(node,text[max(0,offset-400):offset])=='match_list':
                 result.append((offset,node))
         if isinstance(node,mw.nodes.Template) and str(node.name).strip().casefold()=='автонумерация':
             if node.has('Название'):

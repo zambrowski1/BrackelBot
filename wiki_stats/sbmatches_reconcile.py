@@ -9,7 +9,7 @@ from .wikitext_parser import WikitextParser
 from .sbmatches_editor import read_matches,metric_field,validate_row,match_date,GENERAL,EXTRAS
 from .change_validator import apply_patches,references
 from .models import Patch
-from .sbmatches_source import profile_citation,without_generated_match_links,merge_profile_citation,added_profile_references,has_profile_reference
+from .sbmatches_source import profile_citation,without_generated_match_links,merge_profile_citation,added_profile_references,has_profile_reference,statistics_date
 
 
 def sha(text):return hashlib.sha256(text.encode('utf-8')).hexdigest()
@@ -44,7 +44,7 @@ def compose(template,op):
     def add(key,value):node.add(key,str(value)+nl,preserve_spacing=False)
     for key,value in values.items():
         if key in GENERAL and key not in {'обновлено','источники'}:add(key,value.text.strip())
-    day=date.fromisoformat(op['as_of'])
+    day=date.fromisoformat(statistics_date(op))
     if not p.get('external_updated_sha256'):
         old_date=values.get('обновлено')
         if old_date and old_date.text.strip():day=max(day,match_date(old_date.text.strip()))
@@ -58,7 +58,7 @@ def compose(template,op):
     previous=None;identities=set()
     for i,(incoming,index,source) in enumerate(zip(rows,indices,op['sources']),1):
         new_day=validate_row(incoming,metric)
-        if new_day>date.fromisoformat(op['as_of']) or previous and new_day<previous:
+        if new_day>date.fromisoformat(statistics_date(op)) or previous and new_day<previous:
             raise UpdateError('invalid_match','Нарушен порядок или дата матча')
         previous=new_day
         row=dict(incoming)
@@ -109,7 +109,7 @@ def reconcile(text,player,op):
         marker=external_marker(text,template) if p.get('external_updated_sha256') else None
         marker_ready=not p.get('external_updated_sha256') or bool(
             marker and marker.values().get('1') and
-            match_date(marker.values()['1'].text.strip())>=date.fromisoformat(op['as_of']) and
+            match_date(marker.values()['1'].text.strip())>=date.fromisoformat(statistics_date(op)) and
             (not p.get('source_url') or marker.values().get('2') and has_profile_reference(marker.values()['2'].text,p['source_url'])))
         if marker_ready:return text,'already_applied'
         # The table can be unchanged while its external date/source needs updating.
@@ -125,7 +125,7 @@ def reconcile(text,player,op):
         updated=mw.parse(str(marker.node)).filter_templates()[0]
         prior=marker.values().get('1')
         if not prior:raise UpdateError('invalid_input','Нет даты в Обновлено')
-        value=max(match_date(prior.text.strip()),date.fromisoformat(op['as_of']))
+        value=max(match_date(prior.text.strip()),date.fromisoformat(statistics_date(op)))
         updated.add('1',value.isoformat(),preserve_spacing=False)
         profile=profile_citation(p,op['as_of'])
         if profile:

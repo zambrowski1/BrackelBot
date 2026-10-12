@@ -875,8 +875,11 @@
                     ]
                   },
                   "expected_value": {
-                    "type": "string",
-                    "minLength": 1
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "minLength": 0
                   },
                   "statistics_as_of": {
                     "type": "string",
@@ -2046,6 +2049,10 @@
             "source_access_date": {
               "type": "string",
               "format": "date"
+            },
+            "statistics_as_of": {
+              "type": "string",
+              "format": "date"
             }
           },
           "allOf": [
@@ -2237,6 +2244,10 @@
               "pattern": "^https://www\\.sofascore\\.com/football/player/(?:[^/\\s]+/)?[0-9]+$"
             },
             "source_access_date": {
+              "type": "string",
+              "format": "date"
+            },
+            "statistics_as_of": {
               "type": "string",
               "format": "date"
             }
@@ -2570,6 +2581,10 @@
               "pattern": "^https://www\\.sofascore\\.com/football/player/(?:[^/\\s]+/)?[0-9]+$"
             },
             "source_access_date": {
+              "type": "string",
+              "format": "date"
+            },
+            "statistics_as_of": {
               "type": "string",
               "format": "date"
             }

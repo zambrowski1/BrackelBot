@@ -1,5 +1,6 @@
 # SPDX-License-Identifier: MIT
 import re
+import mwparserfromhell as mw
 from datetime import date
 from .errors import UpdateError
 from .models import Patch
@@ -385,12 +386,17 @@ def execute_operation(text,player,op,resolver=None):
         return result,'ready' if result!=text else 'already_applied'
     if kind=='update_date':
         value = parser.infobox(player).get(op['payload']['field'])
-        if value is None:
-            raise UpdateError('unsupported_structure','Параметр даты отсутствует')
         actual = op['payload'].get('statistics_as_of',op['as_of'])
         if date.fromisoformat(actual)>date.fromisoformat(op['as_of']):
             raise UpdateError('source_coverage_mismatch','Дата статистики позже подтверждённого охвата')
         new = date.fromisoformat(actual).strftime('%d.%m.%Y')
+        if value is None:
+            if op['payload']['expected_value'] is not None or op['payload']['field']!='обновление данных о сборной':
+                raise UpdateError('unsupported_structure','Параметр даты отсутствует')
+            box=next(t for t in parser.templates if t.name=='футболист')
+            raw=str(box.node);node=mw.parse(raw).filter_templates()[0]
+            node.add(op['payload']['field'],new,preserve_spacing=True)
+            return apply_patches(text,[Patch(box.start,box.start+len(raw),raw,str(node),'coverage_date')],structural=True),'ready'
         if value.text.strip()==new:
             return text,'already_applied'
         if value.text.strip()!=op['payload']['expected_value']:

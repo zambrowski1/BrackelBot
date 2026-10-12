@@ -7,6 +7,7 @@ from wiki_stats.national_card_coverage import close_national_card
 from wiki_stats.structural_editor import execute_operation
 from wiki_stats.change_planner import plan_article
 from wiki_stats.schema_validator import validate_package
+from wiki_stats.wikitext_parser import WikitextParser
 
 NOW=datetime(2026,10,11,tzinfo=timezone.utc)
 MAPPING={'wiki_name':'Кальвин Браккельман'}
@@ -30,7 +31,7 @@ def test_correct_numbers_still_update_old_date_and_preserve_text_and_replay():
     assert result==TEXT.replace('обновление данных о сборной = 04.10.2026','обновление данных о сборной = 05.10.2026')
     assert close_national_card(snapshot(result),MAPPING,[],[scope()],NOW)==([],True)
 
-@pytest.mark.parametrize('fault',['missing_binding','partial','wrong_team','wrong_period','wrong_old','wrong_new','duplicate','extra_row','missing_matches','future','date_mismatch','newer_existing','unknown_period'])
+@pytest.mark.parametrize('fault',['missing_binding','partial','wrong_team','wrong_period','wrong_old','wrong_new','duplicate','missing_matches','future','date_mismatch','unknown_period'])
 def test_incomplete_card_never_advances_date(fault):
     s=scope();scopes=[s];text=TEXT
     if fault=='missing_binding':s.pop('career_binding')
@@ -40,11 +41,9 @@ def test_incomplete_card_never_advances_date(fault):
     elif fault=='wrong_old':s['career_binding']['numbers']['appearances']=7
     elif fault=='wrong_new':s['numbers']['goals']=1
     elif fault=='duplicate':scopes.append(deepcopy(s))
-    elif fault=='extra_row':text=text.replace('|2024—','|2016—2017|'+U18+'|6 (0)\n|2024—')
     elif fault=='missing_matches':s['matches']=[]
     elif fault=='future':s['statistics_as_of']='2026-10-12';s['matches'][0]['date']='2026-10-12'
     elif fault=='date_mismatch':s['matches'][0]['date']='2026-10-04'
-    elif fault=='newer_existing':text=text.replace('обновление данных о сборной = 04.10.2026','обновление данных о сборной = 06.10.2026')
     else:s['career_binding']['verified_period']='2023—{{н.в.}}'
     assert close_national_card(snapshot(text),MAPPING,[],scopes,NOW)==([],False)
 
@@ -113,3 +112,52 @@ def test_real_orban_primary_youth_and_72_senior_caps_close_one_card():
     assert 'обновление данных о сборной = 05.10.2026' in plan.preview
     replay=plan_article(replace(snap,text=plan.preview),article,'1.1')
     assert not replay.diff and replay.preview==plan.preview
+
+
+@pytest.mark.parametrize('date_field',[None,'','01.01.2020','12.10.2026'])
+def test_senior_match_date_updates_card_without_rechecking_youth(date_field):
+    text=TEXT.replace('|2024—','|2016—2017|'+U18+'|6 (0)\n|2024—')
+    if date_field is None:text=text.replace('| обновление данных о сборной = 04.10.2026\n','')
+    else:text=text.replace('обновление данных о сборной = 04.10.2026','обновление данных о сборной = '+date_field)
+    ops,complete=close_national_card(snapshot(text),MAPPING,[],[scope()],NOW)
+    assert complete and ops[-1]['payload']['statistics_as_of']=='2026-10-05'
+    pkg={'schema_version':'1.1','package_id':'senior-date-proof','generated_at':NOW.isoformat(),
+         'articles':[{'title':snapshot(text).title,'base_revid':100,'player':MAPPING['wiki_name'],'operations':ops}]}
+    validate_package(pkg)
+    plan=plan_article(snapshot(text),pkg['articles'][0],'1.1')
+    assert all(c.status=='ready' for c in plan.changes)
+    assert '05.10.2026' in plan.preview and '|2016—2017|'+U18+'|6 (0)' in plan.preview
+    assert close_national_card(snapshot(plan.preview),MAPPING,[],[scope()],NOW)==([],True)
+    assert not plan_article(replace(snapshot(text),text=plan.preview),pkg['articles'][0],'1.1').diff
+
+
+def test_an_unverified_other_senior_team_still_blocks_the_card_date():
+    text=TEXT.replace('|2024—','|2018—2020|[[Сборная Франции по футболу|Франция]]|3 (0)\n|2024—')
+    assert close_national_card(snapshot(text),MAPPING,[],[scope()],NOW)==([],False)
+
+
+def test_atomic_card_date_preserves_the_national_table_date_and_hash():
+    from tests.test_sbmatches_api_source import scope as real_scope,Wiki
+    from wiki_stats.national_match_format import format_scope
+    from wiki_stats.national_team_identity import NationalTeamIdentity
+    from wiki_stats.sofascore_sbmatches import full_repair
+    source=real_scope();wiki=Wiki();identity=NationalTeamIdentity(wiki)
+    rows,_=format_scope(source,identity.resolve)
+    team='[[Сборная Чехии по футболу|Чехия]]'
+    text='{{Футболист|имя=Патрик Шик|национальная сборная={{спортивная карьера|2016—{{н.в.}}|'+team+'|56 (26)}}}}\n'
+    text+='{{СбМатчи|игрок=Патрик Шик|сборная=Чехия\n'
+    for key,value in rows[0].items():text+='|'+key+'1='+value+'\n'
+    text+='}}'
+    page=snapshot(text);mapping={'wiki_name':'Патрик Шик','api_id':280609}
+    operation=full_repair(page,mapping,source,wiki)
+    source['career_binding']={'period':'2016—{{н.в.}}','verified_period':'2016—{{н.в.}}',
+       'team':team,'qid':operation['entity']['wikidata_id'],'numbers':source['numbers']}
+    ops,complete=close_national_card(page,mapping,[operation],[source],datetime(2026,10,12,tzinfo=timezone.utc))
+    assert complete
+    article={'title':page.title,'base_revid':100,'player':'Патрик Шик','operations':ops}
+    validate_package({'schema_version':'1.1','package_id':'atomic-national-table-date','generated_at':'2026-10-12T00:00:00Z','articles':[article]})
+    plan=plan_article(page,article,'1.1')
+    assert all(c.status=='ready' for c in plan.changes)
+    assert 'обновлено=25-06-2026' in plan.preview
+    assert '25.06.2026' in WikitextParser(plan.preview).infobox('Патрик Шик')['обновление данных о сборной'].text
+    assert not plan_article(replace(page,text=plan.preview),article,'1.1').diff

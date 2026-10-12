@@ -78,7 +78,8 @@ def prepare_nationals(snapshot, mapping, history, api, wiki, budget, now, *, goa
                 period, text, value = matches[0]
                 first = validate_period(period)
                 years = [int(v['date'][:4]) for v in scope['matches']]
-                if not is_active_period(period) or min(years) < first:
+                last=now.year if is_active_period(period) else int(re.findall(r'(?:19|20)[0-9]{2}',period)[-1])
+                if min(years) < first or max(years)>last:
                     issues.append({'code': 'national_career_period_unproven', 'team_id': team['id']})
                 else:
                     old = dict(zip(('appearances', 'goals'), [n.value for n in value.numeric(pair=True)]))
@@ -105,9 +106,7 @@ def prepare_nationals(snapshot, mapping, history, api, wiki, budget, now, *, goa
                     operations.append(repair)
             except UpdateError as exc:
                 issues.append({'code': exc.code, 'team_id': team['id'], 'message': str(exc)})
-        # The card date covers youth rows too. Senior totals cannot certify those rows.
-        if scopes:
-            issues.append({'code': 'national_global_date_incomplete_coverage'})
+        # The card date is closed separately from complete verified senior scopes.
     except UpdateError as exc:
         if exc.code in {'quota_exhausted', 'api_rate_limited', 'api_authentication'}:
             budget['remaining'] = 0

@@ -1,17 +1,25 @@
 # SPDX-License-Identifier: MIT
-"""Bind the date of the whole national card to all verified career rows."""
+"""Date the national card by confirmed matches; youth rows need not block seniors."""
 from copy import deepcopy
 from datetime import date,datetime
 from .wikitext_parser import WikitextParser
 from .national_team_identity import valid_qid
 from .errors import UpdateError
+import re
+import mwparserfromhell as mw
+
+
+def youth_row(text):
+    code=mw.parse(text)
+    names=[code.strip_code(),*[str(link.title) for link in code.filter_wikilinks()]]
+    return any(re.search(r'\(\s*до\s+[0-9]{1,2}(?:\s+(?:лет|года))?\s*\)',name) for name in names)
 
 
 def close_national_card(snapshot,mapping,operations,scopes,now):
     try:
         parser=WikitextParser(snapshot.text)
         rows=parser.career('национальная сборная',mapping['wiki_name'])
-        if not rows or len(rows)!=len(scopes):return operations,False
+        if not rows or not scopes:return operations,False
         covered=set();sources=[];days=[]
         for scope in scopes:
             binding=scope.get('career_binding')
@@ -46,16 +54,18 @@ def close_national_card(snapshot,mapping,operations,scopes,now):
                 provenance='sofascore' if url.startswith('https://www.sofascore.com/') else 'dfb' if url.startswith('https://datencenter.dfb.de/') else 'uefa' if url.startswith('https://www.uefa.com/') else 'sfv'
                 sources.append({'url':url,'provenance':provenance,'coverage_as_of':now.date().isoformat(),
                     'note':'Полный итог этой сборной перепроверен; последний сыгранный матч '+day.isoformat()})
+        if any(i not in covered and not youth_row(team) for i,(_,team,_) in enumerate(rows)):
+            return operations,False
         old=parser.infobox(mapping['wiki_name']).get('обновление данных о сборной')
-        if old is None:return operations,False
-        old_day=datetime.strptime(old.text.strip(),'%d.%m.%Y').date()
+        old_value=old.text.strip() if old else None
+        old_day=datetime.strptime(old_value,'%d.%m.%Y').date() if old_value else None
         latest=max(days)
-        # A newer existing date cannot be justified by older cached matches.
-        if old_day>latest:return operations,False
-        if old_day==latest:return operations,True
+        if old_day==latest and old_value==latest.strftime('%d.%m.%Y'):return operations,True
         linked=deepcopy(operations)
         for op in linked:
             previous=op['as_of']
+            if op['type'] in {'create_sbmatches','repair_sbmatches','reconcile_sbmatches'}:
+                op['payload'].setdefault('statistics_as_of',previous)
             op.update(group_id='complete-national-card',as_of=now.date().isoformat())
             for source in op['sources']:
                 source['coverage_as_of']=op['as_of']
@@ -65,7 +75,7 @@ def close_national_card(snapshot,mapping,operations,scopes,now):
                       'kind':'national_team','wikidata_id':binding['qid']},
             'target':{'structure':'career','field':'национальная сборная'},
             'as_of':now.date().isoformat(),'sources':sources,
-            'payload':{'field':'обновление данных о сборной','expected_value':old.text.strip(),
+            'payload':{'field':'обновление данных о сборной','expected_value':old_value,
                        'statistics_as_of':latest.isoformat()}})
         return linked,True
     except (UpdateError,KeyError,TypeError,ValueError):return operations,False

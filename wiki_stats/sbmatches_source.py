@@ -62,3 +62,11 @@ def without_generated_match_links(citation):
         if link.title is None and re.fullmatch(r'https://www\.sofascore\.com/football/match/[^\s|{}<>\[\]]+',str(link.url)):
             code.remove(link)
     return str(code).strip()
+
+
+def statistics_date(op):
+    from datetime import date
+    value=op['payload'].get('statistics_as_of',op['as_of'])
+    if date.fromisoformat(value)>date.fromisoformat(op['as_of']):
+        raise UpdateError('source_coverage_mismatch','Дата статистики позже подтверждённого охвата')
+    return value

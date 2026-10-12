@@ -47,7 +47,7 @@ def test_complete_scope_updates_card_with_individual_sources_and_replays_without
     assert status == 'ready'
     assert collect(result)[0] == []
     assert 'обновление данных о сборной = 04.10.2026' in result
-    assert any(i['code'] == 'national_global_date_incomplete_coverage' for i in issues)
+    assert not any(i['code'] == 'national_global_date_incomplete_coverage' for i in issues)
 
 
 @pytest.mark.parametrize('problem', ['aggregate', 'missing_game', 'duplicate_team', 'later_period', 'closed_period', 'youth'])
@@ -139,4 +139,4 @@ def test_actual_orban_source_updates_card_from_all_72_verified_matches():
     assert len(operations[0]['sources']) == 72 and len(scopes[0]['matches']) == 72
     result, status = execute_operation(text, MAPPING['wiki_name'], operations[0])
     assert status == 'ready' and '|72 (6)' in result
-    assert [i['code'] for i in issues] == ['national_global_date_incomplete_coverage']
+    assert not issues

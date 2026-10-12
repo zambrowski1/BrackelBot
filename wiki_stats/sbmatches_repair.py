@@ -4,7 +4,7 @@ import hashlib,re
 from datetime import date
 import mwparserfromhell as mw
 from .errors import UpdateError
-from .sbmatches_source import profile_citation,merge_profile_citation
+from .sbmatches_source import profile_citation,merge_profile_citation,statistics_date
 from .wikitext_parser import WikitextParser
 from .sbmatches_editor import GENERAL, EXTRAS, read_matches, metric_field, validate_row
 
@@ -35,14 +35,14 @@ def repair(text,player,op):
     nl='\r\n' if '\r\n' in str(t.node) else '\n';lines=['{{СбМатчи']
     for key,value in values.items():
         if key in GENERAL and key not in {'заголовок','обновлено','источник'}:lines.append('|'+key+'='+value.text.strip())
-    lines.extend(['|заголовок='+payload['label'],'|обновлено='+date.fromisoformat(op['as_of']).strftime('%d-%m-%Y')]);days=[];keys=set()
+    lines.extend(['|заголовок='+payload['label'],'|обновлено='+date.fromisoformat(statistics_date(op)).strftime('%d-%m-%Y')]);days=[];keys=set()
     old_source=values.get('источник')
     citation=old_source.text.strip() if old_source else ''
     if profile:citation=merge_profile_citation(citation,payload,op['as_of'])
     if citation:lines.append('|источник='+citation)
     for i,row in enumerate(payload['matches'],1):
         day=validate_row(row,metric);days.append(day);identity=(day,row['соперник'])
-        if identity in keys or day>date.fromisoformat(op['as_of']):raise UpdateError('invalid_match','Повторный матч или дата за пределами источника')
+        if identity in keys or day>date.fromisoformat(statistics_date(op)):raise UpdateError('invalid_match','Повторный матч или дата за пределами источника')
         keys.add(identity)
         for value in row.values():
             code=mw.parse(value)

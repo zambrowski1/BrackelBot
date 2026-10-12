@@ -6,9 +6,16 @@ from types import SimpleNamespace
 import mwparserfromhell as mw
 from mwparserfromhell.nodes import Heading, Wikilink, Tag
 from .errors import UpdateError
-from .models import Patch
-from .change_validator import apply_patches, arithmetic_warnings
+from .change_validator import arithmetic_warnings, references
 from .klstat_editor import numbers, season_key, league_link
+
+
+def source_reference(payload, as_of):
+    source=payload.get('source_url')
+    if not source:return ''
+    if not re.fullmatch(r'https://www\.sofascore\.com/football/player/(?:[a-z0-9-]+/)?[1-9][0-9]*',source):
+        raise UpdateError('invalid_input','Нужна ссылка на профиль футболиста Sofascore')
+    return '<ref>{{Cite web|url='+source+'|title=Статистика выступлений футболиста|website=Sofascore|lang=en|access-date='+as_of+'}}</ref>'
 
 
 def render_section(payload, resolver, as_of):
@@ -31,11 +38,10 @@ def render_section(payload, resolver, as_of):
         raise UpdateError('source_coverage_mismatch','Дата статистики позднее даты охвата источников')
     lines=['== Статистика выступлений ==','', '=== Клубная статистика ===']
     if day:lines.append('{{обновлено|'+day.isoformat()+'}}')
-    source=payload.get('source_url')
-    if source:
-        if not re.fullmatch(r'https://www\.sofascore\.com/football/player/(?:[a-z0-9-]+/)?[1-9][0-9]*',source):
-            raise UpdateError('invalid_input','Нужна ссылка на профиль футболиста Sofascore')
-        lines.append('Источник: ['+source+' Sofascore].')
+    citation=source_reference(payload,as_of)
+    if citation:
+        if day:lines[-1]='{{обновлено|'+day.isoformat()+'|'+citation+'}}'
+        else:lines.append('Данные Sofascore'+citation+'.')
     notes=payload.get('header_notes',{})
     if set(notes)-set(categories):
         raise UpdateError('invalid_input','Пояснение относится к отсутствующей колонке')
@@ -92,10 +98,13 @@ def render_section(payload, resolver, as_of):
         grand=[sum_known([a,b]) for a,b in zip(grand,total)]
     if not years:
         raise UpdateError('incomplete_statistics','Нет подтверждённых сезонов')
-    # The native total template always says "Всего за карьеру". A bounded
-    # history therefore closes the table without claiming a career total.
-    body.append('{{КлСтат/Итого|'+'|'.join(map(str,grand))+'}}' if payload['full_career'] else '|}\n{{комментарии}}')
-    if notes and payload['full_career']:body.append('{{комментарии}}')
+    # A bounded history omits the career row by default. The all-seasons
+    # display option sums the shown numbers, retaining gaps in the report.
+    show_total=payload['full_career'] or payload.get('show_career_total',False)
+    if show_total and any(value is None for value in grand):
+        raise UpdateError('incomplete_statistics','Для строки итогов нужны числовые ячейки')
+    body.append('{{КлСтат/Итого|'+'|'.join(map(str,grand))+'}}' if show_total else '|}')
+    if notes or not show_total:body.append('{{комментарии}}')
     return '\n'.join(lines+body)+'\n\n'
 
 
@@ -144,7 +153,11 @@ def create_section(text, parser, op, resolver):
     else:
         point=footer if footer is not None else len(text)
     prefix='' if text[:point].endswith(newline+newline) or point==0 else newline+newline
-    result=apply_patches(text,[Patch(point,point,'',prefix+section,'new_statistics_section')],structural=True)
+    # This operation only inserts a validated section. Existing text and refs
+    # stay byte-for-byte intact; the new source citation belongs to this section.
+    result=text[:point]+prefix+section+text[point:]
+    if references(result)!=references(text[:point])+references(section)+references(text[point:]):
+        raise UpdateError('integrity_error','Изменились существующие сноски')
     warnings=arithmetic_warnings(result)
     if warnings: raise UpdateError('totals_mismatch','Новая таблица не прошла проверку')
     return result,'ready'

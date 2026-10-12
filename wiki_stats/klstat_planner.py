@@ -23,12 +23,13 @@ def validate_evidence(evidence):
     # Existing blocks need exact wikitext, while newly created clubs also need kind/QID.
     club['properties']['entity']={'allOf':[{'$ref':'#/$defs/entity'},{'required':['wikitext']}]}
     club['properties']['insert_after_club']={'type':'string','minLength':1}
-    metadata={k:deepcopy(creation['properties'][k]) for k in ['categories','statistics_as_of','full_career']}
+    required_metadata=['categories','statistics_as_of','full_career']
+    metadata={k:deepcopy(creation['properties'][k]) for k in required_metadata+['source_url','header_notes','show_career_total','allow_unknown','unknown_as_zero']}
     schema={'type':'object','additionalProperties':False,'$defs':definitions,
         'properties':{'player':{'type':'string','minLength':1},'as_of':{'type':'string','format':'date'},
                       'sources':operation['properties']['sources'],
                       'clubs':{'type':'array','minItems':1,'items':club},
-                      'create_section':{'type':'object','additionalProperties':False,'properties':metadata,'required':list(metadata)}},
+                      'create_section':{'type':'object','additionalProperties':False,'properties':metadata,'required':required_metadata}},
         'required':['player','as_of','sources','clubs']}
     error=next(iter(Draft202012Validator(schema,format_checker=FormatChecker()).iter_errors(evidence)),None)
     if error:

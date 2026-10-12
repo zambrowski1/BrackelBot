@@ -29,7 +29,7 @@ def test_all_seasons_includes_2016_transfer_without_protocol_recount():
     text=MINI.split('{{КлСтат|')[0].replace('| имя =','| дата рождения = 22.08.1999\n| имя =')
     _,plan,report=prepare_player(snapshot(text),MAPPING,OldSeason(),Wiki(),Resolver(),statistics_since=0,now=NOW)
     assert '{{КлСтат/Сезон|2016/17|5|2}}' in plan.preview
-    assert 'Источник: [https://www.sofascore.com/football/player/1 Sofascore].' in plan.preview
+    assert '|url=https://www.sofascore.com/football/player/1|' in plan.preview
     assert not any(i['code']=='split_season_unproven' for i in report['review'])
 
 
@@ -59,6 +59,32 @@ def test_zero_display_sums_known_values_without_changing_source_payload():
     assert table.seasons[0].values['4'].numeric()[0].value==0
     assert '{{КлСтат/ИтогоЗаКлуб||4|1|0|0|0|0}}' in text
     assert not arithmetic_warnings(text)
+
+
+def test_source_is_inside_updated_marker_and_career_total_is_summed():
+    data=evidence()
+    payload={**data['create_section'],'clubs':data['clubs'],'complete':True,'allow_unknown':True,
+             'unknown_as_zero':True,'show_career_total':True,
+             'source_url':'https://www.sofascore.com/football/player/patrik-schick/280609'}
+    payload['clubs'][0]['rows'][0]['categories']['Кубок']=None
+    text=render_section(payload,resolver(),'2026-10-08')
+    parser=WikitextParser(text)
+    updated=next(t for t in parser.templates if t.name=='обновлено')
+    assert '<ref>{{Cite web|url='+payload['source_url'] in updated.values()['2'].text
+    assert 'Источник:' not in text
+    assert '{{КлСтат/Итого|4|1|0|0|0|0}}' in text
+    assert not arithmetic_warnings(text)
+
+
+def test_source_addition_never_allows_an_old_reference_to_be_changed():
+    from wiki_stats.change_validator import apply_patches
+    from wiki_stats.models import Patch
+    from wiki_stats.errors import UpdateError
+    original='Текст <ref>Старый источник</ref>'
+    added='<ref>Новый источник</ref>'
+    assert apply_patches(original,[Patch(len(original),len(original),'',added,'source')],structural=True,added_references=[added])==original+added
+    with pytest.raises(UpdateError):
+        apply_patches(original,[Patch(0,len(original),original,added,'source')],structural=True,added_references=[added])
 
 
 def test_unknowns_render_as_em_dashes_with_no_native_question_mark_totals():

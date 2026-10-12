@@ -3,7 +3,7 @@ from .test_pages import is_test_page
 from .errors import UpdateError
 from .models import Mode
 from .transactions import plan_fingerprint, approval_fingerprint, clear_approvals
-from .change_validator import apply_patches, arithmetic_warnings
+from .change_validator import arithmetic_warnings
 from .change_planner import plan_article
 from .schema_validator import validate_package
 from .backup import save_backup
@@ -83,7 +83,9 @@ class Publisher:
                 if group.id not in actual or actual[group.id].patches!=group.patches or actual[group.id].diff!=group.diff:
                     clear_approvals(plan)
                     raise UpdateError('recheck_failed','Повторная проверка изменила план; требуется новый diff и подтверждение')
-            text=apply_patches(current.text,[p for g in selected for p in g.patches],structural=True)
+            # The fresh plan already validated these exact approved patches,
+            # including the new statistics source citation.
+            text=rechecked.preview
             if arithmetic_warnings(text):
                 raise UpdateError('totals_mismatch','Публикация заблокирована: арифметика или структура таблицы не согласованы')
         if text==current.text:

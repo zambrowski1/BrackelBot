@@ -1241,6 +1241,9 @@
                   },
                   "unknown_as_zero": {
                     "type": "boolean"
+                  },
+                  "show_career_total": {
+                    "type": "boolean"
                   }
                 },
                 "required": [

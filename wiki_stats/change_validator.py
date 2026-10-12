@@ -1,12 +1,12 @@
 # SPDX-License-Identifier: MIT
-from collections import defaultdict
+from collections import defaultdict, Counter
 import mwparserfromhell as mw
 import re
 from .errors import UpdateError
 from .wikitext_parser import WikitextParser
 
 
-def apply_patches(text, patches, structural=False):
+def apply_patches(text, patches, structural=False, *, added_references=()):
     ordered = sorted(patches, key=lambda p: (p.start, p.end))
     end = 0
     for p in ordered:
@@ -18,7 +18,13 @@ def apply_patches(text, patches, structural=False):
     result = text
     for p in reversed(ordered):
         result = result[:p.start] + p.after + result[p.end:]
-    if references(text) != references(result):
+    old_refs,new_refs=references(text),references(result)
+    if added_references:
+        remaining=iter(new_refs)
+        intact=all(any(ref==other for other in remaining) for ref in old_refs)
+        valid=structural and intact and Counter(new_refs)==Counter(old_refs)+Counter(added_references)
+    else:valid=old_refs==new_refs
+    if not valid:
         raise UpdateError("integrity_error", "Изменились сноски")
     return result
 

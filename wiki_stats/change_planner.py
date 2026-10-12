@@ -138,7 +138,13 @@ def plan_article(snapshot, article, schema_version='1.0', resolver=None):
                 if c.group_id==g.id:
                     c.status='patch_conflict'; c.message='Группы пересекаются. Свяжите эти операции одним group_id.'; c.patches=[];c.diff=''
     ready_patches=[p for g in transactions if g.status=='ready' for p in g.patches]
-    preview=apply_patches(snapshot.text,ready_patches,structural=True)
+    from .statistics_section import source_reference
+    added_refs=[]
+    for change in results:
+        if change.status=='ready' and change.operation['type']=='create_statistics_section':
+            citation=source_reference(change.operation['payload'],change.operation['as_of'])
+            if citation:added_refs.append(citation)
+    preview=apply_patches(snapshot.text,ready_patches,structural=True,added_references=added_refs)
     warnings=list(dict.fromkeys(arithmetic_warnings(preview)+article.get('review_warnings',[])))
     plan=ArticlePlan(snapshot,results,preview,generate_diff(snapshot.text,preview,snapshot.title),warnings,
                      is_test_page(snapshot.title) and snapshot.namespace == 2 and any(g.status=='ready' for g in transactions) and not warnings,

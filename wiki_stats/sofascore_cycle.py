@@ -1142,7 +1142,7 @@ def _prepare_statistics(snapshot, mapping, api, wiki, resolver, *, max_requests=
                 from .competition_notes import column_notes
                 header_notes=column_notes(records,list(clubs.values()),categories)
                 add('create_statistics_section', {'name': 'КлСтат', 'wikitext': '{{КлСтат}}'},
-                    {'structure': 'club_table'}, payload={'complete': True, 'full_career': False,'allow_unknown':statistics_since is not None,'unknown_as_zero':statistics_since is not None,
+                    {'structure': 'club_table'}, payload={'complete': True, 'full_career': False,'allow_unknown':statistics_since is not None,'unknown_as_zero':statistics_since is not None,'show_career_total':statistics_since==0,
                     'statistics_as_of': confirmed, 'categories': categories, 'clubs': list(clubs.values()),'header_notes':header_notes,
                     'source_url':'https://www.sofascore.com/football/player/'+(profile.get('slug')+'/' if isinstance(profile.get('slug'),str) and re.fullmatch(r'[a-z0-9-]+',profile['slug']) else '')+str(mapping['api_id'])})
                 issues.append({'code': 'partial_section', 'message': 'Известные сезонные показатели скопированы; недоступные ячейки показаны нулями по настройке пользователя, пропуски сохранены в отчёте'})

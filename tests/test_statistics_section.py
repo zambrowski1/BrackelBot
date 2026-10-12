@@ -171,6 +171,21 @@ def test_create_publishes_through_normal_recheck_and_backup(tmp_path):
     assert result['backup']
 
 
+def test_create_with_source_citation_passes_publication_recheck(tmp_path):
+    from wiki_stats.publisher import Publisher
+    from wiki_stats.transactions import approve_change
+    from wiki_stats.models import Mode
+    data=evidence()
+    data['create_section'].update(source_url='https://www.sofascore.com/football/player/patrik-schick/280609',show_career_total=True)
+    _,plan=prepare(data=data)
+    assert '{{обновлено|2026-10-04|<ref>' in plan.preview
+    assert len(references(plan.preview))==len(references(BARE))+1
+    approve_change(plan,'create-klstat')
+    client=MemoryClient(snapshot(BARE))
+    Publisher(backup_dir=tmp_path).publish(plan,client,mode=Mode.MANUAL,resolver=resolver())
+    assert client.writes[0][1]==plan.preview
+
+
 def test_section_creation_is_not_an_automatic_operation():
     from wiki_stats.publication_policy import LOW_RISK
     assert 'create_statistics_section' not in LOW_RISK

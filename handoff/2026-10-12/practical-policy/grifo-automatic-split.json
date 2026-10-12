@@ -1,0 +1,97 @@
+[
+  {
+    "team": {
+      "id": 2538,
+      "name": "SC Freiburg",
+      "short_name": "Freiburg",
+      "code": "SCF",
+      "slug": "sc-freiburg",
+      "link": "https://www.sofascore.com/team/football/sc-freiburg/2538",
+      "image_link": "https://img.sofascore.com/api/v1/team/2538/image",
+      "sport": {
+        "id": 1,
+        "name": "Football",
+        "slug": "football"
+      },
+      "country": {
+        "name": "Germany",
+        "alpha2": "DE",
+        "alpha3": "DEU",
+        "slug": "germany"
+      },
+      "gender": "M",
+      "is_national": false,
+      "colors": {
+        "primary": "#cc3333",
+        "secondary": "#000000",
+        "text": "#000000"
+      },
+      "followers_count": 147454
+    },
+    "numbers": {
+      "appearances": 16,
+      "goals": 6
+    },
+    "match_ids": [
+      7851806,
+      7851826,
+      7851830,
+      7851857,
+      7851877,
+      7851889,
+      7851910,
+      7851927,
+      7851937,
+      7851955,
+      7851925,
+      7851939,
+      7851959,
+      7851845,
+      7851888,
+      7851803
+    ]
+  },
+  {
+    "team": {
+      "id": 2569,
+      "name": "TSG Hoffenheim",
+      "short_name": "Hoffenheim",
+      "code": "TSG",
+      "slug": "tsg-hoffenheim",
+      "link": "https://www.sofascore.com/team/football/tsg-hoffenheim/2569",
+      "image_link": "https://img.sofascore.com/api/v1/team/2569/image",
+      "sport": {
+        "id": 1,
+        "name": "Football",
+        "slug": "football"
+      },
+      "country": {
+        "name": "Germany",
+        "alpha2": "DE",
+        "alpha3": "DEU",
+        "slug": "germany"
+      },
+      "gender": "M",
+      "is_national": false,
+      "colors": {
+        "primary": "#1f5da6",
+        "secondary": "#ffffff",
+        "text": "#ffffff"
+      },
+      "followers_count": 104624
+    },
+    "numbers": {
+      "appearances": 7,
+      "goals": 1
+    },
+    "match_ids": [
+      7851487,
+      7851693,
+      7851716,
+      7851761,
+      7851776,
+      7851706,
+      7851815
+    ]
+  }
+]

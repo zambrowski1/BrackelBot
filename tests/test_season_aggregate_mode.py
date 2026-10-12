@@ -61,6 +61,19 @@ def test_zero_display_sums_known_values_without_changing_source_payload():
     assert not arithmetic_warnings(text)
 
 
+def test_unknown_display_keeps_known_league_and_omits_uncomputable_career_total():
+    data=evidence()
+    payload={**data['create_section'],'clubs':data['clubs'],'complete':True,'allow_unknown':True,
+             'unknown_as_zero':False,'show_career_total':True}
+    payload['clubs'][0]['rows'][0]['categories']['Кубок']=None
+    text=render_section(payload,resolver(),'2026-10-08')
+    table=WikitextParser(text).club_table()
+    assert table.seasons[0].values['2'].numeric()[0].value==4
+    assert table.seasons[0].values['4'].numeric()[0].value is None
+    assert not table.grand_total and '?' not in text
+    assert not arithmetic_warnings(text)
+
+
 def test_source_is_inside_updated_marker_and_career_total_is_summed():
     data=evidence()
     payload={**data['create_section'],'clubs':data['clubs'],'complete':True,'allow_unknown':True,

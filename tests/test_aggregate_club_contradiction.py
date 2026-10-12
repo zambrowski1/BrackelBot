@@ -1,6 +1,6 @@
 from tests.test_sofascore import API, Wiki, Resolver, MINI, snapshot, match
 from tests.test_season_aggregate_mode import MAPPING, NOW
-from wiki_stats.sofascore_cycle import other_season_clubs, prepare_player
+from wiki_stats.sofascore_cycle import other_season_clubs, split_cached_aggregate, prepare_player
 
 
 def history_match(**changes):
@@ -36,3 +36,29 @@ def test_aggregate_does_not_overwrite_one_club_with_combined_season():
     _, plan, report = prepare_player(snapshot(text), MAPPING, Split(), Wiki(), Resolver(), statistics_since=0, now=NOW)
     assert any(r['code'] == 'multi_club_season_unproven' for r in report['review'])
     assert not any(c.operation['type'] == 'update_stats' and c.status == 'ready' for c in plan.changes)
+
+
+def closed_history():
+    rows = []
+    for i in range(1, 6):
+        row = match(i)
+        for side in ('home_team', 'away_team'): row[side]['is_national'] = False
+        if i > 3: row['player']['team_id'] = 99
+        if i == 1: row['player']['incidents'] = {'goals': 2}
+        rows.append(row)
+    return {'complete': True, 'matches': rows}
+
+
+def test_closed_aggregate_splits_clubs_and_allows_missing_zero_incidents():
+    result = split_cached_aggregate(closed_history(), {**RECORD, 'numbers': {'appearances': 5, 'goals': 2}}, NOW)
+    assert [(r['team']['id'], r['numbers']) for r in result] == [(2600, {'appearances': 3, 'goals': 2}), (99, {'appearances': 2, 'goals': 0})]
+
+
+def test_missing_appearances_goals_or_duplicate_matches_prevent_split():
+    from copy import deepcopy
+    record = {**RECORD, 'numbers': {'appearances': 5, 'goals': 2}}
+    for field, value in [('appearances', 6), ('goals', 3)]:
+        changed = deepcopy(record); changed['numbers'][field] = value
+        assert split_cached_aggregate(closed_history(), changed, NOW) is None
+    duplicate = closed_history(); duplicate['matches'].append(duplicate['matches'][0])
+    assert split_cached_aggregate(duplicate, record, NOW) is None

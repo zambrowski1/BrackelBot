@@ -2,7 +2,7 @@
 """Collect a verified player's evidence and prepare one reviewable article diff.
 
 Only explicitly supported competition scopes are reconciled. Missing rows do
-not mean zero, and aggregate statistics for multiple clubs are never allocated.
+not mean zero. Multi-club aggregates require a closed per-club reconstruction.
 """
 from datetime import datetime, timezone, date
 from copy import deepcopy
@@ -94,6 +94,62 @@ def other_season_clubs(history, record, now):
         if sum((match.get(side) or {}).get('id') == team for side in ('home_team', 'away_team')) == 1:
             teams.add(team)
     return sorted(teams)
+
+
+def split_cached_aggregate(history, record, now, *, goalkeeper=False):
+    """Split only when cached appearances and goals exhaust the aggregate.
+
+    Omitted scorer incidents may mean zero once all appearances and all
+    season goals close exactly. This bounded assumption is recorded by the
+    caller; no per-match provider requests are needed.
+    """
+    from .sofascore_match_stats import excluded_league_round
+    from .sofascore_national import explicit_history_goals
+    from .sofascore_score import match_score
+    grouped = {}; ids = set(); count = goals = 0
+    for match in history.get('matches', []):
+        if ((match.get('tournament') or {}).get('id'), (match.get('season') or {}).get('id')) != (record['tournament_id'], record['season_id']):
+            continue
+        if match.get('is_finished') is not True or (match.get('status') or {}).get('type') != 'finished': continue
+        try: day = datetime.fromisoformat(match['start_time'].replace('Z', '+00:00'))
+        except (KeyError, TypeError, ValueError): return None
+        if day.tzinfo is None: return None
+        if day > now: continue
+        if record['tournament_id'] in LEAGUES and excluded_league_round(record['tournament_id'], match.get('round') or {}): continue
+        player = match.get('player') or {}
+        minutes = (player.get('statistics') or {}).get('minutes_played')
+        if type(minutes) not in (int, float):
+            # Unknown bench participation can only be excluded after the
+            # positive appearances close on the independently supplied total.
+            if player.get('is_on_bench') is True: continue
+            return None
+        if not 0 <= minutes <= 130: return None
+        if minutes == 0: continue
+        mid = match.get('id'); team_id = player.get('team_id')
+        if type(mid) is not int or mid <= 0 or mid in ids: return None
+        teams = [match.get(side) or {} for side in ('home_team', 'away_team')]
+        own = [team for team in teams if team.get('id') == team_id]
+        if type(team_id) is not int or len(own) != 1 or own[0].get('is_national') is not False: return None
+        if goalkeeper:
+            metric = (player.get('statistics') or {}).get('goals_conceded')
+            if type(metric) is int and metric >= 0: metric = -metric
+            else:
+                score = match_score(match)
+                if score is None: return None
+                conceded = score[1] if teams[0]['id'] == team_id else score[0]
+                if conceded and minutes < 90: return None
+                metric = -conceded
+        else:
+            metric = explicit_history_goals(match)
+            if metric is None:
+                for item in (player.get('statistics') or {}, player.get('incidents') or {}):
+                    if 'goals' in item: return None
+                metric = 0
+        ids.add(mid); count += 1; goals += metric
+        group = grouped.setdefault(team_id, {'team': own[0], 'numbers': {'appearances': 0, 'goals': 0}, 'match_ids': []})
+        group['numbers']['appearances'] += 1; group['numbers']['goals'] += metric; group['match_ids'].append(mid)
+    if len(grouped) < 2 or {'appearances': count, 'goals': goals} != record['numbers']: return None
+    return list(grouped.values())
 
 
 def european_history_covered(history, records, season, now):
@@ -577,6 +633,27 @@ def _prepare_statistics(snapshot, mapping, api, wiki, resolver, *, max_requests=
         year=int(record['season'][:4])
         other_clubs = other_season_clubs(history, record, now) if statistics_since is not None else []
         if other_clubs:
+            separated = split_cached_aggregate(history, record, now, goalkeeper=goalkeeper)
+            if separated:
+                try:
+                    split_records = []
+                    for group in separated:
+                        ent, resolved = resolve_team(group['team'])
+                        split_records.append({**record, 'team_id': group['team']['id'],
+                                              'entity': ent, 'resolved': resolved,
+                                              'numbers': group['numbers'], 'match_reconstructed': True})
+                    if len({r['resolved'].qid for r in split_records}) != len(split_records):
+                        raise UpdateError('entity_mismatch', 'Разные команды переходного сезона сопоставлены одному клубу')
+                except UpdateError as exc:
+                    issues.append({'code': exc.code, 'season': record['season'], 'tournament_id': record['tournament_id']})
+                else:
+                    verified.extend(split_records)
+                    issues.append({'code': 'season_aggregate_split_from_cache', 'season': record['season'],
+                                   'tournament_id': record['tournament_id'],
+                                   'aggregate': record['numbers'],
+                                   'clubs': [{'team_id': g['team']['id'], 'numbers': g['numbers'], 'match_ids': g['match_ids']} for g in separated],
+                                   'assumption': 'Пропущенная запись о голах считается нулём только при замыкании матчей и голов на сезонный итог'})
+                    continue
             fail_scope(record['season'], record['tournament_id'])
             issues.append({'code': 'multi_club_season_unproven', 'season': record['season'],
                            'team_id': record['team_id'], 'tournament_id': record['tournament_id'],
@@ -955,7 +1032,7 @@ def _prepare_statistics(snapshot, mapping, api, wiki, resolver, *, max_requests=
             ent = deepcopy(league[0]['entity'])
             payload = {'complete': True, 'categories': categories,
                        'league_wikitext': LEAGUE_LINKS[league[0]['tournament_id']]}
-            if missing:payload.update(allow_unknown=True,unknown_as_zero=True)
+            if missing:payload.update(allow_unknown=True,unknown_as_zero=False)
             if blocks:
                 ent['wikitext'] = blocks[0].club
                 earlier = sorted((r for r in blocks if table_season_name(r.season) < label),key=lambda r:table_season_name(r.season))
@@ -1198,10 +1275,10 @@ def _prepare_statistics(snapshot, mapping, api, wiki, resolver, *, max_requests=
                 from .competition_notes import column_notes
                 header_notes=column_notes(records,list(clubs.values()),categories)
                 add('create_statistics_section', {'name': 'КлСтат', 'wikitext': '{{КлСтат}}'},
-                    {'structure': 'club_table'}, payload={'complete': True, 'full_career': False,'allow_unknown':statistics_since is not None,'unknown_as_zero':statistics_since is not None,'show_career_total':statistics_since==0,
+                    {'structure': 'club_table'}, payload={'complete': True, 'full_career': False,'allow_unknown':statistics_since is not None,'unknown_as_zero':False,'show_career_total':statistics_since==0,
                     'statistics_as_of': confirmed, 'categories': categories, 'clubs': list(clubs.values()),'header_notes':header_notes,
                     'source_url':'https://www.sofascore.com/football/player/'+(profile.get('slug')+'/' if isinstance(profile.get('slug'),str) and re.fullmatch(r'[a-z0-9-]+',profile['slug']) else '')+str(mapping['api_id'])})
-                issues.append({'code': 'partial_section', 'message': 'Известные сезонные показатели скопированы; недоступные ячейки показаны нулями по настройке пользователя, пропуски сохранены в отчёте'})
+                issues.append({'code': 'partial_section', 'message': 'Известные сезонные показатели скопированы; недоступные новые ячейки показаны тире, пропуски сохранены в отчёте'})
             else:
                 issues.append({'code':'section_needs_confirmed_evidence'})
         else:

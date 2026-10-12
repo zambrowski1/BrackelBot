@@ -101,8 +101,10 @@ def render_section(payload, resolver, as_of):
     # A bounded history omits the career row by default. The all-seasons
     # display option sums the shown numbers, retaining gaps in the report.
     show_total=payload['full_career'] or payload.get('show_career_total',False)
-    if show_total and any(value is None for value in grand):
-        raise UpdateError('incomplete_statistics','Для строки итогов нужны числовые ячейки')
+    if any(value is None for value in grand):
+        # Native КлСтат/Итого does not forward explicit total overrides;
+        # passing an em dash there triggers #expr instead of a valid sum.
+        show_total = False
     body.append('{{КлСтат/Итого|'+'|'.join(map(str,grand))+'}}' if show_total else '|}')
     if notes or not show_total:body.append('{{комментарии}}')
     return '\n'.join(lines+body)+'\n\n'

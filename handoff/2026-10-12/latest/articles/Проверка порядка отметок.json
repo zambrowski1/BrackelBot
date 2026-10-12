@@ -1,18 +1,22 @@
 [
   {
     "article": "Грифо — готовая статья.wiki",
-    "changed_headers": 0
+    "headers_checked": 6,
+    "issues": []
   },
   {
     "article": "Крамарич — готовая статья.wiki",
-    "changed_headers": 1
+    "headers_checked": 5,
+    "issues": []
   },
   {
     "article": "Центнер — готовая статья.wiki",
-    "changed_headers": 1
+    "headers_checked": 3,
+    "issues": []
   },
   {
     "article": "Шик — готовая статья.wiki",
-    "changed_headers": 0
+    "headers_checked": 6,
+    "issues": []
   }
 ]

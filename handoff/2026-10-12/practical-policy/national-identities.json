@@ -1,0 +1,551 @@
+[
+  {
+    "batchcomplete": true,
+    "query": {
+      "pages": [
+        {
+          "pageid": 51626,
+          "ns": 0,
+          "title": "Сборная Бразилии по футболу",
+          "pageprops": {
+            "page_image_free": "Brazilian_Football_Confederation_logo.svg",
+            "wikibase_item": "Q83459"
+          }
+        },
+        {
+          "pageid": 226573,
+          "ns": 0,
+          "title": "Сборная Англии по футболу",
+          "pageprops": {
+            "page_image": "England_national_football_team_crest.svg",
+            "wikibase_item": "Q47762"
+          }
+        },
+        {
+          "pageid": 227209,
+          "ns": 0,
+          "title": "Сборная Аргентины по футболу",
+          "pageprops": {
+            "page_image": "Argentina_national_football_team_logo.svg",
+            "wikibase_item": "Q79800"
+          }
+        },
+        {
+          "pageid": 229964,
+          "ns": 0,
+          "title": "Сборная Ганы по футболу",
+          "pageprops": {
+            "page_image": "Ghana_Football_Association.svg",
+            "wikibase_item": "Q172014"
+          }
+        },
+        {
+          "pageid": 270898,
+          "ns": 0,
+          "title": "Сборная Армении по футболу",
+          "pageprops": {
+            "page_image": "Football_Federation_of_Armenia_2024.svg",
+            "wikibase_item": "Q183326"
+          }
+        },
+        {
+          "pageid": 344742,
+          "ns": 0,
+          "title": "Сборная Болгарии по футболу",
+          "pageprops": {
+            "page_image": "Bulgaria_football_union.png",
+            "page_image_free": "BulgariaFIFARank.png",
+            "wikibase_item": "Q180845"
+          }
+        },
+        {
+          "pageid": 540517,
+          "ns": 0,
+          "title": "Сборная Бельгии по футболу",
+          "pageprops": {
+            "page_image": "Royal_Belgian_Football_Association_Logo.svg",
+            "wikibase_item": "Q166776"
+          }
+        },
+        {
+          "pageid": 626574,
+          "ns": 0,
+          "title": "Сборная Азербайджана по футболу",
+          "pageprops": {
+            "page_image": "AFFA_Logo.svg",
+            "wikibase_item": "Q180800"
+          }
+        },
+        {
+          "pageid": 704950,
+          "ns": 0,
+          "title": "Сборная Албании по футболу",
+          "pageprops": {
+            "page_image_free": "Stema_e_Fanellës_së_Kombëtares.svg",
+            "wikibase_item": "Q186262"
+          }
+        },
+        {
+          "pageid": 772572,
+          "ns": 0,
+          "title": "Сборная Австрии по футболу",
+          "pageprops": {
+            "page_image": "Austria_national_football_team_crest.svg",
+            "wikibase_item": "Q163534"
+          }
+        },
+        {
+          "pageid": 773491,
+          "ns": 0,
+          "title": "Сборная Венгрии по футболу",
+          "pageprops": {
+            "page_image": "Hungarian_Football_Federation.svg",
+            "wikibase_item": "Q170561"
+          }
+        },
+        {
+          "pageid": 4332685,
+          "ns": 0,
+          "title": "Сборная Гибралтара по футболу",
+          "pageprops": {
+            "page_image": "Gibraltar_Football_Association_(2020).svg",
+            "wikibase_item": "Q583626"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "batchcomplete": true,
+    "query": {
+      "pages": [
+        {
+          "pageid": 229925,
+          "ns": 0,
+          "title": "Сборная Италии по футболу",
+          "pageprops": {
+            "page_image_free": "Logo_Italy_National_Football_Team_-_2023.svg",
+            "wikibase_item": "Q676899"
+          }
+        },
+        {
+          "pageid": 230925,
+          "ns": 0,
+          "title": "Сборная Испании по футболу",
+          "pageprops": {
+            "page_image": "Spain_national_football_team_crest.svg",
+            "wikibase_item": "Q42267"
+          }
+        },
+        {
+          "pageid": 273196,
+          "ns": 0,
+          "title": "Сборная Дании по футболу",
+          "pageprops": {
+            "page_image_free": "Dansk_boldspil_union_logo.svg",
+            "wikibase_item": "Q131785"
+          }
+        },
+        {
+          "pageid": 276805,
+          "ns": 0,
+          "title": "Сборная Латвии по футболу",
+          "pageprops": {
+            "page_image": "Latvia_national_football_team.svg",
+            "wikibase_item": "Q189322"
+          }
+        },
+        {
+          "pageid": 655448,
+          "ns": 0,
+          "title": "Сборная Египта по футболу",
+          "pageprops": {
+            "page_image": "Egyptian_Football_Association_logo.svg",
+            "wikibase_item": "Q28089"
+          }
+        },
+        {
+          "pageid": 688693,
+          "ns": 0,
+          "title": "Сборная Колумбии по футболу",
+          "pageprops": {
+            "page_image_free": "FCF-Logo-2023.svg",
+            "wikibase_item": "Q212564"
+          }
+        },
+        {
+          "pageid": 715308,
+          "ns": 0,
+          "title": "Сборная Исландии по футболу",
+          "pageprops": {
+            "page_image": "Эмблема_сборной_Исландии_по_футболу.svg",
+            "wikibase_item": "Q189198"
+          }
+        },
+        {
+          "pageid": 775769,
+          "ns": 0,
+          "title": "Сборная Кипра по футболу",
+          "pageprops": {
+            "page_image": "Cyprus_Football_Association.svg",
+            "wikibase_item": "Q188791"
+          }
+        },
+        {
+          "pageid": 949046,
+          "ns": 0,
+          "title": "Сборная Греции по футболу",
+          "pageprops": {
+            "page_image_free": "Greece_National_Football_Team.svg",
+            "wikibase_item": "Q134925"
+          }
+        },
+        {
+          "pageid": 1020794,
+          "ns": 0,
+          "title": "Сборная Канады по футболу",
+          "pageprops": {
+            "page_image": "Canadian_Soccer_Association_Logo.svg",
+            "wikibase_item": "Q208635"
+          }
+        },
+        {
+          "pageid": 1625744,
+          "ns": 0,
+          "title": "Сборная Иордании по футболу",
+          "pageprops": {
+            "page_image_free": "Jordan_national_football_team_logo_2024.svg",
+            "wikibase_item": "Q275940"
+          }
+        },
+        {
+          "pageid": 3295969,
+          "ns": 0,
+          "title": "Сборная Косова по футболу",
+          "pageprops": {
+            "page_image": "Football_Federation_of_Kosovo.svg",
+            "wikibase_item": "Q113143"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "batchcomplete": true,
+    "query": {
+      "pages": [
+        {
+          "pageid": 95206,
+          "ns": 0,
+          "title": "Сборная России по футболу",
+          "pageprops": {
+            "page_image": "Russian_Football_Union_Logo_2023.png",
+            "wikibase_item": "Q726080"
+          }
+        },
+        {
+          "pageid": 224170,
+          "ns": 0,
+          "title": "Сборная Польши по футболу",
+          "pageprops": {
+            "page_image_free": "Herb_Polski.svg",
+            "wikibase_item": "Q166196"
+          }
+        },
+        {
+          "pageid": 227236,
+          "ns": 0,
+          "title": "Сборная Нидерландов по футболу",
+          "pageprops": {
+            "page_image": "Netherlands_national_football_team_Logo.svg",
+            "wikibase_item": "Q47050"
+          }
+        },
+        {
+          "pageid": 228972,
+          "ns": 0,
+          "title": "Сборная Мексики по футболу",
+          "pageprops": {
+            "page_image": "Mexico_national_football_team_crest.svg",
+            "wikibase_item": "Q164089"
+          }
+        },
+        {
+          "pageid": 229176,
+          "ns": 0,
+          "title": "Сборная Португалии по футболу",
+          "pageprops": {
+            "page_image": "Portuguese_Football_Federation.svg",
+            "wikibase_item": "Q267245"
+          }
+        },
+        {
+          "pageid": 578426,
+          "ns": 0,
+          "title": "Сборная Молдовы по футболу",
+          "pageprops": {
+            "page_image": "Fed_moldova.svg",
+            "wikibase_item": "Q191142"
+          }
+        },
+        {
+          "pageid": 687708,
+          "ns": 0,
+          "title": "Сборная Перу по футболу",
+          "pageprops": {
+            "page_image_free": "Logotipo_de_la_Federación_Peruana_de_Fútbol.svg",
+            "wikibase_item": "Q212166"
+          }
+        },
+        {
+          "pageid": 949330,
+          "ns": 0,
+          "title": "Сборная Норвегии по футболу",
+          "pageprops": {
+            "page_image": "Norway_national_football_team_logo.svg",
+            "wikibase_item": "Q184387"
+          }
+        },
+        {
+          "pageid": 952657,
+          "ns": 0,
+          "title": "Сборная Мальты по футболу",
+          "pageprops": {
+            "page_image_free": "Malta_Football_Association_logo.svg",
+            "wikibase_item": "Q188782"
+          }
+        },
+        {
+          "pageid": 1006953,
+          "ns": 0,
+          "title": "Сборная Нигерии по футболу",
+          "pageprops": {
+            "page_image": "Nigeria_football_federation_Logo.svg",
+            "wikibase_item": "Q181930"
+          }
+        },
+        {
+          "pageid": 1024181,
+          "ns": 0,
+          "title": "Сборная Марокко по футболу",
+          "pageprops": {
+            "page_image": "Футбольная_федерация_Марокко_-_лого.svg",
+            "wikibase_item": "Q207337"
+          }
+        },
+        {
+          "pageid": 1276307,
+          "ns": 0,
+          "title": "Сборная Панамы по футболу",
+          "pageprops": {
+            "page_image": "Panamanian_Football_Federation_logo.svg",
+            "wikibase_item": "Q223748"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "batchcomplete": true,
+    "query": {
+      "pages": [
+        {
+          "pageid": 78858,
+          "ns": 0,
+          "title": "Сборная Украины по футболу",
+          "pageprops": {
+            "page_image_free": "Logo_Fédération_Ukraine_Football_2016.svg",
+            "wikibase_item": "Q170403"
+          }
+        },
+        {
+          "pageid": 227942,
+          "ns": 0,
+          "title": "Сборная Уэльса по футболу",
+          "pageprops": {
+            "page_image": "Wales_national_football_team_logo.svg",
+            "wikibase_item": "Q180857"
+          }
+        },
+        {
+          "pageid": 230952,
+          "ns": 0,
+          "title": "Сборная Туниса по футболу",
+          "pageprops": {
+            "page_image": "Tunisia_FA.svg",
+            "wikibase_item": "Q27971"
+          }
+        },
+        {
+          "pageid": 230991,
+          "ns": 0,
+          "title": "Сборная Саудовской Аравии по футболу",
+          "pageprops": {
+            "page_image": "Saudi_Arabia_national_football_team_logo.svg",
+            "wikibase_item": "Q189723"
+          }
+        },
+        {
+          "pageid": 245787,
+          "ns": 0,
+          "title": "Сборная Турции по футболу",
+          "pageprops": {
+            "page_image_free": "Roundel_flag_of_Turkey.svg",
+            "wikibase_item": "Q483856"
+          }
+        },
+        {
+          "pageid": 363120,
+          "ns": 0,
+          "title": "Сборная Сан-Марино по футболу",
+          "pageprops": {
+            "page_image_free": "San-marino-logo.png",
+            "wikibase_item": "Q185350"
+          }
+        },
+        {
+          "pageid": 543380,
+          "ns": 0,
+          "title": "Сборная Северной Ирландии по футболу",
+          "pageprops": {
+            "page_image": "Irish_Football_Association_logo.svg",
+            "wikibase_item": "Q190978"
+          }
+        },
+        {
+          "pageid": 758577,
+          "ns": 0,
+          "title": "Сборная Фарерских островов по футболу",
+          "pageprops": {
+            "page_image_free": "Faroe_Islands_Football_Association_logo.svg",
+            "wikibase_item": "Q200688"
+          }
+        },
+        {
+          "pageid": 1017345,
+          "ns": 0,
+          "title": "Сборная Словакии по футболу",
+          "pageprops": {
+            "page_image": "Slovak_Football_Association_logo.svg",
+            "wikibase_item": "Q174512"
+          }
+        },
+        {
+          "pageid": 1017607,
+          "ns": 0,
+          "title": "Сборная Словении по футболу",
+          "pageprops": {
+            "page_image": "Slovenialogo.png",
+            "wikibase_item": "Q172221"
+          }
+        },
+        {
+          "pageid": 1018280,
+          "ns": 0,
+          "title": "Сборная Северной Македонии по футболу",
+          "pageprops": {
+            "page_image": "Logo_for_Football_Federation_of_North_Macedonia.png",
+            "wikibase_item": "Q188568"
+          }
+        },
+        {
+          "pageid": 1025612,
+          "ns": 0,
+          "title": "Сборная Сенегала по футболу",
+          "pageprops": {
+            "page_image": "Senegalese_Football_Federation_logo.svg",
+            "wikibase_item": "Q207441"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "batchcomplete": true,
+    "query": {
+      "pages": [
+        {
+          "pageid": 226643,
+          "ns": 0,
+          "title": "Сборная Швеции по футболу",
+          "pageprops": {
+            "page_image": "Sweden_national_football_team_badge.svg",
+            "wikibase_item": "Q160826"
+          }
+        },
+        {
+          "pageid": 228101,
+          "ns": 0,
+          "title": "Сборная Хорватии по футболу",
+          "pageprops": {
+            "page_image": "Hrvatski_Nogometni_Savez.svg",
+            "wikibase_item": "Q134479"
+          }
+        },
+        {
+          "pageid": 229939,
+          "ns": 0,
+          "title": "Сборная Чехии по футболу",
+          "pageprops": {
+            "page_image": "Czech_Republic_football_team.svg",
+            "wikibase_item": "Q483868"
+          }
+        },
+        {
+          "pageid": 230437,
+          "ns": 0,
+          "title": "Сборная Японии по футболу",
+          "pageprops": {
+            "page_image": "JFA_Logo.svg",
+            "wikibase_item": "Q170566"
+          }
+        },
+        {
+          "pageid": 230723,
+          "ns": 0,
+          "title": "Сборная Франции по футболу",
+          "pageprops": {
+            "page_image": "France_national_football_team_seal.svg",
+            "wikibase_item": "Q47774"
+          }
+        },
+        {
+          "pageid": 344388,
+          "ns": 0,
+          "title": "Сборная Шотландии по футболу",
+          "pageprops": {
+            "page_image": "Scotland_national_football_team_logo.svg",
+            "wikibase_item": "Q34044"
+          }
+        },
+        {
+          "pageid": 771764,
+          "ns": 0,
+          "title": "Сборная Черногории по футболу",
+          "pageprops": {
+            "page_image": "Football_Association_of_Montenegro.svg",
+            "wikibase_item": "Q189018"
+          }
+        },
+        {
+          "pageid": 789070,
+          "ns": 0,
+          "title": "Сборная Эстонии по футболу",
+          "pageprops": {
+            "page_image": "Fed_estonie.svg",
+            "wikibase_item": "Q186914"
+          }
+        },
+        {
+          "pageid": 884025,
+          "ns": 0,
+          "title": "Сборная Финляндии по футболу",
+          "pageprops": {
+            "page_image": "Finland_national_football_team.png",
+            "wikibase_item": "Q186532"
+          }
+        }
+      ]
+    }
+  }
+]

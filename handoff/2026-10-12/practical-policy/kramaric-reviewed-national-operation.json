@@ -1,0 +1,1587 @@
+{
+  "id": "reviewed-kramaric-senior-list",
+  "type": "create_sbmatches",
+  "entity": {
+    "name": "Хорватия",
+    "kind": "national_team",
+    "age": null,
+    "wikidata_id": "Q134479",
+    "page_title": "Сборная Хорватии по футболу",
+    "wikitext": "[[Сборная Хорватии по футболу|Хорватия]]"
+  },
+  "target": {
+    "structure": "sbmatches",
+    "age": null
+  },
+  "as_of": "2026-10-12",
+  "sources": [
+    {
+      "url": "https://hns.team/igraci/14791/andrej-kramaric/",
+      "provenance": "user_provided",
+      "coverage_as_of": "2026-10-12",
+      "note": "Отдельно проверенная строка федерации Хорватии"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-malta/IObspUb#id:5076634",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/azerbaijan-croatia/pUbsRUb#id:5076644",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-italy/hUbspUb#id:5076590",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-norway/AObspUb#id:5076046",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://hns.team/igraci/14791/andrej-kramaric/",
+      "provenance": "user_provided",
+      "coverage_as_of": "2026-10-12",
+      "note": "Отдельно проверенная строка федерации Хорватии"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/bulgaria-croatia/pUbsqUb#id:5124740",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-malta/IObspUb#id:5124746",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-russia/UTbspUb#id:6939499",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/moldova-croatia/pUbsHVb#id:7065353",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/san-marino-croatia/pUbsIWb#id:7065352",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-turkiye/aUbspUb#id:6964819",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-spain/YTbspUb#id:6964836",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-portugal/eUbspUb#id:7019683",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-turkiye/aUbspUb#id:6827888",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/kosovo-croatia/pUbsBNlb#id:7116410",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-finland/mUbspUb#id:6828169",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-iceland/iUbspUb#id:6828190",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/northern-ireland-croatia/pUbsLVb#id:7251024",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-ukraine/bUbspUb#id:6828248",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://hns.team/igraci/14791/andrej-kramaric/",
+      "provenance": "user_provided",
+      "coverage_as_of": "2026-10-12",
+      "note": "Отдельно проверенная строка федерации Хорватии"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/kosovo-croatia/pUbsBNlb#id:7116416",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-turkiye/aUbspUb#id:6828368",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-finland/mUbspUb#id:6828387",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-ukraine/bUbspUb#id:6828388",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-greece/kUbspUb#id:7624049",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-greece/kUbspUb#id:7624047",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/peru-croatia/pUbsPVb#id:7725343",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/mexico-croatia/pUbsGVb#id:7725345",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/brazil-croatia/pUbsYUb#id:7805998",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/senegal-croatia/pUbsOUb#id:7807621",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/nigeria-croatia/pUbsKVb#id:7659869",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/argentina-croatia/pUbsuWb#id:7659880",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-iceland/iUbspUb#id:7659906",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-denmark/BObspUb#id:7665829",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-russia/UTbspUb#id:7693127",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-england/nUbspUb#id:7693132",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-france/GObspUb#id:7693131",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-england/nUbspUb#id:7697220",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/jordan-croatia/pUbswVb#id:8009298",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-spain/YTbspUb#id:7697300",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-england/nUbspUb#id:7697301",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/azerbaijan-croatia/pUbsRUb#id:8078328",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-hungary/jUbspUb#id:8078414",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-wales/cUbspUb#id:8078474",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/tunisia-croatia/pUbsEUb#id:8224820",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-portugal/eUbspUb#id:8600740",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-france/GObspUb#id:8600882",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-sweden/NTbspUb#id:8600827",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-france/GObspUb#id:8600755",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-slovenia/JObspUb#id:9223768",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-cyprus/HObspUb#id:9223764",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/armenia-croatia/pUbsPUb#id:9529420",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/belgium-croatia/pUbsrUb#id:9529457",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-england/nUbspUb#id:8513120",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-czechia/oUbspUb#id:8513117",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-scotland/VTbspUb#id:8602463",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-spain/YTbspUb#id:8594133",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-russia/UTbspUb#id:9223858",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-slovakia/XTbspUb#id:9223847",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-slovenia/JObspUb#id:9223855",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-cyprus/HObspUb#id:9223935",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-slovakia/XTbspUb#id:9223899",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-malta/IObspUb#id:9223884",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-russia/UTbspUb#id:9223881",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-slovenia/JObspUb#id:10151893",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/bulgaria-croatia/pUbsqUb#id:10152214",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/austria-croatia/pUbstUb#id:10023384",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-france/GObspUb#id:10023295",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-denmark/BObspUb#id:10023425",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-france/GObspUb#id:10023350",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-denmark/BObspUb#id:10023439",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/austria-croatia/pUbstUb#id:10023332",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/saudi-arabia-croatia/pUbsJWb#id:10751596",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/morocco-croatia/pUbsDVb#id:10230570",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/canada-croatia/pUbscVb#id:10230550",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/belgium-croatia/pUbsrUb#id:10230535",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/japan-croatia/pUbsvVb#id:10230582",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/brazil-croatia/pUbsYUb#id:10230640",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/argentina-croatia/pUbsuWb#id:10230580",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/morocco-croatia/pUbsDVb#id:10230637",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-wales/cUbspUb#id:10752387",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-turkiye/aUbspUb#id:10752408",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-netherlands/fUbspUb#id:11014034",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-spain/YTbspUb#id:11353239",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-latvia/gUbspUb#id:10752472",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/armenia-croatia/pUbsPUb#id:10752493",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-latvia/gUbspUb#id:10752571",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/armenia-croatia/pUbsPUb#id:10752595",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/tunisia-croatia/pUbsEUb#id:12169574",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/egypt-croatia/pUbsiVb#id:12189925",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/north-macedonia-croatia/pUbsCVb#id:12076185",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-portugal/eUbspUb#id:12076183",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-spain/YTbspUb#id:11873907",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-albania/PTbspUb#id:11873906",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-italy/hUbspUb#id:11873896",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-portugal/eUbspUb#id:12057929",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-poland/dUbspUb#id:12057924",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-scotland/VTbspUb#id:12057923",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-poland/dUbspUb#id:12057927",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-scotland/VTbspUb#id:12057918",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-portugal/eUbspUb#id:12057917",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-france/GObspUb#id:13157483",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-france/GObspUb#id:13157484",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/gibraltar-croatia/pUbsoKbb#id:13233427",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-czechia/oUbspUb#id:13233446",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/faroe-islands-croatia/pUbskVb#id:13233469",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/montenegro-croatia/pUbsORc#id:13233579",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-czechia/oUbspUb#id:13233594",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/gibraltar-croatia/pUbsoKbb#id:13233630",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/faroe-islands-croatia/pUbskVb#id:13233661",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/montenegro-croatia/pUbsORc#id:13233686",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/colombia-croatia/pUbsvWb#id:15332281",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/brazil-croatia/pUbsYUb#id:15332282",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/belgium-croatia/pUbsrUb#id:15536790",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-slovenia/JObspUb#id:15536792",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-england/nUbspUb#id:15186504",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/panama-croatia/pUbsodc#id:15186520",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    },
+    {
+      "url": "https://www.sofascore.com/football/match/croatia-portugal/eUbspUb#id:12812997",
+      "provenance": "sofascore",
+      "coverage_as_of": "2026-10-12",
+      "note": "Сохранённый протокол Sofascore"
+    }
+  ],
+  "payload": {
+    "complete": true,
+    "metric": "голы",
+    "matches": [
+      {
+        "дата": "2014-09-04",
+        "соперник": "[[Сборная Кипра по футболу|Кипр]]",
+        "счёт": "2:0",
+        "голы": "0",
+        "соревнование": "Товарищеский матч"
+      },
+      {
+        "дата": "2014-09-09",
+        "соперник": "[[Сборная Мальты по футболу|Мальта]]",
+        "счёт": "2:0",
+        "голы": "1",
+        "соревнование": "Отборочные матчи ЧЕ-2016"
+      },
+      {
+        "дата": "2014-10-13",
+        "соперник": "[[Сборная Азербайджана по футболу|Азербайджан]]",
+        "счёт": "6:0",
+        "голы": "1",
+        "соревнование": "Отборочные матчи ЧЕ-2016"
+      },
+      {
+        "дата": "2014-11-16",
+        "соперник": "[[Сборная Италии по футболу|Италия]]",
+        "счёт": "1:1",
+        "голы": "0",
+        "соревнование": "Отборочные матчи ЧЕ-2016"
+      },
+      {
+        "дата": "2015-03-28",
+        "соперник": "[[Сборная Норвегии по футболу|Норвегия]]",
+        "счёт": "5:1",
+        "голы": "0",
+        "соревнование": "Отборочные матчи ЧЕ-2016"
+      },
+      {
+        "дата": "2015-06-07",
+        "соперник": "[[Сборная Гибралтара по футболу|Гибралтар]]",
+        "счёт": "4:0",
+        "голы": "1",
+        "соревнование": "Товарищеский матч"
+      },
+      {
+        "дата": "2015-10-10",
+        "соперник": "[[Сборная Болгарии по футболу|Болгария]]",
+        "счёт": "3:0",
+        "голы": "0",
+        "соревнование": "Отборочные матчи ЧЕ-2016"
+      },
+      {
+        "дата": "2015-10-13",
+        "соперник": "[[Сборная Мальты по футболу|Мальта]]",
+        "счёт": "1:0",
+        "голы": "0",
+        "соревнование": "Отборочные матчи ЧЕ-2016"
+      },
+      {
+        "дата": "2015-11-17",
+        "соперник": "[[Сборная России по футболу|Россия]]",
+        "счёт": "3:1",
+        "голы": "0",
+        "соревнование": "Товарищеский матч"
+      },
+      {
+        "дата": "2016-05-27",
+        "соперник": "[[Сборная Молдовы по футболу|Молдова]]",
+        "счёт": "1:0",
+        "голы": "1",
+        "соревнование": "Товарищеский матч"
+      },
+      {
+        "дата": "2016-06-04",
+        "соперник": "[[Сборная Сан-Марино по футболу|Сан-Марино]]",
+        "счёт": "10:0",
+        "голы": "0",
+        "соревнование": "Товарищеский матч"
+      },
+      {
+        "дата": "2016-06-12",
+        "соперник": "[[Сборная Турции по футболу|Турция]]",
+        "счёт": "1:0",
+        "голы": "0",
+        "соревнование": "Финальные матчи ЧЕ-2016"
+      },
+      {
+        "дата": "2016-06-21",
+        "соперник": "[[Сборная Испании по футболу|Испания]]",
+        "счёт": "2:1",
+        "голы": "0",
+        "соревнование": "Финальные матчи ЧЕ-2016"
+      },
+      {
+        "дата": "2016-06-25",
+        "соперник": "[[Сборная Португалии по футболу|Португалия]]",
+        "счёт": "0:1",
+        "голы": "0",
+        "соревнование": "Финальные матчи ЧЕ-2016"
+      },
+      {
+        "дата": "2016-09-05",
+        "соперник": "[[Сборная Турции по футболу|Турция]]",
+        "счёт": "1:1",
+        "голы": "0",
+        "соревнование": "Отборочные матчи ЧМ-2018"
+      },
+      {
+        "дата": "2016-10-06",
+        "соперник": "[[Сборная Косова по футболу|Косово]]",
+        "счёт": "6:0",
+        "голы": "0",
+        "соревнование": "Отборочные матчи ЧМ-2018"
+      },
+      {
+        "дата": "2016-10-09",
+        "соперник": "[[Сборная Финляндии по футболу|Финляндия]]",
+        "счёт": "1:0",
+        "голы": "0",
+        "соревнование": "Отборочные матчи ЧМ-2018"
+      },
+      {
+        "дата": "2016-11-12",
+        "соперник": "[[Сборная Исландии по футболу|Исландия]]",
+        "счёт": "2:0",
+        "голы": "0",
+        "соревнование": "Отборочные матчи ЧМ-2018"
+      },
+      {
+        "дата": "2016-11-15",
+        "соперник": "[[Сборная Северной Ирландии по футболу|Северная Ирландия]]",
+        "счёт": "3:0",
+        "голы": "1",
+        "соревнование": "Товарищеский матч"
+      },
+      {
+        "дата": "2017-03-24",
+        "соперник": "[[Сборная Украины по футболу|Украина]]",
+        "счёт": "1:0",
+        "голы": "0",
+        "соревнование": "Отборочные матчи ЧМ-2018"
+      },
+      {
+        "дата": "2017-03-28",
+        "соперник": "[[Сборная Эстонии по футболу|Эстония]]",
+        "счёт": "0:3",
+        "голы": "0",
+        "соревнование": "Товарищеский матч"
+      },
+      {
+        "дата": "2017-09-02",
+        "соперник": "[[Сборная Косова по футболу|Косово]]",
+        "счёт": "1:0",
+        "голы": "0",
+        "соревнование": "Отборочные матчи ЧМ-2018"
+      },
+      {
+        "дата": "2017-09-05",
+        "соперник": "[[Сборная Турции по футболу|Турция]]",
+        "счёт": "0:1",
+        "голы": "0",
+        "соревнование": "Отборочные матчи ЧМ-2018"
+      },
+      {
+        "дата": "2017-10-06",
+        "соперник": "[[Сборная Финляндии по футболу|Финляндия]]",
+        "счёт": "1:1",
+        "голы": "0",
+        "соревнование": "Отборочные матчи ЧМ-2018"
+      },
+      {
+        "дата": "2017-10-09",
+        "соперник": "[[Сборная Украины по футболу|Украина]]",
+        "счёт": "2:0",
+        "голы": "2",
+        "соревнование": "Отборочные матчи ЧМ-2018"
+      },
+      {
+        "дата": "2017-11-09",
+        "соперник": "[[Сборная Греции по футболу|Греция]]",
+        "счёт": "4:1",
+        "голы": "1",
+        "соревнование": "Отборочные матчи ЧМ-2018"
+      },
+      {
+        "дата": "2017-11-12",
+        "соперник": "[[Сборная Греции по футболу|Греция]]",
+        "счёт": "0:0",
+        "голы": "0",
+        "соревнование": "Отборочные матчи ЧМ-2018"
+      },
+      {
+        "дата": "2018-03-24",
+        "соперник": "[[Сборная Перу по футболу|Перу]]",
+        "счёт": "0:2",
+        "голы": "0",
+        "соревнование": "Товарищеский матч"
+      },
+      {
+        "дата": "2018-03-28",
+        "соперник": "[[Сборная Мексики по футболу|Мексика]]",
+        "счёт": "1:0",
+        "голы": "0",
+        "соревнование": "Товарищеский матч"
+      },
+      {
+        "дата": "2018-06-03",
+        "соперник": "[[Сборная Бразилии по футболу|Бразилия]]",
+        "счёт": "0:2",
+        "голы": "0",
+        "соревнование": "Товарищеский матч"
+      },
+      {
+        "дата": "2018-06-08",
+        "соперник": "[[Сборная Сенегала по футболу|Сенегал]]",
+        "счёт": "2:1",
+        "голы": "1",
+        "соревнование": "Товарищеский матч"
+      },
+      {
+        "дата": "2018-06-16",
+        "соперник": "[[Сборная Нигерии по футболу|Нигерия]]",
+        "счёт": "2:0",
+        "голы": "0",
+        "соревнование": "Финальные матчи ЧМ-2018"
+      },
+      {
+        "дата": "2018-06-21",
+        "соперник": "[[Сборная Аргентины по футболу|Аргентина]]",
+        "счёт": "3:0",
+        "голы": "0",
+        "соревнование": "Финальные матчи ЧМ-2018"
+      },
+      {
+        "дата": "2018-06-26",
+        "соперник": "[[Сборная Исландии по футболу|Исландия]]",
+        "счёт": "2:1",
+        "голы": "0",
+        "соревнование": "Финальные матчи ЧМ-2018"
+      },
+      {
+        "дата": "2018-07-01",
+        "соперник": "[[Сборная Дании по футболу|Дания]]",
+        "счёт": "1:1",
+        "голы": "0",
+        "соревнование": "Финальные матчи ЧМ-2018",
+        "пенальти": "3:2"
+      },
+      {
+        "дата": "2018-07-07",
+        "соперник": "[[Сборная России по футболу|Россия]]",
+        "счёт": "2:2",
+        "голы": "1",
+        "соревнование": "Финальные матчи ЧМ-2018",
+        "пенальти": "4:3"
+      },
+      {
+        "дата": "2018-07-11",
+        "соперник": "[[Сборная Англии по футболу|Англия]]",
+        "счёт": "2:1",
+        "голы": "0",
+        "соревнование": "Финальные матчи ЧМ-2018"
+      },
+      {
+        "дата": "2018-07-15",
+        "соперник": "[[Сборная Франции по футболу|Франция]]",
+        "счёт": "2:4",
+        "голы": "0",
+        "соревнование": "Финальные матчи ЧМ-2018"
+      },
+      {
+        "дата": "2018-10-12",
+        "соперник": "[[Сборная Англии по футболу|Англия]]",
+        "счёт": "0:0",
+        "голы": "0",
+        "соревнование": "Лига наций УЕФА 2018/2019"
+      },
+      {
+        "дата": "2018-10-15",
+        "соперник": "[[Сборная Иордании по футболу|Иордания]]",
+        "счёт": "2:1",
+        "голы": "0",
+        "соревнование": "Товарищеский матч"
+      },
+      {
+        "дата": "2018-11-15",
+        "соперник": "[[Сборная Испании по футболу|Испания]]",
+        "счёт": "3:2",
+        "голы": "1",
+        "соревнование": "Лига наций УЕФА 2018/2019"
+      },
+      {
+        "дата": "2018-11-18",
+        "соперник": "[[Сборная Англии по футболу|Англия]]",
+        "счёт": "1:2",
+        "голы": "1",
+        "соревнование": "Лига наций УЕФА 2018/2019"
+      },
+      {
+        "дата": "2019-03-21",
+        "соперник": "[[Сборная Азербайджана по футболу|Азербайджан]]",
+        "счёт": "2:1",
+        "голы": "1",
+        "соревнование": "Отборочные матчи ЧЕ-2020"
+      },
+      {
+        "дата": "2019-03-24",
+        "соперник": "[[Сборная Венгрии по футболу|Венгрия]]",
+        "счёт": "1:2",
+        "голы": "0",
+        "соревнование": "Отборочные матчи ЧЕ-2020"
+      },
+      {
+        "дата": "2019-06-08",
+        "соперник": "[[Сборная Уэльса по футболу|Уэльс]]",
+        "счёт": "2:1",
+        "голы": "0",
+        "соревнование": "Отборочные матчи ЧЕ-2020"
+      },
+      {
+        "дата": "2019-06-11",
+        "соперник": "[[Сборная Туниса по футболу|Тунис]]",
+        "счёт": "1:2",
+        "голы": "0",
+        "соревнование": "Товарищеский матч"
+      },
+      {
+        "дата": "2020-09-05",
+        "соперник": "[[Сборная Португалии по футболу|Португалия]]",
+        "счёт": "1:4",
+        "голы": "0",
+        "соревнование": "Лига наций УЕФА 2020/2021"
+      },
+      {
+        "дата": "2020-09-08",
+        "соперник": "[[Сборная Франции по футболу|Франция]]",
+        "счёт": "2:4",
+        "голы": "0",
+        "соревнование": "Лига наций УЕФА 2020/2021"
+      },
+      {
+        "дата": "2020-10-11",
+        "соперник": "[[Сборная Швеции по футболу|Швеция]]",
+        "счёт": "2:1",
+        "голы": "1",
+        "соревнование": "Лига наций УЕФА 2020/2021"
+      },
+      {
+        "дата": "2020-10-14",
+        "соперник": "[[Сборная Франции по футболу|Франция]]",
+        "счёт": "1:2",
+        "голы": "0",
+        "соревнование": "Лига наций УЕФА 2020/2021"
+      },
+      {
+        "дата": "2021-03-24",
+        "соперник": "[[Сборная Словении по футболу|Словения]]",
+        "счёт": "0:1",
+        "голы": "0",
+        "соревнование": "Отборочные матчи ЧМ-2022"
+      },
+      {
+        "дата": "2021-03-27",
+        "соперник": "[[Сборная Кипра по футболу|Кипр]]",
+        "счёт": "1:0",
+        "голы": "0",
+        "соревнование": "Отборочные матчи ЧМ-2022"
+      },
+      {
+        "дата": "2021-06-01",
+        "соперник": "[[Сборная Армении по футболу|Армения]]",
+        "счёт": "1:1",
+        "голы": "0",
+        "соревнование": "Товарищеский матч"
+      },
+      {
+        "дата": "2021-06-06",
+        "соперник": "[[Сборная Бельгии по футболу|Бельгия]]",
+        "счёт": "0:1",
+        "голы": "0",
+        "соревнование": "Товарищеский матч"
+      },
+      {
+        "дата": "2021-06-13",
+        "соперник": "[[Сборная Англии по футболу|Англия]]",
+        "счёт": "0:1",
+        "голы": "0",
+        "соревнование": "Финальные матчи ЧЕ-2020"
+      },
+      {
+        "дата": "2021-06-18",
+        "соперник": "[[Сборная Чехии по футболу|Чехия]]",
+        "счёт": "1:1",
+        "голы": "0",
+        "соревнование": "Финальные матчи ЧЕ-2020"
+      },
+      {
+        "дата": "2021-06-22",
+        "соперник": "[[Сборная Шотландии по футболу|Шотландия]]",
+        "счёт": "3:1",
+        "голы": "0",
+        "соревнование": "Финальные матчи ЧЕ-2020"
+      },
+      {
+        "дата": "2021-06-28",
+        "соперник": "[[Сборная Испании по футболу|Испания]]",
+        "счёт": "3:5",
+        "голы": "0",
+        "соревнование": "Финальные матчи ЧЕ-2020"
+      },
+      {
+        "дата": "2021-09-01",
+        "соперник": "[[Сборная России по футболу|Россия]]",
+        "счёт": "0:0",
+        "голы": "0",
+        "соревнование": "Отборочные матчи ЧМ-2022"
+      },
+      {
+        "дата": "2021-09-04",
+        "соперник": "[[Сборная Словакии по футболу|Словакия]]",
+        "счёт": "1:0",
+        "голы": "0",
+        "соревнование": "Отборочные матчи ЧМ-2022"
+      },
+      {
+        "дата": "2021-09-07",
+        "соперник": "[[Сборная Словении по футболу|Словения]]",
+        "счёт": "3:0",
+        "голы": "0",
+        "соревнование": "Отборочные матчи ЧМ-2022"
+      },
+      {
+        "дата": "2021-10-08",
+        "соперник": "[[Сборная Кипра по футболу|Кипр]]",
+        "счёт": "3:0",
+        "голы": "0",
+        "соревнование": "Отборочные матчи ЧМ-2022"
+      },
+      {
+        "дата": "2021-10-11",
+        "соперник": "[[Сборная Словакии по футболу|Словакия]]",
+        "счёт": "2:2",
+        "голы": "1",
+        "соревнование": "Отборочные матчи ЧМ-2022"
+      },
+      {
+        "дата": "2021-11-11",
+        "соперник": "[[Сборная Мальты по футболу|Мальта]]",
+        "счёт": "7:1",
+        "голы": "1",
+        "соревнование": "Отборочные матчи ЧМ-2022"
+      },
+      {
+        "дата": "2021-11-14",
+        "соперник": "[[Сборная России по футболу|Россия]]",
+        "счёт": "1:0",
+        "голы": "0",
+        "соревнование": "Отборочные матчи ЧМ-2022"
+      },
+      {
+        "дата": "2022-03-26",
+        "соперник": "[[Сборная Словении по футболу|Словения]]",
+        "счёт": "1:1",
+        "голы": "1",
+        "соревнование": "Товарищеский матч"
+      },
+      {
+        "дата": "2022-03-29",
+        "соперник": "[[Сборная Болгарии по футболу|Болгария]]",
+        "счёт": "2:1",
+        "голы": "1",
+        "соревнование": "Товарищеский матч"
+      },
+      {
+        "дата": "2022-06-03",
+        "соперник": "[[Сборная Австрии по футболу|Австрия]]",
+        "счёт": "0:3",
+        "голы": "0",
+        "соревнование": "Лига наций УЕФА 2022/2023"
+      },
+      {
+        "дата": "2022-06-06",
+        "соперник": "[[Сборная Франции по футболу|Франция]]",
+        "счёт": "1:1",
+        "голы": "1",
+        "соревнование": "Лига наций УЕФА 2022/2023"
+      },
+      {
+        "дата": "2022-06-10",
+        "соперник": "[[Сборная Дании по футболу|Дания]]",
+        "счёт": "1:0",
+        "голы": "0",
+        "соревнование": "Лига наций УЕФА 2022/2023"
+      },
+      {
+        "дата": "2022-06-13",
+        "соперник": "[[Сборная Франции по футболу|Франция]]",
+        "счёт": "1:0",
+        "голы": "0",
+        "соревнование": "Лига наций УЕФА 2022/2023"
+      },
+      {
+        "дата": "2022-09-22",
+        "соперник": "[[Сборная Дании по футболу|Дания]]",
+        "счёт": "2:1",
+        "голы": "0",
+        "соревнование": "Лига наций УЕФА 2022/2023"
+      },
+      {
+        "дата": "2022-09-25",
+        "соперник": "[[Сборная Австрии по футболу|Австрия]]",
+        "счёт": "3:1",
+        "голы": "0",
+        "соревнование": "Лига наций УЕФА 2022/2023"
+      },
+      {
+        "дата": "2022-11-16",
+        "соперник": "[[Сборная Саудовской Аравии по футболу|Саудовская Аравия]]",
+        "счёт": "1:0",
+        "голы": "1",
+        "соревнование": "Товарищеский матч"
+      },
+      {
+        "дата": "2022-11-23",
+        "соперник": "[[Сборная Марокко по футболу|Марокко]]",
+        "счёт": "0:0",
+        "голы": "0",
+        "соревнование": "Финальные матчи ЧМ-2022"
+      },
+      {
+        "дата": "2022-11-27",
+        "соперник": "[[Сборная Канады по футболу|Канада]]",
+        "счёт": "4:1",
+        "голы": "2",
+        "соревнование": "Финальные матчи ЧМ-2022"
+      },
+      {
+        "дата": "2022-12-01",
+        "соперник": "[[Сборная Бельгии по футболу|Бельгия]]",
+        "счёт": "0:0",
+        "голы": "0",
+        "соревнование": "Финальные матчи ЧМ-2022"
+      },
+      {
+        "дата": "2022-12-05",
+        "соперник": "[[Сборная Японии по футболу|Япония]]",
+        "счёт": "1:1",
+        "голы": "0",
+        "соревнование": "Финальные матчи ЧМ-2022",
+        "пенальти": "3:1"
+      },
+      {
+        "дата": "2022-12-09",
+        "соперник": "[[Сборная Бразилии по футболу|Бразилия]]",
+        "счёт": "1:1",
+        "голы": "0",
+        "соревнование": "Финальные матчи ЧМ-2022",
+        "пенальти": "4:2"
+      },
+      {
+        "дата": "2022-12-13",
+        "соперник": "[[Сборная Аргентины по футболу|Аргентина]]",
+        "счёт": "0:3",
+        "голы": "0",
+        "соревнование": "Финальные матчи ЧМ-2022"
+      },
+      {
+        "дата": "2022-12-17",
+        "соперник": "[[Сборная Марокко по футболу|Марокко]]",
+        "счёт": "2:1",
+        "голы": "0",
+        "соревнование": "Финальные матчи ЧМ-2022"
+      },
+      {
+        "дата": "2023-03-25",
+        "соперник": "[[Сборная Уэльса по футболу|Уэльс]]",
+        "счёт": "1:1",
+        "голы": "1",
+        "соревнование": "Отборочные матчи ЧЕ-2024"
+      },
+      {
+        "дата": "2023-03-28",
+        "соперник": "[[Сборная Турции по футболу|Турция]]",
+        "счёт": "2:0",
+        "голы": "0",
+        "соревнование": "Отборочные матчи ЧЕ-2024"
+      },
+      {
+        "дата": "2023-06-14",
+        "соперник": "[[Сборная Нидерландов по футболу|Нидерланды]]",
+        "счёт": "4:2",
+        "голы": "1",
+        "соревнование": "Лига наций УЕФА 2022/2023"
+      },
+      {
+        "дата": "2023-06-18",
+        "соперник": "[[Сборная Испании по футболу|Испания]]",
+        "счёт": "0:0",
+        "голы": "0",
+        "соревнование": "Лига наций УЕФА 2022/2023",
+        "пенальти": "4:5"
+      },
+      {
+        "дата": "2023-09-08",
+        "соперник": "[[Сборная Латвии по футболу|Латвия]]",
+        "счёт": "5:0",
+        "голы": "1",
+        "соревнование": "Отборочные матчи ЧЕ-2024"
+      },
+      {
+        "дата": "2023-09-11",
+        "соперник": "[[Сборная Армении по футболу|Армения]]",
+        "счёт": "1:0",
+        "голы": "1",
+        "соревнование": "Отборочные матчи ЧЕ-2024"
+      },
+      {
+        "дата": "2023-11-18",
+        "соперник": "[[Сборная Латвии по футболу|Латвия]]",
+        "счёт": "2:0",
+        "голы": "1",
+        "соревнование": "Отборочные матчи ЧЕ-2024"
+      },
+      {
+        "дата": "2023-11-21",
+        "соперник": "[[Сборная Армении по футболу|Армения]]",
+        "счёт": "1:0",
+        "голы": "0",
+        "соревнование": "Отборочные матчи ЧЕ-2024"
+      },
+      {
+        "дата": "2024-03-23",
+        "соперник": "[[Сборная Туниса по футболу|Тунис]]",
+        "счёт": "0:0",
+        "голы": "0",
+        "соревнование": "Товарищеский матч",
+        "пенальти": "5:4"
+      },
+      {
+        "дата": "2024-03-26",
+        "соперник": "[[Сборная Египта по футболу|Египет]]",
+        "счёт": "4:2",
+        "голы": "1",
+        "соревнование": "Товарищеский матч"
+      },
+      {
+        "дата": "2024-06-03",
+        "соперник": "[[Сборная Северной Македонии по футболу|Северная Македония]]",
+        "счёт": "3:0",
+        "голы": "0",
+        "соревнование": "Товарищеский матч"
+      },
+      {
+        "дата": "2024-06-08",
+        "соперник": "[[Сборная Португалии по футболу|Португалия]]",
+        "счёт": "2:1",
+        "голы": "0",
+        "соревнование": "Товарищеский матч"
+      },
+      {
+        "дата": "2024-06-15",
+        "соперник": "[[Сборная Испании по футболу|Испания]]",
+        "счёт": "0:3",
+        "голы": "0",
+        "соревнование": "Финальные матчи ЧЕ-2024"
+      },
+      {
+        "дата": "2024-06-19",
+        "соперник": "[[Сборная Албании по футболу|Албания]]",
+        "счёт": "2:2",
+        "голы": "1",
+        "соревнование": "Финальные матчи ЧЕ-2024"
+      },
+      {
+        "дата": "2024-06-24",
+        "соперник": "[[Сборная Италии по футболу|Италия]]",
+        "счёт": "1:1",
+        "голы": "0",
+        "соревнование": "Финальные матчи ЧЕ-2024"
+      },
+      {
+        "дата": "2024-09-05",
+        "соперник": "[[Сборная Португалии по футболу|Португалия]]",
+        "счёт": "1:2",
+        "голы": "0",
+        "соревнование": "Лига наций УЕФА 2024/2025"
+      },
+      {
+        "дата": "2024-09-08",
+        "соперник": "[[Сборная Польши по футболу|Польша]]",
+        "счёт": "1:0",
+        "голы": "0",
+        "соревнование": "Лига наций УЕФА 2024/2025"
+      },
+      {
+        "дата": "2024-10-12",
+        "соперник": "[[Сборная Шотландии по футболу|Шотландия]]",
+        "счёт": "2:1",
+        "голы": "1",
+        "соревнование": "Лига наций УЕФА 2024/2025"
+      },
+      {
+        "дата": "2024-10-15",
+        "соперник": "[[Сборная Польши по футболу|Польша]]",
+        "счёт": "3:3",
+        "голы": "0",
+        "соревнование": "Лига наций УЕФА 2024/2025"
+      },
+      {
+        "дата": "2024-11-15",
+        "соперник": "[[Сборная Шотландии по футболу|Шотландия]]",
+        "счёт": "0:1",
+        "голы": "0",
+        "соревнование": "Лига наций УЕФА 2024/2025"
+      },
+      {
+        "дата": "2024-11-18",
+        "соперник": "[[Сборная Португалии по футболу|Португалия]]",
+        "счёт": "1:1",
+        "голы": "0",
+        "соревнование": "Лига наций УЕФА 2024/2025"
+      },
+      {
+        "дата": "2025-03-20",
+        "соперник": "[[Сборная Франции по футболу|Франция]]",
+        "счёт": "2:0",
+        "голы": "0",
+        "соревнование": "Лига наций УЕФА 2024/2025"
+      },
+      {
+        "дата": "2025-03-23",
+        "соперник": "[[Сборная Франции по футболу|Франция]]",
+        "счёт": "0:2",
+        "голы": "0",
+        "соревнование": "Лига наций УЕФА 2024/2025",
+        "примечание": "По сумме двух матчей 2:2; серия пенальти 4:5"
+      },
+      {
+        "дата": "2025-06-06",
+        "соперник": "[[Сборная Гибралтара по футболу|Гибралтар]]",
+        "счёт": "7:0",
+        "голы": "2",
+        "соревнование": "Отборочные матчи ЧМ-2026"
+      },
+      {
+        "дата": "2025-06-09",
+        "соперник": "[[Сборная Чехии по футболу|Чехия]]",
+        "счёт": "5:1",
+        "голы": "2",
+        "соревнование": "Отборочные матчи ЧМ-2026"
+      },
+      {
+        "дата": "2025-09-05",
+        "соперник": "[[Сборная Фарерских островов по футболу|Фарерские острова]]",
+        "счёт": "1:0",
+        "голы": "1",
+        "соревнование": "Отборочные матчи ЧМ-2026"
+      },
+      {
+        "дата": "2025-09-08",
+        "соперник": "[[Сборная Черногории по футболу|Черногория]]",
+        "счёт": "4:0",
+        "голы": "1",
+        "соревнование": "Отборочные матчи ЧМ-2026"
+      },
+      {
+        "дата": "2025-10-09",
+        "соперник": "[[Сборная Чехии по футболу|Чехия]]",
+        "счёт": "0:0",
+        "голы": "0",
+        "соревнование": "Отборочные матчи ЧМ-2026"
+      },
+      {
+        "дата": "2025-10-12",
+        "соперник": "[[Сборная Гибралтара по футболу|Гибралтар]]",
+        "счёт": "3:0",
+        "голы": "0",
+        "соревнование": "Отборочные матчи ЧМ-2026"
+      },
+      {
+        "дата": "2025-11-14",
+        "соперник": "[[Сборная Фарерских островов по футболу|Фарерские острова]]",
+        "счёт": "3:1",
+        "голы": "0",
+        "соревнование": "Отборочные матчи ЧМ-2026"
+      },
+      {
+        "дата": "2025-11-17",
+        "соперник": "[[Сборная Черногории по футболу|Черногория]]",
+        "счёт": "3:2",
+        "голы": "0",
+        "соревнование": "Отборочные матчи ЧМ-2026"
+      },
+      {
+        "дата": "2026-03-26",
+        "соперник": "[[Сборная Колумбии по футболу|Колумбия]]",
+        "счёт": "2:1",
+        "голы": "0",
+        "соревнование": "Товарищеский матч"
+      },
+      {
+        "дата": "2026-04-01",
+        "соперник": "[[Сборная Бразилии по футболу|Бразилия]]",
+        "счёт": "1:3",
+        "голы": "0",
+        "соревнование": "Товарищеский матч"
+      },
+      {
+        "дата": "2026-06-02",
+        "соперник": "[[Сборная Бельгии по футболу|Бельгия]]",
+        "счёт": "0:2",
+        "голы": "0",
+        "соревнование": "Товарищеский матч"
+      },
+      {
+        "дата": "2026-06-07",
+        "соперник": "[[Сборная Словении по футболу|Словения]]",
+        "счёт": "2:1",
+        "голы": "0",
+        "соревнование": "Товарищеский матч"
+      },
+      {
+        "дата": "2026-06-17",
+        "соперник": "[[Сборная Англии по футболу|Англия]]",
+        "счёт": "2:4",
+        "голы": "0",
+        "соревнование": "Финальные матчи ЧМ-2026"
+      },
+      {
+        "дата": "2026-06-23",
+        "соперник": "[[Сборная Панамы по футболу|Панама]]",
+        "счёт": "1:0",
+        "голы": "0",
+        "соревнование": "Финальные матчи ЧМ-2026"
+      },
+      {
+        "дата": "2026-07-02",
+        "соперник": "[[Сборная Португалии по футболу|Португалия]]",
+        "счёт": "1:2",
+        "голы": "0",
+        "соревнование": "Финальные матчи ЧМ-2026"
+      }
+    ],
+    "label": "Матчи Андрея Крамарича за сборную Хорватии",
+    "totals": {
+      "appearances": 119,
+      "goals": 36
+    },
+    "source_url": "https://www.sofascore.com/football/player/andrej-kramaric/67647",
+    "source_access_date": "2026-10-12",
+    "statistics_as_of": "2026-07-02"
+  }
+}

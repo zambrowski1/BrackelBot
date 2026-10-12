@@ -1,0 +1,30 @@
+[
+  {
+    "player": "Грифо",
+    "changed": false,
+    "season_rows": 17,
+    "arithmetic_errors": [],
+    "references_preserved": true
+  },
+  {
+    "player": "Крамарич",
+    "changed": false,
+    "season_rows": 23,
+    "arithmetic_errors": [],
+    "references_preserved": true
+  },
+  {
+    "player": "Центнер",
+    "changed": false,
+    "season_rows": 15,
+    "arithmetic_errors": [],
+    "references_preserved": true
+  },
+  {
+    "player": "Шик",
+    "changed": false,
+    "season_rows": 14,
+    "arithmetic_errors": [],
+    "references_preserved": true
+  }
+]

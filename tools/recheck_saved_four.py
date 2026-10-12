@@ -17,7 +17,7 @@ from wiki_stats.sbmatches_editor import read_matches
 from wiki_stats.wikitext_parser import WikitextParser
 
 BASE = ROOT / 'handoff/2026-10-12/latest'
-OUT = ROOT / 'handoff/2026-10-12/saved-data-recheck'
+OUT = ROOT / 'handoff/2026-10-12/practical-policy'
 CASES = [
     ('Грифо', 171961, 2538, 2019, 'Винченцо Грифо', '2026-10-11'),
     ('Крамарич', 67647, 2569, 2016, 'Андрей Крамарич', '2026-10-10'),
@@ -35,6 +35,7 @@ TEAMS = {
     'Спарта (футбольный клуб, Прага)': 2218, 'Богемианс 1905': 6064,
     'Сампдория': 2711, 'Рома (футбольный клуб)': 2702, 'РБ Лейпциг': 36360,
     'Байер 04': 2681,
+    'Хоффенхайм II': 5887,
 }
 # Audit classification independent of the collector's package/planner.
 LEAGUE = {35, 44, 491, 42, 493, 1079, 1085, 17, 23, 170, 172}
@@ -180,9 +181,12 @@ def main():
             current = parser.career('клубы', player)[-1][2].text.strip().replace('−', '-')
             check(current == f'{total[0]} ({total[1]})', f'Карточка: {current}, сумма чемпионатов API: {total}')
             nationals = [t for t in parser.templates if t.name == 'сбматчи']
-            if short in ('Грифо', 'Шик'):
-                package_path = 'schick-ready-2026-10-12/api-package-after-reviewed-correction.json' if short == 'Шик' else f'bundesliga-three-2026-10-12/{pid}/final/package.json'
-                op = next(o for o in read(package_path)['articles'][0]['operations'] if 'sbmatch' in o['type'])
+            if short in ('Грифо', 'Шик', 'Крамарич'):
+                if short == 'Крамарич':
+                    op = json.loads((OUT/'kramaric-reviewed-national-operation.json').read_text(encoding='utf8'))
+                else:
+                    package_path = 'schick-ready-2026-10-12/api-package-after-reviewed-correction.json' if short == 'Шик' else f'bundesliga-three-2026-10-12/{pid}/final/package.json'
+                    op = next(o for o in read(package_path)['articles'][0]['operations'] if 'sbmatch' in o['type'])
                 check(len(nationals) == 1, 'Нужен единственный СбМатчи')
                 _, rows = read_matches(nationals[0])
                 source_rows = op['payload']['matches']
@@ -194,9 +198,25 @@ def main():
                         check(av == bv, f'Сборная, матч {index}, {field}: {av} / {bv}')
                 totals = op['payload']['totals']
                 check(len(rows) == totals['appearances'] and sum(int(r['голы']) for r in rows) == totals['goals'], 'Итог СбМатчи не совпадает с пакетом')
-                collection_path = 'schick-sbmatches-api-2026-10-12/report.json' if short == 'Шик' else f'bundesliga-three-2026-10-12/{pid}/final/report.json'
-                scope = read(collection_path)['collection']['national_scopes'][0]
-                source_by_day = {r['date']: r for r in scope['matches']}
+                if short == 'Крамарич':
+                    from wiki_stats.sofascore_score import match_score
+                    recovered = read(f'bundesliga-three-2026-10-12/{pid}/national-reconstructed-matches.json')
+                    games = {m['id']: m for v in records if v.get('player_id') == pid for m in v.get('matches', [])}
+                    source_by_day = {}
+                    for mid, evidence in recovered.items():
+                        if not evidence['numbers']['appearances']: continue
+                        game = games[int(mid)]; score = match_score(game)
+                        a, b = score if game['home_team']['id'] == 4715 else score[::-1]
+                        source_by_day[evidence['date'][:10]] = {'numbers': evidence['numbers'], 'own_score': a, 'opponent_score': b}
+                    gaps = json.loads((OUT/'kramaric-missing-matches.json').read_text(encoding='utf8'))['gaps']
+                    for stamp, opponent, score, goals, minutes in gaps:
+                        check(stamp not in source_by_day, 'Дополнение дублирует матч API')
+                        a, b = map(int, score.split(':'))
+                        source_by_day[stamp] = {'numbers': {'appearances': 1, 'goals': goals}, 'own_score': a, 'opponent_score': b}
+                else:
+                    collection_path = 'schick-sbmatches-api-2026-10-12/report.json' if short == 'Шик' else f'bundesliga-three-2026-10-12/{pid}/final/report.json'
+                    scope = read(collection_path)['collection']['national_scopes'][0]
+                    source_by_day = {r['date']: r for r in scope['matches']}
                 check(len(source_by_day) == len(rows), 'Список сборной не замыкается на сохранённые исходные матчи')
                 for index, row in enumerate(rows, 1):
                     source_match = source_by_day.get(day(row['дата']))
@@ -215,13 +235,13 @@ def main():
                 pairs = [r['numbers'] for r in recovered.values()]
                 confirmed = [sum(p['appearances'] for p in pairs), sum(p['goals'] for p in pairs)]
                 check(confirmed == [116, 35], 'Изменился сохранённый итог реконструкции сборной')
-                limitations.append(f"Сборная: API {national['appearances']}/{national['goals']}, подтверждённые матчи {confirmed[0]}/{confirmed[1]}; старые данные сохранены, СбМатчи не добавлен")
+                limitations.append(f"Сборная: список API {confirmed[0]}/{confirmed[1]} дополнен тремя отдельно проверенными матчами федерации до {national['appearances']}/{national['goals']}; дополнения внесены в черновик отдельным инструментом, автоматический сборщик Sofascore сам их не получает")
             if short == 'Центнер':
-                limitations.append('Пропущенные голы за Майнц 05 II и Хольштайн по сезонам не подтверждены; показанные нули не означают сухие сезоны. В карточке сохранены старые итоги −39 и −28')
+                limitations.append('Пропущенные голы за Майнц 05 II и Хольштайн по сезонам не подтверждены; показаны тире. В карточке и итогах клубов сохранены старые суммы −39 и −28')
             if short != 'Шик':
                 source = read(f'bundesliga-three-2026-10-12/{pid}/final/source-table.json')['payload']
                 nulls = sum(pair is None for club in source['clubs'] for row in club['rows'] for pair in row['categories'].values())
-                if nulls: limitations.append(f'В пакете {nulls} неизвестных пар категория/сезон; по текущей настройке отображаются нулями, это не подтверждённые нули')
+                if nulls: limitations.append(f'В исходном пакете {nulls} неизвестных пар категория/сезон; прежние показатели сохраняются, новые пробелы показываются тире')
             else:
                 review = read('schick-sbmatches-api-2026-10-12/report.json')['collection']['review']
                 missing = sum(r['code'] == 'category_not_covered' for r in review)
@@ -234,7 +254,7 @@ def main():
             check(birthday(box) == birthday(old_box), 'Изменена дата рождения')
             missing_refs = [r for r in references(before) if r not in references(text)]
             check(not missing_refs, 'Утеряны ссылки: ' + str(missing_refs))
-            if short in ('Центнер', 'Крамарич'):
+            if short == 'Центнер':
                 check(box['национальная сборная'].text == old_box['национальная сборная'].text, 'Изменена неподтверждённая сборная в карточке')
             results.append({'player': player, 'draft': str(draft.relative_to(ROOT)), 'errors': errors, 'raw_api_pairs_checked': len(comparisons), 'season_rows': len(table.seasons), 'current_league_total': total, 'comparisons': comparisons, 'limitations': limitations, 'reviewed_transfer_split': reviewed_split, 'national_match_count': len(read_matches(nationals[0])[1]) if nationals else 0})
         report = {'evidence_files_verified': len(manifest['files']), 'football_api_requests': 0, 'wikipedia_edits': 0, 'articles': results}

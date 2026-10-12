@@ -1,0 +1,855 @@
+Andrej Kramarić - Hrvatski nogometni savez (https://hns.team/igraci/14791/andrej-kramaric/)
+citeturn136view0 [wordlim: 200] Crawled: today; Content type: text/html; Source: open({"ref_id":"turn132view0","lineno":900}); Total lines: 5166
+L561: Prijateljska utakmica
+L562: 
+L563: 0
+L564: 
+L565: 0 / 0
+L566: 
+L567: 54
+L568: 
+L569:   * 26.03.2024. 21:00
+L570: 
+L571: Egipat
+L572: 
+L573: cite87†Image: Egipat L574: 
+L575: cite88†2:4†rezultati.hns.team L576: 
+L577: cite10†Hrvatska L578: 
+L579: Prijateljska utakmica
+L580: 
+L581: 1
+L582: 
+L583: 0 / 0
+L584: 
+L585: 23
+L586: 
+L587:   * 22.03.2024. 21:00
+L588: 
+L589: Tunis
+L590: 
+L591: cite89†Image: Tunis L592: 
+L593: cite90†0:0†rezultati.hns.team L594: 
+L595: cite10†Hrvatska L596: 
+L597: Prijateljska utakmica
+L598: 
+L599: 0
+L600: 
+L601: 0 / 0
+L602: 
+L603: 90
+L604: 
+L605:   * 21.11.2023. 20:45
+L606: 
+L607: cite10†Hrvatska L608: 
+L609: cite91†1:0†rezultati.hns.team L610: 
+L611: Armenija
+L612: 
+L613: cite92†Image: Armenija L614: 
+L615: Euro2024 (kv.)
+L616: 
+L617: 0
+L618: 
+L619: 0 / 0
+L620: 
+L621: 67
+L622: 
+L623:   * 18.11.2023. 18:00
+L624: 
+L625: Latvija
+L626: 
+L627: cite93†Image: Latvija L628: 
+L629: cite94†0:2†rezultati.hns.team L630: cite10†Hrvatska L631: 
+L632: Euro2024 (kv.)
+L633: 
+L634: 1
+L635: 
+L636: 0 / 0
+L637: 
+L638: 79
+L639: 
+L640:   * 11.09.2023. 18:00
+L641: 
+L642: Armenija
+L643: 
+L644: cite92†Image: Armenija L645: 
+L646: cite95†0:1†rezultati.hns.team L647: 
+L648: cite10†Hrvatska L649: 
+L650: Euro2024 (kv.)
+L651: 
+L652: 1
+L653: 
+L654: 0 / 0
+L655: 
+L656: 68
+L657: 
+L658:   * 08.09.2023. 20:45
+L659: 
+L660: cite10†Hrvatska L661: 
+L662: cite96†5:0†rezultati.hns.team L663: 
+L664: Latvija
+L665: 
+L666: cite93†Image: Latvija L667: 
+L668: Euro2024 (kv.)
+L669: 
+L670: 1
+L671: 
+L672: 0 / 0
+L673: 
+L674: 90
+L675: 
+L676:   * 18.06.2023. 20:45
+L677: 
+L678: cite10†Hrvatska L679: 
+L680: cite97†0:0(4:5 - 11m)†rezultati.hns.team L681: 
+L682: Španjolska
+L683: 
+L684: cite82†Image: Španjolska L685: 
+L686: Liga nacija - završnica
+L687: 
+L688: 0
+L689: 
+L690: 0 / 0
+L691: 
+L692: 89
+L693: 
+L694:   * 14.06.2023. 20:45
+L695: 
+L696: Nizozemska
+L697: cite98†Image: Nizozemska L698: 
+L699: cite99†2:4 PP†rezultati.hns.team L700: 
+L701: cite10†Hrvatska L702: 
+L703: Liga nacija - završnica
+L704: 
+L705: 1
+L706: 
+L707: 0 / 0
+L708: 
+L709: 89
+L710: 
+L711:   * 28.03.2023. 20:45
+L712: 
+L713: Turska
+L714: 
+L715: cite100†Image: Turska L716: 
+L717: cite101†0:2†rezultati.hns.team L718: 
+L719: cite10†Hrvatska L720: 
+L721: Euro2024 (kv.)
+L722: 
+L723: 0
+L724: 
+L725: 0 / 0
+L726: 
+L727: 83
+L728: 
+L729:   * 25.03.2023. 20:45
+L730: 
+L731: cite10†Hrvatska L732: 
+L733: cite102†1:1†rezultati.hns.team L734: 
+L735: Wales
+L736: 
+L737: cite103†Image: Wales L738: 
+L739: Euro2024 (kv.)
+L740: 
+L741: 1
+L742: 
+L743: 0 / 0
+L744: 
+L745: 75
+L746: 
+L747:   * 17.12.2022. 16:00
+L748: 
+L749: cite10†Hrvatska L750: 
+L751: cite104†2:1†rezultati.hns.team L752: 
+L753: Maroko
+L754: 
+L755: cite105†Image: Maroko L756: 
+L757: SP 2022. - 3. mjesto
+L758: 
+L759: 0
+L760: 
+L761: 0 / 0
+L762: 
+L763: 60
+L764:   * 13.12.2022. 20:00
+L765: 
+L766: Argentina
+L767: 
+L768: cite106†Image: Argentina L769: 
+L770: cite107†3:0†rezultati.hns.team L771: 
+L772: cite10†Hrvatska L773: 
+L774: SP2022 - 1/2
+L775: 
+L776: 0
+L777: 
+L778: 0 / 0
+L779: 
+L780: 71
+L781: 
+L782:   * 09.12.2022. 16:00
+L783: 
+L784: cite10†Hrvatska L785: 
+L786: cite108†1:1(4:2 - 11m)†rezultati.hns.team L787: 
+L788: Brazil
+L789: 
+L790: cite55†Image: Brazil L791: 
+L792: SP2022 - 1/4
+L793: 
+L794: 0
+L795: 
+L796: 0 / 0
+L797: 
+L798: 71
+L799: 
+L800:   * 05.12.2022. 18:00
+L801: 
+L802: Japan
+L803: 
+L804: cite109†Image: Japan L805: 
+L806: cite110†1:1(1:3 - 11m)†rezultati.hns.team L807: 
+L808: cite10†Hrvatska L809: 
+L810: SP2022 - 1/8
+L811: 
+L812: 0
+L813: 
+L814: 0 / 0
+L815: 
+L816: 67
+L817: 
+L818:   * 01.12.2022. 18:00
+L819: 
+L820: cite10†Hrvatska L821: 
+L822: cite111†0:0†rezultati.hns.team L823: 
+L824: Belgija
+L825: 
+L826: cite54†Image: Belgija L827: SP 2022. - skupina
+L828: 
+L829: 0
+L830: 
+L831: 0 / 0
+L832: 
+L833: 63
+L834: 
+L835:   * 27.11.2022. 19:00
+L836: 
+L837: cite10†Hrvatska L838: 
+L839: cite112†4:1†rezultati.hns.team L840: 
+L841: Kanada
+L842: 
+L843: cite113†Image: Kanada L844: 
+L845: SP 2022. - skupina
+L846: 
+L847: 2
+L848: 
+L849: 0 / 0
+L850: 
+L851: 71
+L852: 
+L853:   * 23.11.2022. 13:00
+L854: 
+L855: Maroko
+L856: 
+L857: cite105†Image: Maroko L858: 
+L859: cite114†0:0†rezultati.hns.team L860: 
+L861: cite10†Hrvatska L862: 
+L863: SP 2022. - skupina
+L864: 
+L865: 0
+L866: 
+L867: 0 / 0
+L868: 
+L869: 70
+L870: 
+L871:   * 16.11.2022. 13:00
+L872: 
+L873: Saudijska Arabija
+L874: 
+L875: cite115†Image: Saudijska Arabija L876: 
+L877: cite116†0:1†rezultati.hns.team L878: 
+L879: cite10†Hrvatska L880: 
+L881: Prijateljska utakmica
+L882: 
+L883: 1
+L884: 
+L885: 0 / 0
+L886: 
+L887: 33
+L888: 
+L889:   * 29.03.2022. 16:00
+L890: 
+L891: cite10†Hrvatska L892: cite117†2:1†rezultati.hns.team L893: 
+L894: Bugarska
+L895: 
+L896: cite118†Image: Bugarska L897: 
+L898: Prijateljska utakmica
+L899: 
+L900: 1
+L901: 
+L902: 0 / 0
+L903: 
+L904: 30
+L905: 
+L906:   * 26.03.2022. 15:00
+L907: 
+L908: cite10†Hrvatska L909: 
+L910: cite119†1:1†rezultati.hns.team L911: 
+L912: Slovenija
+L913: 
+L914: cite52†Image: Slovenija L915: 
+L916: Prijateljska utakmica
+L917: 
+L918: 1
+L919: 
+L920: 0 / 0
+L921: 
+L922: 72
+L923: 
+L924:   * 11.10.2021. 20:45
+L925: 
+L926: cite10†Hrvatska L927: 
+L928: cite120†2:2†rezultati.hns.team L929: 
+L930: Slovačka
+L931: 
+L932: cite121†Image: Slovačka L933: 
+L934: SP2022 (kv.)
+L935: 
+L936: 1
+L937: 
+L938: 0 / 0
+L939: 
+L940: 84
+L941: 
+L942:   * 07.09.2021. 20:45
+L943: 
+L944: cite10†Hrvatska L945: 
+L946: cite122†3:0†rezultati.hns.team L947: 
+L948: Slovenija
+L949: 
+L950: cite52†Image: Slovenija L951: 
+L952: SP2022 (kv.)
+L953: 
+L954: 0
+L955: 
+L956: 0 / 0
+L957: 
+L958: 75
+L959:   * 04.09.2021. 20:45
+L960: 
+L961: Slovačka
+L962: 
+L963: cite121†Image: Slovačka L964: 
+L965: cite123†0:1†rezultati.hns.team L966: 
+L967: cite10†Hrvatska L968: 
+L969: SP2022 (kv.)
+L970: 
+L971: 0
+L972: 
+L973: 0 / 0
+L974: 
+L975: 29
+L976: 
+L977:   * 28.06.2021. 18:00
+L978: 
+L979: cite10†Hrvatska L980: 
+L981: cite124†3:5 PP†rezultati.hns.team L982: 
+L983: Španjolska
+L984: 
+L985: cite82†Image: Španjolska L986: 
+L987: Euro 2020
+L988: 
+L989: 0
+L990: 
+L991: 0 / 0
+L992: 
+L993: 75
+L994: 
+L995:   * 06.06.2021. 20:45
+L996: 
+L997: Belgija
+L998: 
+L999: cite54†Image: Belgija L1000: 
+L1001: cite125†1:0†rezultati.hns.team L1002: 
+L1003: cite10†Hrvatska L1004: 
+L1005: Prijateljska utakmica
+L1006: 
+L1007: 0
+L1008: 
+L1009: 0 / 0
+L1010: 
+L1011: 29
+L1012: 
+L1013:   * 01.06.2021. 18:00
+L1014: 
+L1015: cite10†Hrvatska L1016: 
+L1017: cite126†1:1†rezultati.hns.team L1018: 
+L1019: Armenija
+L1020: 
+L1021: cite92†Image: Armenija L1022: Prijateljska utakmica
+L1023: 
+L1024: 0
+L1025: 
+L1026: 0 / 0
+L1027: 
+L1028: 90
+L1029: 
+L1030:   * 24.03.2021. 20:45
+L1031: 
+L1032: Slovenija
+L1033: 
+L1034: cite52†Image: Slovenija L1035: 
+L1036: cite127†1:0†rezultati.hns.team L1037: 
+L1038: cite10†Hrvatska L1039: 
+L1040: SP2022 (kv.)
+L1041: 
+L1042: 0
+L1043: 
+L1044: 0 / 0
+L1045: 
+L1046: 63
+L1047: 
+L1048:   * 11.06.2019. 20:45
+L1049: 
+L1050: cite10†Hrvatska L1051: 
+L1052: cite128†1:2†rezultati.hns.team L1053: 
+L1054: Tunis
+L1055: 
+L1056: cite89†Image: Tunis L1057: 
+L1058: Prijateljska utakmica
+L1059: 
+L1060: 0
+L1061: 
+L1062: 0 / 0
+L1063: 
+L1064: 62
+L1065: 
+L1066:   * 08.06.2019. 15:00
+L1067: 
+L1068: cite10†Hrvatska L1069: 
+L1070: cite129†2:1†rezultati.hns.team L1071: 
+L1072: Wales
+L1073: 
+L1074: cite103†Image: Wales L1075: 
+L1076: Euro2020 (kv.)
+L1077: 
+L1078: 0
+L1079: 
+L1080: 0 / 0
+L1081: 
+L1082: 90
+L1083: 
+L1084:   * 24.03.2019. 18:00
+L1085: 
+L1086: Mađarska
+L1087: 
+L1088: cite130†Image: Mađarska L1089: 
+L1090: cite131†2:1†rezultati.hns.team L1091: cite10†Hrvatska L1092: 
+L1093: Euro2020 (kv.)
+L1094: 
+L1095: 0
+L1096: 
+L1097: 0 / 0
+L1098: 
+L1099: 90
+L1100: 
+L1101:   * 21.03.2019. 20:45
+L1102: 
+L1103: cite10†Hrvatska L1104: 
+L1105: cite132†2:1†rezultati.hns.team L1106: 
+L1107: Azerbajdžan
+L1108: 
+L1109: cite133†Image: Azerbajdžan L1110: 
+L1111: Euro2020 (kv.)
+L1112: 
+L1113: 1
+L1114: 
+L1115: 0 / 0
+L1116: 
+L1117: 90
+L1118: 
+L1119:   * 15.10.2018. 20:45
+L1120: 
+L1121: cite10†Hrvatska L1122: 
+L1123: cite134†2:1†rezultati.hns.team L1124: 
+L1125: Jordan
+L1126: 
+L1127: cite135†Image: Jordan L1128: 
+L1129: Prijateljska utakmica
+L1130: 
+L1131: 0
+L1132: 
+L1133: 0 / 0
+L1134: 
+L1135: 65
+L1136: 
+L1137:   * 11.07.2018. 21:00
+L1138: 
+L1139: cite10†Hrvatska L1140: 
+L1141: cite136†2:1 PP†rezultati.hns.team L1142: 
+L1143: Engleska
+L1144: 
+L1145: cite49†Image: Engleska L1146: 
+L1147: SP2018 - 1/2
+L1148: 
+L1149: 0
+L1150: 
+L1151: 0 / 0
+L1152: 
+L1153: 20
+L1154: 
+L1155:   * 07.07.2018. 21:00
+L1156: 
+L1157: Rusija
+L1158: 
+L1159: cite137†Image: Rusija L1160: cite138†2:2(5:6 - 11m)†rezultati.hns.team L1161: 
+L1162: cite10†Hrvatska L1163: 
+L1164: SP2018 - 1/4
+L1165: 
+L1166: 1
+L1167: 
+L1168: 0 / 0
+L1169: 
+L1170: 87
+L1171: 
+L1172:   * 01.07.2018. 21:00
+L1173: 
+L1174: cite10†Hrvatska L1175: 
+L1176: cite139†1:1(4:3 - 11m)†rezultati.hns.team L1177: 
+L1178: Danska
+L1179: 
+L1180: cite140†Image: Danska L1181: 
+L1182: SP2018 - 1/8
+L1183: 
+L1184: 0
+L1185: 
+L1186: 0 / 0
+L1187: 
+L1188: 24
+L1189: 
+L1190:   * 26.06.2018. 21:00
+L1191: 
+L1192: Island
+L1193: 
+L1194: cite141†Image: Island L1195: 
+L1196: cite142†1:2†rezultati.hns.team L1197: 
+L1198: cite10†Hrvatska L1199: 
+L1200: SP2018 - skupina
+L1201: 
+L1202: 0
+L1203: 
+L1204: 0 / 0
+L1205: 
+L1206: 90
+L1207: 
+L1208:   * 21.06.2018. 21:00
+L1209: 
+L1210: Argentina
+L1211: 
+L1212: cite106†Image: Argentina L1213: 
+L1214: cite143†0:3†rezultati.hns.team L1215: 
+L1216: cite10†Hrvatska L1217: 
+L1218: SP2018 - skupina
+L1219: 
+L1220: 0
+L1221: 
+L1222: 0 / 0
+L1223: 
+L1224: 34
+L1225: 
+L1226:   * 16.06.2018. 21:00
+L1227: cite10†Hrvatska L1228: 
+L1229: cite144†2:0†rezultati.hns.team L1230: 
+L1231: Nigerija
+L1232: 
+L1233: cite145†Image: Nigerija L1234: 
+L1235: SP2018 - skupina
+L1236: 
+L1237: 0
+L1238: 
+L1239: 0 / 0
+L1240: 
+L1241: 59
+L1242: 
+L1243:   * 08.06.2018. 18:00
+L1244: 
+L1245: cite10†Hrvatska L1246: 
+L1247: cite146†2:1†rezultati.hns.team L1248: 
+L1249: Senegal
+L1250: 
+L1251: cite147†Image: Senegal L1252: 
+L1253: Prijateljska utakmica
+L1254: 
+L1255: 1
+L1256: 
+L1257: 0 / 0
+L1258: 
+L1259: 45
+L1260: 
+L1261:   * 03.06.2018. 15:00
+L1262: 
+L1263: Brazil
+L1264: 
+L1265: cite55†Image: Brazil L1266: 
+L1267: cite148†2:0†rezultati.hns.team L1268: 
+L1269: cite10†Hrvatska L1270: 
+L1271: Prijateljska utakmica
+L1272: 
+L1273: 0
+L1274: 
+L1275: 1 / 0
+L1276: 
+L1277: 90
+L1278: 
+L1279:   * 27.03.2018. 21:00
+L1280: 
+L1281: Meksiko
+L1282: 
+L1283: cite149†Image: Meksiko L1284: 
+L1285: cite150†0:1†rezultati.hns.team L1286: 
+L1287: cite10†Hrvatska L1288: 
+L1289: Prijateljska utakmica
+L1290: 
+L1291: 0
+L1292: 
+L1293: 0 / 0
+L1294: 90
+L1295: 
+L1296:   * 23.03.2018. 20:30
+L1297: 
+L1298: Peru
+L1299: 
+L1300: cite151†Image: Peru L1301: 
+L1302: cite152†2:0†rezultati.hns.team L1303: 
+L1304: cite10†Hrvatska L1305: 
+L1306: Prijateljska utakmica
+L1307: 
+L1308: 0
+L1309: 
+L1310: 0 / 0
+L1311: 
+L1312: 27
+L1313: 
+L1314:   * 09.10.2017. 20:45
+L1315: 
+L1316: Ukrajina
+L1317: 
+L1318: cite153†Image: Ukrajina L1319: 
+L1320: cite154†0:2†rezultati.hns.team L1321: 
+L1322: cite10†Hrvatska L1323: 
+L1324: SP2018 (kv.)
+L1325: 
+L1326: 2
+L1327: 
+L1328: 0 / 0
+L1329: 
+L1330: 87
+L1331: 
+L1332:   * 28.03.2017. 19:00
+L1333: 
+L1334: Estonija
+L1335: 
+L1336: cite155†Image: Estonija L1337: 
+L1338: cite156†3:0†rezultati.hns.team L1339: 
+L1340: cite10†Hrvatska L1341: 
+L1342: Prijateljska utakmica
+L1343: 
+L1344: 0
+L1345: 
+L1346: 0 / 0
+L1347: 
+L1348: 90
+L1349: 
+L1350:   * 24.03.2017. 20:45
+L1351: 
+L1352: cite10†Hrvatska L1353: 
+L1354: cite157†1:0†rezultati.hns.team L1355: 
+L1356: Ukrajina
+L1357: 
+L1358: cite153†Image: Ukrajina L1359: SP2018 (kv.)
+L1360: 
+L1361: 0
+L1362: 
+L1363: 0 / 0
+L1364: 
+L1365: 4
+L1366: 
+L1367:   * 15.11.2016. 20:45
+L1368: 
+L1369: Sjeverna Irska
+L1370: 
+L1371: cite158†Image: Sjeverna Irska L1372: 
+L1373: cite159†0:3†rezultati.hns.team L1374: 
+L1375: cite10†Hrvatska L1376: 
+L1377: Prijateljska utakmica
+L1378: 
+L1379: 1
+L1380: 
+L1381: 0 / 0
+L1382: 
+L1383: 90
+L1384: 
+L1385:   * 04.06.2016. 20:15
+L1386: 
+L1387: cite10†Hrvatska L1388: 
+L1389: cite160†10:0†rezultati.hns.team L1390: 
+L1391: San Marino
+L1392: 
+L1393: cite161†Image: San Marino L1394: 
+L1395: Prijateljska utakmica
+L1396: 
+L1397: 0
+L1398: 
+L1399: 0 / 0
+L1400: 
+L1401: 36
+L1402: 
+L1403:   * 27.05.2016. 20:30
+L1404: 
+L1405: cite10†Hrvatska L1406: 
+L1407: cite162†1:0†rezultati.hns.team L1408: 
+L1409: Moldova
+L1410: 
+L1411: cite163†Image: Moldova L1412: 
+L1413: Prijateljska utakmica
+L1414: 
+L1415: 1
+L1416: 
+L1417: 0 / 0
+L1418: 
+L1419: 45
+L1420: 
+L1421:   * 17.11.2015. 19:00
+L1422: 
+L1423: Rusija
+L1424: 
+L1425: cite137†Image: Rusija L1426: cite164†1:3†rezultati.hns.team L1427: 
+L1428: cite10†Hrvatska L1429: 
+L1430: Prijateljska utakmica
+L1431: 
+L1432: 0
+L1433: 
+L1434: 0 / 0
+L1435: 
+L1436: 4
+L1437: 
+L1438:   * 13.10.2015. 20:45
+L1439: 
+L1440: Malta
+L1441: 
+L1442: cite165†Image: Malta L1443: 
+L1444: cite166†0:1†rezultati.hns.team L1445: 
+L1446: cite10†Hrvatska L1447: 
+L1448: Euro2016 (kv.)
+L1449: 
+L1450: 0
+L1451: 
+L1452: 0 / 0
+L1453: 
+L1454: 31
+L1455: 
+L1456:   * 10.10.2015. 20:45
+L1457: 
+L1458: cite10†Hrvatska L1459: 
+L1460: cite167†3:0†rezultati.hns.team L1461: 
+L1462: Bugarska
+L1463: 
+L1464: cite118†Image: Bugarska L1465: 
+L1466: Euro2016 (kv.)
+L1467: 
+L1468: 0
+L1469: 
+L1470: 0 / 0
+L1471: 
+L1472: 6
+L1473: 
+L1474:   * 07.06.2015. 18:00
+L1475: 
+L1476: cite10†Hrvatska L1477: 
+L1478: cite168†4:0†rezultati.hns.team L1479: 
+L1480: Gibraltar
+L1481: 
+L1482: cite64†Image: Gibraltar L1483: 
+L1484: Prijateljska utakmica
+L1485: 
+L1486: 1
+L1487: 
+L1488: 0 / 0
+L1489: 
+L1490: 45
+L1491: 
+L1492:   * 28.03.2015. 18:00
+L1493: cite10†Hrvatska L1494: 
+L1495: cite169†5:1†rezultati.hns.team L1496: 
+L1497: Norveška
+L1498: 
+L1499: cite170†Image: Norveška L1500: 
+L1501: Euro2016 (kv.)
+L1502: 
+L1503: 0
+L1504: 
+L1505: 0 / 0
+L1506: 
+L1507: 21
+L1508: 
+L1509:   * 16.11.2014. 20:45
+L1510: 
+L1511: Italija
+L1512: 
+L1513: cite79†Image: Italija L1514: 
+L1515: cite171†1:1†rezultati.hns.team L1516: 
+L1517: cite10†Hrvatska L1518: 
+L1519: Euro2016 (kv.)
+L1520: 
+L1521: 0
+L1522: 
+L1523: 0 / 0
+L1524: 
+L1525: 23
+L1526: 
+L1527:   * 13.10.2014. 20:45
+L1528: 
+L1529: cite10†Hrvatska L1530: 
+L1531: cite172†6:0†rezultati.hns.team L1532: 
+L1533: Azerbajdžan
+L1534: 
+L1535: cite133†Image: Azerbajdžan L1536: 
+L1537: Euro2016 (kv.)
+L1538: 
+L1539: 1
+L1540: 
+L1541: 0 / 0
+L1542: 
+L1543: 75
+L1544: 
+L1545:   * 09.09.2014. 20:45
+L1546: 
+L1547: cite10†Hrvatska L1548: 
+L1549: cite173†2:0†rezultati.hns.team L1550: 
+L1551: Malta
+L1552: 
+L1553: cite165†Image: Malta L1554: 
+L1555: Euro2016 (kv.)
+L1556: 
+L1557: 1
+L1558: 
+L1559: 0 / 0
+L1560: 
+L1561: 24
+L1562:   * 04.09.2014. 20:15
+L1563: 
+L1564: cite10†Hrvatska L1565: 
+L1566: cite174†2:0†rezultati.hns.team L1567: 
+L1568: Cipar
+L1569: 
+L1570: cite175†Image: Cipar L1571: 
+L1572: Prijateljska utakmica
+L1573: 
+L1574: 0
+L1575: 
+L1576: 0 / 0
+L1577: 
+L1578: 90
+L1579: 
+L1580: cite176†Prikaži sve L1581: 
+L1582:   * Datum
+L1583: 
+L1584: Utakmica
+

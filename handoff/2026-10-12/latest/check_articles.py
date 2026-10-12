@@ -12,7 +12,8 @@ for path in sorted((ROOT/'articles').glob('*готовая статья.wiki')):
     text=path.read_text(encoding='utf8');parser=WikitextParser(text)
     assert not arithmetic_warnings(text),arithmetic_warnings(text)
     clubs=[t for t in parser.templates if t.name=='клстат/клуб']
-    assert clubs and sum(t.name=='клстат/итого' for t in parser.templates)==1
+    assert clubs and sum(t.name=='клстат/итого' for t in parser.templates)<=1
+    parser.club_table() # Includes a validated closure for a partial table.
     for t in clubs:
         label=t.values()['1'].text.strip();code=mw.parse(label)
         flags=[p for p in code.filter_templates(recursive=False) if str(p.name).strip().startswith('Флаг ')]

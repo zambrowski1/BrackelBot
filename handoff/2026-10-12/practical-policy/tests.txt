@@ -1,0 +1,15 @@
+2026-10-13, Windows, Python virtual environment, repository main working tree
+python -m pytest -q
+1604 passed in 195.17s (0:03:15)
+
+python -X utf8 tools/practical_draft_policy.py
+All four drafts: changed=false, arithmetic_errors=[], references_preserved=true
+
+python -X utf8 tools/recheck_saved_four.py
+139 evidence files verified; 125 club statistic pairs; all four errors=[]
+
+python -X utf8 tools/refresh_draft_season_links.py --check
+All four drafts: already_applied, idempotent=true
+
+python -X utf8 handoff/2026-10-12/latest/check_articles.py
+OK: four articles; no network requests or Wikipedia edits

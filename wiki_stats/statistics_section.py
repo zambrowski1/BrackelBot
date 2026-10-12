@@ -30,7 +30,20 @@ def render_section(payload, resolver, as_of):
         raise UpdateError('source_coverage_mismatch','Дата статистики позднее даты охвата источников')
     lines=['== Статистика выступлений ==','', '=== Клубная статистика ===']
     if day:lines.append('{{обновлено|'+day.isoformat()+'}}')
-    body=['{{КлСтат|'+'|'.join(categories)+'}}']
+    notes=payload.get('header_notes',{})
+    if set(notes)-set(categories):
+        raise UpdateError('invalid_input','Пояснение относится к отсутствующей колонке')
+    headings=[]
+    for category in categories:
+        links=notes.get(category,[])
+        if not isinstance(links,list) or len(set(links))!=len(links):
+            raise UpdateError('invalid_input','Пояснения должны быть списком без повторов')
+        for link in links:
+            code=mw.parse(link)
+            if not link.strip() or '\n' in link or any(not isinstance(n,(mw.nodes.Text,Wikilink)) for n in code.nodes) or any(c in code.strip_code() for c in '|{}<>'):
+                raise UpdateError('unsupported_structure','В пояснении допускаются только текст и ссылки')
+        headings.append(category+('{{efn|'+', '.join(links)+'}}' if links else ''))
+    body=['{{КлСтат|'+'|'.join(headings)+'}}']
     grand=[0]*(2*len(categories)); seen=set(); years=[]; checked_leagues=set()
     for club in payload['clubs']:
         entity=resolver.resolve(club['entity'])
@@ -76,6 +89,7 @@ def render_section(payload, resolver, as_of):
     # The native total template always says "Всего за карьеру". A bounded
     # history therefore closes the table without claiming a career total.
     body.append('{{КлСтат/Итого|'+'|'.join(map(str,grand))+'}}' if payload['full_career'] else '|}\n{{комментарии}}')
+    if notes and payload['full_career']:body.append('{{комментарии}}')
     return '\n'.join(lines+body)+'\n\n'
 
 

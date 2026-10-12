@@ -1139,9 +1139,11 @@ def _prepare_statistics(snapshot, mapping, api, wiki, resolver, *, max_requests=
                     'league_wikitext': LEAGUE_LINKS[record['tournament_id']],
                     'categories': values})
             if clubs:
+                from .competition_notes import column_notes
+                header_notes=column_notes(records,list(clubs.values()),categories)
                 add('create_statistics_section', {'name': 'КлСтат', 'wikitext': '{{КлСтат}}'},
                     {'structure': 'club_table'}, payload={'complete': True, 'full_career': False,'allow_unknown':statistics_since is not None,
-                    'statistics_as_of': confirmed, 'categories': categories, 'clubs': list(clubs.values())})
+                    'statistics_as_of': confirmed, 'categories': categories, 'clubs': list(clubs.values()),'header_notes':header_notes})
                 issues.append({'code': 'partial_section', 'message': 'Известные сезонные показатели скопированы; неизвестные ячейки обозначены длинным тире, полного итога карьеры нет'})
             else:
                 issues.append({'code':'section_needs_confirmed_evidence'})

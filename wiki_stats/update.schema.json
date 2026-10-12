@@ -1214,6 +1214,20 @@
                   },
                   "allow_unknown": {
                     "type": "boolean"
+                  },
+                  "header_notes": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": "array",
+                      "minItems": 1,
+                      "maxItems": 30,
+                      "uniqueItems": true,
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 500
+                      }
+                    }
                   }
                 },
                 "required": [

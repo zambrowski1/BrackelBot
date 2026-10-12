@@ -51,6 +51,14 @@ def prepare_nationals(snapshot, mapping, history, api, wiki, budget, now, *, goa
                                            now, goalkeeper=goalkeeper)
             if scope is None:
                 issues.append({'code': 'national_scope_unproven', 'team_id': team['id']})
+                from .national_aggregate_card import prepare as prepare_aggregate_card
+                item = next(item for item in aggregate['statistics'] if item['team']['id'] == team['id'])
+                try:
+                    card_ops = prepare_aggregate_card(snapshot,mapping,item,entity,history,wiki,now,goalkeeper=goalkeeper)
+                    operations.extend(card_ops)
+                    if card_ops: issues.append({'code':'national_card_from_aggregate','team_id':team['id'],'numbers':{'appearances':item['appearances'],'goals':item.get('goals_conceded') if goalkeeper else item['goals']}})
+                except UpdateError as exc:
+                    issues.append({'code':exc.code,'team_id':team['id'],'message':str(exc)})
                 continue
             scopes.append(scope)
             if not scope['statistics_as_of']:

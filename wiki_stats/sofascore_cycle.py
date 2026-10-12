@@ -16,6 +16,7 @@ from .entity_resolver import reference_identity
 from .player_registry import check_player_identity
 from .structural_editor import is_active_period, validate_period
 from .change_planner import plan_article
+from .sofascore_groups import plan as plan_scopes
 from .schema_validator import validate_package
 from .transactions import TEST_TITLE, plan_fingerprint
 from .sofascore_limits import DEFAULT_STATISTICS, DEFAULT_MATCH_PAGES, DEFAULT_MATCH_REQUESTS
@@ -329,10 +330,8 @@ def prepare_player(snapshot, mapping, api, wiki, resolver, *, max_requests=DEFAU
         article = package['articles'][0]
         article['operations'].insert(0, binding)
         article.pop('collection_result', None)
-        for op in article['operations']:
-            op['group_id'] = 'sofascore-reconciliation'
         validate_package(package)
-        plan = plan_article(snapshot, article, '1.1', resolver)
+        plan = plan_scopes(snapshot, article, resolver)
         plan.content_fingerprint = plan_fingerprint(plan)
         return package, plan, evidence
     operation = migration_operation(snapshot.text, mapping['wiki_name'], now.date().isoformat())
@@ -341,10 +340,12 @@ def prepare_player(snapshot, mapping, api, wiki, resolver, *, max_requests=DEFAU
     layout = layout_operation(snapshot.text,mapping['wiki_name'],now.date().isoformat())
     if layout:repairs.insert(0,layout)
     from .legacy_club_table import migration_operation as club_migration
-    old_table=club_migration(snapshot.text,mapping['wiki_name'],now.date().isoformat())
+    try: old_table=club_migration(snapshot.text,mapping['wiki_name'],now.date().isoformat())
+    except UpdateError: old_table=None
     if old_table:repairs.append(old_table)
     from .klstat_normalization import operation as normalize_operation
-    normalized=normalize_operation(snapshot.text,mapping['wiki_name'],now.date().isoformat())
+    try: normalized=normalize_operation(snapshot.text,mapping['wiki_name'],now.date().isoformat())
+    except UpdateError: normalized=None
     if normalized:repairs.append(normalized)
     unknown_period = _active_period_repair(snapshot, mapping, api, wiki, resolver, now)
     if unknown_period:
@@ -367,7 +368,10 @@ def prepare_player(snapshot, mapping, api, wiki, resolver, *, max_requests=DEFAU
     validate_package(package)
     migration = plan_article(snapshot,article,'1.1',resolver)
     if any(c.status not in {'ready','already_applied'} for c in migration.changes):
-        return package,migration,{'provider':'sofascore','review':[{'code':'template_migration_failed'}]}
+        if any(op['type']=='migrate_career_template' for op in repairs):
+            return package,migration,{'provider':'sofascore','review':[{'code':'template_migration_failed'}]}
+        return _prepare_statistics(snapshot,mapping,api,wiki,resolver,
+            max_requests=max_requests,max_match_pages=max_match_pages,max_match_requests=max_match_requests,statistics_since=statistics_since,now=now)
     # Raw legacy tables may already contain incorrect sums. Correct only
     # derived totals from their preserved, fully numeric season cells.
     if old_table:
@@ -389,11 +393,9 @@ def prepare_player(snapshot, mapping, api, wiki, resolver, *, max_requests=DEFAU
     try:
         statistics,statistics_plan,evidence = _prepare_statistics(replace(snapshot,text=migration.preview),
             mapping,api,wiki,resolver,max_requests=max_requests,max_match_pages=max_match_pages,max_match_requests=max_match_requests,statistics_since=statistics_since,now=now)
-        article['operations'].extend(statistics['articles'][0]['operations'])
+        article['operations'].extend(op for op in statistics['articles'][0]['operations'] if op['type'] not in {'normalize_club_flags','normalize_season_links'})
         # Statistics are addressed against the repaired text. Apply their
         # prerequisites in the same ordered transaction, including on replay.
-        for op in article['operations']:
-            op['group_id']='sofascore-reconciliation'
         statistics_warnings = statistics['articles'][0].get('review_warnings',[])
     except UpdateError as exc:
         evidence = {'provider':'sofascore','player_id':mapping['api_id'],
@@ -402,7 +404,19 @@ def prepare_player(snapshot, mapping, api, wiki, resolver, *, max_requests=DEFAU
     if statistics_warnings:
         article['review_warnings'] = list(dict.fromkeys(statistics_warnings))
     validate_package(package)
-    plan = plan_article(snapshot,article,'1.1',resolver)
+    plan = plan_scopes(snapshot,article,resolver)
+    from .club_flags import prepare as prepare_flags
+    from .season_links import prepare as prepare_links
+    for prepare_format in (prepare_flags, prepare_links):
+        try:
+            op, problems = prepare_format(plan.preview,mapping['wiki_name'],now.date().isoformat(),resolver if prepare_format is prepare_flags else wiki)
+            evidence.setdefault('review',[]).extend(problems)
+            if op:
+                article['operations'].append(op)
+                plan=plan_scopes(snapshot,article,resolver)
+        except UpdateError as exc:
+            evidence.setdefault('review',[]).append({'code':exc.code,'message':str(exc)})
+    validate_package(package)
     for change in plan.changes:
         change.source_verification = ('template_redirect_migration' if change.operation['type']=='migrate_career_template'
                                       else 'existing_table_arithmetic' if change.operation['type']=='update_totals'
@@ -523,7 +537,10 @@ def _prepare_statistics(snapshot, mapping, api, wiki, resolver, *, max_requests=
         raise UpdateError('incomplete_statistics', 'Нет списка сезонов игрока')
     # Tolerate repeated season keys while collecting evidence only. The editor
     # remains strict and needs an explicit source-bound repair operation first.
-    table = parser.club_table(allow_duplicates=True) if any(t.name == 'клстат' for t in parser.templates) else None
+    try: table = parser.club_table(allow_duplicates=True) if any(t.name == 'клстат' for t in parser.templates) else None
+    except UpdateError as exc:
+        table=None
+        issues.append({'code':'club_table_unusable','reason':exc.code,'message':str(exc)})
     from .competition_labels import category_label
     category_names={category_label(c):c for c in table.categories} if table else {}
     league_category=category_names.get('Чемпионат',category_names.get('Лига','Чемпионат'))
@@ -1034,8 +1051,8 @@ def _prepare_statistics(snapshot, mapping, api, wiki, resolver, *, max_requests=
                        'league_wikitext': LEAGUE_LINKS[league[0]['tournament_id']]}
             if missing:payload.update(allow_unknown=True,unknown_as_zero=False)
             if blocks:
-                ent['wikitext'] = blocks[0].club
                 earlier = sorted((r for r in blocks if table_season_name(r.season) < label),key=lambda r:table_season_name(r.season))
+                ent['wikitext'] = (earlier[-1] if earlier else blocks[0]).club
                 payload.update({'insert_after_season': earlier[-1].season} if earlier
                                else {'insert_before_season': blocks[0].season})
                 add('add_season', ent, {'structure': 'club_table'}, season=label, payload=payload)
@@ -1363,7 +1380,7 @@ def _prepare_statistics(snapshot, mapping, api, wiki, resolver, *, max_requests=
                'generated_at': now.isoformat(), 'articles': [article]}
     validate_package(package)
     if operations:
-        plan = plan_article(snapshot, article, '1.1', resolver)
+        plan = plan_scopes(snapshot, article, resolver)
         for change in plan.changes:
             provenance = sorted({s['provenance'] for s in change.operation.get('sources', [])})
             change.source_verification = ('existing_table_arithmetic' if change.operation['type']=='update_totals'
@@ -1389,9 +1406,9 @@ def _prepare_statistics(snapshot, mapping, api, wiki, resolver, *, max_requests=
         article.pop('collection_result',None)
         article['operations'].append(flag_op)
         validate_package(package)
-        plan=plan_article(snapshot,article,'1.1',resolver)
+        plan=plan_scopes(snapshot,article,resolver)
     elif flag_issues:
-        plan=plan_article(snapshot,article,'1.1',resolver)
+        plan=plan_scopes(snapshot,article,resolver)
     from .season_links import prepare as prepare_season_links
     try:
         season_op,season_issues=prepare_season_links(plan.preview,mapping['wiki_name'],now.date().isoformat(),wiki)
@@ -1402,7 +1419,7 @@ def _prepare_statistics(snapshot, mapping, api, wiki, resolver, *, max_requests=
         article.pop('collection_result',None)
         article['operations'].append(season_op)
         validate_package(package)
-        plan=plan_article(snapshot,article,'1.1',resolver)
+        plan=plan_scopes(snapshot,article,resolver)
     # The adapter prepares review diffs; automatic mainspace source attestation
     # is deliberately not fabricated by a manually prepared sandbox plan.
     return package, plan, {'provider': 'sofascore', 'player_id': mapping['api_id'],

@@ -11,7 +11,7 @@
       "operations": [
         {
           "as_of": "2026-10-13",
-          "group_id": "sofascore-reconciliation",
+          "group_id": "sofascore-club-table",
           "sources": [
             {
               "url": "https://www.sofascore.com/football/player/174345",
@@ -35,7 +35,7 @@
         },
         {
           "as_of": "2026-10-13",
-          "group_id": "sofascore-reconciliation",
+          "group_id": "sofascore-club-table",
           "sources": [
             {
               "url": "https://www.sofascore.com/football/player/174345",
@@ -70,7 +70,7 @@
         },
         {
           "as_of": "2026-10-13",
-          "group_id": "sofascore-reconciliation",
+          "group_id": "sofascore-club-table",
           "sources": [
             {
               "url": "https://www.sofascore.com/football/player/174345",
@@ -105,7 +105,7 @@
         },
         {
           "as_of": "2026-10-13",
-          "group_id": "sofascore-reconciliation",
+          "group_id": "sofascore-club-table",
           "sources": [
             {
               "url": "https://www.sofascore.com/football/player/174345",
@@ -140,7 +140,7 @@
         },
         {
           "as_of": "2026-10-13",
-          "group_id": "sofascore-reconciliation",
+          "group_id": "sofascore-club-table",
           "sources": [
             {
               "url": "https://www.sofascore.com/football/player/174345",
@@ -175,7 +175,7 @@
         },
         {
           "as_of": "2026-10-13",
-          "group_id": "sofascore-reconciliation",
+          "group_id": "sofascore-club-table",
           "sources": [
             {
               "url": "https://www.sofascore.com/football/player/174345",
@@ -210,7 +210,7 @@
         },
         {
           "as_of": "2026-10-13",
-          "group_id": "sofascore-reconciliation",
+          "group_id": "sofascore-club-table",
           "sources": [
             {
               "url": "https://www.sofascore.com/football/player/174345",
@@ -245,7 +245,7 @@
         },
         {
           "as_of": "2026-10-13",
-          "group_id": "sofascore-reconciliation",
+          "group_id": "sofascore-club-table",
           "sources": [
             {
               "url": "https://www.sofascore.com/football/player/174345",
@@ -280,7 +280,7 @@
         },
         {
           "as_of": "2026-10-13",
-          "group_id": "sofascore-reconciliation",
+          "group_id": "sofascore-club-table",
           "sources": [
             {
               "url": "https://www.sofascore.com/football/player/174345",
@@ -315,7 +315,7 @@
         },
         {
           "as_of": "2026-10-13",
-          "group_id": "sofascore-reconciliation",
+          "group_id": "sofascore-club-table",
           "sources": [
             {
               "url": "https://www.sofascore.com/football/player/174345",
@@ -350,7 +350,7 @@
         },
         {
           "as_of": "2026-10-13",
-          "group_id": "sofascore-reconciliation",
+          "group_id": "sofascore-club-table",
           "sources": [
             {
               "url": "https://www.sofascore.com/football/player/174345",
@@ -385,7 +385,7 @@
         },
         {
           "as_of": "2026-10-13",
-          "group_id": "sofascore-reconciliation",
+          "group_id": "sofascore-club-table",
           "sources": [
             {
               "url": "https://www.sofascore.com/football/player/174345",
@@ -420,7 +420,7 @@
         },
         {
           "as_of": "2026-10-13",
-          "group_id": "sofascore-reconciliation",
+          "group_id": "sofascore-club-table",
           "sources": [
             {
               "url": "https://www.sofascore.com/football/player/174345",
@@ -455,7 +455,7 @@
         },
         {
           "as_of": "2026-10-13",
-          "group_id": "sofascore-reconciliation",
+          "group_id": "sofascore-club-table",
           "sources": [
             {
               "url": "https://www.sofascore.com/football/player/174345",
@@ -495,7 +495,7 @@
         },
         {
           "as_of": "2026-10-13",
-          "group_id": "sofascore-reconciliation",
+          "group_id": "sofascore-club-table",
           "sources": [
             {
               "url": "https://www.sofascore.com/football/player/174345",
@@ -535,7 +535,7 @@
         },
         {
           "as_of": "2026-10-13",
-          "group_id": "sofascore-reconciliation",
+          "group_id": "sofascore-club-table",
           "sources": [
             {
               "url": "https://www.sofascore.com/football/player/174345",
@@ -574,76 +574,9 @@
           }
         },
         {
-          "as_of": "2026-10-13",
-          "group_id": "sofascore-reconciliation",
-          "sources": [
-            {
-              "url": "https://www.sofascore.com/football/player/174345",
-              "provenance": "sofascore",
-              "coverage_as_of": "2026-10-13",
-              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
-            }
-          ],
-          "id": "ss-17",
-          "type": "update_stats",
-          "entity": {
-            "name": "Майнц 05",
-            "wikitext": "{{Флаг Германии|20px}} [[Майнц 05]]"
-          },
-          "target": {
-            "structure": "career",
-            "field": "клубы",
-            "period": "2017—{{н.в.}}"
-          },
-          "season": null,
-          "competition": {
-            "name": "Чемпионат",
-            "category": "all",
-            "scope": "league"
-          },
-          "expected": {
-            "appearances": 145,
-            "goals": -232
-          },
-          "new": {
-            "appearances": 210,
-            "goals": -314
-          }
-        },
-        {
-          "as_of": "2026-10-13",
-          "group_id": "sofascore-reconciliation",
-          "sources": [
-            {
-              "url": "https://www.sofascore.com/football/player/174345",
-              "provenance": "sofascore",
-              "coverage_as_of": "2026-10-13",
-              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
-            }
-          ],
-          "id": "ss-18",
-          "type": "update_date",
-          "entity": {
-            "name": "Майнц 05",
-            "kind": "club",
-            "wikidata_id": "Q105254",
-            "page_title": "Майнц 05",
-            "wikitext": "{{Флаг Германии|20px}} [[Майнц 05|Майнц 05]]"
-          },
-          "target": {
-            "structure": "career",
-            "field": "клубы"
-          },
-          "payload": {
-            "field": "обновление данных о клубе",
-            "expected_value": "04.11.2023",
-            "statistics_as_of": "2026-09-12"
-          }
-        },
-        {
           "id": "normalize-club-flags",
           "type": "normalize_club_flags",
-          "group_id": "sofascore-reconciliation",
+          "group_id": "sofascore-club-table",
           "entity": {
             "name": "Робин Центнер",
             "wikitext": "{{КлСтат}}"
@@ -713,7 +646,7 @@
         {
           "id": "normalize-season-links",
           "type": "normalize_season_links",
-          "group_id": "sofascore-reconciliation",
+          "group_id": "sofascore-club-table",
           "entity": {
             "name": "Робин Центнер",
             "wikitext": "{{КлСтат}}"
@@ -787,6 +720,73 @@
                 "page_title": "Чемпионат Германии по футболу 2024/2025"
               }
             ]
+          }
+        },
+        {
+          "as_of": "2026-10-13",
+          "group_id": "sofascore-card-club",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/174345",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-17",
+          "type": "update_stats",
+          "entity": {
+            "name": "Майнц 05",
+            "wikitext": "{{Флаг Германии|20px}} [[Майнц 05]]"
+          },
+          "target": {
+            "structure": "career",
+            "field": "клубы",
+            "period": "2017—{{н.в.}}"
+          },
+          "season": null,
+          "competition": {
+            "name": "Чемпионат",
+            "category": "all",
+            "scope": "league"
+          },
+          "expected": {
+            "appearances": 145,
+            "goals": -232
+          },
+          "new": {
+            "appearances": 210,
+            "goals": -314
+          }
+        },
+        {
+          "as_of": "2026-10-13",
+          "group_id": "sofascore-card-club",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/174345",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-18",
+          "type": "update_date",
+          "entity": {
+            "name": "Майнц 05",
+            "kind": "club",
+            "wikidata_id": "Q105254",
+            "page_title": "Майнц 05",
+            "wikitext": "{{Флаг Германии|20px}} [[Майнц 05|Майнц 05]]"
+          },
+          "target": {
+            "structure": "career",
+            "field": "клубы"
+          },
+          "payload": {
+            "field": "обновление данных о клубе",
+            "expected_value": "04.11.2023",
+            "statistics_as_of": "2026-09-12"
           }
         }
       ],

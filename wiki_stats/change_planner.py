@@ -129,11 +129,18 @@ def plan_article(snapshot, article, schema_version='1.0', resolver=None):
                 if len(changes)>1 and c.status=='ready':
                     c.diff += '\nСвязанная группа (публикуется целиком):\n'+diff
         results.extend(changes)
+    # Identical infobox prerequisites are explicitly repeated so each optional
+    # group is independently executable. Statistic writes are never deduplicated.
+    def patch_key(p): return p.start, p.end, p.before, p.after
+    shared = {}
+    for c in results:
+        if c.operation['id'].startswith('shared-infobox-') and c.operation['type'] in {'bind_infobox_name','migrate_career_template'} and c.status in {'ready','already_applied'}:
+            shared.setdefault(c.group_id,set()).update(patch_key(p) for p in c.patches)
     conflicts = set()
     for i,g in enumerate(transactions):
         if g.status!='ready': continue
         for h in transactions[i+1:]:
-            if h.status=='ready' and any(overlap(a,b) for a in g.patches for b in h.patches):
+            if h.status=='ready' and any(overlap(a,b) and not (patch_key(a)==patch_key(b) and patch_key(a) in shared.get(g.id,set()) & shared.get(h.id,set())) for a in g.patches for b in h.patches):
                 conflicts.update([g.id,h.id])
     for g in transactions:
         if g.id in conflicts:
@@ -141,7 +148,12 @@ def plan_article(snapshot, article, schema_version='1.0', resolver=None):
             for c in results:
                 if c.group_id==g.id:
                     c.status='patch_conflict'; c.message='Группы пересекаются. Свяжите эти операции одним group_id.'; c.patches=[];c.diff=''
-    ready_patches=[p for g in transactions if g.status=='ready' for p in g.patches]
+    ready_patches=[]; seen=set()
+    for g in transactions:
+        if g.status!='ready': continue
+        for p in g.patches:
+            key=patch_key(p)
+            if key not in seen: ready_patches.append(p); seen.add(key)
     from .statistics_section import source_reference
     from .sbmatches_source import added_profile_references
     added_refs=[]

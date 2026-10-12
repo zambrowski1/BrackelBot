@@ -12,7 +12,7 @@
         {
           "id": "normalize-statistics-layout",
           "type": "normalize_statistics_layout",
-          "group_id": "sofascore-reconciliation",
+          "group_id": "sofascore-club-table",
           "entity": {
             "name": "Патрик Шик",
             "wikitext": "{{Футболист}}"
@@ -35,74 +35,7 @@
         },
         {
           "as_of": "2026-10-13",
-          "group_id": "sofascore-reconciliation",
-          "sources": [
-            {
-              "url": "https://www.sofascore.com/football/player/280609",
-              "provenance": "sofascore",
-              "coverage_as_of": "2026-10-13",
-              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
-            }
-          ],
-          "id": "ss-1",
-          "type": "update_stats",
-          "entity": {
-            "name": "Байер 04",
-            "wikitext": "{{Флаг Германии|20px}} [[Байер 04]]"
-          },
-          "target": {
-            "structure": "career",
-            "field": "клубы",
-            "period": "2020—{{н. в.}}"
-          },
-          "season": null,
-          "competition": {
-            "name": "Чемпионат",
-            "category": "all",
-            "scope": "league"
-          },
-          "expected": {
-            "appearances": 149,
-            "goals": 80
-          },
-          "new": {
-            "appearances": 154,
-            "goals": 85
-          }
-        },
-        {
-          "as_of": "2026-10-13",
-          "group_id": "sofascore-reconciliation",
-          "sources": [
-            {
-              "url": "https://www.sofascore.com/football/player/280609",
-              "provenance": "sofascore",
-              "coverage_as_of": "2026-10-13",
-              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
-            }
-          ],
-          "id": "ss-2",
-          "type": "update_date",
-          "entity": {
-            "name": "Байер 04",
-            "kind": "club",
-            "wikidata_id": "Q104761",
-            "page_title": "Байер 04",
-            "wikitext": "{{Флаг Германии|20px}} [[Байер 04|Байер 04]]"
-          },
-          "target": {
-            "structure": "career",
-            "field": "клубы"
-          },
-          "payload": {
-            "field": "обновление данных о клубе",
-            "expected_value": "16.5.2026",
-            "statistics_as_of": "2026-10-10"
-          }
-        },
-        {
-          "as_of": "2026-10-13",
-          "group_id": "sofascore-reconciliation",
+          "group_id": "sofascore-club-table",
           "sources": [
             {
               "url": "https://www.sofascore.com/football/player/280609",
@@ -378,9 +311,76 @@
           }
         },
         {
+          "as_of": "2026-10-13",
+          "group_id": "sofascore-card-club",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/280609",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-1",
+          "type": "update_stats",
+          "entity": {
+            "name": "Байер 04",
+            "wikitext": "{{Флаг Германии|20px}} [[Байер 04]]"
+          },
+          "target": {
+            "structure": "career",
+            "field": "клубы",
+            "period": "2020—{{н. в.}}"
+          },
+          "season": null,
+          "competition": {
+            "name": "Чемпионат",
+            "category": "all",
+            "scope": "league"
+          },
+          "expected": {
+            "appearances": 149,
+            "goals": 80
+          },
+          "new": {
+            "appearances": 154,
+            "goals": 85
+          }
+        },
+        {
+          "as_of": "2026-10-13",
+          "group_id": "sofascore-card-club",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/280609",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-2",
+          "type": "update_date",
+          "entity": {
+            "name": "Байер 04",
+            "kind": "club",
+            "wikidata_id": "Q104761",
+            "page_title": "Байер 04",
+            "wikitext": "{{Флаг Германии|20px}} [[Байер 04|Байер 04]]"
+          },
+          "target": {
+            "structure": "career",
+            "field": "клубы"
+          },
+          "payload": {
+            "field": "обновление данных о клубе",
+            "expected_value": "16.5.2026",
+            "statistics_as_of": "2026-10-10"
+          }
+        },
+        {
           "id": "national-card-date",
           "type": "update_date",
-          "group_id": "sofascore-reconciliation",
+          "group_id": "sofascore-card-national-complete-national-card",
           "entity": {
             "name": "Статистика сборных",
             "wikitext": "{{Флаг Чехии|20px}} [[Сборная Чехии по футболу|Чехия]]",

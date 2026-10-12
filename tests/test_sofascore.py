@@ -360,7 +360,7 @@ def test_transfer_card_and_shirt_number_share_one_atomic_diff():
     assert '|2026—{{н.в.}}|'+AUGSBURG+'|5 (2)' in plan.preview
     assert '| нынешний клуб = '+AUGSBURG in plan.preview
     assert '| номер = 3<!-- сохранить -->' in plan.preview
-    assert len([g for g in plan.groups if g.status=='ready'])==1
+    assert len([g for g in plan.groups if g.status=='ready' and g.id=='sofascore-card-club'])==1
 
 
 def test_overall_fallback_requires_complete_non_playoff_match_count():

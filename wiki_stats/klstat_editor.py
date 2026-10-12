@@ -109,7 +109,7 @@ def insert_season(text, parser, op):
     layout = table_layout(parser).get(club)
     if not layout:
         raise UpdateError('target_not_found', 'Сначала добавьте блок клуба операцией add_table_club')
-    existing = [(r,l) for r,l in layout['seasons'] if r.values()['1'].text.strip() == season]
+    existing = [(r,l) for r,l in layout['seasons'] if season_key(r.values()['1'].text.strip()) == key]
     if existing:
         row, league = existing[0]
         actual = [row.values()[str(i+2)].numeric(signed=bool(i % 2))[0].value for i in range(len(values))]
@@ -120,7 +120,7 @@ def insert_season(text, parser, op):
         raise UpdateError('totals_mismatch', 'Сначала исправьте исходные итоги явной операцией update_totals')
     before = 'insert_before_season' in payload
     anchor = payload['insert_before_season'] if before else payload['insert_after_season']
-    matches = [(i,r,l) for i,(r,l) in enumerate(layout['seasons']) if r.values()['1'].text.strip() == anchor]
+    matches = [(i,r,l) for i,(r,l) in enumerate(layout['seasons']) if season_key(r.values()['1'].text.strip()) == season_key(anchor)]
     if len(matches) != 1:
         raise UpdateError('target_not_found', 'Не найден единственный сезон-якорь')
     index, previous, league = matches[0]

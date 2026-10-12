@@ -10,9 +10,9 @@
       "player": "Винченцо Грифо",
       "operations": [
         {
-          "id": "bind-card-name",
+          "id": "shared-infobox-0-sofascore-club-table",
           "type": "bind_infobox_name",
-          "group_id": "sofascore-reconciliation",
+          "group_id": "sofascore-club-table",
           "entity": {
             "name": "Винченцо Грифо",
             "wikidata_id": "Q1756602",
@@ -37,7 +37,7 @@
         {
           "id": "normalize-statistics-layout",
           "type": "normalize_statistics_layout",
-          "group_id": "sofascore-reconciliation",
+          "group_id": "sofascore-club-table",
           "entity": {
             "name": "Винченцо Грифо",
             "wikitext": "{{Футболист}}"
@@ -60,74 +60,7 @@
         },
         {
           "as_of": "2026-10-13",
-          "group_id": "sofascore-reconciliation",
-          "sources": [
-            {
-              "url": "https://www.sofascore.com/football/player/171961",
-              "provenance": "sofascore",
-              "coverage_as_of": "2026-10-13",
-              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
-            }
-          ],
-          "id": "ss-1",
-          "type": "update_stats",
-          "entity": {
-            "name": "Фрайбург",
-            "wikitext": "{{Флаг Германии|20px}} [[Фрайбург (футбольный клуб)|Фрайбург]]"
-          },
-          "target": {
-            "structure": "career",
-            "field": "клубы",
-            "period": "2019—{{н.в.}}"
-          },
-          "season": null,
-          "competition": {
-            "name": "Чемпионат",
-            "category": "all",
-            "scope": "league"
-          },
-          "expected": {
-            "appearances": 185,
-            "goals": 53
-          },
-          "new": {
-            "appearances": 227,
-            "goals": 60
-          }
-        },
-        {
-          "as_of": "2026-10-13",
-          "group_id": "sofascore-reconciliation",
-          "sources": [
-            {
-              "url": "https://www.sofascore.com/football/player/171961",
-              "provenance": "sofascore",
-              "coverage_as_of": "2026-10-13",
-              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
-            }
-          ],
-          "id": "ss-2",
-          "type": "update_date",
-          "entity": {
-            "name": "Фрайбург",
-            "kind": "club",
-            "wikidata_id": "Q106394",
-            "page_title": "Фрайбург (футбольный клуб)",
-            "wikitext": "{{Флаг Германии|20px}} [[Фрайбург (футбольный клуб)|Фрайбург]]"
-          },
-          "target": {
-            "structure": "career",
-            "field": "клубы"
-          },
-          "payload": {
-            "field": "обновление данных о клубе",
-            "expected_value": "14.04.2025",
-            "statistics_as_of": "2026-10-11"
-          }
-        },
-        {
-          "as_of": "2026-10-13",
-          "group_id": "sofascore-reconciliation",
+          "group_id": "sofascore-club-table",
           "sources": [
             {
               "url": "https://www.sofascore.com/football/player/171961",
@@ -505,86 +438,9 @@
           }
         },
         {
-          "id": "national-card-date",
-          "type": "update_date",
-          "group_id": "sofascore-reconciliation",
-          "entity": {
-            "name": "Статистика сборных",
-            "wikitext": "{{Флаг Италии|20px}} [[Сборная Италии по футболу|Италия]]",
-            "kind": "national_team",
-            "wikidata_id": "Q676899"
-          },
-          "target": {
-            "structure": "career",
-            "field": "национальная сборная"
-          },
-          "as_of": "2026-10-13",
-          "sources": [
-            {
-              "url": "https://www.sofascore.com/football/match/usa-italy/hUbszUb#id:8030844",
-              "provenance": "sofascore",
-              "coverage_as_of": "2026-10-13",
-              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2023-03-26"
-            },
-            {
-              "url": "https://www.sofascore.com/football/match/liechtenstein-italy/hUbsFWb#id:8079025",
-              "provenance": "sofascore",
-              "coverage_as_of": "2026-10-13",
-              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2023-03-26"
-            },
-            {
-              "url": "https://www.sofascore.com/football/match/moldova-italy/hUbsHVb#id:8803185",
-              "provenance": "sofascore",
-              "coverage_as_of": "2026-10-13",
-              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2023-03-26"
-            },
-            {
-              "url": "https://www.sofascore.com/football/match/estonia-italy/hUbsjVb#id:9135431",
-              "provenance": "sofascore",
-              "coverage_as_of": "2026-10-13",
-              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2023-03-26"
-            },
-            {
-              "url": "https://www.sofascore.com/football/match/northern-ireland-italy/hUbsLVb#id:9223761",
-              "provenance": "sofascore",
-              "coverage_as_of": "2026-10-13",
-              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2023-03-26"
-            },
-            {
-              "url": "https://www.sofascore.com/football/match/san-marino-italy/hUbsIWb#id:9512296",
-              "provenance": "sofascore",
-              "coverage_as_of": "2026-10-13",
-              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2023-03-26"
-            },
-            {
-              "url": "https://www.sofascore.com/football/match/italy-albania/PTbshUb#id:10751615",
-              "provenance": "sofascore",
-              "coverage_as_of": "2026-10-13",
-              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2023-03-26"
-            },
-            {
-              "url": "https://www.sofascore.com/football/match/austria-italy/hUbstUb#id:10751626",
-              "provenance": "sofascore",
-              "coverage_as_of": "2026-10-13",
-              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2023-03-26"
-            },
-            {
-              "url": "https://www.sofascore.com/football/match/italy-malta/IObshUb#id:10752394",
-              "provenance": "sofascore",
-              "coverage_as_of": "2026-10-13",
-              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2023-03-26"
-            }
-          ],
-          "payload": {
-            "field": "обновление данных о сборной",
-            "expected_value": "26.3.2023",
-            "statistics_as_of": "2023-03-26"
-          }
-        },
-        {
           "id": "normalize-season-links",
           "type": "normalize_season_links",
-          "group_id": "sofascore-reconciliation",
+          "group_id": "sofascore-club-table",
           "entity": {
             "name": "Винченцо Грифо",
             "wikitext": "{{КлСтат}}"
@@ -718,6 +574,200 @@
                 "page_title": "Чемпионат Германии по футболу 2024/2025"
               }
             ]
+          }
+        },
+        {
+          "id": "shared-infobox-0-sofascore-card-club",
+          "type": "bind_infobox_name",
+          "group_id": "sofascore-card-club",
+          "entity": {
+            "name": "Винченцо Грифо",
+            "wikidata_id": "Q1756602",
+            "wikitext": "{{Футболист}}"
+          },
+          "target": {
+            "structure": "career"
+          },
+          "as_of": "2026-10-13",
+          "sources": [
+            {
+              "url": "https://www.wikidata.org/wiki/Q1756602",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-13",
+              "note": "Статья и профиль игрока проверены по QID и дате рождения; дата в карточке не меняется"
+            }
+          ],
+          "payload": {
+            "expected_sha256": "cdc38546dd31e56781115a29b665e792f90a364ece929b1472a52a6f9a4b762a"
+          }
+        },
+        {
+          "as_of": "2026-10-13",
+          "group_id": "sofascore-card-club",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/171961",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-1",
+          "type": "update_stats",
+          "entity": {
+            "name": "Фрайбург",
+            "wikitext": "{{Флаг Германии|20px}} [[Фрайбург (футбольный клуб)|Фрайбург]]"
+          },
+          "target": {
+            "structure": "career",
+            "field": "клубы",
+            "period": "2019—{{н.в.}}"
+          },
+          "season": null,
+          "competition": {
+            "name": "Чемпионат",
+            "category": "all",
+            "scope": "league"
+          },
+          "expected": {
+            "appearances": 185,
+            "goals": 53
+          },
+          "new": {
+            "appearances": 227,
+            "goals": 60
+          }
+        },
+        {
+          "as_of": "2026-10-13",
+          "group_id": "sofascore-card-club",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/player/171961",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Получено через Sofascore Scraper; дата получения не является датой матча"
+            }
+          ],
+          "id": "ss-2",
+          "type": "update_date",
+          "entity": {
+            "name": "Фрайбург",
+            "kind": "club",
+            "wikidata_id": "Q106394",
+            "page_title": "Фрайбург (футбольный клуб)",
+            "wikitext": "{{Флаг Германии|20px}} [[Фрайбург (футбольный клуб)|Фрайбург]]"
+          },
+          "target": {
+            "structure": "career",
+            "field": "клубы"
+          },
+          "payload": {
+            "field": "обновление данных о клубе",
+            "expected_value": "14.04.2025",
+            "statistics_as_of": "2026-10-11"
+          }
+        },
+        {
+          "id": "shared-infobox-0-sofascore-card-national-complete-national-card",
+          "type": "bind_infobox_name",
+          "group_id": "sofascore-card-national-complete-national-card",
+          "entity": {
+            "name": "Винченцо Грифо",
+            "wikidata_id": "Q1756602",
+            "wikitext": "{{Футболист}}"
+          },
+          "target": {
+            "structure": "career"
+          },
+          "as_of": "2026-10-13",
+          "sources": [
+            {
+              "url": "https://www.wikidata.org/wiki/Q1756602",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-13",
+              "note": "Статья и профиль игрока проверены по QID и дате рождения; дата в карточке не меняется"
+            }
+          ],
+          "payload": {
+            "expected_sha256": "cdc38546dd31e56781115a29b665e792f90a364ece929b1472a52a6f9a4b762a"
+          }
+        },
+        {
+          "id": "national-card-date",
+          "type": "update_date",
+          "group_id": "sofascore-card-national-complete-national-card",
+          "entity": {
+            "name": "Статистика сборных",
+            "wikitext": "{{Флаг Италии|20px}} [[Сборная Италии по футболу|Италия]]",
+            "kind": "national_team",
+            "wikidata_id": "Q676899"
+          },
+          "target": {
+            "structure": "career",
+            "field": "национальная сборная"
+          },
+          "as_of": "2026-10-13",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/match/usa-italy/hUbszUb#id:8030844",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2023-03-26"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/liechtenstein-italy/hUbsFWb#id:8079025",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2023-03-26"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/moldova-italy/hUbsHVb#id:8803185",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2023-03-26"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/estonia-italy/hUbsjVb#id:9135431",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2023-03-26"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/northern-ireland-italy/hUbsLVb#id:9223761",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2023-03-26"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/san-marino-italy/hUbsIWb#id:9512296",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2023-03-26"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/italy-albania/PTbshUb#id:10751615",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2023-03-26"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/austria-italy/hUbstUb#id:10751626",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2023-03-26"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/italy-malta/IObshUb#id:10752394",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2023-03-26"
+            }
+          ],
+          "payload": {
+            "field": "обновление данных о сборной",
+            "expected_value": "26.3.2023",
+            "statistics_as_of": "2023-03-26"
           }
         }
       ],

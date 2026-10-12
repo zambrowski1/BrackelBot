@@ -25,6 +25,7 @@ from tools.recheck_saved_four import CASES
 BASE = ROOT/'handoff/2026-10-12/latest'
 OUT = ROOT/'handoff/2026-10-13/automatic-card-recheck'
 EXPECTED = {'Грифо': '227 (60)', 'Крамарич': '310 (135)', 'Центнер': '210 (-314)', 'Шик': '154 (85)'}
+NATIONAL = {'Грифо':'9 (4)', 'Крамарич':'119 (36)', 'Шик':'56 (26)'}
 
 
 class EmptyStore:
@@ -139,7 +140,7 @@ def main():
         common = read('bundesliga-three-2026-10-12/cache.json')
         schick = read('schick-sbmatches-api-2026-10-12/seed-cache.json')
         schick.update(read('schick-sbmatches-api-2026-10-12/fresh-cache.json'))
-        for short, pid, *_ in CASES:
+        for short, pid, current_team, start, player, updated in CASES:
             wiki.reads = 0
             mapping = read('schick-sbmatches-api-2026-10-12/mapping.json') if short == 'Шик' else read(f'bundesliga-three-2026-10-12/{pid}/final/report.json')['mapping']
             before = archive.read('schick-ready-2026-10-12/before.wiki' if short == 'Шик' else f'bundesliga-three-2026-10-12/{pid}/before.wiki').decode('utf-8-sig')
@@ -163,11 +164,17 @@ def main():
             careers = result.get('after_card', {}).get('клубы')
             actual = careers[-1][-1].replace('−','-') if isinstance(careers,list) and careers else None
             result['current_club_card_passed'] = actual == EXPECTED[short]
+            raw_date = result.get('after_card',{}).get('обновление данных о клубе','')
+            try: result['current_club_date_passed'] = datetime.strptime(raw_date,'%d.%m.%Y').date().isoformat() == updated
+            except ValueError: result['current_club_date_passed'] = False
+            if short in NATIONAL:
+                national = result.get('after_card',{}).get('национальная сборная')
+                result['national_card_passed'] = isinstance(national,list) and national[-1][-1] == NATIONAL[short]
             results.append(result)
             print(json.dumps({k:v for k,v in result.items() if k not in ('changes','review','before_card','missing_cached_requests')},ensure_ascii=False),flush=True)
     (OUT/'report.json').write_text(json.dumps({'wikipedia_edits':0,'football_api_requests':0,'wikimedia_reads':wiki.total_reads,'wiki_read_attempts':wiki.attempts,'articles':results},ensure_ascii=False,indent=2),encoding='utf8')
     (OUT/'wikimedia-read-evidence.json').write_text(json.dumps(wiki.fresh,ensure_ascii=False,indent=2),encoding='utf8')
-    return 0 if all(a['current_club_card_passed'] for a in results) else 1
+    return 0 if all(a['current_club_card_passed'] and a['current_club_date_passed'] and a.get('national_card_passed',True) and a.get('idempotent') and a.get('references_preserved') and not a.get('new_arithmetic_errors') for a in results) else 1
 
 
 if __name__ == '__main__': sys.exit(main())

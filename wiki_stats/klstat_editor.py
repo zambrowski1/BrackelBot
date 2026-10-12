@@ -132,7 +132,17 @@ def insert_season(text, parser, op):
         raise UpdateError('unknown_season', 'Новый сезон нарушает хронологию выбранных соседних строк')
     same_league = same_league_name(league.values()['1'].text.strip(), league_name)
     if not same_league and league.start==layout['club'].start:
-        raise UpdateError('structure_change_required','Для смены лиги нужно развернуть общий параметр клуба в отдельные блоки лиг')
+        # Expand the compact club/league header losslessly before inserting a
+        # promoted/relegated season. The regular explicit-block guards below
+        # still refuse an insertion inside an unsplit league span.
+        club_ref=layout['club']; club_values=club_ref.values()
+        node=mw.parse(str(club_ref.node)).filter_templates()[0]
+        node.remove('2')
+        newline='\r\n' if '\r\n' in text else '\n'
+        expanded=str(node)+newline+'{{КлСтат/Лига|'+club_values['2'].text+'|сезоны='+club_values['сезоны'].text+'}}'
+        changed=apply_patches(text,[Patch(club_ref.start,club_ref.start+len(str(club_ref.node)),str(club_ref.node),expanded,'split_inline_league')],structural=True)
+        from .wikitext_parser import WikitextParser
+        return insert_season(changed,WikitextParser(changed),op)
     if not same_league and ((before and prior and prior[-1][1].start == league.start)
                             or not before and following and following[0][1].start == league.start):
         raise UpdateError('unsupported_structure', 'Новая лига внутри существующего блока требует разделения этого блока')

@@ -140,7 +140,11 @@ def create_section(text, parser, op, resolver):
             if node.level==2 and title in {'достижения','награды','примечания','ссылки','литература','источники','см. также'} and footer is None:
                 footer=offset
         if isinstance(node,Tag) and str(node.tag).strip().casefold()=='table':
-            if offset in national_tables:allowed_raw.append(value)
+            from .national_table_formats import classify
+            headings=list(re.finditer(r'(?m)^={2,6}\s*([^=\r\n]+?)\s*={2,6}\s*$',text[:offset]))
+            heading=headings[-1][1].casefold() if headings else ''
+            national_summary=('сборн' in heading and classify(node,text[max(0,offset-400):offset]) in {'goals_list','annual_summary'})
+            if offset in national_tables or national_summary:allowed_raw.append(value)
             else:raise UpdateError('statistics_exists','Найдена обычная таблица с возможной статистикой')
         if isinstance(node,Wikilink) and str(node.title).strip().casefold().startswith('категория:') and footer is None:
             footer=offset

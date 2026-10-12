@@ -268,7 +268,7 @@
     [
       "2025—{{н.в.}}",
       "{{Флаг Германии|20px}} [[Шальке 04]]",
-      "35 (-30)"
+      "39 (-35)"
     ]
   ],
   "национальная сборная": [
@@ -306,38 +306,7 @@
 }
 ```
 
-Отклонённые действия:
-```json
-[
-  {
-    "operation": "add_table_club",
-    "status": "group_blocked",
-    "reason": "Вся группа sofascore-club-table отклонена: old_value_mismatch"
-  },
-  {
-    "operation": "add_season",
-    "status": "group_blocked",
-    "reason": "Вся группа sofascore-club-table отклонена: old_value_mismatch"
-  },
-  {
-    "operation": "add_season",
-    "status": "structure_change_required",
-    "reason": "Для смены лиги нужно развернуть общий параметр клуба в отдельные блоки лиг"
-  },
-  {
-    "operation": "normalize_club_flags",
-    "status": "group_blocked",
-    "reason": "Вся группа sofascore-club-table отклонена: old_value_mismatch"
-  },
-  {
-    "operation": "normalize_season_links",
-    "status": "old_value_mismatch",
-    "reason": "Изменилась ячейка сезона или её лига"
-  }
-]
-```
-
-Замечания источников (полные причины в report.json): source_cache_missing: 17, category_not_covered: 38, zero_from_complete_match_history: 1, unknown_table_cells: 3, club_flag_unproven: 2, season_link_unproven: 11, season_article_missing: 1
+Замечания источников (полные причины в report.json): source_cache_missing: 17, category_not_covered: 38, zero_from_complete_match_history: 1, unknown_table_cells: 3, club_flag_unproven: 1, season_link_unproven: 14, season_article_missing: 1
 
 Повторный запуск: True; сноски сохранены: True; новые арифметические ошибки: [].
 
@@ -408,7 +377,7 @@
 {
   "номер": "22",
   "обновление данных о клубе": "10.10.2026",
-  "обновление данных о сборной": "30.3.2026",
+  "обновление данных о сборной": "04.10.2026",
   "клубы": [
     [
       "2017—2021",
@@ -455,24 +424,13 @@
     [
       "2021—{{н. в.}}",
       "{{Флаг Германии|20px}} [[Сборная Германии по футболу|Германия]]",
-      "39 (1)"
+      "40 (1)"
     ]
   ]
 }
 ```
 
-Отклонённые действия:
-```json
-[
-  {
-    "operation": "create_statistics_section",
-    "status": "statistics_exists",
-    "reason": "Найдена обычная таблица с возможной статистикой"
-  }
-]
-```
-
-Замечания источников (полные причины в report.json): competition_unmapped: 6, source_cache_missing: 1, club_ambiguous: 1, wiki_cache_missing: 3, unknown_table_cells: 5, zero_from_complete_match_history: 14, partial_section: 1, national_career_identity_unproven: 4, national_career_row_unproven: 1, possible_national_statistics: 1
+Замечания источников (полные причины в report.json): competition_unmapped: 6, source_cache_missing: 1, club_ambiguous: 1, wiki_cache_missing: 3, unknown_table_cells: 5, zero_from_complete_match_history: 14, partial_section: 1, possible_national_statistics: 1, season_link_unproven: 8
 
 Повторный запуск: True; сноски сохранены: True; новые арифметические ошибки: [].
 

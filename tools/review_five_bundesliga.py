@@ -91,6 +91,21 @@ def main():
             row.update(after_card=card(preview,name),changes=[asdict(c) for c in plan.changes],review=evidence.get('review',[]),
                        idempotent=second.preview==preview,references_preserved=all(any(ref==other for other in old_refs) for ref in references(snap.text)),
                        new_arithmetic_errors=[v for v in arithmetic_warnings(preview) if v not in arithmetic_warnings(snap.text)])
+            if short in {'Кариус','Раум'}:
+                parsed=WikitextParser(preview);table=parsed.club_table()
+                checks={'club_table_operations_passed':all(c.status in {'ready','already_applied'} for c in plan.changes if c.operation.get('target',{}).get('structure')=='club_table')}
+                if short=='Кариус':
+                    pair=parsed.career('клубы',name)[-1][2].numeric(pair=True)
+                    checks['winter_arrival_total']=[n.value for n in pair]==[39,-35]
+                    checks['promoted_season_present']=any('Шальке' in r.club and r.season.endswith('2026/2027]]') or 'Шальке' in r.club and r.season=='2026/27' for r in table.seasons)
+                else:
+                    pair=parsed.career('национальная сборная',name)[-1][2].numeric(pair=True)
+                    checks['senior_card_total']=[n.value for n in pair]==[40,1]
+                    checks['senior_card_date']=row['after_card']['обновление данных о сборной']=='04.10.2026'
+                    old_tables=[str(n) for n in WikitextParser(snap.text).code.filter_tags() if str(n.tag)=='table']
+                    checks['original_goals_table_preserved']=all(t in preview for t in old_tables)
+                    checks['no_duplicate_sbmatches']=sum(t.name=='сбматчи' for t in parsed.templates)==sum(t.name=='сбматчи' for t in WikitextParser(snap.text).templates)
+                row['regression_checks']=checks
         except Exception as exc:
             row.update(error=str(exc),code=getattr(exc,'code',type(exc).__name__))
         row['changed']=preview!=snap.text;row['missing_cached_requests']=api.missing
@@ -119,7 +134,7 @@ def main():
     with ZipFile(OUT/'five-articles.zip','w',ZIP_DEFLATED) as archive:
         for p in sorted(OUT.iterdir()):
             if p.suffix in {'.wiki','.diff','.md'} or p.name in {'report.json','collection.json'}:archive.write(p,p.name)
-    return 0 if all(not r.get('error') and r.get('idempotent') and r.get('references_preserved') and not r.get('new_arithmetic_errors') for r in results) else 1
+    return 0 if all(not r.get('error') and r.get('idempotent') and r.get('references_preserved') and not r.get('new_arithmetic_errors') and all(r.get('regression_checks',{}).values()) for r in results) else 1
 
 
 if __name__=='__main__':sys.exit(main())

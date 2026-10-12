@@ -412,11 +412,603 @@
             },
             "source_url": "https://www.sofascore.com/football/player/david-raum/856076"
           }
+        },
+        {
+          "id": "normalize-season-links",
+          "type": "normalize_season_links",
+          "group_id": "sofascore-club-table",
+          "entity": {
+            "name": "Давид Раум",
+            "wikitext": "{{КлСтат}}"
+          },
+          "target": {
+            "structure": "club_table"
+          },
+          "as_of": "2026-10-13",
+          "sources": [
+            {
+              "url": "https://ru.wikipedia.org/wiki/%D0%A7%D0%B5%D0%BC%D0%BF%D0%B8%D0%BE%D0%BD%D0%B0%D1%82_%D0%93%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B8%D0%B8_%D0%BF%D0%BE_%D1%84%D1%83%D1%82%D0%B1%D0%BE%D0%BB%D1%83_2022/2023",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-13",
+              "note": "Существующая статья соответствующей лиги и сезона"
+            },
+            {
+              "url": "https://ru.wikipedia.org/wiki/%D0%A7%D0%B5%D0%BC%D0%BF%D0%B8%D0%BE%D0%BD%D0%B0%D1%82_%D0%93%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B8%D0%B8_%D0%BF%D0%BE_%D1%84%D1%83%D1%82%D0%B1%D0%BE%D0%BB%D1%83_2023/2024",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-13",
+              "note": "Существующая статья соответствующей лиги и сезона"
+            },
+            {
+              "url": "https://ru.wikipedia.org/wiki/%D0%A7%D0%B5%D0%BC%D0%BF%D0%B8%D0%BE%D0%BD%D0%B0%D1%82_%D0%93%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B8%D0%B8_%D0%BF%D0%BE_%D1%84%D1%83%D1%82%D0%B1%D0%BE%D0%BB%D1%83_2024/2025",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-13",
+              "note": "Существующая статья соответствующей лиги и сезона"
+            }
+          ],
+          "payload": {
+            "seasons": [
+              {
+                "club": "{{Флаг Германии|20px}} [[РБ Лейпциг|РБ Лейпциг]]",
+                "league": "[[Чемпионат Германии по футболу|Бундеслига]]",
+                "expected_wikitext": "2022/23",
+                "page_title": "Чемпионат Германии по футболу 2022/2023"
+              },
+              {
+                "club": "{{Флаг Германии|20px}} [[РБ Лейпциг|РБ Лейпциг]]",
+                "league": "[[Чемпионат Германии по футболу|Бундеслига]]",
+                "expected_wikitext": "2023/24",
+                "page_title": "Чемпионат Германии по футболу 2023/2024"
+              },
+              {
+                "club": "{{Флаг Германии|20px}} [[РБ Лейпциг|РБ Лейпциг]]",
+                "league": "[[Чемпионат Германии по футболу|Бундеслига]]",
+                "expected_wikitext": "2024/25",
+                "page_title": "Чемпионат Германии по футболу 2024/2025"
+              }
+            ]
+          }
+        },
+        {
+          "id": "national-card-4711",
+          "type": "update_stats",
+          "group_id": "sofascore-card-national-complete-national-card",
+          "entity": {
+            "name": "Германия",
+            "wikitext": "{{Флаг Германии|20px}} [[Сборная Германии по футболу|Германия]]",
+            "page_title": "Сборная Германии по футболу",
+            "wikidata_id": "Q43310",
+            "kind": "national_team",
+            "age": null
+          },
+          "target": {
+            "structure": "career",
+            "field": "национальная сборная",
+            "period": "2021—{{н. в.}}"
+          },
+          "season": null,
+          "competition": {
+            "name": "Матчи сборной",
+            "category": "all",
+            "scope": "national_all"
+          },
+          "as_of": "2026-10-13",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/match/armenia-germany/lUbsPUb#id:9223804",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полная история участия сверена с итогом сборной; голы проверены по матчам; исходная граница данных 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/north-macedonia-germany/lUbsCVb#id:9223906",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полная история участия сверена с итогом сборной; голы проверены по матчам; исходная граница данных 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/armenia-germany/lUbsPUb#id:9223963",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полная история участия сверена с итогом сборной; голы проверены по матчам; исходная граница данных 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/germany-israel/FObslUb#id:10102033",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полная история участия сверена с итогом сборной; голы проверены по матчам; исходная граница данных 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/germany-netherlands/fUbslUb#id:10102067",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полная история участия сверена с итогом сборной; голы проверены по матчам; исходная граница данных 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/germany-italy/hUbslUb#id:10023373",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полная история участия сверена с итогом сборной; голы проверены по матчам; исходная граница данных 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/england-germany/lUbsnUb#id:10023351",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полная история участия сверена с итогом сборной; голы проверены по матчам; исходная граница данных 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/germany-hungary/jUbslUb#id:10023404",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полная история участия сверена с итогом сборной; голы проверены по матчам; исходная граница данных 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/germany-italy/hUbslUb#id:10023354",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полная история участия сверена с итогом сборной; голы проверены по матчам; исходная граница данных 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/germany-hungary/jUbslUb#id:10023383",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полная история участия сверена с итогом сборной; голы проверены по матчам; исходная граница данных 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/england-germany/lUbsnUb#id:10023377",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полная история участия сверена с итогом сборной; голы проверены по матчам; исходная граница данных 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/oman-germany/lUbsMVb#id:10751599",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полная история участия сверена с итогом сборной; голы проверены по матчам; исходная граница данных 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/japan-germany/lUbsvVb#id:10230562",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полная история участия сверена с итогом сборной; голы проверены по матчам; исходная граница данных 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/germany-spain/YTbslUb#id:10230575",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полная история участия сверена с итогом сборной; голы проверены по матчам; исходная граница данных 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/costa-rica-germany/lUbsgVb#id:10230573",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полная история участия сверена с итогом сборной; голы проверены по матчам; исходная граница данных 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/peru-germany/lUbsPVb#id:11038092",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полная история участия сверена с итогом сборной; голы проверены по матчам; исходная граница данных 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/belgium-germany/lUbsrUb#id:11090718",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полная история участия сверена с итогом сборной; голы проверены по матчам; исходная граница данных 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/germany-ukraine/bUbslUb#id:11239348",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полная история участия сверена с итогом сборной; голы проверены по матчам; исходная граница данных 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/mexico-germany/lUbsGVb#id:11635606",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полная история участия сверена с итогом сборной; голы проверены по матчам; исходная граница данных 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/germany-netherlands/fUbslUb#id:11896613",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полная история участия сверена с итогом сборной; голы проверены по матчам; исходная граница данных 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/germany-greece/kUbslUb#id:12208861",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полная история участия сверена с итогом сборной; голы проверены по матчам; исходная граница данных 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/germany-switzerland/ZTbslUb#id:11873902",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полная история участия сверена с итогом сборной; голы проверены по матчам; исходная граница данных 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/germany-denmark/BObslUb#id:11874018",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полная история участия сверена с итогом сборной; голы проверены по матчам; исходная граница данных 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/germany-spain/YTbslUb#id:11874027",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полная история участия сверена с итогом сборной; голы проверены по матчам; исходная граница данных 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/germany-hungary/jUbslUb#id:12057903",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полная история участия сверена с итогом сборной; голы проверены по матчам; исходная граница данных 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/germany-netherlands/fUbslUb#id:12057900",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полная история участия сверена с итогом сборной; голы проверены по матчам; исходная граница данных 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/germany-italy/hUbslUb#id:13157485",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полная история участия сверена с итогом сборной; голы проверены по матчам; исходная граница данных 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/loser-of-sf-2-loser-of-sf-1/GObslUb#id:13157876",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полная история участия сверена с итогом сборной; голы проверены по матчам; исходная граница данных 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/germany-slovakia/XTbslUb#id:13233456",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полная история участия сверена с итогом сборной; голы проверены по матчам; исходная граница данных 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/northern-ireland-germany/lUbsLVb#id:13233481",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полная история участия сверена с итогом сборной; голы проверены по матчам; исходная граница данных 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/germany-luxembourg/DObslUb#id:13233600",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полная история участия сверена с итогом сборной; голы проверены по матчам; исходная граница данных 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/northern-ireland-germany/lUbsLVb#id:13233633",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полная история участия сверена с итогом сборной; голы проверены по матчам; исходная граница данных 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/germany-luxembourg/DObslUb#id:13233657",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полная история участия сверена с итогом сборной; голы проверены по матчам; исходная граница данных 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/germany-slovakia/XTbslUb#id:13233681",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полная история участия сверена с итогом сборной; голы проверены по матчам; исходная граница данных 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/germany-switzerland/ZTbslUb#id:15362812",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полная история участия сверена с итогом сборной; голы проверены по матчам; исходная граница данных 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/ghana-germany/lUbsoVb#id:15362813",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полная история участия сверена с итогом сборной; голы проверены по матчам; исходная граница данных 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/usa-germany/lUbszUb#id:15184400",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полная история участия сверена с итогом сборной; голы проверены по матчам; исходная граница данных 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/curacao-germany/lUbsCqx#id:15186899",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полная история участия сверена с итогом сборной; голы проверены по матчам; исходная граница данных 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/ecuador-germany/lUbshVb#id:15186907",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полная история участия сверена с итогом сборной; голы проверены по матчам; исходная граница данных 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/germany-greece/kUbslUb#id:15534061",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полная история участия сверена с итогом сборной; голы проверены по матчам; исходная граница данных 2026-10-04"
+            }
+          ],
+          "expected": {
+            "appearances": 39,
+            "goals": 1
+          },
+          "new": {
+            "appearances": 40,
+            "goals": 1
+          }
+        },
+        {
+          "id": "national-card-date",
+          "type": "update_date",
+          "group_id": "sofascore-card-national-complete-national-card",
+          "entity": {
+            "name": "Статистика сборных",
+            "wikitext": "{{Флаг Германии|20px}} [[Сборная Германии по футболу|Германия]]",
+            "kind": "national_team",
+            "wikidata_id": "Q43310"
+          },
+          "target": {
+            "structure": "career",
+            "field": "национальная сборная"
+          },
+          "as_of": "2026-10-13",
+          "sources": [
+            {
+              "url": "https://www.sofascore.com/football/match/armenia-germany/lUbsPUb#id:9223804",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/north-macedonia-germany/lUbsCVb#id:9223906",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/armenia-germany/lUbsPUb#id:9223963",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/germany-israel/FObslUb#id:10102033",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/germany-netherlands/fUbslUb#id:10102067",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/germany-italy/hUbslUb#id:10023373",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/england-germany/lUbsnUb#id:10023351",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/germany-hungary/jUbslUb#id:10023404",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/germany-italy/hUbslUb#id:10023354",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/germany-hungary/jUbslUb#id:10023383",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/england-germany/lUbsnUb#id:10023377",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/oman-germany/lUbsMVb#id:10751599",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/japan-germany/lUbsvVb#id:10230562",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/germany-spain/YTbslUb#id:10230575",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/costa-rica-germany/lUbsgVb#id:10230573",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/peru-germany/lUbsPVb#id:11038092",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/belgium-germany/lUbsrUb#id:11090718",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/germany-ukraine/bUbslUb#id:11239348",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/mexico-germany/lUbsGVb#id:11635606",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/germany-netherlands/fUbslUb#id:11896613",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/germany-greece/kUbslUb#id:12208861",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/germany-switzerland/ZTbslUb#id:11873902",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/germany-denmark/BObslUb#id:11874018",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/germany-spain/YTbslUb#id:11874027",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/germany-hungary/jUbslUb#id:12057903",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/germany-netherlands/fUbslUb#id:12057900",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/germany-italy/hUbslUb#id:13157485",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/loser-of-sf-2-loser-of-sf-1/GObslUb#id:13157876",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/germany-slovakia/XTbslUb#id:13233456",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/northern-ireland-germany/lUbsLVb#id:13233481",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/germany-luxembourg/DObslUb#id:13233600",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/northern-ireland-germany/lUbsLVb#id:13233633",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/germany-luxembourg/DObslUb#id:13233657",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/germany-slovakia/XTbslUb#id:13233681",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/germany-switzerland/ZTbslUb#id:15362812",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/ghana-germany/lUbsoVb#id:15362813",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/usa-germany/lUbszUb#id:15184400",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/curacao-germany/lUbsCqx#id:15186899",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/ecuador-germany/lUbshVb#id:15186907",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-10-04"
+            },
+            {
+              "url": "https://www.sofascore.com/football/match/germany-greece/kUbslUb#id:15534061",
+              "provenance": "sofascore",
+              "coverage_as_of": "2026-10-13",
+              "note": "Полный итог этой сборной перепроверен; последний сыгранный матч 2026-10-04"
+            }
+          ],
+          "payload": {
+            "field": "обновление данных о сборной",
+            "expected_value": "30.3.2026",
+            "statistics_as_of": "2026-10-04"
+          }
         }
       ],
       "review_warnings": [
         "Недоступные ячейки новых сезонов показаны нулями по настройке пользователя; итоги рассчитаны по показанным значениям. Пропуски данных перечислены в отчёте.",
-        "Общая дата статистики сборных сохранена: полный охват всех сборных ещё не подтверждён.",
         "Часть статистики сборных не подтверждена полной сверкой матчей. Неподтверждённые показатели сохранены; причины указаны в отчёте."
       ]
     }

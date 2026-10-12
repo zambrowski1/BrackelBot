@@ -15,6 +15,14 @@ def youth_row(text):
     return any(re.search(r'\(\s*до\s+[0-9]{1,2}(?:\s+(?:лет|года))?\s*\)',name) for name in names)
 
 
+def non_senior_row(text):
+    if youth_row(text):return True
+    code=mw.parse(text);links=code.filter_wikilinks()
+    if links:
+        return all(re.match(r'^олимпийская сборная .+ по футболу$',str(link.title).strip(),re.I) for link in links)
+    return bool(re.search(r'\(\s*олимп\.?\s*\)\s*$',code.strip_code().strip(),re.I))
+
+
 def close_national_card(snapshot,mapping,operations,scopes,now):
     try:
         parser=WikitextParser(snapshot.text)
@@ -54,7 +62,7 @@ def close_national_card(snapshot,mapping,operations,scopes,now):
                 provenance='sofascore' if url.startswith('https://www.sofascore.com/') else 'dfb' if url.startswith('https://datencenter.dfb.de/') else 'uefa' if url.startswith('https://www.uefa.com/') else 'sfv'
                 sources.append({'url':url,'provenance':provenance,'coverage_as_of':now.date().isoformat(),
                     'note':'Полный итог этой сборной перепроверен; последний сыгранный матч '+day.isoformat()})
-        if any(i not in covered and not youth_row(team) for i,(_,team,_) in enumerate(rows)):
+        if any(i not in covered and not non_senior_row(team) for i,(_,team,_) in enumerate(rows)):
             return operations,False
         old=parser.infobox(mapping['wiki_name']).get('обновление данных о сборной')
         old_value=old.text.strip() if old else None

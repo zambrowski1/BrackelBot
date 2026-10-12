@@ -78,7 +78,8 @@ def prepare_nationals(snapshot, mapping, history, api, wiki, budget, now, *, goa
                     if reference_identity(wiki,row[1]).get('qid')==entity['wikidata_id']:
                         matches.append(row)
                 except UpdateError as exc:
-                    if not unlinked_youth_label(row[1]):
+                    from .national_card_coverage import non_senior_row
+                    if not (unlinked_youth_label(row[1]) or non_senior_row(row[1])):
                         unresolved_adult=True
                         issues.append({'code':'national_career_identity_unproven','team_id':team['id'],
                                        'period':row[0],'message':str(exc)})

@@ -1141,7 +1141,18 @@ def _prepare_statistics(snapshot, mapping, api, wiki, resolver, *, max_requests=
         departed = any(t.get('transfer_from',{}).get('id')==current['id']
                        and stint_start<=str(t.get('transfer_date',''))[:10]<=now.date().isoformat()
                        for t in transfers['transfers'])
-        new = None if departed else total(resolved_current.qid, first, current_season)
+        first_season=first; boundary_unproven=False
+        boundary=[r for r in records if r['resolved'].qid==resolved_current.qid and r['tournament_id'] in LEAGUES
+                  and '/' in r['season'] and int(r['season'][:4])==first-1]
+        if arrival and arrival_day and arrival_day.year==first and arrival_day.month<7 and boundary:
+            # A winter arrival belongs to the season started the year before.
+            # Include that club's aggregate only when every appearance is
+            # independently located after this arrival, not a previous loan.
+            played=played_matches(history,boundary[0],now,league=True) if len(boundary)==1 else None
+            if played is not None and len(played)==boundary[0]['numbers']['appearances'] and all(str(g['start_time'])[:10]>=stint_start for g in played):
+                first_season=first-1
+            else:boundary_unproven=True
+        new = None if departed or boundary_unproven else total(resolved_current.qid, first_season, current_season)
         current_total = new
         if new:
             old = dict(zip(('appearances', 'goals'), [n.value for n in value.numeric(pair=True)]))
@@ -1240,6 +1251,7 @@ def _prepare_statistics(snapshot, mapping, api, wiki, resolver, *, max_requests=
             return False
         return total(row_entity(team), first, last) is not None
     coverage_complete = all(career_covered(period, team) for period, team, _ in career)
+    if current_rows and current_total is None:coverage_complete=False
     if confirmed:
         old = box.get('обновление данных о клубе')
         try:
@@ -1256,6 +1268,7 @@ def _prepare_statistics(snapshot, mapping, api, wiki, resolver, *, max_requests=
                 years = re.findall(r'(?:19|20)[0-9]{2}', period)
                 return bool(years) and int(years[-1]) < old_day.year or career_covered(period, team)
             coverage_complete = all(covered_since_previous_update(period, team) for period,team,_ in career)
+            if current_rows and current_total is None:coverage_complete=False
         if old_day and confirmed < old_day.isoformat():
             issues.append({'code': 'date_evidence_older', 'confirmed_match_date': confirmed, 'article_date': old_day.isoformat()})
         elif old_day and confirmed > old_day.isoformat() and coverage_complete and entity is not None:

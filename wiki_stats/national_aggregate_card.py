@@ -17,8 +17,8 @@ def prepare(snapshot, mapping, item, entity, history, wiki, now, *, goalkeeper=F
         try:
             if reference_identity(wiki,row[1]).get('qid') == entity['wikidata_id']: rows.append(row)
         except UpdateError:
-            from .national_card_coverage import youth_row
-            if not youth_row(row[1]): return []
+            from .national_card_coverage import non_senior_row
+            if not non_senior_row(row[1]): return []
     if len(rows) != 1: return []
     period,text,value = rows[0]
     from .structural_editor import validate_period

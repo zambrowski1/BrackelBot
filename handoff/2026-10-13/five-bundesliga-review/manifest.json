@@ -13,7 +13,7 @@
   },
   {
     "file": "Кобель-просмотр.html",
-    "sha256": "f96775cac4e7a9b2c32b44077c33831f2377b70cb3eaf3b80bfc800df50c9ed9"
+    "sha256": "18f0bf1569041b39c7ba0ee1b3cb970be583945cef6ae0cbc0fd1db29c0c350a"
   },
   {
     "file": "Кариус-до.wiki",
@@ -21,15 +21,15 @@
   },
   {
     "file": "Кариус-после.wiki",
-    "sha256": "f503ed808a37a69516196021e08383a76691fcd2bddcaaeeebc046a9d24f9887"
+    "sha256": "129a8f69e4ad75e5703fa1c006ce0f7903e183ad63bfdf375da32ce3ad9efd37"
   },
   {
     "file": "Кариус-изменения.diff",
-    "sha256": "53308367872de853d4e1c04220aa5ba6c0e2338b2fc12b90ab11cb1bc0938d46"
+    "sha256": "6808d872ba041a8f0e47493181e38ba846b560141e16000d8c467ef4d89b43b3"
   },
   {
     "file": "Кариус-просмотр.html",
-    "sha256": "634617d49528e747ce1d367dbe0c817778bb70870cb0fc89b6491a360d4cc937"
+    "sha256": "ef0509dd40f00066ab5bc22bc53f57b7787160e250a0bb141906cd020135d6bc"
   },
   {
     "file": "Раум-до.wiki",
@@ -37,15 +37,15 @@
   },
   {
     "file": "Раум-после.wiki",
-    "sha256": "e5f2479660d52d2c086fc7b775a6aadbc51c0af692daa44e2ba75876063e3f29"
+    "sha256": "c62254d5f1ec67807f8b2f50756d7df28fad1e6d49bb8c29469d173d88d21290"
   },
   {
     "file": "Раум-изменения.diff",
-    "sha256": "2e6475a822d3d348bb7492e2e57092d5cc630f3c2cbd29f652349337ef4b3338"
+    "sha256": "42efa58265b4cbad4176494809de103f23c6630fd2754fb555de1fd6123b96df"
   },
   {
     "file": "Раум-просмотр.html",
-    "sha256": "78cceb6f90ee76b13aeecf244b10db9a8e41528773d78562b207b43f5fbeda82"
+    "sha256": "5c0dbb4006c65cb87fef01c3ea07f42e19a615a19ee655b313ad1985fb47c6e1"
   },
   {
     "file": "Орбан-до.wiki",
@@ -61,7 +61,7 @@
   },
   {
     "file": "Орбан-просмотр.html",
-    "sha256": "2201d215a1897b16187de9bd677488785483ef72c2266de4bbfc7936e7e1568b"
+    "sha256": "9607ec6bd47c9a474837d51e47f71d909b4d26702cf3741bc236d97ad50b8d00"
   },
   {
     "file": "Штиллер-до.wiki",
@@ -77,6 +77,6 @@
   },
   {
     "file": "Штиллер-просмотр.html",
-    "sha256": "e2e279314a9995463119cb386f509d12045d554a67a3d2457892a486278aa628"
+    "sha256": "8c114b1877cb8f06532ec42afe5ba8a412a857717cc9faea13cb5f1ff2b19ce3"
   }
 ]

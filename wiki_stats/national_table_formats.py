@@ -22,12 +22,19 @@ def table_parts(node):
         first=parts[0];tag=str(first.tag).casefold()
         if tag=='td' and str(first).lstrip().startswith('|+'):
             caption=str(first.contents).strip().removeprefix('+').strip();parts=parts[1:]
-        elif tag in {'caption','th'}:
+        elif tag=='caption' or tag=='th' and not (len(parts)>1 and isinstance(parts[1],mw.nodes.Tag) and str(parts[1].tag).casefold()=='th'):
             caption=str(first.contents).strip();parts=parts[1:]
         elif tag=='tr':
             cells=[n for n in first.contents.nodes if not isinstance(n,mw.nodes.Text) or str(n).strip()]
             if len(cells)==1 and isinstance(cells[0],mw.nodes.Tag) and str(cells[0].tag).casefold()=='th':
                 caption=str(cells[0].contents).strip();parts=parts[1:]
+    if parts and isinstance(parts[0],mw.nodes.Tag) and str(parts[0].tag).casefold()=='th':
+        # MediaWiki tables may start with ! A !! B directly, without |-.
+        headers=[]
+        while parts and isinstance(parts[0],mw.nodes.Tag) and str(parts[0].tag).casefold()=='th':
+            headers.append(parts.pop(0))
+        if len(headers)<2:raise UpdateError('needs_review','Неоднозначная строка заголовков')
+        return caption,headers,parts
     if not parts or not isinstance(parts[0],mw.nodes.Tag) or str(parts[0].tag).casefold()!='tr':
         raise UpdateError('needs_review','Не найдена строка заголовков таблицы')
     headers=[n for n in parts[0].contents.nodes if not isinstance(n,mw.nodes.Text) or str(n).strip()]

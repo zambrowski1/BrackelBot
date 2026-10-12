@@ -152,6 +152,12 @@
           "as_of": "2026-10-13",
           "sources": [
             {
+              "url": "https://www.wikidata.org/wiki/Q16525419",
+              "provenance": "user_provided",
+              "coverage_as_of": "2026-10-13",
+              "note": "Страна клуба и шаблон флага проверены через Википедию и Wikidata"
+            },
+            {
               "url": "https://www.wikidata.org/wiki/Q105254",
               "provenance": "user_provided",
               "coverage_as_of": "2026-10-13",
@@ -178,6 +184,17 @@
           ],
           "payload": {
             "clubs": [
+              {
+                "expected_wikitext": "{{фарм-клуб}}[[Майнц 05 II]]",
+                "occurrences": 1,
+                "flag": "Германии",
+                "entity": {
+                  "name": "Майнц 05 II",
+                  "kind": "club",
+                  "page_title": "Майнц 05 II",
+                  "wikidata_id": "Q16525419"
+                }
+              },
               {
                 "expected_wikitext": "[[Майнц 05]]",
                 "occurrences": 1,
@@ -254,13 +271,13 @@
           "payload": {
             "seasons": [
               {
-                "club": "[[Майнц 05]]",
+                "club": "{{Флаг Германии|20px}} [[Майнц 05]]",
                 "league": "[[Чемпионат Германии по футболу|Бундеслига]]",
                 "expected_wikitext": "[[Чемпионат Германии по футболу 2012/2013|2012/13]]",
                 "page_title": "Чемпионат Германии по футболу 2012/2013"
               },
               {
-                "club": "[[Майнц 05]]",
+                "club": "{{Флаг Германии|20px}} [[Майнц 05]]",
                 "league": "[[Чемпионат Германии по футболу|Бундеслига]]",
                 "expected_wikitext": "[[Чемпионат Германии по футболу 2014/2015|2014/15]]",
                 "page_title": "Чемпионат Германии по футболу 2014/2015"
@@ -301,8 +318,8 @@
             "goals": -33
           },
           "new": {
-            "appearances": 35,
-            "goals": -30
+            "appearances": 39,
+            "goals": -35
           }
         },
         {

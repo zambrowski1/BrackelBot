@@ -31,8 +31,8 @@ def make_api(store):
         from .highlightly_client import HighlightlyClient
         return HighlightlyClient(store)
     if getattr(store, 'provider', '') == 'sofascore':
-        from .sofascore_client import SofascoreClient
-        return SofascoreClient(store)
+        from .sofascore_combined import make_sofascore_client
+        return make_sofascore_client(store)
     return ApiFootballClient(store)
 
 

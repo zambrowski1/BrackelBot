@@ -1,0 +1,132 @@
+{
+  "player": "Patrik Schick",
+  "jersey_number": 14,
+  "season": {
+    "appearances": 5,
+    "goals": 5
+  },
+  "match_page_count": 30,
+  "cache_replay_without_requests": true,
+  "quotas": {
+    "provider": "sofascore",
+    "sources": {
+      "sofascore6": {
+        "limit": 500,
+        "remaining": 467,
+        "reset_at": 1794542625.5956492,
+        "confirmed": true
+      },
+      "omkarcloud": {
+        "provider": "sofascore",
+        "keys": [
+          {
+            "slot": 1,
+            "id": "7981174997a9c62dbcc1",
+            "limit": 1000,
+            "remaining": 4,
+            "reset_at": 1794211219.809293,
+            "confirmed": true,
+            "disabled": false,
+            "usable_remaining": 4
+          },
+          {
+            "slot": 2,
+            "id": "aeff5f2ab2f06a672d74",
+            "limit": 1000,
+            "remaining": 1,
+            "reset_at": null,
+            "confirmed": false,
+            "disabled": false,
+            "usable_remaining": 1
+          },
+          {
+            "slot": 3,
+            "id": "4609559e4d95cf741fff",
+            "limit": 1000,
+            "remaining": 1,
+            "reset_at": null,
+            "confirmed": false,
+            "disabled": false,
+            "usable_remaining": 1
+          },
+          {
+            "slot": 4,
+            "id": "5a3e9077ac02bdf76193",
+            "limit": 1000,
+            "remaining": 1,
+            "reset_at": null,
+            "confirmed": false,
+            "disabled": false,
+            "usable_remaining": 1
+          }
+        ],
+        "limit": 4000,
+        "remaining": 7,
+        "confirmed": false,
+        "reset_at": 1794211219.809293,
+        "cooldown_until": 0
+      }
+    },
+    "keys": [
+      {
+        "slot": 1,
+        "id": "sofascore6:5a3e9077ac02bdf76193",
+        "source": "sofascore6",
+        "limit": 500,
+        "remaining": 467,
+        "reset_at": 1794542625.5956492,
+        "confirmed": true,
+        "disabled": false,
+        "usable_remaining": 467
+      },
+      {
+        "slot": 2,
+        "id": "7981174997a9c62dbcc1",
+        "limit": 1000,
+        "remaining": 4,
+        "reset_at": 1794211219.809293,
+        "confirmed": true,
+        "disabled": false,
+        "usable_remaining": 4,
+        "source": "omkarcloud"
+      },
+      {
+        "slot": 3,
+        "id": "aeff5f2ab2f06a672d74",
+        "limit": 1000,
+        "remaining": 1,
+        "reset_at": null,
+        "confirmed": false,
+        "disabled": false,
+        "usable_remaining": 1,
+        "source": "omkarcloud"
+      },
+      {
+        "slot": 4,
+        "id": "4609559e4d95cf741fff",
+        "limit": 1000,
+        "remaining": 1,
+        "reset_at": null,
+        "confirmed": false,
+        "disabled": false,
+        "usable_remaining": 1,
+        "source": "omkarcloud"
+      },
+      {
+        "slot": 5,
+        "id": "5a3e9077ac02bdf76193",
+        "limit": 1000,
+        "remaining": 1,
+        "reset_at": null,
+        "confirmed": false,
+        "disabled": false,
+        "usable_remaining": 1,
+        "source": "omkarcloud"
+      }
+    ],
+    "limit": 4500,
+    "remaining": 474,
+    "confirmed": false,
+    "reset_at": 1794211219.809293
+  }
+}

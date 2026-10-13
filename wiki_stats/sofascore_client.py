@@ -22,6 +22,16 @@ PATHS.update({'/tournaments/seasons', '/tournaments/matches', '/players/national
 
 
 class _SofascoreAccount:
+    host = HOST
+    quota_limit = 1000
+    cooldown_key = 'cooldown'
+
+    def wire_request(self, path, params):
+        return path, params
+
+    def normalize_response(self, path, params, data):
+        return data
+
     def __init__(self, store, key=None, session=None, clock=time.time):
         self.store = store
         self.key = key or os.environ.get('SOFASCORE_API_KEY')
@@ -32,10 +42,10 @@ class _SofascoreAccount:
         self.account = hashlib.sha256(self.key.encode()).hexdigest()[:20]
 
     def quota_status(self):
-        quota = self.store.get('quota', self.account, {'limit': 1000, 'remaining': 1,
+        quota = self.store.get('quota', self.account, {'limit': self.quota_limit, 'remaining': 1,
                                'reset_at': None, 'confirmed': False})
         if quota.get('confirmed') and quota.get('reset_at') and self.clock()>=quota['reset_at']:
-            return {'limit': 1000, 'remaining': 1, 'reset_at': None, 'confirmed': False}
+            return {'limit': self.quota_limit, 'remaining': 1, 'reset_at': None, 'confirmed': False}
         return quota
 
     def request(self, path, params, *, fresh=False, ttl=3600):
@@ -46,18 +56,19 @@ class _SofascoreAccount:
         cached = self.store.get('cache', cache_key)
         if not fresh and cached and 0 <= now-cached['at'] < ttl:
             return cached['data']
+        wire_path, wire_params = self.wire_request(path, params)
         quota = self.quota_status()
         # An unconfirmed window is capped at the free allowance; expired windows
         # allow one probe only, then require valid new provider headers.
         if quota.get('reset_at') and now >= quota['reset_at'] and quota.get('confirmed'):
-            quota = {'limit': 1000, 'remaining': 1, 'reset_at': None, 'confirmed': False}
+            quota = {'limit': self.quota_limit, 'remaining': 1, 'reset_at': None, 'confirmed': False}
         if quota['remaining'] <= 0:
             raise UpdateError('quota_exhausted', 'Квота Sofascore исчерпана; платное превышение запрещено')
         quota = {**quota, 'remaining': quota['remaining']-1}
         self.store.put('quota', self.account, quota)
         try:
-            response = self.session.get('https://'+HOST+path, params=params,
-                headers={'x-rapidapi-key': self.key, 'x-rapidapi-host': HOST},
+            response = self.session.get('https://'+self.host+wire_path, params=wire_params,
+                headers={'x-rapidapi-key': self.key, 'x-rapidapi-host': self.host},
                 timeout=30, allow_redirects=False)
         except requests.RequestException:
             raise UpdateError('api_unavailable', 'Sofascore недоступен; запрос учтён, автоматического повтора нет') from None
@@ -66,7 +77,7 @@ class _SofascoreAccount:
             limit = int(headers['x-ratelimit-requests-limit'])
             remaining = int(headers['x-ratelimit-requests-remaining'])
             reset = int(headers['x-ratelimit-requests-reset'])
-            if not 0 <= remaining <= limit or not 0 < limit <= 1000 or reset <= 0:
+            if not 0 <= remaining <= limit or not 0 < limit <= self.quota_limit or reset <= 0:
                 raise ValueError()
             # Don't let a stale/out-of-order response increase the same window.
             if quota.get('confirmed') and quota.get('reset_at', 0) > now:
@@ -81,7 +92,7 @@ class _SofascoreAccount:
                 raise UpdateError('quota_exhausted', 'Sofascore вернул ограничение квоты')
             try: delay = max(60, min(86400, float(headers.get('retry-after',60))))
             except (ValueError,TypeError): delay = 60
-            self.store.put('api_state','cooldown',now+delay)
+            self.store.put('api_state',self.cooldown_key,now+delay)
             raise UpdateError('api_rate_limited','Sofascore ограничил частоту; переключение ключей не выполняется')
         if response.status_code in {401,403}:
             self.store.put('key_health',self.account,{'disabled':True,'http':response.status_code})
@@ -93,12 +104,13 @@ class _SofascoreAccount:
             data = response.json()
         except ValueError:
             raise UpdateError('api_invalid', 'Sofascore вернул некорректный JSON') from None
-        if not isinstance(data, dict) or data.get('errors') or data.get('error') or data.get('messages'):
-            raise UpdateError('api_invalid', 'Sofascore не подтвердил данные')
         serialized = json.dumps(data,ensure_ascii=False)
         if any(secret in serialized for secret in getattr(self,'secrets',[self.key])):
             raise UpdateError('api_invalid','Ответ Sofascore содержит конфиденциальное значение')
-        self.store.put('cache', cache_key, {'at': now, 'data': data})
+        data = self.normalize_response(path, params, data)
+        if not isinstance(data, dict) or data.get('errors') or data.get('error') or data.get('messages'):
+            raise UpdateError('api_invalid', 'Sofascore не подтвердил данные')
+        self.store.put('cache', cache_key, {'at': now, 'data': data, 'delivery_provider': self.host})
         return data
 
     def details(self, player_id):
